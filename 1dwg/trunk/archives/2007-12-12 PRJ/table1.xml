@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- table1.xml -->
+<!-- 2007-10-29 canSAS working version -->
+<SASdata>
+  <Idata><Q units="1/nm">0.01</Q><I units="1/cm">1300</I></Idata>
+  <Idata><Q units="1/nm">0.02</Q><I units="1/cm">1200</I></Idata>
+  <Idata><Q units="1/nm">0.03</Q><I units="1/cm">100</I></Idata>
+  <Idata><Q units="1/nm">0.04</Q><I units="1/cm">20</I></Idata>
+</SASdata>
