@@ -1,0 +1,854 @@
+<?xml version="1.0"?>
+<SASroot xmlns="" xml_output_version="12.07a">
+  <SASentry>
+    <Run>SEP06064.SA3_AJJ_L205</Run>
+    <Title>A1 9m</Title>
+    <SASdata>
+      <Idata>
+        <Q units="/Angstrom">0.003</Q>
+        <I units="/cm">100</I>
+        <Idev units="/cm">10</Idev>
+        <Qdev units="/Angstrom">3e-05</Qdev>
+        <Qmean units="/Angstrom">0.003</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.005</Q>
+        <I units="/cm">99</I>
+        <Idev units="/cm">9.9499</Idev>
+        <Qdev units="/Angstrom">5e-05</Qdev>
+        <Qmean units="/Angstrom">0.005</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.007</Q>
+        <I units="/cm">98</I>
+        <Idev units="/cm">9.8995</Idev>
+        <Qdev units="/Angstrom">7e-05</Qdev>
+        <Qmean units="/Angstrom">0.007</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.009</Q>
+        <I units="/cm">97</I>
+        <Idev units="/cm">9.8489</Idev>
+        <Qdev units="/Angstrom">9e-05</Qdev>
+        <Qmean units="/Angstrom">0.009</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.011</Q>
+        <I units="/cm">96</I>
+        <Idev units="/cm">9.798</Idev>
+        <Qdev units="/Angstrom">0.00011</Qdev>
+        <Qmean units="/Angstrom">0.011</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.013</Q>
+        <I units="/cm">95</I>
+        <Idev units="/cm">9.7468</Idev>
+        <Qdev units="/Angstrom">0.00013</Qdev>
+        <Qmean units="/Angstrom">0.013</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.015</Q>
+        <I units="/cm">94</I>
+        <Idev units="/cm">9.6954</Idev>
+        <Qdev units="/Angstrom">0.00015</Qdev>
+        <Qmean units="/Angstrom">0.015</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.017</Q>
+        <I units="/cm">93</I>
+        <Idev units="/cm">9.6437</Idev>
+        <Qdev units="/Angstrom">0.00017</Qdev>
+        <Qmean units="/Angstrom">0.017</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.019</Q>
+        <I units="/cm">92</I>
+        <Idev units="/cm">9.5917</Idev>
+        <Qdev units="/Angstrom">0.00019</Qdev>
+        <Qmean units="/Angstrom">0.019</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.021</Q>
+        <I units="/cm">91</I>
+        <Idev units="/cm">9.5394</Idev>
+        <Qdev units="/Angstrom">0.00021</Qdev>
+        <Qmean units="/Angstrom">0.021</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.023</Q>
+        <I units="/cm">90</I>
+        <Idev units="/cm">9.4868</Idev>
+        <Qdev units="/Angstrom">0.00023</Qdev>
+        <Qmean units="/Angstrom">0.023</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.025</Q>
+        <I units="/cm">89</I>
+        <Idev units="/cm">9.434</Idev>
+        <Qdev units="/Angstrom">0.00025</Qdev>
+        <Qmean units="/Angstrom">0.025</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.027</Q>
+        <I units="/cm">88</I>
+        <Idev units="/cm">9.3808</Idev>
+        <Qdev units="/Angstrom">0.00027</Qdev>
+        <Qmean units="/Angstrom">0.027</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.029</Q>
+        <I units="/cm">87</I>
+        <Idev units="/cm">9.3274</Idev>
+        <Qdev units="/Angstrom">0.00029</Qdev>
+        <Qmean units="/Angstrom">0.029</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.031</Q>
+        <I units="/cm">86</I>
+        <Idev units="/cm">9.2736</Idev>
+        <Qdev units="/Angstrom">0.00031</Qdev>
+        <Qmean units="/Angstrom">0.031</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.033</Q>
+        <I units="/cm">85</I>
+        <Idev units="/cm">9.2195</Idev>
+        <Qdev units="/Angstrom">0.00033</Qdev>
+        <Qmean units="/Angstrom">0.033</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.035</Q>
+        <I units="/cm">84</I>
+        <Idev units="/cm">9.1652</Idev>
+        <Qdev units="/Angstrom">0.00035</Qdev>
+        <Qmean units="/Angstrom">0.035</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.037</Q>
+        <I units="/cm">83</I>
+        <Idev units="/cm">9.1104</Idev>
+        <Qdev units="/Angstrom">0.00037</Qdev>
+        <Qmean units="/Angstrom">0.037</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.039</Q>
+        <I units="/cm">82</I>
+        <Idev units="/cm">9.0554</Idev>
+        <Qdev units="/Angstrom">0.00039</Qdev>
+        <Qmean units="/Angstrom">0.039</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.041</Q>
+        <I units="/cm">81</I>
+        <Idev units="/cm">9</Idev>
+        <Qdev units="/Angstrom">0.00041</Qdev>
+        <Qmean units="/Angstrom">0.041</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.043</Q>
+        <I units="/cm">80</I>
+        <Idev units="/cm">8.9443</Idev>
+        <Qdev units="/Angstrom">0.00043</Qdev>
+        <Qmean units="/Angstrom">0.043</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.045</Q>
+        <I units="/cm">79</I>
+        <Idev units="/cm">8.8882</Idev>
+        <Qdev units="/Angstrom">0.00045</Qdev>
+        <Qmean units="/Angstrom">0.045</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.047</Q>
+        <I units="/cm">78</I>
+        <Idev units="/cm">8.8318</Idev>
+        <Qdev units="/Angstrom">0.00047</Qdev>
+        <Qmean units="/Angstrom">0.047</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.049</Q>
+        <I units="/cm">77</I>
+        <Idev units="/cm">8.775</Idev>
+        <Qdev units="/Angstrom">0.00049</Qdev>
+        <Qmean units="/Angstrom">0.049</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.051</Q>
+        <I units="/cm">76</I>
+        <Idev units="/cm">8.7178</Idev>
+        <Qdev units="/Angstrom">0.00051</Qdev>
+        <Qmean units="/Angstrom">0.051</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.053</Q>
+        <I units="/cm">75</I>
+        <Idev units="/cm">8.6603</Idev>
+        <Qdev units="/Angstrom">0.00053</Qdev>
+        <Qmean units="/Angstrom">0.053</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.055</Q>
+        <I units="/cm">74</I>
+        <Idev units="/cm">8.6023</Idev>
+        <Qdev units="/Angstrom">0.00055</Qdev>
+        <Qmean units="/Angstrom">0.055</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.057</Q>
+        <I units="/cm">73</I>
+        <Idev units="/cm">8.544</Idev>
+        <Qdev units="/Angstrom">0.00057</Qdev>
+        <Qmean units="/Angstrom">0.057</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.059</Q>
+        <I units="/cm">72</I>
+        <Idev units="/cm">8.4853</Idev>
+        <Qdev units="/Angstrom">0.00059</Qdev>
+        <Qmean units="/Angstrom">0.059</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.061</Q>
+        <I units="/cm">71</I>
+        <Idev units="/cm">8.4261</Idev>
+        <Qdev units="/Angstrom">0.00061</Qdev>
+        <Qmean units="/Angstrom">0.061</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.063</Q>
+        <I units="/cm">70</I>
+        <Idev units="/cm">8.3666</Idev>
+        <Qdev units="/Angstrom">0.00063</Qdev>
+        <Qmean units="/Angstrom">0.063</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.065</Q>
+        <I units="/cm">69</I>
+        <Idev units="/cm">8.3066</Idev>
+        <Qdev units="/Angstrom">0.00065</Qdev>
+        <Qmean units="/Angstrom">0.065</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.067</Q>
+        <I units="/cm">68</I>
+        <Idev units="/cm">8.2462</Idev>
+        <Qdev units="/Angstrom">0.00067</Qdev>
+        <Qmean units="/Angstrom">0.067</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.069</Q>
+        <I units="/cm">67</I>
+        <Idev units="/cm">8.1854</Idev>
+        <Qdev units="/Angstrom">0.00069</Qdev>
+        <Qmean units="/Angstrom">0.069</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.071</Q>
+        <I units="/cm">66</I>
+        <Idev units="/cm">8.124</Idev>
+        <Qdev units="/Angstrom">0.00071</Qdev>
+        <Qmean units="/Angstrom">0.071</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.073</Q>
+        <I units="/cm">65</I>
+        <Idev units="/cm">8.0623</Idev>
+        <Qdev units="/Angstrom">0.00073</Qdev>
+        <Qmean units="/Angstrom">0.073</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.075</Q>
+        <I units="/cm">64</I>
+        <Idev units="/cm">8</Idev>
+        <Qdev units="/Angstrom">0.00075</Qdev>
+        <Qmean units="/Angstrom">0.075</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.077</Q>
+        <I units="/cm">63</I>
+        <Idev units="/cm">7.9373</Idev>
+        <Qdev units="/Angstrom">0.00077</Qdev>
+        <Qmean units="/Angstrom">0.077</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.079</Q>
+        <I units="/cm">62</I>
+        <Idev units="/cm">7.874</Idev>
+        <Qdev units="/Angstrom">0.00079</Qdev>
+        <Qmean units="/Angstrom">0.079</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.081</Q>
+        <I units="/cm">61</I>
+        <Idev units="/cm">7.8102</Idev>
+        <Qdev units="/Angstrom">0.00081</Qdev>
+        <Qmean units="/Angstrom">0.081</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.083</Q>
+        <I units="/cm">60</I>
+        <Idev units="/cm">7.746</Idev>
+        <Qdev units="/Angstrom">0.00083</Qdev>
+        <Qmean units="/Angstrom">0.083</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.085</Q>
+        <I units="/cm">59</I>
+        <Idev units="/cm">7.6811</Idev>
+        <Qdev units="/Angstrom">0.00085</Qdev>
+        <Qmean units="/Angstrom">0.085</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.087</Q>
+        <I units="/cm">58</I>
+        <Idev units="/cm">7.6158</Idev>
+        <Qdev units="/Angstrom">0.00087</Qdev>
+        <Qmean units="/Angstrom">0.087</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.089</Q>
+        <I units="/cm">57</I>
+        <Idev units="/cm">7.5498</Idev>
+        <Qdev units="/Angstrom">0.00089</Qdev>
+        <Qmean units="/Angstrom">0.089</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.091</Q>
+        <I units="/cm">56</I>
+        <Idev units="/cm">7.4833</Idev>
+        <Qdev units="/Angstrom">0.00091</Qdev>
+        <Qmean units="/Angstrom">0.091</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.093</Q>
+        <I units="/cm">55</I>
+        <Idev units="/cm">7.4162</Idev>
+        <Qdev units="/Angstrom">0.00093</Qdev>
+        <Qmean units="/Angstrom">0.093</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.095</Q>
+        <I units="/cm">54</I>
+        <Idev units="/cm">7.3485</Idev>
+        <Qdev units="/Angstrom">0.00095</Qdev>
+        <Qmean units="/Angstrom">0.095</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.097</Q>
+        <I units="/cm">53</I>
+        <Idev units="/cm">7.2801</Idev>
+        <Qdev units="/Angstrom">0.00097</Qdev>
+        <Qmean units="/Angstrom">0.097</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.099</Q>
+        <I units="/cm">52</I>
+        <Idev units="/cm">7.2111</Idev>
+        <Qdev units="/Angstrom">0.00099</Qdev>
+        <Qmean units="/Angstrom">0.099</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.101</Q>
+        <I units="/cm">51</I>
+        <Idev units="/cm">7.1414</Idev>
+        <Qdev units="/Angstrom">0.00101</Qdev>
+        <Qmean units="/Angstrom">0.101</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.103</Q>
+        <I units="/cm">50</I>
+        <Idev units="/cm">7.0711</Idev>
+        <Qdev units="/Angstrom">0.00103</Qdev>
+        <Qmean units="/Angstrom">0.103</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.105</Q>
+        <I units="/cm">49</I>
+        <Idev units="/cm">7</Idev>
+        <Qdev units="/Angstrom">0.00105</Qdev>
+        <Qmean units="/Angstrom">0.105</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.107</Q>
+        <I units="/cm">48</I>
+        <Idev units="/cm">6.9282</Idev>
+        <Qdev units="/Angstrom">0.00107</Qdev>
+        <Qmean units="/Angstrom">0.107</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.109</Q>
+        <I units="/cm">47</I>
+        <Idev units="/cm">6.8557</Idev>
+        <Qdev units="/Angstrom">0.00109</Qdev>
+        <Qmean units="/Angstrom">0.109</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.111</Q>
+        <I units="/cm">46</I>
+        <Idev units="/cm">6.7823</Idev>
+        <Qdev units="/Angstrom">0.00111</Qdev>
+        <Qmean units="/Angstrom">0.111</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.113</Q>
+        <I units="/cm">45</I>
+        <Idev units="/cm">6.7082</Idev>
+        <Qdev units="/Angstrom">0.00113</Qdev>
+        <Qmean units="/Angstrom">0.113</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.115</Q>
+        <I units="/cm">44</I>
+        <Idev units="/cm">6.6332</Idev>
+        <Qdev units="/Angstrom">0.00115</Qdev>
+        <Qmean units="/Angstrom">0.115</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.117</Q>
+        <I units="/cm">43</I>
+        <Idev units="/cm">6.5574</Idev>
+        <Qdev units="/Angstrom">0.00117</Qdev>
+        <Qmean units="/Angstrom">0.117</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.119</Q>
+        <I units="/cm">42</I>
+        <Idev units="/cm">6.4807</Idev>
+        <Qdev units="/Angstrom">0.00119</Qdev>
+        <Qmean units="/Angstrom">0.119</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.121</Q>
+        <I units="/cm">41</I>
+        <Idev units="/cm">6.4031</Idev>
+        <Qdev units="/Angstrom">0.00121</Qdev>
+        <Qmean units="/Angstrom">0.121</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.123</Q>
+        <I units="/cm">40</I>
+        <Idev units="/cm">6.3246</Idev>
+        <Qdev units="/Angstrom">0.00123</Qdev>
+        <Qmean units="/Angstrom">0.123</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.125</Q>
+        <I units="/cm">39</I>
+        <Idev units="/cm">6.245</Idev>
+        <Qdev units="/Angstrom">0.00125</Qdev>
+        <Qmean units="/Angstrom">0.125</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.127</Q>
+        <I units="/cm">38</I>
+        <Idev units="/cm">6.1644</Idev>
+        <Qdev units="/Angstrom">0.00127</Qdev>
+        <Qmean units="/Angstrom">0.127</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.129</Q>
+        <I units="/cm">37</I>
+        <Idev units="/cm">6.0828</Idev>
+        <Qdev units="/Angstrom">0.00129</Qdev>
+        <Qmean units="/Angstrom">0.129</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.131</Q>
+        <I units="/cm">36</I>
+        <Idev units="/cm">6</Idev>
+        <Qdev units="/Angstrom">0.00131</Qdev>
+        <Qmean units="/Angstrom">0.131</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.133</Q>
+        <I units="/cm">35</I>
+        <Idev units="/cm">5.9161</Idev>
+        <Qdev units="/Angstrom">0.00133</Qdev>
+        <Qmean units="/Angstrom">0.133</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.135</Q>
+        <I units="/cm">34</I>
+        <Idev units="/cm">5.831</Idev>
+        <Qdev units="/Angstrom">0.00135</Qdev>
+        <Qmean units="/Angstrom">0.135</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.137</Q>
+        <I units="/cm">33</I>
+        <Idev units="/cm">5.7446</Idev>
+        <Qdev units="/Angstrom">0.00137</Qdev>
+        <Qmean units="/Angstrom">0.137</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.139</Q>
+        <I units="/cm">32</I>
+        <Idev units="/cm">5.6569</Idev>
+        <Qdev units="/Angstrom">0.00139</Qdev>
+        <Qmean units="/Angstrom">0.139</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.141</Q>
+        <I units="/cm">31</I>
+        <Idev units="/cm">5.5678</Idev>
+        <Qdev units="/Angstrom">0.00141</Qdev>
+        <Qmean units="/Angstrom">0.141</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.143</Q>
+        <I units="/cm">30</I>
+        <Idev units="/cm">5.4772</Idev>
+        <Qdev units="/Angstrom">0.00143</Qdev>
+        <Qmean units="/Angstrom">0.143</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.145</Q>
+        <I units="/cm">29</I>
+        <Idev units="/cm">5.3852</Idev>
+        <Qdev units="/Angstrom">0.00145</Qdev>
+        <Qmean units="/Angstrom">0.145</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.147</Q>
+        <I units="/cm">28</I>
+        <Idev units="/cm">5.2915</Idev>
+        <Qdev units="/Angstrom">0.00147</Qdev>
+        <Qmean units="/Angstrom">0.147</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.149</Q>
+        <I units="/cm">27</I>
+        <Idev units="/cm">5.1962</Idev>
+        <Qdev units="/Angstrom">0.00149</Qdev>
+        <Qmean units="/Angstrom">0.149</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.151</Q>
+        <I units="/cm">26</I>
+        <Idev units="/cm">5.099</Idev>
+        <Qdev units="/Angstrom">0.00151</Qdev>
+        <Qmean units="/Angstrom">0.151</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.153</Q>
+        <I units="/cm">25</I>
+        <Idev units="/cm">5</Idev>
+        <Qdev units="/Angstrom">0.00153</Qdev>
+        <Qmean units="/Angstrom">0.153</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.155</Q>
+        <I units="/cm">24</I>
+        <Idev units="/cm">4.899</Idev>
+        <Qdev units="/Angstrom">0.00155</Qdev>
+        <Qmean units="/Angstrom">0.155</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.157</Q>
+        <I units="/cm">23</I>
+        <Idev units="/cm">4.7958</Idev>
+        <Qdev units="/Angstrom">0.00157</Qdev>
+        <Qmean units="/Angstrom">0.157</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.159</Q>
+        <I units="/cm">22</I>
+        <Idev units="/cm">4.6904</Idev>
+        <Qdev units="/Angstrom">0.00159</Qdev>
+        <Qmean units="/Angstrom">0.159</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.161</Q>
+        <I units="/cm">21</I>
+        <Idev units="/cm">4.5826</Idev>
+        <Qdev units="/Angstrom">0.00161</Qdev>
+        <Qmean units="/Angstrom">0.161</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.163</Q>
+        <I units="/cm">20</I>
+        <Idev units="/cm">4.4721</Idev>
+        <Qdev units="/Angstrom">0.00163</Qdev>
+        <Qmean units="/Angstrom">0.163</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.165</Q>
+        <I units="/cm">19</I>
+        <Idev units="/cm">4.3589</Idev>
+        <Qdev units="/Angstrom">0.00165</Qdev>
+        <Qmean units="/Angstrom">0.165</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.167</Q>
+        <I units="/cm">18</I>
+        <Idev units="/cm">4.2426</Idev>
+        <Qdev units="/Angstrom">0.00167</Qdev>
+        <Qmean units="/Angstrom">0.167</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.169</Q>
+        <I units="/cm">17</I>
+        <Idev units="/cm">4.1231</Idev>
+        <Qdev units="/Angstrom">0.00169</Qdev>
+        <Qmean units="/Angstrom">0.169</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.171</Q>
+        <I units="/cm">16</I>
+        <Idev units="/cm">4</Idev>
+        <Qdev units="/Angstrom">0.00171</Qdev>
+        <Qmean units="/Angstrom">0.171</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.173</Q>
+        <I units="/cm">15</I>
+        <Idev units="/cm">3.873</Idev>
+        <Qdev units="/Angstrom">0.00173</Qdev>
+        <Qmean units="/Angstrom">0.173</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.175</Q>
+        <I units="/cm">14</I>
+        <Idev units="/cm">3.7417</Idev>
+        <Qdev units="/Angstrom">0.00175</Qdev>
+        <Qmean units="/Angstrom">0.175</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.177</Q>
+        <I units="/cm">13</I>
+        <Idev units="/cm">3.6056</Idev>
+        <Qdev units="/Angstrom">0.00177</Qdev>
+        <Qmean units="/Angstrom">0.177</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.179</Q>
+        <I units="/cm">12</I>
+        <Idev units="/cm">3.4641</Idev>
+        <Qdev units="/Angstrom">0.00179</Qdev>
+        <Qmean units="/Angstrom">0.179</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.181</Q>
+        <I units="/cm">11</I>
+        <Idev units="/cm">3.3166</Idev>
+        <Qdev units="/Angstrom">0.00181</Qdev>
+        <Qmean units="/Angstrom">0.181</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.183</Q>
+        <I units="/cm">10</I>
+        <Idev units="/cm">3.1623</Idev>
+        <Qdev units="/Angstrom">0.00183</Qdev>
+        <Qmean units="/Angstrom">0.183</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.185</Q>
+        <I units="/cm">9</I>
+        <Idev units="/cm">3</Idev>
+        <Qdev units="/Angstrom">0.00185</Qdev>
+        <Qmean units="/Angstrom">0.185</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.187</Q>
+        <I units="/cm">8</I>
+        <Idev units="/cm">2.8284</Idev>
+        <Qdev units="/Angstrom">0.00187</Qdev>
+        <Qmean units="/Angstrom">0.187</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.189</Q>
+        <I units="/cm">7</I>
+        <Idev units="/cm">2.6458</Idev>
+        <Qdev units="/Angstrom">0.00189</Qdev>
+        <Qmean units="/Angstrom">0.189</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.191</Q>
+        <I units="/cm">6</I>
+        <Idev units="/cm">2.4495</Idev>
+        <Qdev units="/Angstrom">0.00191</Qdev>
+        <Qmean units="/Angstrom">0.191</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.193</Q>
+        <I units="/cm">5</I>
+        <Idev units="/cm">2.2361</Idev>
+        <Qdev units="/Angstrom">0.00193</Qdev>
+        <Qmean units="/Angstrom">0.193</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.195</Q>
+        <I units="/cm">4</I>
+        <Idev units="/cm">2</Idev>
+        <Qdev units="/Angstrom">0.00195</Qdev>
+        <Qmean units="/Angstrom">0.195</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.197</Q>
+        <I units="/cm">3</I>
+        <Idev units="/cm">1.7321</Idev>
+        <Qdev units="/Angstrom">0.00197</Qdev>
+        <Qmean units="/Angstrom">0.197</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.199</Q>
+        <I units="/cm">2</I>
+        <Idev units="/cm">1.4142</Idev>
+        <Qdev units="/Angstrom">0.00199</Qdev>
+        <Qmean units="/Angstrom">0.199</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+      <Idata>
+        <Q units="/Angstrom">0.201</Q>
+        <I units="/cm">1</I>
+        <Idev units="/cm">1</Idev>
+        <Qdev units="/Angstrom">0.00201</Qdev>
+        <Qmean units="/Angstrom">0.201</Qmean>
+        <shadowfactor units="none">1e-06</shadowfactor>
+      </Idata>
+    </SASdata>
+    <flux_monitor>1e+08</flux_monitor>
+    <Q_resolution>estimate</Q_resolution>
+    <SASsample>
+      <sample_thickness units="mm">1</sample_thickness>
+      <sample_transmission>0.33476</sample_transmission>
+    </SASsample>
+    <SASinstrument>
+      <name>NG3-SANS</name>
+      <SASsource>
+        <radiation>neutrons</radiation>
+        <beam_shape>disc</beam_shape>
+        <wavelength units="Angstrom">6</wavelength>
+        <wavelength_spread units="percent">14.3</wavelength_spread>
+      </SASsource>
+      <SAScollimation>
+        <distance_coll units="m">10.12</distance_coll>
+        <source_aperture units="mm" type="radius">50</source_aperture>
+        <sample_aperture units="mm" type="radius">0</sample_aperture>
+      </SAScollimation>
+      <SASdetector>
+        <offset_angle units="deg">0</offset_angle>
+        <distance_SD units="m">9</distance_SD>
+        <beam_centreX units="mm">68.46</beam_centreX>
+        <beam_centreY units="mm">64.3</beam_centreY>
+        <pixel_sizeX units="mm">5</pixel_sizeX>
+        <pixel_sizeY units="mm">5</pixel_sizeY>
+        <detectortype>ORNL</detectortype>
+      </SASdetector>
+    </SASinstrument>
+    <SASprocess name="NCNR-IGOR">
+      <date>03-SEP-2006 11:42:47</date>
+      <average_type>Circular</average_type>
+      <SAM_file>SEP06064.SA3_AJJ_L205</SAM_file>
+      <BKD_file>SEP06064.SA3_AJJ_L205</BKD_file>
+      <EMP_file>SEP06064.SA3_AJJ_L205</EMP_file>
+      <DIV_file>SEP06064.SA3_AJJ_L205</DIV_file>
+      <MASK_file>SEP06064.SA3_AJJ_L205</MASK_file>
+      <ABS_parameters>
+        <TSTAND>1</TSTAND>
+        <DSTAND units="mm">1</DSTAND>
+        <IZERO>230.09</IZERO>
+        <XSECT units="mm">1</XSECT>
+      </ABS_parameters>
+      <SASnote>USER:MASK.COM</SASnote>
+    </SASprocess>
+  </SASentry>
+</SASroot>
