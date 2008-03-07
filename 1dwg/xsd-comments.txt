@@ -1,0 +1,73 @@
+; SASroot: [1..1]  <br/> required name of the type of data in this file, 'version="1.0"' is a required attribute
+;   SASentry: [1..inf]  <br/> a single SAS scan
+;     Title: [0..1]  <br/> title of this SAS scan
+;     Run: [0..1]  <br/> run (number or text) of this SAS scan
+;     SASdata: [1..1]  <br/> required, contains all the SAS data for this SAS scan
+;	Idata: [1..inf]  <br/> row of SAS data
+;	Q: [1..1]  <br/> Q value for this row
+;	I: [1..1]  <br/> Intensity value for this row
+;	Qdev: [1..1]  <br/> Qdev value for this row
+;	Idev: [1..1]  <br/> Idev value for this row
+;	Qfwhm: [0..1]  <br/> Qfwhm value for this row
+;	Qmean: [0..1]  <br/> Qmean value for this row
+;	Shadowfactor: [0..1]  <br/> beam stop Shadowfactor value for this row
+;   SASsample: []  <br/> description of the sample
+;     ID: [1..1]  <br/> required, sample ID
+;     thickness: [0..1]  <br/> sample thickness
+;     transmission: [0..1]  <br/> sample transmission
+;     thickness: [0..1]  <br/> sample temperature
+;     position: [0..1]  <br/> sample translation, name is optional
+;	x: [0..1]  <br/> sample X position
+;	y: [0..1]  <br/> sample Y position
+;	z: [0..1]  <br/> sample Z position
+;     orientation: [0..1]  <br/> sample rotation, name is optional
+;	roll: [0..1]  <br/> sample roll
+;	pitch: [0..1]  <br/> sample pitch
+;	yaw: [0..1]  <br/> sample yaw
+;     details: [0..inf]  <br/> free form description of the sample
+;   SASinstrument: []  <br/> description of the instrument
+;     SASsource: []  <br/> description of the radiation source
+;	radiation: [1..1]  <br/> neutron, X-ray tube, synchrotron X-ray, ...
+;	beam_size: [0..1]  <br/> dimensions of the beam
+;	  x: [0..1]  <br/> horizontal beam size
+;	  y: [0..1]  <br/> vertical Y beam size
+;	  z: [0..1]  <br/> this is allowed but has no meaning for SAS
+;	beam_shape: [0..1]  <br/> disc, rectangle, oval, ...
+;	wavelength: [0..1]  <br/> incident radiation
+;	wavelength_min: [0..1]  <br/> minimum wavelength
+;	wavelength_max: [0..1]  <br/> maximum wavelength
+;	wavelength_spread: [0..1]  <br/> wavelength spread
+;     SAScollimation: []  <br/> description of the instrument collimation
+;	distance: [0..1]  <br/> distance from ?sample?
+;	aperture: [0..inf]  <br/> description of slits or aperture
+;	size: [0..1]  <br/> description of slits or aperture
+;	  x: [0..1]  <br/> horizontal size
+;	  y: [0..1]  <br/> vertical size
+;	  z: [0..1]  <br/> this is allowed but has no meaning for SAS
+;	distance: [0..1]  <br/> distance from ?sample?
+;     SASdetector: [1..inf]  <br/> description of the detector
+;	name: [1..1]  <br/> detector name
+;	offset: [0..1]  <br/> detector translation
+;	  x: [0..1]  <br/> horizontal
+;	  y: [0..1]  <br/> vertical
+;	  z: [0..1]  <br/> depth
+;	orientation: [0..1]  <br/> detector rotation
+;	  roll: [0..1]  <br/> detector roll
+;	  pitch: [0..1]  <br/> detector pitch
+;	  yaw: [0..1]  <br/> detector yaw
+;	beam_center: [0..1]  <br/> beam displacement on detector
+;	  x: [0..1]  <br/> horizontal
+;	  y: [0..1]  <br/> vertical
+;	  z: [0..1]  <br/> this is allowed but has no meaning for SAS
+;	pixel_size: [0..1]  <br/> pixel size on detector
+;	  x: [0..1]  <br/> horizontal
+;	  y: [0..1]  <br/> vertical
+;	  z: [0..1]  <br/> this is allowed but has no meaning for SAS
+;	slitlength: [0..1]  <br/> slitlength at detector
+;   SASprocess: [0..inf]  <br/> description of a processing or analysis step
+;     name: [0..1]  <br/> name of processing routine
+;     date: [0..1]  <br/> date of processing
+;     description: [0..1]  <br/> free form description of processing routine
+;     term: [0..inf]  <br/> some term used in processing or analysis (string or number)
+;     SASprocessnote: [1..inf]  <br/> free form description of processing
+;   SASnote: [1..inf]  <br/> free form description of anything not covered above
