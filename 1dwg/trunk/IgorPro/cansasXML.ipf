@@ -1,11 +1,12 @@
 #pragma rtGlobals=1		// Use modern global access method.
+#pragma version=1.01
 
-# file:	cansasXML.ipf
-# author:	Pete R. Jemian <jemian@anl.gov>
-# date:	2008-03-07
-# purpose:  implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files
-#			adheres to the cansas1d/1.0 standard
-# URL:	http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
+// file:	cansasXML.ipf
+// author:	Pete R. Jemian <jemian@anl.gov>
+// date:	2008-03-13
+// purpose:  implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files
+//			adheres to the cansas1d/1.0 standard
+// URL:	http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
 
 FUNCTION CS_XmlReader(fileName)
 	//
@@ -40,15 +41,16 @@ FUNCTION CS_XmlReader(fileName)
 	MAKE/T/N=(0,3)/O metadata
 	CS_appendMetaData("xmlFile", "", fileName)
 	xmlFile = fileName
-	IF ( CS_fileExists(fileName) == 0 )
-		errorMsg = fileName + ": XML file not found"
-		PRINT errorMsg
-		SetDataFolder $origFolder
-		RETURN(-1)						// could not find file
-	ENDIF
 	fileID = XmlOpenFile(fileName)			// open and parse the XMLfile
 	IF ( fileID < 0 )
-		errorMsg = fileName + ": XML file not found"
+		SWITCH(fileID)					// fileID holds the return code; check it
+			CASE -1:
+				errorMsg = fileName + ": failed to parse XML"
+			BREAK
+			CASE -2:
+				errorMsg = fileName + " either not found or cannot be opened for reading"
+			BREAK
+		ENDSWITCH
 		PRINT errorMsg
 		SetDataFolder $origFolder
 		RETURN(-1)						// could not find file
@@ -84,7 +86,7 @@ FUNCTION CS_XmlReader(fileName)
 	CS_appendMetaData("cansas_version", CS_XPath_NS("/SASroot/@version"), version)
 	STRSWITCH(version)	
 	CASE "1.0":							// version 1.0 of the canSAS 1-D reduced SAS data standard
-		PRINT fileName, " identified as: cansas1d/1.0 XML file"
+		PRINT fileName, "\t\t identified as: cansas1d/1.0 XML file"
 		returnCode = CS_1i_parseXml(fileID)
 		IF (returnCode != 0)
 			IF (strlen(errorMsg) == 0)
@@ -120,7 +122,7 @@ FUNCTION CS_1i_parseXml(fileID)
 	SVAR nsStr, errorMsg
 	STRING/G Title, FolderList = ""
 	STRING XPathStr, Title_folder, SASdata_folder
-	VARIABLE i, j, index, SASdata_index
+	VARIABLE i, j, index, SASdata_index, returnCode = 0
 
 	// locate all the SASentry elements
 	CS_simpleXmlListXpath(fileID, "", "/SASroot//SASentry")
@@ -133,17 +135,15 @@ FUNCTION CS_1i_parseXml(fileID)
 		RETURN(-4)						// no <SASentry> elements
 	ENDIF
 
-	//
+	// Should we test here for all required elements?  That could be tedious.  And possibly unnecessary.
+
 	// process each SASentry element
 	// (safer to copy W_listxpath to a local variable and allow for other calls to XMLlistXpath)
 	DUPLICATE/O/T metadata, metadata_file
 	FOR (i = 0; i < numpnts(SASentryList); i += 1)
 		index = CS_findElementIndex(SASentryList[i])
-		// Get each /SASentry/Title to create a data folder
-		Title = CS_XmlStrFmXpath(fileID, SASentryList[i], "/Title")
-		PRINT "\t Title:", Title
 		DUPLICATE/O/T metadata_file, metadata
-		CS_appendMetaData("title", SASentryList[i]+CS_XPath_NS("/Title"), Title)
+		Title = CS_locateTitle(fileID, SASentryList[i])		// look in several places or use default title
 		Title_folder = CleanupName(Title, 0)
 		IF ( CheckName(Title_folder, 11) != 0 )
 			Title_folder = UniqueName(Title_folder, 11, 0)
@@ -160,7 +160,17 @@ FUNCTION CS_1i_parseXml(fileID)
 			// only one SASdata element, place data waves in Title folder
 			SASdata_folder = ":" + Title_folder + ":"
 			PRINT "\t\t dataFolder:", SASdata_folder
-			CS_1i_extractSasData(fileID, SASdataList[0], SASdata_folder)
+			IF (CS_1i_extractSasData(fileID, SASdataList[0], SASdata_folder))
+				// non-zero return code means an error, message is in errorMsg
+				// What to do now?
+				//	Proceed with that knowledge or discard the data folder?
+				//	Go with the discard for now.
+				returnCode += 1				// for later
+				PRINT "\t\t" + errorMsg
+				KillDataFolder/Z $Title_folder		// only 1 SASdata
+				// RETURN(1)				// Can't return now.  What about other SASentry elements?
+				BREAK
+			ENDIF
 			CS_appendMetaData(  "Run", "", CS_XmlStrFmXpath(fileID, SASdataList[0]+"/",  "../Run["+num2str(j+1)+"]"))
 			CS_appendMetaData(  "Run_name", "", CS_XmlStrFmXpath(fileID, SASdataList[0]+"/",  "../Run["+num2str(j+1)+"]/@name"))
 			CS_appendMetaData(  "SASdata_name", "", CS_XmlStrFmXpath(fileID, SASdataList[0],  "/@name"))
@@ -185,12 +195,22 @@ FUNCTION CS_1i_parseXml(fileID)
 				SetDataFolder ::
 				SASdata_folder =  ":" + Title_folder + ":" + SASdata_folder + ":"
 				//---
-				CS_1i_extractSasData(fileID, SASdataList[j], SASdata_folder)
-			ENDFOR
-		ENDIF
-	ENDFOR
+				IF (CS_1i_extractSasData(fileID, SASdataList[j], SASdata_folder))
+					// non-zero return code means an error, message is in errorMsg
+					// What to do now?
+					//	Proceed with that knowledge or discard the data folder?
+					//	Go with the discard for now.
+					returnCode += 1						// for later
+					PRINT "\t\t" + errorMsg
+					KillDataFolder/Z $SASdata_folder		// just this SASdata
+					// RETURN(1)						// Can't return now.  What about other SASentry elements?
+					BREAK
+				ENDIF
+			ENDFOR	// many SASdata
+		ENDIF			// 1 or many SASdata
+	ENDFOR		// each SASentry
 
-	RETURN(0)
+	RETURN(returnCode)
 END
 
 // ==================================================================
@@ -305,7 +325,42 @@ END
 
 // ==================================================================
 
+FUNCTION/S CS_locateTitle(fileID, SASentryPath)
+	VARIABLE fileID
+	STRING SASentryPath
+	WAVE/T metadata
+	STRING TitlePath, Title
+	// /SASroot/SASentry/Title is the expected location, but it could be empty
+	TitlePath = SASentryPath+CS_XPath_NS("/Title")
+	Title = CS_XmlStrFmXpath(fileID,  TitlePath, "")
+	// search harder for a title
+	IF (strlen(Title) == 0)
+		TitlePath = SASentryPath+CS_XPath_NS("/@name")
+		Title = CS_XmlStrFmXpath(fileID,  TitlePath, "")
+	ENDIF
+	IF (strlen(Title) == 0)
+		TitlePath = SASentryPath+CS_XPath_NS("/SASsample/ID")
+		Title = CS_XmlStrFmXpath(fileID,  TitlePath, "")
+	ENDIF
+	IF (strlen(Title) == 0)
+		TitlePath = SASentryPath+CS_XPath_NS("/SASsample/@name")
+		Title = CS_XmlStrFmXpath(fileID,  TitlePath, "")
+	ENDIF
+	IF (strlen(Title) == 0)
+		// last resort: make up a title
+		Title = "SASentry"
+		TitlePath = ""
+	ENDIF
+	PRINT "\t Title:", Title
+	CS_appendMetaData("title", TitlePath, Title)
+	RETURN(Title)
+END
+
+// ==================================================================
+
 FUNCTION CS_fileExists(fileName)
+	// checks if a file can be found and opened
+	// !!! not needed by 2008-03-13 change in XmlOpenFile()
 	STRING fileName
 	VARIABLE refNum
 	Open/R/Z/P=home refNum as fileName
@@ -531,7 +586,7 @@ FUNCTION CS_1i_extractIdataColumn2Wave(fileID, basePath, colName, wavName)
 	STRING basePath, colName, wavName
 	STRING unit
 	WAVE/T metadata
-	VARIABLE i
+	VARIABLE i, numPts
 
 	//	Q values come out in multiple columns. Different nodes means different columns in M_xmlcontent
 	//	Multiple values in the SAME node (i.e. a vector) get put in different rows.
@@ -539,21 +594,31 @@ FUNCTION CS_1i_extractIdataColumn2Wave(fileID, basePath, colName, wavName)
 	//	(Based on example from Andrew R.J. Nelson.)
 	CS_simpleXmlWaveFmXpath(fileID, basePath, "//Idata/" + colName)
 	WAVE/T  M_xmlcontent, W_xmlcontentnodes
-	IF (numpnts(M_XMLcontent) > 0)
+	numPts = numpnts(M_XMLcontent)
+	IF (numPts > 0)
 		MatrixTranspose M_XMLcontent
 		MAKE/O/D/N=(numpnts(M_XMLcontent)) $wavName = str2num(M_xmlcontent[p][0])
-		// don't forget the units!  Assume that all rows have the same as the first row.
+		// don't forget the units!  Assume that all rows have the same "unit" as in the first row.
+		unit = CS_XmlStrFmXpath(fileID, basePath, "/Idata[1]/"+colName+"/@unit")
+		SetScale d 0, 1, unit, $wavName				// update the wave's "UNITS" string
+		SetScale x 0, 1, unit, $wavName				// put it here, too, for the Data Browser
+		// put unit directly into wavenote of _this_ wave
+		CS_updateWaveNote(wavName, "unit", unit)		// put UNIT in wavenote
+		// store all the metadata in the wavenote (for now, at least)
 		FOR (i = 0; i < DimSize(metadata, 0); i += 1)
 			IF (strlen(metadata[i][2]) > 0)
 				// only add defined metadata to the wavenote
 				CS_updateWaveNote(wavName, metadata[i][0], metadata[i][2])
 			ENDIF
 		ENDFOR
-		unit = CS_XmlStrFmXpath(fileID, basePath, "/Idata[1]/"+colName+"/@unit")
-		SetScale d 0, 1, unit, $wavName				// update the wave's "UNITS" string
-		SetScale x 0, 1, unit, $wavName				// put it here, too, for the Data Browser
-		CS_updateWaveNote(wavName, "unit", unit)		// put UNIT in wavenote
+	ELSE
+		// did not find any data
+		// no need to apply special handling here; do that in the caller
 	ENDIF
+	//IF (numPts)
+	//	PRINT "\t\t\t\t" + wavName + ": found " + num2str(numPts) + " points"
+	//ENDIF
+	RETURN(numPts)
 END
 
 // ==================================================================
@@ -563,44 +628,70 @@ FUNCTION CS_1i_extractSasData(fileID, SASdataPath, SASdata_folder)
 	// extract data from the SASdata/Idata block in a canSAS1d/v1.0 XML file
 	//  (1i in the function name signifies this is a function that supports INPUT from version 1.0 XML files)
 	//
+	//	returns:
+	//		0	no error
+	//		1	number of points in waves is not the same as Qsas wave
+	//
 	VARIABLE fileID
 	STRING SASdataPath, SASdata_folder
+	WAVE/T metadata
+	VARIABLE numPts, numQ
+	SVAR errorMsg
 
 	// extract each Idata column into the waves: QQ, II, Qdev, Idev [Qmean] [Qfwhm] [Shadowfactor]
-	CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Q",		"Qsas")
-	CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "I",		"Isas")
-	CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qdev",	"Qdev")
-	CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Idev",	"Idev")
-	CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qmean",	"Qmean")
-	CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qfwhm",	"Qfwhm")
-	CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Shadowfactor",	"Shadowfactor")
-	// this looks too simple!
+	// ignore the return codes here, check below
+	numQ	= CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Q",				"Qsas")
+	IF (numQ != CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "I",				"Isas"))
+		errorMsg = "number of points in Qsas and Isas waves are not identical"
+		RETURN(1)
+	ENDIF
+	IF (numQ != CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qdev",			"Qdev"))
+		errorMsg = "number of points in Qsas and Qdev waves is not identical"
+		RETURN(1)
+	ENDIF
+	IF (numQ != CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Idev",			"Idev"))
+		errorMsg = "number of points in Qsas and Idev waves is not identical"
+		RETURN(1)
+	ENDIF
+	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qmean",		"Qmean")
+	IF (numPts && (numQ != numPts) )
+		errorMsg = "number of points in Qsas and Qmean waves is not identical"
+		RETURN(1)
+	ENDIF
+	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qfwhm",		"Qfwhm")
+	IF (numPts && (numQ != numPts) )
+		errorMsg = "number of points in Qsas and Qfwhm waves is not identical"
+		RETURN(1)
+	ENDIF
+	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Shadowfactor",	"Shadowfactor")
+	IF (numPts && (numQ != numPts) )
+		errorMsg = "number of points in Qsas and Shadowfactor waves is not identical"
+		RETURN(1)
+	ENDIF
+
+	PRINT "\t\t\t\t found " + num2str(numpnts(Qsas)) + " points"
 
 	// move the waves to the sample folder
 	// !!!!! Missing Qsas, Isas, Qdev, and/or Idev are a broken data set
-	//		This should produce an exception.
+	//		This should produce an exception.  Should have been trapped by numPts tests.
 	//		Best to return an error code but the caller chain is not ready to pass that to the top level, yet.
-	IF (exists("Qsas") == 1)
-		MoveWave Qsas, $SASdata_folder
-	ENDIF
-	IF (exists("Isas") == 1)
-		MoveWave Isas, $SASdata_folder
-	ENDIF
-	IF (exists("Qdev") == 1)
-		MoveWave Qdev, $SASdata_folder
-	ENDIF
-	IF (exists("Idev") == 1)
-		MoveWave Idev, $SASdata_folder
-	ENDIF
+	MoveWave Qsas, $SASdata_folder			// required wave
+	MoveWave Isas, $SASdata_folder			// required wave
+	MoveWave Qdev, $SASdata_folder			// required wave
+	MoveWave Idev, $SASdata_folder			// required wave
 	IF (exists("Qmean") == 1)
-		MoveWave Qmean, $SASdata_folder
+		MoveWave Qmean, $SASdata_folder	// optional wave
 	ENDIF
 	IF (exists("Qfwhm") == 1)
-		MoveWave Qfwhm, $SASdata_folder
+		MoveWave Qfwhm, $SASdata_folder	// optional wave
 	ENDIF
 	IF (exists("ShadowFactor") == 1)
-		MoveWave ShadowFactor, $SASdata_folder
+		MoveWave ShadowFactor, $SASdata_folder	// optional wave
 	ENDIF
+	IF (exists("metadata") == 1)
+		Duplicate/O metadata, $SASdata_folder + "metadata"
+	ENDIF
+	RETURN(0)			// no error
 END
 
 
@@ -640,19 +731,21 @@ FUNCTION prjTest_cansas1d()
 	VARIABLE i
 	// build a table of test data sets
 	fList = AddListItem("elmo.xml", 				fList, ";", Inf)		// non-existent file
+	fList = AddListItem("cansasXML.ipf", 			fList, ";", Inf)		// this file (should fail on XML parsing)
+	fList = AddListItem("book.xml", 				fList, ";", Inf)		// good XML example file but not canSAS, not even close
 	fList = AddListItem("bimodal-test1.xml", 		fList, ";", Inf)		// simple dataset
 	fList = AddListItem("bimodal-test2-vector.xml",	fList, ";", Inf)		// version 2.0 file (no standard yet)
 	fList = AddListItem("test.xml",					fList, ";", Inf)		// cs_collagen.xml with no namespace
 	fList = AddListItem("test2.xml", 				fList, ";", Inf)		// version 2.0 file (no standard yet)
 	fList = AddListItem("ill_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
 	fList = AddListItem("isis_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
-	fList = AddListItem("r586.xml", 				fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
-	fList = AddListItem("r597.xml", 				fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("r586.xml", 					fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("r597.xml", 					fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
 	fList = AddListItem("cs_collagen.xml", 			fList, ";", Inf)		// another simple dataset, bare minimum info
-	fList = AddListItem("cs_collagen_full.xml", 	fList, ";", Inf)		// more Q range than previous
+	fList = AddListItem("cs_collagen_full.xml", 		fList, ";", Inf)		// more Q range than previous
 	fList = AddListItem("cs_af1410.xml", 			fList, ";", Inf)		// multiple SASentry and SASdata elements
 	fList = AddListItem("1998spheres.xml", 			fList, ";", Inf)		// 2 SASentry, few thousand data points each
-	fList = AddListItem("does-not-exist-file.xml", 	fList, ";", Inf)		// non-existent file
+	fList = AddListItem("does-not-exist-file.xml", 		fList, ";", Inf)		// non-existent file
 	// try to load each data set in the table
 	FOR ( i = 0; i < ItemsInList(fList) ; i += 1 )
 		theFile = StringFromList(i, fList)					// walk through all test files
