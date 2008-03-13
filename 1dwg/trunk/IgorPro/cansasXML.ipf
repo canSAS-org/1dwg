@@ -420,6 +420,7 @@ FUNCTION/S CS_XPath_NS(simpleStr)
 		IF ( CmpStr(lastChar, "/") == 0 )
 			STRSWITCH (thisChar)
 				CASE "/":
+				CASE ".":
 				CASE "@":
 					BREAK
 				DEFAULT:
@@ -643,11 +644,15 @@ FUNCTION prjTest_cansas1d()
 	fList = AddListItem("bimodal-test2-vector.xml",	fList, ";", Inf)		// version 2.0 file (no standard yet)
 	fList = AddListItem("test.xml",					fList, ";", Inf)		// cs_collagen.xml with no namespace
 	fList = AddListItem("test2.xml", 				fList, ";", Inf)		// version 2.0 file (no standard yet)
+	fList = AddListItem("ill_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("isis_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("r586.xml", 				fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("r597.xml", 				fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
 	fList = AddListItem("cs_collagen.xml", 			fList, ";", Inf)		// another simple dataset, bare minimum info
-	fList = AddListItem("cs_collagen_full.xml", 		fList, ";", Inf)		// more Q range than previous
+	fList = AddListItem("cs_collagen_full.xml", 	fList, ";", Inf)		// more Q range than previous
 	fList = AddListItem("cs_af1410.xml", 			fList, ";", Inf)		// multiple SASentry and SASdata elements
 	fList = AddListItem("1998spheres.xml", 			fList, ";", Inf)		// 2 SASentry, few thousand data points each
-	fList = AddListItem("does-not-exist-file.xml", 		fList, ";", Inf)		// non-existent file
+	fList = AddListItem("does-not-exist-file.xml", 	fList, ";", Inf)		// non-existent file
 	// try to load each data set in the table
 	FOR ( i = 0; i < ItemsInList(fList) ; i += 1 )
 		theFile = StringFromList(i, fList)					// walk through all test files
