@@ -1,9 +1,9 @@
 #pragma rtGlobals=1		// Use modern global access method.
-#pragma version=1.01
+#pragma version=1.02
 
 // file:	cansasXML.ipf
 // author:	Pete R. Jemian <jemian@anl.gov>
-// date:	2008-03-13
+// date:	2008-03-16
 // purpose:  implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files
 //			adheres to the cansas1d/1.0 standard
 // URL:	http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
@@ -61,16 +61,6 @@ FUNCTION CS_XmlReader(fileName)
 	//
 	XmlElemList(fileID)					// load the elementlist into W_ElementList
 	WAVE/T 	W_ElementList				// This declaration comes _after_ XmlElemList() is called
-	CS_registerNameSpaces()				// to assist XPath construction
-
-	// assume for now that canSAS namespace is constant throughout this XML
-	// call this code once here, rather many times throughout
-	STRING/G nsPre = "", nsStr = ""
-	nsPre = CS_GetKeyByNameSpace(W_ElementList[0][1])
-	IF (strlen(nsPre) > 0) 
-		nsStr = nsPre + "=" + W_ElementList[0][1]
-		nsPre += ":"
-	ENDIF
 
 	// qualify the XML file, don't allow just any ole XML.
 	IF ( CmpStr(W_ElementList[0][3], "SASroot") != 0 )		// deftly avoid namespace
@@ -80,6 +70,15 @@ FUNCTION CS_XmlReader(fileName)
 		SetDataFolder $origFolder
 		RETURN(-2)						// not a canSAS XML file
 	ENDIF
+
+	// make an index to speed up searching through column 0
+	Make/O/T/N=(DimSize(W_ElementList, 0)) W_ElementList_Col0
+	W_ElementList_Col0 = W_ElementList[p][0]
+	STRING/G nsPre = "", nsStr = ""
+	CS_registerNameSpaces(fileID)				// to assist XPath construction
+
+	// PRJ_quick(fileID)
+
 	// identify supported versions of canSAS XML standard
 	STRING version
 	version = StringByKey("version", W_ElementList[0][2])
@@ -122,11 +121,13 @@ FUNCTION CS_1i_parseXml(fileID)
 	SVAR nsStr, errorMsg
 	STRING/G Title, FolderList = ""
 	STRING XPathStr, Title_folder, SASdata_folder
+	STRING SASentryPath, SASdataPath
 	VARIABLE i, j, index, SASdata_index, returnCode = 0
 
 	// locate all the SASentry elements
 	CS_simpleXmlListXpath(fileID, "", "/SASroot//SASentry")
 	WAVE/T 	W_listXPath
+	// (safer to copy W_listxpath to a local variable and allow for other calls to XMLlistXpath)
 	DUPLICATE/O/T   W_listXPath, SASentryList
 
 	IF (numpnts(SASentryList) < 1)
@@ -138,12 +139,11 @@ FUNCTION CS_1i_parseXml(fileID)
 	// Should we test here for all required elements?  That could be tedious.  And possibly unnecessary.
 
 	// process each SASentry element
-	// (safer to copy W_listxpath to a local variable and allow for other calls to XMLlistXpath)
 	DUPLICATE/O/T metadata, metadata_file
 	FOR (i = 0; i < numpnts(SASentryList); i += 1)
 		index = CS_findElementIndex(SASentryList[i])
 		DUPLICATE/O/T metadata_file, metadata
-		Title = CS_locateTitle(fileID, SASentryList[i])		// look in several places or use default title
+		Title = CS_1i_locateTitle(fileID, CS_correctedXpathStr(SASentryList[i]))		// look in several places or use default title
 		Title_folder = CleanupName(Title, 0)
 		IF ( CheckName(Title_folder, 11) != 0 )
 			Title_folder = UniqueName(Title_folder, 11, 0)
@@ -151,16 +151,19 @@ FUNCTION CS_1i_parseXml(fileID)
 		NewDataFolder/O  $Title_folder
 		FolderList = AddListItem(Title_folder, FolderList, ";", Inf)
 		//
-		CS_1i_collectMetadata(fileID, SASentryList[i])
+		// CS_correctedXpathStr
+		SASentryPath = CS_correctedXpathStr(SASentryList[i])
+		CS_1i_collectMetadata(fileID, SASentryPath)
 		//
 		// next, extract each SASdata block into a subfolder
-		CS_simpleXmlListXpath(fileID, SASentryList[i], "//SASdata")	//output: W_listXPath
+		CS_simpleXmlListXpath(fileID, SASentryPath, "//SASdata")	//output: W_listXPath
 		DUPLICATE/O/T   W_listXPath, SASdataList
 		IF (numpnts(SASdataList) == 1)
 			// only one SASdata element, place data waves in Title folder
+			SASdataPath = CS_correctedXpathStr(SASdataList[0])
 			SASdata_folder = ":" + Title_folder + ":"
 			PRINT "\t\t dataFolder:", SASdata_folder
-			IF (CS_1i_extractSasData(fileID, SASdataList[0], SASdata_folder))
+			IF (CS_1i_extractSasData(fileID, SASdataPath, SASdata_folder))
 				// non-zero return code means an error, message is in errorMsg
 				// What to do now?
 				//	Proceed with that knowledge or discard the data folder?
@@ -171,22 +174,21 @@ FUNCTION CS_1i_parseXml(fileID)
 				// RETURN(1)				// Can't return now.  What about other SASentry elements?
 				BREAK
 			ENDIF
-			CS_appendMetaData(  "Run", "", CS_XmlStrFmXpath(fileID, SASdataList[0]+"/",  "../Run["+num2str(j+1)+"]"))
-			CS_appendMetaData(  "Run_name", "", CS_XmlStrFmXpath(fileID, SASdataList[0]+"/",  "../Run["+num2str(j+1)+"]/@name"))
-			CS_appendMetaData(  "SASdata_name", "", CS_XmlStrFmXpath(fileID, SASdataList[0],  "/@name"))
+			CS_appendMetaData(  "Run", "", CS_XmlStrFmXpath(fileID, SASdataPath+"/",  "../Run["+num2str(j+1)+"]"))
+			CS_appendMetaData(  "Run_name", "", CS_XmlStrFmXpath(fileID, SASdataPath+"/",  "../Run["+num2str(j+1)+"]/@name"))
+			CS_appendMetaData(  "SASdata_name", "", CS_XmlStrFmXpath(fileID, SASdataPath,  "/@name"))
 		ELSE
 			// multiple SASdata elements, place data waves in subfolders
 			DUPLICATE/O/T metadata, metadata_entry
 			FOR (j = 0; j < numpnts(SASdataList); j += 1)
 				DUPLICATE/O/T metadata_entry, metadata
-				XMLlistAttr(fileID,SASdataList[j],nsStr)
-				WAVE/T M_ListAttr
 				SASdata_index = CS_findElementIndex(SASdataList[j])
+				SASdataPath = CS_correctedXpathStr(SASdataList[j])
 				SASdata_folder = CleanupName(StringByKey("name", W_ElementList[SASdata_index][2]), 0)
 				PRINT "\t\t dataFolder:", SASdata_folder
-				CS_appendMetaData(  "Run"+num2str(j), "", CS_XmlStrFmXpath(fileID, SASdataList[j]+"/",  "../Run["+num2str(j+1)+"]"))
-				CS_appendMetaData(  "Run"+num2str(j)+"_name", "", CS_XmlStrFmXpath(fileID, SASdataList[j]+"/",  "../Run["+num2str(j+1)+"]/@name"))
-				CS_appendMetaData(  "SASdata"+num2str(j)+"_name", "", CS_XmlStrFmXpath(fileID, SASdataList[j],  "/@name"))
+				CS_appendMetaData(  "Run"+num2str(j), "", CS_XmlStrFmXpath(fileID, SASdataPath+"/",  "../Run["+num2str(j+1)+"]"))
+				CS_appendMetaData(  "Run"+num2str(j)+"_name", "", CS_XmlStrFmXpath(fileID, SASdataPath+"/",  "../Run["+num2str(j+1)+"]/@name"))
+				CS_appendMetaData(  "SASdata"+num2str(j)+"_name", "", CS_XmlStrFmXpath(fileID, SASdataPath,  "/@name"))
 				SetDataFolder $Title_folder
 				IF ( CheckName(SASdata_folder, 11) != 0 )
 					SASdata_folder = UniqueName(SASdata_folder, 11, 0)
@@ -195,7 +197,7 @@ FUNCTION CS_1i_parseXml(fileID)
 				SetDataFolder ::
 				SASdata_folder =  ":" + Title_folder + ":" + SASdata_folder + ":"
 				//---
-				IF (CS_1i_extractSasData(fileID, SASdataList[j], SASdata_folder))
+				IF (CS_1i_extractSasData(fileID, SASdataPath, SASdata_folder))
 					// non-zero return code means an error, message is in errorMsg
 					// What to do now?
 					//	Proceed with that knowledge or discard the data folder?
@@ -325,7 +327,7 @@ END
 
 // ==================================================================
 
-FUNCTION/S CS_locateTitle(fileID, SASentryPath)
+FUNCTION/S CS_1i_locateTitle(fileID, SASentryPath)
 	VARIABLE fileID
 	STRING SASentryPath
 	WAVE/T metadata
@@ -386,78 +388,113 @@ END
 // ==================================================================
 
 FUNCTION CS_findElementIndex(matchStr)
+	STRING matchStr
 	//
 	// support the canSAS XML file reader
-	// return index where   W_ElementList[index][0] == matchStr
+	// return index where   g[index][0] == matchStr
 	// return -1 if not found
 	//
-	// not dependent on the version of the canSAS XML file being read
-	//
-	STRING matchStr
-	WAVE/T W_ElementList
-	VARIABLE i
-	FOR (i = 0; i < numpnts(W_ElementList); i += 1)
-		IF ( CmpStr(W_ElementList[i][0], matchStr)  == 0 )
-			RETURN(i)
-		ENDIF
-	ENDFOR
-	RETURN(-1)
+	WAVE/T W_ElementList_Col0
+
+	FindValue/TEXT=matchStr    W_ElementList_Col0
+	RETURN(V_value)
 END
 
 // ==================================================================
 
-FUNCTION CS_registerNameSpaces()
+FUNCTION CS_registerNameSpaces(fileID)
+	VARIABLE fileID
 	//
-	// identify the namespaces in use by the XML file described in W_ElementList
-	// build a registry for later use that assigns a prefix to each unique namespace
-	// build a reverse registry as well to identify the keyword
+	// Only one namespace might be used within the document and that is
+	// the one defined in the zzz:schemaLocation attribute to the <SASroot> element.
+	// Since the XMLutils XOP only extracts the schemaLocation as an attribute,
+	// we just ask for "/*/@schemaLocation" and pick the first URI as the namespace.
+	// We can use our own namespace prefix without further concern.
 	//
 	WAVE/T W_ElementList
-	STRING thisNs
-	STRING thisKey = "ns"
-	STRING/G nsRegistry = ""
-	STRING/G reverseRegistry = ""
-	STRING/G keySep = "=", listSep = ";"
-	VARIABLE i
-	// first, identify all the namespaces in use by looking at  W_ElementList[][1]
-	FOR (i = 0; i < numpnts(W_ElementList); i += 1)
-		thisNs = W_ElementList[i][1]
-		// value does not matter now, we'll fix that later
-		reverseRegistry = ReplaceStringByKey(thisNs, reverseRegistry, thisKey, keySep, listSep)
+	SVAR nsPre
+	SVAR nsStr
+	VARIABLE i, j, index
+	STRING testStr
+	//
+	nsStr = StringFromList(0, StringByKey("schemaLocation", W_ElementList[0][2]), " ")
+	nsStr = W_ElementList[0][1]		// this is the one to use
+	IF (strlen(nsStr))
+		nsPre = "cs:"
+		nsStr = "cs=" + nsStr
+	ELSE
+		nsPre = ""
+	ENDIF
+
+	// 2008-03-14,PRJ: Now, add a workaround for the libxml2 support that affects MacOS.
+	//   When using namespaces 
+	//		W_ElementList[][1] != "" (it shows a namespace for this node)
+	//   and with default libxml2 (v2.2) on MacOS,
+	//		W_ElementList[][0] != /SASroot/SASentry ...
+	//  BUT, on PCs and on MacOS with user-proveded libxml2 (?version?)
+	//		W_ElementList[][0] != /*/*[1]   or /*/* ...
+	//
+	// Need to handle either situation.
+	//  Add another column to W_ElementList that shows the corrected absolute 
+	//	XPath query,  complete with namespace prefix as needed.
+	Redimension/N=(DimSize(W_ElementList,0),5) W_ElementList
+	W_ElementList[0,Inf][4] = ""				// clear out the last column (useful only to developer)
+	W_ElementList[0][4] = CS_XPath_NS("/"+W_ElementList[0][3])
+	FOR (i = 1; i < DimSize(W_ElementList,0); i += 1)
+		IF (strlen(W_ElementList[i][4]) == 0)		// if not already set, then find absolute XPath string
+			index = CS_findElementIndex(  CS_findLast(W_ElementList[i][0], "/", 1  )  )
+			testStr = W_ElementList[index][4] + CS_XPath_NS("/"+W_ElementList[i][3])
+			XMLlistXpath(fileID,testStr,nsStr)
+			WAVE/T W_listXPath
+			SWITCH(numpnts(W_listXPath))
+				CASE 0:			// What?  Can't find the node we just found?
+					PRINT numpnts(W_listXPath), testStr, " !!! WARNING:  <Can't find the node we just found> in CS_registerNameSpaces()"
+					BREAK
+				CASE 1:			// Only one node with this element
+					W_ElementList[i][4] = testStr
+					BREAK
+				DEFAULT:			// Multiple elements match this node; need to use indices
+					// PRINT numpnts(W_listXPath), testStr
+					FOR (j = 0; j < numpnts(W_listXPath); j += 1)
+						index = CS_findElementIndex(  W_listXPath[j]  )
+						W_ElementList[index][4] = testStr + "[" + num2str(j+1) + "]"
+					ENDFOR
+					BREAK
+			ENDSWITCH
+		ENDIF
 	ENDFOR
-	// next, create the registry by indexing each namespace
-	FOR (i = 0; i < ItemsInList(reverseRegistry, listSep); i += 1)
-		thisNs = StringFromList(0, StringFromList(i, reverseRegistry, listSep), keySep)
-		thisKey = "ns" + num2str(i)
-		nsRegistry = ReplaceStringByKey(thisKey, nsRegistry, thisNs, keySep, listSep)
-		// don't forget to assign the proper key name as the value in the reverse registry
-		reverseRegistry = ReplaceStringByKey(thisNs, reverseRegistry, thisKey, keySep, listSep)
-	ENDFOR
+	// PRINT StringByKey("schemaLocation", W_ElementList[0][2])
+	//
+	// <code comes here>
 	RETURN(0)
 END
 
 // ==================================================================
 
-FUNCTION/S CS_GetNameSpaceByKey(key)
-	STRING key
-	STRING ns
-	SVAR nsRegistry
-	SVAR keySep
-	SVAR listSep
-	ns = StringByKey(key, nsRegistry, keySep, listSep)
-	RETURN(ns)
-END
-
-// ==================================================================
-
-FUNCTION/S CS_GetKeyByNameSpace(ns)
-	STRING ns
-	STRING key
-	SVAR reverseRegistry
-	SVAR keySep
-	SVAR listSep
-	key = StringByKey(ns, reverseRegistry, keySep, listSep)
-	RETURN(key)
+FUNCTION/S CS_findLast(src, matchStr, leftSide)
+	STRING src
+	STRING matchStr
+	VARIABLE leftSide
+	// given a source string such as:   /*/*/*[7]/*/*[39]/*[2]
+	// return the part on the $leftSide if the $matchStr
+	// Examples:
+	//	 CS_findLast( "/*/*/*[7]/*/*[39]/*[2]"  , "/", 1)		  /*/*/*[7]/*/*[39]
+	//	 CS_findLast( "/*/*/*[7]/*/*[39]/*[2]"  , "/", 0)		  /*[2]
+	//	 CS_findLast( "/*/*/*[7]/*/*[39]/*[2]"  , "[", 1)		  /*/*/*[7]/*/*[39]/*
+	//	 CS_findLast( "/*/*/*[7]/*/*[39]/*[2]"  , "[", 0)		  [2]
+	VARIABLE i
+	STRING result="", test
+	FOR (i=strlen(src)-1; i >= 0; i -= 1)
+		IF (stringmatch(src[i], matchStr ))
+			IF (leftSide)
+				result = src[0,i-1]
+			ELSE
+				result = src[i,Inf]
+			ENDIF
+			RETURN(result)
+		ENDIF
+	ENDFOR
+	RETURN(result)
 END
 
 // ==================================================================
@@ -490,22 +527,6 @@ END
 
 // ==================================================================
 
-FUNCTION/S CS_buildXpathStr(prefix, value)
-	STRING prefix, value
-	SVAR nsPre
-	STRING XPathStr = ""
-	// namespaces complicate the XPath description
-	// this function can be used only with very simple XPath constructions
-	IF (strlen(nsPre) > 0) 
-		XPathStr = prefix + nsPre + value
-	ELSE
-		XPathStr = prefix + value
-	ENDIF
-	RETURN(XPathStr)
-END
-
-// ==================================================================
-
 FUNCTION/S CS_XmlStrFmXpath(fileID, prefix, value)
 	VARIABLE fileID
 	STRING prefix, value
@@ -523,6 +544,18 @@ FUNCTION CS_simpleXmlWaveFmXpath(fileID, prefix, value)
 	SVAR nsStr
 	XMLwaveFmXpath(fileID, prefix + CS_XPath_NS(value), nsStr, " ")	
 	// output: M_xmlContent  W_xmlContentNodes
+END
+
+// ==================================================================
+
+FUNCTION/S CS_correctedXpathStr(indexPath)
+	STRING indexPath
+	VARIABLE index
+	STRING absolutePath
+	WAVE/T		W_ElementList
+	index  =  CS_findElementIndex(indexPath)
+	absolutePath = W_ElementList[index][4]	// use corrected XPath string
+	RETURN(absolutePath)
 END
 
 // ==================================================================
@@ -750,8 +783,46 @@ FUNCTION prjTest_cansas1d()
 	FOR ( i = 0; i < ItemsInList(fList) ; i += 1 )
 		theFile = StringFromList(i, fList)					// walk through all test files
 		// PRINT "file: ", theFile
-		IF (CS_XmlReader(theFile) == 0)					// did the XML reader return without an error code?
+		pathInfo home 
+		//IF (CS_XmlReader(theFile) == 0)					// did the XML reader return without an error code?
+		IF (CS_XmlReader(ParseFilePath(5,S_path,"*",0,0) + theFile) == 0)    // did the XML reader return without an error code?
 			prj_grabMyXmlData()						// move the data to my directory
 		ENDIF
 	ENDFOR
+END
+
+// ==================================================================
+
+FUNCTION PRJ_quick(fileID)
+	VARIABLE fileID
+	WAVE/T W_ElementList, W_listXPath
+	SVAR nsStr
+
+	XMLlistXpath(fileID, "/cs:SASroot/cs:SASentry/cs:Title", nsStr)		// output: W_listXPath
+	print W_listXPath[0]
+	XMLlistXpath(fileID, "//cs:Idata[4]", nsStr)		// output: W_listXPath
+	print W_listXPath[0]
+	XMLlistXpath(fileID, "//cs:Idata*", nsStr)		// output: W_listXPath
+	print W_listXPath[0]
+	XMLlistXpath(fileID, "//cs:Idata", nsStr)		// output: W_listXPath
+	print W_listXPath[0]
+	XMLlistXpath(fileID, "/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata[4]", nsStr)		// output: W_listXPath
+	print W_listXPath[0]
+	XMLlistXpath(fileID, "/*/@*", "")		// output: W_listXPath
+	print W_listXPath[0]
+	PRINT TrimWS(XmlStrFmXpath(fileID, "/*/@version", "", ""))
+	PRINT TrimWS(XmlStrFmXpath(fileID, "/*/@xmlns", "", ""))
+	PRINT StringByKey("schemaLocation", W_ElementList[0][2])
+
+	//CS_simpleXmlListXpath(fileID, "", "/SASroot//SASentry")
+	//WAVE/T 	W_listXPath
+	//DUPLICATE/O/T   W_listXPath, SASentryList
+
+	//<SASroot version="1.0"
+	//	xmlns="http://www.smallangles.net/cansas1d"
+	//	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	//	xsi:schemaLocation="http://www.smallangles.net/cansas1d/ http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd"
+	//	>
+
+
 END
