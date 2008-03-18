@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="example.xsl" ?>
 <SASroot version="1.0"
-	xmlns="http://www.smallangles.net/cansas1d"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.smallangles.net/cansas1d/ http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd"
-	>
+ xmlns="http://www.smallangles.net/cansas1d"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.smallangles.net/cansas1d 
+		       http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd">
 	<SASentry>
 		<Title>SAS bimodal test1</Title>
 		<Run>1992</Run>
@@ -137,7 +137,7 @@
 			<name>create the SAS data</name>
 			<date>1992-01-31</date>
 			<term name="shape">spheres</term>
-			<term name="contrast" unit="cm^4">100E20</term>
+			<term name="contrast" unit="1/cm^4">100E20</term>
 			<term name="Background" unit="1/cm">0.1</term>
 			<term name="sMult" unit="cts/cm">1000.0</term>
 			<term name="sNoise" unit="fraction">0.25</term>
