@@ -11,19 +11,53 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<title>example XSL for cansas1d</title>
+				<title>SAS data in canSAS 1-D format</title>
 			</head>
 			<body>
 				<h1>SAS data in canSAS 1-D format</h1>
+				<small>generated using <TT>example.xsl</TT> from canSAS</small>
+				<BR />
 				<table border="2">
 					<tr>
-						<th bgcolor="lavender">version:</th>
+						<th bgcolor="lavender">canSAS 1-D XML version:</th>
 						<td><xsl:value-of select="cs:SASroot/@version" /></td>
 					</tr>
 					<tr>
 						<th bgcolor="lavender">number of entries:</th>
 						<td><xsl:value-of select="count(cs:SASroot/cs:SASentry)" /></td>
 					</tr>
+					<xsl:if test="count(/cs:SASroot//cs:SASentry)>1">
+						<!-- if more than one SASentry, make a table of contents -->
+						<xsl:for-each select="/cs:SASroot//cs:SASentry">
+							<tr>
+								<th bgcolor="lavender">SASentry-<xsl:value-of select="position()" /></th>
+								<td>
+									<A HREF="#SASentry-{generate-id(.)}">
+										<xsl:if test="@name!=''">
+											(<xsl:value-of select="@name" />)
+										</xsl:if>
+										<xsl:value-of select="cs:Title" />
+									</A>
+									<xsl:if test="count(cs:SASdata)>1">
+										<!-- if more than one SASdata, make a local table of contents -->
+										<xsl:for-each select="cs:SASdata">
+											<xsl:text> | </xsl:text>
+											<A HREF="#SASdata-{generate-id(.)}">
+												<xsl:choose>
+													<xsl:when test="@name!=''">
+														<xsl:value-of select="@name" />
+													</xsl:when>
+													<xsl:otherwise>
+														SASdata<xsl:value-of select="position()" />
+													</xsl:otherwise>
+												</xsl:choose>
+											</A>
+										</xsl:for-each>
+									</xsl:if>
+								</td>
+							</tr>
+						</xsl:for-each>
+					</xsl:if>
 				</table>
 				<xsl:apply-templates  />
 				<hr />
@@ -35,13 +69,37 @@
 		<xsl:for-each select="cs:SASentry">
 			<hr />
 			<br />
+			<A NAME="#SASentry-{generate-id(.)}" />
 			<h1>
-				Entry: 
-				<xsl:if test="@name!=''">
-					(<xsl:value-of select="@name" />)
-				</xsl:if>
-				<xsl:value-of select="cs:Title" />
+					SASentry<xsl:value-of select="position()" />:
+					<xsl:if test="@name!=''">
+						(<xsl:value-of select="@name" />)
+					</xsl:if>
+					<xsl:value-of select="cs:Title" />
 			</h1>
+			<xsl:if test="count(cs:SASdata)>1">
+				<TABLE BORDER="2">
+					<CAPTION>SASdata contents</CAPTION>
+					<xsl:for-each select="cs:SASdata">
+						<TR>
+							<TH>SASdata-<xsl:value-of select="position()" /></TH>
+							<TD>
+								<A HREF="#SASdata-{generate-id(.)}">
+									<xsl:choose>
+									<xsl:when test="@name!=''">
+											<xsl:value-of select="@name" />
+										</xsl:when>
+										<xsl:otherwise>
+											SASdata<xsl:value-of select="position()" />
+										</xsl:otherwise>
+									</xsl:choose>
+								</A>
+							</TD>
+						</TR>
+					</xsl:for-each>
+				</TABLE>
+			</xsl:if>
+			<br />
 			<TABLE BORDER="2">
 				<TR>
 					<TH>SAS data</TH>
@@ -79,6 +137,7 @@
 	</xsl:template>
 
 	<xsl:template match="cs:SASdata">
+		<A NAME="#SASdata-{generate-id(.)}" />
 		<table border="2">
 			<caption>
 				<xsl:if test="@name!=''">
@@ -107,39 +166,82 @@
 	</xsl:template>
 
 	<xsl:template match="cs:SASsample">
-		<xsl:if test="cs:name!=''">
-			<TR>
-				<TD>Sample_optional_name</TD>
-				<TD><xsl:value-of select="cs:name" /></TD>
-				<TD />
-			</TR>
-		</xsl:if>
+		<TR>
+			<TD>SASsample</TD>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD />
+		</TR>
 		<xsl:for-each select="*">
-			<TR>
-				<TD><xsl:value-of select="name()" /></TD>
-				<TD><xsl:value-of select="." /></TD>
-				<TD />
-			</TR>
+			<xsl:choose>
+				<xsl:when test="name()='position'">
+					<xsl:apply-templates select="." />
+				</xsl:when>
+				<xsl:when test="name()='orientation'">
+					<xsl:apply-templates select="." />
+				</xsl:when>
+				<xsl:otherwise>
+					<TR>
+						<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+						<TD><xsl:value-of select="." /></TD>
+						<TD><xsl:value-of select="@unit" /></TD>
+					</TR>
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:SASinstrument">
-		<xsl:if test="cs:name!=''">
-			<TR>
-				<TD>Instrument_name</TD>
-				<TD><xsl:value-of select="cs:name" /></TD>
-				<TD bgcolor="#9acd32">section follows</TD>
-			</TR>
-		</xsl:if>
-		<xsl:apply-templates select="cs:SASsource" />
-		<xsl:apply-templates select="cs:SAScollimation" />
-		<xsl:apply-templates select="cs:SASdetector" />
+		<TR>
+			<TD>SASinstrument</TD>
+			<TD><xsl:value-of select="cs:name" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+		</TR>
+		<xsl:for-each select="*">
+			<xsl:choose>
+				<xsl:when test="name()='SASsource'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:when test="name()='SAScollimation'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:when test="name()='SASdetector'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:when test="name()='name'" />
+				<xsl:otherwise>
+					<TR>
+						<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+						<TD><xsl:value-of select="." /></TD>
+						<TD><xsl:value-of select="@unit" /></TD>
+					</TR>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:SASsource">
+		<TR>
+			<TD><xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD />
+		</TR>
+		<xsl:for-each select="*">
+			<xsl:choose>
+				<xsl:when test="name()='beam_size'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:otherwise>
+					<TR>
+						<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+						<TD><xsl:value-of select="." /></TD>
+						<TD><xsl:value-of select="@unit" /></TD>
+					</TR>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="cs:beam_size">
+		<TR>
+			<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD />
+		</TR>
 		<xsl:for-each select="*">
 			<TR>
-				<TD>SASsource_<xsl:value-of select="name()" /></TD>
+				<TD><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
 				<TD><xsl:value-of select="." /></TD>
 				<TD><xsl:value-of select="@unit" /></TD>
 			</TR>
@@ -148,8 +250,48 @@
 
 	<xsl:template match="cs:SAScollimation">
 		<xsl:for-each select="*">
+			<xsl:choose>
+				<xsl:when test="name()='aperture'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:otherwise>
+					<TR>
+						<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+						<TD><xsl:value-of select="." /></TD>
+						<TD><xsl:value-of select="@unit" /></TD>
+					</TR>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="cs:aperture">
+		<TR>
+			<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD><xsl:value-of select="@type" /></TD>
+		</TR>
+		<xsl:for-each select="*">
+			<xsl:choose>
+				<xsl:when test="name()='size'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:otherwise>
+					<TR>
+						<TD><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+						<TD><xsl:value-of select="." /></TD>
+						<TD><xsl:value-of select="@unit" /></TD>
+					</TR>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="cs:size">
+		<TR>
+			<TD><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD />
+		</TR>
+		<xsl:for-each select="*">
 			<TR>
-				<TD>SAScollimation_<xsl:value-of select="name()" /></TD>
+				<TD><xsl:value-of select="name(../../..)" />_<xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
 				<TD><xsl:value-of select="." /></TD>
 				<TD><xsl:value-of select="@unit" /></TD>
 			</TR>
@@ -157,61 +299,148 @@
 	</xsl:template>
 
 	<xsl:template match="cs:SASdetector">
+		<TR>
+			<TD><xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="cs:name" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+		</TR>
+		<xsl:for-each select="*">
+			<xsl:choose>
+				<xsl:when test="name()='name'" />
+				<xsl:when test="name()='offset'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:when test="name()='orientation'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:when test="name()='beam_center'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:when test="name()='pixel_size'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:otherwise>
+					<TR>
+						<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+						<TD><xsl:value-of select="." /></TD>
+						<TD><xsl:value-of select="@unit" /></TD>
+					</TR>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="cs:orientation">
+		<TR>
+			<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD />
+		</TR>
 		<xsl:for-each select="*">
 			<TR>
-				<TD>SASdetector_<xsl:value-of select="name()" /></TD>
+				<TD><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
 				<TD><xsl:value-of select="." /></TD>
 				<TD><xsl:value-of select="@unit" /></TD>
 			</TR>
 		</xsl:for-each>
 	</xsl:template>
 
-	<xsl:template match="cs:SASprocess">
+	<xsl:template match="cs:position">
 		<TR>
-			<TD>SASprocess_name</TD>
-			<TD><xsl:value-of select="cs:name" /></TD>
-			<TD bgcolor="#9acd32">section follows</TD>
-		</TR>
-		<TR>
-			<TD>SASprocess_date</TD>
-			<TD><xsl:value-of select="cs:date" /></TD>
+			<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
 			<TD />
 		</TR>
-		<xsl:if test="count(cs:term)!=0">
-			<xsl:for-each select="cs:term">
-				<TR>
-					<TD><xsl:value-of select="@name" /></TD>
-					<TD><xsl:value-of select="." /></TD>
-					<TD><xsl:value-of select="@unit" /></TD>
-				</TR>
-			</xsl:for-each>
-		</xsl:if>
-		<xsl:if test="count(cs:SASprocessnote)!=0">
-			<xsl:if test="cs:SASprocessnote/cs:name!=''">
-				<TR>
-					<TD>SASprocessnote_name</TD>
-					<TD><xsl:value-of select="cs:SASprocessnote/cs:name" /></TD>
-					<TD bgcolor="#9acd32">section follows</TD>
-				</TR>
-			</xsl:if>
-			<xsl:for-each select="cs:SASprocessnote">
-				<xsl:if test=".!=''">
+		<xsl:for-each select="*">
+			<TR>
+				<TD><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+				<TD><xsl:value-of select="." /></TD>
+				<TD><xsl:value-of select="@unit" /></TD>
+			</TR>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="cs:offset">
+		<TR>
+			<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD />
+		</TR>
+		<xsl:for-each select="*">
+			<TR>
+				<TD><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+				<TD><xsl:value-of select="." /></TD>
+				<TD><xsl:value-of select="@unit" /></TD>
+			</TR>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="cs:beam_center">
+		<TR>
+			<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD />
+		</TR>
+		<xsl:for-each select="*">
+			<TR>
+				<TD><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+				<TD><xsl:value-of select="." /></TD>
+				<TD><xsl:value-of select="@unit" /></TD>
+			</TR>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="cs:pixel_size">
+		<TR>
+			<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD />
+		</TR>
+		<xsl:for-each select="*">
+			<TR>
+				<TD><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
+				<TD><xsl:value-of select="." /></TD>
+				<TD><xsl:value-of select="@unit" /></TD>
+			</TR>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="cs:term">
+		<TR>
+			<TD><xsl:value-of select="@name" /></TD>
+			<TD><xsl:value-of select="." /></TD>
+			<TD><xsl:value-of select="@unit" /></TD>
+		</TR>
+	</xsl:template>
+
+	<xsl:template match="cs:SASprocessnote">
+		<TR>
+			<TD><xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="." /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+		</TR>
+	</xsl:template>
+
+	<xsl:template match="cs:SASprocess">
+		<TR>
+			<TD><xsl:value-of select="name()" /></TD>
+			<TD><xsl:value-of select="cs:name" /></TD>
+			<TD><xsl:value-of select="@name" /></TD>
+		</TR>
+		<xsl:for-each select="*">
+			<xsl:choose>
+				<xsl:when test="name()='name'" />
+				<xsl:when test="name()='term'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:when test="name()='SASprocessnote'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:otherwise>
 					<TR>
-						<TD>SASprocessnote_<xsl:value-of select="@name" /></TD>
+						<TD><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></TD>
 						<TD><xsl:value-of select="." /></TD>
 						<TD />
 					</TR>
-				</xsl:if>
-			</xsl:for-each>
-		</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:SASnote">
 		<xsl:if test="@name!=''">
 			<TR>
-				<TD>SASnote_<xsl:value-of select="@name" /></TD>
+				<TD><xsl:value-of select="name()" /></TD>
 				<TD><xsl:value-of select="." /></TD>
-				<TD />
+				<TD><xsl:value-of select="@name" /></TD>
 			</TR>
 		</xsl:if>
 	</xsl:template>
