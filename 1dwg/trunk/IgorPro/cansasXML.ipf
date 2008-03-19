@@ -1,12 +1,15 @@
 #pragma rtGlobals=1		// Use modern global access method.
-#pragma version=1.02
+#pragma version=1.04
 
 // file:	cansasXML.ipf
 // author:	Pete R. Jemian <jemian@anl.gov>
-// date:	2008-03-16
+// date:	2008-03-19
 // purpose:  implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files
 //			adheres to the cansas1d/1.0 standard
 // URL:	http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
+//
+// requires:	IgorPro (http://www.wavemetrics.com/)
+//				XMLutils - XOP (http://www.igorexchange.com/project/XMLutils)
 
 FUNCTION CS_XmlReader(fileName)
 	//
@@ -77,8 +80,6 @@ FUNCTION CS_XmlReader(fileName)
 	STRING/G nsPre = "", nsStr = ""
 	CS_registerNameSpaces(fileID)				// to assist XPath construction
 
-	// PRJ_quick(fileID)
-
 	// identify supported versions of canSAS XML standard
 	STRING version
 	version = StringByKey("version", W_ElementList[0][2])
@@ -118,10 +119,10 @@ END
 FUNCTION CS_1i_parseXml(fileID)
 	VARIABLE fileID
 	WAVE/T W_ElementList
-	SVAR nsStr, errorMsg
-	STRING/G Title, FolderList = ""
+	SVAR nsStr, errorMsg, xmlFile
+	STRING/G Title
 	STRING XPathStr, Title_folder, SASdata_folder
-	STRING SASentryPath, SASdataPath
+	STRING SASentryPath, SASdataPath, RunNum
 	VARIABLE i, j, index, SASdata_index, returnCode = 0
 
 	// locate all the SASentry elements
@@ -149,7 +150,8 @@ FUNCTION CS_1i_parseXml(fileID)
 			Title_folder = UniqueName(Title_folder, 11, 0)
 		ENDIF
 		NewDataFolder/O  $Title_folder
-		FolderList = AddListItem(Title_folder, FolderList, ";", Inf)
+		STRING/G FolderList = ""
+		FolderList = AddListItem(":"+Title_folder+":", FolderList, ";", Inf)
 		//
 		// CS_correctedXpathStr
 		SASentryPath = CS_correctedXpathStr(SASentryList[i])
@@ -162,7 +164,12 @@ FUNCTION CS_1i_parseXml(fileID)
 			// only one SASdata element, place data waves in Title folder
 			SASdataPath = CS_correctedXpathStr(SASdataList[0])
 			SASdata_folder = ":" + Title_folder + ":"
+			RunNum = "/Run"
+			CS_appendMetaData( "Run",				SASentryPath+CS_XPath_NS(RunNum), 				"")
+			CS_appendMetaData( "Run_name",			SASentryPath+CS_XPath_NS(RunNum + "/@name"), 	"")
+			CS_appendMetaData( "SASdata_name",	SASdataPath+CS_XPath_NS("/@name"), 				"")
 			PRINT "\t\t dataFolder:", SASdata_folder
+			CS_1i_fillMetadataTable(fileID)
 			IF (CS_1i_extractSasData(fileID, SASdataPath, SASdata_folder))
 				// non-zero return code means an error, message is in errorMsg
 				// What to do now?
@@ -174,9 +181,6 @@ FUNCTION CS_1i_parseXml(fileID)
 				// RETURN(1)				// Can't return now.  What about other SASentry elements?
 				BREAK
 			ENDIF
-			CS_appendMetaData(  "Run", "", CS_XmlStrFmXpath(fileID, SASdataPath+"/",  "../Run["+num2str(j+1)+"]"))
-			CS_appendMetaData(  "Run_name", "", CS_XmlStrFmXpath(fileID, SASdataPath+"/",  "../Run["+num2str(j+1)+"]/@name"))
-			CS_appendMetaData(  "SASdata_name", "", CS_XmlStrFmXpath(fileID, SASdataPath,  "/@name"))
 		ELSE
 			// multiple SASdata elements, place data waves in subfolders
 			DUPLICATE/O/T metadata, metadata_entry
@@ -186,9 +190,10 @@ FUNCTION CS_1i_parseXml(fileID)
 				SASdataPath = CS_correctedXpathStr(SASdataList[j])
 				SASdata_folder = CleanupName(StringByKey("name", W_ElementList[SASdata_index][2]), 0)
 				PRINT "\t\t dataFolder:", SASdata_folder
-				CS_appendMetaData(  "Run"+num2str(j), "", CS_XmlStrFmXpath(fileID, SASdataPath+"/",  "../Run["+num2str(j+1)+"]"))
-				CS_appendMetaData(  "Run"+num2str(j)+"_name", "", CS_XmlStrFmXpath(fileID, SASdataPath+"/",  "../Run["+num2str(j+1)+"]/@name"))
-				CS_appendMetaData(  "SASdata"+num2str(j)+"_name", "", CS_XmlStrFmXpath(fileID, SASdataPath,  "/@name"))
+				RunNum = "/Run["+num2str(j+1)+"]"
+				CS_appendMetaData( "Run"+num2str(j),				SASdataPath+"/.."+CS_XPath_NS(RunNum), 				"")
+				CS_appendMetaData( "Run"+num2str(j)+"_name",		SASdataPath+"/.."+CS_XPath_NS(RunNum + "/@name"), 	"")
+				CS_appendMetaData( "SASdata"+num2str(j)+"_name",	SASdataPath+CS_XPath_NS("/@name"), 					"")
 				SetDataFolder $Title_folder
 				IF ( CheckName(SASdata_folder, 11) != 0 )
 					SASdata_folder = UniqueName(SASdata_folder, 11, 0)
@@ -196,7 +201,9 @@ FUNCTION CS_1i_parseXml(fileID)
 				NewDataFolder/O  $SASdata_folder
 				SetDataFolder ::
 				SASdata_folder =  ":" + Title_folder + ":" + SASdata_folder + ":"
+				FolderList = AddListItem(SASdata_folder, FolderList, ";", Inf)
 				//---
+				CS_1i_fillMetadataTable(fileID)
 				IF (CS_1i_extractSasData(fileID, SASdataPath, SASdata_folder))
 					// non-zero return code means an error, message is in errorMsg
 					// What to do now?
@@ -210,6 +217,16 @@ FUNCTION CS_1i_parseXml(fileID)
 				ENDIF
 			ENDFOR	// many SASdata
 		ENDIF			// 1 or many SASdata
+		MAKE/O/T/N=(3,2) admin
+		admin[0][0] = "xmlFile"
+		admin[0][1] = xmlFile
+		admin[1][0] = "FolderList"
+		admin[1][1] = FolderList
+		admin[2][0] = "numSASdata"
+		admin[2][1] = num2str(numpnts(SASdataList))
+		Title_folder = ":" + Title_folder + ":"
+		MoveWave admin, $Title_folder
+		MoveString FolderList, $Title_folder
 	ENDFOR		// each SASentry
 
 	RETURN(returnCode)
@@ -224,7 +241,7 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 	VARIABLE i
 	WAVE/T metadata
 	STRING suffix = ""
-	STRING value
+	STRING value, detailsPath, detectorPath, notePath
 	// collect some metadata
 	// first, fill a table with keywords, and XPath locations, 3rd column will be values
 
@@ -255,19 +272,27 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 		IF (numpnts(detailsList) > 1)
 			suffix = num2str(i)
 		ENDIF
-		CS_appendMetaData("sample_details"+suffix+"_name", 	detailsList[i]+CS_XPath_NS("/@name"), "")
-		CS_appendMetaData("sample_details"+suffix,	 		detailsList[i], "")
+		detailsPath = CS_correctedXpathStr(detailsList[i])
+		CS_appendMetaData("sample_details"+suffix+"_name", 	detailsPath+CS_XPath_NS("/@name"), "")
+		CS_appendMetaData("sample_details"+suffix,	 		detailsPath, "")
 	ENDFOR
 
 
 	// <SASinstrument>
 	CS_appendMetaData("Instrument_name", sasEntryPath+CS_XPath_NS("/SASinstrument/name"), "")
+	CS_appendMetaData("Instrument_attr_name", sasEntryPath+CS_XPath_NS("/SASinstrument/@name"), "")
 
 	// <SASinstrument><SASsource>
 	CS_appendMetaData("source_name", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/@name"), "")
 	CS_appendMetaData("radiation", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/radiation"), "")
+	CS_appendMetaData("beam_size_name", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/beam_size/@name"), "")
+	CS_appendMetaData("beam_size_x", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/beam_size/x"), "")
+	CS_appendMetaData("beam_size_x_unit", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/beam_size/x/@unit"), "")
+	CS_appendMetaData("beam_size_y", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/beam_size/y"), "")
+	CS_appendMetaData("beam_size_y_unit", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/beam_size/y/@unit"), "")
+	CS_appendMetaData("beam_size_z", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/beam_size/z"), "")
+	CS_appendMetaData("beam_size_z_unit", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/beam_size/z/@unit"), "")
 	CS_appendMetaData("beam_shape", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/beam_shape"), "")
-	// ignore <beam_size> for now
 	CS_appendMetaData("wavelength", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/wavelength"), "")
 	CS_appendMetaData("wavelength_unit", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/wavelength/@unit"), "")
 	CS_appendMetaData("wavelength_min", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/wavelength_min"), "")
@@ -278,6 +303,30 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 	CS_appendMetaData("wavelength_spread_unit", sasEntryPath+CS_XPath_NS("/SASinstrument/SASsource/wavelength_spread/@unit"), "")
 
 	// ignore <SASinstrument><SAScollimation> for now
+	CS_simpleXmlListXpath(fileID, sasEntryPath, "/SASinstrument//SAScollimation")		//output: W_listXPath
+	DUPLICATE/O/T   W_listXPath, SAScollimationList
+	STRING collimationPath
+	suffix = ""
+	FOR (i = 0; i < numpnts(SAScollimationList); i += 1)
+		IF (numpnts(SAScollimationList) > 1)
+			suffix = num2str(i)
+		ENDIF
+		collimationPath = CS_correctedXpathStr(SAScollimationList[i])
+		CS_appendMetaData("collimation_name"+suffix, 	collimationPath+CS_XPath_NS("/@name"), "")
+		CS_appendMetaData("collimation_distance"+suffix, 	collimationPath+CS_XPath_NS("/distance"), "")
+		CS_appendMetaData("collimation_distance_unit"+suffix, 	collimationPath+CS_XPath_NS("/distance/@unit"), "")
+		CS_appendMetaData("collimation_aperture_name"+suffix, 	collimationPath+CS_XPath_NS("/aperture/@name"), "")
+		CS_appendMetaData("collimation_aperture_type"+suffix, 	collimationPath+CS_XPath_NS("/aperture/type"), "")
+		CS_appendMetaData("collimation_aperture_size_name"+suffix, 	collimationPath+CS_XPath_NS("/aperture/size/@name"), "")
+		CS_appendMetaData("collimation_aperture_size_x"+suffix, 	collimationPath+CS_XPath_NS("/aperture/size/x"), "")
+		CS_appendMetaData("collimation_aperture_size_x_unit"+suffix, 	collimationPath+CS_XPath_NS("/aperture/size/x/@unit"), "")
+		CS_appendMetaData("collimation_aperture_size_y"+suffix, 	collimationPath+CS_XPath_NS("/aperture/size/y"), "")
+		CS_appendMetaData("collimation_aperture_size_y_unit"+suffix, 	collimationPath+CS_XPath_NS("/aperture/size/y/@unit"), "")
+		CS_appendMetaData("collimation_aperture_size_z"+suffix, 	collimationPath+CS_XPath_NS("/aperture/size/z"), "")
+		CS_appendMetaData("collimation_aperture_size_z_unit"+suffix, 	collimationPath+CS_XPath_NS("/aperture/size/z/@unit"), "")
+		CS_appendMetaData("collimation_aperture_distance"+suffix, 	collimationPath+CS_XPath_NS("/aperture/distance"), "")
+		CS_appendMetaData("collimation_aperture_distance_unit"+suffix, 	collimationPath+CS_XPath_NS("/aperture/distance/@unit"), "")
+	ENDFOR
 
 	// <SASinstrument><SASdetector> might appear multiple times
 	CS_simpleXmlListXpath(fileID, sasEntryPath, "/SASinstrument//SASdetector")	//output: W_listXPath
@@ -287,15 +336,44 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 		IF (numpnts(SASdetectorList) > 1)
 			suffix = num2str(i)
 		ENDIF
-		CS_appendMetaData("detector_name"+suffix, 	SASdetectorList[i]+CS_XPath_NS("/name"), "")
-		CS_appendMetaData("SDD"+suffix, 			SASdetectorList[i]+CS_XPath_NS("/SDD"), "")
-		CS_appendMetaData("SDD"+suffix+"_unit", 		SASdetectorList[i]+CS_XPath_NS("/SDD/@unit"), "")
-		// ignore <offset> for now
-		// ignore <orientation> for now
-		// ignore <beam_center> for now
-		// ignore <pixel_size> for now
-		CS_appendMetaData("slit_length"+suffix, 		SASdetectorList[i]+CS_XPath_NS("/slit_length"), "")
-		CS_appendMetaData("slitLength"+suffix+"_unit", 	SASdetectorList[i]+CS_XPath_NS("/slit_length/@unit"), "")
+		detectorPath = CS_correctedXpathStr(SASdetectorList[i])
+		CS_appendMetaData("detector_name"+suffix, 	detectorPath+CS_XPath_NS("/name"), "")
+		CS_appendMetaData("SDD"+suffix, 			detectorPath+CS_XPath_NS("/SDD"), "")
+		CS_appendMetaData("SDD"+suffix+"_unit", 		detectorPath+CS_XPath_NS("/SDD/@unit"), "")
+		CS_appendMetaData("detector_offset_name"+suffix, 	detectorPath+CS_XPath_NS("/offset/@name"), "")
+		CS_appendMetaData("detector_offset_x"+suffix, 		detectorPath+CS_XPath_NS("/offset/x"), "")
+		CS_appendMetaData("detector_offset_x_unit"+suffix, 	detectorPath+CS_XPath_NS("/offset/x/@unit"), "")
+		CS_appendMetaData("detector_offset_y"+suffix, 		detectorPath+CS_XPath_NS("/offset/y"), "")
+		CS_appendMetaData("detector_offset_y_unit"+suffix, 	detectorPath+CS_XPath_NS("/offset/y/@unit"), "")
+		CS_appendMetaData("detector_offset_z"+suffix, 		detectorPath+CS_XPath_NS("/offset/z"), "")
+		CS_appendMetaData("detector_offset_z_unit"+suffix, 	detectorPath+CS_XPath_NS("/offset/z/@unit"), "")
+
+		CS_appendMetaData("detector_orientation_name"+suffix, 		detectorPath+CS_XPath_NS("/orientation/@name"), "")
+		CS_appendMetaData("detector_orientation_roll"+suffix, 		detectorPath+CS_XPath_NS("/orientation/roll"), "")
+		CS_appendMetaData("detector_orientation_roll_unit"+suffix, 	detectorPath+CS_XPath_NS("/orientation/roll/@unit"), "")
+		CS_appendMetaData("detector_orientation_pitch"+suffix, 		detectorPath+CS_XPath_NS("/orientation/pitch"), "")
+		CS_appendMetaData("detector_orientation_pitch_unit"+suffix, 	detectorPath+CS_XPath_NS("/orientation/pitch/@unit"), "")
+		CS_appendMetaData("detector_orientation_yaw"+suffix, 		detectorPath+CS_XPath_NS("/orientation/yaw"), "")
+		CS_appendMetaData("detector_orientation_yaw_unit"+suffix, 	detectorPath+CS_XPath_NS("/orientation/yaw/@unit"), "")
+
+		CS_appendMetaData("detector_beam_center_name"+suffix, 	detectorPath+CS_XPath_NS("/beam_center/@name"), "")
+		CS_appendMetaData("detector_beam_center_x"+suffix, 		detectorPath+CS_XPath_NS("/beam_center/x"), "")
+		CS_appendMetaData("detector_beam_center_x_unit"+suffix, 	detectorPath+CS_XPath_NS("/beam_center/x/@unit"), "")
+		CS_appendMetaData("detector_beam_center_y"+suffix, 		detectorPath+CS_XPath_NS("/beam_center/y"), "")
+		CS_appendMetaData("detector_beam_center_y_unit"+suffix, 	detectorPath+CS_XPath_NS("/beam_center/y/@unit"), "")
+		CS_appendMetaData("detector_beam_center_z"+suffix, 		detectorPath+CS_XPath_NS("/beam_center/z"), "")
+		CS_appendMetaData("detector_beam_center_z_unit"+suffix, 	detectorPath+CS_XPath_NS("/beam_center/z/@unit"), "")
+
+		CS_appendMetaData("detector_pixel_size_name"+suffix, 	detectorPath+CS_XPath_NS("/pixel_size/@name"), "")
+		CS_appendMetaData("detector_pixel_size_x"+suffix, 		detectorPath+CS_XPath_NS("/pixel_size/x"), "")
+		CS_appendMetaData("detector_pixel_size_x_unit"+suffix, 	detectorPath+CS_XPath_NS("/pixel_size/x/@unit"), "")
+		CS_appendMetaData("detector_pixel_size_y"+suffix, 		detectorPath+CS_XPath_NS("/pixel_size/y"), "")
+		CS_appendMetaData("detector_pixel_size_y_unit"+suffix, 	detectorPath+CS_XPath_NS("/pixel_size/y/@unit"), "")
+		CS_appendMetaData("detector_pixel_size_z"+suffix, 		detectorPath+CS_XPath_NS("/pixel_size/z"), "")
+		CS_appendMetaData("detector_pixel_size_z_unit"+suffix, 	detectorPath+CS_XPath_NS("/pixel_size/z/@unit"), "")
+
+		CS_appendMetaData("slit_length"+suffix, 		detectorPath+CS_XPath_NS("/slit_length"), "")
+		CS_appendMetaData("slitLength"+suffix+"_unit", 	detectorPath+CS_XPath_NS("/slit_length/@unit"), "")
 	ENDFOR
 
 	// ignore <SASprocess> for now
@@ -308,10 +386,20 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 		IF (numpnts(SASnoteList) > 1)
 			suffix = num2str(i)
 		ENDIF
-		CS_appendMetaData("SASnote"+suffix+"_name", 	SASnoteList[i]+CS_XPath_NS("/@name"), "")
-		CS_appendMetaData("SASnote"+suffix,		 		SASnoteList[i], "")
+		notePath = CS_correctedXpathStr(SASnoteList[i])
+		CS_appendMetaData("SASnote"+suffix+"_name", 	notePath+CS_XPath_NS("/@name"), "")
+		CS_appendMetaData("SASnote"+suffix,		 		notePath, "")
 	ENDFOR
+	//CS_1i_fillMetadataTable(fileID)
+END
 
+// ==================================================================
+
+FUNCTION/S CS_1i_fillMetadataTable(fileID)
+	VARIABLE fileID
+	WAVE/T metadata
+	VARIABLE i
+	STRING value
 	// +++++++++++++++++++++++++ 			// try to fill the value column from the XML data
 	FOR (i = 0; i < DimSize(metadata, 0); i += 1)
 		IF (strlen(metadata[i][1]) > 0)				// XPathStr for this entry?
@@ -770,6 +858,8 @@ FUNCTION prjTest_cansas1d()
 	fList = AddListItem("bimodal-test2-vector.xml",	fList, ";", Inf)		// version 2.0 file (no standard yet)
 	fList = AddListItem("test.xml",					fList, ";", Inf)		// cs_collagen.xml with no namespace
 	fList = AddListItem("test2.xml", 				fList, ";", Inf)		// version 2.0 file (no standard yet)
+	fList = AddListItem("ISIS_SANS_Example.xml", 	fList, ";", Inf)		// from S. King, 2008-03-17
+	fList = AddListItem("W1W2.xml", 				fList, ";", Inf)		// from S. King, 2008-03-17
 	fList = AddListItem("ill_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
 	fList = AddListItem("isis_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
 	fList = AddListItem("r586.xml", 					fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
@@ -777,7 +867,7 @@ FUNCTION prjTest_cansas1d()
 	fList = AddListItem("cs_collagen.xml", 			fList, ";", Inf)		// another simple dataset, bare minimum info
 	fList = AddListItem("cs_collagen_full.xml", 		fList, ";", Inf)		// more Q range than previous
 	fList = AddListItem("cs_af1410.xml", 			fList, ";", Inf)		// multiple SASentry and SASdata elements
-	fList = AddListItem("1998spheres.xml", 			fList, ";", Inf)		// 2 SASentry, few thousand data points each
+	//fList = AddListItem("1998spheres.xml", 			fList, ";", Inf)		// 2 SASentry, few thousand data points each
 	fList = AddListItem("does-not-exist-file.xml", 		fList, ";", Inf)		// non-existent file
 	// try to load each data set in the table
 	FOR ( i = 0; i < ItemsInList(fList) ; i += 1 )
@@ -789,40 +879,4 @@ FUNCTION prjTest_cansas1d()
 			prj_grabMyXmlData()						// move the data to my directory
 		ENDIF
 	ENDFOR
-END
-
-// ==================================================================
-
-FUNCTION PRJ_quick(fileID)
-	VARIABLE fileID
-	WAVE/T W_ElementList, W_listXPath
-	SVAR nsStr
-
-	XMLlistXpath(fileID, "/cs:SASroot/cs:SASentry/cs:Title", nsStr)		// output: W_listXPath
-	print W_listXPath[0]
-	XMLlistXpath(fileID, "//cs:Idata[4]", nsStr)		// output: W_listXPath
-	print W_listXPath[0]
-	XMLlistXpath(fileID, "//cs:Idata*", nsStr)		// output: W_listXPath
-	print W_listXPath[0]
-	XMLlistXpath(fileID, "//cs:Idata", nsStr)		// output: W_listXPath
-	print W_listXPath[0]
-	XMLlistXpath(fileID, "/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata[4]", nsStr)		// output: W_listXPath
-	print W_listXPath[0]
-	XMLlistXpath(fileID, "/*/@*", "")		// output: W_listXPath
-	print W_listXPath[0]
-	PRINT TrimWS(XmlStrFmXpath(fileID, "/*/@version", "", ""))
-	PRINT TrimWS(XmlStrFmXpath(fileID, "/*/@xmlns", "", ""))
-	PRINT StringByKey("schemaLocation", W_ElementList[0][2])
-
-	//CS_simpleXmlListXpath(fileID, "", "/SASroot//SASentry")
-	//WAVE/T 	W_listXPath
-	//DUPLICATE/O/T   W_listXPath, SASentryList
-
-	//<SASroot version="1.0"
-	//	xmlns="http://www.smallangles.net/cansas1d"
-	//	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	//	xsi:schemaLocation="http://www.smallangles.net/cansas1d/ http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd"
-	//	>
-
-
 END
