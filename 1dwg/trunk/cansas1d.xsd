@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="xsd-documentation.xsl" ?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
+<?xml-stylesheet type="text/cs:xsl" href="xsd-documentation.xsl" ?>
+<schema xmlns="http://www.w3.org/2001/cs:xMLSchema"
 	targetNamespace="http://www.smallangles.net/cansas1d"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsd="http://www.w3.org/2001/cs:xMLSchema"
 	xmlns:tns="http://www.smallangles.net/cansas1d"
 	elementFormDefault="qualified">
 
@@ -55,7 +55,7 @@
 				maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>position/x</DT>
+						<DT>position/cs:x</DT>
 						<DD>
 							[0..1] Translation in the horizontal
 							direction, orthogonal to Y and Z. Positive X
@@ -69,7 +69,7 @@
 				maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>position/y</DT>
+						<DT>position/cs:y</DT>
 						<DD>
 							[0..1] Translation along the vertical
 							gravitational direction. Positive direction
@@ -82,7 +82,7 @@
 				maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>position/z</DT>
+						<DT>position/cs:z</DT>
 						<DD>
 							[0..1] Translation along the beam direction.
 							Positive direction increases from source
@@ -115,7 +115,7 @@
 				maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>orientation/roll</DT>
+						<DT>orientation/cs:roll</DT>
 						<DD>
 							[0..1] Rotation about about the Z axis. Unit
 							must be specified.
@@ -127,7 +127,7 @@
 				maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>orientation/pitch</DT>
+						<DT>orientation/cs:pitch</DT>
 						<DD>
 							[0..1] Rotation about about the X axis. Unit
 							must be specified.
@@ -139,7 +139,7 @@
 				maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>orientation/yaw</DT>
+						<DT>orientation/cs:yaw</DT>
 						<DD>
 							[0..1] Rotation about about the Y axis. Unit
 							must be specified.
@@ -163,7 +163,7 @@
 				type="tns:floatUnitType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata/Idata/Q</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Q</DT>
 						<DD>
 							[1..1] Q = (4 pi / lambda) sin(theta)
 							<br />
@@ -174,7 +174,7 @@
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata/Idata/Q/@unit</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Q/@unit</DT>
 						<DD>
 							[1..1] Required unit for Q. (See @unit for
 							details.)
@@ -186,13 +186,13 @@
 				type="tns:floatUnitType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata/Idata/I</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:I</DT>
 						<DD>
 							[1..1] Intensity of the detected radiation.
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata/Idata/I/@unit</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:I/@unit</DT>
 						<DD>
 							[1..1] Required unit for I. (See @unit for
 							details.)
@@ -204,7 +204,7 @@
 				type="tns:floatUnitType" default="0">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata/Idata/Qdev</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qdev</DT>
 						<DD>
 							[0..1] Estimated standard deviation of Q.
 							Must specify the unit as an attribute.
@@ -212,7 +212,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASdata/Idata/Qdev/@unit
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qdev/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for Qdev. (See @unit
@@ -225,7 +225,7 @@
 				type="tns:floatUnitType" default="0">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata/Idata/Idev</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Idev</DT>
 						<DD>
 							[1..1] Estimated standard deviation of I.
 							Must specify the unit as an attribute.
@@ -233,7 +233,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASdata/Idata/Idev/@unit
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Idev/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for Idev. (See @unit
@@ -246,7 +246,7 @@
 				type="tns:floatUnitType" default="0">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata/Idata/Qfwhm</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qfwhm</DT>
 						<DD>
 							[0..1] Q resolution of this datum, defined
 							as full-width in Q at half-maximum
@@ -256,7 +256,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASdata/Idata/Qfwhm/@unit
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qfwhm/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for Qfwhm. (See @unit
@@ -269,7 +269,7 @@
 				type="tns:floatUnitType" default="0">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata/Idata/Qmean</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qmean</DT>
 						<DD>
 							[0..1] Mean value of Q for this datum. Must
 							specify the unit as an attribute.
@@ -277,7 +277,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASdata/Idata/Qmean/@unit
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qmean/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for Qmean. (See @unit
@@ -291,7 +291,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASdata/Idata/Shadowfactor
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Shadowfactor
 						</DT>
 						<DD>
 							[0..1] Describes the adjustment due to the
@@ -311,7 +311,7 @@
 				type="tns:IdataType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata/Idata</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata</DT>
 						<DD>
 							[1..inf] Idata describes a single SAS data
 							point.
@@ -323,7 +323,7 @@
 		<attribute name="name" type="string" use="optional">
 			<annotation>
 				<documentation>
-					<DT>/SASroot/SASentry/SASdata/@name</DT>
+					<DT>/cs:SASroot/cs:SASentry/cs:SASdata/@name</DT>
 					<DD>
 						[0..1] Optional string attribute to identify
 						this particular SASdata.
@@ -341,7 +341,7 @@
 				type="string">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample/ID</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:ID</DT>
 						<DD>
 							[1..1] Text string that identifies this
 							sample.
@@ -353,7 +353,7 @@
 				type="tns:floatUnitType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample/thickness</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:thickness</DT>
 						<DD>
 							[0..1] Thickness of this sample. Must
 							specify the unit as an attribute.
@@ -361,7 +361,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/thickness/@unit
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:thickness/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for thickness. (See
@@ -375,7 +375,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/transmission
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:transmission
 						</DT>
 						<DD>
 							[0..1] Transmission (1-attenuation) of this
@@ -390,7 +390,7 @@
 				type="tns:floatUnitType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample/temperature</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:temperature</DT>
 						<DD>
 							[0..1] Temperature of this sample. Must
 							specify the unit as an attribute.
@@ -398,7 +398,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/temperature/@unit
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:temperature/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for temperature. (See
@@ -411,7 +411,7 @@
 				type="tns:positionType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample/position</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:position</DT>
 						<DD>
 							[0..1] Location in X, Y, and Z of the
 							sample. Must specify the unit as an
@@ -420,19 +420,19 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/position/@name
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/@name
 						</DT>
 						<DD>
 							Optional attribute to name this position.
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample/position/x</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:x</DT>
 						<DD>[0..1] Location of the sample in X.</DD>
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/position/x/@unit
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:x/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of x.
@@ -440,12 +440,12 @@
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample/position/y</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:y</DT>
 						<DD>[0..1] Location of the sample in Y.</DD>
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/position/y/@unit
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:y/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of y.
@@ -453,7 +453,7 @@
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample/position/z</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:z</DT>
 						<DD>
 							[0..1] Location of the sample in Z. While
 							this is allowed by the standard, it does not
@@ -462,7 +462,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/position/z/@unit
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:z/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of z.
@@ -475,14 +475,14 @@
 				type="tns:orientationType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample/orientation</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation</DT>
 						<DD>
 							[0..1] Orientation (rotation) of the sample.
 						</DD>
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/orientation/@name
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/@name
 						</DT>
 						<DD>
 							Optional attribute to name this orientation.
@@ -490,7 +490,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/orientation/roll
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:roll
 						</DT>
 						<DD>
 							[0..1] Optional rotation of the sample about
@@ -499,7 +499,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/orientation/roll/@unit
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:roll/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of
@@ -508,7 +508,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/orientation/pitch
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:pitch
 						</DT>
 						<DD>
 							[0..1] Optional rotation of the sample about
@@ -517,7 +517,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/orientation/pitch/@unit
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:pitch/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of
@@ -526,7 +526,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/orientation/yaw
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:yaw
 						</DT>
 						<DD>
 							[0..1] Optional rotation of the sample about
@@ -535,7 +535,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASsample/orientation/yaw/@unit
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:yaw/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of
@@ -548,7 +548,7 @@
 				maxOccurs="unbounded">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample/details</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:details</DT>
 						<DD>
 							[0..inf] Text string to supply additional
 							sample details.
@@ -560,10 +560,10 @@
 		<attribute name="name" type="string" use="optional">
 			<annotation>
 				<documentation>
-					<DT>/SASroot/SASentry/SASsample/@name</DT>
+					<DT>/cs:SASroot/cs:SASentry/cs:SASsample/@name</DT>
 					<DD>
 						[0..1] Optional attribute to name this sample.
-						(Should be the same as SASsample/ID)
+						(Should be the same as SASsample/cs:ID)
 					</DD>
 				</documentation>
 			</annotation>
@@ -578,7 +578,7 @@
 				type="string">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASprocess/name</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASprocess/cs:name</DT>
 						<DD>
 							[0..1] Optional name for this data
 							processing or analysis step.
@@ -590,7 +590,7 @@
 				type="string">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASprocess/date</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASprocess/cs:date</DT>
 						<DD>
 							[0..1] Optional date for this data
 							processing or analysis step. *** SHOULD WE
@@ -603,7 +603,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASprocess/description
+							/cs:SASroot/cs:SASentry/cs:SASprocess/cs:description
 						</DT>
 						<DD>
 							[0..1] Optional description for this data
@@ -615,7 +615,7 @@
 			<element name="term" minOccurs="0" maxOccurs="unbounded">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASprocess/term</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASprocess/cs:term</DT>
 						<DD>
 							[0..1] This is used to specify the value of
 							a single variable, parameter, or term
@@ -631,7 +631,7 @@
 								<annotation>
 									<documentation>
 										<DT>
-											/SASroot/SASentry/SASprocess/term/@name
+											/cs:SASroot/cs:SASentry/cs:SASprocess/cs:term/@name
 										</DT>
 										<DD>
 											[1..1] Name of the term.
@@ -644,7 +644,7 @@
 								<annotation>
 									<documentation>
 										<DT>
-											/SASroot/SASentry/SASprocess/term/@unit
+											/cs:SASroot/cs:SASentry/cs:SASprocess/cs:term/@unit
 										</DT>
 										<DD>
 											[1..1] Unit (string) of the
@@ -663,7 +663,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASprocess/SASprocessnote
+							/cs:SASroot/cs:SASentry/cs:SASprocess/cs:SASprocessnote
 						</DT>
 						<DD>
 							[1..inf] This element is used to describe
@@ -677,11 +677,11 @@
 		<attribute name="name" type="string" use="optional">
 			<annotation>
 				<documentation>
-					<DT>/SASroot/SASentry/SASprocess/@name</DT>
+					<DT>/cs:SASroot/cs:SASentry/cs:SASprocess/@name</DT>
 					<DD>
 						[0..1] Optional attribute to provide a name for
 						this SASprocess. It is redundant with
-						/SASroot/SASentry/SASprocess/name but it is not
+						/cs:SASroot/cs:SASentry/cs:SASprocess/cs:name but it is not
 						the same. It should probably be removed.
 					</DD>
 				</documentation>
@@ -698,7 +698,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/radiation
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:radiation
 						</DT>
 						<DD>
 							[1..1] Name of the radiation used (neutron,
@@ -713,7 +713,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/beam_size
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size
 						</DT>
 						<DD>
 							[0..1] Physical dimension of the beam
@@ -726,7 +726,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/beam_size/@name
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/@name
 						</DT>
 						<DD>
 							Optional attribute to clarify the name of
@@ -735,13 +735,13 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/beam_size/x
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:x
 						</DT>
 						<DD>[0..1] Dimension of the beam size in X.</DD>
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/beam_size/x/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:x/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of x.
@@ -750,13 +750,13 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/beam_size/y
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:y
 						</DT>
 						<DD>[0..1] Dimension of the beam size in Y.</DD>
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/beam_size/y/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:y/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of y.
@@ -765,7 +765,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/beam_size/z
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:z
 						</DT>
 						<DD>
 							[0..1] Dimension of the beam size in Z.
@@ -776,7 +776,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/beam_size/z/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:z/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of z.
@@ -790,7 +790,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/beam_shape
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_shape
 						</DT>
 						<DD>
 							[0..1] Text description of the shape of the
@@ -804,7 +804,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/wavelength
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength
 						</DT>
 						<DD>
 							[0..1] wavelength of radiation incident on
@@ -813,7 +813,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/wavelength/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength/@unit
 						</DT>
 						<DD>
 							[1..1] wavelength of radiation requires a
@@ -828,7 +828,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/wavelength_min
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_min
 						</DT>
 						<DD>
 							[0..1] Some facilities specify wavelength
@@ -838,7 +838,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/wavelength_min/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_min/@unit
 						</DT>
 						<DD>
 							[1..1] wavelength_min requires a unit to be
@@ -852,7 +852,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/wavelength_max
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_max
 						</DT>
 						<DD>
 							[0..1] Some facilities specify wavelength
@@ -862,7 +862,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/wavelength_max/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_max/@unit
 						</DT>
 						<DD>
 							[1..1] wavelength_max requires a unit to be
@@ -876,7 +876,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/wavelength_spread
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_spread
 						</DT>
 						<DD>
 							[0..1] Some facilities specify the width of
@@ -886,7 +886,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource/wavelength_spread/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_spread/@unit
 						</DT>
 						<DD>
 							[1..1] wavelength_spread requires a unit to
@@ -900,13 +900,13 @@
 			<annotation>
 				<documentation>
 					<DT>
-						/SASroot/SASentry/SASinstrument/SASsource/@name
+						/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/@name
 					</DT>
 					<DD>
 						[0..1] Optional text description of the source
 						of the radiation (incident on the sample). This
 						can be different from
-						/SASroot/SASentry/SASinstrument/SASsource/radiation.
+						/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:radiation.
 					</DD>
 				</documentation>
 			</annotation>
@@ -920,20 +920,18 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SAScollimation/distance
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance
 						</DT>
 						<DD>
-							[0..1] Distance from this collimation
-							element to the sample.
+							[0..1] Distance from this collimation element to the sample.
 						</DD>
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SAScollimation/distance/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance/@unit
 						</DT>
 						<DD>
-							[1..1] distance requires a unit to be
-							specified. (See @unit for details.)
+							[1..1] distance requires a unit to be specified. (See @unit for details.)
 						</DD>
 					</documentation>
 				</annotation>
@@ -943,7 +941,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SAScollimation/aperture
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture
 						</DT>
 						<DD>[0..inf] Slit or aperture.</DD>
 					</documentation>
@@ -955,54 +953,47 @@
 							<annotation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/size
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size
 									</DT>
 									<DD>
-										[0..1] Opening dimensions of
-										this aperture.
+										[0..1] Opening dimensions of this aperture.
 									</DD>
 								</documentation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/size/@name
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/@name
 									</DT>
 									<DD>
-										[1..1] Optional attribute to
-										clarify the name of this beam
-										size.
+										[1..1] Optional attribute to clarify the name of this beam size.
 									</DD>
 								</documentation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/size/x
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:x
 									</DT>
 									<DD>
-										[0..1] Dimension of the aperture
-										in X.
+										[0..1] Dimension of the aperture in X.
 									</DD>
 								</documentation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/size/x/@unit
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:x/@unit
 									</DT>
 									<DD>
-										[1..1] Required unit for the
-										dimension of x. (See @unit for
-										details.)
+										[1..1] Required unit for the dimension of x. (See @unit for details.)
 									</DD>
 								</documentation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/size/y
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:y
 									</DT>
 									<DD>
-										[0..1] Dimension of the aperture
-										in Y.
+										[0..1] Dimension of the aperture in Y.
 									</DD>
 								</documentation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/size/y/@unit
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:y/@unit
 									</DT>
 									<DD>
 										[1..1] Required unit for the
@@ -1012,7 +1003,7 @@
 								</documentation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/size/z
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:z
 									</DT>
 									<DD>
 										[0..1] Dimension of the aperture
@@ -1024,7 +1015,7 @@
 								</documentation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/size/z/@unit
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:z/@unit
 									</DT>
 									<DD>
 										[1..1] Required unit for the
@@ -1039,19 +1030,19 @@
 							<annotation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/distance
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:distance
 									</DT>
 									<DD>
 										[0..1] Is this necessary? What
 										is the difference between
-										/SASroot/SASentry/SASinstrument/SAScollimation/distance
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance
 										and
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/distance?
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:distance?
 									</DD>
 								</documentation>
 								<documentation>
 									<DT>
-										/SASroot/SASentry/SASinstrument/SAScollimation/aperture/distance/@unit
+										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:distance/@unit
 									</DT>
 									<DD>
 										[1..1] distance requires a unit
@@ -1067,7 +1058,7 @@
 						<annotation>
 							<documentation>
 								<DT>
-									/SASroot/SASentry/SASinstrument/SAScollimation/aperture/@name
+									/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/@name
 								</DT>
 								<DD>
 									[0..1] Optional name for this
@@ -1081,7 +1072,7 @@
 						<annotation>
 							<documentation>
 								<DT>
-									/SASroot/SASentry/SASinstrument/SAScollimation/aperture/@type
+									/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/@type
 								</DT>
 								<DD>
 									[1..1] Optional text to describe the
@@ -1098,14 +1089,11 @@
 			<annotation>
 				<documentation>
 					<DT>
-						/SASroot/SASentry/SASinstrument/SAScollimation/@name
+						/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/@name
 					</DT>
 					<DD>
 						[0..1] Optional text to describe this
-						collimation element. (This is redundant with,
-						but not the same as,
-						/SASroot/SASentry/SASinstrument/SAScollimation/name
-						and should be removed.)
+						collimation element.
 					</DD>
 				</documentation>
 			</annotation>
@@ -1119,7 +1107,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/name
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:name
 						</DT>
 						<DD>[1..1] Name of the detector.</DD>
 					</documentation>
@@ -1130,7 +1118,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/SDD
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:SDD
 						</DT>
 						<DD>
 							[0..1] Distance between sample and detector.
@@ -1139,7 +1127,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/SDD/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:SDD/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for SDD. (See @unit for
@@ -1153,7 +1141,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/offset
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset
 						</DT>
 						<DD>
 							[0..1] Offset of the detector position in X,
@@ -1162,7 +1150,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/offset/@name
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/@name
 						</DT>
 						<DD>
 							Optional attribute to clarify the name of
@@ -1171,7 +1159,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/offset/x
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:x
 						</DT>
 						<DD>
 							[0..1] Offset of the detector position in X.
@@ -1179,7 +1167,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/offset/x/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:x/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of x.
@@ -1188,7 +1176,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/offset/y
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:y
 						</DT>
 						<DD>
 							[0..1] Offset of the detector position in Y.
@@ -1196,7 +1184,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/offset/y/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:y/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of y.
@@ -1205,7 +1193,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/offset/z
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:z
 						</DT>
 						<DD>
 							[0..1] Offset of the detector position in Z.
@@ -1216,7 +1204,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/offset/z/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:z/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of z.
@@ -1230,7 +1218,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/orientation
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation
 						</DT>
 						<DD>
 							[0..1] Orientation (rotation) of the
@@ -1240,7 +1228,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/orientation/@name
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/@name
 						</DT>
 						<DD>
 							Optional attribute to name this orientation.
@@ -1248,7 +1236,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/orientation/roll
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:roll
 						</DT>
 						<DD>
 							[0..1] Optional rotation of the detector
@@ -1257,7 +1245,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/orientation/roll/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:roll/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of
@@ -1266,7 +1254,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/orientation/pitch
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:pitch
 						</DT>
 						<DD>
 							[0..1] Optional rotation of the detector
@@ -1275,7 +1263,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/orientation/pitch/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:pitch/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of
@@ -1284,7 +1272,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/orientation/yaw
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:yaw
 						</DT>
 						<DD>
 							[0..1] Optional rotation of the detector
@@ -1293,7 +1281,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/orientation/yaw/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:yaw/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of
@@ -1307,7 +1295,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/beam_center
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center
 						</DT>
 						<DD>
 							[0..1] Center of the beam on the detector in
@@ -1316,7 +1304,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/beam_center/@name
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/@name
 						</DT>
 						<DD>
 							Optional attribute to clarify the name of
@@ -1325,7 +1313,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/beam_center/x
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:x
 						</DT>
 						<DD>
 							[0..1] Center of the beam on the detector in
@@ -1334,7 +1322,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/beam_center/x/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:x/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of x.
@@ -1343,7 +1331,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/beam_center/y
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:y
 						</DT>
 						<DD>
 							[0..1] Center of the beam on the detector in
@@ -1352,7 +1340,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/beam_center/y/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:y/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of y.
@@ -1361,7 +1349,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/beam_center/z
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:z
 						</DT>
 						<DD>
 							[0..1] Center of the beam on the detector in
@@ -1372,7 +1360,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/beam_center/z/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:z/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of z.
@@ -1386,7 +1374,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/pixel_size
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size
 						</DT>
 						<DD>
 							[0..1] Size of detector pixels in X and Y.
@@ -1394,7 +1382,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/pixel_size/@name
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/@name
 						</DT>
 						<DD>
 							Optional attribute to clarify the name of
@@ -1403,13 +1391,13 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/pixel_size/x
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:x
 						</DT>
 						<DD>[0..1] Size of detector pixels in X.</DD>
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/pixel_size/x/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:x/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of x.
@@ -1418,13 +1406,13 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/pixel_size/y
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:y
 						</DT>
 						<DD>[0..1] Size of detector pixels in Y.</DD>
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/pixel_size/y/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:y/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of y.
@@ -1433,7 +1421,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/pixel_size/z
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:z
 						</DT>
 						<DD>
 							[0..1] Size of detector pixels in Z. While
@@ -1443,7 +1431,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/pixel_size/z/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:z/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the dimension of z.
@@ -1457,7 +1445,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/slit_length
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:slit_length
 						</DT>
 						<DD>
 							[0..1] Slit length of the instrument for
@@ -1467,7 +1455,7 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector/slit_length/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:slit_length/@unit
 						</DT>
 						<DD>
 							[1..1] Required unit for the slit length.
@@ -1485,7 +1473,7 @@
 				maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASinstrument/name</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:name</DT>
 						<DD>[1..1] Name of the instrument.</DD>
 					</documentation>
 				</annotation>
@@ -1494,7 +1482,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASsource
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource
 						</DT>
 						<DD>
 							[] Description of the source of the
@@ -1508,7 +1496,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SAScollimation
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation
 						</DT>
 						<DD>
 							[] Description of the instrument
@@ -1522,7 +1510,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/SASroot/SASentry/SASinstrument/SASdetector
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector
 						</DT>
 						<DD>
 							[1..inf] Description of a single or
@@ -1542,7 +1530,7 @@
 				type="string">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/Title</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:Title</DT>
 						<DD>[1..1] Title of this SASentry.</DD>
 					</documentation>
 				</annotation>
@@ -1551,7 +1539,7 @@
 				type="string">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/Run</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:Run</DT>
 						<DD>
 							[1..inf] Run identification for this
 							SASentry. For many facilities, this is an
@@ -1567,7 +1555,7 @@
 				type="tns:SASdataType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASdata</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASdata</DT>
 						<DD>
 							[1..inf] Reduced 1-D SAS data for this
 							SASentry. Use multiple SASdata elements to
@@ -1579,7 +1567,7 @@
 			<element name="SASsample" type="tns:SASsampleType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASsample</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASsample</DT>
 						<DD>[] Description of the sample.</DD>
 					</documentation>
 				</annotation>
@@ -1588,7 +1576,7 @@
 				minOccurs="1" maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASinstrument</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASinstrument</DT>
 						<DD>[1..1] Description of the instrument.</DD>
 					</documentation>
 				</annotation>
@@ -1597,7 +1585,7 @@
 				minOccurs="0" maxOccurs="unbounded">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASprocess</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASprocess</DT>
 						<DD>
 							[0..inf] Description of a processing or
 							analysis step.
@@ -1608,7 +1596,7 @@
 			<element name="SASnote">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry/SASnote</DT>
+						<DT>/cs:SASroot/cs:SASentry/cs:SASnote</DT>
 						<DD>
 							[1..] Free form description of anything not
 							covered by other elements.
@@ -1620,7 +1608,7 @@
 		<attribute name="name" type="string" use="optional">
 			<annotation>
 				<documentation>
-					<DT>/SASroot/SASentry/@name</DT>
+					<DT>/cs:SASroot/cs:SASentry/@name</DT>
 					<DD>
 						[0..1] Optional string attribute to identify
 						this particular SASentry.
@@ -1638,7 +1626,7 @@
 				type="tns:SASentryType">
 				<annotation>
 					<documentation>
-						<DT>/SASroot/SASentry</DT>
+						<DT>/cs:SASroot/cs:SASentry</DT>
 						<DD>
 							[1..] A single SAS scan is reported in a
 							SASentry. A SASentry can use the optional
@@ -1654,7 +1642,7 @@
 			use="required">
 			<annotation>
 				<documentation>
-					<DT>/SASroot/@version</DT>
+					<DT>/cs:SASroot/@version</DT>
 					<DD>
 						[1..1] version="1.0" Required attribute to
 						indicate the version of the standard to which
@@ -1668,7 +1656,7 @@
 	<element name="SASroot" type="tns:SASrootType">
 		<annotation>
 			<documentation>
-				<DT>/SASroot</DT>
+				<DT>/cs:SASroot</DT>
 				<DD>
 					[1..1] The canSAS reduced 1-D SAS data will be in
 					the SASroot database. This is similar to NXroot used
