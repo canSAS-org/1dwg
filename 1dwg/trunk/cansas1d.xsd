@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/cs:xsl" href="xsd-documentation.xsl" ?>
-<schema xmlns="http://www.w3.org/2001/cs:xMLSchema"
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://www.smallangles.net/cansas1d"
-	xmlns:xsd="http://www.w3.org/2001/cs:xMLSchema"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:tns="http://www.smallangles.net/cansas1d"
 	elementFormDefault="qualified">
 
@@ -1535,21 +1535,45 @@
 					</documentation>
 				</annotation>
 			</element>
-			<element name="Run" minOccurs="1" maxOccurs="unbounded"
-				type="string">
-				<annotation>
-					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:Run</DT>
-						<DD>
-							[1..inf] Run identification for this
-							SASentry. For many facilities, this is an
-							integer. Use multiple instances of Run as
-							needed. Note: How to correlate this with
-							SASinstrument configurations has not yet
-							been defined.
-						</DD>
-					</documentation>
-				</annotation>
+			<element name="Run" minOccurs="1" maxOccurs="unbounded">
+				<xsd:complexType>
+					<annotation>
+						<documentation>
+							<DT>/cs:SASroot/cs:SASentry/cs:Run</DT>
+							<DD>
+								[1..inf] Run identification for this
+								SASentry. For many facilities, this is
+								an integer. Use multiple instances of
+								Run as needed. Note: How to correlate
+								this with SASinstrument configurations
+								has not yet been defined.
+							</DD>
+						</documentation>
+					</annotation>
+					<simpleContent>
+						<extension base="string">
+							<attribute name="name" type="string"
+								use="optional">
+								<annotation>
+									<documentation>
+										<DT>
+											/cs:SASroot/cs:SASentry/cs:Run/@name
+										</DT>
+										<DD>
+											[0..1] Optional string
+											attribute to identify this
+											particular SASrun. Use this
+											to associate (correlate)
+											multiple SASdata elements
+											with Run elements. (Give
+											them the same name.)
+										</DD>
+									</documentation>
+								</annotation>
+							</attribute>
+						</extension>
+					</simpleContent>
+				</xsd:complexType>
 			</element>
 			<element name="SASdata" minOccurs="1" maxOccurs="unbounded"
 				type="tns:SASdataType">
@@ -1559,7 +1583,10 @@
 						<DD>
 							[1..inf] Reduced 1-D SAS data for this
 							SASentry. Use multiple SASdata elements to
-							represent multiple frames.
+							represent multiple frames. Use this to
+							associate (correlate) multiple SASdata
+							elements with Run elements. (Give them the
+							same name.)
 						</DD>
 					</documentation>
 				</annotation>
@@ -1593,7 +1620,7 @@
 					</documentation>
 				</annotation>
 			</element>
-			<element name="SASnote">
+			<element name="SASnote" minOccurs="1" maxOccurs="unbounded">
 				<annotation>
 					<documentation>
 						<DT>/cs:SASroot/cs:SASentry/cs:SASnote</DT>
