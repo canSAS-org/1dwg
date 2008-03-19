@@ -1134,7 +1134,7 @@
   </SASentry>
   <SASentry name="AF1410:20">
     <Title>AF1410-20 (AF1410 steel aged 20 h)</Title>
-    <Run name="AF1410-a20">nuclear sector</Run>
+    <!--<Run name="AF1410-a20">nuclear sector</Run>-->
     <Run name="AF1410-b20">nuclear+magnetic sector</Run>
     <!-- missing  SASdata name="AF1410-a20" / -->
     <SASdata name="AF1410-b20">
