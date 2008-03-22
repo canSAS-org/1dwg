@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="example.xsl" ?>
 <SASroot version="1.0"
-	xmlns="http://www.smallangles.net/cansas1d/"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.smallangles.net/cansas1d/ http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd"
-	>
+    xmlns="cansas1d/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+    >
 	<SASentry>
 		<Title>SAS bimodal test1</Title>
 		<Run>1992</Run>
