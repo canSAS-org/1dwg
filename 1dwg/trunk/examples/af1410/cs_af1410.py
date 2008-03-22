@@ -167,10 +167,10 @@ def makeSASnote():
 def makeSASroot(reqDir, aging, sector):
    xml = ""
    SASroot_tag = 'SASroot version="1.0"'
-   SASroot_tag = SASroot_tag + '\n xmlns="http://www.smallangles.net/cansas1d"'
+   SASroot_tag = SASroot_tag + '\n xmlns="cansas1d/1.0"'
    SASroot_tag = SASroot_tag + '\n xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'
-   SASroot_tag = SASroot_tag + '\n xsi:schemaLocation="http://www.smallangles.net/cansas1d/ '
-   SASroot_tag = SASroot_tag + '\n		       http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd"'
+   SASroot_tag = SASroot_tag + '\n xsi:schemaLocation="cansas1d/1.0 '
+   SASroot_tag = SASroot_tag + '  http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"'
 
    for index in aging:
        entry = makeSASentry(reqDir, index, aging, sector)
@@ -179,6 +179,7 @@ def makeSASroot(reqDir, aging, sector):
 
    complete_xml = ""
    complete_xml = complete_xml + '<?xml version="1.0"?>\n'
+   complete_xml = complete_xml + '<?xml-stylesheet type="text/xsl" href="example.xsl" ?>\n'
    complete_xml = complete_xml + makeXMLelement(SASroot_tag, xml, 1)
    return( complete_xml )
 

@@ -1,7 +1,7 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:cs="http://www.smallangles.net/cansas1d">
+	xmlns:cs="cansas1d/1.0">
 
 	<!-- http://www.w3schools.com/xsl/xsl_transformation.asp -->
 

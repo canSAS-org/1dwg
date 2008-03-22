@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="example.xsl" ?>
 <SASroot version="1.0"
-	xmlns="http://www.smallangles.net/cansas1d"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.smallangles.net/cansas1d/ http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd"
-	>
+    xmlns="cansas1d/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+    >
 	<SASentry>
 		<Title>dry chick collagen, d = 673 A, 6531 eV, X6B</Title>
 		<Run>Sep 19 1994     01:41:02 am</Run>
 		<SASdata>
 <!--  
-  --  converted to canSAS1D/1.0 XML within Excel spreadsheet using user macro commands such as
-  --   =IDATA_tag(A5,$A$4,0.00055,$A$4,B5,$B$4,C5,$C$4)
-  --  where
-  --     Idata_tag(Q, Q_unit, I, I_unit, Qdev, Qdev_unit, Idev, Idev_unit)
+  -   converted to canSAS1D/1.0 XML within Excel spreadsheet using user macro commands such as
+  -    =IDATA_tag(A5,$A$4,0.00055,$A$4,B5,$B$4,C5,$C$4)
+  -   where
+  -      Idata_tag(Q, Q_unit, I, I_unit, Qdev, Qdev_unit, Idev, Idev_unit)
   -->
 <Idata><Q unit="1/A">0.022756</Q><I unit="a.u.">1107.6</I><Qdev unit="1/A">0.00055</Qdev><Idev unit="a.u.">8.586</Idev></Idata>
 <Idata><Q unit="1/A">0.023296</Q><I unit="a.u.">1038.9</I><Qdev unit="1/A">0.00055</Qdev><Idev unit="a.u.">7.6445</Idev></Idata>

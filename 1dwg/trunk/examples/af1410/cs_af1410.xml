@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="example.xsl" ?>
 <SASroot version="1.0"
- xmlns="http://www.smallangles.net/cansas1d"
+ xmlns="cansas1d/1.0"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.smallangles.net/cansas1d/ 
-		       http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd">
+ xsi:schemaLocation="cansas1d/1.0   http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd">
   <SASentry name="AF1410:10">
     <Title>AF1410-10 (AF1410 steel aged 10 h)</Title>
     <Run name="AF1410-a10">nuclear sector</Run>
@@ -1136,7 +1136,7 @@
     <Title>AF1410-20 (AF1410 steel aged 20 h)</Title>
     <Run name="AF1410-a20">nuclear sector</Run>
     <Run name="AF1410-b20">nuclear+magnetic sector</Run>
-    <!-- missing  SASdata name="AF1410-a20" / -->
+    <SASdata name="AF1410-a20" />
     <SASdata name="AF1410-b20">
       <Idata><Q unit="1/A">0.0176750</Q><I unit="1/cm">100.6899948</I><Qdev unit="1/A">0.001</Qdev><Idev unit="1/cm">5.4614463</Idev></Idata>
       <Idata><Q unit="1/A">0.0188360</Q><I unit="1/cm">85.8899994</I><Qdev unit="1/A">0.001</Qdev><Idev unit="1/cm">3.9071729</Idev></Idata>
