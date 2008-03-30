@@ -19,20 +19,43 @@
 		<!-- repeat SASentry for as many scans as needed -->
 		<Title>Title of the scan goes here.</Title>
 		<Run>Could be a number or text</Run>
+		<Run_extension xmlns="ILL">
+			<!-- example foreign element -->
+			001
+		</Run_extension>
+		<aps:SB_USAXS xmlns:aps="USAXS/APS/32ID">
+			<!-- example foreign element with namespace prefix -->
+			no
+		</aps:SB_USAXS>
 		<SASdata name="this name is optional">
 			<Idata>
 				<!--* Idata: contains one SAS data point -->
 				<Q unit="1/A">0.02</Q>
 				<I unit="1/cm">1000</I>
-				<Qdev unit="1/A">0.01</Qdev>
 				<Idev unit="1/cm">3</Idev>
-				<Qfwhm unit="1/A" /><!-- optional -->
+				<Qdev unit="1/A">0.01</Qdev>
 				<Qmean unit="1/A" /><!-- optional -->
 				<Shadowfactor /><!-- optional -->
 			</Idata>
 			<Idata>
 				<!-- repeat Idata for as many data points as needed -->
-				<Q unit="1/A">0.03</Q><I unit="1/cm">989</I><Qdev unit="1/A">0.01</Qdev><Idev unit="1/cm">3</Idev>
+				<Q unit="1/A">0.03</Q>
+				<I unit="1/cm">989</I>
+				<Idev unit="1/cm">3</Idev>
+				<Qdev unit="1/A">0.01</Qdev>
+			</Idata>
+			<Idata>
+				<!-- this shows/tests the alternate form with dQw and dQl
+					Do not use both forms within a single SASdata element.
+					XMLreaders are not expected to handle the situation
+					with both Qdev and (dQw or dQl) since the rules say
+					it is not allowed.
+				-->
+				<Q unit="1/A">0.03</Q>
+				<I unit="1/cm">989</I>
+				<Idev unit="1/cm">3</Idev>
+				<dQw unit="1/A">0.01</dQw>
+				<dQl unit="1/A">0.01</dQl>
 			</Idata>
 		</SASdata>
 		<SASsample name="this name is optional">
@@ -75,7 +98,6 @@
 						<x unit="mm">50</x>
 						<y unit="mm">2.1</y>
 					</size>
-					<distance unit="mm">15.0</distance>
 				</aperture>
 			</SAScollimation>
 			<SASdetector>

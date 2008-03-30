@@ -1,9 +1,9 @@
 #pragma rtGlobals=1		// Use modern global access method.
-#pragma version=1.04
+#pragma version=1.05
 
 // file:	cansasXML.ipf
 // author:	Pete R. Jemian <jemian@anl.gov>
-// date:	2008-03-19
+// date:	2008-03-31
 // purpose:  implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files
 //			adheres to the cansas1d/1.0 standard
 // URL:	http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
@@ -119,7 +119,7 @@ END
 FUNCTION CS_1i_parseXml(fileID)
 	VARIABLE fileID
 	WAVE/T W_ElementList
-	SVAR nsStr, errorMsg, xmlFile
+	SVAR errorMsg, xmlFile
 	STRING/G Title
 	STRING XPathStr, Title_folder, SASdata_folder
 	STRING SASentryPath, SASdataPath, RunNum
@@ -237,7 +237,6 @@ END
 FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 	VARIABLE fileID
 	STRING sasEntryPath
-	SVAR nsStr
 	VARIABLE i
 	WAVE/T metadata
 	STRING suffix = ""
@@ -493,27 +492,24 @@ END
 FUNCTION CS_registerNameSpaces(fileID)
 	VARIABLE fileID
 	//
-	// Only one namespace might be used within the document and that is
-	// the one defined in the zzz:schemaLocation attribute to the <SASroot> element.
-	// Since the XMLutils XOP only extracts the schemaLocation as an attribute,
-	// we just ask for "/*/@schemaLocation" and pick the first URI as the namespace.
+	// The canSAS 1-D namespace is defined in the <SASroot> element.
 	// We can use our own namespace prefix without further concern.
+	// Other namespaces may be used in the file but this does not 
+	// look for foreign (non-canSAS) elements.
 	//
 	WAVE/T W_ElementList
 	SVAR nsPre
 	SVAR nsStr
-	VARIABLE i, j, index
+	VARIABLE i, j, index, row
 	STRING testStr
+	MAKE/T/N=(1,2)/O nsRegistry
 	//
-	nsStr = StringFromList(0, StringByKey("schemaLocation", W_ElementList[0][2]), " ")
 	nsStr = W_ElementList[0][1]		// this is the one to use
+	nsPre = ""
 	IF (strlen(nsStr))
 		nsPre = "cs:"
 		nsStr = "cs=" + nsStr
-	ELSE
-		nsPre = ""
 	ENDIF
-
 	// 2008-03-14,PRJ: Now, add a workaround for the libxml2 support that affects MacOS.
 	//   When using namespaces 
 	//		W_ElementList[][1] != "" (it shows a namespace for this node)
@@ -530,13 +526,21 @@ FUNCTION CS_registerNameSpaces(fileID)
 	W_ElementList[0][4] = CS_XPath_NS("/"+W_ElementList[0][3])
 	FOR (i = 1; i < DimSize(W_ElementList,0); i += 1)
 		IF (strlen(W_ElementList[i][4]) == 0)		// if not already set, then find absolute XPath string
+			// For now, only handle items in the default namespace.
+			// Takes more work to build in the capability to handle more namespaces
+			//
 			index = CS_findElementIndex(  CS_findLast(W_ElementList[i][0], "/", 1  )  )
 			testStr = W_ElementList[index][4] + CS_XPath_NS("/"+W_ElementList[i][3])
 			XMLlistXpath(fileID,testStr,nsStr)
+			IF ( !EXISTS("W_listXPath") )
+				PRINT i, testStr, " empty result from XmlListXpath()"
+				BREAK
+			ENDIF
 			WAVE/T W_listXPath
 			SWITCH(numpnts(W_listXPath))
 				CASE 0:			// What?  Can't find the node we just found?
-					PRINT numpnts(W_listXPath), testStr, " !!! WARNING:  <Can't find the node we just found> in CS_registerNameSpaces()"
+					//PRINT numpnts(W_listXPath), testStr, " !!! WARNING:  <Can't find the node we just found> in CS_registerNameSpaces()"
+					PRINT i, testStr, " Foreign element namespace detected and ignored"
 					BREAK
 				CASE 1:			// Only one node with this element
 					W_ElementList[i][4] = testStr
@@ -759,34 +763,41 @@ FUNCTION CS_1i_extractSasData(fileID, SASdataPath, SASdata_folder)
 	VARIABLE numPts, numQ
 	SVAR errorMsg
 
-	// extract each Idata column into the waves: QQ, II, Qdev, Idev [Qmean] [Qfwhm] [Shadowfactor]
+	// extract each Idata column into waves
 	// ignore the return codes here, check below
-	numQ	= CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Q",				"Qsas")
-	IF (numQ != CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "I",				"Isas"))
+	numQ	= CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Q",			"Qsas")
+	IF (numQ != CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "I",			"Isas"))
 		errorMsg = "number of points in Qsas and Isas waves are not identical"
 		RETURN(1)
 	ENDIF
-	IF (numQ != CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qdev",			"Qdev"))
-		errorMsg = "number of points in Qsas and Qdev waves is not identical"
+	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Idev",		"Idev")
+	IF (numPts && (numQ != numPts) )
+		errorMsg = "number of points in Qsas and Idev waves are not identical"
 		RETURN(1)
 	ENDIF
-	IF (numQ != CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Idev",			"Idev"))
-		errorMsg = "number of points in Qsas and Idev waves is not identical"
+	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qdev",		"Qdev")
+	IF (numPts && (numQ != numPts) )
+		errorMsg = "number of points in Qsas and Qdev waves are not identical"
+		RETURN(1)
+	ENDIF
+	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "dQw",		"dQw")
+	IF (numPts && (numQ != numPts) )
+		errorMsg = "number of points in Qsas and dQw waves are not identical"
+		RETURN(1)
+	ENDIF
+	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "dQl",			"dQl")
+	IF (numPts && (numQ != numPts) )
+		errorMsg = "number of points in Qsas and dQl waves are not identical"
 		RETURN(1)
 	ENDIF
 	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qmean",		"Qmean")
 	IF (numPts && (numQ != numPts) )
-		errorMsg = "number of points in Qsas and Qmean waves is not identical"
-		RETURN(1)
-	ENDIF
-	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Qfwhm",		"Qfwhm")
-	IF (numPts && (numQ != numPts) )
-		errorMsg = "number of points in Qsas and Qfwhm waves is not identical"
+		errorMsg = "number of points in Qsas and Qmean waves are not identical"
 		RETURN(1)
 	ENDIF
 	numPts = CS_1i_extractIdataColumn2Wave(fileID, SASdataPath, "Shadowfactor",	"Shadowfactor")
 	IF (numPts && (numQ != numPts) )
-		errorMsg = "number of points in Qsas and Shadowfactor waves is not identical"
+		errorMsg = "number of points in Qsas and Shadowfactor waves are not identical"
 		RETURN(1)
 	ENDIF
 
@@ -796,15 +807,22 @@ FUNCTION CS_1i_extractSasData(fileID, SASdataPath, SASdata_folder)
 	// !!!!! Missing Qsas, Isas, Qdev, and/or Idev are a broken data set
 	//		This should produce an exception.  Should have been trapped by numPts tests.
 	//		Best to return an error code but the caller chain is not ready to pass that to the top level, yet.
-	MoveWave Qsas, $SASdata_folder			// required wave
-	MoveWave Isas, $SASdata_folder			// required wave
-	MoveWave Qdev, $SASdata_folder			// required wave
-	MoveWave Idev, $SASdata_folder			// required wave
-	IF (exists("Qmean") == 1)
-		MoveWave Qmean, $SASdata_folder	// optional wave
+	MoveWave Qsas, $SASdata_folder				// required wave
+	MoveWave Isas, $SASdata_folder				// required wave
+	IF (exists("Idev") == 1)
+		MoveWave Idev, $SASdata_folder			// optional wave
 	ENDIF
-	IF (exists("Qfwhm") == 1)
-		MoveWave Qfwhm, $SASdata_folder	// optional wave
+	IF (exists("Qdev") == 1)
+		MoveWave Qdev, $SASdata_folder			// optional wave
+	ENDIF
+	IF (exists("dQw") == 1)
+		MoveWave dQw, $SASdata_folder			// optional wave
+	ENDIF
+	IF (exists("dQl") == 1)
+		MoveWave dQl, $SASdata_folder			// optional wave
+	ENDIF
+	IF (exists("Qmean") == 1)
+		MoveWave Qmean, $SASdata_folder		// optional wave
 	ENDIF
 	IF (exists("ShadowFactor") == 1)
 		MoveWave ShadowFactor, $SASdata_folder	// optional wave
@@ -849,7 +867,7 @@ FUNCTION prjTest_cansas1d()
 	// unit tests for the routines under prj-readXML.ipf
 	STRING theFile
 	STRING fList = ""
-	VARIABLE i
+	VARIABLE i, result, timerID, seconds
 	// build a table of test data sets
 	fList = AddListItem("elmo.xml", 				fList, ";", Inf)		// non-existent file
 	fList = AddListItem("cansasXML.ipf", 			fList, ";", Inf)		// this file (should fail on XML parsing)
@@ -864,19 +882,44 @@ FUNCTION prjTest_cansas1d()
 	fList = AddListItem("isis_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
 	fList = AddListItem("r586.xml", 					fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
 	fList = AddListItem("r597.xml", 					fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("xg009036_001.xml", 		fList, ";", Inf)		// foreign elements with other namespaces
 	fList = AddListItem("cs_collagen.xml", 			fList, ";", Inf)		// another simple dataset, bare minimum info
 	fList = AddListItem("cs_collagen_full.xml", 		fList, ";", Inf)		// more Q range than previous
 	fList = AddListItem("cs_af1410.xml", 			fList, ";", Inf)		// multiple SASentry and SASdata elements
+	fList = AddListItem("cansas1d-template.xml", 	fList, ";", Inf)		// multiple SASentry and SASdata elements
 	//fList = AddListItem("1998spheres.xml", 			fList, ";", Inf)		// 2 SASentry, few thousand data points each
 	fList = AddListItem("does-not-exist-file.xml", 		fList, ";", Inf)		// non-existent file
+	fList = AddListItem("cs_rr_polymers.xml", 		fList, ";", Inf)		// Round Robin polymer samples from John Barnes @ NIST
 	// try to load each data set in the table
 	FOR ( i = 0; i < ItemsInList(fList) ; i += 1 )
 		theFile = StringFromList(i, fList)					// walk through all test files
 		// PRINT "file: ", theFile
 		pathInfo home 
 		//IF (CS_XmlReader(theFile) == 0)					// did the XML reader return without an error code?
-		IF (CS_XmlReader(ParseFilePath(5,S_path,"*",0,0) + theFile) == 0)    // did the XML reader return without an error code?
+		timerID = StartMStimer
+		result = CS_XmlReader(ParseFilePath(5,S_path,"*",0,0) + theFile)
+		seconds = StopMSTimer(timerID) * 1.0e-6
+		PRINT "\t Completed in ", seconds, " seconds"
+		IF (result == 0)    // did the XML reader return without an error code?
 			prj_grabMyXmlData()						// move the data to my directory
 		ENDIF
 	ENDFOR
+END
+
+
+FUNCTION prjTest_writer(xmlFile)
+	STRING xmlFile
+	VARIABLE fileID
+	STRING nsStr = "cansas1d/1.0", prefixStr = ""
+	fileID = XMLcreateFile(xmlFile,"SASroot",nsStr,prefixStr)
+	XMLsetAttr(fileID,		"/SASroot", 				nsStr, "version", "1.0")
+	XMLsetAttr(fileID,		"/SASroot", 				nsStr, "xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance")
+	XMLsetAttr(fileID,		"/SASroot", 				nsStr, "xsi:schemaLocation", "cansas1d/1.0    http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd")
+	XMLaddNode(fileID, 	"/SASroot", 				nsStr, "SASentry", "", 1)
+	XMLsetAttr(fileID,		"/SASroot/SASentry", 	nsStr, "name", "something")
+	XMLaddNode(fileID, 	"/SASroot/SASentry", 	nsStr, "Title", "my very first title", 1)
+	XMLaddNode(fileID, 	"/SASroot/SASentry", 	nsStr, "Run", "2008-03-19", 1)
+	XMLsetAttr(fileID,		"/SASroot/SASentry/Run", nsStr, "name", "actually is a date")
+	XMLsaveFile(fileID)
+	XMLcloseFile(fileID,0)
 END

@@ -106,10 +106,16 @@ def makeSASentry(dirName, index, aging, sectors):
    SASentry = ""
    SASentry = SASentry + makeXMLelement('Title', title, 0)
    # associate Run and SASdata using common "name" attribute based on sector&aging codes
+   allRuns = ""
+   allSASdatas = ""
    for alpha in sectors:
-      SASentry = SASentry + makeXMLelement('Run name="AF1410-' + alpha + index + '"', sectors[alpha], 0)
-   for alpha in sectors:
-      SASentry = SASentry + makeSASdata(dirName, alpha + index + ".vmh", "AF1410-" + alpha + index)
+	  thisSASdata = makeSASdata(dirName, alpha + index + ".vmh", "AF1410-" + alpha + index)
+	  if (len(thisSASdata) > 0):
+		thisRun = makeXMLelement('Run name="AF1410-' + alpha + index + '"', sectors[alpha], 0)
+		allRuns = allRuns + thisRun
+		allSASdatas = allSASdatas + thisSASdata
+   SASentry = SASentry + allRuns
+   SASentry = SASentry + allSASdatas
    SASentry = SASentry + makeSASsample(title)
    SASentry = SASentry + makeSASinstrument()
    SASentry = SASentry + makeSASnote()
@@ -118,11 +124,12 @@ def makeSASentry(dirName, index, aging, sectors):
 def makeSASdata(dirName, fileName, name):
    Idata = ""
    Q_I_esd = readVMHfile(dirName, fileName)
+   if (len(Q_I_esd) ==  0):
+	 return( "" )
    for Q, I, esd in Q_I_esd:
      str = ""
      str = str + makeXMLelement('Q unit="1/A"', Q, 0).strip() 
      str = str + makeXMLelement('I unit="1/cm"', I, 0).strip() 
-     str = str + makeXMLelement('Qdev unit="1/A"', 0.001, 0).strip() 
      str = str + makeXMLelement('Idev unit="1/cm"', esd, 0).strip() 
      Idata = Idata + makeXMLelement('Idata', str, 0)
    SASdata = makeXMLelement('SASdata name="' + name + '"', Idata, 1)
