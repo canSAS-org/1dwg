@@ -1,3 +1,152 @@
+;<TT>/cs:SASroot/cs:SASentry/cs:Title </TT>: [1..1] Title of this SASentry. <br />
+;<TT>/cs:SASroot/cs:SASentry/cs:SASsample/@name </TT>: [0..1] Optional attribute to name this sample. (Should be the same as SASsample/cs:ID) <br />
+;<TT>/cs:SASroot/cs:SASentry/cs:SASsample </TT>: [] Description of the sample. <br />
+;<TT>/cs:SASroot/cs:SASentry/cs:SASprocess/@name </TT>: [0..1] Optional attribute to provide a name for this SASprocess. It is redundant with /cs:SASroot/cs:SASentry/cs:SASprocess/cs:name but it is not the same. It should probably be removed. <br />
+;<TT>/cs:SASroot/cs:SASentry/cs:SASprocess </TT>: [0..inf] Description of a processing or analysis step. <br />
+;<TT>/cs:SASroot/cs:SASentry/cs:SASnote </TT>: [1..] Free form description of anything not covered by other elements. <br />
+;<TT>/cs:SASroot/cs:SASentry/cs:SASdata/@name </TT>: [0..1] Optional string attribute to identify this particular SASdata. <br />
+;<TT>/cs:SASroot/cs:SASentry/cs:SASdata </TT>: [1..inf] Reduced 1-D SAS data for this SASentry. Use multiple SASdata elements to represent multiple frames. Use this to associate (correlate) multiple SASdata elements with Run elements. (Give them the same name.) <br />
+;<TT>/cs:SASroot/cs:SASentry/cs:Run </TT>: [1..inf] Run identification for this SASentry. For many facilities, this is an integer. Use multiple instances of Run as needed. Note: How to correlate this with SASinstrument configurations has not yet been defined. <br />
+;<TT>/cs:SASroot/cs:SASentry/@name </TT>: [0..1] Optional string attribute to identify this particular SASentry. <br />
+;<TT>/cs:SASroot/cs:SASentry </TT>: [1..] A single SAS scan is reported in a SASentry. A SASentry can use the optional "name" attribute to provide a string for this SASentry. Use of this string is not defined by this standard. <br />
+;<TT>/cs:SASroot/@version </TT>: [1..1] version="1.0" Required attribute to indicate the version of the standard to which this XML document is encoded. <br />
+;<TT>/cs:SASroot </TT>: [1..1] The canSAS reduced 1-D SAS data will be in the SASroot database. This is similar to NXroot used by NeXus. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:transmission </TT>: [0..1] Transmission (1-attenuation) of this sample. Express this as a fraction, not as a percentage. NOTE: there is not "unit" attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:thickness/@unit </TT>: [1..1] Required unit for thickness. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:thickness </TT>: [0..1] Thickness of this sample. Must specify the unit as an attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:temperature/@unit </TT>: [1..1] Required unit for temperature. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:temperature </TT>: [0..1] Temperature of this sample. Must specify the unit as an attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:z/@unit </TT>: [1..1] Required unit for the dimension of z. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:z </TT>: [0..1] Location of the sample in Z. While this is allowed by the standard, it does not make much sense for small-angle scattering. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:y/@unit </TT>: [1..1] Required unit for the dimension of y. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:y </TT>: [0..1] Location of the sample in Y. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:x/@unit </TT>: [1..1] Required unit for the dimension of x. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:x </TT>: [0..1] Location of the sample in X. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:position/@name </TT>: Optional attribute to name this position. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:position </TT>: [0..1] Location in X, Y, and Z of the sample. Must specify the unit as an attribute to each position. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:yaw/@unit </TT>: [1..1] Required unit for the dimension of yaw. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:yaw </TT>: [0..1] Optional rotation of the sample about the Y axis (yaw). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:roll/@unit </TT>: [1..1] Required unit for the dimension of roll. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:roll </TT>: [0..1] Optional rotation of the sample about the Z axis (roll). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:pitch/@unit </TT>: [1..1] Required unit for the dimension of pitch. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/cs:pitch </TT>: [0..1] Optional rotation of the sample about the X axis (pitch). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation/@name </TT>: Optional attribute to name this orientation. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation </TT>: [0..1] Orientation (rotation) of the sample. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:ID </TT>: [1..1] Text string that identifies this sample. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/cs:details </TT>: [0..inf] Text string to supply additional sample details. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASsample/<any> </TT>: [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. Use a '''xmlns="some-simple-identification-string"''' to identify that this is a ''foreign element.'' <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASprocess/cs:term </TT>: [0..1] This is used to specify the value of a single variable, parameter, or term related to the SASprocess step. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASprocess/cs:SASprocessnote/<any> </TT>: [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. Use a '''xmlns="some-simple-identification-string"''' to identify that this is a ''foreign element.'' <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASprocess/cs:SASprocessnote </TT>: [1..inf] This element is used to describe anything about SASprocess that is not already described. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASprocess/cs:name </TT>: [0..1] Optional name for this data processing or analysis step. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASprocess/cs:description </TT>: [0..1] Optional description for this data processing or analysis step. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASprocess/cs:date </TT>: [0..1] Optional date for this data processing or analysis step. *** SHOULD WE SPECIFY THE FORMAT FOR THE DATE? *** <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_spread/@unit </TT>: [1..1] wavelength_spread requires a unit to be specified. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_spread </TT>: [0..1] Some facilities specify the width of the wavelength spectrum. The minimum of such a range is given by wavelength_spread. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_min/@unit </TT>: [1..1] wavelength_min requires a unit to be specified. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_min </TT>: [0..1] Some facilities specify wavelength using a range. The minimum of such a range is given by wavelength_min. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_max/@unit </TT>: [1..1] wavelength_max requires a unit to be specified. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength_max </TT>: [0..1] Some facilities specify wavelength using a range. The maximum of such a range is given by wavelength_max. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength/@unit </TT>: [1..1] wavelength of radiation requires a unit to be specified. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:wavelength </TT>: [0..1] wavelength of radiation incident on the sample. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:radiation </TT>: [1..1] Name of the radiation used (neutron, X-ray, synchrotron X-ray, Cu Ka X-ray tube, ..." <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:z/@unit </TT>: [1..1] Required unit for the dimension of z. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:z </TT>: [0..1] Dimension of the beam size in Z. While this is allowed by the standard, it does not make much sense for small-angle scattering. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:y/@unit </TT>: [1..1] Required unit for the dimension of y. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:y </TT>: [0..1] Dimension of the beam size in Y. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:x/@unit </TT>: [1..1] Required unit for the dimension of x. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:x </TT>: [0..1] Dimension of the beam size in X. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size/@name </TT>: Optional attribute to clarify the name of this beam size. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_size </TT>: [0..1] Physical dimension of the beam (incident on the sample). Note: If beam is round, just use X dimension. Note: While Z dimension is allowed by the standard, it does not make sense for small-angle scattering. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:beam_shape </TT>: [0..1] Text description of the shape of the beam (incident on the sample). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/@name </TT>: [0..1] Optional text description of the source of the radiation (incident on the sample). This can be different from /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource/cs:radiation. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource </TT>: [1..1] Description of the source of the radiation. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:slit_length/@unit </TT>: [1..1] Required unit for the slit length. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:slit_length </TT>: [0..1] Slit length of the instrument for this detector. Must specify the unit as an attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:SDD/@unit </TT>: [1..1] Required unit for SDD. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:SDD </TT>: [0..1] Distance between sample and detector. Must specify the unit as an attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:z/@unit </TT>: [1..1] Required unit for the dimension of z. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:z </TT>: [0..1] Size of detector pixels in Z. While this is allowed by the standard, it does not make much sense for small-angle scattering. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:y/@unit </TT>: [1..1] Required unit for the dimension of y. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:y </TT>: [0..1] Size of detector pixels in Y. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:x/@unit </TT>: [1..1] Required unit for the dimension of x. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/cs:x </TT>: [0..1] Size of detector pixels in X. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size/@name </TT>: Optional attribute to clarify the name of this detector pixel size. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:pixel_size </TT>: [0..1] Size of detector pixels in X and Y. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:yaw/@unit </TT>: [1..1] Required unit for the dimension of yaw. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:yaw </TT>: [0..1] Optional rotation of the detector about the Y axis (yaw). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:roll/@unit </TT>: [1..1] Required unit for the dimension of roll. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:roll </TT>: [0..1] Optional rotation of the detector about the Z axis (roll). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:pitch/@unit </TT>: [1..1] Required unit for the dimension of pitch. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/cs:pitch </TT>: [0..1] Optional rotation of the detector about the X axis (pitch). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation/@name </TT>: Optional attribute to name this orientation. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:orientation </TT>: [0..1] Orientation (rotation) of the detector in roll, pitch, and yaw. Must specify the unit as an attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:z/@unit </TT>: [1..1] Required unit for the dimension of z. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:z </TT>: [0..1] Offset of the detector position in Z. While this is allowed by the standard, it does not make much sense for small-angle scattering. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:y/@unit </TT>: [1..1] Required unit for the dimension of y. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:y </TT>: [0..1] Offset of the detector position in Y. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:x/@unit </TT>: [1..1] Required unit for the dimension of x. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/cs:x </TT>: [0..1] Offset of the detector position in X. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset/@name </TT>: Optional attribute to clarify the name of this beam size. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:offset </TT>: [0..1] Offset of the detector position in X, Y, and Z. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:name </TT>: [1..1] Name of the detector. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:z/@unit </TT>: [1..1] Required unit for the dimension of z. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:z </TT>: [0..1] Center of the beam on the detector in Z. While this is allowed by the standard, it does not make much sense for small-angle scattering. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:y/@unit </TT>: [1..1] Required unit for the dimension of y. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:y </TT>: [0..1] Center of the beam on the detector in Y. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:x/@unit </TT>: [1..1] Required unit for the dimension of x. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/cs:x </TT>: [0..1] Center of the beam on the detector in X. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center/@name </TT>: Optional attribute to clarify the name of this detector beam center. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center </TT>: [0..1] Center of the beam on the detector in X and Y. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector </TT>: [1..inf] Description of a single or composite detector. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance/@unit </TT>: [1..1] distance requires a unit to be specified. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance </TT>: [0..1] Distance from this collimation element to the sample. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:z/@unit </TT>: [1..1] Required unit for the dimension of z. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:z </TT>: [0..1] Dimension of the aperture in Z. While this is allowed by the standard, it does not make much sense for small-angle scattering. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:y/@unit </TT>: [1..1] Required unit for the dimension of y. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:y </TT>: [0..1] Dimension of the aperture in Y. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:x/@unit </TT>: [1..1] Required unit for the dimension of x. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:x </TT>: [0..1] Dimension of the aperture in X. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/@name </TT>: [1..1] Optional attribute to clarify the name of this beam size. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size </TT>: [0..1] Opening dimensions of this aperture. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/@type </TT>: [1..1] Optional text to describe the type aperture (pinhole, 4-blade slit, Soller slit, ...). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/@name </TT>: [0..1] Optional name for this aperture. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture </TT>: [0..inf] Slit or aperture. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/@name </TT>: [0..1] Optional text to describe this collimation element. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation </TT>: [1..inf] Description of the instrument collimation. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:name </TT>: [1..1] Name of the instrument. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument </TT>: [1..1] Description of the instrument. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Shadowfactor </TT>: [0..1] Describes the adjustment due to the beam stop penumbra. (This definition needs revision. NIST?) NOTE: There is no "unit" attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qmean/@unit </TT>: [1..1] Required unit for Qmean. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qmean </TT>: [0..1] Mean value of Q for this datum. Must specify the unit as an attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qdev/@unit </TT>: [1..1] Required unit for Qdev. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qdev </TT>: [0..1] Estimated standard deviation of Q. Must specify the unit as an attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Q/@unit </TT>: [1..1] Required unit for Q. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Q </TT>: [1..1] Q = (4 pi / lambda) sin(theta) where lambda is the wavelength of the radiation and 2theta is the angle through which the detected radiation has been scattered. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Idev/@unit </TT>: [1..1] Required unit for Idev. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Idev </TT>: [0..1] Estimated standard deviation of I. Must specify the unit as an attribute. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:I/@unit </TT>: [1..1] Required unit for I. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:I </TT>: [1..1] Intensity of the detected radiation. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:dQw/@unit </TT>: [1..1] Required unit for dQw. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:dQw </TT>: [0..1] Q resolution along the axis of scanning (the ''slit width'' direction). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:dQl/@unit </TT>: [1..1] Required unit for dQl. (See @unit for details.) <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:dQl </TT>: [0..1] Q resolution perpendicular to the axis of scanning (the ''slit length'' direction). <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata </TT>: [1..inf] Idata describes a single SAS data point. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:Run/@name </TT>: [0..1] Optional string attribute to identify this particular SASrun. Use this to associate (correlate) multiple SASdata elements with Run elements. (Give them the same name.) <br />
+;<TT> /cs:SASroot/cs:SASentry/<any> </TT>: [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. Use a '''xmlns="some-simple-identification-string"''' to identify that this is a ''foreign element.'' <br />
+
+;<TT>x, y, z </TT>: Coordinates for (x, y, z) values representing a position or dimension. Unit must be specified for each. <br />
+;<TT>roll, pitch, yaw </TT>: Coordinates for (roll, pitch, yaw) values representing an orientation or rotation. Unit must be specified for each. <br />
+;<TT>position/cs:z </TT>: [0..1] Translation along the beam direction. Positive direction increases from source towards detector. Unit must be specified. <br />
+;<TT>position/cs:y </TT>: [0..1] Translation along the vertical gravitational direction. Positive direction increases upward. Unit must be specified. <br />
+;<TT>position/cs:x </TT>: [0..1] Translation in the horizontal direction, orthogonal to Y and Z. Positive X direction increases as defined by Y and Z. Unit must be specified. <br />
+;<TT>orientation/cs:yaw </TT>: [0..1] Rotation about about the Y axis. Unit must be specified. <br />
+;<TT>orientation/cs:roll </TT>: [0..1] Rotation about about the Z axis. Unit must be specified. <br />
+;<TT>orientation/cs:pitch </TT>: [0..1] Rotation about about the X axis. Unit must be specified. <br />
+;<TT>term/@unit </TT>: [1..1] Unit (string) of the term. (See @unit for details.) <br />
+;<TT>term/@name </TT>: [1..1] Name of the term. <br />
+;<TT>term </TT>: [0..1] This is used to specify the value of a single variable, parameter, or term related to the SASprocess step. This could also be used in a SASnote element to indicate terms not associated with a SASprocess step. <br />
+;<TT>@unit </TT>: Data unit to be given in standard SI abbreviations (e.g., m, cm, mm, nm, K) with the following exceptions: um=micrometres C=celsius A=Angstroms percent=%. fraction a.u.=arbitrary units none=no units are relevant (such as dimensionless) <br />
 ; SASroot: [1..1]  <br/> required name of the type of data in this file, 'version="1.0"' is a required attribute
 ;   SASentry: [1..inf]  <br/> a single SAS scan
 ;     Title: [0..1]  <br/> title of this SAS scan

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/cs:xsl" href="xsd-documentation.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="xsd-documentation.xsl" ?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="cansas1d/1.0"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:tns="cansas1d/1.0"
+	targetNamespace="cansas1d/1.0" xmlns:tns="cansas1d/1.0"
 	elementFormDefault="qualified">
 
 	<complexType name="floatUnitType">
@@ -163,7 +162,9 @@
 				type="tns:floatUnitType">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Q</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Q
+						</DT>
 						<DD>
 							[1..1] Q = (4 pi / lambda) sin(theta)
 							<br />
@@ -174,7 +175,9 @@
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Q/@unit</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Q/@unit
+						</DT>
 						<DD>
 							[1..1] Required unit for Q. (See @unit for
 							details.)
@@ -186,13 +189,17 @@
 				type="tns:floatUnitType">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:I</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:I
+						</DT>
 						<DD>
 							[1..1] Intensity of the detected radiation.
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:I/@unit</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:I/@unit
+						</DT>
 						<DD>
 							[1..1] Required unit for I. (See @unit for
 							details.)
@@ -200,34 +207,15 @@
 					</documentation>
 				</annotation>
 			</element>
-			<element name="Qdev" minOccurs="1" maxOccurs="1"
+			<element name="Idev" minOccurs="0" maxOccurs="1"
 				type="tns:floatUnitType" default="0">
 				<annotation>
-					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qdev</DT>
-						<DD>
-							[0..1] Estimated standard deviation of Q.
-							Must specify the unit as an attribute.
-						</DD>
-					</documentation>
 					<documentation>
 						<DT>
-							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qdev/@unit
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Idev
 						</DT>
 						<DD>
-							[1..1] Required unit for Qdev. (See @unit
-							for details.)
-						</DD>
-					</documentation>
-				</annotation>
-			</element>
-			<element name="Idev" minOccurs="1" maxOccurs="1"
-				type="tns:floatUnitType" default="0">
-				<annotation>
-					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Idev</DT>
-						<DD>
-							[1..1] Estimated standard deviation of I.
+							[0..1] Estimated standard deviation of I.
 							Must specify the unit as an attribute.
 						</DD>
 					</documentation>
@@ -242,34 +230,90 @@
 					</documentation>
 				</annotation>
 			</element>
-			<element name="Qfwhm" minOccurs="0" maxOccurs="1"
-				type="tns:floatUnitType" default="0">
-				<annotation>
-					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qfwhm</DT>
-						<DD>
-							[0..1] Q resolution of this datum, defined
-							as full-width in Q at half-maximum
-							intensity. Must specify the unit as an
-							attribute.
-						</DD>
-					</documentation>
-					<documentation>
-						<DT>
-							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qfwhm/@unit
-						</DT>
-						<DD>
-							[1..1] Required unit for Qfwhm. (See @unit
-							for details.)
-						</DD>
-					</documentation>
-				</annotation>
-			</element>
+			<xsd:choice>
+				<!-- [ [Qdev] | [[dQw] | [dQl]] ] -->
+				<element name="Qdev" minOccurs="0" maxOccurs="1"
+					type="tns:floatUnitType" default="0">
+					<annotation>
+						<documentation>
+							<DT>
+								/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qdev
+							</DT>
+							<DD>
+								[0..1] Estimated standard deviation of
+								Q. Must specify the unit as an
+								attribute.
+							</DD>
+						</documentation>
+						<documentation>
+							<DT>
+								/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qdev/@unit
+							</DT>
+							<DD>
+								[1..1] Required unit for Qdev. (See
+								@unit for details.)
+							</DD>
+						</documentation>
+					</annotation>
+				</element>
+				<xsd:sequence>
+					<element name="dQw" minOccurs="0" maxOccurs="1"
+						type="tns:floatUnitType" default="0">
+						<annotation>
+							<documentation>
+								<DT>
+									/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:dQw
+								</DT>
+								<DD>
+									[0..1] Q resolution along the axis
+									of scanning (the high-resolution ''slit width''
+									direction).
+								</DD>
+							</documentation>
+							<documentation>
+								<DT>
+									/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:dQw/@unit
+								</DT>
+								<DD>
+									[1..1] Required unit for dQw. (See
+									@unit for details.)
+								</DD>
+							</documentation>
+						</annotation>
+					</element>
+					<element name="dQl" minOccurs="0" maxOccurs="1"
+						type="tns:floatUnitType" default="0">
+						<annotation>
+							<documentation>
+								<DT>
+									/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:dQl
+								</DT>
+								<DD>
+									[0..1] Q resolution perpendicular to
+									the axis of scanning (the low-resolution ''slit
+									length'' direction).
+								</DD>
+							</documentation>
+							<documentation>
+								<DT>
+									/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:dQl/@unit
+								</DT>
+								<DD>
+									[1..1] Required unit for dQl. (See
+									@unit for details.)
+								</DD>
+							</documentation>
+						</annotation>
+					</element>
+				</xsd:sequence>
+			</xsd:choice>
 			<element name="Qmean" minOccurs="0" maxOccurs="1"
 				type="tns:floatUnitType" default="0">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qmean</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/cs:Qmean
+						</DT>
 						<DD>
 							[0..1] Mean value of Q for this datum. Must
 							specify the unit as an attribute.
@@ -311,7 +355,9 @@
 				type="tns:IdataType">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata
+						</DT>
 						<DD>
 							[1..inf] Idata describes a single SAS data
 							point.
@@ -341,7 +387,9 @@
 				type="string">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:ID</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:ID
+						</DT>
 						<DD>
 							[1..1] Text string that identifies this
 							sample.
@@ -353,7 +401,9 @@
 				type="tns:floatUnitType">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:thickness</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:thickness
+						</DT>
 						<DD>
 							[0..1] Thickness of this sample. Must
 							specify the unit as an attribute.
@@ -390,7 +440,9 @@
 				type="tns:floatUnitType">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:temperature</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:temperature
+						</DT>
 						<DD>
 							[0..1] Temperature of this sample. Must
 							specify the unit as an attribute.
@@ -411,7 +463,9 @@
 				type="tns:positionType">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:position</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:position
+						</DT>
 						<DD>
 							[0..1] Location in X, Y, and Z of the
 							sample. Must specify the unit as an
@@ -427,7 +481,9 @@
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:x</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:x
+						</DT>
 						<DD>[0..1] Location of the sample in X.</DD>
 					</documentation>
 					<documentation>
@@ -440,7 +496,9 @@
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:y</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:y
+						</DT>
 						<DD>[0..1] Location of the sample in Y.</DD>
 					</documentation>
 					<documentation>
@@ -453,7 +511,9 @@
 						</DD>
 					</documentation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:z</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:position/cs:z
+						</DT>
 						<DD>
 							[0..1] Location of the sample in Z. While
 							this is allowed by the standard, it does not
@@ -475,7 +535,9 @@
 				type="tns:orientationType">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:orientation
+						</DT>
 						<DD>
 							[0..1] Orientation (rotation) of the sample.
 						</DD>
@@ -548,7 +610,9 @@
 				maxOccurs="unbounded">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASsample/cs:details</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/cs:details
+						</DT>
 						<DD>
 							[0..inf] Text string to supply additional
 							sample details.
@@ -556,6 +620,24 @@
 					</documentation>
 				</annotation>
 			</element>
+			<xsd:any minOccurs="0" maxOccurs="unbounded"
+				processContents="skip" namespace="##other">
+				<annotation>
+					<documentation>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASsample/&lt;any&gt;
+						</DT>
+						<DD>
+							[0..inf] Provision at this point for any
+							element to be entered that is not part of
+							the canSAS standard. Use a
+							'''xmlns="some-simple-identification-string"'''
+							to identify that this is a ''foreign
+							element.''
+						</DD>
+					</documentation>
+				</annotation>
+			</xsd:any>
 		</sequence>
 		<attribute name="name" type="string" use="optional">
 			<annotation>
@@ -572,13 +654,55 @@
 
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
+	<complexType name="termType">
+		<annotation>
+			<documentation>
+				<DT>cs:term</DT>
+				<DD>
+					[0..1] This is used to specify the value of a single
+					variable, parameter, or term related to the
+					SASprocess step. This could also be used in a
+					SASnote element to indicate terms not associated
+					with a SASprocess step.
+				</DD>
+			</documentation>
+		</annotation>
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name" type="string" use="required">
+					<annotation>
+						<documentation>
+							<DT>cs:term/@name</DT>
+							<DD>[1..1] Name of the term.</DD>
+						</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="unit" type="string" use="optional">
+					<annotation>
+						<documentation>
+							<DT>cs:term/@unit</DT>
+							<DD>
+								[1..1] Unit (string) of the term. (See
+								@unit for details.)
+							</DD>
+						</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
 	<complexType name="SASprocessType">
 		<sequence>
 			<element name="name" minOccurs="0" maxOccurs="1"
 				type="string">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASprocess/cs:name</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASprocess/cs:name
+						</DT>
 						<DD>
 							[0..1] Optional name for this data
 							processing or analysis step.
@@ -590,7 +714,9 @@
 				type="string">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASprocess/cs:date</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASprocess/cs:date
+						</DT>
 						<DD>
 							[0..1] Optional date for this data
 							processing or analysis step. *** SHOULD WE
@@ -612,10 +738,13 @@
 					</documentation>
 				</annotation>
 			</element>
-			<element name="term" minOccurs="0" maxOccurs="unbounded">
+			<element name="term" minOccurs="0" maxOccurs="unbounded"
+				type="tns:termType">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASprocess/cs:term</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASprocess/cs:term
+						</DT>
 						<DD>
 							[0..1] This is used to specify the value of
 							a single variable, parameter, or term
@@ -623,40 +752,6 @@
 						</DD>
 					</documentation>
 				</annotation>
-				<complexType>
-					<simpleContent>
-						<extension base="string">
-							<attribute name="name" type="string"
-								use="required">
-								<annotation>
-									<documentation>
-										<DT>
-											/cs:SASroot/cs:SASentry/cs:SASprocess/cs:term/@name
-										</DT>
-										<DD>
-											[1..1] Name of the term.
-										</DD>
-									</documentation>
-								</annotation>
-							</attribute>
-							<attribute name="unit" type="string"
-								use="optional">
-								<annotation>
-									<documentation>
-										<DT>
-											/cs:SASroot/cs:SASentry/cs:SASprocess/cs:term/@unit
-										</DT>
-										<DD>
-											[1..1] Unit (string) of the
-											term. (See @unit for
-											details.)
-										</DD>
-									</documentation>
-								</annotation>
-							</attribute>
-						</extension>
-					</simpleContent>
-				</complexType>
 			</element>
 			<element name="SASprocessnote" minOccurs="1"
 				maxOccurs="unbounded">
@@ -673,6 +768,24 @@
 					</documentation>
 				</annotation>
 			</element>
+			<xsd:any minOccurs="0" maxOccurs="unbounded"
+				processContents="skip" namespace="##other">
+				<annotation>
+					<documentation>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASprocess/cs:SASprocessnote/&lt;any&gt;
+						</DT>
+						<DD>
+							[0..inf] Provision at this point for any
+							element to be entered that is not part of
+							the canSAS standard. Use a
+							'''xmlns="some-simple-identification-string"'''
+							to identify that this is a ''foreign
+							element.''
+						</DD>
+					</documentation>
+				</annotation>
+			</xsd:any>
 		</sequence>
 		<attribute name="name" type="string" use="optional">
 			<annotation>
@@ -681,8 +794,9 @@
 					<DD>
 						[0..1] Optional attribute to provide a name for
 						this SASprocess. It is redundant with
-						/cs:SASroot/cs:SASentry/cs:SASprocess/cs:name but it is not
-						the same. It should probably be removed.
+						/cs:SASroot/cs:SASentry/cs:SASprocess/cs:name
+						but it is not the same. It should probably be
+						removed.
 					</DD>
 				</documentation>
 			</annotation>
@@ -923,7 +1037,8 @@
 							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance
 						</DT>
 						<DD>
-							[0..1] Distance from this collimation element to the sample.
+							[0..1] Distance from this collimation
+							element to the sample.
 						</DD>
 					</documentation>
 					<documentation>
@@ -931,7 +1046,8 @@
 							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance/@unit
 						</DT>
 						<DD>
-							[1..1] distance requires a unit to be specified. (See @unit for details.)
+							[1..1] distance requires a unit to be
+							specified. (See @unit for details.)
 						</DD>
 					</documentation>
 				</annotation>
@@ -956,7 +1072,8 @@
 										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size
 									</DT>
 									<DD>
-										[0..1] Opening dimensions of this aperture.
+										[0..1] Opening dimensions of
+										this aperture.
 									</DD>
 								</documentation>
 								<documentation>
@@ -964,7 +1081,9 @@
 										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/@name
 									</DT>
 									<DD>
-										[1..1] Optional attribute to clarify the name of this beam size.
+										[1..1] Optional attribute to
+										clarify the name of this beam
+										size.
 									</DD>
 								</documentation>
 								<documentation>
@@ -972,7 +1091,8 @@
 										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:x
 									</DT>
 									<DD>
-										[0..1] Dimension of the aperture in X.
+										[0..1] Dimension of the aperture
+										in X.
 									</DD>
 								</documentation>
 								<documentation>
@@ -980,7 +1100,9 @@
 										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:x/@unit
 									</DT>
 									<DD>
-										[1..1] Required unit for the dimension of x. (See @unit for details.)
+										[1..1] Required unit for the
+										dimension of x. (See @unit for
+										details.)
 									</DD>
 								</documentation>
 								<documentation>
@@ -988,7 +1110,8 @@
 										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:y
 									</DT>
 									<DD>
-										[0..1] Dimension of the aperture in Y.
+										[0..1] Dimension of the aperture
+										in Y.
 									</DD>
 								</documentation>
 								<documentation>
@@ -1020,33 +1143,6 @@
 									<DD>
 										[1..1] Required unit for the
 										dimension of z. (See @unit for
-										details.)
-									</DD>
-								</documentation>
-							</annotation>
-						</element>
-						<element name="distance" minOccurs="0"
-							maxOccurs="1" type="tns:floatUnitType">
-							<annotation>
-								<documentation>
-									<DT>
-										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:distance
-									</DT>
-									<DD>
-										[0..1] Is this necessary? What
-										is the difference between
-										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance
-										and
-										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:distance?
-									</DD>
-								</documentation>
-								<documentation>
-									<DT>
-										/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:distance/@unit
-									</DT>
-									<DD>
-										[1..1] distance requires a unit
-										to be specified. (See @unit for
 										details.)
 									</DD>
 								</documentation>
@@ -1473,33 +1569,35 @@
 				maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:name</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:name
+						</DT>
 						<DD>[1..1] Name of the instrument.</DD>
 					</documentation>
 				</annotation>
 			</element>
-			<element name="SASsource" type="tns:SASsourceType">
+			<element name="SASsource" type="tns:SASsourceType" minOccurs="1" maxOccurs="1">
 				<annotation>
 					<documentation>
 						<DT>
 							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASsource
 						</DT>
 						<DD>
-							[] Description of the source of the
+							[1..1] Description of the source of the
 							radiation.
 						</DD>
 					</documentation>
 				</annotation>
 			</element>
 			<element name="SAScollimation"
-				type="tns:SAScollimationType">
+				type="tns:SAScollimationType" minOccurs="1" maxOccurs="unbounded">
 				<annotation>
 					<documentation>
 						<DT>
 							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation
 						</DT>
 						<DD>
-							[] Description of the instrument
+							[1..inf] Description of the instrument
 							collimation.
 						</DD>
 					</documentation>
@@ -1575,6 +1673,24 @@
 					</simpleContent>
 				</xsd:complexType>
 			</element>
+			<xsd:any minOccurs="0" maxOccurs="unbounded"
+				processContents="skip" namespace="##other">
+				<annotation>
+					<documentation>
+						<DT>
+							/cs:SASroot/cs:SASentry/&lt;any&gt;
+						</DT>
+						<DD>
+							[0..inf] Provision at this point for any
+							element to be entered that is not part of
+							the canSAS standard. Use a
+							'''xmlns="some-simple-identification-string"'''
+							to identify that this is a ''foreign
+							element.''
+						</DD>
+					</documentation>
+				</annotation>
+			</xsd:any>
 			<element name="SASdata" minOccurs="1" maxOccurs="unbounded"
 				type="tns:SASdataType">
 				<annotation>
@@ -1591,6 +1707,24 @@
 					</documentation>
 				</annotation>
 			</element>
+			<xsd:any minOccurs="0" maxOccurs="unbounded"
+				processContents="skip" namespace="##other">
+				<annotation>
+					<documentation>
+						<DT>
+							/cs:SASroot/cs:SASentry/&lt;any&gt;
+						</DT>
+						<DD>
+							[0..inf] Provision at this point for any
+							element to be entered that is not part of
+							the canSAS standard. Use a
+							'''xmlns="some-simple-identification-string"'''
+							to identify that this is a ''foreign
+							element.''
+						</DD>
+					</documentation>
+				</annotation>
+			</xsd:any>
 			<element name="SASsample" type="tns:SASsampleType">
 				<annotation>
 					<documentation>
@@ -1603,7 +1737,9 @@
 				minOccurs="1" maxOccurs="1">
 				<annotation>
 					<documentation>
-						<DT>/cs:SASroot/cs:SASentry/cs:SASinstrument</DT>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASinstrument
+						</DT>
 						<DD>[1..1] Description of the instrument.</DD>
 					</documentation>
 				</annotation>
@@ -1620,7 +1756,11 @@
 					</documentation>
 				</annotation>
 			</element>
-			<element name="SASnote" minOccurs="1" maxOccurs="unbounded">
+			<element name="SASnote" minOccurs="1"
+				maxOccurs="unbounded">
+				<!-- this is a free-form element.
+					Do not define any content for it or it will become restrictive.
+				-->
 				<annotation>
 					<documentation>
 						<DT>/cs:SASroot/cs:SASentry/cs:SASnote</DT>

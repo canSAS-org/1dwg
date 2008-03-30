@@ -12,9 +12,8 @@
 			<Idata>
 				<Q unit="1/A">0.02</Q>
 				<I unit="1/cm">1000</I>
-				<Qdev unit="1/A">0.01</Qdev>
 				<Idev unit="1/cm">3</Idev>
-				<Qfwhm unit="1/A"><!-- Qfwhm is optional --></Qfwhm>
+				<Qdev unit="1/A">0.01</Qdev>
 				<Qmean unit="1/A"><!-- Qmean is optional --></Qmean>
 				<Shadowfactor><!-- Shadowfactor is optional --></Shadowfactor>
 			</Idata>
