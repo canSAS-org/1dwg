@@ -1037,8 +1037,7 @@
 							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance
 						</DT>
 						<DD>
-							[0..1] Distance from this collimation
-							element to the sample.
+							[0..1] Amount/length of collimation inserted (on a SANS instrument).
 						</DD>
 					</documentation>
 					<documentation>
@@ -1179,6 +1178,29 @@
 						</annotation>
 					</attribute>
 				</complexType>
+			</element>
+			<element name="distance" minOccurs="0" maxOccurs="1"
+				type="tns:floatUnitType">
+				<annotation>
+					<documentation>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:distance
+						</DT>
+						<DD>
+							[0..1] Distance from this collimation
+							element to the sample.
+						</DD>
+					</documentation>
+					<documentation>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:distance/@unit
+						</DT>
+						<DD>
+							[1..1] distance requires a unit to be
+							specified. (See @unit for details.)
+						</DD>
+					</documentation>
+				</annotation>
 			</element>
 		</sequence>
 		<attribute name="name" type="string" use="optional">

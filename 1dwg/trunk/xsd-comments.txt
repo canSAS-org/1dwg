@@ -100,7 +100,7 @@
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector/cs:beam_center </TT>: [0..1] Center of the beam on the detector in X and Y. <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SASdetector </TT>: [1..inf] Description of a single or composite detector. <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance/@unit </TT>: [1..1] distance requires a unit to be specified. (See @unit for details.) <br />
-;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance </TT>: [0..1] Distance from this collimation element to the sample. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance </TT>: [0..1] Amount/length of collimation inserted (on a SANS instrument). <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:z/@unit </TT>: [1..1] Required unit for the dimension of z. (See @unit for details.) <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:z </TT>: [0..1] Dimension of the aperture in Z. While this is allowed by the standard, it does not make much sense for small-angle scattering. <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:y/@unit </TT>: [1..1] Required unit for the dimension of y. (See @unit for details.) <br />
@@ -109,6 +109,8 @@
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:x </TT>: [0..1] Dimension of the aperture in X. <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/@name </TT>: [1..1] Optional attribute to clarify the name of this beam size. <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size </TT>: [0..1] Opening dimensions of this aperture. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:distance </TT>: [0..1] Distance from this collimation element to the sample. <br />
+;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/cs:size/cs:distance/@unit </TT>: [1..1] Required unit for distance. <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/@type </TT>: [1..1] Optional text to describe the type aperture (pinhole, 4-blade slit, Soller slit, ...). <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture/@name </TT>: [0..1] Optional name for this aperture. <br />
 ;<TT> /cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:aperture </TT>: [0..inf] Slit or aperture. <br />

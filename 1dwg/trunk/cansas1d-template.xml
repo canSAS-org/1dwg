@@ -92,12 +92,13 @@
 				<wavelength_spread unit="percent">14.3</wavelength_spread>
 			</SASsource>
 			<SAScollimation name="this name is optional">
-				<distance unit="m">11.000</distance>
+				<distance unit="mm">255.0</distance>
 				<aperture name="source" type="radius">
 					<size>
 						<x unit="mm">50</x>
 						<y unit="mm">2.1</y>
 					</size>
+					<distance unit="m">11.000</distance>
 				</aperture>
 			</SAScollimation>
 			<SASdetector>

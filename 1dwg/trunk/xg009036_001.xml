@@ -100,21 +100,19 @@
 				<wavelength_spread unit="percent">0.10</wavelength_spread>
 			</SASsource>
 			<SAScollimation>
-				<distance unit="m">5.60</distance>
 				<aperture name="source" type="disc">
 					<size>
 						<x unit="mm">3.00</x>
 						<y unit="mm">0.00</y>
 					</size>
+					<distance unit="m">5.60</distance>
 				</aperture>
-			</SAScollimation>
-			<SAScollimation>
-				<distance unit="m">0</distance>
 				<aperture name="sample" type="disc">
 					<size>
 						<x unit="mm">0.80</x>
 						<y unit="mm">0.00</y>
 					</size>
+					<distance unit="m">0</distance>
 				</aperture>
 			</SAScollimation>
 			<SASdetector>
