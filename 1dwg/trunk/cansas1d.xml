@@ -53,11 +53,11 @@
 				</wavelength_spread>
 			</SASsource>
 			<SAScollimation>
-				<distance unit="m">11.000<!-- was: distance_coll --></distance>
 				<aperture name="source" type="radius">
 					<size>
 						<x unit="mm">50</x>
 					</size>
+					<distance unit="m">11.000<!-- was: distance_coll --></distance>
 				</aperture>
 				<aperture name="sample" type="radius">
 					<size>
