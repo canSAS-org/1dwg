@@ -168,7 +168,7 @@
 				<wavelength_max unit="nm"> 1.00 </wavelength_max>
 			</SASsource>
 			<SAScollimation name="fixed">
-				<distance unit="m"> 10.995 </distance>
+				<length unit="m"> 10.995 </length>
 				<aperture name="A2" type="pinhole">
 					<size>
 						<x unit="mm"> 12.0 </x>
@@ -379,7 +379,7 @@
 				<wavelength_max unit="nm"> 1.00 </wavelength_max>
 			</SASsource>
 			<SAScollimation name="fixed">
-				<distance unit="m"> 10.995 </distance>
+				<length unit="m"> 10.995 </length>
 				<aperture name="A2" type="pinhole">
 					<size>
 						<x unit="mm"> 12.0 </x>

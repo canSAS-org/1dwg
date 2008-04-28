@@ -70,7 +70,7 @@
 				<wavelength_spread unit="none">0.00</wavelength_spread>
 			</SASsource>
 			<SAScollimation>
-				<distance unit="m">10.000</distance>
+				<length unit="m">10.000</length>
 			</SAScollimation>
 			<SASdetector>
 				<name />

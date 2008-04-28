@@ -98,7 +98,7 @@
 				<wavelength_spread unit="fraction ">0.10</wavelength_spread>
 			</SASsource>
 			<SAScollimation>
-				<distance unit="m">11.200</distance>
+				<length unit="m">11.200</length>
 			</SAScollimation>
 			<SASdetector>
 				<name />

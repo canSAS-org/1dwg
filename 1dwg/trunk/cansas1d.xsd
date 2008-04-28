@@ -346,6 +346,24 @@
 					</documentation>
 				</annotation>
 			</element>
+			<xsd:any minOccurs="0" maxOccurs="unbounded"
+				processContents="skip" namespace="##other">
+				<annotation>
+					<documentation>
+						<DT>
+							/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/_any_;
+						</DT>
+						<DD>
+							[0..inf] Provision at this point for any
+							element to be entered that is not part of
+							the canSAS standard. Use a
+							'''xmlns="some-simple-identification-string"'''
+							to identify that this is a ''foreign
+							element.''
+						</DD>
+					</documentation>
+				</annotation>
+			</xsd:any>
 		</sequence>
 	</complexType>
 
@@ -625,7 +643,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/cs:SASroot/cs:SASentry/cs:SASsample/&lt;any&gt;
+							/cs:SASroot/cs:SASentry/cs:SASsample/_any_;
 						</DT>
 						<DD>
 							[0..inf] Provision at this point for any
@@ -773,7 +791,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/cs:SASroot/cs:SASentry/cs:SASprocess/cs:SASprocessnote/&lt;any&gt;
+							/cs:SASroot/cs:SASentry/cs:SASprocess/cs:SASprocessnote/_any_;
 						</DT>
 						<DD>
 							[0..inf] Provision at this point for any
@@ -1029,12 +1047,12 @@
 
 	<complexType name="SAScollimationType">
 		<sequence>
-			<element name="distance" minOccurs="0" maxOccurs="1"
+			<element name="length" minOccurs="0" maxOccurs="1"
 				type="tns:floatUnitType">
 				<annotation>
 					<documentation>
 						<DT>
-							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:length
 						</DT>
 						<DD>
 							[0..1] Amount/length of collimation inserted (on a SANS instrument).
@@ -1042,10 +1060,10 @@
 					</documentation>
 					<documentation>
 						<DT>
-							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:distance/@unit
+							/cs:SASroot/cs:SASentry/cs:SASinstrument/cs:SAScollimation/cs:length/@unit
 						</DT>
 						<DD>
-							[1..1] distance requires a unit to be
+							[1..1] length requires a unit to be
 							specified. (See @unit for details.)
 						</DD>
 					</documentation>
@@ -1700,7 +1718,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/cs:SASroot/cs:SASentry/&lt;any&gt;
+							/cs:SASroot/cs:SASentry/_any_;
 						</DT>
 						<DD>
 							[0..inf] Provision at this point for any
@@ -1734,7 +1752,7 @@
 				<annotation>
 					<documentation>
 						<DT>
-							/cs:SASroot/cs:SASentry/&lt;any&gt;
+							/cs:SASroot/cs:SASentry/_any_;
 						</DT>
 						<DD>
 							[0..inf] Provision at this point for any
