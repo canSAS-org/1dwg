@@ -165,7 +165,7 @@
 				<wavelength_max unit="nm">1.00</wavelength_max>
 			</SASsource>
 			<SAScollimation>
-				<distance unit="m">11.000</distance>
+				<length unit="m">11.000</length>
 			</SAScollimation>
 			<SASdetector>
 				<name />
