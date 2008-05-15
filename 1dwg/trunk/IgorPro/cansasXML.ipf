@@ -447,20 +447,6 @@ END
 
 // ==================================================================
 
-FUNCTION CS_fileExists(fileName)
-	// checks if a file can be found and opened
-	// !!! not needed by 2008-03-13 change in XmlOpenFile()
-	STRING fileName
-	VARIABLE refNum
-	Open/R/Z/P=home refNum as fileName
-	IF (V_flag == 0)
-		CLOSE refNum
-	ENDIF
-	RETURN( !V_flag )
-END
-
-// ==================================================================
-
 FUNCTION CS_appendMetaData(key, xpath, value)
 	STRING key, xpath, value
 	WAVE/T metadata
@@ -664,9 +650,7 @@ END
 Function/T   TrimWS(str)
     // TrimWhiteSpace (code from Jon Tischler)
     String str
-    str = TrimWSL(str)
-    str = TrimWSR(str)
-    return str
+    return TrimWSL(TrimWSR(str))
 End
 
 // ==================================================================
