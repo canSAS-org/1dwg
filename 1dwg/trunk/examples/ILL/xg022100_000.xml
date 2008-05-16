@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl"
+ href="xg.xsl"?>
+<!--SASroot version="1.0"
+xmlns="http://www.smallangles.net/cansas1d"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http:www.smallangles.net/cansas1d/ http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd"-->
+<SASroot version="1.0">
+<SASentry>
+<Title>teflon              </Title>
+<Run>022100</Run>
+<SASdata>
+   <Idata><Q unit="1/A">0.000E+00</Q><I unit="count">0.0000E+00</I><Idev unit="count">0.000E+00</Idev><Qdev unit="1/A">0.00E+00</Qdev></Idata>
+   <Idata><Q unit="1/A">0.148E-02</Q><I unit="count">0.5600E+02</I><Idev unit="count">0.374E+01</Idev><Qdev unit="1/A">0.21E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.369E-02</Q><I unit="count">0.7158E+02</I><Idev unit="count">0.244E+01</Idev><Qdev unit="1/A">0.21E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.572E-02</Q><I unit="count">0.7638E+02</I><Idev unit="count">0.218E+01</Idev><Qdev unit="1/A">0.21E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.803E-02</Q><I unit="count">0.1194E+04</I><Idev unit="count">0.653E+01</Idev><Qdev unit="1/A">0.21E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.101E-01</Q><I unit="count">0.2465E+04</I><Idev unit="count">0.938E+01</Idev><Qdev unit="1/A">0.21E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.122E-01</Q><I unit="count">0.1733E+04</I><Idev unit="count">0.694E+01</Idev><Qdev unit="1/A">0.22E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.144E-01</Q><I unit="count">0.1262E+04</I><Idev unit="count">0.513E+01</Idev><Qdev unit="1/A">0.22E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.164E-01</Q><I unit="count">0.7854E+03</I><Idev unit="count">0.422E+01</Idev><Qdev unit="1/A">0.22E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.185E-01</Q><I unit="count">0.5127E+03</I><Idev unit="count">0.292E+01</Idev><Qdev unit="1/A">0.22E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.206E-01</Q><I unit="count">0.3436E+03</I><Idev unit="count">0.248E+01</Idev><Qdev unit="1/A">0.23E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.227E-01</Q><I unit="count">0.2361E+03</I><Idev unit="count">0.176E+01</Idev><Qdev unit="1/A">0.23E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.249E-01</Q><I unit="count">0.1689E+03</I><Idev unit="count">0.149E+01</Idev><Qdev unit="1/A">0.23E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.272E-01</Q><I unit="count">0.1204E+03</I><Idev unit="count">0.114E+01</Idev><Qdev unit="1/A">0.24E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.293E-01</Q><I unit="count">0.9296E+02</I><Idev unit="count">0.108E+01</Idev><Qdev unit="1/A">0.24E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.314E-01</Q><I unit="count">0.7251E+02</I><Idev unit="count">0.852E+00</Idev><Qdev unit="1/A">0.25E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.336E-01</Q><I unit="count">0.5634E+02</I><Idev unit="count">0.722E+00</Idev><Qdev unit="1/A">0.25E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.356E-01</Q><I unit="count">0.4614E+02</I><Idev unit="count">0.693E+00</Idev><Qdev unit="1/A">0.26E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.377E-01</Q><I unit="count">0.3803E+02</I><Idev unit="count">0.573E+00</Idev><Qdev unit="1/A">0.26E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.397E-01</Q><I unit="count">0.3109E+02</I><Idev unit="count">0.518E+00</Idev><Qdev unit="1/A">0.27E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.418E-01</Q><I unit="count">0.2596E+02</I><Idev unit="count">0.458E+00</Idev><Qdev unit="1/A">0.27E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.439E-01</Q><I unit="count">0.2305E+02</I><Idev unit="count">0.400E+00</Idev><Qdev unit="1/A">0.28E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.460E-01</Q><I unit="count">0.1910E+02</I><Idev unit="count">0.393E+00</Idev><Qdev unit="1/A">0.29E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.482E-01</Q><I unit="count">0.1638E+02</I><Idev unit="count">0.309E+00</Idev><Qdev unit="1/A">0.29E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.504E-01</Q><I unit="count">0.1470E+02</I><Idev unit="count">0.320E+00</Idev><Qdev unit="1/A">0.30E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.524E-01</Q><I unit="count">0.1286E+02</I><Idev unit="count">0.287E+00</Idev><Qdev unit="1/A">0.31E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.544E-01</Q><I unit="count">0.1210E+02</I><Idev unit="count">0.279E+00</Idev><Qdev unit="1/A">0.31E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.565E-01</Q><I unit="count">0.1084E+02</I><Idev unit="count">0.245E+00</Idev><Qdev unit="1/A">0.32E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.587E-01</Q><I unit="count">0.1028E+02</I><Idev unit="count">0.236E+00</Idev><Qdev unit="1/A">0.32E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.608E-01</Q><I unit="count">0.9306E+01</I><Idev unit="count">0.227E+00</Idev><Qdev unit="1/A">0.33E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.628E-01</Q><I unit="count">0.8574E+01</I><Idev unit="count">0.214E+00</Idev><Qdev unit="1/A">0.34E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.649E-01</Q><I unit="count">0.8390E+01</I><Idev unit="count">0.205E+00</Idev><Qdev unit="1/A">0.35E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.670E-01</Q><I unit="count">0.7755E+01</I><Idev unit="count">0.199E+00</Idev><Qdev unit="1/A">0.35E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.691E-01</Q><I unit="count">0.7403E+01</I><Idev unit="count">0.244E+00</Idev><Qdev unit="1/A">0.36E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.710E-01</Q><I unit="count">0.7028E+01</I><Idev unit="count">0.255E+00</Idev><Qdev unit="1/A">0.37E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.732E-01</Q><I unit="count">0.7050E+01</I><Idev unit="count">0.242E+00</Idev><Qdev unit="1/A">0.37E-02</Qdev></Idata>
+   <Idata><Q unit="1/A">0.746E-01</Q><I unit="count">0.6375E+01</I><Idev unit="count">0.631E+00</Idev><Qdev unit="1/A">0.38E-02</Qdev></Idata>
+</SASdata>
+<SASsample>
+<temperature unit="C">    0.0000</temperature>
+<orientation> 
+<yaw unit="degree">     0.000</yaw>
+</orientation>
+<transmission> 0.0000</transmission>
+<thickness unit="mm">  0.00</thickness>
+</SASsample>
+<SASinstrument name="D11 " > 
+<SASsource>
+<radiation>neutron</radiation>
+<wavelength unit="A">  10.00</wavelength>
+<wavelength_spread unit="percent">    0.01</wavelength_spread>/</SASsource>
+<SAScollimation>
+<aperture name="source">
+<x unit="mm">   3.00</x>
+<y unit="mm">   0.00</y>
+<distance unit="m">   5.00</distance>
+
+<shape>disc</shape>
+</aperture>
+<aperture name="sample">
+<x unit="mm">   1.30</x>
+<y unit="mm">   0.00</y>
+<distance unit="m">   0.00</distance>
+
+<shape>disc</shape>
+</aperture>
+</SAScollimation>
+<SASdetector>
+<SDD unit="m">    3.000</SDD>
+<beam_center>
+<x unit="mm">  315.00 </x>
+<y unit="mm">  315.00 </y>
+</beam_center>
+<pixel_size>
+<x unit="mm">    0.00 </x>
+<y unit="mm">    0.00 </y>
+</pixel_size>
+<orientation><yaw unit="degree">   0.00</yaw></orientation>
+</SASdetector>
+</SASinstrument>
+<SASprocess name="rnil" >
+<term name="Run_extension">000</term>
+<term name="Source_file">g022100.000</term>
+<term name="Flux_monitor"> 100000.00</term>
+<term name="Count_time" unit="s">    34.900</term>
+<term name="Q_resolution">estimated</term>
+<term name="radial_step" unit="mm">  10.000 </term>
+<term name="sector_width" unit="degree">  180.0 </term>
+<term name="sector_orientation" unit="degree">     0.0 </term>
+<SASprocessnote>created by rnil  04-May-2008 19:15:51   </SASprocessnote>
+</SASprocess>
+</SASentry>
+</SASroot>
