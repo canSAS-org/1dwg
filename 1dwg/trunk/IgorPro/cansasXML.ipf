@@ -1,9 +1,9 @@
 #pragma rtGlobals=1		// Use modern global access method.
-#pragma version=1.06
+#pragma version=1.07
 
 // file:	cansasXML.ipf
 // author:	Pete R. Jemian <jemian@anl.gov>
-// date:	2008-05-18
+// date:	2008-05-19
 // purpose:  implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files
 //			adheres to the cansas1d/1.0 standard
 // readme:    http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_IgorPro
@@ -30,6 +30,7 @@ FUNCTION CS_XmlReader(fileName)
 	//		-2: root element is not <SASroot> with valid canSAS namespace
 	//		-3: <SASroot> version  is not 1.0
 	//		-4: no <SASentry> elements
+	//		-5: XOPutils needs upgrade
 	//
 	STRING fileName
 	STRING origFolder
@@ -67,9 +68,23 @@ FUNCTION CS_XmlReader(fileName)
 		RETURN(-1)						// could not find file
 	ENDIF
 
+	//
+	//	test to see if XOPutils has the needed upgrade
+	//
+	XMLlistXpath(fileID, "/*", "")	
+	IF ( EXISTS( "M_listXPath" ) == 0 )
+		XmlCloseFile(fileID,0)
+		errorMsg = "XOPutils needs an upgrade:  http://www.igorexchange.com/project/XMLutils"
+		PRINT errorMsg
+		SetDataFolder $origFolder
+		RETURN(-5)						// XOPutils needs an upgrade
+	ENDIF
+	WAVE/T 	M_listXPath
+
 	// check for canSAS namespace string, returns "" if not valid or not found
 	STRING/G ns = CS_getDefaultNamespace(fileID)
 	IF (strlen(ns) == 0 )
+		XmlCloseFile(fileID,0)
 		errorMsg = "root element is not <SASroot> with valid canSAS namespace"
 		PRINT errorMsg
 		SetDataFolder $origFolder
@@ -120,23 +135,19 @@ FUNCTION/S CS_getDefaultNamespace(fileID)
 	// It is possible to call XMLelemList and get the namespace directly
 	// but that call can be expensive (time) when there are lots of elements.
 	VARIABLE fileID
-	STRING ns = "", thisNS
-	STRING p = "cs"
+	STRING ns = "", thisLocation
 	VARIABLE i, item
 	MAKE/T/N=(1)/O nsList		// list of all possible namespaces
 	nsList[0] = "cansas1d/1.0"		// first version of canSAS 1-D reduced SAS
 
 	FOR (item = 0; item < DimSize(nsList, 0); item += 1)		// loop over all possible namespaces
-		XMLlistAttr(fileID, "/cs:SASroot", p+"="+nsList[item])
+		XMLlistAttr(fileID, "/cs:SASroot", "cs="+nsList[item])
 		WAVE/T M_listAttr
 		FOR (i = 0; i < DimSize(M_listAttr,0); i+=1)			// loop over all available attributes
 			// Expect the required canSAS XML header (will fail if "schemalocation" is not found)
 			IF ( CmpStr(  LowerStr(M_listAttr[i][1]),  LowerStr("schemaLocation") ) == 0 )
-				thisNS = StringFromList( 0, M_listAttr[i][2], " " )	// get the first string
-				IF ( strlen(thisNS) == strlen(M_listAttr[i][2]) )		// just in case tab-delimited
-					thisNS = StringFromList( 0, M_listAttr[i][2], "\t" )	// get the first string
-				ENDIF
-				IF ( CmpStr(  TrimWS(thisNS),  nsList[item] ) == 0 )
+				thisLocation = TrimWS(M_listAttr[i][2])
+				IF ( StringMatch(thisLocation, nsList[item] + "*") )
 					ns = nsList[item]
 					BREAK		// found it!
 				ENDIF
@@ -233,7 +244,7 @@ FUNCTION CS_1i_getOneSASdata(fileID, Title, SASdataPath)
 
 	SVAR ns = root:Packages:CS_XMLreader:ns
 	CS_appendMetaData(fileID, "namespace", "", ns)
-	CS_appendMetaData(fileID, "title", "", Title)
+	CS_appendMetaData(fileID, "Title", "", Title)
 	
 	XmlListXpath(fileID, SASdataPath + "/..//cs:Run", nsStr)
 	WAVE/T 	M_listXPath
@@ -259,10 +270,10 @@ FUNCTION CS_1i_getOneVector(file,prefix,XML_name,Igor_name)
 	SVAR nsPre = root:Packages:CS_XMLreader:nsPre
 	SVAR nsStr = root:Packages:CS_XMLreader:nsStr
 
-	XmlWaveFmXpath(file,prefix+XML_name,nsStr,"")	//this loads ALL the vector's nodes at the same time
+	XmlWaveFmXpath(file,prefix+XML_name,nsStr,"")			//this loads ALL the vector's nodes at the same time
 	WAVE/T M_xmlcontent
 	WAVE/T W_xmlContentNodes
-	IF (DimSize(M_xmlcontent, 0))	//this is a test to see if the nodes exist.  this isn't strictly necessary if you know they're there
+	IF (DimSize(M_xmlcontent, 0))			// test to see if the nodes exist.  not strictly necessary if you know the nodes are there
 		IF (DimSize(M_xmlcontent,1)>DimSize(M_xmlcontent,0))	//if you're not in vector mode
 			MatrixTranspose M_xmlcontent
 		ENDIF
@@ -299,13 +310,12 @@ FUNCTION CS_1i_GetReducedSASdata(fileID, SASdataPath)
 	ELSE				// search for _ANY_ data vectors
 		// find the names of all the data columns and load them as vectors
 	 	// this gets tricky if we want to avoid namespace references
-//		XmlListXpath(fileID, "//"+nsPre+":SASentry["+num2istr(i)+"]//"+nsPre+":Idata[1]/*", nsStr)
 		XmlListXpath(fileID, SASdataPath+"//cs:Idata[1]/*", nsStr)
 		WAVE/T M_listXPath
 		STRING xmlElement, xPathStr
 		STRING igorWave
 		VARIABLE j
-		FOR (j = 0; j < DimSize(M_listXPath, 0); j += 1)
+		FOR (j = 0; j < DimSize(M_listXPath, 0); j += 1)	// loop over all columns in SASdata/Idata[1]
 			xmlElement = M_listXPath[j][1]
 			STRSWITCH(xmlElement)
 				CASE "Q":		// IgorPro does not allow a variable named Q
@@ -335,7 +345,7 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 	STRING sasEntryPath
 	VARIABLE i, j
 	WAVE/T metadata
-	STRING suffix = ""
+	STRING suffix = "", preMeta = "", preXpath = ""
 	STRING value, detailsPath, detectorPath, notePath
 
 	SVAR nsPre = root:Packages:CS_XMLreader:nsPre
@@ -345,24 +355,25 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 	// first, fill a table with keywords, and XPath locations, 3rd column will be values
 
 	// handle most <SASsample> fields
-	CS_appendMetaData(fileID, "sample/ID",  					sasEntryPath + "/cs:SASsample/cs:ID", "")
-	CS_appendMetaData(fileID, "sample/thickness",				sasEntryPath + "/cs:SASsample/cs:thickness", "")
-	CS_appendMetaData(fileID, "sample/thickness/@unit",		sasEntryPath + "/cs:SASsample/cs:thickness/@unit", "")
-	CS_appendMetaData(fileID, "sample/transmission",			sasEntryPath + "/cs:SASsample/cs:transmission", "")
-	CS_appendMetaData(fileID, "sample/temperature", 			sasEntryPath + "/cs:SASsample/cs:temperature", "")
-	CS_appendMetaData(fileID, "sample/temperature/@unit",		sasEntryPath + "/cs:SASsample/cs:temperature/@unit", "")
-	CS_appendMetaData(fileID, "sample/position/x",  			sasEntryPath + "/cs:SASsample/cs:position/cs:x", "")
-	CS_appendMetaData(fileID, "sample/position/x/@unit",		sasEntryPath + "/cs:SASsample/cs:position/cs:x/@unit", "")
-	CS_appendMetaData(fileID, "sample/position/y",  			sasEntryPath + "/cs:SASsample/cs:position/cs:y", "")
-	CS_appendMetaData(fileID, "sample/position/y/@unit",		sasEntryPath + "/cs:SASsample/cs:position/cs:y/@unit", "")
-	CS_appendMetaData(fileID, "sample/position/z",  			sasEntryPath + "/cs:SASsample/cs:position/cs:z", "")
-	CS_appendMetaData(fileID, "sample/position/z/@unit",		sasEntryPath + "/cs:SASsample/cs:position/cs:z/@unit", "")
-	CS_appendMetaData(fileID, "sample/orientation/roll",			sasEntryPath + "/cs:SASsample/cs:orientation/cs:roll", "")
-	CS_appendMetaData(fileID, "sample/orientation/roll/@unit",	sasEntryPath + "/cs:SASsample/cs:orientation/cs:roll/@unit", "")
-	CS_appendMetaData(fileID, "sample/orientation/pitch",		sasEntryPath + "/cs:SASsample/cs:orientation/cs:pitch", "")
-	CS_appendMetaData(fileID, "sample/orientation/pitch/@unit",	sasEntryPath + "/cs:SASsample/cs:orientation/cs:pitch/@unit", "")
-	CS_appendMetaData(fileID, "sample/orientation/yaw",			sasEntryPath + "/cs:SASsample/cs:orientation/cs:yaw", "")
-	CS_appendMetaData(fileID, "sample/orientation/yaw/@unit",	sasEntryPath + "/cs:SASsample/cs:orientation/cs:yaw/@unit", "")
+	CS_appendMetaData(fileID, "SASsample/@name",				sasEntryPath + "/cs:SASsample/@name", "")
+	CS_appendMetaData(fileID, "SASsample/ID",					sasEntryPath + "/cs:SASsample/cs:ID", "")
+	CS_appendMetaData(fileID, "SASsample/thickness",				sasEntryPath + "/cs:SASsample/cs:thickness", "")
+	CS_appendMetaData(fileID, "SASsample/thickness/@unit",  		sasEntryPath + "/cs:SASsample/cs:thickness/@unit", "")
+	CS_appendMetaData(fileID, "SASsample/transmission",			sasEntryPath + "/cs:SASsample/cs:transmission", "")
+	CS_appendMetaData(fileID, "SASsample/temperature",			sasEntryPath + "/cs:SASsample/cs:temperature", "")
+	CS_appendMetaData(fileID, "SASsample/temperature/@unit",	   sasEntryPath + "/cs:SASsample/cs:temperature/@unit", "")
+	CS_appendMetaData(fileID, "SASsample/position/x",			   sasEntryPath + "/cs:SASsample/cs:position/cs:x", "")
+	CS_appendMetaData(fileID, "SASsample/position/x/@unit", 	   sasEntryPath + "/cs:SASsample/cs:position/cs:x/@unit", "")
+	CS_appendMetaData(fileID, "SASsample/position/y",			   sasEntryPath + "/cs:SASsample/cs:position/cs:y", "")
+	CS_appendMetaData(fileID, "SASsample/position/y/@unit", 	   sasEntryPath + "/cs:SASsample/cs:position/cs:y/@unit", "")
+	CS_appendMetaData(fileID, "SASsample/position/z",			   sasEntryPath + "/cs:SASsample/cs:position/cs:z", "")
+	CS_appendMetaData(fileID, "SASsample/position/z/@unit", 	   sasEntryPath + "/cs:SASsample/cs:position/cs:z/@unit", "")
+	CS_appendMetaData(fileID, "SASsample/orientation/roll", 		   sasEntryPath + "/cs:SASsample/cs:orientation/cs:roll", "")
+	CS_appendMetaData(fileID, "SASsample/orientation/roll/@unit",	   sasEntryPath + "/cs:SASsample/cs:orientation/cs:roll/@unit", "")
+	CS_appendMetaData(fileID, "SASsample/orientation/pitch",	   sasEntryPath + "/cs:SASsample/cs:orientation/cs:pitch", "")
+	CS_appendMetaData(fileID, "SASsample/orientation/pitch/@unit",     sasEntryPath + "/cs:SASsample/cs:orientation/cs:pitch/@unit", "")
+	CS_appendMetaData(fileID, "SASsample/orientation/yaw",  		   sasEntryPath + "/cs:SASsample/cs:orientation/cs:yaw", "")
+	CS_appendMetaData(fileID, "SASsample/orientation/yaw/@unit",	   sasEntryPath + "/cs:SASsample/cs:orientation/cs:yaw/@unit", "")
 	// <SASsample><details> might appear multiple times, too!
 	XmlListXpath(fileID, sasEntryPath+"/cs:SASsample//cs:details", nsStr)	//output: M_listXPath
 	WAVE/T 	M_listXPath
@@ -373,109 +384,119 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 			suffix = "_" + num2str(i)
 		ENDIF
 		detailsPath = detailsList[i][0]
-		CS_appendMetaData(fileID, "sample/details"+suffix+"/@name", 	detailsPath + "/@name", "")
-		CS_appendMetaData(fileID, "sample/details"+suffix,	 	detailsPath, "")
+		CS_appendMetaData(fileID, "SASsample/details"+suffix+"/@name", 	detailsPath + "/@name", "")
+		CS_appendMetaData(fileID, "SASsample/details"+suffix,	 	detailsPath, "")
 	ENDFOR
 
 
 	// <SASinstrument>
-	CS_appendMetaData(fileID, "Instrument/name",		sasEntryPath + "/cs:SASinstrument/cs:name", "")
-	CS_appendMetaData(fileID, "Instrument/@name",	sasEntryPath + "/cs:SASinstrument/@name", "")
+	CS_appendMetaData(fileID, "SASinstrument/name",		sasEntryPath + "/cs:SASinstrument/cs:name", "")
+	CS_appendMetaData(fileID, "SASinstrument/@name",	sasEntryPath + "/cs:SASinstrument/@name", "")
 
 	// <SASinstrument><SASsource>
-	CS_appendMetaData(fileID, "source/@name", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/@name", "")
-	CS_appendMetaData(fileID, "radiation", 			sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:radiation", "")
-	CS_appendMetaData(fileID, "beam/size/@name", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:beam_size/@name", "")
-	CS_appendMetaData(fileID, "beam/size/x", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:x", "")
-	CS_appendMetaData(fileID, "beam/size/x@unit", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:x/@unit", "")
-	CS_appendMetaData(fileID, "beam/size/y", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:y", "")
-	CS_appendMetaData(fileID, "beam/size/y@unit", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:y/@unit", "")
-	CS_appendMetaData(fileID, "beam/size/z", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:z", "")
-	CS_appendMetaData(fileID, "beam/size/z@unit", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:beam_size/cs:z/@unit", "")
-	CS_appendMetaData(fileID, "beam/shape", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:beam_shape", "")
-	CS_appendMetaData(fileID, "wavelength", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:wavelength", "")
-	CS_appendMetaData(fileID, "wavelength/@unit", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:wavelength/@unit", "")
-	CS_appendMetaData(fileID, "wavelength_min", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:wavelength_min", "")
-	CS_appendMetaData(fileID, "wavelength_min/@unit",	sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:wavelength_min/@unit", "")
-	CS_appendMetaData(fileID, "wavelength_max", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:wavelength_max", "")
-	CS_appendMetaData(fileID, "wavelength_max/@unit", 	sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:wavelength_max/@unit", "")
-	CS_appendMetaData(fileID, "wavelength_spread", 		sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:wavelength_spread", "")
-	CS_appendMetaData(fileID, "wavelength_spread/@unit", 	sasEntryPath + "/cs:SASinstrument/cs:SASsource/cs:wavelength_spread/@unit", "")
+	preMeta = "SASinstrument/SASsource"
+	preXpath = sasEntryPath + "/cs:SASinstrument/cs:SASsource"
+	CS_appendMetaData(fileID, preMeta + "/@name",			   preXpath + "/@name", "")
+	CS_appendMetaData(fileID, preMeta + "/radiation",		   preXpath + "/cs:radiation", "")
+	CS_appendMetaData(fileID, preMeta + "/beam/size/@name", 	   preXpath + "/cs:beam_size/@name", "")
+	CS_appendMetaData(fileID, preMeta + "/beam/size/x",		   preXpath + "/cs:beam_size/cs:x", "")
+	CS_appendMetaData(fileID, preMeta + "/beam/size/x@unit",	   preXpath + "/cs:beam_size/cs:x/@unit", "")
+	CS_appendMetaData(fileID, preMeta + "/beam/size/y",		   preXpath + "/cs:beam_size/cs:y", "")
+	CS_appendMetaData(fileID, preMeta + "/beam/size/y@unit",	   preXpath + "/cs:beam_size/cs:y/@unit", "")
+	CS_appendMetaData(fileID, preMeta + "/beam/size/z",		   preXpath + "/cs:beam_size/cs:z", "")
+	CS_appendMetaData(fileID, preMeta + "/beam/size/z@unit",	   preXpath + "/cs:beam_size/cs:z/@unit", "")
+	CS_appendMetaData(fileID, preMeta + "/beam/shape",		   preXpath + "/cs:beam_shape", "")
+	CS_appendMetaData(fileID, preMeta + "/wavelength",		   preXpath + "/cs:wavelength", "")
+	CS_appendMetaData(fileID, preMeta + "/wavelength/@unit",	   preXpath + "/cs:wavelength/@unit", "")
+	CS_appendMetaData(fileID, preMeta + "/wavelength_min",  	   preXpath + "/cs:wavelength_min", "")
+	CS_appendMetaData(fileID, preMeta + "/wavelength_min/@unit",	   preXpath + "/cs:wavelength_min/@unit", "")
+	CS_appendMetaData(fileID, preMeta + "/wavelength_max",  	   preXpath + "/cs:wavelength_max", "")
+	CS_appendMetaData(fileID, preMeta + "/wavelength_max/@unit",	   preXpath + "/cs:wavelength_max/@unit", "")
+	CS_appendMetaData(fileID, preMeta + "/wavelength_spread",	   preXpath + "/cs:wavelength_spread", "")
+	CS_appendMetaData(fileID, preMeta + "/wavelength_spread/@unit",    preXpath + "/cs:wavelength_spread/@unit", "")
 
 	// <SASinstrument><SAScollimation> might appear multiple times
 	XmlListXpath(fileID, sasEntryPath+"/cs:SASinstrument//cs:SAScollimation", nsStr)	//output: M_listXPath
 	WAVE/T 	M_listXPath
 	DUPLICATE/O/T   M_listXPath, SAScollimationList
 	STRING collimationPath
-	suffix = ""
 	FOR (i = 0; i < DimSize(SAScollimationList, 0); i += 1)
+		preMeta = "SASinstrument/SAScollimation"
 		IF (DimSize(SAScollimationList, 0) > 1)
-			suffix = "_" + num2str(i)
+			preMeta += "_" + num2str(i)
 		ENDIF
 		collimationPath = SAScollimationList[i][0]
-		CS_appendMetaData(fileID, "collimation/@name"+suffix,			collimationPath + "/@name", "")
-		CS_appendMetaData(fileID, "collimation/length"+suffix,			collimationPath + "/cs:length", "")
-		CS_appendMetaData(fileID, "collimation/length_unit"+suffix,		collimationPath + "/cs:length/@unit", "")
-		CS_appendMetaData(fileID, "collimation/aperture/@name"+suffix,		collimationPath + "/cs:aperture/@name", "")
-		CS_appendMetaData(fileID, "collimation/aperture/type"+suffix,		collimationPath + "/cs:aperture/cs:type", "")
-		CS_appendMetaData(fileID, "collimation/aperture/size/@name"+suffix,	collimationPath + "/cs:aperture/cs:size/@name", "")
-		CS_appendMetaData(fileID, "collimation/aperture/size/x"+suffix, 	collimationPath + "/cs:aperture/cs:size/cs:x", "")
-		CS_appendMetaData(fileID, "collimation/aperture/size/x/@unit"+suffix,	collimationPath + "/cs:aperture/cs:size/cs:x/@unit", "")
-		CS_appendMetaData(fileID, "collimation/aperture/size/y"+suffix, 	collimationPath + "/cs:aperture/cs:size/cs:y", "")
-		CS_appendMetaData(fileID, "collimation/aperture/size/y/@unit"+suffix,	collimationPath + "/cs:aperture/cs:size/cs:y/@unit", "")
-		CS_appendMetaData(fileID, "collimation/aperture/size/z"+suffix, 	collimationPath + "/cs:aperture/cs:size/cs:z", "")
-		CS_appendMetaData(fileID, "collimation/aperture/size/z/@unit"+suffix,	collimationPath + "/cs:aperture/cs:size/cs:z/@unit", "")
-		CS_appendMetaData(fileID, "collimation/aperture/distance"+suffix,	collimationPath + "/cs:aperture/cs:distance", "")
-		CS_appendMetaData(fileID, "collimation/aperture/distance/@unit"+suffix, collimationPath + "/cs:aperture/cs:distance/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/@name",		    collimationPath + "/@name", "")
+		CS_appendMetaData(fileID, preMeta + "/length",		    collimationPath + "/cs:length", "")
+		CS_appendMetaData(fileID, preMeta + "/length_unit",	    collimationPath + "/cs:length/@unit", "")
+		FOR (j = 0; j < DimSize(M_listXPath, 0); j += 1)	// aperture may be repeated!
+			IF (DimSize(M_listXPath, 0) == 1)
+				preMeta = "SASinstrument/SAScollimation/aperture"
+			ELSE
+				preMeta = "SASinstrument/SAScollimation/aperture_" + num2str(j)
+			ENDIF
+			preXpath = collimationPath + "/cs:aperture["+num2str(j+1)+"]"
+			CS_appendMetaData(fileID, preMeta + "/@name",	      preXpath + "/@name", "")
+			CS_appendMetaData(fileID, preMeta + "/type",	      preXpath + "/cs:type", "")
+			CS_appendMetaData(fileID, preMeta + "/size/@name",     preXpath + "/cs:size/@name", "")
+			CS_appendMetaData(fileID, preMeta + "/size/x",	      preXpath + "/cs:size/cs:x", "")
+			CS_appendMetaData(fileID, preMeta + "/size/x/@unit",   preXpath + "/cs:size/cs:x/@unit", "")
+			CS_appendMetaData(fileID, preMeta + "/size/y",	      preXpath + "/cs:size/cs:y", "")
+			CS_appendMetaData(fileID, preMeta + "/size/y/@unit",   preXpath + "/cs:size/cs:y/@unit", "")
+			CS_appendMetaData(fileID, preMeta + "/size/z",	      preXpath + "/cs:size/cs:z", "")
+			CS_appendMetaData(fileID, preMeta + "/size/z/@unit",   preXpath + "/cs:size/cs:z/@unit", "")
+			CS_appendMetaData(fileID, preMeta + "/distance",       preXpath + "/cs:distance", "")
+			CS_appendMetaData(fileID, preMeta + "/distance/@unit", preXpath + "/cs:distance/@unit", "")
+		ENDFOR
 	ENDFOR
 
 	// <SASinstrument><SASdetector> might appear multiple times
 	XmlListXpath(fileID, sasEntryPath+"/cs:SASinstrument//cs:SASdetector", nsStr)	//output: M_listXPath
 	WAVE/T 	M_listXPath
 	DUPLICATE/O/T   M_listXPath, SASdetectorList
-	suffix = ""
 	FOR (i = 0; i < DimSize(SASdetectorList, 0); i += 1)
+		preMeta = "SASinstrument/SASdetector"
 		IF (DimSize(SASdetectorList, 0) > 1)
-			suffix = "_" + num2str(i)
+			preMeta += "_" + num2str(i)
 		ENDIF
 		detectorPath = SASdetectorList[i][0]
-		CS_appendMetaData(fileID, "detector/@name"+suffix,			detectorPath + "/cs:name", "")
-		CS_appendMetaData(fileID, "SDD"+suffix, 				detectorPath + "/cs:SDD", "")
-		CS_appendMetaData(fileID, "SDD"+suffix+"/@unit",			detectorPath + "/cs:SDD/@unit", "")
-		CS_appendMetaData(fileID, "detector/offset/@name"+suffix,		detectorPath + "/cs:offset/@name", "")
-		CS_appendMetaData(fileID, "detector/offset/x"+suffix,			detectorPath + "/cs:offset/cs:x", "")
-		CS_appendMetaData(fileID, "detector/offset/x/@unit"+suffix,		detectorPath + "/cs:offset/cs:x/@unit", "")
-		CS_appendMetaData(fileID, "detector/offset/y"+suffix,			detectorPath + "/cs:offset/cs:y", "")
-		CS_appendMetaData(fileID, "detector/offset/y/@unit"+suffix,		detectorPath + "/cs:offset/cs:y/@unit", "")
-		CS_appendMetaData(fileID, "detector/offset/z"+suffix,			detectorPath + "/cs:offset/cs:z", "")
-		CS_appendMetaData(fileID, "detector/offset/z/@unit"+suffix,		detectorPath + "/cs:offset/cs:z/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/@name",			 detectorPath + "/cs:name", "")
+		CS_appendMetaData(fileID, preMeta + "/SDD",				 detectorPath + "/cs:SDD", "")
+		CS_appendMetaData(fileID, preMeta + "/SDD/@unit",			 detectorPath + "/cs:SDD/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/offset/@name",		 detectorPath + "/cs:offset/@name", "")
+		CS_appendMetaData(fileID, preMeta + "/offset/x", 		 detectorPath + "/cs:offset/cs:x", "")
+		CS_appendMetaData(fileID, preMeta + "/offset/x/@unit",		 detectorPath + "/cs:offset/cs:x/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/offset/y", 		 detectorPath + "/cs:offset/cs:y", "")
+		CS_appendMetaData(fileID, preMeta + "/offset/y/@unit",		 detectorPath + "/cs:offset/cs:y/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/offset/z", 		 detectorPath + "/cs:offset/cs:z", "")
+		CS_appendMetaData(fileID, preMeta + "/offset/z/@unit",		 detectorPath + "/cs:offset/cs:z/@unit", "")
 
-		CS_appendMetaData(fileID, "detector/orientation/@name"+suffix,		detectorPath + "/cs:orientation/@name", "")
-		CS_appendMetaData(fileID, "detector/orientation/roll"+suffix,		detectorPath + "/cs:orientation/cs:roll", "")
-		CS_appendMetaData(fileID, "detector/orientation/roll/@unit"+suffix,	detectorPath + "/cs:orientation/cs:roll/@unit", "")
-		CS_appendMetaData(fileID, "detector/orientation/pitch"+suffix,  	detectorPath + "/cs:orientation/cs:pitch", "")
-		CS_appendMetaData(fileID, "detector/orientation/pitch/@unit"+suffix,	detectorPath + "/cs:orientation/cs:pitch/@unit", "")
-		CS_appendMetaData(fileID, "detector/orientation/yaw"+suffix,		detectorPath + "/cs:orientation/cs:yaw", "")
-		CS_appendMetaData(fileID, "detector/orientation/yaw/@unit"+suffix,	detectorPath + "/cs:orientation/cs:yaw/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/orientation/@name",	 detectorPath + "/cs:orientation/@name", "")
+		CS_appendMetaData(fileID, preMeta + "/orientation/roll", 	 detectorPath + "/cs:orientation/cs:roll", "")
+		CS_appendMetaData(fileID, preMeta + "/orientation/roll/@unit",	 detectorPath + "/cs:orientation/cs:roll/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/orientation/pitch",	 detectorPath + "/cs:orientation/cs:pitch", "")
+		CS_appendMetaData(fileID, preMeta + "/orientation/pitch/@unit",   detectorPath + "/cs:orientation/cs:pitch/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/orientation/yaw",  	 detectorPath + "/cs:orientation/cs:yaw", "")
+		CS_appendMetaData(fileID, preMeta + "/orientation/yaw/@unit",	 detectorPath + "/cs:orientation/cs:yaw/@unit", "")
 
-		CS_appendMetaData(fileID, "detector/beam_center/@name"+suffix,		detectorPath + "/cs:beam_center/@name", "")
-		CS_appendMetaData(fileID, "detector/beam_center/x"+suffix,		detectorPath + "/cs:beam_center/cs:x", "")
-		CS_appendMetaData(fileID, "detector/beam_center/x/@unit"+suffix,	detectorPath + "/cs:beam_center/cs:x/@unit", "")
-		CS_appendMetaData(fileID, "detector/beam_center/y"+suffix,		detectorPath + "/cs:beam_center/cs:y", "")
-		CS_appendMetaData(fileID, "detector/beam_center/y/@unit"+suffix,	detectorPath + "/cs:beam_center/cs:y/@unit", "")
-		CS_appendMetaData(fileID, "detector/beam_center/z"+suffix,		detectorPath + "/cs:beam_center/cs:z", "")
-		CS_appendMetaData(fileID, "detector/beam_center/z/@unit"+suffix,	detectorPath + "/cs:beam_center/cs:z/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/beam_center/@name",	 detectorPath + "/cs:beam_center/@name", "")
+		CS_appendMetaData(fileID, preMeta + "/beam_center/x",		 detectorPath + "/cs:beam_center/cs:x", "")
+		CS_appendMetaData(fileID, preMeta + "/beam_center/x/@unit",	 detectorPath + "/cs:beam_center/cs:x/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/beam_center/y",		 detectorPath + "/cs:beam_center/cs:y", "")
+		CS_appendMetaData(fileID, preMeta + "/beam_center/y/@unit",	 detectorPath + "/cs:beam_center/cs:y/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/beam_center/z",		 detectorPath + "/cs:beam_center/cs:z", "")
+		CS_appendMetaData(fileID, preMeta + "/beam_center/z/@unit",	 detectorPath + "/cs:beam_center/cs:z/@unit", "")
 
-		CS_appendMetaData(fileID, "detector/pixel_size/@name"+suffix,		detectorPath + "/cs:pixel_size/@name", "")
-		CS_appendMetaData(fileID, "detector/pixel_size/x"+suffix,		detectorPath + "/cs:pixel_size/cs:x", "")
-		CS_appendMetaData(fileID, "detector/pixel_size/x/@unit"+suffix,  	detectorPath + "/cs:pixel_size/cs:x/@unit", "")
-		CS_appendMetaData(fileID, "detector/pixel_size/y"+suffix,		detectorPath + "/cs:pixel_size/cs:y", "")
-		CS_appendMetaData(fileID, "detector/pixel_size/y/@unit"+suffix,  	detectorPath + "/cs:pixel_size/cs:y/@unit", "")
-		CS_appendMetaData(fileID, "detector/pixel_size/z"+suffix,		detectorPath + "/cs:pixel_size/cs:z", "")
-		CS_appendMetaData(fileID, "detector/pixel_size/z/@unit"+suffix,  	detectorPath + "/cs:pixel_size/cs:z/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/pixel_size/@name", 	 detectorPath + "/cs:pixel_size/@name", "")
+		CS_appendMetaData(fileID, preMeta + "/pixel_size/x",		 detectorPath + "/cs:pixel_size/cs:x", "")
+		CS_appendMetaData(fileID, preMeta + "/pixel_size/x/@unit",	 detectorPath + "/cs:pixel_size/cs:x/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/pixel_size/y",		 detectorPath + "/cs:pixel_size/cs:y", "")
+		CS_appendMetaData(fileID, preMeta + "/pixel_size/y/@unit",	 detectorPath + "/cs:pixel_size/cs:y/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/pixel_size/z",		 detectorPath + "/cs:pixel_size/cs:z", "")
+		CS_appendMetaData(fileID, preMeta + "/pixel_size/z/@unit",	 detectorPath + "/cs:pixel_size/cs:z/@unit", "")
 
-		CS_appendMetaData(fileID, "slit_length"+suffix, 			detectorPath + "/cs:slit_length", "")
-		CS_appendMetaData(fileID, "slit_length"+suffix+"/@unit", 		detectorPath + "/cs:slit_length/@unit", "")
+		CS_appendMetaData(fileID, preMeta + "/slit_length",		       detectorPath + "/cs:slit_length", "")
+		CS_appendMetaData(fileID, preMeta + "/slit_length/@unit",	       detectorPath + "/cs:slit_length/@unit", "")
 	ENDFOR
 
 	// <SASprocess> might appear multiple times
@@ -483,36 +504,37 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 	WAVE/T 	M_listXPath
 	DUPLICATE/O/T   M_listXPath, SASprocessList
 	STRING SASprocessPath
-	suffix = ""
 	FOR (i = 0; i < DimSize(SASprocessList, 0); i += 1)
+		preMeta = "SASprocess"
 		IF (DimSize(SASprocessList, 0) > 1)
-			suffix = "_" + num2str(i)
+			preMeta += "_" + num2str(i)
 		ENDIF
 		SASprocessPath = SASprocessList[i][0]
-		CS_appendMetaData(fileID, "process"+suffix+"/@name",		SASprocessPath + "/@name", "")
-		CS_appendMetaData(fileID, "process"+suffix+"/name",		SASprocessPath + "/cs:name", "")
-		CS_appendMetaData(fileID, "process"+suffix+"/date",			SASprocessPath + "/cs:date", "")
-		CS_appendMetaData(fileID, "process"+suffix+"/description",	SASprocessPath + "/cs:description", "")
+		CS_appendMetaData(fileID, preMeta+"/@name",	   SASprocessPath + "/@name", "")
+		CS_appendMetaData(fileID, preMeta+"/name",	   SASprocessPath + "/cs:name", "")
+		CS_appendMetaData(fileID, preMeta+"/date",		   SASprocessPath + "/cs:date", "")
+		CS_appendMetaData(fileID, preMeta+"/description",   SASprocessPath + "/cs:description", "")
 		XmlListXpath(fileID, SASprocessList[i][0]+"//cs:term", nsStr)
 		FOR (j = 0; j < DimSize(M_listXPath, 0); j += 1)
-			CS_appendMetaData(fileID, "process"+suffix+"/term_"+num2str(j)+"/@name",	M_listXPath[j][0] + "/@name", "")
-			CS_appendMetaData(fileID, "process"+suffix+"/term_"+num2str(j)+"/@unit",		M_listXPath[j][0] + "/@unit", "")
-			CS_appendMetaData(fileID, "process"+suffix+"/term_"+num2str(j),				M_listXPath[j][0], "")
+			CS_appendMetaData(fileID, preMeta+"/term_"+num2str(j)+"/@name",     M_listXPath[j][0] + "/@name", "")
+			CS_appendMetaData(fileID, preMeta+"/term_"+num2str(j)+"/@unit",  	   M_listXPath[j][0] + "/@unit", "")
+			CS_appendMetaData(fileID, preMeta+"/term_"+num2str(j),				   M_listXPath[j][0], "")
 		ENDFOR
+		// ignore <SASprocessnote>
 	ENDFOR
 
 	// <SASnote> might appear multiple times
 	XmlListXpath(fileID, sasEntryPath+"//cs:SASnote", nsStr)	//output: M_listXPath
 	WAVE/T 	M_listXPath
 	DUPLICATE/O/T   M_listXPath, SASnoteList
-	suffix = ""
 	FOR (i = 0; i < DimSize(SASnoteList, 0); i += 1)
+		preMeta = "SASnote"
 		IF (DimSize(SASnoteList, 0) > 1)
-			suffix = "_" + num2str(i)
+			preMeta += "_" + num2str(i)
 		ENDIF
 		notePath = SASnoteList[i][0]
-		CS_appendMetaData(fileID, "SASnote"+suffix+"/@name", 	notePath + "/@name", "")
-		CS_appendMetaData(fileID, "SASnote"+suffix,		notePath, "")
+		CS_appendMetaData(fileID, preMeta+"/@name", 	notePath + "/@name", "")
+		CS_appendMetaData(fileID, preMeta,		notePath, "")
 	ENDFOR
 
 	KillWaves/Z M_listXPath, detailsList, SAScollimationList, SASdetectorList, SASprocessList, SASnoteList
@@ -668,7 +690,7 @@ FUNCTION prjTest_cansas1d()
 	fList = AddListItem("1998spheres.xml", 			fList, ";", Inf)		// 2 SASentry, few thousand data points each
 	fList = AddListItem("does-not-exist-file.xml", 		fList, ";", Inf)		// non-existent file
 	fList = AddListItem("cs_rr_polymers.xml", 		fList, ";", Inf)		// Round Robin polymer samples from John Barnes @ NIST
-	fList = AddListItem("s81-polyurea.xml", 			fList, ";", Inf)		// Round Robin polymer samples from John Barnes @ NIST
+	fList = AddListItem("s81-polyurea.xml", 			fList, ";", Inf)		// polyurea from APS/USAXS/Indra (with extra metadata)
 	
 	// try to load each data set in the table
 	FOR ( i = 0; i < ItemsInList(fList) ; i += 1 )
@@ -687,32 +709,20 @@ FUNCTION prjTest_cansas1d()
 END
 
 
-FUNCTION prjTest_writer(xmlFile)
-	STRING xmlFile
-	VARIABLE fileID
-	STRING nsStr = "cansas1d/1.0", prefixStr = ""
-	fileID = XMLcreateFile(xmlFile,"SASroot",nsStr,prefixStr)
-	XMLsetAttr(fileID,		"/SASroot", 				nsStr, "version", "1.0")
-	XMLsetAttr(fileID,		"/SASroot", 				nsStr, "xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance")
-	XMLsetAttr(fileID,		"/SASroot", 				nsStr, "xsi:schemaLocation", "cansas1d/1.0    http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd")
-	XMLaddNode(fileID, 	"/SASroot", 				nsStr, "SASentry", "", 1)
-	XMLsetAttr(fileID,		"/SASroot/SASentry", 	nsStr, "name", "something")
-	XMLaddNode(fileID, 	"/SASroot/SASentry", 	nsStr, "Title", "my very first title", 1)
-	XMLaddNode(fileID, 	"/SASroot/SASentry", 	nsStr, "Run", "2008-03-19", 1)
-	XMLsetAttr(fileID,		"/SASroot/SASentry/Run", nsStr, "name", "actually is a date")
-	XMLsaveFile(fileID)
-	XMLcloseFile(fileID,0)
-END
-
-
 FUNCTION testCollette()
+					// !!!!!!!!!!!!!!!!! NOTE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					//          THIS IS JUST AN EXAMPLE
 
 // suggestions from ISIS users
-	// 3.	Loading actual data from LOQ caused some problems. Data created by Colette names files with run number. When entering full path to load the data if you use "…\example\31531.X" Igor will read \3 as a character. A simple fix which has worked for this is to use / instead of \ e.g. "…\example/31531.X".
-	// I assume this will not be an issue once a proper pull down menu has been created.
+	// 3.	Loading actual data from LOQ caused some problems. 
+	//	Data created by Colette names files with run number. 
+	//	When entering full path to load the data if you use "…\example\31531.X" Igor will read \3 as a character. 
+	//	A simple fix which has worked for this is to use / instead of \ e.g. "…\example/31531.X".
 	
-	//4.	Once data is loaded in Igor it is relatively easy to work with but would be nicer if the SASdata was loaded into root directory (named using run number rather than generically as it is at the moment) rather than another folder.
-	//This becomes more problematic when two samples are being loaded for comparison. Although still relatively easy to work with, changing the folders can lead to mistakes being made.
+	//4.	Once data is loaded in Igor it is relatively easy to work with but would be nicer if the SASdata 
+	//	was loaded into root directory (named using run number rather than generically as it is at the moment) rather than another folder.
+	//This becomes more problematic when two samples are being loaded for comparison. 
+	//	Although still relatively easy to work with, changing the folders can lead to mistakes being made.
 
 	//Say, for Run=31531, then Qsas_31531
 
@@ -724,7 +734,7 @@ FUNCTION testCollette()
 		SetDataFolder $srcDir
 		importFolder = GetIndexedObjName(srcDir, 4, i)
 		SetDataFolder $importFolder
-		IF ( exists( "metadata" ) == 1 )
+		IF ( EXISTS( "metadata" ) == 1 )
 			// looks like a SAS data folder
 			WAVE/T metadata
 			STRING Run = ""
