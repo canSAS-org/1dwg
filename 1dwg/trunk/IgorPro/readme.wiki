@@ -103,6 +103,117 @@ and create
 a shortcut/alias to the plugin in 
 <nowiki>...\Wavemetrics\Igor Pro Folder\Igor Extensions</nowiki>. 
 
+== What it does ==
+
+Given an XML file, '''CS_XmlReader(fileName)''' attempts to open the file
+and read its contents as if it conformed to the canSAS XML standard for
+reduced 1-D SAS data (cansas1d/1.0, also known as SASXML).  If the file is 
+found to be non-conforming, then '''CS_XmlReader(fileName)''' returns with an
+error code (show below), otherwise it returns '''0''' that indicates ''no error''.
+All data read by this code is left in the IgorPro data folder 
+'''''root:Packages:CS_XMLreader''''' for pickup by the calling routine.
+(Two examples are provided to show how a routine might retrieve the data.)
+
+After opening the XML file (with a file identifier ''fileID''), control is 
+passed to '''CS_1i_parseXml(fileID)''' which then walks through the XML
+elements.  For each '''SASentry''' in the file, a new data folder is created
+with the name derived from the Title element (or best effort determination).
+Efforts are taken to avoid duplication of data folder names (using standard 
+IgorPro routines).  For '''SASentry''' elements that contain  more than one SASdata
+element, a '''SASdata''' folder is created for each and the corresponding ''I(Q)'' 
+is placed in that subfolder.  When only one '''SASdata''' is found, the ''I(Q)''
+data is placed in the main ''Title'' folder.
+
+=== data columns ===
+
+Each column of data in the '''SASdata/Idata/*''' table is placed into a single
+IgorPro wave.  At present, the code does not check for non-standard data columns.
+(The capability is built into the code but is deactivated at present).
+
+=== metadata ===
+
+Additional metadata is collected into a single text wave (''metadata'') where the first column
+is an identifier (or ''key'') and the second identifier is the ''value''.  Only
+those keys with non-empty values are retained in the metadata table.
+'''CAUTION:''' The ''values'' are not checked for characters that may cause trouble when
+placed in a wave note.  This will be the responsibility of the calling routine
+to ''clean these up'' if the need arises.
+
+The code checks for most metadata elements and will check for repeated elements
+where the standard permits.
+
+Here is an example of the metadata for the [[cansas1d_casestudy_collagen | ''cs_collagen_full.xml'']] data:
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | ''i'' (''row'')
+! {{Headcellstyle}} | metadata[''i''][0] (''key'')
+! {{Headcellstyle}} | metadata[''i''][1] (''value'')
+|-
+|| 0
+|| xmlFile
+|| cs_collagen_full.xml
+|-
+|| 1
+|| namespace
+|| cansas1d/1.0
+|-
+|| 2
+|| Title
+|| dry chick collagen, d = 673 A, 6531 eV, X6B
+|-
+|| 3
+|| Run
+|| Sep 19 1994     01:41:02 am
+|-
+|| 4
+|| SASsample/ID
+|| dry chick collagen, d = 673 A, 6531 eV, X6B
+|-
+|| 5
+|| SASinstrument/name
+|| X6B, NSLS, BNL
+|-
+|| 6
+|| SASinstrument/SASsource/radiation
+|| X-ray synchrotron
+|-
+|| 7
+|| SASinstrument/SASsource/wavelength
+|| 1.898
+|-
+|| 8
+|| SASinstrument/SASsource/wavelength/@unit
+|| A
+|-
+|| 9
+|| SASinstrument/SASdetector/@name
+|| X6B PSD
+|-
+|| 10
+|| SASnote
+|| <pre>Sep 19 1994     01:41:02 am     Elt: 00090 Seconds 
+ID: No spectrum identifier defined
+Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls
+
+dry chick collagen, d = 673 A
+6531 eV, X6B</pre>
+|-
+|}
+
+=== XML foreign namespace elements ===
+
+These are ignored at this time.
+
+=== XML namespace and header ===
+
+The routine does a ''best-efforts'' check to ensure that the given
+XML file conforms to the [[cansas1d_documentation#Required_XML_file_header |
+required XML file header]].  If you take a minimalist view (''a.k.a.'' a shortcut),
+it is likely that your file may be refused by this and other readers.  
+Pay particular attention to 
+UPPER/lower case in the text '''cansas1d/1.0''' as this is a '''key component''' used to
+index through the XML file.
 
 ==  List of Functions  ==
 
