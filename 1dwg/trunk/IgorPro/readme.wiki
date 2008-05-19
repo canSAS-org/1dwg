@@ -23,7 +23,10 @@ of choice (including any renaming of waves as desired).
 || Pete R. Jemian <jemian@anl.gov>
 |-
 ! {{Headcellstyle}} | date
-|| 2008-03-31
+|| 2008-05-19
+|-
+! {{Headcellstyle}} | version
+|| 1.07  ('''requires''' latest XMLutils XOP -- see below)
 |-
 ! {{Headcellstyle}} | purpose
 || implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files <br /> adheres to the cansas1d/1.0 standard:  http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
@@ -32,7 +35,7 @@ of choice (including any renaming of waves as desired).
 || 	TRAC: http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf <br /> SVN: http://svn.smallangles.net/svn/canSAS/1dwg/trunk/IgorPro/cansasXML.ipf
 |-
 ! {{Headcellstyle}} | requires
-|| IgorPro: http://www.wavemetrics.com <br /> XMLutils - XOP: http://www.igorexchange.com/project/XMLutils
+|| IgorPro: http://www.wavemetrics.com <br /> XMLutils - XOP: http://www.igorexchange.com/project/XMLutils (IGOR.5.04.x-1.x-dev, 2008-May-19)
 |-
 |}
 
@@ -114,24 +117,29 @@ that together show a usage example.
 *returns:
 **0 successful
 **-1: XML file not found
-**-2: root element is not <SASroot>
+**-2: root element is not <SASroot> with valid canSAS namespace
 **-3: <SASroot> version  is not 1.0
-**-4: no <SASentry> elements
-;CS_1i_parseXml(fileID): given a file ID returned from '''XMLOpenFile()''', parses that file for SAS data and metadata
-;CS_1i_collectMetadata(fileID, sasEntryPath): gathers metadata from the named SASentry (XPathStr)
-;CS_appendMetaData(key, xpath, value): queries XML file for '''xpath'''.  If '''value''' is not empty, appends it to '''metadata''' where ''last'' is the new last row: <nowiki>metadata[last][0]=key; metadata[last][1]=value</nowiki>
-;CS_findElementIndex(matchStr): looks for element index in structure ''W_ElementList'' returned from call to '''XmlElemList(fileID)'''
-;CS_registerNameSpaces(): Builds a table of all namespaces used in the XML file and appends '''W_ElementList''' with full namespace-xpath string for each element.
-;CS_XPath_NS(simpleStr): this function adds namespace info as necessary to simpleStr (an XPath)
+**-4: no <SASentry> elements (NOT USED NOW)
+**-5: XOPutils needs upgrade
+;CS_1i_parseXml(fileID): '''This is what guides the work''', given a file ID returned from '''XMLOpenFile()''', parses that file for SAS data and metadata <br /> (1i in the function name signifies this is a function that supports INPUT from version 1.0 XML files)
+;CS_1i_getOneSASdata(fileID, Title, SASdataPath): harvest the data and metadata in the specific SASdata element
+;CS_1i_getOneVector(file,prefix,XML_name,Igor_name): harvest just one column (vector) of data
+;CS_1i_GetReducedSASdata(fileID, SASdataPath): grab the data and put it in the working data folder
+;CS_1i_locateTitle(fileID, SASentryPath): determine the title for this experiment
+;CS_appendMetaData(fileID, key, xpath, value): queries XML file for '''xpath'''.  If '''value''' is not empty, appends it to '''metadata''' where ''last'' is the new last row: <nowiki>metadata[last][0]=key; metadata[last][1]=value</nowiki>
 ;CS_buildXpathStr(prefix, value): this function can be used only with very simple XPath constructions
-;CS_XmlStrFmXpath(fileID, prefix, value): Calls '''XmlStrFmXpath()''' with proper namespace prefix attached.  Trims the result string.
-;CS_simpleXmlWaveFmXpath(fileID, prefix, value): Calls '''XMLwaveFmXpath()''' with proper namespace prefix attached.
+;CS_cleanFolderName(proposal): given a proposal string, returns a candidate folder name for immediate use
+;CS_findElementIndex(matchStr): looks for element index in structure ''W_ElementList'' returned from call to '''XmlElemList(fileID)'''
+;CS_getDefaultNamespace(fileID): returns the string containing the default namespace for the XML file
+;CS_registerNameSpaces(): Builds a table of all namespaces used in the XML file and appends '''W_ElementList''' with full namespace-xpath string for each element.
 ;CS_simpleXmlListXpath(fileID, prefix, value): Calls '''XMLlistXpath()''' with proper namespace prefix attached.
+;CS_simpleXmlWaveFmXpath(fileID, prefix, value): Calls '''XMLwaveFmXpath()''' with proper namespace prefix attached.
+;CS_updateWaveNote(wavName, key, value): adds (or replaces) definition of ''key''=''value'' in the wave note of ''wavName''
+;CS_XmlStrFmXpath(fileID, prefix, value): Calls '''XmlStrFmXpath()''' with proper namespace prefix attached.  Trims the result string.
+;CS_XPath_NS(simpleStr): this function adds namespace info as necessary to simpleStr (an XPath)
 ;TrimWS(str): Calls '''TrimWSL(TrimWSR(str))'''
 ;TrimWSL(str): Trims white space from left (leading) end of '''str'''
 ;TrimWSR(str): Trims white space from right (trailing) end of '''str'''
-;CS_updateWaveNote(wavName, key, value): adds (or replaces) definition of ''key''=''value'' in the wave note of ''wavName''
-;CS_1i_extractIdataColumn2Wave(fileID, basePath, colName, wavName): This function pulls one column of data from each <nowiki><Idata></nowiki> element.  It is easier to write this as a single function than debug it all the times it is needed. <br /> Avoid the use of the semicolon in anything that might make it into the IgorPro wavenote since the semicolon is a list delimiter.  The import macro defends against this by converting all semicolons into the string " :semicolon: "
-;CS_1i_extractSasData(fileID, SASdataPath, SASdata_folder): (1i in the function name signifies this is a function that supports INPUT from version 1.0 XML files)
-;prj_grabMyXmlData(): Demonstration function that moves loaded data from <nowiki>root:Packages:CS_XMLreader</nowiki> to a user's data folder.  (In this ''example'', that folder is <nowiki>root:PRJ_canSAS</nowiki>.)
 ;prjTest_cansas1d(): Demonstration function that calls '''CS_XmlReader(fileName)''' for many of the test data sets.
+;prj_grabMyXmlData(): Demonstration function that moves loaded data from <nowiki>root:Packages:CS_XMLreader</nowiki> to a user's data folder.  (In this ''example'', that folder is <nowiki>root:PRJ_canSAS</nowiki>.)
+;testCollette(): Demonstration function that reads an ISIS/LOQ file and copies the data to the root folder a la COLLETE
