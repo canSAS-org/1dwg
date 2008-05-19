@@ -254,3 +254,87 @@ that together show a usage example.
 ;prjTest_cansas1d(): Demonstration function that calls '''CS_XmlReader(fileName)''' for many of the test data sets.
 ;prj_grabMyXmlData(): Demonstration function that moves loaded data from <nowiki>root:Packages:CS_XMLreader</nowiki> to a user's data folder.  (In this ''example'', that folder is <nowiki>root:PRJ_canSAS</nowiki>.)
 ;testCollette(): Demonstration function that reads an ISIS/LOQ file and copies the data to the root folder a la COLLETE
+
+== Example test case ==
+
+Here is an example running the test routine '''prjTest_cansas1d()'''.
+
+<pre>
+•prjTest_cansas1d()
+  XMLopenfile: File(path) to open doesn't exist, or file can't be opened
+  elmo.xml either not found or cannot be opened for reading
+  	 Completed in   0.00669666   seconds
+  XMLopenfile: XML file was not parseable
+  cansasXML.ipf: failed to parse XML
+  	 Completed in   0.0133704   seconds
+  root element is not <SASroot> with valid canSAS namespace
+  	 Completed in   0.0134224   seconds
+  bimodal-test1.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  SAS bimodal test1 
+  	 Completed in   0.068654   seconds
+  root element is not <SASroot> with valid canSAS namespace
+  	 Completed in   0.0172572   seconds
+  root element is not <SASroot> with valid canSAS namespace
+  	 Completed in   0.0123102   seconds
+  root element is not <SASroot> with valid canSAS namespace
+  	 Completed in   0.00930118   seconds
+  ISIS_SANS_Example.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:   standard can 12mm SANS   
+  	 Completed in   0.0410387   seconds
+  W1W2.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:   standard can 12mm SANS    
+  	 Title:   TK49 standard 12mm SANS   
+  	 Completed in   0.0669074   seconds
+  ill_sasxml_example.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  ILL-D22 example: 7D1 2mm              
+  	 Completed in   0.0332752   seconds
+  isis_sasxml_example.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:   LOQ TK49 Standard 12mm C9                                     
+  	 Completed in   0.0388868   seconds
+  r586.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  ILL-D11 example1: 2A 5mM 0%D2O 
+  	 Completed in   0.0213737   seconds
+  r597.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  ILL-D11 example2: 2A 5mM 0%D2O 
+  	 Completed in   0.0221894   seconds
+  xg009036_001.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  det corrn 5m 
+  	 Completed in   0.0286721   seconds
+  cs_collagen.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  dry chick collagen, d = 673 A, 6531 eV, X6B 
+  	 Completed in   0.0296247   seconds
+  cs_collagen_full.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  dry chick collagen, d = 673 A, 6531 eV, X6B 
+  	 Completed in   0.0751836   seconds
+  cs_af1410.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  AF1410-10 (AF1410 steel aged 10 h) 
+  	 Title:  AF1410-8h (AF1410 steel aged 8 h) 
+  	 Title:  AF1410-qu (AF1410 steel aged 0.25 h) 
+  	 Title:  AF1410-cc (AF1410 steel aged 100 h) 
+  	 Title:  AF1410-2h (AF1410 steel aged 2 h) 
+  	 Title:  AF1410-50 (AF1410 steel aged 50 h) 
+  	 Title:  AF1410-20 (AF1410 steel aged 20 h) 
+  	 Title:  AF1410-5h (AF1410 steel aged 5 h) 
+  	 Title:  AF1410-1h (AF1410 steel aged 1 h) 
+  	 Title:  AF1410-hf (AF1410 steel aged 0.5 h) 
+  	 Completed in   0.338425   seconds
+  XMLopenfile: File(path) to open doesn't exist, or file can't be opened
+  cansas1d-template.xml either not found or cannot be opened for reading
+  	 Completed in   0.00892823   seconds
+  1998spheres.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  255 nm PS spheres 
+  	 Title:  460 nm PS spheres 
+  	 Completed in   2.87649   seconds
+  XMLopenfile: File(path) to open doesn't exist, or file can't be opened
+  does-not-exist-file.xml either not found or cannot be opened for reading
+  	 Completed in   0.00404549   seconds
+  cs_rr_polymers.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  Round Robin Polymer A 
+  	 Title:  Round Robin Polymer B 
+  	 Title:  Round Robin Polymer C 
+  	 Title:  Round Robin Polymer D 
+  	 Completed in   0.0943477   seconds
+  s81-polyurea.xml  		 identified as: cansas1d/1.0 XML file
+  	 Title:  S7 Neat Polyurea 
+  	 Completed in   0.0361616   seconds
+</pre>
