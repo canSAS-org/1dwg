@@ -1,225 +1,12 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="example.xsl" ?>
-<SASroot version="1.0"
-		xmlns="cansas1d/1.0"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-		>
+<SASroot xmlns="cansas1d/1.0" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="cansas1d/1.0    http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd">
+  <!--created by CS_XML_Indra.ipf-->
+  <!--exported from IgorPro::Indra-->
+  <!--Tue, May 20, 2008  1:39:23 PM-->
   <SASentry name="S7 Neat Polyurea">
     <Title>S7 Neat Polyurea</Title>
     <Run>81</Run>
-    <metadata xmlns="Indra metadata">
-      <usaxs name="local variables" xmlns="APS/32ID-B/USAXS">
-        <SpecSourceFileName>08_21.dat</SpecSourceFileName>
-        <BeamCenter>15.8222786625075</BeamCenter>
-        <MaximumIntensity>1.20472188572703e-09</MaximumIntensity>
-        <PeakWidth>0.0010520791661782</PeakWidth>
-      </usaxs>
-      <usaxs name="wavenotes" xmlns="APS/32ID-B/USAXS">
-        <DATAFILE>08_21.dat</DATAFILE>
-        <EPOCH>1187703812</EPOCH>
-        <TZ>-5</TZ>
-        <SCAN_N>81</SCAN_N>
-        <SECONDS>3270557871</SECONDS>
-        <DATE>Tue, Aug 21, 2007</DATE>
-        <HOUR>16:17:51</HOUR>
-        <COMMENT>S7 Neat Polyurea</COMMENT>
-        <SpecCommand>uascan  ar 15.7415 15.7403 6.737 2e-05  113.37 525 0 124 1 150 1</SpecCommand>
-        <SpecComment>S7 Neat Polyurea</SpecComment>
-        <SpecScan>spec81</SpecScan>
-        <USAXSDataFolder>root:USAXS:'08_21':'S81_S7 Neat Polyurea'</USAXSDataFolder>
-        <RawFolder>root:raw:'08_21':spec81:</RawFolder>
-        <UserSampleName>'S81_S7 Neat Polyurea'</UserSampleName>
-        <Wname>SMR_Qvec</Wname>
-        <Wavelength>1.0419</Wavelength>
-        <SlitLength>0.031589</SlitLength>
-        <NumberOfSteps>150</NumberOfSteps>
-        <SDDistance>525</SDDistance>
-        <Units>A-1</Units>
-        <PeakFitFunction>Gauss</PeakFitFunction>
-        <BeamCenter>15.822</BeamCenter>
-        <MaximumIntensity>1.2047e-09</MaximumIntensity>
-        <FWHM>3.7875</FWHM>
-        <BeamCenterError>1.419e-06</BeamCenterError>
-        <MaximumIntensityError>4.2509e-12</MaximumIntensityError>
-        <FWHM_Error>0.019022</FWHM_Error>
-        <BlankComment>Tape blank</BlankComment>
-        <BlankFolder>root:USAXS:'08_21':'S71_Tape blank'</BlankFolder>
-        <Kfactor>2.2375e-17</Kfactor>
-        <SampleThickness>0.64</SampleThickness>
-        <SampleTransmission>0.57053</SampleTransmission>
-        <SampleTransmissionPeakToPeak>0.57053</SampleTransmissionPeakToPeak>
-        <UseMSAXSCorrection>0</UseMSAXSCorrection>
-        <MSAXSCorrection>1</MSAXSCorrection>
-      </usaxs>
-      <usaxs name="MeasurementParameters" xmlns="APS/32ID-B/USAXS">
-        <DCM_energy>11.9</DCM_energy>
-        <UPD2mode>2</UPD2mode>
-        <UPD2range>4</UPD2range>
-        <UPD2vfc>100000</UPD2vfc>
-        <UPD2gain>100000000000</UPD2gain>
-        <UPD2selected>1</UPD2selected>
-        <UPD2gain1>1000</UPD2gain1>
-        <UPD2bkg1>70.875</UPD2bkg1>
-        <UPD2bkgErr1>0.353553</UPD2bkgErr1>
-        <UPD2gain2>100000</UPD2gain2>
-        <UPD2bkg2>62</UPD2bkg2>
-        <UPD2bkgErr2>25.0599</UPD2bkgErr2>
-        <UPD2gain3>10000000</UPD2gain3>
-        <UPD2bkg3>65.875</UPD2bkg3>
-        <UPD2bkgErr3>17.3241</UPD2bkgErr3>
-        <UPD2gain4>1000000000</UPD2gain4>
-        <UPD2bkg4>166.75</UPD2bkg4>
-        <UPD2bkgErr4>0.707107</UPD2bkgErr4>
-        <UPD2gain5>100000000000</UPD2gain5>
-        <UPD2bkg5>8795.12</UPD2bkg5>
-        <UPD2bkgErr5>37.3074</UPD2bkgErr5>
-        <thickness>0.64</thickness>
-        <ARenc_0>15.822</ARenc_0>
-        <SAD>124</SAD>
-        <SDD>525</SDD>
-      </usaxs>
-      <usaxs name="UPDParameters" xmlns="APS/32ID-B/USAXS">
-        <Vfc>100000</Vfc>
-        <Gain1>1000</Gain1>
-        <Gain2>100000</Gain2>
-        <Gain3>10000000</Gain3>
-        <Gain4>1000000000</Gain4>
-        <Gain5>100000000000</Gain5>
-        <Bkg1>70.875</Bkg1>
-        <Bkg2>62</Bkg2>
-        <Bkg3>65.875</Bkg3>
-        <Bkg4>166.75</Bkg4>
-        <Bkg5>8795.12</Bkg5>
-        <Bkg1Err>0.353553</Bkg1Err>
-        <Bkg2Err>25.0599</Bkg2Err>
-        <Bkg3Err>17.3241</Bkg3Err>
-        <Bkg4Err>0.707107</Bkg4Err>
-        <Bkg5Err>37.3074</Bkg5Err>
-      </usaxs>
-      <usaxs name="ListOfASBParameters" xmlns="APS/32ID-B/USAXS">
-        <Sample>root:USAXS:'08_21':'S81_S7 Neat Polyurea':</Sample>
-        <Calibrate>USAXS</Calibrate>
-        <Blank>root:USAXS:'08_21':'S71_Tape blank':</Blank>
-        <Kfactor>2.23747846728468e-17</Kfactor>
-        <OmegaFactor>1.65567055250463e-07</OmegaFactor>
-      </usaxs>
-      <usaxs name="raw" xmlns="APS/32ID-B/USAXS">
-        <specCommand>uascan  ar 15.7415 15.7403 6.737 2e-05  113.37 525 0 124 1 150 1</specCommand>
-        <timeWritten>Aug 21 16:17:51 2007</timeWritten>
-        <specComment>S7 Neat Polyurea</specComment>
-        <xAxisName>ar</xAxisName>
-        <yAxisName>USAXS_PD</yAxisName>
-        <SpecSourceFileName>08_21.dat</SpecSourceFileName>
-        <DataTransferredto>root:USAXS:'08_21':'S81_S7 Neat Polyurea'</DataTransferredto>
-      </usaxs>
-      <usaxs name="specValues" xmlns="APS/32ID-B/USAXS">
-        <a_lat>0</a_lat>
-        <TZ>-5</TZ>
-      </usaxs>
-      <usaxs name="specMotors" xmlns="APS/32ID-B/USAXS">
-        <slux>-1.4999022</slux>
-        <sluy>-0.50000002</sluy>
-        <sldx>1.5001384</sldx>
-        <sldy>0.70000003</sldy>
-        <dcmthfine>0.22549875</dcmthfine>
-        <ion_ch>-5.0477684e-07</ion_ch>
-        <msx>8.0373135e-07</msx>
-        <msy>2.9999986</msy>
-        <mx>17.000013</mx>
-        <my>-0.00059129391</my>
-        <msr>-6.1096158e-07</msr>
-        <a1y>0.0012794505</a1y>
-        <a2y>7.0995993</a2y>
-        <CCD.focus>-14.971</CCD.focus>
-        <asx>0.10000006</asx>
-        <asy>-4.8801303e-07</asy>
-        <ax>-8.9999984</ax>
-        <ay>0.00010330731</ay>
-        <az>89.000016</az>
-        <sx>12.499999</sx>
-        <sy>173</sy>
-        <dx>-8.9000042</dx>
-        <dy>113.37001</dy>
-        <sa>0.99998343</sa>
-        <asr>-1.038776e-06</asr>
-        <uslitvercen>9.9336758e-06</uslitvercen>
-        <uslithorcen>2.0027583e-05</uslithorcen>
-        <uslitverap>1.000175</uslitverap>
-        <uslithorap>1.9999618</uslithorap>
-        <mr>15.747864</mr>
-        <mst>1.1222442e-07</mst>
-        <ar>15.74031</ar>
-        <a1t>3.0299999</a1t>
-        <ast>4.551839e-08</ast>
-        <USAXS.a2rp>4.99</USAXS.a2rp>
-        <USAXS.asrp>2.6125</USAXS.asrp>
-        <USAXS.msrp>2.4</USAXS.msrp>
-        <USAXS.m2rp>5.8475</USAXS.m2rp>
-        <s1hgap>3</s1hgap>
-        <s1hcen>0</s1hcen>
-        <s1vgap>1.2</s1vgap>
-        <s1vcen>0.1</s1vcen>
-        <dcmth>9.5660499</dcmth>
-        <dcmchi>-0.094487</dcmchi>
-        <en>11.9</en>
-        <sx_fine>35.502</sx_fine>
-      </usaxs>
-      <usaxs name="EPICS_PVs" xmlns="APS/32ID-B/USAXS">
-        <SR_current>89.0441</SR_current>
-        <SR_fill>0</SR_fill>
-        <SR_status>1</SR_status>
-        <SR_mode>0</SR_mode>
-        <SR_fb>1</SR_fb>
-        <SR_fbH>1</SR_fbH>
-        <SR_fbV>1</SR_fbV>
-        <SR_topUp>0</SR_topUp>
-        <barometer_mbar>984.62</barometer_mbar>
-        <SR_BPM_HP>-0.0826158</SR_BPM_HP>
-        <SR_BPM_VP>0.155536</SR_BPM_VP>
-        <SR_BPM_HA>-2.50195</SR_BPM_HA>
-        <SR_BPM_VA>-12.8479</SR_BPM_VA>
-        <ID_gap>0</ID_gap>
-        <ID_E>0</ID_E>
-        <ID_harmonic>0</ID_harmonic>
-        <ID_taperGap>0.00142425</ID_taperGap>
-        <ID_taperE>0.000461578</ID_taperE>
-        <FE_XBPM_HP>0.778382</FE_XBPM_HP>
-        <FE_XBPM_VP>3.19601</FE_XBPM_VP>
-        <FE_XBPM_HA>-26.5318</FE_XBPM_HA>
-        <FE_XBPM_VA>-177.236</FE_XBPM_VA>
-        <DCM_energy>11.9</DCM_energy>
-        <DCM_lambda>1.04188</DCM_lambda>
-        <arEnc>15.8221</arEnc>
-        <sampleYstep>0</sampleYstep>
-        <I0AmpGain>1000000</I0AmpGain>
-        <I00AmpGain>10000000</I00AmpGain>
-        <UPD2mode>2</UPD2mode>
-        <UPD2range>4</UPD2range>
-        <UPD2vfc>100000</UPD2vfc>
-        <UPD2gain>100000000000</UPD2gain>
-        <UPD2selected>1</UPD2selected>
-        <UPD2gain1>1000</UPD2gain1>
-        <UPD2bkg1>70.875</UPD2bkg1>
-        <UPD2bkgErr1>0.353553</UPD2bkgErr1>
-        <UPD2gain2>100000</UPD2gain2>
-        <UPD2bkg2>62</UPD2bkg2>
-        <UPD2bkgErr2>25.0599</UPD2bkgErr2>
-        <UPD2gain3>10000000</UPD2gain3>
-        <UPD2bkg3>65.875</UPD2bkg3>
-        <UPD2bkgErr3>17.3241</UPD2bkgErr3>
-        <UPD2gain4>1000000000</UPD2gain4>
-        <UPD2bkg4>166.75</UPD2bkg4>
-        <UPD2bkgErr4>0.707107</UPD2bkgErr4>
-        <UPD2gain5>100000000000</UPD2gain5>
-        <UPD2bkg5>8795.12</UPD2bkg5>
-        <UPD2bkgErr5>37.3074</UPD2bkgErr5>
-        <thickness>0.64</thickness>
-        <ARenc_0>15.822</ARenc_0>
-        <SAD>124</SAD>
-        <SDD>525</SDD>
-      </usaxs>
-    </metadata>
     <SASdata name="slit-smeared">
       <Idata>
         <Q unit="1/A">6.7822e-05</Q>
@@ -807,7 +594,20 @@
         <beam_shape>rectangle</beam_shape>
         <wavelength unit="A">1.0419</wavelength>
       </SASsource>
-      <SAScollimation/>
+      <SAScollimation>
+        <aperture name="usaxs">
+          <size>
+            <x unit="mm">1.9999618</x>
+            <y unit="mm">1.000175</y>
+          </size>
+        </aperture>
+        <aperture name="s1">
+          <size>
+            <x unit="mm">3</x>
+            <y unit="mm">1.2</y>
+          </size>
+        </aperture>
+      </SAScollimation>
       <SASdetector>
         <name>USAXS photodiode</name>
         <SDD unit="mm">525</SDD>
@@ -819,13 +619,224 @@
     </SASinstrument>
     <SASprocess name="Indra">
       <name>exported from IgorPro::Indra</name>
-      <date>Fri, Apr 18, 2008  4:22:19 PM</date>
+      <date>Tue, May 20, 2008  1:39:23 PM</date>
       <description>raw USAXS data reduced to standard 1-D form</description>
       <term name="energy" unit="keV">11.9</term>
       <term name="SAD" unit="mm">124</term>
       <term name="SDD" unit="mm">525</term>
-      <term name="experiment date" unit="none">Tue, Aug 21, 2007  16:17:51</term>
-      <SASprocessnote/>
+      <term name="experiment date">Tue, Aug 21, 2007  16:17:51</term>
+      <SASprocessnote name="metadata">
+        <APS_USAXS name="local variables">
+          <SpecSourceFileName>08_21.dat</SpecSourceFileName>
+          <BeamCenter>15.8222786625075</BeamCenter>
+          <MaximumIntensity>1.20472188572703e-09</MaximumIntensity>
+          <PeakWidth>0.0010520791661782</PeakWidth>
+        </APS_USAXS>
+        <APS_USAXS name="wavenotes">
+          <DATAFILE>08_21.dat</DATAFILE>
+          <EPOCH>1187703812</EPOCH>
+          <TZ>-5</TZ>
+          <SCAN_N>81</SCAN_N>
+          <SECONDS>3270557871</SECONDS>
+          <DATE>Tue, Aug 21, 2007</DATE>
+          <HOUR>16:17:51</HOUR>
+          <COMMENT>S7 Neat Polyurea</COMMENT>
+          <SpecCommand>uascan  ar 15.7415 15.7403 6.737 2e-05  113.37 525 0 124 1 150 1</SpecCommand>
+          <SpecComment>S7 Neat Polyurea</SpecComment>
+          <SpecScan>spec81</SpecScan>
+          <USAXSDataFolder>root:USAXS:'08_21':'S81_S7 Neat Polyurea'</USAXSDataFolder>
+          <RawFolder>root:raw:'08_21':spec81:</RawFolder>
+          <UserSampleName>'S81_S7 Neat Polyurea'</UserSampleName>
+          <Wname>SMR_Qvec</Wname>
+          <Wavelength>1.0419</Wavelength>
+          <SlitLength>0.031589</SlitLength>
+          <NumberOfSteps>150</NumberOfSteps>
+          <SDDistance>525</SDDistance>
+          <Units>A-1</Units>
+          <PeakFitFunction>Gauss</PeakFitFunction>
+          <BeamCenter>15.822</BeamCenter>
+          <MaximumIntensity>1.2047e-09</MaximumIntensity>
+          <FWHM>3.7875</FWHM>
+          <BeamCenterError>1.419e-06</BeamCenterError>
+          <MaximumIntensityError>4.2509e-12</MaximumIntensityError>
+          <FWHM_Error>0.019022</FWHM_Error>
+          <BlankComment>Tape blank</BlankComment>
+          <BlankFolder>root:USAXS:'08_21':'S71_Tape blank'</BlankFolder>
+          <Kfactor>2.2375e-17</Kfactor>
+          <SampleThickness>0.64</SampleThickness>
+          <SampleTransmission>0.57053</SampleTransmission>
+          <SampleTransmissionPeakToPeak>0.57053</SampleTransmissionPeakToPeak>
+          <UseMSAXSCorrection>0</UseMSAXSCorrection>
+          <MSAXSCorrection>1</MSAXSCorrection>
+        </APS_USAXS>
+        <APS_USAXS name="MeasurementParameters">
+          <DCM_energy>11.9</DCM_energy>
+          <UPD2mode>2</UPD2mode>
+          <UPD2range>4</UPD2range>
+          <UPD2vfc>100000</UPD2vfc>
+          <UPD2gain>100000000000</UPD2gain>
+          <UPD2selected>1</UPD2selected>
+          <UPD2gain1>1000</UPD2gain1>
+          <UPD2bkg1>70.875</UPD2bkg1>
+          <UPD2bkgErr1>0.353553</UPD2bkgErr1>
+          <UPD2gain2>100000</UPD2gain2>
+          <UPD2bkg2>62</UPD2bkg2>
+          <UPD2bkgErr2>25.0599</UPD2bkgErr2>
+          <UPD2gain3>10000000</UPD2gain3>
+          <UPD2bkg3>65.875</UPD2bkg3>
+          <UPD2bkgErr3>17.3241</UPD2bkgErr3>
+          <UPD2gain4>1000000000</UPD2gain4>
+          <UPD2bkg4>166.75</UPD2bkg4>
+          <UPD2bkgErr4>0.707107</UPD2bkgErr4>
+          <UPD2gain5>100000000000</UPD2gain5>
+          <UPD2bkg5>8795.12</UPD2bkg5>
+          <UPD2bkgErr5>37.3074</UPD2bkgErr5>
+          <thickness>0.64</thickness>
+          <ARenc_0>15.822</ARenc_0>
+          <SAD>124</SAD>
+          <SDD>525</SDD>
+        </APS_USAXS>
+        <APS_USAXS name="UPDParameters">
+          <Vfc>100000</Vfc>
+          <Gain1>1000</Gain1>
+          <Gain2>100000</Gain2>
+          <Gain3>10000000</Gain3>
+          <Gain4>1000000000</Gain4>
+          <Gain5>100000000000</Gain5>
+          <Bkg1>70.875</Bkg1>
+          <Bkg2>62</Bkg2>
+          <Bkg3>65.875</Bkg3>
+          <Bkg4>166.75</Bkg4>
+          <Bkg5>8795.12</Bkg5>
+          <Bkg1Err>0.353553</Bkg1Err>
+          <Bkg2Err>25.0599</Bkg2Err>
+          <Bkg3Err>17.3241</Bkg3Err>
+          <Bkg4Err>0.707107</Bkg4Err>
+          <Bkg5Err>37.3074</Bkg5Err>
+        </APS_USAXS>
+        <APS_USAXS name="ListOfASBParameters">
+          <Sample>root:USAXS:'08_21':'S81_S7 Neat Polyurea':</Sample>
+          <Calibrate>USAXS</Calibrate>
+          <Blank>root:USAXS:'08_21':'S71_Tape blank':</Blank>
+          <Kfactor>2.23747846728468e-17</Kfactor>
+          <OmegaFactor>1.65567055250463e-07</OmegaFactor>
+        </APS_USAXS>
+        <APS_USAXS name="raw">
+          <specCommand>uascan  ar 15.7415 15.7403 6.737 2e-05  113.37 525 0 124 1 150 1</specCommand>
+          <timeWritten>Aug 21 16:17:51 2007</timeWritten>
+          <specComment>S7 Neat Polyurea</specComment>
+          <xAxisName>ar</xAxisName>
+          <yAxisName>USAXS_PD</yAxisName>
+          <SpecSourceFileName>08_21.dat</SpecSourceFileName>
+          <DataTransferredto>root:USAXS:'08_21':'S81_S7 Neat Polyurea'</DataTransferredto>
+        </APS_USAXS>
+        <APS_USAXS name="specValues">
+          <a_lat>0</a_lat>
+          <TZ>-5</TZ>
+        </APS_USAXS>
+        <APS_USAXS name="specMotors">
+          <slux>-1.4999022</slux>
+          <sluy>-0.50000002</sluy>
+          <sldx>1.5001384</sldx>
+          <sldy>0.70000003</sldy>
+          <dcmthfine>0.22549875</dcmthfine>
+          <ion_ch>-5.0477684e-07</ion_ch>
+          <msx>8.0373135e-07</msx>
+          <msy>2.9999986</msy>
+          <mx>17.000013</mx>
+          <my>-0.00059129391</my>
+          <msr>-6.1096158e-07</msr>
+          <a1y>0.0012794505</a1y>
+          <a2y>7.0995993</a2y>
+          <CCD.focus>-14.971</CCD.focus>
+          <asx>0.10000006</asx>
+          <asy>-4.8801303e-07</asy>
+          <ax>-8.9999984</ax>
+          <ay>0.00010330731</ay>
+          <az>89.000016</az>
+          <sx>12.499999</sx>
+          <sy>173</sy>
+          <dx>-8.9000042</dx>
+          <dy>113.37001</dy>
+          <sa>0.99998343</sa>
+          <asr>-1.038776e-06</asr>
+          <uslitvercen>9.9336758e-06</uslitvercen>
+          <uslithorcen>2.0027583e-05</uslithorcen>
+          <uslitverap>1.000175</uslitverap>
+          <uslithorap>1.9999618</uslithorap>
+          <mr>15.747864</mr>
+          <mst>1.1222442e-07</mst>
+          <ar>15.74031</ar>
+          <a1t>3.0299999</a1t>
+          <ast>4.551839e-08</ast>
+          <USAXS.a2rp>4.99</USAXS.a2rp>
+          <USAXS.asrp>2.6125</USAXS.asrp>
+          <USAXS.msrp>2.4</USAXS.msrp>
+          <USAXS.m2rp>5.8475</USAXS.m2rp>
+          <s1hgap>3</s1hgap>
+          <s1hcen>0</s1hcen>
+          <s1vgap>1.2</s1vgap>
+          <s1vcen>0.1</s1vcen>
+          <dcmth>9.5660499</dcmth>
+          <dcmchi>-0.094487</dcmchi>
+          <en>11.9</en>
+          <sx_fine>35.502</sx_fine>
+        </APS_USAXS>
+        <APS_USAXS name="EPICS_PVs">
+          <SR_current>89.0441</SR_current>
+          <SR_fill>0</SR_fill>
+          <SR_status>1</SR_status>
+          <SR_mode>0</SR_mode>
+          <SR_fb>1</SR_fb>
+          <SR_fbH>1</SR_fbH>
+          <SR_fbV>1</SR_fbV>
+          <SR_topUp>0</SR_topUp>
+          <barometer_mbar>984.62</barometer_mbar>
+          <SR_BPM_HP>-0.0826158</SR_BPM_HP>
+          <SR_BPM_VP>0.155536</SR_BPM_VP>
+          <SR_BPM_HA>-2.50195</SR_BPM_HA>
+          <SR_BPM_VA>-12.8479</SR_BPM_VA>
+          <ID_gap>0</ID_gap>
+          <ID_E>0</ID_E>
+          <ID_harmonic>0</ID_harmonic>
+          <ID_taperGap>0.00142425</ID_taperGap>
+          <ID_taperE>0.000461578</ID_taperE>
+          <FE_XBPM_HP>0.778382</FE_XBPM_HP>
+          <FE_XBPM_VP>3.19601</FE_XBPM_VP>
+          <FE_XBPM_HA>-26.5318</FE_XBPM_HA>
+          <FE_XBPM_VA>-177.236</FE_XBPM_VA>
+          <DCM_energy>11.9</DCM_energy>
+          <DCM_lambda>1.04188</DCM_lambda>
+          <arEnc>15.8221</arEnc>
+          <sampleYstep>0</sampleYstep>
+          <I0AmpGain>1000000</I0AmpGain>
+          <I00AmpGain>10000000</I00AmpGain>
+          <UPD2mode>2</UPD2mode>
+          <UPD2range>4</UPD2range>
+          <UPD2vfc>100000</UPD2vfc>
+          <UPD2gain>100000000000</UPD2gain>
+          <UPD2selected>1</UPD2selected>
+          <UPD2gain1>1000</UPD2gain1>
+          <UPD2bkg1>70.875</UPD2bkg1>
+          <UPD2bkgErr1>0.353553</UPD2bkgErr1>
+          <UPD2gain2>100000</UPD2gain2>
+          <UPD2bkg2>62</UPD2bkg2>
+          <UPD2bkgErr2>25.0599</UPD2bkgErr2>
+          <UPD2gain3>10000000</UPD2gain3>
+          <UPD2bkg3>65.875</UPD2bkg3>
+          <UPD2bkgErr3>17.3241</UPD2bkgErr3>
+          <UPD2gain4>1000000000</UPD2gain4>
+          <UPD2bkg4>166.75</UPD2bkg4>
+          <UPD2bkgErr4>0.707107</UPD2bkgErr4>
+          <UPD2gain5>100000000000</UPD2gain5>
+          <UPD2bkg5>8795.12</UPD2bkg5>
+          <UPD2bkgErr5>37.3074</UPD2bkgErr5>
+          <thickness>0.64</thickness>
+          <ARenc_0>15.822</ARenc_0>
+          <SAD>124</SAD>
+          <SDD>525</SDD>
+        </APS_USAXS>
+      </SASprocessnote>
     </SASprocess>
     <SASnote/>
   </SASentry>
