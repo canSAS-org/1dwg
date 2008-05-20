@@ -182,7 +182,7 @@ FUNCTION CS_1i_parseXml(fileID)
 	DUPLICATE/O/T	M_listXPath, SASentryList
 
 	FOR (i=0; i < DimSize(SASentryList, 0); i += 1)
-		SASentryPath = SASentryList[i][0]
+		SASentryPath = "/cs:SASroot/cs:SASentry["+num2str(i+1)+"]"
 		SetDataFolder root:Packages:CS_XMLreader
 		
 		title =  CS_1i_locateTitle(fileID, SASentryPath)
@@ -192,13 +192,13 @@ FUNCTION CS_1i_parseXml(fileID)
 		XmlListXpath(fileID, SASentryPath + "//cs:SASdata", nsStr)
 		WAVE/T 	M_listXPath
 		IF ( DimSize(M_listXPath, 0) == 1)
-			CS_1i_getOneSASdata(fileID, Title, M_listXPath[0][0])
+			CS_1i_getOneSASdata(fileID, Title, SASentryPath+"/cs:SASdata")
 			CS_1i_collectMetadata(fileID, SASentryPath)
 		ELSE
 			FOR (j = 0; j < DimSize(M_listXPath, 0); j += 1)
 				STRING SASdataFolder = CS_cleanFolderName("SASdata_" + num2str(j))
 				NewDataFolder/O/S  $SASdataFolder
-				CS_1i_getOneSASdata(fileID, Title, M_listXPath[j][0])
+				CS_1i_getOneSASdata(fileID, Title, SASentryPath+"/cs:SASdata["+num2str(j+1)+"]")
 				CS_1i_collectMetadata(fileID, SASentryPath)
 				SetDataFolder ::			// back up to parent directory
 			ENDFOR
@@ -252,8 +252,8 @@ FUNCTION CS_1i_getOneSASdata(fileID, Title, SASdataPath)
 		IF ( DimSize(M_listXPath, 0) > 1 )
 			suffix = "_" + num2str(i)
 		ENDIF
-		CS_appendMetaData(fileID, "Run" + suffix,  M_listXPath[i][0], "")
-		CS_appendMetaData(fileID, "Run/@name" + suffix,  M_listXPath[i][0] + "/@name", "")
+		CS_appendMetaData(fileID, "Run" + suffix,  SASdataPath + "/../cs:Run["+num2str(i+1)+"]", "")
+		CS_appendMetaData(fileID, "Run/@name" + suffix,  SASdataPath + "/../cs:Run["+num2str(i+1)+"]/@name", "")
 	ENDFOR
 
 	SASdata_name = TrimWS(XMLstrFmXpath(fileID,  SASdataPath + "/@name", nsStr, ""))
@@ -325,10 +325,19 @@ FUNCTION CS_1i_GetReducedSASdata(fileID, SASdataPath)
 				DEFAULT:
 					igorWave = xmlElement		// can we trust this one?
 			ENDSWITCH
-			xPathStr = M_listXPath[j][0]							// clear name reference
-			pos = strsearch(xPathStr, "/", Inf, 3)					// peel off the tail of the string and reform
-			xmlElement = xPathStr[pos,Inf]						// find last element on the path
-			prefix = xPathStr[0, pos-1-4]+"/*"						// ALL Idata elements
+			//
+//			// This will need some work to support foreign namespaces here
+//			//
+//			//
+//			xPathStr = M_listXPath[j][0]							// clear name reference
+//			pos = strsearch(xPathStr, "/", Inf, 3)					// peel off the tail of the string and reform
+//			xmlElement = xPathStr[pos,Inf]						// find last element on the path
+//			prefix = xPathStr[0, pos-1-4]+"/*"						// ALL Idata elements
+//			CS_1i_getOneVector(fileID,prefix, xmlElement, igorWave)		// loads ALL rows (Idata) of the column at the same time
+			//
+			//  Could there be a problem with a foreign namespace here?
+			prefix = SASdataPath+"//cs:Idata"						// ALL Idata elements
+			xmlElement = "cs:" + M_listXPath[j][1]					// just this column
 			CS_1i_getOneVector(fileID,prefix, xmlElement, igorWave)		// loads ALL rows (Idata) of the column at the same time
 		ENDFOR
 		// check them for common length
@@ -383,7 +392,7 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 		IF (DimSize(detailsList, 0) > 1)
 			suffix = "_" + num2str(i)
 		ENDIF
-		detailsPath = detailsList[i][0]
+		detailsPath = sasEntryPath+"/cs:SASsample/cs:details["+num2str(i+1)+"]"
 		CS_appendMetaData(fileID, "SASsample/details"+suffix+"/@name", 	detailsPath + "/@name", "")
 		CS_appendMetaData(fileID, "SASsample/details"+suffix,	 	detailsPath, "")
 	ENDFOR
@@ -425,7 +434,7 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 		IF (DimSize(SAScollimationList, 0) > 1)
 			preMeta += "_" + num2str(i)
 		ENDIF
-		collimationPath = SAScollimationList[i][0]
+		collimationPath = sasEntryPath+"/cs:SASinstrument/cs:SAScollimation["+num2str(i+1)+"]"
 		CS_appendMetaData(fileID, preMeta + "/@name",		    collimationPath + "/@name", "")
 		CS_appendMetaData(fileID, preMeta + "/length",		    collimationPath + "/cs:length", "")
 		CS_appendMetaData(fileID, preMeta + "/length_unit",	    collimationPath + "/cs:length/@unit", "")
@@ -459,7 +468,7 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 		IF (DimSize(SASdetectorList, 0) > 1)
 			preMeta += "_" + num2str(i)
 		ENDIF
-		detectorPath = SASdetectorList[i][0]
+		detectorPath = sasEntryPath+"/cs:SASinstrument/cs:SASdetector["+num2str(i+1)+"]"
 		CS_appendMetaData(fileID, preMeta + "/@name",			 detectorPath + "/cs:name", "")
 		CS_appendMetaData(fileID, preMeta + "/SDD",				 detectorPath + "/cs:SDD", "")
 		CS_appendMetaData(fileID, preMeta + "/SDD/@unit",			 detectorPath + "/cs:SDD/@unit", "")
@@ -503,22 +512,23 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 	XmlListXpath(fileID, sasEntryPath+"//cs:SASprocess", nsStr)	//output: M_listXPath
 	WAVE/T 	M_listXPath
 	DUPLICATE/O/T   M_listXPath, SASprocessList
-	STRING SASprocessPath
+	STRING SASprocessPath, prefix
 	FOR (i = 0; i < DimSize(SASprocessList, 0); i += 1)
 		preMeta = "SASprocess"
 		IF (DimSize(SASprocessList, 0) > 1)
 			preMeta += "_" + num2str(i)
 		ENDIF
-		SASprocessPath = SASprocessList[i][0]
+		SASprocessPath = sasEntryPath+"/cs:SASprocess["+num2str(i+1)+"]"
 		CS_appendMetaData(fileID, preMeta+"/@name",	   SASprocessPath + "/@name", "")
 		CS_appendMetaData(fileID, preMeta+"/name",	   SASprocessPath + "/cs:name", "")
 		CS_appendMetaData(fileID, preMeta+"/date",		   SASprocessPath + "/cs:date", "")
 		CS_appendMetaData(fileID, preMeta+"/description",   SASprocessPath + "/cs:description", "")
-		XmlListXpath(fileID, SASprocessList[i][0]+"//cs:term", nsStr)
+		XmlListXpath(fileID, SASprocessPath+"//cs:term", nsStr)
 		FOR (j = 0; j < DimSize(M_listXPath, 0); j += 1)
-			CS_appendMetaData(fileID, preMeta+"/term_"+num2str(j)+"/@name",     M_listXPath[j][0] + "/@name", "")
-			CS_appendMetaData(fileID, preMeta+"/term_"+num2str(j)+"/@unit",  	   M_listXPath[j][0] + "/@unit", "")
-			CS_appendMetaData(fileID, preMeta+"/term_"+num2str(j),				   M_listXPath[j][0], "")
+			prefix = SASprocessPath + "/cs:term[" + num2str(j+1) + "]"
+			CS_appendMetaData(fileID, preMeta+"/term_"+num2str(j)+"/@name",     prefix + "/@name", "")
+			CS_appendMetaData(fileID, preMeta+"/term_"+num2str(j)+"/@unit",  	  prefix + "/@unit", "")
+			CS_appendMetaData(fileID, preMeta+"/term_"+num2str(j),				  prefix, "")
 		ENDFOR
 		// ignore <SASprocessnote>
 	ENDFOR
@@ -532,7 +542,7 @@ FUNCTION CS_1i_collectMetadata(fileID, sasEntryPath)
 		IF (DimSize(SASnoteList, 0) > 1)
 			preMeta += "_" + num2str(i)
 		ENDIF
-		notePath = SASnoteList[i][0]
+		notePath = sasEntryPath+"//cs:SASnote["+num2str(i+1)+"]"
 		CS_appendMetaData(fileID, preMeta+"/@name", 	notePath + "/@name", "")
 		CS_appendMetaData(fileID, preMeta,		notePath, "")
 	ENDFOR
