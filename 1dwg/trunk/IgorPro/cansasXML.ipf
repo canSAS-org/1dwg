@@ -91,8 +91,8 @@ FUNCTION CS_XmlReader(fileName)
 		SetDataFolder $origFolder
 		RETURN(-2)						// root element is not <SASroot> with valid canSAS namespace
 	ENDIF
-	STRING/G nsPre = "cs"
-	STRING/G nsStr = nsPre + "=" + ns
+	STRING/G nsPre = "cs:"
+	STRING/G nsStr = "cs=" + ns
 
 	SVAR nsPre = root:Packages:CS_XMLreader:nsPre
 	SVAR nsStr = root:Packages:CS_XMLreader:nsStr
