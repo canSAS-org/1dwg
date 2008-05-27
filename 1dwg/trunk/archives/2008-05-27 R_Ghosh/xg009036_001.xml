@@ -4,7 +4,7 @@
 <SASroot version="1.0"
 xmlns="cansas1d/1.0"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http:www.smallangles.net/cansas1d/1.0  
+xsi:schemaLocation="cansas1d/1.0 
 http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd">
 <SASentry>
 <Title>amphiphol 5m        </Title>
@@ -93,11 +93,11 @@ http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd">
 <SASsource>
 <radiation>neutron</radiation>
 <beam_size>
-<x> unit="mm">   0.80</x>
+<x unit="mm">   0.80</x>
 </beam_size>
 <beam_shape> disc </beam_shape>
 <wavelength unit="A">  10.00</wavelength>
-<wavelength_spread unit="percent">   10.00</wavelength_spread>/</SASsource>
+<wavelength_spread unit="percent">   10.00</wavelength_spread></SASsource>
 <SAScollimation>
 <aperture  type="disc"  name="source"><size>
 <x unit="mm">   3.00</x>
@@ -115,8 +115,8 @@ http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd">
 <SASdetector>
 <name>D22 </name>
 <SDD unit="m">    5.000</SDD>
-<orientation><yaw unit="degree">   0.00</yaw></orientation>
 <offset/>
+<orientation><yaw unit="degree">   0.00</yaw></orientation>
 <beam_center>
 <x unit="mm">  473.63 </x>
 <y unit="mm">  478.88 </y>
