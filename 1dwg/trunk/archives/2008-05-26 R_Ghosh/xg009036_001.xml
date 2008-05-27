@@ -4,7 +4,8 @@
 <s:SASroot version="1.0"
 xmlns:s="cansas1d/1.0"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http:www.smallangles.net/cansas1d/ http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd">
+xsi:schemaLocation="cansas1d/1.0  http://www.smallangles.net/cansas1d/1.0/cansas1d.xsd">
+<!-- revised the first part of the xsi:schemaLocation -->
 <s:SASentry>
 <s:Title>det corrn 5m        </s:Title>
 <s:Run>009036</s:Run>
@@ -79,36 +80,49 @@ xsi:schemaLocation="http:www.smallangles.net/cansas1d/ http://www.smallangles.ne
    <s:Idata><s:Q unit="1/A">0.842E-01</s:Q><s:I unit="1/cm">0.0000E+00</s:I><s:Idev unit="1/cm">0.000E+00</s:Idev><s:Qdev unit="1/A">0.39E-02</s:Qdev></s:Idata>
 </s:SASdata>
 <s:SASsample>
+<s:ID /><!-- ID is a required element (sample description) -->
+<!-- order of elements is defined: 
+	http://www.smallangles.net/wgwiki/index.php/cansas1d_SASsample 
+-->
+<s:thickness unit="mm">  0.00</s:thickness>
+<s:transmission> 0.0000</s:transmission>
 <s:temperature unit="C">    0.0000</s:temperature>
 <s:orientation> 
 <s:yaw unit="degree">    -0.100</s:yaw>
 </s:orientation>
-<s:transmission> 0.0000</s:transmission>
-<s:thickness unit="mm">  0.00</s:thickness>
 </s:SASsample>
-<s:SASinstrument name="D22 " > 
+<s:SASinstrument> <!-- no name attribute: http://www.smallangles.net/wgwiki/index.php/cansas1d_SASinstrument -->
+<s:name>D22 </s:name><!-- name is a required element (instrument name) -->
 <s:SASsource>
 <s:radiation>neutron</s:radiation>
 <s:wavelength unit="A">  10.00</s:wavelength>
-<s:wavelength_spread unit="percent">    0.10</s:wavelength_spread>/</s:SASsource>
+<s:wavelength_spread unit="percent">    0.10</s:wavelength_spread><!-- / (a typo here) --></s:SASsource>
 <s:SAScollimation>
-<s:aperture name="source">
+<s:aperture name="source" type="disc">
+<s:size><!-- x & y are enclosed in a "size" element -->
 <s:x unit="mm">   3.00</s:x>
 <s:y unit="mm">   0.00</s:y>
+</s:size>
 <s:distance unit="m">   5.60</s:distance>
 
-<s:shape>disc</s:shape>
+<!--<s:shape>disc</s:shape> shape is actually the "type" attribute-->
 </s:aperture>
-<s:aperture name="sample">
+<s:aperture name="sample" type="disc">
+<s:size><!-- x & y are enclosed in a "size" element -->
 <s:x unit="mm">   0.80</s:x>
 <s:y unit="mm">   0.00</s:y>
+</s:size>
 <s:distance unit="m">   0.00</s:distance>
 
-<s:shape>disc</s:shape>
+<!--<s:shape>disc</s:shape>-->
 </s:aperture>
 </s:SAScollimation>
 <s:SASdetector>
+<!-- http://www.smallangles.net/wgwiki/index.php/cansas1d_SASdetector -->
+<s:name /><!-- name is a required element (detector name) -->
 <s:SDD unit="m">    5.000</s:SDD>
+<!-- orientation comes before beam_center -->
+<s:orientation><s:yaw unit="degree">   0.00</s:yaw></s:orientation>
 <s:beam_center>
 <s:x unit="mm">  473.63 </s:x>
 <s:y unit="mm">  478.88 </s:y>
@@ -117,7 +131,6 @@ xsi:schemaLocation="http:www.smallangles.net/cansas1d/ http://www.smallangles.ne
 <s:x unit="mm">    7.50 </s:x>
 <s:y unit="mm">    7.50 </s:y>
 </s:pixel_size>
-<s:orientation><s:yaw unit="degree">   0.00</s:yaw></s:orientation>
 </s:SASdetector>
 </s:SASinstrument>
 <s:SASprocess name="spol" >
@@ -135,5 +148,6 @@ xsi:schemaLocation="http:www.smallangles.net/cansas1d/ http://www.smallangles.ne
 <s:SASprocessnote>Cd/E  9034  0  1.00E+02 B4C                                                     </s:SASprocessnote>
 <s:SASprocessnote>                                                                                </s:SASprocessnote>
 </s:SASprocess>
+<s:SASnote /><!-- SASnote is a required element -->
 </s:SASentry>
 </s:SASroot>
