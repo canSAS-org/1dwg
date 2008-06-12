@@ -304,7 +304,7 @@ FUNCTION CS_1i_GetReducedSASdata(fileID, SASdataPath)
 		CS_1i_getOneVector(fileID, prefix, "Idev", 		"Idev")
 		CS_1i_getOneVector(fileID, prefix, "Qdev",		"Qdev")
 		CS_1i_getOneVector(fileID, prefix, "dQw", 	"dQw")
-		CS_1i_getOneVector(fileID, prefix, "dQl", 		"Qsas")
+		CS_1i_getOneVector(fileID, prefix, "dQl", 		"dQl")
 		CS_1i_getOneVector(fileID, prefix, "Qmean",	"Qmean")
 		CS_1i_getOneVector(fileID, prefix, "Shadowfactor", 	"Shadowfactor")
 		// check them for common length
