@@ -1,9 +1,13 @@
 #pragma rtGlobals=1		// Use modern global access method.
-#pragma version=1.08
+#pragma version=1.09
 
 // file:	cansasXML.ipf
 // author:	Pete R. Jemian <jemian@anl.gov>
-// date:	2008-06-02
+// date:	2008-06-19
+// SVN date: $LastChangedDate$
+// SVN rev.: $rev$
+// SVN URL:  $HeadURL$
+// SVN ID:   $Id$
 // purpose:  implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files
 //			adheres to the cansas1d/1.0 standard
 // readme:    http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_IgorPro
