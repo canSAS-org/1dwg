@@ -14,6 +14,8 @@
 //
 // requires:	IgorPro (http://www.wavemetrics.com/)
 //				XMLutils - XOP (http://www.igorexchange.com/project/XMLutils)
+// provides:  CS_CmlReader(String fileName)
+//				all other functions in this file should not be relied upon
 
 // ==================================================================
 // CS_XmlReader("bimodal-test1.xml")
@@ -25,8 +27,8 @@
 // ==================================================================
 
 
+#if( Exists("XmlOpenFile") )
 	// BEFORE we do anything else, check that XMLutils XOP is available.
-	#if( Exists("XmlOpenFile") == 0 )
 
 
 FUNCTION CS_XmlReader(fileName)
@@ -806,10 +808,11 @@ FUNCTION testCollette()
 	SetDataFolder root:
 END
 
-	#else	// if( Exists("XmlOpenFile") == 0 )
+#else	// if( Exists("XmlOpenFile") )
+	// No XMLutils XOP: provide dummy function so that IgorPro can compile dependent support code
 	FUNCTION CS_XmlReader(fileName)
 	    String fileName
 	    Abort  "XML function provided by XMLutils XOP is not available, get the XOP from : http://www.igorexchange.com/project/XMLutils (see http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_IgorPro for details)"
 	    RETURN(-6)
 	END
-	#endif	// if( Exists("XmlOpenFile") == 0 )
+#endif	// if( Exists("XmlOpenFile") )
