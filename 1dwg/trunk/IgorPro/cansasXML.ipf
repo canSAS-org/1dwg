@@ -1,9 +1,8 @@
 #pragma rtGlobals=1		// Use modern global access method.
-#pragma version=1.09
+#pragma version=1.10
 
 // file:	cansasXML.ipf
 // author:	Pete R. Jemian <jemian@anl.gov>
-// date:	2008-06-19
 // SVN date:	$Date$
 // SVN rev.:	$Revision$
 // SVN URL:	$HeadURL$
@@ -41,6 +40,12 @@ FUNCTION CS_XmlReader(fileName)
 	STRING origFolder
 	STRING workingFolder = "root:Packages:CS_XMLreader"
 	VARIABLE returnCode
+
+	// BEFORE we do anything else, check that XMLutils XOP is available.
+	#if( Exists("XmlOpenFile") == 0 )
+    Abort  "XML function provided by XMLutils XOP is not available, get the XOP from : http://www.igorexchange.com/project/XMLutils (see http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_IgorPro for details)"
+	#endif
+
 
 	//
 	// set up a work folder within root:Packages
@@ -302,7 +307,7 @@ FUNCTION CS_1i_GetReducedSASdata(fileID, SASdataPath)
 	VARIABLE cansasStrict = 1		// !!!software developer's choice!!!
 	IF (cansasStrict)		// only get known canSAS data vectors
 		prefix = SASdataPath + "//cs:"
-		// load ALL nodes of each vector (if exists) at tthe same time
+		// load ALL nodes of each vector (if exists) at the same time
 		CS_1i_getOneVector(fileID, prefix, "Q", 		"Qsas")
 		CS_1i_getOneVector(fileID, prefix, "I", 		"Isas")
 		CS_1i_getOneVector(fileID, prefix, "Idev", 		"Idev")
