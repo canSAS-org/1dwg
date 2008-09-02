@@ -25,6 +25,10 @@
 // ==================================================================
 
 
+	// BEFORE we do anything else, check that XMLutils XOP is available.
+	#if( Exists("XmlOpenFile") == 0 )
+
+
 FUNCTION CS_XmlReader(fileName)
 	//
 	// open a canSAS 1-D reduced SAS XML data file
@@ -34,17 +38,13 @@ FUNCTION CS_XmlReader(fileName)
 	//		-2: root element is not <SASroot> with valid canSAS namespace
 	//		-3: <SASroot> version  is not 1.0
 	//		-4: no <SASentry> elements
-	//		-5: XOPutils needs upgrade
+	//		-5: XMLutils XOP needs upgrade
+	//		-6: XMLutils XOP not found
 	//
 	STRING fileName
 	STRING origFolder
 	STRING workingFolder = "root:Packages:CS_XMLreader"
 	VARIABLE returnCode
-
-	// BEFORE we do anything else, check that XMLutils XOP is available.
-	#if( Exists("XmlOpenFile") == 0 )
-    Abort  "XML function provided by XMLutils XOP is not available, get the XOP from : http://www.igorexchange.com/project/XMLutils (see http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_IgorPro for details)"
-	#endif
 
 
 	//
@@ -79,12 +79,12 @@ FUNCTION CS_XmlReader(fileName)
 	ENDIF
 
 	//
-	//	test to see if XOPutils has the needed upgrade
+	//	test to see if XMLutils has the needed upgrade
 	//
 	XMLlistXpath(fileID, "/*", "")	
 	IF ( EXISTS( "M_listXPath" ) == 0 )
 		XmlCloseFile(fileID,0)
-		errorMsg = "XOPutils needs an upgrade:  http://www.igorexchange.com/project/XMLutils"
+		errorMsg = "XMLutils needs an upgrade:  http://www.igorexchange.com/project/XMLutils"
 		PRINT errorMsg
 		SetDataFolder $origFolder
 		RETURN(-5)						// XOPutils needs an upgrade
@@ -805,3 +805,11 @@ FUNCTION testCollette()
 
 	SetDataFolder root:
 END
+
+	#else	// if( Exists("XmlOpenFile") == 0 )
+	FUNCTION CS_XmlReader(fileName)
+	    String fileName
+	    Abort  "XML function provided by XMLutils XOP is not available, get the XOP from : http://www.igorexchange.com/project/XMLutils (see http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_IgorPro for details)"
+	    RETURN(-6)
+	END
+	#endif	// if( Exists("XmlOpenFile") == 0 )
