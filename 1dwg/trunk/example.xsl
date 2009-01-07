@@ -94,7 +94,7 @@ Usage:
 		<xsl:for-each select="cs:SASentry">
 			<hr />
 			<br />
-			<a id="#SASentry-{generate-id(.)}"  name="#SASentry-{generate-id(.)}" />
+			<a id="#SASentry-{generate-id(.)}"  name="SASentry-{generate-id(.)}" />
 			<h1>SASentry<xsl:value-of select="position()" />:<xsl:if 
 				test="@name!=''">(<xsl:value-of select="@name" />)</xsl:if>
 				<xsl:value-of select="cs:Title" /></h1>
@@ -158,7 +158,7 @@ Usage:
 	</xsl:template>
 
 	<xsl:template match="cs:SASdata">
-		<a id="#SASdata-{generate-id(.)}"  name="#SASdata-{generate-id(.)}" />
+		<a id="#SASdata-{generate-id(.)}"  name="SASdata-{generate-id(.)}" />
 		<table border="2">
 			<caption><xsl:if 
 				test="@name!=''"><xsl:value-of select="@name" /></xsl:if> (<xsl:value-of 
