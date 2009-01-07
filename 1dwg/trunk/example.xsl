@@ -34,9 +34,7 @@
 								<th bgcolor="lavender">SASentry-<xsl:value-of select="position()" /></th>
 								<td>
 									<a href="#SASentry-{generate-id(.)}">
-										<xsl:if test="@name!=''">
-											(<xsl:value-of select="@name" />)
-										</xsl:if>
+										<xsl:if test="@name!=''">(<xsl:value-of select="@name" />)</xsl:if>
 										<xsl:value-of select="cs:Title" />
 									</a>
 								</td>
@@ -69,6 +67,7 @@
 				</table>
 				<xsl:apply-templates  />
 				<hr />
+				<small><center>$Id$</center></small>
 			</body>
 		</html>
 	</xsl:template>
@@ -78,13 +77,9 @@
 			<hr />
 			<br />
 			<a id="#SASentry-{generate-id(.)}"  name="#SASentry-{generate-id(.)}" />
-			<h1>
-					SASentry<xsl:value-of select="position()" />:
-					<xsl:if test="@name!=''">
-						(<xsl:value-of select="@name" />)
-					</xsl:if>
-					<xsl:value-of select="cs:Title" />
-			</h1>
+			<h1>SASentry<xsl:value-of select="position()" />:<xsl:if 
+				test="@name!=''">(<xsl:value-of select="@name" />)</xsl:if>
+				<xsl:value-of select="cs:Title" /></h1>
 			<xsl:if test="count(cs:SASdata)>1">
 				<table border="2">
 					<caption>SASdata contents</caption>
@@ -147,19 +142,14 @@
 	<xsl:template match="cs:SASdata">
 		<a id="#SASdata-{generate-id(.)}"  name="#SASdata-{generate-id(.)}" />
 		<table border="2">
-			<caption>
-				<xsl:if test="@name!=''">
-					<xsl:value-of select="@name" />
-				</xsl:if>
-				(<xsl:value-of select="count(cs:Idata)" /> points)
-			</caption>
+			<caption><xsl:if 
+				test="@name!=''"><xsl:value-of select="@name" /></xsl:if> (<xsl:value-of 
+				select="count(cs:Idata)" /> points)</caption>
 			<tr bgcolor="lavender">
 				<xsl:for-each select="cs:Idata[1]/*">
 					<th>
 						<xsl:value-of select="name()" /> 
-						<xsl:if test="@unit!=''">
-							(<xsl:value-of select="@unit" />)
-						</xsl:if>
+						<xsl:if test="@unit!=''"> (<xsl:value-of select="@unit" />)</xsl:if>
 					</th>
 				</xsl:for-each>
 			</tr>
@@ -413,14 +403,36 @@
 		</tr>
 	</xsl:template>
 
-	<xsl:template match="cs:SASprocessnote">
+	<xsl:template match="cs:SASprocessnote" mode="standard">
 		<tr>
 			<td><xsl:value-of select="name()" /></td>
 			<td><xsl:value-of select="." /></td>
 			<td><xsl:value-of select="@name" /></td>
 		</tr>
 	</xsl:template>
-
+	
+	<xsl:template match="cs:SASprocessnote" mode="Indra">
+		<!-- 
+			Customization for APS USAXS metadata
+			These will be IgorPro wavenote variables
+		-->
+		<xsl:for-each select="cs:APS_USAXS">
+			<!-- ignore any other elements at this point -->
+			<tr>
+				<td bgcolor="lightgrey"><xsl:value-of select="name(..)" /></td>
+				<td bgcolor="lightgrey"><xsl:value-of select="name()" /></td>
+				<td bgcolor="lightgrey"><xsl:value-of select="@name" /></td>
+			</tr>
+			<xsl:for-each select="*">
+				<tr>
+					<td><xsl:value-of select="name()" /></td>
+					<td><xsl:value-of select="." /></td>
+					<td><xsl:value-of select="@name" /></td>
+				</tr>
+			</xsl:for-each>
+		</xsl:for-each>
+	</xsl:template>
+	
 	<xsl:template match="cs:SASprocess">
 		<tr>
 			<td><xsl:value-of select="name()" /></td>
@@ -431,7 +443,12 @@
 			<xsl:choose>
 				<xsl:when test="name()='name'" />
 				<xsl:when test="name()='term'"><xsl:apply-templates select="." /></xsl:when>
-				<xsl:when test="name()='SASprocessnote'"><xsl:apply-templates select="." /></xsl:when>
+				<xsl:when test="name()='SASprocessnote'">
+					<xsl:choose>
+						<xsl:when test="../@name='Indra'"><xsl:apply-templates select="." mode="Indra"/></xsl:when>
+						<xsl:otherwise><xsl:apply-templates select="." mode="standard"/></xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
 				<xsl:otherwise>
 					<tr>
 						<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
