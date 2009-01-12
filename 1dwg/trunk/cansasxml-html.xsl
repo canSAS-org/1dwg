@@ -15,7 +15,7 @@ Purpose:
 	in a web browser such as Firefox or Internet Explorer.
 
 Usage:
-	xsltproc example.xsl datafile.xml > datafile.html
+	xsltproc cansasxml-html.xsl datafile.xml > datafile.html
 	(or include it as indicated at the documentation site
 	http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation)
 -->
@@ -34,7 +34,7 @@ Usage:
 			</head>
 			<body>
 				<h1>SAS data in canSAS 1-D format</h1>
-				<small>generated using <TT>example.xsl</TT> from canSAS</small>
+				<small>generated using <TT>cansasxml-html.xsl</TT> from canSAS</small>
 				<BR />
 				<table border="2">
 					<tr>
