@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SASroot>
+ <SASentry>
+  <SASdata>
+   <Idata><Q_A-1>  0.000E+00 </Q_A-1><I_cm-1>  0.0000E+00 </I_cm-1><Idev_cm-1>  0.000E+00 </Idev_cm-1><Qdev_A-1>  0.00E+00 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.047E-03 </Q_A-1><I_cm-1>  0.0000E+00 </I_cm-1><Idev_cm-1>  0.000E+00 </Idev_cm-1><Qdev_A-1>  9.14E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.094E-03 </Q_A-1><I_cm-1>  0.0000E+00 </I_cm-1><Idev_cm-1>  0.000E+00 </Idev_cm-1><Qdev_A-1>  9.32E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  3.142E-03 </Q_A-1><I_cm-1>  0.0000E+00 </I_cm-1><Idev_cm-1>  0.000E+00 </Idev_cm-1><Qdev_A-1>  9.61E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  4.189E-03 </Q_A-1><I_cm-1>  0.0000E+00 </I_cm-1><Idev_cm-1>  0.000E+00 </Idev_cm-1><Qdev_A-1>  1.00E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  5.364E-03 </Q_A-1><I_cm-1>  5.4484E+00 </I_cm-1><Idev_cm-1>  1.647E-01 </Idev_cm-1><Qdev_A-1>  1.05E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  6.255E-03 </Q_A-1><I_cm-1>  4.9963E+00 </I_cm-1><Idev_cm-1>  9.122E-02 </Idev_cm-1><Qdev_A-1>  1.10E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  7.299E-03 </Q_A-1><I_cm-1>  4.6705E+00 </I_cm-1><Idev_cm-1>  7.450E-02 </Idev_cm-1><Qdev_A-1>  1.17E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  8.340E-03 </Q_A-1><I_cm-1>  4.2690E+00 </I_cm-1><Idev_cm-1>  5.745E-02 </Idev_cm-1><Qdev_A-1>  1.23E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  9.395E-03 </Q_A-1><I_cm-1>  4.0078E+00 </I_cm-1><Idev_cm-1>  5.484E-02 </Idev_cm-1><Qdev_A-1>  1.31E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.045E-02 </Q_A-1><I_cm-1>  3.8409E+00 </I_cm-1><Idev_cm-1>  4.939E-02 </Idev_cm-1><Qdev_A-1>  1.38E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.151E-02 </Q_A-1><I_cm-1>  3.6579E+00 </I_cm-1><Idev_cm-1>  4.750E-02 </Idev_cm-1><Qdev_A-1>  1.47E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.258E-02 </Q_A-1><I_cm-1>  3.4413E+00 </I_cm-1><Idev_cm-1>  4.344E-02 </Idev_cm-1><Qdev_A-1>  1.55E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.362E-02 </Q_A-1><I_cm-1>  3.2571E+00 </I_cm-1><Idev_cm-1>  4.197E-02 </Idev_cm-1><Qdev_A-1>  1.64E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.465E-02 </Q_A-1><I_cm-1>  3.0475E+00 </I_cm-1><Idev_cm-1>  4.016E-02 </Idev_cm-1><Qdev_A-1>  1.72E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.570E-02 </Q_A-1><I_cm-1>  2.9447E+00 </I_cm-1><Idev_cm-1>  3.703E-02 </Idev_cm-1><Qdev_A-1>  1.81E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.674E-02 </Q_A-1><I_cm-1>  2.8542E+00 </I_cm-1><Idev_cm-1>  3.706E-02 </Idev_cm-1><Qdev_A-1>  1.90E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.779E-02 </Q_A-1><I_cm-1>  2.6221E+00 </I_cm-1><Idev_cm-1>  3.293E-02 </Idev_cm-1><Qdev_A-1>  2.00E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.886E-02 </Q_A-1><I_cm-1>  2.5466E+00 </I_cm-1><Idev_cm-1>  3.318E-02 </Idev_cm-1><Qdev_A-1>  2.09E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  1.989E-02 </Q_A-1><I_cm-1>  2.4346E+00 </I_cm-1><Idev_cm-1>  3.203E-02 </Idev_cm-1><Qdev_A-1>  2.19E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.093E-02 </Q_A-1><I_cm-1>  2.2702E+00 </I_cm-1><Idev_cm-1>  3.034E-02 </Idev_cm-1><Qdev_A-1>  2.28E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.198E-02 </Q_A-1><I_cm-1>  2.2182E+00 </I_cm-1><Idev_cm-1>  3.011E-02 </Idev_cm-1><Qdev_A-1>  2.38E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.303E-02 </Q_A-1><I_cm-1>  2.0914E+00 </I_cm-1><Idev_cm-1>  2.798E-02 </Idev_cm-1><Qdev_A-1>  2.48E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.408E-02 </Q_A-1><I_cm-1>  2.0097E+00 </I_cm-1><Idev_cm-1>  2.795E-02 </Idev_cm-1><Qdev_A-1>  2.57E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.511E-02 </Q_A-1><I_cm-1>  1.9056E+00 </I_cm-1><Idev_cm-1>  2.684E-02 </Idev_cm-1><Qdev_A-1>  2.67E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.617E-02 </Q_A-1><I_cm-1>  1.8275E+00 </I_cm-1><Idev_cm-1>  2.559E-02 </Idev_cm-1><Qdev_A-1>  2.77E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.724E-02 </Q_A-1><I_cm-1>  1.7406E+00 </I_cm-1><Idev_cm-1>  2.508E-02 </Idev_cm-1><Qdev_A-1>  2.87E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.828E-02 </Q_A-1><I_cm-1>  1.6591E+00 </I_cm-1><Idev_cm-1>  2.441E-02 </Idev_cm-1><Qdev_A-1>  2.97E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  2.932E-02 </Q_A-1><I_cm-1>  1.5903E+00 </I_cm-1><Idev_cm-1>  2.451E-02 </Idev_cm-1><Qdev_A-1>  3.07E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  3.035E-02 </Q_A-1><I_cm-1>  1.4810E+00 </I_cm-1><Idev_cm-1>  2.289E-02 </Idev_cm-1><Qdev_A-1>  3.17E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  3.140E-02 </Q_A-1><I_cm-1>  1.4093E+00 </I_cm-1><Idev_cm-1>  2.279E-02 </Idev_cm-1><Qdev_A-1>  3.27E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  3.242E-02 </Q_A-1><I_cm-1>  1.3394E+00 </I_cm-1><Idev_cm-1>  2.281E-02 </Idev_cm-1><Qdev_A-1>  3.37E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  3.349E-02 </Q_A-1><I_cm-1>  1.2679E+00 </I_cm-1><Idev_cm-1>  2.555E-02 </Idev_cm-1><Qdev_A-1>  3.47E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  3.454E-02 </Q_A-1><I_cm-1>  1.2336E+00 </I_cm-1><Idev_cm-1>  2.911E-02 </Idev_cm-1><Qdev_A-1>  3.57E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  3.560E-02 </Q_A-1><I_cm-1>  1.1766E+00 </I_cm-1><Idev_cm-1>  2.880E-02 </Idev_cm-1><Qdev_A-1>  3.67E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  3.666E-02 </Q_A-1><I_cm-1>  1.0849E+00 </I_cm-1><Idev_cm-1>  3.269E-02 </Idev_cm-1><Qdev_A-1>  3.78E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>  3.750E-02 </Q_A-1><I_cm-1>  1.0130E+00 </I_cm-1><Idev_cm-1>  5.246E-02 </Idev_cm-1><Qdev_A-1>  3.86E-03 </Qdev_A-1></Idata>
+</SASdata>
+<Title>2A 5mM 0%D2O        </Title>
+<Source_file>"g013586.001"</Source_file>
+<Flux_monitor>      1.00</Flux_monitor>
+<Count_time_secs>   900.000</Count_time_secs>
+<Q_resolution>"estimated"</Q_resolution>
+<SASsample>
+<sample_temperature>     0.0000 </sample_temperature>
+<sample_offset_angle_deg>      0.020 </sample_offset_angle_deg>
+<sample_x_mm>   10.00 </sample_x_mm>
+<sample_y_mm>    0.00 </sample_y_mm>
+<sample_transmission>   0.0000 </sample_transmission>
+<sample_thickness_mm>    0.00 </sample_thickness_mm>
+</SASsample>
+<SASinstrument name="D11 " > 
+<SASsource>
+<radiation>  neutron  </radiation>
+<beam_x_mm>   30.00 </beam_x_mm>
+<beam_y_mm>    0.00 </beam_y_mm>
+<wavelength_A>    6.00 </wavelength_A>
+<wavelength_spread>    0.00 </wavelength_spread>
+</SASsource>
+<SAScollimation>
+<distance_coll_m>   10.000 </distance_coll_m>
+</SAScollimation>
+<SASdetector>
+<offset_angle_deg>    0.00 </offset_angle_deg>
+<x0_mm>  311.00 </x0_mm>
+<y0_mm>  315.00 </y0_mm>
+<distance_SD_m>    10.000 </distance_SD_m>
+<pixel_x_mm>   10.00 </pixel_x_mm>
+<pixel_y_mm>   10.00 </pixel_y_mm>
+</SASdetector>
+</SASinstrument>
+<SASprocess name="spol" >
+<date> 04-Sep-2007 18:12:27 </date>
+<radialstep_mm>  10.000 </radialstep_mm>
+<sector_width_deg>  180.0 </sector_width_deg>
+<sector_orient_deg>     0.0 </sector_orient_deg>
+<SASnote_01>  AvA1 0.0000E+00 AsA2 1.0000E+00 XvA3 1.1111E+01 XsA4 5.2200E-02 XfA5 0.0000E+00 </SASnote_01>
+<SASnote_02> S... 13586  0  5.63E+01 2A 5mM 0%D2O    Sbak 13567  0  1.88E+01 H2O buffer       </SASnote_02>
+<SASnote_03> Sbak 13533  0  7.49E+00 H2O buffer      V... 13552  1  1.00E+00 Normal 10m from  </SASnote_03>
+<SASnote_04>                                                                                  </SASnote_04>
+</SASprocess>
+</SASentry>
+</SASroot>
