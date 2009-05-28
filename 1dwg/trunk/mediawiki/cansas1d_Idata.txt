@@ -1,0 +1,76 @@
+<gallery>
+Image:cansas1d-v1-2-SASdata.png | block diagram
+Image:Q-geometry.jpg | Q geometry
+</gallery>
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| '''Q'''
+|| floating-point number
+| align="center" | [1..1]
+|| ''Q=(4 &pi; / &lambda;) sin(&theta;)'' where ''&lambda;'' is the wavelength of the radiation and ''2&theta;'' is the angle through which the detected radiation has been scattered.  
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  Either ''1/A'' or ''1/nm'' are typical.
+|| '''unit'''="{units}"
+|-
+|| '''I'''
+|| floating-point number
+| align="center" | [1..1]
+|| Intensity of the detected radiation. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  One possibility might be''1/cm''.
+|| '''unit'''="{units}"
+|-
+|| '''''Idev'''''
+|| floating-point number
+| align="center" | [0..1]
+|| Estimated standard deviation of '''I'''.
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  One possibility might be''1/cm''.
+|| '''unit'''="{units}"
+|-
+|| '''''Qdev'''''
+|| floating-point number
+| align="center" | [0..1]
+|| Estimated standard deviation of '''Q'''. (optional: see note below on usage)
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  Either ''1/A'' or ''1/nm'' are typical.
+|| '''unit'''="{units}"
+|-
+|| '''''dQw'''''
+|| floating-point number
+| align="center" | [0..1]
+|| '''Q''' resolution along the axis of scanning (the high-resolution ''slit width'' direction).  Useful for defining resolution data from slit-smearing instruments such as Bonse-Hart geometry.  (optional: see note below on usage)
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  Either ''1/A'' or ''1/nm'' are typical.
+|| '''unit'''="{units}"
+|-
+|| '''''dQl'''''
+|| floating-point number
+| align="center" | [0..1]
+|| '''Q''' resolution perpendicular to the axis of scanning (the low-resolution ''slit length'' direction).  Useful for defining resolution data from slit-smearing instruments such as Bonse-Hart geometry.  (optional: see note below on usage)
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  Either ''1/A'' or ''1/nm'' are typical.
+|| '''unit'''="{units}"
+|-
+|| '''''Qmean'''''
+|| floating-point number
+| align="center" | [0..1]
+|| Mean value of '''Q''' for this datum.  Useful when describing data that has been binned from higher-resolution or from area detectors.
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  Either ''1/A'' or ''1/nm'' are typical.
+|| '''unit'''="{units}"
+|-
+|| '''''Shadowfactor'''''
+|| floating-point number
+| align="center" | [0..1]
+|| Describes the adjustment due to the beam stop penumbra. 
+'''(This definition needs revision. NIST?)'''
+NOTE: There is no "unit" attribute.
+|| 
+|-
+|}
+
+== Notes ==
+
+# When an optional element ('''''Idev''''', '''''Qdev''''', ...) is used, it must be given in every [[cansas1d_Idata | '''Idata''']] within the enclosing [[cansas1d_SASdata | '''SASdata''']].
+# If either '''''dQw''''' or '''''dQl''''' are used, then '''''Qdev''''' is not permitted to be used.

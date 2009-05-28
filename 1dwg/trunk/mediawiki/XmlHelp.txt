@@ -1,0 +1,7 @@
+= Help for XML =
+; XML: EXtensible Markup Language <br /> http://www.w3schools.com/xml/ <br /> http://www.w3.org/XML/ <br /> http://en.wikipedia.org/wiki/XML <br /> http://www.zvon.org/xxl/XPathTutorial/General/examples.html
+; XSL (or XSLT): EXtensible Stylesheet Language <br /> http://www.w3schools.com/xsl/ <br /> http://www.w3.org/Style/XSL/ <br /> http://en.wikipedia.org/wiki/Extensible_Stylesheet_Language <br /> http://en.wikipedia.org/wiki/XSLT
+; XPath: XPath is a language for finding information in an XML document. <br /> http://www.w3schools.com/xpath/ <br /> http://www.w3.org/Style/XSL/ <br /> http://en.wikipedia.org/wiki/XPath
+; Schema: An XML Schema describes the structure of an XML document. <br /> http://www.w3schools.com/schema/ <br /> http://www.w3.org/XML/Schema <br /> http://en.wikipedia.org/wiki/XSD
+; XML Namespaces: XML namespaces are used for providing uniquely named elements and attributes in an XML instance. <br /> http://www.zvon.org/xxl/NamespaceTutorial/Output <br /> http://en.wikipedia.org/wiki/XML_namespaces <br /> http://www.w3schools.com/XML/xml_namespaces.asp
+; XML Foreign Elements: Inclusion of elements, at select locations, that are not defined by the cansas1d.xsd XML Schema <br /> http://books.xmlschemata.org/relaxng/relax-CHP-11-SECT-4.html <br /> http://www.w3.org/TR/SVG/extend.html <br /> http://www.google.com/search?q=XML+foreign+elements
