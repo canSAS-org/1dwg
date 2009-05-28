@@ -1,0 +1,198 @@
+<gallery caption="block diagrams">
+Image:cansas1d-v1-7-SASdetector.png
+</gallery>
+
+* parent: [[cansas1d_SASinstrument | SASinstrument]]
+
+== SASdetector ==
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| '''name'''
+|| string
+| align="center" | [1..1]
+|| Text string that identifies the name of this detector.
+|| 
+|-
+|| '''''SDD'''''
+|| floating-point number
+| align="center" | [0..1]
+|| Distance between sample and detector.
+|| '''''unit'''''="{unit}"
+|-
+|| [[#offset | '''''offset''''']]
+|| container
+| align="center" | [0..1]
+|| Offset of this detector position in X, Y, (and Z if necessary).
+||
+|-
+|| [[#orientation | '''''orientation''''']]
+|| container
+| align="center" | [0..1]
+|| Orientation (rotation) of this detector in roll, pitch, and yaw. 
+||
+|-
+|| [[#beam_center| '''''beam_center''''']]
+|| container
+| align="center" | [0..1]
+|| Center of the beam on the detector in X and Y (and Z if necessary). 
+||
+|-
+|| [[#pixel_size | '''''pixel_size''''']]
+|| container
+| align="center" | [0..1]
+|| Size of detector pixels in X and Y (and Z if necessary).  
+||
+|-
+|| '''''slit_length'''''
+|| floating-point number
+| align="center" | [0..1]
+|| Slit length of the instrument for this detector.  This is expressed in the same units as <math>Q</math> (reciprocal space units).
+|| '''''unit'''''="{unit}"
+|-
+|}
+
+== geometry ==
+
+<gallery caption="geometry ">
+Image:Translation-orientation-geometry.jpg    | from source
+Image:Translation-orientation-geometry-2.jpg  | from detector
+</gallery>
+
+== offset ==
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| '''x'''
+|| floating-point number
+| align="center" | [0..1]
+|| Offset of the detector position in X. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''y'''
+|| floating-point number
+| align="center" | [0..1]
+|| Offset of the detector position in Y. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''z'''
+|| floating-point number
+| align="center" | [0..1]
+|| Offset of the detector position in Z. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  Note: While Z is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
+|| '''unit'''="{units}"
+|-
+|}
+
+== orientation ==
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| '''roll'''
+|| floating-point number
+| align="center" | [0..1]
+|| Rotation about the ''Z'' axis (roll). 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''pitch'''
+|| floating-point number
+| align="center" | [0..1]
+|| Rotation about the ''X'' axis (pitch). 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''yaw'''
+|| floating-point number
+| align="center" | [0..1]
+|| Rotation about the ''Y'' axis (yaw). 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|}
+
+== beam_center ==
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| '''x'''
+|| floating-point number
+| align="center" | [0..1]
+|| Position of the beam center on the detector in X. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''y'''
+|| floating-point number
+| align="center" | [0..1]
+|| Position of the beam center on the detector in Y. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''z'''
+|| floating-point number
+| align="center" | [0..1]
+|| Position of the beam center on the detector in Z. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
+|| '''unit'''="{units}"
+|-
+|}
+
+== pixel_size ==
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| '''x'''
+|| floating-point number
+| align="center" | [0..1]
+|| Size of a detector pixel in X. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''y'''
+|| floating-point number
+| align="center" | [0..1]
+|| Size of a detector pixel in Y. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''z'''
+|| floating-point number
+| align="center" | [0..1]
+|| Size of a detector pixel in Z. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
+|| '''unit'''="{units}"
+|-
+|}
