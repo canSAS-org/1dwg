@@ -174,9 +174,10 @@ function buildHtmlPage($post) {
 	addTextElement($doc, $body, 'h2', 'Results');
 	$p = addElement($doc, $body, 'p');
 	addText($doc, $p, 
-		'Output from the form will be formatted for nice display ' .
-		'using the standard canSAS style sheet.  To see the raw ' .
-		'XML output, use the "View Source" capability of your browser.'
+		'Output from the form will be formatted for nice display using the ' .
+		'standard canSAS style sheet. To see the raw XML output and save the data ' .
+		'as a canSAS1d file, use the "View Source" capability of your browser. ' .
+		'Be sure to change the file extension to XML.'
 	);
 
 	addComment($doc, $body, ' end content ');
