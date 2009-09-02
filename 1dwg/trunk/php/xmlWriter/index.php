@@ -8,6 +8,7 @@
 # $Id$
 ########### SVN repository information ###################
 
+##### GLOBALS #####################################################################
 
 $tool['titleStr'] = "canSAS1d/1.0 XML formatter";
 $tool['svnid'] = "\$Id$";
@@ -34,9 +35,10 @@ $vars['detector_SDD'] = 'sample-detector distance (m)';
 $vars['SASnote'] = 'SASnote';
 $vars['SASdata'] = 'SAS data (3 columns: Q I Idev)';
 
-
 $process = 0;		// Should processing be run this time?
 $post = array();    // processing parameters to be used
+
+##### main body of code #####################################################################
 
 # look for any input parameters
 switch ($_SERVER["REQUEST_METHOD"]) {
@@ -87,6 +89,8 @@ switch ($_SERVER["REQUEST_METHOD"]) {
 		break;
 }
 #phpInfo();
+
+####### function definitions ###################################################################
 
 
 function buildHtmlPage($post) {
@@ -360,11 +364,13 @@ function addElement($doc, $parent, $tag, $prefix = '') {
 	return($node);
 }
 
+
 function addAttribute($parent, $name, $value = '') {
 	$attr = $parent->setAttribute($name, $value);
 	$parent->appendChild($attr);
 	return($attr);
 }
+
 
 function addText($doc, $parent, $text = '') {
 	$node = $doc->createTextNode($text);
@@ -372,17 +378,20 @@ function addText($doc, $parent, $text = '') {
 	return($node);
 }
 
+
 function addComment($doc, $parent, $text = '') {
 	$node = $doc->createComment($text);
 	$parent->appendChild($node);
 	return($node);
 }
 
+
 function addTextElement($doc, $parent, $tag, $text) {
 	$node = addElement($doc, $parent, $tag);
 	addText($doc, $node, $text);
 	return($node);
 }
+
 
 function prettyXML($sXML) {
 	# Thanks to Joachem Blok on http://us3.php.net/domdocument
@@ -392,6 +401,7 @@ function prettyXML($sXML) {
 	$doc->loadXML($sXML);
 	return($doc->saveXML());
 }
+
 
 // PRJ_mysqlDate
 // ===============
