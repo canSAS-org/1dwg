@@ -333,8 +333,10 @@ function surveillance($post) {
 
 	$list = addElement($doc, $entry, 'sas_variables');
 	foreach ($post as $key => $value) {
-		$node = addTextElement($doc, $list, 'var', $value);
-		addAttribute($node, 'name', $key);
+		if ($key != 'result_style'} {
+			$node = addTextElement($doc, $list, 'var', $value);
+			addAttribute($node, 'name', $key);
+		}
 	}
 
 	$list = addElement($doc, $entry, 'server_variables');
