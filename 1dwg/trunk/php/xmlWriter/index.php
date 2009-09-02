@@ -214,7 +214,8 @@ function buildHtmlPage($post) {
 
 	addElement($doc, $body, 'br');
 
-	$small = addTextElement($doc, $body, 'small', $tool['svnid']);
+	$idstr = trim(trim($tool['svnid'], "\$"));
+	$small = addTextElement($doc, $body, 'small', $idstr);
 
 	addComment($doc, $body, ' end footer ');
 	#--end-footer------------------------------
@@ -298,7 +299,8 @@ function prepare_cansasxml($post) {
 	addTextElement($doc, $sasprocess, 'name', $tool['titleStr']);
 	addTextElement($doc, $sasprocess, 'date', PRJ_mysqlDate('now') );
 
-	$node = addTextElement($doc, $sasprocess, 'SASprocessnote', $tool['svnid']);
+	$idstr = trim(trim($tool['svnid'], "\$"));
+	$node = addTextElement($doc, $sasprocess, 'SASprocessnote', $idstr);
 	addAttribute($node, 'name', 'svnid');
 
 	$str = 'formatting of text data into canSAS XML 1D standard';
