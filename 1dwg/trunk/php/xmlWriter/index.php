@@ -192,10 +192,10 @@ function buildHtmlPage($post) {
 	addTextElement($doc, $body, 'h2', 'Results');
 	$p = addElement($doc, $body, 'p');
 	addText($doc, $p, 
-		'Output from the form will be formatted for nice display using the ' .
-		'standard canSAS style sheet. To see the raw XML output and save the data ' .
-		'as a canSAS1d file, use the "View Source" capability of your browser. ' .
-		'Be sure to change the file extension to XML.'
+		'Output from the form can be either be formatted for nice display using the ' .
+		'standard canSAS style sheet ("Styled" radiobutton) or as "Raw XML."  ' .
+		'However, to see the raw XML output from Styled output, ' .
+		'use the "View Source" capability of your browser.  '
 	);
 
 	addComment($doc, $body, ' end content ');
