@@ -1,5 +1,5 @@
 #pragma rtGlobals=1		// Use modern global access method.
-#pragma version=1.10
+#pragma version=1.11
 
 // file:	cansasXML.ipf
 // author:	Pete R. Jemian <jemian@anl.gov>
@@ -208,9 +208,25 @@ FUNCTION CS_1i_parseXml(fileID)
 			CS_1i_collectMetadata(fileID, SASentryPath)
 		ELSE
 			FOR (j = 0; j < DimSize(M_listXPath, 0); j += 1)
-				STRING SASdataFolder = CS_cleanFolderName("SASdata_" + num2str(j))
+				// Could make this new behavior optional
+				STRING SASdata_item = "SASdata_" + num2str(j)
+				STRING SASdata_node = SASentryPath+"/cs:SASdata["+num2str(j+1)+"]"
+				// Preferred name obtained from the SASentry/SASdata/@name attribute, if present
+				STRING SASdata_name = XMLstrFmXpath(fileID,  SASdata_node + "/@name", nsStr, "")
+				IF (strlen(SASdata_name) == 0)
+					IF (DimSize(M_listXPath, 0) == 1)
+						// Alternative if only one SASdata block is to use the SASentry/Title
+						SASdata_name = XMLstrFmXpath(fileID,  SASentryPath+"/cs:Title", nsStr, "")
+					ELSE
+						// the original behavior: SASdata_0, SASdata_1, ...
+						SASdata_name = SASdata_item
+					ENDIF
+					// the original behavior: SASdata_0, SASdata_1, ...
+					SASdata_name = SASdata_item
+				ENDIF
+				STRING SASdataFolder = CS_cleanFolderName(SASdata_name)
 				NewDataFolder/O/S  $SASdataFolder
-				CS_1i_getOneSASdata(fileID, Title, SASentryPath+"/cs:SASdata["+num2str(j+1)+"]")
+				CS_1i_getOneSASdata(fileID, Title, SASdata_node)
 				CS_1i_collectMetadata(fileID, SASentryPath)
 				SetDataFolder ::			// back up to parent directory
 			ENDFOR
