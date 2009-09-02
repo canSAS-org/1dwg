@@ -1314,7 +1314,7 @@
     <SASprocess>
       <name>canSAS1d/1.0 XML formatter</name>
       <date>2009-08-26 23:06:21</date>
-      <SASprocessnote name="svnid">$Id$</SASprocessnote>
+      <SASprocessnote name="svnid">Id: index.php 1060 2009-08-26 15:37:23Z jemian</SASprocessnote>
       <SASprocessnote name="titleStr">formatting of text data into canSAS XML 1D standard</SASprocessnote>
     </SASprocess>
     <SASnote name="comment">
@@ -1625,7 +1625,7 @@
     <SASprocess>
       <name>canSAS1d/1.0 XML formatter</name>
       <date>2009-08-26 23:06:21</date>
-      <SASprocessnote name="svnid">$Id$</SASprocessnote>
+      <SASprocessnote name="svnid">Id: index.php 1060 2009-08-26 15:37:23Z jemian</SASprocessnote>
       <SASprocessnote name="titleStr">formatting of text data into canSAS XML 1D standard</SASprocessnote>
     </SASprocess>
     <SASnote name="comment">
