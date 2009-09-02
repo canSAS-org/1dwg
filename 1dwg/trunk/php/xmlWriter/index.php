@@ -76,8 +76,9 @@ switch ($_SERVER["REQUEST_METHOD"]) {
 			print($result);
 		}
 		if ($post['result_style'] == 'Raw XML') {
+			header("Content-Type: text/html");
 			print("<pre>\n");
-			print($result);
+			print(htmlentities($result));			//  "<" to "&lt;" and similar
 			print("</pre>\n");
 		}
 		break;
