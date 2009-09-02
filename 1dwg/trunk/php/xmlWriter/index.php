@@ -71,8 +71,15 @@ switch ($_SERVER["REQUEST_METHOD"]) {
 		print($page);
 		break;
 	case "POST":  # this is when the work gets done
-		header("Content-Type: text/xml");
-		print($result);
+		if ($post['result_style'] == 'Styled') {
+			header("Content-Type: text/xml");
+			print($result);
+		}
+		if ($post['result_style'] == 'Raw XML') {
+			print("<pre>\n");
+			print($result);
+			print("</pre>\n");
+		}
 		break;
 	case "":  # command-line interface works here
 		print("No command-line interface at this time.");
@@ -132,6 +139,16 @@ function buildHtmlPage($post) {
 	addComment($doc, $form, ' end form table ');
 
 	addComment($doc, $form, ' start form buttons ');
+
+	foreach (array("Styled", "Raw XML") as $item) {
+		$input = addTextElement($doc, $form, 'input', $item);
+		addAttribute($input, 'type', 'radio');
+		addAttribute($input, 'name', 'result_style');
+		addAttribute($input, 'value', $item);
+		if ($item == 'Styled') {
+			addAttribute($input, 'checked', 'true');
+		}
+	}
 	foreach (array("Submit", "Reset") as $item) {
 		$input = addElement($doc, $form, 'input');
 		addAttribute($input, 'type', strtolower($item));
