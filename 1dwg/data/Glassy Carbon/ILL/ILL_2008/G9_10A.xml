@@ -1,0 +1,991 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
+<SASroot xmlns="cansas1d/1.0" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd">
+  <SASentry>
+    <Title>Glassy Carbon G9</Title>
+    <Run>063479</Run>
+    <SASdata>
+      <Idata>
+        <Q unit="1/A">0.001815</Q>
+        <I unit="1/cm">0.0071</I>
+        <Idev unit="1/cm">0.00169</Idev>
+        <Qdev unit="1/A">0.002405</Qdev>
+        <Qmean unit="1/A">0.004165</Qmean>
+        <Shadowfactor>0.8435</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.005446</Q>
+        <I unit="1/cm">0.009085</I>
+        <Idev unit="1/cm">0.001074</Idev>
+        <Qdev unit="1/A">0.003325</Qdev>
+        <Qmean unit="1/A">0.006343</Qmean>
+        <Shadowfactor>0.9988</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.009076</Q>
+        <I unit="1/cm">0.008647</I>
+        <Idev unit="1/cm">0.001145</Idev>
+        <Qdev unit="1/A">0.003231</Qdev>
+        <Qmean unit="1/A">0.009612</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.01271</Q>
+        <I unit="1/cm">0.01337</I>
+        <Idev unit="1/cm">0.001647</Idev>
+        <Qdev unit="1/A">0.003211</Qdev>
+        <Qmean unit="1/A">0.01309</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.01633</Q>
+        <I unit="1/cm">0.3045</I>
+        <Idev unit="1/cm">0.1452</Idev>
+        <Qdev unit="1/A">0.003221</Qdev>
+        <Qmean unit="1/A">0.01663</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.01996</Q>
+        <I unit="1/cm">1.768</I>
+        <Idev unit="1/cm">0.3586</Idev>
+        <Qdev unit="1/A">0.003246</Qdev>
+        <Qmean unit="1/A">0.0202</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.02359</Q>
+        <I unit="1/cm">3.884</I>
+        <Idev unit="1/cm">0.3652</Idev>
+        <Qdev unit="1/A">0.003281</Qdev>
+        <Qmean unit="1/A">0.02379</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.02721</Q>
+        <I unit="1/cm">5.414</I>
+        <Idev unit="1/cm">0.1904</Idev>
+        <Qdev unit="1/A">0.003323</Qdev>
+        <Qmean unit="1/A">0.02739</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.03083</Q>
+        <I unit="1/cm">5.935</I>
+        <Idev unit="1/cm">0.05653</Idev>
+        <Qdev unit="1/A">0.003373</Qdev>
+        <Qmean unit="1/A">0.03099</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.03445</Q>
+        <I unit="1/cm">5.879</I>
+        <Idev unit="1/cm">0.03532</Idev>
+        <Qdev unit="1/A">0.003429</Qdev>
+        <Qmean unit="1/A">0.03459</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.03807</Q>
+        <I unit="1/cm">5.845</I>
+        <Idev unit="1/cm">0.03191</Idev>
+        <Qdev unit="1/A">0.00349</Qdev>
+        <Qmean unit="1/A">0.0382</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.04168</Q>
+        <I unit="1/cm">5.783</I>
+        <Idev unit="1/cm">0.03509</Idev>
+        <Qdev unit="1/A">0.003557</Qdev>
+        <Qmean unit="1/A">0.0418</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.04529</Q>
+        <I unit="1/cm">5.751</I>
+        <Idev unit="1/cm">0.03388</Idev>
+        <Qdev unit="1/A">0.003628</Qdev>
+        <Qmean unit="1/A">0.0454</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0489</Q>
+        <I unit="1/cm">5.649</I>
+        <Idev unit="1/cm">0.02974</Idev>
+        <Qdev unit="1/A">0.003704</Qdev>
+        <Qmean unit="1/A">0.049</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.05251</Q>
+        <I unit="1/cm">5.623</I>
+        <Idev unit="1/cm">0.02791</Idev>
+        <Qdev unit="1/A">0.003784</Qdev>
+        <Qmean unit="1/A">0.0526</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.05611</Q>
+        <I unit="1/cm">5.611</I>
+        <Idev unit="1/cm">0.02482</Idev>
+        <Qdev unit="1/A">0.003868</Qdev>
+        <Qmean unit="1/A">0.05619</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0597</Q>
+        <I unit="1/cm">5.595</I>
+        <Idev unit="1/cm">0.02422</Idev>
+        <Qdev unit="1/A">0.003956</Qdev>
+        <Qmean unit="1/A">0.05978</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.06329</Q>
+        <I unit="1/cm">5.549</I>
+        <Idev unit="1/cm">0.02665</Idev>
+        <Qdev unit="1/A">0.004047</Qdev>
+        <Qmean unit="1/A">0.06337</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.06688</Q>
+        <I unit="1/cm">5.597</I>
+        <Idev unit="1/cm">0.02376</Idev>
+        <Qdev unit="1/A">0.00414</Qdev>
+        <Qmean unit="1/A">0.06695</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.07046</Q>
+        <I unit="1/cm">5.58</I>
+        <Idev unit="1/cm">0.02513</Idev>
+        <Qdev unit="1/A">0.004237</Qdev>
+        <Qmean unit="1/A">0.07053</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.07404</Q>
+        <I unit="1/cm">5.477</I>
+        <Idev unit="1/cm">0.0258</Idev>
+        <Qdev unit="1/A">0.004336</Qdev>
+        <Qmean unit="1/A">0.0741</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.07761</Q>
+        <I unit="1/cm">5.445</I>
+        <Idev unit="1/cm">0.02564</Idev>
+        <Qdev unit="1/A">0.004438</Qdev>
+        <Qmean unit="1/A">0.07767</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.08118</Q>
+        <I unit="1/cm">5.423</I>
+        <Idev unit="1/cm">0.02308</Idev>
+        <Qdev unit="1/A">0.004542</Qdev>
+        <Qmean unit="1/A">0.08123</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.08474</Q>
+        <I unit="1/cm">5.408</I>
+        <Idev unit="1/cm">0.02339</Idev>
+        <Qdev unit="1/A">0.004648</Qdev>
+        <Qmean unit="1/A">0.08479</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.08829</Q>
+        <I unit="1/cm">5.373</I>
+        <Idev unit="1/cm">0.02164</Idev>
+        <Qdev unit="1/A">0.004755</Qdev>
+        <Qmean unit="1/A">0.08834</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.09184</Q>
+        <I unit="1/cm">5.295</I>
+        <Idev unit="1/cm">0.02008</Idev>
+        <Qdev unit="1/A">0.004865</Qdev>
+        <Qmean unit="1/A">0.09189</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.09538</Q>
+        <I unit="1/cm">5.196</I>
+        <Idev unit="1/cm">0.02036</Idev>
+        <Qdev unit="1/A">0.004976</Qdev>
+        <Qmean unit="1/A">0.09543</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.09891</Q>
+        <I unit="1/cm">5.106</I>
+        <Idev unit="1/cm">0.01893</Idev>
+        <Qdev unit="1/A">0.005088</Qdev>
+        <Qmean unit="1/A">0.09896</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1024</Q>
+        <I unit="1/cm">5.001</I>
+        <Idev unit="1/cm">0.02109</Idev>
+        <Qdev unit="1/A">0.005202</Qdev>
+        <Qmean unit="1/A">0.1025</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.106</Q>
+        <I unit="1/cm">4.944</I>
+        <Idev unit="1/cm">0.01882</Idev>
+        <Qdev unit="1/A">0.005317</Qdev>
+        <Qmean unit="1/A">0.106</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1095</Q>
+        <I unit="1/cm">4.857</I>
+        <Idev unit="1/cm">0.01903</Idev>
+        <Qdev unit="1/A">0.005433</Qdev>
+        <Qmean unit="1/A">0.1095</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.113</Q>
+        <I unit="1/cm">4.707</I>
+        <Idev unit="1/cm">0.01819</Idev>
+        <Qdev unit="1/A">0.00555</Qdev>
+        <Qmean unit="1/A">0.113</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1165</Q>
+        <I unit="1/cm">4.64</I>
+        <Idev unit="1/cm">0.01879</Idev>
+        <Qdev unit="1/A">0.005668</Qdev>
+        <Qmean unit="1/A">0.1165</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.12</Q>
+        <I unit="1/cm">4.463</I>
+        <Idev unit="1/cm">0.01834</Idev>
+        <Qdev unit="1/A">0.005786</Qdev>
+        <Qmean unit="1/A">0.12</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1234</Q>
+        <I unit="1/cm">4.375</I>
+        <Idev unit="1/cm">0.01811</Idev>
+        <Qdev unit="1/A">0.005906</Qdev>
+        <Qmean unit="1/A">0.1235</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1269</Q>
+        <I unit="1/cm">4.232</I>
+        <Idev unit="1/cm">0.01735</Idev>
+        <Qdev unit="1/A">0.006026</Qdev>
+        <Qmean unit="1/A">0.1269</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1304</Q>
+        <I unit="1/cm">4.122</I>
+        <Idev unit="1/cm">0.01572</Idev>
+        <Qdev unit="1/A">0.006146</Qdev>
+        <Qmean unit="1/A">0.1304</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1338</Q>
+        <I unit="1/cm">3.992</I>
+        <Idev unit="1/cm">0.01463</Idev>
+        <Qdev unit="1/A">0.006267</Qdev>
+        <Qmean unit="1/A">0.1339</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1373</Q>
+        <I unit="1/cm">3.813</I>
+        <Idev unit="1/cm">0.01475</Idev>
+        <Qdev unit="1/A">0.006389</Qdev>
+        <Qmean unit="1/A">0.1373</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1407</Q>
+        <I unit="1/cm">3.715</I>
+        <Idev unit="1/cm">0.01586</Idev>
+        <Qdev unit="1/A">0.006511</Qdev>
+        <Qmean unit="1/A">0.1407</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1441</Q>
+        <I unit="1/cm">3.59</I>
+        <Idev unit="1/cm">0.01276</Idev>
+        <Qdev unit="1/A">0.006633</Qdev>
+        <Qmean unit="1/A">0.1442</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1475</Q>
+        <I unit="1/cm">3.458</I>
+        <Idev unit="1/cm">0.01326</Idev>
+        <Qdev unit="1/A">0.006756</Qdev>
+        <Qmean unit="1/A">0.1476</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1509</Q>
+        <I unit="1/cm">3.326</I>
+        <Idev unit="1/cm">0.0137</Idev>
+        <Qdev unit="1/A">0.006879</Qdev>
+        <Qmean unit="1/A">0.151</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1543</Q>
+        <I unit="1/cm">3.207</I>
+        <Idev unit="1/cm">0.01151</Idev>
+        <Qdev unit="1/A">0.007002</Qdev>
+        <Qmean unit="1/A">0.1544</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1577</Q>
+        <I unit="1/cm">3.092</I>
+        <Idev unit="1/cm">0.01085</Idev>
+        <Qdev unit="1/A">0.007125</Qdev>
+        <Qmean unit="1/A">0.1577</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1611</Q>
+        <I unit="1/cm">2.98</I>
+        <Idev unit="1/cm">0.01116</Idev>
+        <Qdev unit="1/A">0.007248</Qdev>
+        <Qmean unit="1/A">0.1611</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1645</Q>
+        <I unit="1/cm">2.871</I>
+        <Idev unit="1/cm">0.01074</Idev>
+        <Qdev unit="1/A">0.007372</Qdev>
+        <Qmean unit="1/A">0.1645</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1678</Q>
+        <I unit="1/cm">2.73</I>
+        <Idev unit="1/cm">0.01051</Idev>
+        <Qdev unit="1/A">0.007495</Qdev>
+        <Qmean unit="1/A">0.1678</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1711</Q>
+        <I unit="1/cm">2.633</I>
+        <Idev unit="1/cm">0.009588</Idev>
+        <Qdev unit="1/A">0.007619</Qdev>
+        <Qmean unit="1/A">0.1712</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1745</Q>
+        <I unit="1/cm">2.518</I>
+        <Idev unit="1/cm">0.009147</Idev>
+        <Qdev unit="1/A">0.007742</Qdev>
+        <Qmean unit="1/A">0.1745</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1778</Q>
+        <I unit="1/cm">2.424</I>
+        <Idev unit="1/cm">0.01</Idev>
+        <Qdev unit="1/A">0.007865</Qdev>
+        <Qmean unit="1/A">0.1778</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1811</Q>
+        <I unit="1/cm">2.317</I>
+        <Idev unit="1/cm">0.008758</Idev>
+        <Qdev unit="1/A">0.007989</Qdev>
+        <Qmean unit="1/A">0.1811</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1844</Q>
+        <I unit="1/cm">2.23</I>
+        <Idev unit="1/cm">0.008899</Idev>
+        <Qdev unit="1/A">0.008112</Qdev>
+        <Qmean unit="1/A">0.1844</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1877</Q>
+        <I unit="1/cm">2.132</I>
+        <Idev unit="1/cm">0.007946</Idev>
+        <Qdev unit="1/A">0.008235</Qdev>
+        <Qmean unit="1/A">0.1877</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.191</Q>
+        <I unit="1/cm">2.053</I>
+        <Idev unit="1/cm">0.007697</Idev>
+        <Qdev unit="1/A">0.008358</Qdev>
+        <Qmean unit="1/A">0.191</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1942</Q>
+        <I unit="1/cm">1.96</I>
+        <Idev unit="1/cm">0.006936</Idev>
+        <Qdev unit="1/A">0.008481</Qdev>
+        <Qmean unit="1/A">0.1942</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.1975</Q>
+        <I unit="1/cm">1.885</I>
+        <Idev unit="1/cm">0.007303</Idev>
+        <Qdev unit="1/A">0.008604</Qdev>
+        <Qmean unit="1/A">0.1975</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2007</Q>
+        <I unit="1/cm">1.799</I>
+        <Idev unit="1/cm">0.007351</Idev>
+        <Qdev unit="1/A">0.008726</Qdev>
+        <Qmean unit="1/A">0.2007</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2039</Q>
+        <I unit="1/cm">1.733</I>
+        <Idev unit="1/cm">0.006949</Idev>
+        <Qdev unit="1/A">0.008849</Qdev>
+        <Qmean unit="1/A">0.2039</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2071</Q>
+        <I unit="1/cm">1.663</I>
+        <Idev unit="1/cm">0.005942</Idev>
+        <Qdev unit="1/A">0.008971</Qdev>
+        <Qmean unit="1/A">0.2071</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2103</Q>
+        <I unit="1/cm">1.594</I>
+        <Idev unit="1/cm">0.006678</Idev>
+        <Qdev unit="1/A">0.009092</Qdev>
+        <Qmean unit="1/A">0.2103</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2135</Q>
+        <I unit="1/cm">1.528</I>
+        <Idev unit="1/cm">0.006245</Idev>
+        <Qdev unit="1/A">0.009214</Qdev>
+        <Qmean unit="1/A">0.2135</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2167</Q>
+        <I unit="1/cm">1.462</I>
+        <Idev unit="1/cm">0.006399</Idev>
+        <Qdev unit="1/A">0.009335</Qdev>
+        <Qmean unit="1/A">0.2167</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2198</Q>
+        <I unit="1/cm">1.421</I>
+        <Idev unit="1/cm">0.006463</Idev>
+        <Qdev unit="1/A">0.009456</Qdev>
+        <Qmean unit="1/A">0.2198</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.223</Q>
+        <I unit="1/cm">1.372</I>
+        <Idev unit="1/cm">0.006024</Idev>
+        <Qdev unit="1/A">0.009577</Qdev>
+        <Qmean unit="1/A">0.223</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2261</Q>
+        <I unit="1/cm">1.328</I>
+        <Idev unit="1/cm">0.007093</Idev>
+        <Qdev unit="1/A">0.009697</Qdev>
+        <Qmean unit="1/A">0.2261</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2292</Q>
+        <I unit="1/cm">1.268</I>
+        <Idev unit="1/cm">0.006425</Idev>
+        <Qdev unit="1/A">0.009817</Qdev>
+        <Qmean unit="1/A">0.2292</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2323</Q>
+        <I unit="1/cm">1.227</I>
+        <Idev unit="1/cm">0.006039</Idev>
+        <Qdev unit="1/A">0.009936</Qdev>
+        <Qmean unit="1/A">0.2323</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2354</Q>
+        <I unit="1/cm">1.171</I>
+        <Idev unit="1/cm">0.006438</Idev>
+        <Qdev unit="1/A">0.01006</Qdev>
+        <Qmean unit="1/A">0.2354</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2385</Q>
+        <I unit="1/cm">1.132</I>
+        <Idev unit="1/cm">0.005947</Idev>
+        <Qdev unit="1/A">0.01017</Qdev>
+        <Qmean unit="1/A">0.2385</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2416</Q>
+        <I unit="1/cm">1.095</I>
+        <Idev unit="1/cm">0.004901</Idev>
+        <Qdev unit="1/A">0.01029</Qdev>
+        <Qmean unit="1/A">0.2416</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2446</Q>
+        <I unit="1/cm">1.043</I>
+        <Idev unit="1/cm">0.005171</Idev>
+        <Qdev unit="1/A">0.01041</Qdev>
+        <Qmean unit="1/A">0.2446</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2476</Q>
+        <I unit="1/cm">1.021</I>
+        <Idev unit="1/cm">0.005709</Idev>
+        <Qdev unit="1/A">0.01053</Qdev>
+        <Qmean unit="1/A">0.2477</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2507</Q>
+        <I unit="1/cm">0.9729</I>
+        <Idev unit="1/cm">0.00505</Idev>
+        <Qdev unit="1/A">0.01065</Qdev>
+        <Qmean unit="1/A">0.2507</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2537</Q>
+        <I unit="1/cm">0.9491</I>
+        <Idev unit="1/cm">0.005035</Idev>
+        <Qdev unit="1/A">0.01076</Qdev>
+        <Qmean unit="1/A">0.2537</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2567</Q>
+        <I unit="1/cm">0.9132</I>
+        <Idev unit="1/cm">0.004542</Idev>
+        <Qdev unit="1/A">0.01088</Qdev>
+        <Qmean unit="1/A">0.2567</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2596</Q>
+        <I unit="1/cm">0.8857</I>
+        <Idev unit="1/cm">0.004727</Idev>
+        <Qdev unit="1/A">0.01099</Qdev>
+        <Qmean unit="1/A">0.2597</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2626</Q>
+        <I unit="1/cm">0.8488</I>
+        <Idev unit="1/cm">0.004723</Idev>
+        <Qdev unit="1/A">0.01111</Qdev>
+        <Qmean unit="1/A">0.2626</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2656</Q>
+        <I unit="1/cm">0.8251</I>
+        <Idev unit="1/cm">0.004586</Idev>
+        <Qdev unit="1/A">0.01123</Qdev>
+        <Qmean unit="1/A">0.2656</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2685</Q>
+        <I unit="1/cm">0.8066</I>
+        <Idev unit="1/cm">0.004476</Idev>
+        <Qdev unit="1/A">0.01134</Qdev>
+        <Qmean unit="1/A">0.2685</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2714</Q>
+        <I unit="1/cm">0.7808</I>
+        <Idev unit="1/cm">0.004368</Idev>
+        <Qdev unit="1/A">0.01145</Qdev>
+        <Qmean unit="1/A">0.2714</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2743</Q>
+        <I unit="1/cm">0.7554</I>
+        <Idev unit="1/cm">0.00393</Idev>
+        <Qdev unit="1/A">0.01157</Qdev>
+        <Qmean unit="1/A">0.2743</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2772</Q>
+        <I unit="1/cm">0.7317</I>
+        <Idev unit="1/cm">0.003793</Idev>
+        <Qdev unit="1/A">0.01168</Qdev>
+        <Qmean unit="1/A">0.2772</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2801</Q>
+        <I unit="1/cm">0.7071</I>
+        <Idev unit="1/cm">0.003701</Idev>
+        <Qdev unit="1/A">0.01179</Qdev>
+        <Qmean unit="1/A">0.2801</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.283</Q>
+        <I unit="1/cm">0.6784</I>
+        <Idev unit="1/cm">0.004205</Idev>
+        <Qdev unit="1/A">0.01191</Qdev>
+        <Qmean unit="1/A">0.283</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2858</Q>
+        <I unit="1/cm">0.6593</I>
+        <Idev unit="1/cm">0.004323</Idev>
+        <Qdev unit="1/A">0.01202</Qdev>
+        <Qmean unit="1/A">0.2858</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2886</Q>
+        <I unit="1/cm">0.6477</I>
+        <Idev unit="1/cm">0.00429</Idev>
+        <Qdev unit="1/A">0.01213</Qdev>
+        <Qmean unit="1/A">0.2887</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2915</Q>
+        <I unit="1/cm">0.63</I>
+        <Idev unit="1/cm">0.004218</Idev>
+        <Qdev unit="1/A">0.01224</Qdev>
+        <Qmean unit="1/A">0.2915</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2943</Q>
+        <I unit="1/cm">0.6094</I>
+        <Idev unit="1/cm">0.003818</Idev>
+        <Qdev unit="1/A">0.01235</Qdev>
+        <Qmean unit="1/A">0.2943</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2971</Q>
+        <I unit="1/cm">0.5946</I>
+        <Idev unit="1/cm">0.003344</Idev>
+        <Qdev unit="1/A">0.01246</Qdev>
+        <Qmean unit="1/A">0.2971</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.2998</Q>
+        <I unit="1/cm">0.5737</I>
+        <Idev unit="1/cm">0.003469</Idev>
+        <Qdev unit="1/A">0.01257</Qdev>
+        <Qmean unit="1/A">0.2998</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3026</Q>
+        <I unit="1/cm">0.5547</I>
+        <Idev unit="1/cm">0.003708</Idev>
+        <Qdev unit="1/A">0.01268</Qdev>
+        <Qmean unit="1/A">0.3026</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3053</Q>
+        <I unit="1/cm">0.5429</I>
+        <Idev unit="1/cm">0.003464</Idev>
+        <Qdev unit="1/A">0.01279</Qdev>
+        <Qmean unit="1/A">0.3054</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3081</Q>
+        <I unit="1/cm">0.5243</I>
+        <Idev unit="1/cm">0.00367</Idev>
+        <Qdev unit="1/A">0.01289</Qdev>
+        <Qmean unit="1/A">0.3081</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3108</Q>
+        <I unit="1/cm">0.5112</I>
+        <Idev unit="1/cm">0.003078</Idev>
+        <Qdev unit="1/A">0.013</Qdev>
+        <Qmean unit="1/A">0.3108</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3135</Q>
+        <I unit="1/cm">0.4995</I>
+        <Idev unit="1/cm">0.003396</Idev>
+        <Qdev unit="1/A">0.01311</Qdev>
+        <Qmean unit="1/A">0.3135</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3162</Q>
+        <I unit="1/cm">0.4866</I>
+        <Idev unit="1/cm">0.002899</Idev>
+        <Qdev unit="1/A">0.01321</Qdev>
+        <Qmean unit="1/A">0.3162</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3189</Q>
+        <I unit="1/cm">0.4784</I>
+        <Idev unit="1/cm">0.003034</Idev>
+        <Qdev unit="1/A">0.01332</Qdev>
+        <Qmean unit="1/A">0.3189</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3215</Q>
+        <I unit="1/cm">0.466</I>
+        <Idev unit="1/cm">0.00323</Idev>
+        <Qdev unit="1/A">0.01342</Qdev>
+        <Qmean unit="1/A">0.3215</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3242</Q>
+        <I unit="1/cm">0.4516</I>
+        <Idev unit="1/cm">0.00314</Idev>
+        <Qdev unit="1/A">0.01353</Qdev>
+        <Qmean unit="1/A">0.3242</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3268</Q>
+        <I unit="1/cm">0.4413</I>
+        <Idev unit="1/cm">0.003067</Idev>
+        <Qdev unit="1/A">0.01363</Qdev>
+        <Qmean unit="1/A">0.3268</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3294</Q>
+        <I unit="1/cm">0.4301</I>
+        <Idev unit="1/cm">0.002863</Idev>
+        <Qdev unit="1/A">0.01373</Qdev>
+        <Qmean unit="1/A">0.3294</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.332</Q>
+        <I unit="1/cm">0.4219</I>
+        <Idev unit="1/cm">0.003087</Idev>
+        <Qdev unit="1/A">0.01384</Qdev>
+        <Qmean unit="1/A">0.332</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3346</Q>
+        <I unit="1/cm">0.4167</I>
+        <Idev unit="1/cm">0.003544</Idev>
+        <Qdev unit="1/A">0.01394</Qdev>
+        <Qmean unit="1/A">0.3346</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3372</Q>
+        <I unit="1/cm">0.4024</I>
+        <Idev unit="1/cm">0.003801</Idev>
+        <Qdev unit="1/A">0.01404</Qdev>
+        <Qmean unit="1/A">0.3372</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3397</Q>
+        <I unit="1/cm">0.3804</I>
+        <Idev unit="1/cm">0.002985</Idev>
+        <Qdev unit="1/A">0.01414</Qdev>
+        <Qmean unit="1/A">0.3397</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3423</Q>
+        <I unit="1/cm">0.3762</I>
+        <Idev unit="1/cm">0.004421</Idev>
+        <Qdev unit="1/A">0.01424</Qdev>
+        <Qmean unit="1/A">0.3423</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3448</Q>
+        <I unit="1/cm">0.3702</I>
+        <Idev unit="1/cm">0.004017</Idev>
+        <Qdev unit="1/A">0.01434</Qdev>
+        <Qmean unit="1/A">0.3448</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3473</Q>
+        <I unit="1/cm">0.358</I>
+        <Idev unit="1/cm">0.004273</Idev>
+        <Qdev unit="1/A">0.01444</Qdev>
+        <Qmean unit="1/A">0.3473</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3498</Q>
+        <I unit="1/cm">0.3582</I>
+        <Idev unit="1/cm">0.004256</Idev>
+        <Qdev unit="1/A">0.01454</Qdev>
+        <Qmean unit="1/A">0.3498</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3523</Q>
+        <I unit="1/cm">0.3514</I>
+        <Idev unit="1/cm">0.005264</Idev>
+        <Qdev unit="1/A">0.01464</Qdev>
+        <Qmean unit="1/A">0.3523</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3547</Q>
+        <I unit="1/cm">0.3531</I>
+        <Idev unit="1/cm">0.003899</Idev>
+        <Qdev unit="1/A">0.01474</Qdev>
+        <Qmean unit="1/A">0.3548</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3572</Q>
+        <I unit="1/cm">0.3426</I>
+        <Idev unit="1/cm">0.005908</Idev>
+        <Qdev unit="1/A">0.01484</Qdev>
+        <Qmean unit="1/A">0.3572</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3596</Q>
+        <I unit="1/cm">0.3178</I>
+        <Idev unit="1/cm">0.005666</Idev>
+        <Qdev unit="1/A">0.01493</Qdev>
+        <Qmean unit="1/A">0.3597</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3621</Q>
+        <I unit="1/cm">0.3304</I>
+        <Idev unit="1/cm">0.006529</Idev>
+        <Qdev unit="1/A">0.01503</Qdev>
+        <Qmean unit="1/A">0.3621</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3645</Q>
+        <I unit="1/cm">0.3206</I>
+        <Idev unit="1/cm">0.006509</Idev>
+        <Qdev unit="1/A">0.01513</Qdev>
+        <Qmean unit="1/A">0.3645</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3669</Q>
+        <I unit="1/cm">0.2983</I>
+        <Idev unit="1/cm">0.005091</Idev>
+        <Qdev unit="1/A">0.01522</Qdev>
+        <Qmean unit="1/A">0.3669</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3693</Q>
+        <I unit="1/cm">0.3106</I>
+        <Idev unit="1/cm">0.01147</Idev>
+        <Qdev unit="1/A">0.01532</Qdev>
+        <Qmean unit="1/A">0.3693</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.3716</Q>
+        <I unit="1/cm">0.2786</I>
+        <Idev unit="1/cm">1</Idev>
+        <Qdev unit="1/A">0.01541</Qdev>
+        <Qmean unit="1/A">0.3716</Qmean>
+        <Shadowfactor>1</Shadowfactor>
+      </Idata>
+    </SASdata>
+    <SASsample>
+      <ID>Glassy Carbon G9</ID>
+    </SASsample>
+    <SASinstrument>
+      <name>ILL D22</name>
+      <SASsource>
+        <radiation>neutron</radiation>
+      </SASsource>
+      <SAScollimation/>
+      <SASdetector>
+        <name>Ordela 128x128</name>
+      </SASdetector>
+    </SASinstrument>
+    <SASprocess name="NIST Data Converter">
+      <SASprocessnote>FILE: 063479		 CREATED: Fri, Nov 21, 2008 11:23:09 AM
+LABEL:           Glassy Carbon G9    
+MON CNT   LAMBDA   DET ANG   DET DIST   TRANS   THICK   AVE   STEP
+1e+08  9.997       0     1.3849     0.82899     0.1C   1
+BCENT(X,Y)   A1(mm)   A2(mm)   A1A2DIST(m)   DL/L   BSTOP(mm)   DET_TYP 
+26.64  64.04  52    10    4    0.1    0    
+SAM: 063479
+BGD: 063480,
+EMP: 063477,
+DIV: plex_vacuum,
+MASK: mask_D22,
+ABS Parameters (3-6): TSTAND=1;DSTAND=1;IZERO=1.5425e+05;XSECT=1
+Average Choices: AVTYPE=Circular;SAVE=Yes;NAME=Auto;PLOT=Yes;</SASprocessnote>
+    </SASprocess>
+    <SASnote>Data converted from previous NIST format ILL Data. SASProcessnote contains header from original text file.</SASnote>
+  </SASentry>
+</SASroot>

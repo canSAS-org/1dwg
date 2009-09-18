@@ -1,0 +1,679 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
+<SASroot xmlns="cansas1d/1.0" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="cansas1d/1.0    http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd">
+<!--created by CS_XML_Indra.ipf-->
+<!--exported from IgorPro::Indra-->
+<!--Fri, Dec 26, 2008  3:35:05 PM-->
+  <SASentry name="Glassy Carbon C4 12keV">
+    <Title>Glassy Carbon C4 12keV</Title>
+    <Run>APS_USAXS=32-ID;scan=21;file=12_10_GC_12keV.dat;dataType=desmeared;MSAXS=no;</Run>
+    <SASdata name="APS_USAXS=32-ID;scan=21;file=12_10_GC_12keV.dat;dataType=desmeared;MSAXS=no;">
+      <Idata>
+        <Q unit="1/A">0.0018044</Q>
+        <I unit="1/cm">41.891</I>
+        <Idev unit="1/cm">0.9362</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0019689</Q>
+        <I unit="1/cm">40.201</I>
+        <Idev unit="1/cm">1.532</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0021461</Q>
+        <I unit="1/cm">38.805</I>
+        <Idev unit="1/cm">1.759</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0023439</Q>
+        <I unit="1/cm">39.174</I>
+        <Idev unit="1/cm">1.7576</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0025541</Q>
+        <I unit="1/cm">37.668</I>
+        <Idev unit="1/cm">1.6181</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.002777</Q>
+        <I unit="1/cm">38.389</I>
+        <Idev unit="1/cm">1.4047</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0030332</Q>
+        <I unit="1/cm">38.162</I>
+        <Idev unit="1/cm">1.2086</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0033119</Q>
+        <I unit="1/cm">36.95</I>
+        <Idev unit="1/cm">1.0872</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0036075</Q>
+        <I unit="1/cm">35.963</I>
+        <Idev unit="1/cm">1.0147</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0039185</Q>
+        <I unit="1/cm">36.582</I>
+        <Idev unit="1/cm">0.94521</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0042578</Q>
+        <I unit="1/cm">37.064</I>
+        <Idev unit="1/cm">0.87545</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0046218</Q>
+        <I unit="1/cm">36.647</I>
+        <Idev unit="1/cm">0.8171</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0050239</Q>
+        <I unit="1/cm">36.561</I>
+        <Idev unit="1/cm">0.76417</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0054794</Q>
+        <I unit="1/cm">35.946</I>
+        <Idev unit="1/cm">0.70814</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0059625</Q>
+        <I unit="1/cm">35.822</I>
+        <Idev unit="1/cm">0.6649</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0065058</Q>
+        <I unit="1/cm">35.654</I>
+        <Idev unit="1/cm">0.66703</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0070752</Q>
+        <I unit="1/cm">35.628</I>
+        <Idev unit="1/cm">0.71598</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0076841</Q>
+        <I unit="1/cm">35.028</I>
+        <Idev unit="1/cm">0.77011</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0083591</Q>
+        <I unit="1/cm">35.321</I>
+        <Idev unit="1/cm">0.79366</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.009109</Q>
+        <I unit="1/cm">34.752</I>
+        <Idev unit="1/cm">0.79094</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.009917</Q>
+        <I unit="1/cm">35.107</I>
+        <Idev unit="1/cm">0.78454</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.010765</Q>
+        <I unit="1/cm">36.086</I>
+        <Idev unit="1/cm">0.7743</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.01172</Q>
+        <I unit="1/cm">36.054</I>
+        <Idev unit="1/cm">0.74185</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.012752</Q>
+        <I unit="1/cm">35.279</I>
+        <Idev unit="1/cm">0.69531</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.013867</Q>
+        <I unit="1/cm">35.002</I>
+        <Idev unit="1/cm">0.66643</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.015099</Q>
+        <I unit="1/cm">34.389</I>
+        <Idev unit="1/cm">0.6597</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.016406</Q>
+        <I unit="1/cm">34.483</I>
+        <Idev unit="1/cm">0.64683</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.017873</Q>
+        <I unit="1/cm">34.04</I>
+        <Idev unit="1/cm">0.61001</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.019445</Q>
+        <I unit="1/cm">34.088</I>
+        <Idev unit="1/cm">0.56436</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.021167</Q>
+        <I unit="1/cm">33.926</I>
+        <Idev unit="1/cm">0.54217</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.023018</Q>
+        <I unit="1/cm">33.712</I>
+        <Idev unit="1/cm">0.56108</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.025027</Q>
+        <I unit="1/cm">33.26</I>
+        <Idev unit="1/cm">0.60614</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.027234</Q>
+        <I unit="1/cm">33.291</I>
+        <Idev unit="1/cm">0.64647</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.029621</Q>
+        <I unit="1/cm">32.67</I>
+        <Idev unit="1/cm">0.66067</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.032208</Q>
+        <I unit="1/cm">32.725</I>
+        <Idev unit="1/cm">0.64294</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.035035</Q>
+        <I unit="1/cm">32.069</I>
+        <Idev unit="1/cm">0.60298</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.03811</Q>
+        <I unit="1/cm">31.839</I>
+        <Idev unit="1/cm">0.56325</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.04148</Q>
+        <I unit="1/cm">31.279</I>
+        <Idev unit="1/cm">0.53902</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.045116</Q>
+        <I unit="1/cm">30.941</I>
+        <Idev unit="1/cm">0.52239</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.049066</Q>
+        <I unit="1/cm">30.997</I>
+        <Idev unit="1/cm">0.49999</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.053353</Q>
+        <I unit="1/cm">30.838</I>
+        <Idev unit="1/cm">0.4781</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.058019</Q>
+        <I unit="1/cm">30.563</I>
+        <Idev unit="1/cm">0.47214</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.063092</Q>
+        <I unit="1/cm">30.316</I>
+        <Idev unit="1/cm">0.47869</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.068594</Q>
+        <I unit="1/cm">30.305</I>
+        <Idev unit="1/cm">0.48091</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.074575</Q>
+        <I unit="1/cm">29.986</I>
+        <Idev unit="1/cm">0.47822</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.0811</Q>
+        <I unit="1/cm">29.68</I>
+        <Idev unit="1/cm">0.48465</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.088237</Q>
+        <I unit="1/cm">29.088</I>
+        <Idev unit="1/cm">0.49664</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.095982</Q>
+        <I unit="1/cm">28.198</I>
+        <Idev unit="1/cm">0.4887</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.10441</Q>
+        <I unit="1/cm">26.64</I>
+        <Idev unit="1/cm">0.45095</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.11356</Q>
+        <I unit="1/cm">24.753</I>
+        <Idev unit="1/cm">0.40488</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.12344</Q>
+        <I unit="1/cm">22.703</I>
+        <Idev unit="1/cm">0.36857</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.13418</Q>
+        <I unit="1/cm">20.222</I>
+        <Idev unit="1/cm">0.34134</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.14583</Q>
+        <I unit="1/cm">17.673</I>
+        <Idev unit="1/cm">0.32551</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.15852</Q>
+        <I unit="1/cm">14.899</I>
+        <Idev unit="1/cm">0.3232</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.17232</Q>
+        <I unit="1/cm">12.334</I>
+        <Idev unit="1/cm">0.32401</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.18734</Q>
+        <I unit="1/cm">9.9023</I>
+        <Idev unit="1/cm">0.31708</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.20366</Q>
+        <I unit="1/cm">7.7647</I>
+        <Idev unit="1/cm">0.29758</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.22145</Q>
+        <I unit="1/cm">6.0324</I>
+        <Idev unit="1/cm">0.26603</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.24084</Q>
+        <I unit="1/cm">4.618</I>
+        <Idev unit="1/cm">0.22926</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.26199</Q>
+        <I unit="1/cm">3.4271</I>
+        <Idev unit="1/cm">0.19196</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.28493</Q>
+        <I unit="1/cm">2.617</I>
+        <Idev unit="1/cm">0.15547</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.30992</Q>
+        <I unit="1/cm">1.8987</I>
+        <Idev unit="1/cm">0.12289</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.33703</Q>
+        <I unit="1/cm">1.3594</I>
+        <Idev unit="1/cm">0.094627</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.36631</Q>
+        <I unit="1/cm">1.0213</I>
+        <Idev unit="1/cm">0.069059</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.39821</Q>
+        <I unit="1/cm">0.79412</I>
+        <Idev unit="1/cm">0.048284</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.43295</Q>
+        <I unit="1/cm">0.63905</I>
+        <Idev unit="1/cm">0.034213</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.47089</Q>
+        <I unit="1/cm">0.52863</I>
+        <Idev unit="1/cm">0.025044</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.51219</Q>
+        <I unit="1/cm">0.46674</I>
+        <Idev unit="1/cm">0.018982</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.55692</Q>
+        <I unit="1/cm">0.41046</I>
+        <Idev unit="1/cm">0.015616</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.60534</Q>
+        <I unit="1/cm">0.37084</I>
+        <Idev unit="1/cm">0.014014</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.65817</Q>
+        <I unit="1/cm">0.35935</I>
+        <Idev unit="1/cm">0.013543</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.71584</Q>
+        <I unit="1/cm">0.34276</I>
+        <Idev unit="1/cm">0.014793</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.77827</Q>
+        <I unit="1/cm">0.3461</I>
+        <Idev unit="1/cm">0.017034</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.84602</Q>
+        <I unit="1/cm">0.31717</I>
+        <Idev unit="1/cm">0.017278</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">0.92003</Q>
+        <I unit="1/cm">0.34035</I>
+        <Idev unit="1/cm">0.013616</Idev>
+      </Idata>
+      <Idata>
+        <Q unit="1/A">1.0002</Q>
+        <I unit="1/cm">0.34355</I>
+        <Idev unit="1/cm">0.0071977</Idev>
+      </Idata>
+    </SASdata>
+    <SASsample>
+      <ID>Glassy Carbon C4 12keV</ID>
+      <thickness unit="mm">1</thickness>
+      <transmission>0.82093</transmission>
+      <position>
+        <x unit="mm">12.5</x>
+        <y unit="mm">125</y>
+      </position>
+    </SASsample>
+    <SASinstrument>
+      <name>APS 32ID-B USAXS</name>
+      <SASsource>
+        <radiation>X-ray synchrotron</radiation>
+        <beam_size>
+          <x unit="mm">2</x>
+          <y unit="mm">1.0001355</y>
+        </beam_size>
+        <beam_shape>rectangle</beam_shape>
+        <wavelength unit="A">1.0401</wavelength>
+      </SASsource>
+      <SAScollimation>
+        <aperture name="usaxs">
+          <size>
+            <x unit="mm">2</x>
+            <y unit="mm">1.0001355</y>
+          </size>
+        </aperture>
+        <aperture name="s1">
+          <size>
+            <x unit="mm">3</x>
+            <y unit="mm">1.2</y>
+          </size>
+        </aperture>
+      </SAScollimation>
+      <SASdetector>
+        <name>USAXS photodiode</name>
+        <SDD unit="mm">518</SDD>
+        <pixel_size>
+          <x unit="mm">5.50</x>
+        </pixel_size>
+        <slit_length unit="1/A">0.9e-4</slit_length>
+      </SASdetector>
+    </SASinstrument>
+    <SASprocess name="Indra">
+      <name>exported from IgorPro::Indra</name>
+      <date>Fri, Dec 26, 2008  3:35:05 PM</date>
+      <description>USAXS data in standard 1-D form</description>
+      <term name="energy" unit="keV">11.92</term>
+      <term name="SAD" unit="mm">67</term>
+      <term name="SDD" unit="mm">518</term>
+      <term name="experiment date">Wed, Dec 10, 2008  14:30:11</term>
+      <SASprocessnote name="metadata">
+        <APS_USAXS name="local variables">
+          <SpecSourceFileName>12_10_GC_12keV.dat</SpecSourceFileName>
+          <BeamCenter>15.7114381790161</BeamCenter>
+          <MaximumIntensity>1.7478247738012e-09</MaximumIntensity>
+          <PeakWidth>0.000880719897683739</PeakWidth>
+        </APS_USAXS>
+        <APS_USAXS name="wavenotes">
+          <DATAFILE>12_10_GC_12keV.dat</DATAFILE>
+          <EPOCH>1228939478</EPOCH>
+          <TZ>-6</TZ>
+          <SCAN_N>21</SCAN_N>
+          <SECONDS>3311764211</SECONDS>
+          <DATE>Wed, Dec 10, 2008</DATE>
+          <HOUR>14:30:11</HOUR>
+          <COMMENT>Glassy Carbon C4 12keV</COMMENT>
+          <SpecCommand>uascan  ar 15.7107 15.7092 6.21226 2e-05  116.569 518 0 67 1 150 1</SpecCommand>
+          <SpecComment>Glassy Carbon C4 12keV</SpecComment>
+          <SpecScan>spec21</SpecScan>
+          <USAXSDataFolder>root:USAXS:'12_10_GC_12keV':'S21_Glassy Carbon C4 12keV'</USAXSDataFolder>
+          <RawFolder>root:raw:'12_10_GC_12keV':spec21:</RawFolder>
+          <UserSampleName>'S21_Glassy Carbon C4 12keV'</UserSampleName>
+          <Wname>DSM_Qvec</Wname>
+          <Wavelength>1.0401</Wavelength>
+          <SlitLength>0.032069</SlitLength>
+          <NumberOfSteps>150</NumberOfSteps>
+          <SDDistance>518</SDDistance>
+          <Units>A-1</Units>
+          <BlankComment>Blank Glassy Carbon 12keV</BlankComment>
+          <BlankFolder>root:USAXS:'12_10_GC_12keV':'S16_Blank Glassy Carbon 12keV'</BlankFolder>
+          <Kfactor>3.6081e-17</Kfactor>
+          <SampleThickness>1</SampleThickness>
+          <SampleTransmission>0.82093</SampleTransmission>
+          <SampleTransmissionPeakToPeak>0.82093</SampleTransmissionPeakToPeak>
+          <UseMSAXSCorrection>0</UseMSAXSCorrection>
+          <MSAXSCorrection>1</MSAXSCorrection>
+          <DataDesmeared>yes</DataDesmeared>
+          <DataFolderName>root:USAXS:'12_10_GC_12keV':'S21_Glassy Carbon C4 12keV':</DataFolderName>
+          <IntensityWaveName>SMR_Int</IntensityWaveName>
+          <QWavename>SMR_Qvec</QWavename>
+          <ErrorWaveName>SMR_Error</ErrorWaveName>
+          <BackgroundFunction>PowerLaw w flat</BackgroundFunction>
+          <NumberOfIterations>5</NumberOfIterations>
+          <BckgExtrapolationStartQ>0.26199</BckgExtrapolationStartQ>
+          <DataSmoothedBeforeDesmearing>No</DataSmoothedBeforeDesmearing>
+          <DataSmoothedAfterDesmearing>No</DataSmoothedAfterDesmearing>
+        </APS_USAXS>
+        <APS_USAXS name="MeasurementParameters">
+          <DCM_energy>11.92</DCM_energy>
+          <UPD2mode>2</UPD2mode>
+          <UPD2range>4</UPD2range>
+          <UPD2vfc>100000</UPD2vfc>
+          <UPD2gain>100000000000</UPD2gain>
+          <UPD2selected>1</UPD2selected>
+          <UPD2gain1>1000</UPD2gain1>
+          <UPD2bkg1>41.75</UPD2bkg1>
+          <UPD2bkgErr1>0.707107</UPD2bkgErr1>
+          <UPD2gain2>100000</UPD2gain2>
+          <UPD2bkg2>31.625</UPD2bkg2>
+          <UPD2bkgErr2>18.9053</UPD2bkgErr2>
+          <UPD2gain3>10000000</UPD2gain3>
+          <UPD2bkg3>35.75</UPD2bkg3>
+          <UPD2bkgErr3>15.276</UPD2bkgErr3>
+          <UPD2gain4>1000000000</UPD2gain4>
+          <UPD2bkg4>216</UPD2bkg4>
+          <UPD2bkgErr4>0.92582</UPD2bkgErr4>
+          <UPD2gain5>100000000000</UPD2gain5>
+          <UPD2bkg5>14597.4</UPD2bkg5>
+          <UPD2bkgErr5>91.2108</UPD2bkgErr5>
+          <thickness>1</thickness>
+          <ARenc_0>15.7112</ARenc_0>
+          <SAD>67</SAD>
+          <SDD>518</SDD>
+          <CCD_DX>0.225</CCD_DX>
+          <CCD_DY>44.75</CCD_DY>
+          <DIODE_DX>-6.17375</DIODE_DX>
+          <DIODE_DY>116.569</DIODE_DY>
+          <UATERM>1</UATERM>
+        </APS_USAXS>
+        <APS_USAXS name="UPDParameters">
+          <Vfc>100000</Vfc>
+          <Gain1>1000</Gain1>
+          <Gain2>100000</Gain2>
+          <Gain3>10000000</Gain3>
+          <Gain4>1000000000</Gain4>
+          <Gain5>100000000000</Gain5>
+          <Bkg1>41.75</Bkg1>
+          <Bkg2>31.625</Bkg2>
+          <Bkg3>35.75</Bkg3>
+          <Bkg4>216</Bkg4>
+          <Bkg5>14597.4</Bkg5>
+          <Bkg1Err>0.707107</Bkg1Err>
+          <Bkg2Err>18.9053</Bkg2Err>
+          <Bkg3Err>15.276</Bkg3Err>
+          <Bkg4Err>0.92582</Bkg4Err>
+          <Bkg5Err>91.2108</Bkg5Err>
+        </APS_USAXS>
+        <APS_USAXS name="ListOfASBParameters">
+          <Sample>root:USAXS:'12_10_GC_12keV':'S21_Glassy Carbon C4 12keV':</Sample>
+          <Calibrate>USAXS</Calibrate>
+          <Blank>root:USAXS:'12_10_GC_12keV':'S16_Blank Glassy Carbon 12keV':</Blank>
+          <Kfactor>3.60813149145678e-17</Kfactor>
+          <OmegaFactor>1.69468439784465e-07</OmegaFactor>
+        </APS_USAXS>
+        <APS_USAXS name="raw">
+          <specCommand>uascan  ar 15.7107 15.7092 6.21226 2e-05  116.569 518 0 67 1 150 1</specCommand>
+          <timeWritten>Dec 10 14:30:11 2008</timeWritten>
+          <specComment>Glassy Carbon C4 12keV</specComment>
+          <xAxisName>ar</xAxisName>
+          <yAxisName>USAXS_PD</yAxisName>
+          <SpecSourceFileName>12_10_GC_12keV.dat</SpecSourceFileName>
+          <DataTransferredto>root:USAXS:'12_10_GC_12keV':'S21_Glassy Carbon C4 12keV'</DataTransferredto>
+        </APS_USAXS>
+        <APS_USAXS name="specValues">
+          <a_lat>0</a_lat>
+          <TZ>-6</TZ>
+        </APS_USAXS>
+        <APS_USAXS name="specMotors">
+          <slux>-1.1998514</slux>
+          <sluy>-0.6</sluy>
+          <sldx>1.8001892</sldx>
+          <sldy>0.60000003</sldy>
+          <dcmthfine>0.36160111</dcmthfine>
+          <ion_ch>0</ion_ch>
+          <msx>5.894899e-07</msx>
+          <msy>4</msy>
+          <mx>18</mx>
+          <my>0.00028</my>
+          <msr>15.77395</msr>
+          <a1y>0.0017072</a1y>
+          <a2y>6.9603324</a2y>
+          <CCD.focus>-22.29064</CCD.focus>
+          <asx>2.2999999</asx>
+          <asy>5</asy>
+          <ax>-8</ax>
+          <ay>-0.0001</ay>
+          <az>91.726</az>
+          <sx>12.5</sx>
+          <sy>125</sy>
+          <dx>-6.17375</dx>
+          <dy>116.56875</dy>
+          <sa>2</sa>
+          <asr>15.7452</asr>
+          <uslitvercen>-3.4e-05</uslitvercen>
+          <uslithorcen>-7.8e-05</uslithorcen>
+          <uslitverap>1.0001355</uslitverap>
+          <uslithorap>2</uslithorap>
+          <mr>15.70994</mr>
+          <mst>2.765656e-07</mst>
+          <ar>15.70924</ar>
+          <a1t>3.03</a1t>
+          <ast>6.02426e-08</ast>
+          <USAXS.a2rp>3.1875</USAXS.a2rp>
+          <USAXS.asrp>6.3675</USAXS.asrp>
+          <USAXS.msrp>4.6075</USAXS.msrp>
+          <USAXS.m2rp>5.46</USAXS.m2rp>
+          <s1hgap>3</s1hgap>
+          <s1hcen>0.3</s1hcen>
+          <s1vgap>1.2</s1vgap>
+          <s1vcen>0</s1vcen>
+          <dcmth>9.5498503</dcmth>
+          <dcmchi>-0.108555</dcmchi>
+          <en>11.92</en>
+          <sx_fine>-860.0268</sx_fine>
+        </APS_USAXS>
+        <APS_USAXS name="EPICS_PVs">
+          <SR_current>92.3761</SR_current>
+          <SR_fill>0</SR_fill>
+          <SR_status>1</SR_status>
+          <SR_mode>0</SR_mode>
+          <SR_fb>1</SR_fb>
+          <SR_fbH>1</SR_fbH>
+          <SR_fbV>1</SR_fbV>
+          <SR_topUp>0</SR_topUp>
+          <barometer_mbar>994.291</barometer_mbar>
+          <SR_BPM_HP>0.0460971</SR_BPM_HP>
+          <SR_BPM_VP>0.225684</SR_BPM_VP>
+          <SR_BPM_HA>1.85092</SR_BPM_HA>
+          <SR_BPM_VA>-16.2253</SR_BPM_VA>
+          <ID_gap>0</ID_gap>
+          <ID_E>0</ID_E>
+          <ID_harmonic>0</ID_harmonic>
+          <ID_taperGap>0.0022788</ID_taperGap>
+          <ID_taperE>0.000730515</ID_taperE>
+          <FE_XBPM_HP>4.44189</FE_XBPM_HP>
+          <FE_XBPM_VP>6.51481</FE_XBPM_VP>
+          <FE_XBPM_HA>-212.303</FE_XBPM_HA>
+          <FE_XBPM_VA>-339.487</FE_XBPM_VA>
+          <DCM_energy>11.92</DCM_energy>
+          <DCM_lambda>1.04014</DCM_lambda>
+          <UND_energy>12.0798</UND_energy>
+          <UND_tracking>0</UND_tracking>
+          <UND_offset>0</UND_offset>
+          <arEnc>15.7112</arEnc>
+          <mrCenter>15.7099</mrCenter>
+          <arCenter>15.7092</arCenter>
+          <msrCenter>4.60867</msrCenter>
+          <asrCenter>6.36636</asrCenter>
+          <Scan_Al_Filter>0</Scan_Al_Filter>
+          <Scan_Ti_Filter>0</Scan_Ti_Filter>
+          <I0AmpGain>1000000</I0AmpGain>
+          <I00AmpGain>100000</I00AmpGain>
+          <UPD2mode>2</UPD2mode>
+          <UPD2range>4</UPD2range>
+          <UPD2vfc>100000</UPD2vfc>
+          <UPD2gain>100000000000</UPD2gain>
+          <UPD2selected>1</UPD2selected>
+          <UPD2gain1>1000</UPD2gain1>
+          <UPD2bkg1>41.75</UPD2bkg1>
+          <UPD2bkgErr1>0.707107</UPD2bkgErr1>
+          <UPD2gain2>100000</UPD2gain2>
+          <UPD2bkg2>31.625</UPD2bkg2>
+          <UPD2bkgErr2>18.9053</UPD2bkgErr2>
+          <UPD2gain3>10000000</UPD2gain3>
+          <UPD2bkg3>35.75</UPD2bkg3>
+          <UPD2bkgErr3>15.276</UPD2bkgErr3>
+          <UPD2gain4>1000000000</UPD2gain4>
+          <UPD2bkg4>216</UPD2bkg4>
+          <UPD2bkgErr4>0.92582</UPD2bkgErr4>
+          <UPD2gain5>100000000000</UPD2gain5>
+          <UPD2bkg5>14597.4</UPD2bkg5>
+          <UPD2bkgErr5>91.2108</UPD2bkgErr5>
+          <thickness>1</thickness>
+          <ARenc_0>15.7112</ARenc_0>
+          <SAD>67</SAD>
+          <SDD>518</SDD>
+          <CCD_DX>0.225</CCD_DX>
+          <CCD_DY>44.75</CCD_DY>
+          <DIODE_DX>-6.17375</DIODE_DX>
+          <DIODE_DY>116.569</DIODE_DY>
+          <UATERM>1</UATERM>
+        </APS_USAXS>
+      </SASprocessnote>
+    </SASprocess>
+    <SASnote/>
+  </SASentry>
+</SASroot>

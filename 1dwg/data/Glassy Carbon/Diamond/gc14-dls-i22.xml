@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
+<SASroot version="1.0"
+		xmlns="cansas1d/1.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+		>
+	<SASentry>
+		<Title>glassy carbon C14 at Diamond I22 at 8.9keV</Title>
+		<Run/>
+		<SASdata>
+			<!-- Idev is not known -->
+			<Idata><Q unit="1/A">0.00972</Q><I unit="electrons/nm3">0.0021855</I></Idata>
+			<Idata><Q unit="1/A">0.0105</Q><I unit="electrons/nm3">0.0021941</I></Idata>
+			<Idata><Q unit="1/A">0.0112</Q><I unit="electrons/nm3">0.0021949</I></Idata>
+			<Idata><Q unit="1/A">0.012</Q><I unit="electrons/nm3">0.0022368</I></Idata>
+			<Idata><Q unit="1/A">0.0127</Q><I unit="electrons/nm3">0.0022223</I></Idata>
+			<Idata><Q unit="1/A">0.0135</Q><I unit="electrons/nm3">0.002171</I></Idata>
+			<Idata><Q unit="1/A">0.0142</Q><I unit="electrons/nm3">0.0021569</I></Idata>
+			<Idata><Q unit="1/A">0.0149</Q><I unit="electrons/nm3">0.0022032</I></Idata>
+			<Idata><Q unit="1/A">0.0157</Q><I unit="electrons/nm3">0.0022113</I></Idata>
+			<Idata><Q unit="1/A">0.0164</Q><I unit="electrons/nm3">0.0022191</I></Idata>
+			<Idata><Q unit="1/A">0.0172</Q><I unit="electrons/nm3">0.0021943</I></Idata>
+			<Idata><Q unit="1/A">0.0179</Q><I unit="electrons/nm3">0.002214</I></Idata>
+			<Idata><Q unit="1/A">0.0187</Q><I unit="electrons/nm3">0.0021879</I></Idata>
+			<Idata><Q unit="1/A">0.0194</Q><I unit="electrons/nm3">0.0021901</I></Idata>
+			<Idata><Q unit="1/A">0.0202</Q><I unit="electrons/nm3">0.0021949</I></Idata>
+			<Idata><Q unit="1/A">0.0209</Q><I unit="electrons/nm3">0.0021896</I></Idata>
+			<Idata><Q unit="1/A">0.0217</Q><I unit="electrons/nm3">0.0021805</I></Idata>
+			<Idata><Q unit="1/A">0.0224</Q><I unit="electrons/nm3">0.0021977</I></Idata>
+			<Idata><Q unit="1/A">0.0232</Q><I unit="electrons/nm3">0.0021721</I></Idata>
+			<Idata><Q unit="1/A">0.0239</Q><I unit="electrons/nm3">0.0021661</I></Idata>
+			<Idata><Q unit="1/A">0.0247</Q><I unit="electrons/nm3">0.0021612</I></Idata>
+			<Idata><Q unit="1/A">0.0254</Q><I unit="electrons/nm3">0.0021514</I></Idata>
+			<Idata><Q unit="1/A">0.0262</Q><I unit="electrons/nm3">0.0021192</I></Idata>
+			<Idata><Q unit="1/A">0.0269</Q><I unit="electrons/nm3">0.0021245</I></Idata>
+			<Idata><Q unit="1/A">0.0277</Q><I unit="electrons/nm3">0.0021146</I></Idata>
+			<Idata><Q unit="1/A">0.0284</Q><I unit="electrons/nm3">0.0021171</I></Idata>
+			<Idata><Q unit="1/A">0.0291</Q><I unit="electrons/nm3">0.0021173</I></Idata>
+			<Idata><Q unit="1/A">0.0299</Q><I unit="electrons/nm3">0.0021131</I></Idata>
+			<Idata><Q unit="1/A">0.0306</Q><I unit="electrons/nm3">0.0021033</I></Idata>
+			<Idata><Q unit="1/A">0.0314</Q><I unit="electrons/nm3">0.0020983</I></Idata>
+			<Idata><Q unit="1/A">0.0321</Q><I unit="electrons/nm3">0.0020789</I></Idata>
+			<Idata><Q unit="1/A">0.0329</Q><I unit="electrons/nm3">0.0020784</I></Idata>
+			<Idata><Q unit="1/A">0.0336</Q><I unit="electrons/nm3">0.0020794</I></Idata>
+			<Idata><Q unit="1/A">0.0344</Q><I unit="electrons/nm3">0.0020662</I></Idata>
+			<Idata><Q unit="1/A">0.0351</Q><I unit="electrons/nm3">0.0020771</I></Idata>
+			<Idata><Q unit="1/A">0.0359</Q><I unit="electrons/nm3">0.002067</I></Idata>
+			<Idata><Q unit="1/A">0.0366</Q><I unit="electrons/nm3">0.0020621</I></Idata>
+			<Idata><Q unit="1/A">0.0374</Q><I unit="electrons/nm3">0.0020497</I></Idata>
+			<Idata><Q unit="1/A">0.0381</Q><I unit="electrons/nm3">0.0020498</I></Idata>
+			<Idata><Q unit="1/A">0.0389</Q><I unit="electrons/nm3">0.0020482</I></Idata>
+			<Idata><Q unit="1/A">0.0396</Q><I unit="electrons/nm3">0.0020366</I></Idata>
+			<Idata><Q unit="1/A">0.0404</Q><I unit="electrons/nm3">0.0020346</I></Idata>
+			<Idata><Q unit="1/A">0.0411</Q><I unit="electrons/nm3">0.0020373</I></Idata>
+			<Idata><Q unit="1/A">0.0419</Q><I unit="electrons/nm3">0.0020295</I></Idata>
+			<Idata><Q unit="1/A">0.0426</Q><I unit="electrons/nm3">0.0020186</I></Idata>
+			<Idata><Q unit="1/A">0.0433</Q><I unit="electrons/nm3">0.0020325</I></Idata>
+			<Idata><Q unit="1/A">0.0441</Q><I unit="electrons/nm3">0.0020152</I></Idata>
+			<Idata><Q unit="1/A">0.0448</Q><I unit="electrons/nm3">0.0020112</I></Idata>
+			<Idata><Q unit="1/A">0.0456</Q><I unit="electrons/nm3">0.0020049</I></Idata>
+			<Idata><Q unit="1/A">0.0463</Q><I unit="electrons/nm3">0.0020065</I></Idata>
+			<Idata><Q unit="1/A">0.0471</Q><I unit="electrons/nm3">0.0019907</I></Idata>
+			<Idata><Q unit="1/A">0.0478</Q><I unit="electrons/nm3">0.0019983</I></Idata>
+			<Idata><Q unit="1/A">0.0486</Q><I unit="electrons/nm3">0.0020075</I></Idata>
+			<Idata><Q unit="1/A">0.0493</Q><I unit="electrons/nm3">0.0019906</I></Idata>
+			<Idata><Q unit="1/A">0.0501</Q><I unit="electrons/nm3">0.0019988</I></Idata>
+			<Idata><Q unit="1/A">0.0508</Q><I unit="electrons/nm3">0.0019964</I></Idata>
+			<Idata><Q unit="1/A">0.0516</Q><I unit="electrons/nm3">0.0019981</I></Idata>
+			<Idata><Q unit="1/A">0.0523</Q><I unit="electrons/nm3">0.0020025</I></Idata>
+			<Idata><Q unit="1/A">0.0531</Q><I unit="electrons/nm3">0.0019992</I></Idata>
+			<Idata><Q unit="1/A">0.0538</Q><I unit="electrons/nm3">0.0020001</I></Idata>
+			<Idata><Q unit="1/A">0.0546</Q><I unit="electrons/nm3">0.0019936</I></Idata>
+			<Idata><Q unit="1/A">0.0553</Q><I unit="electrons/nm3">0.0019857</I></Idata>
+			<Idata><Q unit="1/A">0.0561</Q><I unit="electrons/nm3">0.0019697</I></Idata>
+			<Idata><Q unit="1/A">0.0568</Q><I unit="electrons/nm3">0.0019784</I></Idata>
+			<Idata><Q unit="1/A">0.0575</Q><I unit="electrons/nm3">0.00198</I></Idata>
+			<Idata><Q unit="1/A">0.0583</Q><I unit="electrons/nm3">0.001975</I></Idata>
+			<Idata><Q unit="1/A">0.059</Q><I unit="electrons/nm3">0.0019825</I></Idata>
+			<Idata><Q unit="1/A">0.0598</Q><I unit="electrons/nm3">0.0019856</I></Idata>
+			<Idata><Q unit="1/A">0.0605</Q><I unit="electrons/nm3">0.0019834</I></Idata>
+			<Idata><Q unit="1/A">0.0613</Q><I unit="electrons/nm3">0.0019723</I></Idata>
+			<Idata><Q unit="1/A">0.062</Q><I unit="electrons/nm3">0.0019759</I></Idata>
+			<Idata><Q unit="1/A">0.0628</Q><I unit="electrons/nm3">0.0019748</I></Idata>
+			<Idata><Q unit="1/A">0.0635</Q><I unit="electrons/nm3">0.0019741</I></Idata>
+			<Idata><Q unit="1/A">0.0643</Q><I unit="electrons/nm3">0.0019838</I></Idata>
+			<Idata><Q unit="1/A">0.065</Q><I unit="electrons/nm3">0.001977</I></Idata>
+			<Idata><Q unit="1/A">0.0658</Q><I unit="electrons/nm3">0.0019749</I></Idata>
+			<Idata><Q unit="1/A">0.0665</Q><I unit="electrons/nm3">0.0019702</I></Idata>
+			<Idata><Q unit="1/A">0.0673</Q><I unit="electrons/nm3">0.0019698</I></Idata>
+			<Idata><Q unit="1/A">0.068</Q><I unit="electrons/nm3">0.0019634</I></Idata>
+			<Idata><Q unit="1/A">0.0688</Q><I unit="electrons/nm3">0.0019583</I></Idata>
+			<Idata><Q unit="1/A">0.0695</Q><I unit="electrons/nm3">0.0019608</I></Idata>
+			<Idata><Q unit="1/A">0.0703</Q><I unit="electrons/nm3">0.0019566</I></Idata>
+			<Idata><Q unit="1/A">0.071</Q><I unit="electrons/nm3">0.0019744</I></Idata>
+			<Idata><Q unit="1/A">0.0718</Q><I unit="electrons/nm3">0.001965</I></Idata>
+			<Idata><Q unit="1/A">0.0725</Q><I unit="electrons/nm3">0.0019624</I></Idata>
+			<Idata><Q unit="1/A">0.0732</Q><I unit="electrons/nm3">0.0019588</I></Idata>
+			<Idata><Q unit="1/A">0.074</Q><I unit="electrons/nm3">0.0019518</I></Idata>
+			<Idata><Q unit="1/A">0.0747</Q><I unit="electrons/nm3">0.0019442</I></Idata>
+			<Idata><Q unit="1/A">0.0755</Q><I unit="electrons/nm3">0.001946</I></Idata>
+			<Idata><Q unit="1/A">0.0762</Q><I unit="electrons/nm3">0.0019454</I></Idata>
+			<Idata><Q unit="1/A">0.077</Q><I unit="electrons/nm3">0.0019422</I></Idata>
+			<Idata><Q unit="1/A">0.0777</Q><I unit="electrons/nm3">0.0019397</I></Idata>
+			<Idata><Q unit="1/A">0.0785</Q><I unit="electrons/nm3">0.0019329</I></Idata>
+			<Idata><Q unit="1/A">0.0792</Q><I unit="electrons/nm3">0.0019321</I></Idata>
+			<Idata><Q unit="1/A">0.08</Q><I unit="electrons/nm3">0.0019235</I></Idata>
+			<Idata><Q unit="1/A">0.0807</Q><I unit="electrons/nm3">0.0019225</I></Idata>
+			<Idata><Q unit="1/A">0.0815</Q><I unit="electrons/nm3">0.0019219</I></Idata>
+			<Idata><Q unit="1/A">0.0822</Q><I unit="electrons/nm3">0.0019153</I></Idata>
+			<Idata><Q unit="1/A">0.083</Q><I unit="electrons/nm3">0.0019212</I></Idata>
+			<Idata><Q unit="1/A">0.0837</Q><I unit="electrons/nm3">0.001921</I></Idata>
+			<Idata><Q unit="1/A">0.0845</Q><I unit="electrons/nm3">0.0019046</I></Idata>
+			<Idata><Q unit="1/A">0.0852</Q><I unit="electrons/nm3">0.0018985</I></Idata>
+			<Idata><Q unit="1/A">0.086</Q><I unit="electrons/nm3">0.001899</I></Idata>
+			<Idata><Q unit="1/A">0.0867</Q><I unit="electrons/nm3">0.0018878</I></Idata>
+			<Idata><Q unit="1/A">0.0874</Q><I unit="electrons/nm3">0.0018836</I></Idata>
+			<Idata><Q unit="1/A">0.0882</Q><I unit="electrons/nm3">0.0018817</I></Idata>
+			<Idata><Q unit="1/A">0.0889</Q><I unit="electrons/nm3">0.0018727</I></Idata>
+			<Idata><Q unit="1/A">0.0897</Q><I unit="electrons/nm3">0.0018688</I></Idata>
+			<Idata><Q unit="1/A">0.0904</Q><I unit="electrons/nm3">0.0018707</I></Idata>
+			<Idata><Q unit="1/A">0.0912</Q><I unit="electrons/nm3">0.0018564</I></Idata>
+			<Idata><Q unit="1/A">0.0919</Q><I unit="electrons/nm3">0.0018621</I></Idata>
+			<Idata><Q unit="1/A">0.0927</Q><I unit="electrons/nm3">0.0018516</I></Idata>
+			<Idata><Q unit="1/A">0.0934</Q><I unit="electrons/nm3">0.001847</I></Idata>
+			<Idata><Q unit="1/A">0.0942</Q><I unit="electrons/nm3">0.0018385</I></Idata>
+			<Idata><Q unit="1/A">0.0949</Q><I unit="electrons/nm3">0.0018395</I></Idata>
+			<Idata><Q unit="1/A">0.0957</Q><I unit="electrons/nm3">0.0018349</I></Idata>
+			<Idata><Q unit="1/A">0.0964</Q><I unit="electrons/nm3">0.001826</I></Idata>
+			<Idata><Q unit="1/A">0.0972</Q><I unit="electrons/nm3">0.0018111</I></Idata>
+			<Idata><Q unit="1/A">0.0979</Q><I unit="electrons/nm3">0.0018163</I></Idata>
+			<Idata><Q unit="1/A">0.0987</Q><I unit="electrons/nm3">0.0018016</I></Idata>
+			<Idata><Q unit="1/A">0.0994</Q><I unit="electrons/nm3">0.0017882</I></Idata>
+			<Idata><Q unit="1/A">0.1</Q><I unit="electrons/nm3">0.0017887</I></Idata>
+			<Idata><Q unit="1/A">0.101</Q><I unit="electrons/nm3">0.0017926</I></Idata>
+			<Idata><Q unit="1/A">0.102</Q><I unit="electrons/nm3">0.0017798</I></Idata>
+			<Idata><Q unit="1/A">0.102</Q><I unit="electrons/nm3">0.0017709</I></Idata>
+			<Idata><Q unit="1/A">0.103</Q><I unit="electrons/nm3">0.0017666</I></Idata>
+			<Idata><Q unit="1/A">0.104</Q><I unit="electrons/nm3">0.0017356</I></Idata>
+			<Idata><Q unit="1/A">0.105</Q><I unit="electrons/nm3">0.0017326</I></Idata>
+			<Idata><Q unit="1/A">0.105</Q><I unit="electrons/nm3">0.0017299</I></Idata>
+			<Idata><Q unit="1/A">0.106</Q><I unit="electrons/nm3">0.0017168</I></Idata>
+			<Idata><Q unit="1/A">0.107</Q><I unit="electrons/nm3">0.0017301</I></Idata>
+			<Idata><Q unit="1/A">0.108</Q><I unit="electrons/nm3">0.0017212</I></Idata>
+			<Idata><Q unit="1/A">0.108</Q><I unit="electrons/nm3">0.0017025</I></Idata>
+			<Idata><Q unit="1/A">0.109</Q><I unit="electrons/nm3">0.0016979</I></Idata>
+			<Idata><Q unit="1/A">0.11</Q><I unit="electrons/nm3">0.0016931</I></Idata>
+			<Idata><Q unit="1/A">0.111</Q><I unit="electrons/nm3">0.001683</I></Idata>
+			<Idata><Q unit="1/A">0.111</Q><I unit="electrons/nm3">0.0016713</I></Idata>
+			<Idata><Q unit="1/A">0.112</Q><I unit="electrons/nm3">0.0016654</I></Idata>
+			<Idata><Q unit="1/A">0.113</Q><I unit="electrons/nm3">0.0016629</I></Idata>
+			<Idata><Q unit="1/A">0.114</Q><I unit="electrons/nm3">0.0016445</I></Idata>
+			<Idata><Q unit="1/A">0.114</Q><I unit="electrons/nm3">0.001632</I></Idata>
+			<Idata><Q unit="1/A">0.115</Q><I unit="electrons/nm3">0.0016295</I></Idata>
+			<Idata><Q unit="1/A">0.116</Q><I unit="electrons/nm3">0.0016214</I></Idata>
+			<Idata><Q unit="1/A">0.117</Q><I unit="electrons/nm3">0.0016056</I></Idata>
+			<Idata><Q unit="1/A">0.117</Q><I unit="electrons/nm3">0.001596</I></Idata>
+			<Idata><Q unit="1/A">0.118</Q><I unit="electrons/nm3">0.0015833</I></Idata>
+			<Idata><Q unit="1/A">0.119</Q><I unit="electrons/nm3">0.0015817</I></Idata>
+			<Idata><Q unit="1/A">0.12</Q><I unit="electrons/nm3">0.001572</I></Idata>
+			<Idata><Q unit="1/A">0.12</Q><I unit="electrons/nm3">0.0015592</I></Idata>
+			<Idata><Q unit="1/A">0.121</Q><I unit="electrons/nm3">0.0015493</I></Idata>
+			<Idata><Q unit="1/A">0.122</Q><I unit="electrons/nm3">0.0015426</I></Idata>
+			<Idata><Q unit="1/A">0.123</Q><I unit="electrons/nm3">0.001526</I></Idata>
+			<Idata><Q unit="1/A">0.123</Q><I unit="electrons/nm3">0.001521</I></Idata>
+			<Idata><Q unit="1/A">0.124</Q><I unit="electrons/nm3">0.0015076</I></Idata>
+			<Idata><Q unit="1/A">0.125</Q><I unit="electrons/nm3">0.0014963</I></Idata>
+			<Idata><Q unit="1/A">0.126</Q><I unit="electrons/nm3">0.0014863</I></Idata>
+			<Idata><Q unit="1/A">0.126</Q><I unit="electrons/nm3">0.0014774</I></Idata>
+			<Idata><Q unit="1/A">0.127</Q><I unit="electrons/nm3">0.0014709</I></Idata>
+			<Idata><Q unit="1/A">0.128</Q><I unit="electrons/nm3">0.0014695</I></Idata>
+			<Idata><Q unit="1/A">0.129</Q><I unit="electrons/nm3">0.0014549</I></Idata>
+			<Idata><Q unit="1/A">0.129</Q><I unit="electrons/nm3">0.0014428</I></Idata>
+			<Idata><Q unit="1/A">0.13</Q><I unit="electrons/nm3">0.001425</I></Idata>
+			<Idata><Q unit="1/A">0.131</Q><I unit="electrons/nm3">0.0014217</I></Idata>
+			<Idata><Q unit="1/A">0.132</Q><I unit="electrons/nm3">0.0014086</I></Idata>
+			<Idata><Q unit="1/A">0.132</Q><I unit="electrons/nm3">0.0014003</I></Idata>
+			<Idata><Q unit="1/A">0.133</Q><I unit="electrons/nm3">0.0013897</I></Idata>
+			<Idata><Q unit="1/A">0.134</Q><I unit="electrons/nm3">0.0013862</I></Idata>
+			<Idata><Q unit="1/A">0.135</Q><I unit="electrons/nm3">0.0013763</I></Idata>
+			<Idata><Q unit="1/A">0.135</Q><I unit="electrons/nm3">0.00136</I></Idata>
+			<Idata><Q unit="1/A">0.136</Q><I unit="electrons/nm3">0.0013525</I></Idata>
+			<Idata><Q unit="1/A">0.137</Q><I unit="electrons/nm3">0.0013417</I></Idata>
+			<Idata><Q unit="1/A">0.138</Q><I unit="electrons/nm3">0.0013303</I></Idata>
+			<Idata><Q unit="1/A">0.138</Q><I unit="electrons/nm3">0.0013174</I></Idata>
+			<Idata><Q unit="1/A">0.139</Q><I unit="electrons/nm3">0.0013065</I></Idata>
+			<Idata><Q unit="1/A">0.14</Q><I unit="electrons/nm3">0.0013022</I></Idata>
+			<Idata><Q unit="1/A">0.141</Q><I unit="electrons/nm3">0.0012924</I></Idata>
+			<Idata><Q unit="1/A">0.141</Q><I unit="electrons/nm3">0.0012772</I></Idata>
+			<Idata><Q unit="1/A">0.142</Q><I unit="electrons/nm3">0.0012694</I></Idata>
+			<Idata><Q unit="1/A">0.143</Q><I unit="electrons/nm3">0.0012625</I></Idata>
+			<Idata><Q unit="1/A">0.144</Q><I unit="electrons/nm3">0.0012492</I></Idata>
+			<Idata><Q unit="1/A">0.144</Q><I unit="electrons/nm3">0.0012378</I></Idata>
+			<Idata><Q unit="1/A">0.145</Q><I unit="electrons/nm3">0.001226</I></Idata>
+			<Idata><Q unit="1/A">0.146</Q><I unit="electrons/nm3">0.001219</I></Idata>
+			<Idata><Q unit="1/A">0.146</Q><I unit="electrons/nm3">0.0012106</I></Idata>
+			<Idata><Q unit="1/A">0.147</Q><I unit="electrons/nm3">0.0011987</I></Idata>
+			<Idata><Q unit="1/A">0.148</Q><I unit="electrons/nm3">0.0011893</I></Idata>
+			<Idata><Q unit="1/A">0.149</Q><I unit="electrons/nm3">0.0011796</I></Idata>
+			<Idata><Q unit="1/A">0.149</Q><I unit="electrons/nm3">0.001168</I></Idata>
+			<Idata><Q unit="1/A">0.15</Q><I unit="electrons/nm3">0.001156</I></Idata>
+			<Idata><Q unit="1/A">0.151</Q><I unit="electrons/nm3">0.0011505</I></Idata>
+			<Idata><Q unit="1/A">0.152</Q><I unit="electrons/nm3">0.0011465</I></Idata>
+			<Idata><Q unit="1/A">0.152</Q><I unit="electrons/nm3">0.0011292</I></Idata>
+			<Idata><Q unit="1/A">0.153</Q><I unit="electrons/nm3">0.0011179</I></Idata>
+			<Idata><Q unit="1/A">0.154</Q><I unit="electrons/nm3">0.0011132</I></Idata>
+			<Idata><Q unit="1/A">0.155</Q><I unit="electrons/nm3">0.0011026</I></Idata>
+			<Idata><Q unit="1/A">0.155</Q><I unit="electrons/nm3">0.0010918</I></Idata>
+			<Idata><Q unit="1/A">0.156</Q><I unit="electrons/nm3">0.0010793</I></Idata>
+			<Idata><Q unit="1/A">0.157</Q><I unit="electrons/nm3">0.0010699</I></Idata>
+			<Idata><Q unit="1/A">0.158</Q><I unit="electrons/nm3">0.0010642</I></Idata>
+			<Idata><Q unit="1/A">0.158</Q><I unit="electrons/nm3">0.0010561</I></Idata>
+			<Idata><Q unit="1/A">0.159</Q><I unit="electrons/nm3">0.0010415</I></Idata>
+			<Idata><Q unit="1/A">0.16</Q><I unit="electrons/nm3">0.0010345</I></Idata>
+			<Idata><Q unit="1/A">0.161</Q><I unit="electrons/nm3">0.0010249</I></Idata>
+			<Idata><Q unit="1/A">0.161</Q><I unit="electrons/nm3">0.0010115</I></Idata>
+			<Idata><Q unit="1/A">0.162</Q><I unit="electrons/nm3">0.0010025</I></Idata>
+			<Idata><Q unit="1/A">0.163</Q><I unit="electrons/nm3">0.00099058</I></Idata>
+			<Idata><Q unit="1/A">0.164</Q><I unit="electrons/nm3">0.00098666</I></Idata>
+			<Idata><Q unit="1/A">0.164</Q><I unit="electrons/nm3">0.00097668</I></Idata>
+			<Idata><Q unit="1/A">0.165</Q><I unit="electrons/nm3">0.00096531</I></Idata>
+			<Idata><Q unit="1/A">0.166</Q><I unit="electrons/nm3">0.00095878</I></Idata>
+			<Idata><Q unit="1/A">0.167</Q><I unit="electrons/nm3">0.00095125</I></Idata>
+			<Idata><Q unit="1/A">0.167</Q><I unit="electrons/nm3">0.00093944</I></Idata>
+			<Idata><Q unit="1/A">0.168</Q><I unit="electrons/nm3">0.0009303</I></Idata>
+			<Idata><Q unit="1/A">0.169</Q><I unit="electrons/nm3">0.00091917</I></Idata>
+			<Idata><Q unit="1/A">0.17</Q><I unit="electrons/nm3">0.00091128</I></Idata>
+			<Idata><Q unit="1/A">0.17</Q><I unit="electrons/nm3">0.00090269</I></Idata>
+			<Idata><Q unit="1/A">0.171</Q><I unit="electrons/nm3">0.00088895</I></Idata>
+			<Idata><Q unit="1/A">0.172</Q><I unit="electrons/nm3">0.00087975</I></Idata>
+			<Idata><Q unit="1/A">0.173</Q><I unit="electrons/nm3">0.00087638</I></Idata>
+			<Idata><Q unit="1/A">0.173</Q><I unit="electrons/nm3">0.00086687</I></Idata>
+			<Idata><Q unit="1/A">0.174</Q><I unit="electrons/nm3">0.00085843</I></Idata>
+			<Idata><Q unit="1/A">0.175</Q><I unit="electrons/nm3">0.00084887</I></Idata>
+			<Idata><Q unit="1/A">0.176</Q><I unit="electrons/nm3">0.00083905</I></Idata>
+			<Idata><Q unit="1/A">0.176</Q><I unit="electrons/nm3">0.00083039</I></Idata>
+			<Idata><Q unit="1/A">0.177</Q><I unit="electrons/nm3">0.00082273</I></Idata>
+			<Idata><Q unit="1/A">0.178</Q><I unit="electrons/nm3">0.0008134</I></Idata>
+			<Idata><Q unit="1/A">0.179</Q><I unit="electrons/nm3">0.00080491</I></Idata>
+			<Idata><Q unit="1/A">0.179</Q><I unit="electrons/nm3">0.00079569</I></Idata>
+			<Idata><Q unit="1/A">0.18</Q><I unit="electrons/nm3">0.00078774</I></Idata>
+			<Idata><Q unit="1/A">0.181</Q><I unit="electrons/nm3">0.00078386</I></Idata>
+			<Idata><Q unit="1/A">0.182</Q><I unit="electrons/nm3">0.00077513</I></Idata>
+			<Idata><Q unit="1/A">0.182</Q><I unit="electrons/nm3">0.00076573</I></Idata>
+			<Idata><Q unit="1/A">0.183</Q><I unit="electrons/nm3">0.00075882</I></Idata>
+			<Idata><Q unit="1/A">0.184</Q><I unit="electrons/nm3">0.00074961</I></Idata>
+			<Idata><Q unit="1/A">0.185</Q><I unit="electrons/nm3">0.00074128</I></Idata>
+			<Idata><Q unit="1/A">0.185</Q><I unit="electrons/nm3">0.00073488</I></Idata>
+			<Idata><Q unit="1/A">0.186</Q><I unit="electrons/nm3">0.00072617</I></Idata>
+			<Idata><Q unit="1/A">0.187</Q><I unit="electrons/nm3">0.00071939</I></Idata>
+			<Idata><Q unit="1/A">0.188</Q><I unit="electrons/nm3">0.00071205</I></Idata>
+			<Idata><Q unit="1/A">0.188</Q><I unit="electrons/nm3">0.00070669</I></Idata>
+			<Idata><Q unit="1/A">0.189</Q><I unit="electrons/nm3">0.00069889</I></Idata>
+			<Idata><Q unit="1/A">0.19</Q><I unit="electrons/nm3">0.00069201</I></Idata>
+			<Idata><Q unit="1/A">0.191</Q><I unit="electrons/nm3">0.00067582</I></Idata>
+			<Idata><Q unit="1/A">0.191</Q><I unit="electrons/nm3">0.00067259</I></Idata>
+		</SASdata>
+		<SASsample>
+			<ID>glassy carbon C14</ID>
+			<thickness unit="mm">1.0</thickness>
+		</SASsample>
+		<SASinstrument>
+			<name>Diamond Light Source, I22 at 8.9keV</name>
+			<SASsource>
+				<radiation>X-ray synchrotron</radiation>
+				<wavelength unit="A"> 1.393 <!-- = 12398/8900 eV --> </wavelength>
+			</SASsource>
+			<SAScollimation/>
+			<SASdetector>
+				<name>I22</name>
+			</SASdetector>
+		</SASinstrument>
+		<SASnote>
+			http://www.smallangles.net/wgwiki/index.php/Glassy_Carbon_Round_Robin
+		</SASnote>
+	</SASentry>
+</SASroot>
