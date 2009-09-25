@@ -13,7 +13,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Wiki Manual</title>
     <!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation -->
-    <section xml:id="cansas1d_documentation_Disclaimer">
+    <section xml:id="cansas1d_documentation-Disclaimer">
         <title>Disclaimer</title>
         <para>This description is meant to inform the community how to layout the information within
             the XML files. However, should the information in this document and the <link
@@ -22,7 +22,7 @@
             (http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd) differ, the XML
             Schema will be deemed to have the most correct description of the standard.</para>
     </section>
-    <section xml:id="cansas1d_documentation_Objective">
+    <section xml:id="cansas1d_documentation-Objective">
         <title>Objective</title>
         <para>One of the first aims of the canSAS (Collective Action for Nomadic Small-Angle
             Scatterers) forum of users, software developers, and facility staff was to discuss
@@ -41,7 +41,7 @@
             metadata about the measurement, parameters and results of processing or analysis steps.
             Even multiple measurements (related or unrelated) may be included within a single XML
             file. </para>
-        <section xml:id="cansas1d_documentation_Objective_Status">
+        <section xml:id="cansas1d_documentation_Objective-Status">
             <title>Status</title>
             <para>Version 1.0 was tagged from the subversion repository on 2009-05-12 as no changes
                 were committed since January 2009. Use this command to checkout the tagged release.
