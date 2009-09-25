@@ -10,9 +10,535 @@
     ########### SVN repository information ###################
 -->
 <!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_Fortran -->
-<section xml:id="cansas1d_documentation-binding-IgorPro"
-    xmlns="http://docbook.org/ns/docbook" version="5.0"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
+<section xml:id="cansas1d_documentation-binding-IgorPro" xmlns="http://docbook.org/ns/docbook"
+    version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>IgorPro binding</title>
+    <para> An import tool (binding) for IgorPro has been created (cansasXML.ipf). You can check out
+        the IgorPro working directory from the SVN server (see instructions below). </para>
+    <para> To use the canSASxml.ipf procedure, you must have the XMLutils XOP IGOR plugin installed.
+        See the Usage Notes below. </para>
+    <para> Note that the code described here is <emphasis>not a complete user interface</emphasis>.
+        (See further comments below.) It is expected that this code will be called by a graphical
+        user interface routineand that routine will handle the work of copying the loaded SAS data
+        inIgorPro from the root:Packages:CS_XMLreader data folder to the destinationof choice
+        (including any renaming of waves as desired). <table>
+            <title>Current status of IgorPro support</title>
+            <tgroup cols="2">
+                <tbody>
+                    <row>
+                        <entry> file </entry>
+                        <entry>
+                            <link
+                                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf"
+                                    ><citetitle>cansasXML.ipf</citetitle></link>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry> author </entry>
+                        <entry> Pete R. Jemian &lt;jemian@anl.gov&gt;
+                        </entry>
+                    </row>
+                    <row>
+                        <entry> date </entry>
+                        <entry>2009-09-02</entry>
+                    </row>
+                    <row>
+                        <entry> version </entry>
+                        <entry> 1.11 (<emphasis role="bold">requires</emphasis> latest XMLutils XOP
+                            -- see below) </entry>
+                    </row>
+                    <row>
+                        <entry> purpose </entry>
+                        <entry> implement an IgorPro file reader to read the canSAS 1-D reduced SAS
+                            data in XML files adheres to the cansas1d/1.0 standard:
+                            http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
+                        </entry>
+                    </row>
+                    <row>
+                        <entry> URL </entry>
+                        <entry> TRAC:
+                            http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
+                            SVN:
+                            http://svn.smallangles.net/svn/canSAS/1dwg/trunk/IgorPro/cansasXML.ipf
+                        </entry>
+                    </row>
+                    <row>
+                        <entry> requires </entry>
+                        <entry> IgorPro: http://www.wavemetrics.com XMLutils - XOP:
+                            http://www.igorexchange.com/project/XMLutils (IGOR.5.04.x-1.x-dev,
+                            2008-Aug-22) </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table></para>
+    <section>
+        <title>Checkout of support code in Subversion</title>
+        <para> Subversion (http://subversion.tigris.org/) is a program formanaging software
+            versions. There are command line and GUI clientsfor a variety of operating systems. We
+            won't recommend any herebut will show the command lines necessary. </para>
+        <section>
+            <title>XMLutils XOP</title>
+            <para> The XMLutils XOP, written by Andrew Nelson (ANSTO), is hosted on the IgorExchange
+                (http://www.igorexchange.com/). </para>
+            <para> One good location to place the checked out XMLutils directoryis in the
+                Wavemetrics directory, next to the Igor Pro
+                Folder<programlisting>svn://svn.igorexchange.com/packages/XMLutils/ XMLutils</programlisting></para>
+            <para> In the future, to retrieve an updated version of this support, go intothe
+                XMLutils directory (created above) and type the
+                command<programlisting>svn update</programlisting>This will check the repository and
+                update files as needed.If the installer program was updated, you;ll need to run the
+                newinstaller program. It is not necessary to uninstall first. </para>
+            <para> The installer executables contained in the download will do all the installation
+                for you. They will place the XOP in the folder <emphasis>/User
+                    Procedures/motofit/XMLutils</emphasis>, and create a shortcut/alias to the
+                plugin in /Igor Extensions.Packages from other facilities should place the XOP there
+                as well. </para>
+        </section>
+        <section>
+            <title>cansasXML.ipf</title>
+            <para> Check out the canSAS 1d SAS XML reader from the subversion
+                repository:<programlisting>svn checkout http://svn.smallangles.net/svn/canSAS/1dwg/trunk cansas-1dwg</programlisting></para>
+            <para> This will download lots of extra files. The file of interest is in the
+                IgorProdirectory and is called cansasXML.ipf </para>
+            <para> In the future, to retrieve an updated version of this support, go intothe
+                cansas-1dwg directory (created above) and type the
+                command<programlisting>svn update</programlisting>This will check the repository and
+                update files as needed. </para>
+        </section>
+    </section>
+    <section>
+        <title>Installation</title>
+        <orderedlist numeration="arabic">
+            <listitem>
+                <para> License and Install IgorPro (should have already been done by now) </para>
+            </listitem>
+            <listitem>
+                <para> Quit IgorPro if it is running </para>
+            </listitem>
+            <listitem>
+                <para> Download XMLutils XOP. Either checkout from subversion (see above) or, with a
+                    web browser, go to http://svn.igorexchange.com/viewvc/packages/XMLutils/trunk/
+                </para>
+            </listitem>
+            <listitem>
+                <para> Install XMLutils XOP by double-clicking the installer for you operating
+                    system. </para>
+            </listitem>
+            <listitem>
+                <para> Download cansasXML.ipf. Either checkout from subversion (see above) or, with
+                    a web browser, copy cansasXML.ipf from on-line subversion repository:
+                    http://svn.smallangles.net/svn/canSAS/1dwg/trunk/IgorPro/cansasXML.ipf </para>
+            </listitem>
+            <listitem>
+                <para> Copy cansasXML.ipf file to ...WavemetricsIgor Pro FolderUser Procedures (or
+                    file system equivalent) </para>
+            </listitem>
+            <listitem>
+                <para> Then, you should be able to restart IgorPro and progress from there </para>
+            </listitem>
+        </orderedlist>
+    </section>
+    <section>
+        <title>Usage Notes</title>
+        <para> To use the canSASxml.ipf procedure, you must have the XMLutils XOP IGOR plugin
+            installed. This may be downloaded from the IgorExchange Project site. There are
+            installer executables contained in the download that will do all the installation for
+            you. Each installer will place the XOP in the folder ...WavemetricsIgor Pro FolderUser
+            ProceduresmotofitXMLutils, and create a shortcut/alias to the plugin in
+            ...WavemetricsIgor Pro FolderIgor Extensions. </para>
+    </section>
+    <section>
+        <title>What it does</title>
+        <para> Given an XML file, <emphasis role="bold">CS_XmlReader(fileName)</emphasis> attempts
+            to open the fileand read its contents as if it conformed to the canSAS XML standard
+            forreduced 1-D SAS data (cansas1d/1.0, also known as SASXML). If the file is found to be
+            non-conforming, then <emphasis role="bold">CS_XmlReader(fileName)</emphasis> returns
+            with anerror code (show below), otherwise it returns <emphasis role="bold">0</emphasis>
+            that indicates <emphasis>no error</emphasis>.All data read by this code is left in the
+            IgorPro data folder <emphasis role="bold"
+                    ><emphasis>root:Packages:CS_XMLreader</emphasis></emphasis> for pickup by the
+            calling routine.(Two examples are provided to show how a routine might retrieve the
+            data.) </para>
+        <para> After opening the XML file (with a file identifier <emphasis>fileID</emphasis>),
+            control is passed to <emphasis role="bold">CS_1i_parseXml(fileID)</emphasis> which then
+            walks through the XMLelements. For each <emphasis role="bold">SASentry</emphasis> in the
+            file, a new data folder is createdwith the name derived from the Title element (or best
+            effort determination).Efforts are taken to avoid duplication of data folder names (using
+            standard IgorPro routines). For <emphasis role="bold">SASentry</emphasis> elements that
+            contain more than one SASdataelement, a <emphasis role="bold">SASdata</emphasis> folder
+            is created for each and the corresponding <emphasis>I(Q)</emphasis> is placed in that
+            subfolder. When only one <emphasis role="bold">SASdata</emphasis> is found, the
+                <emphasis>I(Q)</emphasis>data is placed in the main <emphasis>Title</emphasis>
+            folder. </para>
+        <section>
+            <title>data columns</title>
+            <para> Each column of data in the <emphasis role="bold">SASdata/Idata/*</emphasis> table
+                is placed into a singleIgorPro wave. At present, the code does not check for
+                non-standard data columns.(The capability is built into the code but is deactivated
+                at present). </para>
+        </section>
+        <section>
+            <title>metadata</title>
+            <para> Additional metadata is collected into a single text wave
+                    (<emphasis>metadata</emphasis>) where the first columnis an identifier (or
+                    <emphasis>key</emphasis>) and the second identifier is the
+                    <emphasis>value</emphasis>. Onlythose keys with non-empty values are retained in
+                the metadata table.<emphasis role="bold">CAUTION:</emphasis> The
+                    <emphasis>values</emphasis> are not checked for characters that may cause
+                trouble whenplaced in a wave note. This will be the responsibility of the calling
+                routineto <emphasis>clean these up</emphasis> if the need arises. </para>
+            <para> The code checks for most metadata elements and will check for repeated
+                elementswhere the standard permits. </para>
+            <para> Here is an example of the metadata for the ''cs_collagen_full.xml'' case study: <table>
+                    <title>metadata for the ''cs_collagen_full.xml'' case study</title>
+                    <tgroup cols="3">
+                        <tbody>
+                            <row>
+                                <entry><emphasis>i</emphasis> (<emphasis>row</emphasis>)</entry>
+                                <entry>metadata[<emphasis>i</emphasis>][0]
+                                    (<emphasis>key</emphasis>)</entry>
+                                <entry>metadata[<emphasis>i</emphasis>][1]
+                                        (<emphasis>value</emphasis>)</entry>
+                            </row>
+                            <row>
+                                <entry> 0</entry>
+                                <entry> xmlFile</entry>
+                                <entry> cs_collagen_full.xml</entry>
+                            </row>
+                            <row>
+                                <entry> 1</entry>
+                                <entry> namespace</entry>
+                                <entry> cansas1d/1.0</entry>
+                            </row>
+                            <row>
+                                <entry> 2</entry>
+                                <entry> Title</entry>
+                                <entry> dry chick collagen, d = 673 A, 6531 eV, X6B</entry>
+                            </row>
+                            <row>
+                                <entry> 3</entry>
+                                <entry> Run</entry>
+                                <entry> Sep 19 1994 01:41:02 am</entry>
+                            </row>
+                            <row>
+                                <entry> 4</entry>
+                                <entry> SASsample/ID</entry>
+                                <entry> dry chick collagen, d = 673 A, 6531 eV, X6B</entry>
+                            </row>
+                            <row>
+                                <entry> 5</entry>
+                                <entry> SASinstrument/name</entry>
+                                <entry> X6B, NSLS, BNL</entry>
+                            </row>
+                            <row>
+                                <entry> 6</entry>
+                                <entry> SASinstrument/SASsource/radiation</entry>
+                                <entry> X-ray synchrotron</entry>
+                            </row>
+                            <row>
+                                <entry> 7</entry>
+                                <entry> SASinstrument/SASsource/wavelength</entry>
+                                <entry> 1.898</entry>
+                            </row>
+                            <row>
+                                <entry> 8</entry>
+                                <entry> SASinstrument/SASsource/wavelength/@unit</entry>
+                                <entry> A</entry>
+                            </row>
+                            <row>
+                                <entry> 9</entry>
+                                <entry> SASinstrument/SASdetector/@name</entry>
+                                <entry> X6B PSD</entry>
+                            </row>
+                            <row>
+                                <entry> 10</entry>
+                                <entry> SASnote</entry>
+                                <entry>
+<programlisting>Sep 19 1994     01:41:02 am     Elt: 00090 Seconds 
+ID: No spectrum identifier defined
+Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls
+
+dry chick collagen, d = 673 A
+6531 eV, X6B</programlisting>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+            </table>
+            </para>
+        </section>
+        <section>
+            <title>XML foreign namespace elements</title>
+            <para> These are ignored at this time. </para>
+        </section>
+        <section>
+            <title>XML namespace and header</title>
+            <para> The routine does a <emphasis>best-efforts</emphasis> check to ensure that the
+                givenXML file conforms to the [[cansas1d_documentation#Required_XML_file_header
+                |required XML file header]]. If you take a minimalist view
+                    (<emphasis>a.k.a.</emphasis> a shortcut),it is likely that your file may be
+                refused by this and other readers. Pay particular attention to UPPER/lower case in
+                the text <emphasis role="bold">cansas1d/1.0</emphasis> as this is a <emphasis
+                    role="bold">key component</emphasis> used toindex through the XML file. </para>
+        </section>
+        <section>
+            <title>XML stylesheet processing-instruction is not generated</title>
+            <para> The <link xlink:href="http://www.igorexchange.com/project/XMLutils"
+                        ><citetitle>'''XMLutils'''</citetitle></link> package does not provide a
+                method to insert the prescribed XML stylesheet processing-instruction into the XML
+                data
+                file.<programlisting>?xml-stylesheet type=text/xsl href=example.xsl ?</programlisting>If
+                this processing-instruction is desired, it must be added to each XML data file by
+                other methods such as use of a text editor or application of an XSLT transformation.
+            </para>
+        </section>
+    </section>
+    <section>
+        <title>List of Functions</title>
+        <para> These are (most of) the FUNCTIONS in the cansasXML.ipf code.The only functions of
+            interest are <emphasis role="bold">CS_XmlReader(fileName)</emphasis>which reads the
+            named XML file and and loads SAS data and the two demonstrationfunctions <emphasis
+                role="bold">prj_grabMyXmlData()</emphasis> and <emphasis role="bold"
+                >prjTest_cansas1d()</emphasis>that together show a usage example. </para>
+        <itemizedlist mark="opencircle">
+            <listitem>
+                <para>
+                    <emphasis role="bold">CS_XmlReader(fileName)</emphasis> : open a canSAS 1-D
+                    reduced SAS XML data file </para>
+            </listitem>
+        </itemizedlist>
+        <itemizedlist mark="opencircle">
+            <listitem>
+                <para> input: <emphasis>fileName</emphasis> (string) name of canSAS XML file (can
+                    include file system path name to file) </para>
+            </listitem>
+            <listitem>
+                <para> returns: </para>
+                <itemizedlist mark="opencircle">
+                    <listitem>
+                        <para> 0 successful </para>
+                    </listitem>
+                    <listitem>
+                        <para> -1: XML file not found </para>
+                    </listitem>
+                    <listitem>
+                        <para> -2: root element is not SASroot with valid canSAS namespace </para>
+                    </listitem>
+                    <listitem>
+                        <para> -3: SASroot version is not 1.0 </para>
+                    </listitem>
+                    <listitem>
+                        <para> -4: no SASentry elements (NOT USED NOW) </para>
+                    </listitem>
+                    <listitem>
+                        <para> -5: XOPutils needs upgrade </para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+        </itemizedlist>
+        <itemizedlist mark="opencircle">
+            <listitem>
+                <para> CS_1i_parseXml(fileID) : <emphasis role="bold">This is what guides the
+                        work</emphasis>, given a file ID returned from <emphasis role="bold"
+                        >XMLOpenFile()</emphasis>, parses that file for SAS data and metadata (1i in
+                    the function name signifies this is a function that supports INPUT from version
+                    1.0 XML files) </para>
+            </listitem>
+            <listitem>
+                <para> CS_1i_getOneSASdata(fileID, Title, SASdataPath) : harvest the data and
+                    metadata in the specific SASdata element </para>
+            </listitem>
+            <listitem>
+                <para> CS_1i_getOneVector(file,prefix,XML_name,Igor_name) : harvest just one column
+                    (vector) of data </para>
+            </listitem>
+            <listitem>
+                <para> CS_1i_GetReducedSASdata(fileID, SASdataPath) : grab the data and put it in
+                    the working data folder </para>
+            </listitem>
+            <listitem>
+                <para> CS_1i_locateTitle(fileID, SASentryPath) : determine the title for this
+                    experiment </para>
+            </listitem>
+            <listitem>
+                <para> CS_appendMetaData(fileID, key, xpath, value) : queries XML file for <emphasis
+                        role="bold">xpath</emphasis>. If <emphasis role="bold">value</emphasis> is
+                    not empty, appends it to <emphasis role="bold">metadata</emphasis> where
+                        <emphasis>last</emphasis> is the new last row: metadata[last][0]=key;
+                    metadata[last][1]=value </para>
+            </listitem>
+            <listitem>
+                <para> CS_buildXpathStr(prefix, value) : this function can be used only with very
+                    simple XPath constructions </para>
+            </listitem>
+            <listitem>
+                <para> CS_cleanFolderName(proposal) : given a proposal string, returns a candidate
+                    folder name for immediate use </para>
+            </listitem>
+            <listitem>
+                <para> CS_findElementIndex(matchStr) : looks for element index in structure
+                        <emphasis>W_ElementList</emphasis> returned from call to <emphasis
+                        role="bold">XmlElemList(fileID)</emphasis>
+                </para>
+            </listitem>
+            <listitem>
+                <para> CS_getDefaultNamespace(fileID) : returns the string containing the default
+                    namespace for the XML file </para>
+            </listitem>
+            <listitem>
+                <para> CS_registerNameSpaces() : Builds a table of all namespaces used in the XML
+                    file and appends <emphasis role="bold">W_ElementList</emphasis> with full
+                    namespace-xpath string for each element. </para>
+            </listitem>
+            <listitem>
+                <para> CS_simpleXmlListXpath(fileID, prefix, value) : Calls <emphasis role="bold"
+                        >XMLlistXpath()</emphasis> with proper namespace prefix attached. </para>
+            </listitem>
+            <listitem>
+                <para> CS_simpleXmlWaveFmXpath(fileID, prefix, value) : Calls <emphasis role="bold"
+                        >XMLwaveFmXpath()</emphasis> with proper namespace prefix attached. </para>
+            </listitem>
+            <listitem>
+                <para> CS_updateWaveNote(wavName, key, value) : adds (or replaces) definition of
+                        <emphasis>key</emphasis>=<emphasis>value</emphasis> in the wave note of
+                        <emphasis>wavName</emphasis>
+                </para>
+            </listitem>
+            <listitem>
+                <para> CS_XmlStrFmXpath(fileID, prefix, value) : Calls <emphasis role="bold"
+                        >XmlStrFmXpath()</emphasis> with proper namespace prefix attached. Trims the
+                    result string. </para>
+            </listitem>
+            <listitem>
+                <para> CS_XPath_NS(simpleStr) : this function adds namespace info as necessary to
+                    simpleStr (an XPath) </para>
+            </listitem>
+            <listitem>
+                <para> TrimWS(str) : Calls <emphasis role="bold">TrimWSL(TrimWSR(str))</emphasis>
+                </para>
+            </listitem>
+            <listitem>
+                <para> TrimWSL(str) : Trims white space from left (leading) end of <emphasis
+                        role="bold">str</emphasis>
+                </para>
+            </listitem>
+            <listitem>
+                <para> TrimWSR(str) : Trims white space from right (trailing) end of <emphasis
+                        role="bold">str</emphasis>
+                </para>
+            </listitem>
+            <listitem>
+                <para> prjTest_cansas1d() : Demonstration function that calls <emphasis role="bold"
+                        >CS_XmlReader(fileName)</emphasis> for many of the test data sets. </para>
+            </listitem>
+            <listitem>
+                <para> prj_grabMyXmlData() : Demonstration function that moves loaded data from
+                    root:Packages:CS_XMLreader to a user's data folder. (In this
+                        <emphasis>example</emphasis>, that folder is root:PRJ_canSAS.) </para>
+            </listitem>
+            <listitem>
+                <para> testCollette() : Demonstration function that reads an ISIS/LOQ file and
+                    copies the data to the root folder a la COLLETE </para>
+            </listitem>
+        </itemizedlist>
+    </section>
+    <section>
+        <title>Example test case</title>
+        <para> Here is an example running the test routine <emphasis role="bold"
+                >prjTest_cansas1d()</emphasis>.
+            <programlisting>
+•prjTest_cansas1d()
+XMLopenfile: File(path) to open doesn't exist, or file can't be opened
+elmo.xml either not found or cannot be opened for reading
+    Completed in 0.00669666 seconds
+XMLopenfile: XML file was not parseable
+cansasXML.ipf: failed to parse XML
+    Completed in 0.0133704 seconds
+root element is not SASroot with valid canSAS namespace
+    Completed in 0.0134224 seconds
+bimodal-test1.xml 		 identified as: cansas1d/1.0 XML file
+    Title: SAS bimodal test1 
+    Completed in 0.068654 seconds
+root element is not SASroot with valid canSAS namespace
+    Completed in 0.0172572 seconds
+root element is not SASroot with valid canSAS namespace
+    Completed in 0.0123102 seconds
+root element is not SASroot with valid canSAS namespace
+    Completed in 0.00930118 seconds
+ISIS_SANS_Example.xml 		 identified as: cansas1d/1.0 XML file
+    Title: standard can 12mm SANS 
+    Completed in 0.0410387 seconds
+W1W2.xml 		 identified as: cansas1d/1.0 XML file
+    Title: standard can 12mm SANS 
+    Title: TK49 standard 12mm SANS 
+    Completed in 0.0669074 seconds
+ill_sasxml_example.xml 		 identified as: cansas1d/1.0 XML file
+    Title: ILL-D22 example: 7D1 2mm 
+    Completed in 0.0332752 seconds
+isis_sasxml_example.xml 		 identified as: cansas1d/1.0 XML file
+    Title: LOQ TK49 Standard 12mm C9 
+    Completed in 0.0388868 seconds
+r586.xml 		 identified as: cansas1d/1.0 XML file
+    Title: ILL-D11 example1: 2A 5mM 0%D2O 
+    Completed in 0.0213737 seconds
+r597.xml 		 identified as: cansas1d/1.0 XML file
+    Title: ILL-D11 example2: 2A 5mM 0%D2O 
+    Completed in 0.0221894 seconds
+xg009036_001.xml 		 identified as: cansas1d/1.0 XML file
+    Title: det corrn 5m 
+    Completed in 0.0286721 seconds
+cs_collagen.xml 		 identified as: cansas1d/1.0 XML file
+    Title: dry chick collagen, d = 673 A, 6531 eV, X6B 
+    Completed in 0.0296247 seconds
+cs_collagen_full.xml 		 identified as: cansas1d/1.0 XML file
+    Title: dry chick collagen, d = 673 A, 6531 eV, X6B 
+    Completed in 0.0751836 seconds
+cs_af1410.xml 		 identified as: cansas1d/1.0 XML file
+    Title: AF1410-10 (AF1410 steel aged 10 h) 
+    Title: AF1410-8h (AF1410 steel aged 8 h) 
+    Title: AF1410-qu (AF1410 steel aged 0.25 h) 
+    Title: AF1410-cc (AF1410 steel aged 100 h) 
+    Title: AF1410-2h (AF1410 steel aged 2 h) 
+    Title: AF1410-50 (AF1410 steel aged 50 h) 
+    Title: AF1410-20 (AF1410 steel aged 20 h) 
+    Title: AF1410-5h (AF1410 steel aged 5 h) 
+    Title: AF1410-1h (AF1410 steel aged 1 h) 
+    Title: AF1410-hf (AF1410 steel aged 0.5 h) 
+    Completed in 0.338425 seconds
+XMLopenfile: File(path) to open doesn't exist, or file can't be opened
+cansas1d-template.xml either not found or cannot be opened for reading
+    Completed in 0.00892823 seconds
+1998spheres.xml 		 identified as: cansas1d/1.0 XML file
+    Title: 255 nm PS spheres 
+    Title: 460 nm PS spheres 
+    Completed in 2.87649 seconds
+XMLopenfile: File(path) to open doesn't exist, or file can't be opened
+does-not-exist-file.xml either not found or cannot be opened for reading
+    Completed in 0.00404549 seconds
+cs_rr_polymers.xml 		 identified as: cansas1d/1.0 XML file
+    Title: Round Robin Polymer A 
+    Title: Round Robin Polymer B 
+    Title: Round Robin Polymer C 
+    Title: Round Robin Polymer D 
+    Completed in 0.0943477 seconds
+s81-polyurea.xml 		 identified as: cansas1d/1.0 XML file
+    Title: S7 Neat Polyurea 
+    Completed in 0.0361616 seconds
+            </programlisting></para>
+    </section>
+    <section>
+        <title>Graphical User Interface</title>
+        <para> At least two groups are working on graphical user interfaces that use the canSAS 1-D
+            SAS XML format binding to IgorPro. The GUIs are intended to be used with their suites of
+            SAS analysis tools (and hide the detailsof using this support code from the user). </para>
+        <para> NOTE: There is no support yet for writing the data back into the canSAS format.
+            Several details need to be described, and theseare being collected on the discussion
+            page for the XML format </para>
+        <section>
+            <title>Irena tool suite</title>
+            <para> Jan Ilavsky's <emphasis role="bold">Irena</emphasis> tool suite
+                (http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.html) for IgorPro has a GUI to
+                load the data found in the XML file. Refer to the WWW site for more details. </para>
+        </section>
     </section>
 </section>
