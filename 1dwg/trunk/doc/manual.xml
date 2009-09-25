@@ -31,7 +31,6 @@
             <email>jemian@anl.gov</email>
         </author>
     </info>
-    <!--<toc/> <!-\- How is this created?  Automatically? -\->-->
     <preface>
         <title>Preface</title>
         <para>
@@ -50,33 +49,36 @@
 		This page can be called with parameters: w2x.php?doit=1&whatsthis=articlelist&site=en.wikipedia.org/w&output_format=odt&text=Biochemistry
 
 http://toolserver.org/~magnus/wiki2xml/w2x.php
-	cansas1d_documentation
-	cansas1d_SASroot
-	cansas1d_SASentry
-	cansas1d_SASdata
-	cansas1d_SASsample
-	cansas1d_SASinstrument
-	cansas1d_SASsource
-	cansas1d_SAScollimation
-	cansas1d_SASdetector
-	cansas1d_SASprocess
-	cansas1d_SASnote
+   	    cansas1d_documentation
+      	cansas1d_SASroot
+      	cansas1d_SASentry
+      	cansas1d_SASdata
+      	cansas1d_SASsample
+      	cansas1d_SASinstrument
+      	cansas1d_SASsource
+      	cansas1d_SAScollimation
+      	cansas1d_SASdetector
+      	cansas1d_SASprocess
+      	cansas1d_SASnote
 	cansas1d_block_diagrams
 	1D_Data_Formats_Working_Group
 	Talk:1D_Data_Formats_Working_Group
 	cansas1d_definition_of_terms
 	cansas1d_XML_header
-	cansas1d_any
+	   cansas1d_any
 	cansas1d_casestudy_collagen
 	cansas1d_casestudy_af1410
 	cansas1d_binding_IgorPro
 	cansas1d_binding_Java
 	cansas1d_binding_Python
-	cansas1d_binding_Fortran
-	XmlHelp
+   	   cansas1d_binding_Fortran
+	   XmlHelp
 	-->
     
     <xi:include href="wiki.xml"/>
+    <xi:include href="elements.xml"/>
+    <xi:include href="bindings.xml"/>
+    <xi:include href="other.xml"/>
     <!--
         <appendix><title>An Appendix</title>
         <para>...</para>

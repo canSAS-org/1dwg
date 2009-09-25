@@ -611,5 +611,6 @@
         <title>Help for XML</title>
         <para>The various references for help on XML have been moved to their own wiki page:
             [[XmlHelp]] </para>
+        <note><para>chapter="Other" section="XML Help" xml:id="wiki-XML_Help"</para></note>
     </section>
 </chapter>
