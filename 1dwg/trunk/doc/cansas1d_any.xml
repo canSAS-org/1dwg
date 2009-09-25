@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_any -->
+<section xml:id="cansas1d_documentation-element-any"
+    xmlns="http://docbook.org/ns/docbook" version="5.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>''{any}'' element</title>
+    <table>
+        <title/>
+        <tgroup cols="5">
+            <tbody>
+                <row>
+                    <entry>Name</entry>
+                    <entry>Type</entry>
+                    <entry>occurrence</entry>
+                    <entry>Description</entry>
+                    <entry>Attributes</entry>
+                </row>
+                <row>
+                    <entry>''{any}''</entry>
+                    <entry>
+                        container
+                    </entry>
+                    <entry>
+                        [0..unbounded]
+                    </entry>
+                    <entry>
+                        <para>
+                            Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. (These are called 
+                            <emphasis>foreign</emphasis>
+                            elements. It is suggested to associate foreign elements with a foreign namespace to differentiate them from the canSAS elements in the XML file.)
+                        </para>
+                    </entry>
+                    <entry>
+                        <para>
+                            <emphasis role="bold">
+                                <emphasis>xmlns:{foreign-prefix}</emphasis>
+                            </emphasis>
+                            ={foreign-namespace}
+                        </para>
+                    </entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+</section>
