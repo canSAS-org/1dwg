@@ -38,13 +38,13 @@ test ::
 	@echo $(CLEANING_LIST)
 
 # dblatex.sf.net can be used to build a PDF version of the manual
-dblatex NeXusManual.pdf ::
+dblatex manual.pdf ::
 	@#dblatex -P table.in.float=0 -ttex manual.xml
 	dblatex -P table.in.float=0 -b pdftex -tpdf manual.xml
 	@#pdftops $< temporary-manual.ps
 	@#ps2pdf temporary-manual.ps $<
 
-NeXusManual.ps ::NeXusManual.pdf
+manual.ps ::manual.pdf
 	pdftops $<
 
 clean ::
