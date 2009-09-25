@@ -18,4 +18,5 @@
         have been created and contributed.  These are listed here by the 
         language or software environment.</para>
     <xi:include href="cansas1d_binding_Fortran.xml"/>
+    <xi:include href="cansas1d_binding_IgorPro.xml"/>
 </chapter>

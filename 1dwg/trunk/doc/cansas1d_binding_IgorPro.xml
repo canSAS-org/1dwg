@@ -14,7 +14,9 @@
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>IgorPro binding</title>
     <para>An import tool (binding) for IgorPro has been created (cansasXML.ipf). You can check out
-    the IgorPro working directory from the SVN server (see instructions below). </para>
+        the IgorPro working directory from the SVN server (see instructions below). </para>
+    <para>To use the canSASxml.ipf procedure, you must have the XMLutils XOP IGOR plugin installed.
+        See the Usage Notes below. </para>
     <note><para>Note that this tool is not a true 
         <link xlink:href="http://en.wikipedia.org/wiki/Binding_%28computer_science%29">binding</link>
         in that the structure of the 
@@ -23,13 +25,13 @@
         into IgorPro waves (Qsas, Isas, ...). The tool also reads 
         most of the metadata into an IgorPro textWave for use by other 
         support in IgorPro.</para></note>
-    <para>To use the canSASxml.ipf procedure, you must have the XMLutils XOP IGOR plugin installed.
-        See the Usage Notes below. </para>
-    <para>Note that the code described here is <emphasis>not a complete user interface</emphasis>.
+    <note><para>Note that the code described here is <emphasis>not a complete user interface</emphasis>.
         (See further comments below.) It is expected that this code will be called by a graphical
         user interface routine and that routine will handle the work of copying the loaded SAS data
         in IgorPro from the root:Packages:CS_XMLreader data folder to the destination of choice
         (including any renaming of waves as desired). 
+    </para></note>
+    <para>
         <table>
             <title>Current status of IgorPro support</title>
             <tgroup cols="2">
