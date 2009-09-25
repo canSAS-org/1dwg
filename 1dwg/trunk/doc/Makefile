@@ -22,6 +22,7 @@
 
 RELEASE = 1.0
 TARGET = cansas-1d-$(RELEASE)-Manual.pdf
+TARGET = manual.pdf
 
 CLEANING_LIST += $(TARGET)
 #CLEANING_LIST += *.pdf

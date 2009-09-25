@@ -31,57 +31,56 @@
         in IgorPro from the root:Packages:CS_XMLreader data folder to the destination of choice
         (including any renaming of waves as desired). 
     </para></note>
-    <para>
-        <table>
-            <title>Current status of IgorPro support</title>
-            <tgroup cols="2">
-                <tbody>
-                    <row>
-                        <entry> file </entry>
-                        <entry>
-                            <link
-                                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf"
-                                    ><citetitle>cansasXML.ipf</citetitle></link>
-                        </entry>
-                    </row>
-                    <row>
-                        <entry> author </entry>
-                        <entry> Pete R. Jemian &lt;jemian@anl.gov&gt;
-                        </entry>
-                    </row>
-                    <row>
-                        <entry> date </entry>
-                        <entry>2009-09-02</entry>
-                    </row>
-                    <row>
-                        <entry> version </entry>
-                        <entry> 1.11 (<emphasis role="bold">requires</emphasis> latest XMLutils XOP
-                            -- see below) </entry>
-                    </row>
-                    <row>
-                        <entry> purpose </entry>
-                        <entry> implement an IgorPro file reader to read the canSAS 1-D reduced SAS
-                            data in XML files adheres to the cansas1d/1.0 standard:
-                            http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
-                        </entry>
-                    </row>
-                    <row>
-                        <entry> URL </entry>
-                        <entry> TRAC:
-                            http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
-                            SVN:
-                            http://svn.smallangles.net/svn/canSAS/1dwg/trunk/IgorPro/cansasXML.ipf
-                        </entry>
-                    </row>
-                    <row>
-                        <entry> requires </entry>
-                        <entry> IgorPro: http://www.wavemetrics.com XMLutils - XOP:
-                            http://www.igorexchange.com/project/XMLutils (IGOR.5.04.x-1.x-dev,
-                            2008-Aug-22) </entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </table></para>
+    <glosslist>
+        <glossentry>
+            <glossterm>file</glossterm>
+            <glossdef>
+                <para><link
+                    xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf"
+                    ><citetitle>cansasXML.ipf</citetitle></link></para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>author</glossterm>
+            <glossdef><para>Pete R. Jemian &lt;jemian@anl.gov&gt;</para></glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>date</glossterm>
+            <glossdef><para>2009-09-02</para></glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>version</glossterm>
+            <glossdef><para>1.11 (<emphasis role="bold">requires</emphasis> 
+                latest XMLutils XOP -- see below)</para></glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>purpose</glossterm>
+            <glossdef><para>implement an IgorPro file reader to read the canSAS 1-D reduced SAS
+                data in XML files adheres to the cansas1d/1.0 standard:
+                http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation</para></glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>URL</glossterm>
+            <glossdef>
+                <para>
+                  TRAC:
+                  http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
+                </para>
+                <para>
+                  SVN:
+                  http://svn.smallangles.net/svn/canSAS/1dwg/trunk/IgorPro/cansasXML.ipf
+                </para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>requires</glossterm>
+            <glossdef><para>
+                IgorPro: http://www.wavemetrics.com XMLutils - XOP:
+                http://www.igorexchange.com/project/XMLutils (IGOR.5.04.x-1.x-dev,
+                2008-Aug-22)
+            </para></glossdef>
+        </glossentry>
+    </glosslist>
     <section>
         <title>Checkout of support code in Subversion</title>
         <para> Subversion (http://subversion.tigris.org/) is a program formanaging software
