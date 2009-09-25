@@ -20,4 +20,5 @@
     <xi:include href="cansas1d_binding_Fortran.xml"/>
     <xi:include href="cansas1d_binding_IgorPro.xml"/>
     <xi:include href="cansas1d_binding_Java.xml"/>
+    <xi:include href="cansas1d_binding_Python.xml"/>
 </chapter>
