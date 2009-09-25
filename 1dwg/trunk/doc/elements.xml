@@ -16,15 +16,15 @@
     <title>Elements of the CanSAS XML standard</title>
     <para>There are various elements (tag names) in the canSAS1d/1.0 standard.  
         Each of these is described below.</para>
-    <!--<xi:include href="cansas1d_element_SASroot"/>-->
-    <!--<xi:include href="cansas1d_element_SASentry"/>-->
-    <!--<xi:include href="cansas1d_element_SASdata"/>-->
-    <!--<xi:include href="cansas1d_element_SASsample"/>-->
-    <!--<xi:include href="cansas1d_element_SASinstrument"/>-->
-    <!--<xi:include href="cansas1d_element_SASsource"/>-->
-    <!--<xi:include href="cansas1d_element_SAScollimation"/>-->
-    <!--<xi:include href="cansas1d_element_SASdetector"/>-->
-    <!--<xi:include href="cansas1d_element_SASprocess"/>-->
-    <!--<xi:include href="cansas1d_element_SASnote"/>-->
+    <xi:include href="cansas1d_element_SASroot.xml"/>
+    <xi:include href="cansas1d_element_SASentry.xml"/>
+    <!--<xi:include href="cansas1d_element_SASdata.xml"/>-->
+    <!--<xi:include href="cansas1d_element_SASsample.xml"/>-->
+    <!--<xi:include href="cansas1d_element_SASinstrument.xml"/>-->
+    <!--<xi:include href="cansas1d_element_SASsource.xml"/>-->
+    <!--<xi:include href="cansas1d_element_SAScollimation.xml"/>-->
+    <!--<xi:include href="cansas1d_element_SASdetector.xml"/>-->
+    <!--<xi:include href="cansas1d_element_SASprocess.xml"/>-->
+    <!--<xi:include href="cansas1d_element_SASnote.xml"/>-->
     <xi:include href="cansas1d_element_any.xml"/>
 </chapter>
