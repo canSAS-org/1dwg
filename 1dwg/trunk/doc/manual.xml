@@ -56,6 +56,20 @@
             </mediaobject>
             CanSAS 1-D Data Format Manual, v1.0
         </para>
+        <note><para>
+            Provide a note here describing CanSAS and the initiative to establish
+            a standard file format.
+        </para></note>
+        <para>
+            "CanSAS" stands for "Collective Action for Nomadic Small-Angle Scatterers.
+        </para>
+        <para>
+            This work is the initiative of the CanSAS 1D Data Formats Working Group, 
+            established at the canSAS-V workshop, NIST, Gaithersburg, Maryland, 
+            USA from October 29th to 31st 2007.  It derives many of its foundations
+            from previous works such as the SASXML format, a joint collaboration
+            between ISIS and ILL.
+        </para>
     </preface>
 
     <!--
@@ -71,10 +85,10 @@ http://toolserver.org/~magnus/wiki2xml/w2x.php
         cansas1d_SASsample
         cansas1d_SASinstrument
         cansas1d_SASsource
-    cansas1d_SAScollimation
-    cansas1d_SASdetector
-    cansas1d_SASprocess
-    cansas1d_SASnote
+        cansas1d_SAScollimation
+        cansas1d_SASdetector
+        cansas1d_SASprocess
+        cansas1d_SASnote
 	cansas1d_block_diagrams
 	1D_Data_Formats_Working_Group
 	Talk:1D_Data_Formats_Working_Group

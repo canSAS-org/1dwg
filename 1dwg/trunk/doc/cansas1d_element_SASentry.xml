@@ -17,7 +17,7 @@
         <title>The SASentry element</title>
         <mediaobject>
             <imageobject>
-                <imagedata fileref="../graphics/1-SASroot.png" width="200px"
+                <imagedata fileref="../graphics/1-SASroot.png" width="200pt"
                     scalefit="1"/>
             </imageobject>
             <textobject>

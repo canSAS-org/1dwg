@@ -17,7 +17,7 @@
         <title>The SASsource element</title>
         <mediaobject>
             <imageobject>
-                <imagedata fileref="../graphics/5-SASsource.png" width="200px"
+                <imagedata fileref="../graphics/5-SASsource.png" width="200pt"
                     scalefit="1"/>
             </imageobject>
             <textobject>
@@ -212,7 +212,7 @@
                             <entry>
                                 <mediaobject>
                                     <imageobject>
-                                        <imagedata fileref="../graphics/translation-orientation-geometry.jpg" width='200px' scalefit='1'/>
+                                        <imagedata fileref="../graphics/translation-orientation-geometry.jpg" width='200pt' scalefit='1'/>
                                     </imageobject>
                                     <caption>
                                         <para>view from source</para>
@@ -222,7 +222,7 @@
                             <entry>
                                 <mediaobject>
                                     <imageobject>
-                                        <imagedata fileref="../graphics/translation-orientation-geometry-2.jpg" width='200px' scalefit='1'/>
+                                        <imagedata fileref="../graphics/translation-orientation-geometry-2.jpg" width='200pt' scalefit='1'/>
                                     </imageobject>
                                     <caption>
                                         <para>view from detector</para>

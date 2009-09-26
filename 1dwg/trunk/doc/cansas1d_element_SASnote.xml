@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_SASnote -->
+<section xml:id="cansas1d_documentation-element-SASnote" xmlns="http://docbook.org/ns/docbook"
+    version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>SASnote element</title>
+    <figure>
+        <title>The SASroot element</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="../graphics/1-SASroot.png" width="200pt"
+                    scalefit="1"/>
+            </imageobject>
+            <textobject>
+                <phrase>cansas1d-v1-1-SASroot</phrase>
+            </textobject>
+            <caption>
+                <para>The SASroot element</para>
+            </caption>
+        </mediaobject>
+    </figure>
+    <itemizedlist mark="opencircle">
+        <listitem>
+            <para>
+                parent: SASentry
+            </para>
+        </listitem>
+    </itemizedlist>
+    <table>
+        <title/>
+        <tgroup cols='5'>
+            <tbody>
+                <row>
+                    <entry>
+                        Name
+                    </entry>
+                    <entry>
+                        Type
+                    </entry>
+                    <entry>
+                        occurrence
+                    </entry>
+                    <entry>
+                        Description
+                    </entry>
+                    <entry>
+                        Attributes
+                    </entry>
+                </row>
+                <row>
+                    <entry>
+                        '''''{any}'''''
+                    </entry>
+                    <entry>
+                        container
+                    </entry>
+                    <entry>
+                        [0..unbounded]
+                    </entry>
+                    <entry>
+                        Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.
+                    </entry>
+                    <entry>
+                        <para>
+                            <emphasis role="bold"><emphasis>xmlns:{foreign-prefix}</emphasis></emphasis>={foreign-namespace}
+                        </para>
+                    </entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    
+</section>
