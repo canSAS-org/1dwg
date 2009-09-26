@@ -10,7 +10,7 @@
     ########### SVN repository information ###################
 -->
 <!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_Python -->
-<section xml:id="cansas1d_documentation-binding-IgorPro" xmlns="http://docbook.org/ns/docbook"
+<section xml:id="cansas1d_documentation-binding-Python" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Python binding</title>
     <para>
