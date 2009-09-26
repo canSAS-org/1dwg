@@ -63,9 +63,10 @@
                 etc.). Details of the [[cansas1d_SASentry | SASentry]] element are also shown in the
                 next figure. Refer to the [[cansas1d_block_diagrams | block diagrams]] for
                 alternative depictions. See <link
-                    xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml">http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml</link>
-                for an example XML file. Examples, Case Studies, and other background
-                information are below. More discussion can be found on the
+                    xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml"
+                    >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml</link>
+                for an example XML file. Examples, Case Studies, and other background information
+                are below. More discussion can be found on the
                 [[1D_Data_Formats_Working_Group|canSAS 1D Data Formats Working Group]] page and its
                 [[Talk:1D_Data_Formats_Working_Group|discussion]] page. Details about each specific
                 field (XPath string, XML elements and attributes) are described on the
@@ -74,7 +75,7 @@
                 <title>block diagram of minimum elements required for cansas1d/1.0 standard</title>
                 <mediaobject>
                     <imageobject>
-                        <imagedata fileref="../graphics/10-minimum.png" scalefit="1" width="200px"/>
+                        <imagedata fileref="../graphics/10-minimum.png" scalefit="1" width="200pt"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -194,14 +195,14 @@
             <section xml:id="cansas1d_documentation-required_header">
                 <title>Required XML file header</title>
                 <programlisting>
-&lt;?xml version="1.0"?>
-&lt;?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
-&lt;SASroot version="1.0"
-    xmlns="cansas1d/1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="cansas1d/1.0 
-        http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-    >
+                    &lt;?xml version="1.0"?>
+                    &lt;?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
+                    &lt;SASroot version="1.0"
+                    xmlns="cansas1d/1.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="cansas1d/1.0 
+                    http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+                    >
                 </programlisting>
             </section>
         </section>
@@ -224,9 +225,8 @@
                         <title>definition of Q geometry for small-angle scattering</title>
                         <mediaobject>
                             <imageobject>
-                                <imagedata fileref="../graphics/Q-geometry.jpg"  
-                                    scalefit="1" width="200px"
-                                /></imageobject>
+                                <imagedata fileref="../graphics/Q-geometry.jpg" scalefit="1"
+                                    width="200pt"/></imageobject>
                         </mediaobject>
                     </figure>
                 </listitem>
@@ -285,22 +285,41 @@
                             <figure>
                                 <title>definition of translation and orientation geometry as viewed
                                     from the detector towards the source</title>
-                                <mediaobject>
-                                    <imageobject>
-                                        <imagedata
-                                            fileref="../graphics/translation-orientation-geometry.jpg"
-                                            scalefit="1" width="200px"/></imageobject>
-                                </mediaobject>
-                            </figure>
-                            <figure>
-                                <title>definition of translation and orientation geometry as viewed
-                                    from the source towards the detector</title>
-                                <mediaobject>
-                                    <imageobject>
-                                        <imagedata
-                                            fileref="../graphics/translation-orientation-geometry-2.jpg"
-                                            scalefit="1" width="200px"/></imageobject>
-                                </mediaobject>
+                                <para>
+                                    <table>
+                                        <title/>
+                                        <tgroup cols="2">
+                                            <tbody>
+                                                <row>
+                                                    <entry>
+                                                        <mediaobject>
+                                                            <imageobject>
+                                                                <imagedata
+                                                                    fileref="../graphics/translation-orientation-geometry.jpg"
+                                                                    width="200pt" scalefit="1"/>
+                                                            </imageobject>
+                                                            <caption>
+                                                                <para>as viewed from source</para>
+                                                            </caption>
+                                                        </mediaobject>
+                                                    </entry>
+                                                    <entry>
+                                                        <mediaobject>
+                                                            <imageobject>
+                                                                <imagedata
+                                                                    fileref="../graphics/translation-orientation-geometry-2.jpg"
+                                                                    width="200pt" scalefit="1"/>
+                                                            </imageobject>
+                                                            <caption>
+                                                                <para>as viewed from detector</para>
+                                                            </caption>
+                                                        </mediaobject>
+                                                    </entry>
+                                                </row>
+                                            </tbody>
+                                        </tgroup>
+                                    </table>
+                                </para>
                             </figure>
                         </listitem>
                     </orderedlist>
@@ -423,7 +442,7 @@
                     <itemizedlist>
                         <listitem>
                             <para>be sure to update to the latest SVN repository revision (command:
-                                    <code>svn update</code>) </para>
+                                <code>svn update</code>) </para>
                         </listitem>
                         <listitem>
                             <para>check the output directory to see if it contains the default XSLT
@@ -509,34 +528,34 @@
                 <para>Here is a brief sketch of how a file would be arranged with multiple SASentry
                     elements and multiple SASdata elements.
                     <programlisting>
-&lt;?xml version="1.0"?>
-&lt;?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
-&lt;SASroot version="1.0"
-   xmlns="cansas1d/1.0"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-   >
-   &lt;SASentry name="071121.dat#S22">
-     &lt;!-\- contents of the first experiment in the file go here -\->
-   &lt;/SASentry>
-   &lt;SASentry name="example temperature series">
-     &lt;!-\- example with two SAS data sets related to the same sample -\->
-     &lt;Title>title of this series&lt;/Title>
-     &lt;Run name="run1">42-001&lt;/Run>
-     &lt;Run name="run2">42-002&lt;/Run>
-     &lt;SASdata name="run1">
-       &lt;!-\- data from 42-001 run comes here -\->
-     &lt;/SASdata>
-     &lt;SASdata name="run2">
-       &lt;!-\- data from 42-002 run comes here -\->
-     &lt;/SASdata>
-     &lt;!-\- other elements come here for this entry -\->
-   &lt;/SASentry>
-   &lt;SASentry name="other sample">
-     &lt;!-\- any number of additional experiments can be included, as desired -\->
-     &lt;!-\- SASentry elements in the same XML file do not have to be related -\->
-   &lt;/SASentry>
-&lt;/SASroot>
+                        &lt;?xml version="1.0"?>
+                        &lt;?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
+                        &lt;SASroot version="1.0"
+                        xmlns="cansas1d/1.0"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+                        >
+                        &lt;SASentry name="071121.dat#S22">
+                        &lt;!-\- contents of the first experiment in the file go here -\->
+                        &lt;/SASentry>
+                        &lt;SASentry name="example temperature series">
+                        &lt;!-\- example with two SAS data sets related to the same sample -\->
+                        &lt;Title>title of this series&lt;/Title>
+                        &lt;Run name="run1">42-001&lt;/Run>
+                        &lt;Run name="run2">42-002&lt;/Run>
+                        &lt;SASdata name="run1">
+                        &lt;!-\- data from 42-001 run comes here -\->
+                        &lt;/SASdata>
+                        &lt;SASdata name="run2">
+                        &lt;!-\- data from 42-002 run comes here -\->
+                        &lt;/SASdata>
+                        &lt;!-\- other elements come here for this entry -\->
+                        &lt;/SASentry>
+                        &lt;SASentry name="other sample">
+                        &lt;!-\- any number of additional experiments can be included, as desired -\->
+                        &lt;!-\- SASentry elements in the same XML file do not have to be related -\->
+                        &lt;/SASentry>
+                        &lt;/SASroot>
                     </programlisting></para>
             </section>
         </section>
@@ -547,9 +566,9 @@
                 cansas1d/1.0 format. Please refer to the references (and others) [[#Help_for_XML |
                 below]] for deeper discussions on foreign elements. </para>
             <para> No examples exist. <note>
-                    <para> 2009-09, PRJ: Actually, the ISIS glassy carbon data is now an example
-                    </para>
-                </note> At present, all examples of canSAS xml files using foreign namespaces have
+                <para> 2009-09, PRJ: Actually, the ISIS glassy carbon data is now an example
+                </para>
+            </note> At present, all examples of canSAS xml files using foreign namespaces have
                 been converted to bring that data into either the '''SASprocessnote''' or
                 '''SASnote''' elements. Refer to the
                 [http://svn.smallangles.net/trac/canSAS/changeset/47 TRAC changes] for an example of
@@ -559,8 +578,8 @@
         <section xml:id="cansas1d_documentation-Support_Tools">
             <title>Support tools for Visualization &amp; Analysis software</title>
             <para> Support for importing canSAS1d/1.0 files exists for these languages: <note>
-                    <para>Refactor the wiki pages here and link as appropriate.</para>
-                </note></para>
+                <para>Refactor the wiki pages here and link as appropriate.</para>
+            </note></para>
             <itemizedlist>
                 <listitem>
                     <para><emphasis role="bold">FORTRAN</emphasis></para>
@@ -573,23 +592,20 @@
                 </listitem>
                 <listitem>
                     <para>
-                        <emphasis role="bold">Microsoft Excel</emphasis>
-                        Support for Microsoft Excel is provided through the default 
-                        canSAS stylesheet 
-                        <link 
-                            xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl">cansasxml-html.xsl</link>.
-                        An 
-                        <link 
-                            xlink:href="http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf">excellent description</link>
-                        of how to import data from the cansas1d/1.0 format into Excel is available 
-                        from the 
-                        <link xlink:href="http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html">ISIS LOQ instrument</link>
-                        (http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html).
-                        Also note the
-                        <link 
-                            xlink:href="http://www.isis.rl.ac.uk/atchive/LargeScale/LOQ/loq.htm">old WWW site</link>.
-                        (http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm) may still be available.
-                    </para>
+                        <emphasis role="bold">Microsoft Excel</emphasis> Support for Microsoft Excel
+                        is provided through the default canSAS stylesheet <link
+                            xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl"
+                            >cansasxml-html.xsl</link>. An <link
+                                xlink:href="http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf"
+                                >excellent description</link> of how to import data from the
+                        cansas1d/1.0 format into Excel is available from the <link
+                            xlink:href="http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html"
+                            >ISIS LOQ instrument</link>
+                        (http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html). Also note the
+                        <link
+                            xlink:href="http://www.isis.rl.ac.uk/atchive/LargeScale/LOQ/loq.htm">old
+                            WWW site</link>. (http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm) may
+                        still be available. </para>
                 </listitem>
                 <listitem>
                     <para><emphasis role="bold">PHP</emphasis></para>
@@ -606,12 +622,14 @@
             <title>Software repositories (for canSAS1d/1.0 standard)</title>
             <itemizedlist>
                 <listitem>
-                    <para><emphasis role="bold">TRAC</emphasis>:
-                        <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0">http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0</link></para>
+                    <para><emphasis role="bold">TRAC</emphasis>: <link
+                        xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0"
+                        >http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0</link></para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold">Subversion</emphasis>:
-                        <link xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0">http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0</link></para>
+                    <para><emphasis role="bold">Subversion</emphasis>: <link
+                        xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0"
+                        >http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0</link></para>
                 </listitem>
             </itemizedlist>
         </section>
@@ -619,17 +637,32 @@
     <section xml:id="cansas1d_documentation-schema_validation">
         <title>Validation of XML against the Schema</title>
         <orderedlist>
-            <listitem><para>open browser to:   http://www.xmlvalidation.com/</para></listitem>
-            <listitem><para>paste content of candidate XML file (with reference in the header to the XML Schema as shown above) into the form</para></listitem>
-            <listitem><para>press &lt;validate></para></listitem>
-            <listitem><para>paste content of [http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd cansas1d.xsd] XSD file into form and press &lt;continue validation></para></listitem>
-            <listitem><para>check the results</para></listitem>
+            <listitem>
+                <para>open browser to: http://www.xmlvalidation.com/</para>
+            </listitem>
+            <listitem>
+                <para>paste content of candidate XML file (with reference in the header to the XML
+                    Schema as shown above) into the form</para>
+            </listitem>
+            <listitem>
+                <para>press &lt;validate></para>
+            </listitem>
+            <listitem>
+                <para>paste content of
+                    [http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd cansas1d.xsd] XSD
+                    file into form and press &lt;continue validation></para>
+            </listitem>
+            <listitem>
+                <para>check the results</para>
+            </listitem>
         </orderedlist>
     </section>
     <section xml:id="cansas1d_documentation-XML_Help">
         <title>Help for XML</title>
         <para>The various references for help on XML have been moved to their own wiki page:
             [[XmlHelp]] </para>
-        <note><para>chapter="Other" section="XML Help" xml:id="wiki-XML_Help"</para></note>
+        <note>
+            <para>chapter="Other" section="XML Help" xml:id="wiki-XML_Help"</para>
+        </note>
     </section>
 </chapter>

@@ -17,7 +17,7 @@
         <title>The SASsample element</title>
         <mediaobject>
             <imageobject>
-                <imagedata fileref="../graphics/3-SASsample.png" width="200px" scalefit="1"/>
+                <imagedata fileref="../graphics/3-SASsample.png" width="200pt" scalefit="1"/>
             </imageobject>
             <textobject>
                 <phrase>cansas1d-v1-3-SASsample</phrase>
@@ -153,7 +153,7 @@
                                     <imageobject>
                                         <imagedata
                                             fileref="../graphics/translation-orientation-geometry.jpg"
-                                            width="200px" scalefit="1"/>
+                                            width="200pt" scalefit="1"/>
                                     </imageobject>
                                     <textobject>
                                         <phrase/>
@@ -168,7 +168,7 @@
                                     <imageobject>
                                         <imagedata
                                             fileref="../graphics/translation-orientation-geometry-2.jpg"
-                                            width="200px" scalefit="1"/>
+                                            width="200pt" scalefit="1"/>
                                     </imageobject>
                                     <textobject>
                                         <phrase/>
