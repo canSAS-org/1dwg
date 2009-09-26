@@ -16,6 +16,7 @@
     <title>Elements of the CanSAS XML standard</title>
     <para>There are various elements (tag names) in the canSAS1d/1.0 standard.  
         Each of these is described below.</para>
+    <xi:include href="cansas1d_element_XML_Header.xml"/>
     <xi:include href="cansas1d_element_SASroot.xml"/>
     <xi:include href="cansas1d_element_SASentry.xml"/>
     <!--<xi:include href="cansas1d_element_SASdata.xml"/>-->

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_XML_Header -->
+<section xml:id="cansas1d_documentation-XML_Header" xmlns="http://docbook.org/ns/docbook"
+    version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Required XML Header</title>
+    <figure>
+        <title>The SASroot element</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="../graphics/1-SASroot.png" width="200px" scalefit="1"/>
+            </imageobject>
+            <textobject>
+                <phrase>cansas1d-v1-1-SASroot</phrase>
+            </textobject>
+            <caption>
+                <para/>
+            </caption>
+        </mediaobject>
+    </figure>
+    <table>
+        <title/>
+        <tgroup cols="5">
+            <tbody>
+                <row>
+                    <entry>Name</entry>
+                    <entry>Type</entry>
+                    <entry>occurrence</entry>
+                    <entry>Description</entry>
+                    <entry>Attributes</entry>
+                </row>
+                <row>
+                    <entry><emphasis>xml declaration</emphasis></entry>
+                    <entry>header</entry>
+                    <entry>[1..1]</entry>
+                    <entry><code>&lt;?xml version="1.0"?></code></entry>
+                    <entry><code>version="1.0"</code></entry>
+                </row>
+                <row>
+                    <entry><emphasis role="italic">stylesheet</emphasis></entry>
+                    <entry>header</entry>
+                    <entry>[0..1]</entry>
+                    <entry>
+                        <para><code>&lt;?xml-stylesheet type="text/xsl" href="example.xsl"
+                            ?></code></para>
+                        <para> Declares that <emphasis role="italic">example.xsl</emphasis> (needs
+                            to be in the local directory) will be the default stylesheet to an XML
+                            visualization tool. Change <emphasis role="italic"
+                                >example.xsl</emphasis> to indicate a different stylesheet in the
+                            local directory. Refer to <link
+                                xlink:href="http://www.w3schools.org/xsl">W3 Schools XSLT
+                                Help</link> for assistance in constructing XSLT files. </para>
+                        <para> XML rules actually allow for multiple stylesheet declarations.
+                            Explore this possibility as your own adventure. </para>
+                    </entry>
+                    <entry>
+                        <para><code>type="text/xsl"</code></para>
+                        <para><code>href="example.xsl"</code></para>
+                    </entry>
+                </row>
+                <row>
+                    <entry><emphasis role="bold">SASroot</emphasis></entry>
+                    <entry>container</entry>
+                    <entry>[1..1]</entry>
+                    <entry>
+                        <para>The canSAS reduced 1-D SAS data (cansas1d/1.0) will be in the
+                                <emphasis role="bold">SASroot</emphasis> database.</para>
+                        <para>(This is similar to NXroot used by NeXus.)</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>
+                                    <emphasis role="bold">version="1.0"</emphasis> is required to
+                                    identify the cansas1d/1.0 standard for SAS data.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis role="bold">xmlns</emphasis> sets the default
+                                    namespace for all elements (with no prefix) in this file.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis role="bold">xmlns:xsi</emphasis> sets <emphasis
+                                        role="bold">xsi</emphasis> as the prefix for any elements
+                                    from the governing XML Schema.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                    <emphasis role="bold">xsi:schemaLocation</emphasis> associates a
+                                    suggested URL (where the cansas1d/1.0 XML Schema might be found)
+                                    with the default namespace string. </para>
+                            </listitem>
+                        </itemizedlist>
+                        <programlisting>&lt;SASroot version="1.0"
+    xmlns="cansas1d/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+    ></programlisting>
+                    </entry>
+                    <entry>
+                        <para><code>version="1.0"</code></para>
+                        <para><code>xmlns="{this-namespace-URI}"</code></para>
+                        <para><code>xmlns:xsi="{URL-of-governing-XML-Schema}"</code></para>
+                        <para><code>xsi:schemaLocation="{this-namespace-URI}
+                                {URL-to-find-XML-Schema}" </code></para>
+                    </entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+</section>
