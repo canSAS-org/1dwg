@@ -21,8 +21,8 @@
     <xi:include href="cansas1d_element_SASentry.xml"/>
     <xi:include href="cansas1d_element_SASdata.xml"/>
     <xi:include href="cansas1d_element_SASsample.xml"/>
-    <!--<xi:include href="cansas1d_element_SASinstrument.xml"/>-->
-    <!--<xi:include href="cansas1d_element_SASsource.xml"/>-->
+    <xi:include href="cansas1d_element_SASinstrument.xml"/>
+    <xi:include href="cansas1d_element_SASsource.xml"/>
     <!--<xi:include href="cansas1d_element_SAScollimation.xml"/>-->
     <!--<xi:include href="cansas1d_element_SASdetector.xml"/>-->
     <!--<xi:include href="cansas1d_element_SASprocess.xml"/>-->

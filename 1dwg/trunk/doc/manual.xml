@@ -69,8 +69,8 @@ http://toolserver.org/~magnus/wiki2xml/w2x.php
         cansas1d_SASentry
         cansas1d_SASdata
         cansas1d_SASsample
-    cansas1d_SASinstrument
-    cansas1d_SASsource
+        cansas1d_SASinstrument
+        cansas1d_SASsource
     cansas1d_SAScollimation
     cansas1d_SASdetector
     cansas1d_SASprocess
