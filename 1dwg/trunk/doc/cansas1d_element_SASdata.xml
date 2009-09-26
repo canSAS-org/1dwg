@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_SASdata -->
+<section xml:id="cansas1d_documentation-element-SASdata" xmlns="http://docbook.org/ns/docbook"
+    version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>SASdata element</title>
+    <figure>
+        <title>The SASdata element</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="../graphics/2-SASdata.png" width="200px"
+                    scalefit="1"/>
+            </imageobject>
+            <textobject>
+                <phrase>cansas1d-v1-2-SASdata.png</phrase>
+            </textobject>
+            <caption>
+                <para>The SASdata element</para>
+            </caption>
+        </mediaobject>
+    </figure>
+    <figure>
+        <title>Q geometry</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="../graphics/Q-geometry.jpg" width="200px"
+                    scalefit="1"/>
+            </imageobject>
+            <textobject>
+                <phrase>Q-geometry.jpg</phrase>
+            </textobject>
+            <caption>
+                <para>Q geometry</para>
+            </caption>
+        </mediaobject>
+    </figure>
+    <itemizedlist mark="opencircle">
+        <listitem>
+            <para>
+                parent: SASentry
+            </para>
+        </listitem>
+    </itemizedlist>
+    <section>
+        <title>SASdata</title>
+        <table>
+            <title/>
+            <tgroup cols='5'>
+                <tbody>
+                    <row>
+                        <entry>
+                            Name
+                        </entry>
+                        <entry>
+                            Type
+                        </entry>
+                        <entry>
+                            occurrence
+                        </entry>
+                        <entry>
+                            Description
+                        </entry>
+                        <entry>
+                            Attributes
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            '''Idata'''
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry>
+                            [1..unbounded]
+                        </entry>
+                        <entry>
+                            Idata describes a single SAS data point.
+                        </entry>
+                        <entry/>
+                    </row>
+                </tbody></tgroup>
+        </table>
+    </section>
+    <section>
+        <title>Idata</title>
+        <table>
+            <title/>
+            <tgroup cols='5'>
+                <tbody>
+                    <row>
+                        <entry> Name </entry>
+                        <entry> Type </entry>
+                        <entry> occurrence </entry>
+                        <entry> Description </entry>
+                        <entry> Attributes </entry>
+
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">Q</emphasis>
+                            </para>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [1..1]
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis>Q=(4 pi; / lambda;) sin(theta;)</emphasis> where <emphasis>lambda;</emphasis> is the wavelength of the radiation and <emphasis>2theta;</emphasis> is the angle through which the detected radiation has been scattered. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Either <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are typical.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={units}
+                            </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">I</emphasis>
+                            </para>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [1..1]
+                        </entry>
+                        <entry>
+                            Intensity of the detected radiation. 
+                            The <emphasis role="bold">unit</emphasis> attribute is required. 
+                            See cansas1d_documentation#Rules for acceptable values. 
+                            One possibility might be<emphasis>1/cm</emphasis> for absolute 
+                            units when the intensity describes a <emphasis>differential 
+                                cross-section per unit volume per unit solid angle</emphasis>. 
+                            <emphasis role="bold">NOTE</emphasis>: 
+                            Be aware that there are different types of intensity that 
+                            may be reported (see Talk:cansas1d_documentation#The_Intensity_Problem) 
+                            and one should be very careful to inspect the 
+                            <emphasis role="bold">unit</emphasis> attribute to determine how to 
+                            handle subsequent data processing, especially in the area of 
+                            units conversion.
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={units}
+                            </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>Idev</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Estimated standard deviation of 
+                            <emphasis role="bold">I</emphasis>.
+                            The <emphasis role="bold">unit</emphasis> attribute is required. 
+                            See cansas1d_documentation#Rules for acceptable values. 
+                            One possibility might be <emphasis>1/cm</emphasis>.
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={units}
+                            </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>Qdev</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Estimated standard deviation of 
+                            <emphasis role="bold">Q</emphasis>. (optional: see note below on usage)The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Either <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are typical.
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={units}
+                            </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>dQw</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">Q</emphasis> resolution along the axis of scanning (the high-resolution <emphasis>slit width</emphasis> direction). Useful for defining resolution data from slit-smearing instruments such as Bonse-Hart geometry. (optional: see note below on usage)The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Either <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are typical.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={units} </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>dQl</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">Q</emphasis> resolution perpendicular to the axis of scanning (the low-resolution <emphasis>slit length</emphasis> direction). Useful for defining resolution data from slit-smearing instruments such as Bonse-Hart geometry. (optional: see note below on usage)The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Either <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are typical.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={units}
+                            </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>Qmean</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Mean value of <emphasis role="bold">Q</emphasis> for this datum. Useful when describing data that has been binned from higher-resolution or from area detectors.The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Either <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are typical.
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={units} </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>Shadowfactor</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Describes the adjustment due to the beam stop penumbra. 
+                            <emphasis role="bold">(This definition needs revision. NIST?)</emphasis>
+                            NOTE: There is no unit attribute.
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry>
+                            '''''{any}'''''
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry> [0..unbounded] </entry>
+                        <entry>
+                            Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>xmlns:{foreign-prefix}</emphasis></emphasis>={foreign-namespace}
+                            </para>
+                        </entry>
+                    </row>
+                </tbody></tgroup>
+        </table>
+    </section>
+    <section><title>Notes</title>
+        <orderedlist numeration="arabic"><listitem>
+            <para>
+                When an optional element (<emphasis role="bold"><emphasis>Idev</emphasis></emphasis>, <emphasis role="bold"><emphasis>Qdev</emphasis></emphasis>, ...) is used, it must be given in every '''Idata''' within the enclosing '''SASdata'''.
+            </para>
+        </listitem>
+            <listitem>
+                <para>
+                    If either <emphasis role="bold"><emphasis>dQw</emphasis></emphasis> or <emphasis role="bold"><emphasis>dQl</emphasis></emphasis> are used, then <emphasis role="bold"><emphasis>Qdev</emphasis></emphasis> is not permitted to be used.
+                </para>
+            </listitem>
+        </orderedlist>
+        <note><para>
+            <emphasis role="bold">(The Shadowfactor attribute definition needs revision. NIST?)</emphasis>
+        </para></note>
+    </section>
+</section>
