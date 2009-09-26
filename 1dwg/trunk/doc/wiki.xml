@@ -62,9 +62,9 @@
                 describes a single experiment (data set, time-slice, step in a series, new sample,
                 etc.). Details of the [[cansas1d_SASentry | SASentry]] element are also shown in the
                 next figure. Refer to the [[cansas1d_block_diagrams | block diagrams]] for
-                alternative depictions. See
-                [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml
-                cansas1d.xml] for an example XML file. Examples, Case Studies, and other background
+                alternative depictions. See <link
+                    xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml">http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml</link>
+                for an example XML file. Examples, Case Studies, and other background
                 information are below. More discussion can be found on the
                 [[1D_Data_Formats_Working_Group|canSAS 1D Data Formats Working Group]] page and its
                 [[Talk:1D_Data_Formats_Working_Group|discussion]] page. Details about each specific
@@ -74,7 +74,8 @@
                 <title>block diagram of minimum elements required for cansas1d/1.0 standard</title>
                 <mediaobject>
                     <imageobject>
-                        <imagedata fileref="../graphics/10-minimum.png" scale="80"/></imageobject>
+                        <imagedata fileref="../graphics/10-minimum.png" scalefit="1" width="200px"/>
+                    </imageobject>
                 </mediaobject>
             </figure>
             <itemizedlist>
@@ -223,7 +224,8 @@
                         <title>definition of Q geometry for small-angle scattering</title>
                         <mediaobject>
                             <imageobject>
-                                <imagedata fileref="../graphics/Q-geometry.jpg" scale="80"
+                                <imagedata fileref="../graphics/Q-geometry.jpg"  
+                                    scalefit="1" width="200px"
                                 /></imageobject>
                         </mediaobject>
                     </figure>
@@ -287,7 +289,7 @@
                                     <imageobject>
                                         <imagedata
                                             fileref="../graphics/translation-orientation-geometry.jpg"
-                                            scale="80"/></imageobject>
+                                            scalefit="1" width="200px"/></imageobject>
                                 </mediaobject>
                             </figure>
                             <figure>
@@ -297,7 +299,7 @@
                                     <imageobject>
                                         <imagedata
                                             fileref="../graphics/translation-orientation-geometry-2.jpg"
-                                            scale="80"/></imageobject>
+                                            scalefit="1" width="200px"/></imageobject>
                                 </mediaobject>
                             </figure>
                         </listitem>
@@ -570,7 +572,24 @@
                     <para><emphasis role="bold">Java</emphasis></para>
                 </listitem>
                 <listitem>
-                    <para><emphasis role="bold">Microsoft Excel</emphasis></para>
+                    <para>
+                        <emphasis role="bold">Microsoft Excel</emphasis>
+                        Support for Microsoft Excel is provided through the default 
+                        canSAS stylesheet 
+                        <link 
+                            xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl">cansasxml-html.xsl</link>.
+                        An 
+                        <link 
+                            xlink:href="http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf">excellent description</link>
+                        of how to import data from the cansas1d/1.0 format into Excel is available 
+                        from the 
+                        <link xlink:href="http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html">ISIS LOQ instrument</link>
+                        (http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html).
+                        Also note the
+                        <link 
+                            xlink:href="http://www.isis.rl.ac.uk/atchive/LargeScale/LOQ/loq.htm">old WWW site</link>.
+                        (http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm) may still be available.
+                    </para>
                 </listitem>
                 <listitem>
                     <para><emphasis role="bold">PHP</emphasis></para>
@@ -588,11 +607,11 @@
             <itemizedlist>
                 <listitem>
                     <para><emphasis role="bold">TRAC</emphasis>:
-                        http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0</para>
+                        <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0">http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0</link></para>
                 </listitem>
                 <listitem>
                     <para><emphasis role="bold">Subversion</emphasis>:
-                        http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0</para>
+                        <link xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0">http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0</link></para>
                 </listitem>
             </itemizedlist>
         </section>

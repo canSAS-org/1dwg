@@ -331,7 +331,7 @@ See the [[cansas1d_binding_Fortran | Fortran Documentation]] page for more detai
 
 Support for Microsoft Excel is provided through the default canSAS stylesheet 
 [[http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl  cansasxml-html.xsl]].  
-An excellent description (http://www.isis.rl.ac.uk/LargeScale/LOQ/xml/cansas_xml_format.pdf) of how to import data from the cansas1d/1.0 format into Excel is available from the ISIS LOQ instrument (http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm).
+An excellent description (http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf) of how to import data from the cansas1d/1.0 format into Excel is available from the ISIS LOQ instrument (http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm).
 
 == Software repositories ==
 
