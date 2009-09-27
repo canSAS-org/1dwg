@@ -14,11 +14,31 @@
     <title>Elements of the CanSAS XML standard</title>
     <para>There are various elements (tag names) in the canSAS1d/1.0 standard. Each of these is
         described below.</para>
-    <para> The <emphasis role="italic">Type</emphasis> may be a <emphasis role="italic"
-            >container</emphasis> or <emphasis role="italic">askjgv</emphasis>. Elements of type
-            <emphasis role="italic">container</emphasis> have subelements but no text for
-        themselves. </para>
-    <para> The number of times a particular element may appear is described in the <emphasis
+    <para> The <emphasis role="italic">Type</emphasis> may be a 
+        <emphasis role="italic">container</emphasis>, 
+        <emphasis role="italic">header</emphasis>,
+        or <emphasis role="italic">floating-point number</emphasis>,
+        or <emphasis role="italic">string</emphasis>. 
+    </para>
+    <para>
+        Elements of type <emphasis role="italic">container</emphasis> 
+        have subelements but no text for themselves. 
+        These are similar to the NeXus NXDL <literal>group</literal> type.
+    </para>
+    <para>
+        Elements of type <emphasis role="italic">floating-point number</emphasis> 
+        are obvious.  In most cases, a <literal>unit</literal> attribute
+        is required.  This will be noted.
+    </para>
+    <para>
+        Elements of type <emphasis role="italic">string</emphasis> 
+        are any valid string (non-whitespace) sequence.
+    </para>
+    <para>
+        Elements of type <emphasis role="italic">header</emphasis> 
+        describe the required XML header lines.  Use them without question.
+    </para>
+    <para>The number of times a particular element may appear is described in the <emphasis
             role="italic">occurence</emphasis> column. A value of <emphasis role="italic"
             >[0..1]</emphasis> indicates the element is optional but may appear one time. A value of
             <emphasis role="italic">[0..inf]</emphasis> indicates the element is optional 

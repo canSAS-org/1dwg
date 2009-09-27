@@ -70,48 +70,22 @@
             from previous works such as the SASXML format, a joint collaboration
             between ISIS and ILL.
         </para>
+        <para>
+            The home page of the CanSAS 1D Data Formats Working Group
+            <link 
+                xlink:href="http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group"
+                >http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group</link>
+            describes the members, timelines, and current status.
+            There is a discussion page for some matters that preceded this revision.
+            <link 
+                xlink:href="http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group"
+                >http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group</link>        </para>
     </preface>
 
-    <!--
-        Note there is WWW-based converter from MediaWiki to DocBook:
-            http://toolserver.org/~magnus/wiki2xml/w2x.php
-		This page can be called with parameters: w2x.php?doit=1&whatsthis=articlelist&site=en.wikipedia.org/w&output_format=odt&text=Biochemistry
-
-http://toolserver.org/~magnus/wiki2xml/w2x.php
-        cansas1d_documentation
-        cansas1d_SASroot
-        cansas1d_SASentry
-        cansas1d_SASdata
-        cansas1d_SASsample
-        cansas1d_SASinstrument
-        cansas1d_SASsource
-        cansas1d_SAScollimation
-        cansas1d_SASdetector
-        cansas1d_SASprocess
-        cansas1d_SASnote
-	cansas1d_block_diagrams
-	1D_Data_Formats_Working_Group
-	Talk:1D_Data_Formats_Working_Group
-	   cansas1d_definition_of_terms
-	   cansas1d_XML_header
-	   cansas1d_any
-	cansas1d_casestudy_collagen
-	cansas1d_casestudy_af1410
-	   cansas1d_binding_IgorPro
-	   cansas1d_binding_Java
-	   cansas1d_binding_Python
-   	   cansas1d_binding_Fortran
-	   XmlHelp
-	-->
-    
     <xi:include href="wiki.xml"/>
     <xi:include href="elements.xml"/>
     <xi:include href="bindings.xml"/>
     <xi:include href="casestudies.xml"/>
     <xi:include href="other.xml"/>
-    <!--
-        <appendix><title>An Appendix</title>
-        <para>...</para>
-        </appendix>
-    -->
+    <index/>
 </book>
