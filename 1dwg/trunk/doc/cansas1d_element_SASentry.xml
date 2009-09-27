@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-element-SASentry" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASentry element</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <figure>
         <title>The SASentry element</title>
         <mediaobject>
@@ -78,7 +82,7 @@
                         string
                     </entry>
                     <entry>
-                        [1..]
+                        [1..inf]
                     </entry>
                     <entry>
                         <para>
@@ -105,7 +109,7 @@
                         container
                     </entry>
                     <entry>
-                        [0..]
+                        [0..inf]
                     </entry>
                     <entry>
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.
@@ -124,7 +128,7 @@
                         container
                     </entry>
                     <entry>
-                        [1..]
+                        [1..inf]
                     </entry>
                     <entry>
                         Reduced 1-D SAS data for this '''SASentry'''. 
@@ -147,7 +151,7 @@
                         container
                     </entry>
                     <entry>
-                        [0..]
+                        [0..inf]
                     </entry>
                     <entry>
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.
@@ -201,7 +205,7 @@
                         container
                     </entry>
                     <entry>
-                        [0..]
+                        [0..inf]
                     </entry>
                     <entry>
                         Description of a processing or analysis step.
@@ -220,7 +224,7 @@
                         container
                     </entry>
                     <entry>
-                        [1..]
+                        [1..inf]
                     </entry>
                     <entry>
                         Free form description of anything not covered by other elements.

@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-element-SASinstrument" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASinstrument element</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <figure>
         <title>The SASinstrument element</title>
         <mediaobject>
@@ -93,7 +97,7 @@
                     container
                 </entry>
                 <entry>
-                    [1..]
+                    [1..inf]
                 </entry>
                 <entry>
                     Text string that identifies the name of this instrument collimation.
@@ -112,7 +116,7 @@
                     container
                 </entry>
                 <entry>
-                    [1..]
+                    [1..inf]
                 </entry>
                 <entry>
                     Text string that identifies the name of this detector.

@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-binding-IgorPro" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>IgorPro binding</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <para>An import tool (binding) for IgorPro has been created (cansasXML.ipf). You can check out
         the IgorPro working directory from the SVN server (see instructions below). </para>
     <para>To use the canSASxml.ipf procedure, you must have the XMLutils XOP IGOR plugin installed.

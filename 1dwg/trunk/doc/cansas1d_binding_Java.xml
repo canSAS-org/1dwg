@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-binding-Java" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Java JAXB binding</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <para>
         Documentation for the JAXB binding is spotty at this time.
         You can check it out with subversion:

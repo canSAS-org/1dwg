@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_SASroot -->
+<section xml:id="cansas1d_documentation-case_study-af1410" xmlns="http://docbook.org/ns/docbook"
+    version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Case Study: AF1410 steel</title>
+    <bridgehead> $Revision$ $Date$ </bridgehead>
+    <section>
+        <title>Overview</title>
+        <note>
+            <para> This case study has not yet been written up. For now, see the data file 
+                (<link
+                    xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/examples/af1410/cs_af1410.xml"
+                    > http://svn.smallangles.net/svn/canSAS/1dwg/trunk/examples/af1410/cs_af1410.xml
+                </link>).
+            </para>
+            <para> 
+                The data file contains multiple SASentry elements that pertain to different samples
+                treated at different conditions in a time series.  Each SASentry element contains two
+                SASdata sections that correspond to sector averages from the two-dimensional SANS
+                data.  Since the samples had been subjected to a 1.6T magentic field to clear
+                the scattering from magentic domain boundaries in one direction, the sector average
+                for that direction has scattering dominated by purely nuclear scattering moments.  The
+                other SASdata section has scattering due to both nuclear and magnetic scattering moments.
+            </para>
+            <para> 
+                Also see the publication: A.J. Allen, D. Gavillet, J.R. Weertman, 
+                "Small-Angle Neutron Scattering Studies of
+                Carbide Precipitation in Ultrahigh-Strength Steels,"
+                <emphasis role="italic">Acta Metall</emphasis>
+                <emphasis role="bold">41</emphasis> (1993) 1869-1884. </para>
+        </note>
+    </section>
+</section>

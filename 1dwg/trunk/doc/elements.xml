@@ -21,8 +21,8 @@
     <para> The number of times a particular element may appear is described in the <emphasis
             role="italic">occurence</emphasis> column. A value of <emphasis role="italic"
             >[0..1]</emphasis> indicates the element is optional but may appear one time. A value of
-            <emphasis role="italic">[0..]</emphasis> indicates the element is optional but may
-        appear as many times as desired (also known as unbounded). </para>
+            <emphasis role="italic">[0..inf]</emphasis> indicates the element is optional 
+            but may appear an infinite number of times (also known as unbounded). </para>
     <xi:include href="cansas1d_element_XML_Header.xml"/>
     <xi:include href="cansas1d_element_SASroot.xml"/>
     <xi:include href="cansas1d_element_SASentry.xml"/>
