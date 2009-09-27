@@ -27,9 +27,14 @@
             </caption>
         </mediaobject>
     </figure>
-    <table>
+    <table orient="port">
         <title/>
         <tgroup cols="5">
+            <colspec colname="c1" colwidth="15*"/>
+            <colspec colname="c2" colwidth="15*"/>
+            <colspec colname="c3" colwidth="10*"/>
+            <colspec colname="c4" colwidth="30*"/>
+            <colspec colname="c5" colwidth="30*"/>
             <tbody>
                 <row>
                     <entry>Name</entry>
@@ -100,21 +105,28 @@
                                     with the default namespace string. </para>
                             </listitem>
                         </itemizedlist>
-                        <programlisting>&lt;SASroot version="1.0"
-    xmlns="cansas1d/1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-    ></programlisting>
+                        <para>See Note 1 below</para>
                     </entry>
                     <entry>
-                        <para><code>version="1.0"</code></para>
-                        <para><code>xmlns="{this-namespace-URI}"</code></para>
-                        <para><code>xmlns:xsi="{URL-of-governing-XML-Schema}"</code></para>
-                        <para><code>xsi:schemaLocation="{this-namespace-URI}
-                                {URL-to-find-XML-Schema}" </code></para>
+                        <para>See Note 2 below</para>
                     </entry>
                 </row>
             </tbody>
         </tgroup>
     </table>
+    <figure>
+        <title>Note 1: Required header for canSAS1d/1.0 XML files</title>
+        <programlisting>&lt;SASroot version="1.0"
+            xmlns="cansas1d/1.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+            ></programlisting>
+    </figure>
+    <figure>
+        <title>Note 2: Description of attributes in required header for canSAS1d/1.0 XML files</title>
+        <programlisting>version="1.0"
+xmlns="{this-namespace-URI}"
+xmlns:xsi="{URL-of-governing-XML-Schema}"
+xsi:schemaLocation="{this-namespace-URI}  {URL-to-find-XML-Schema}"</programlisting>
+    </figure>
 </section>
