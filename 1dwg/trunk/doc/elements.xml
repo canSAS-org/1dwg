@@ -9,13 +9,20 @@
     # $Id$
     ########### SVN repository information ###################
 -->
-<chapter xml:id="wiki-elements" 
-    xmlns="http://docbook.org/ns/docbook" version="5.0"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="wiki-elements" xmlns="http://docbook.org/ns/docbook" version="5.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Elements of the CanSAS XML standard</title>
-    <para>There are various elements (tag names) in the canSAS1d/1.0 standard.  
-        Each of these is described below.</para>
+    <para>There are various elements (tag names) in the canSAS1d/1.0 standard. Each of these is
+        described below.</para>
+    <para> The <emphasis role="italic">Type</emphasis> may be a <emphasis role="italic"
+            >container</emphasis> or <emphasis role="italic">askjgv</emphasis>. Elements of type
+            <emphasis role="italic">container</emphasis> have subelements but no text for
+        themselves. </para>
+    <para> The number of times a particular element may appear is described in the <emphasis
+            role="italic">occurence</emphasis> column. A value of <emphasis role="italic"
+            >[0..1]</emphasis> indicates the element is optional but may appear one time. A value of
+            <emphasis role="italic">[0..]</emphasis> indicates the element is optional but may
+        appear as many times as desired (also known as unbounded). </para>
     <xi:include href="cansas1d_element_XML_Header.xml"/>
     <xi:include href="cansas1d_element_SASroot.xml"/>
     <xi:include href="cansas1d_element_SASentry.xml"/>
