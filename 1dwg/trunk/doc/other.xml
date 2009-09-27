@@ -16,5 +16,6 @@
     <title>Other matters</title>
     <para>Various topics have been considered or presented in considering this standard.  
         Some are described below.</para>
+    <xi:include href="cansas1d_definition_of_terms.xml"/>
     <xi:include href="xml-help.xml"/>
 </chapter>
