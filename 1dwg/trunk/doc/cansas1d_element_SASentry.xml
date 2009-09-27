@@ -39,7 +39,7 @@
             </para>
         </listitem>
     </itemizedlist>
-    <table orient="port">
+    <table orient="port" role="small">
         <title/>
         <tgroup cols="5">
             <colspec colname="c1" colwidth="15*"/>
@@ -49,11 +49,11 @@
             <colspec colname="c5" colwidth="30*"/>
             <tbody>
                 <row>
-                    <entry>Name</entry>
-                    <entry>Type</entry>
-                    <entry>occurrence</entry>
-                    <entry>Description</entry>
-                    <entry>Attributes</entry>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Name</entry>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Type</entry>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Occurrence</entry>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                 </row>
                 <row>
                     <entry>

@@ -114,8 +114,8 @@
                             <colspec colname="c2" colnum="2" colwidth="6*"/>
                             <thead>
                                 <row>
-                                    <entry>Element</entry>
-                                    <entry>Description</entry>
+                                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Element</entry>
+                                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
                                 </row>
                             </thead>
                             <tbody>
@@ -275,9 +275,17 @@
                             >cansas1d.xsd</link></para>
                 </listitem>
                 <listitem>
-                    <equation><mathphrase>Q=(4 pi / lambda) sin(theta)</mathphrase></equation>
-                    <para>where lambda is the wavelength of the radiation</para>
-                    <para>and 2theta is the angle through which the detected radiation has been
+                    <para>
+                        <inlineequation>
+                            <mathphrase><alt>$Q=(4 \pi / \lambda) \sin(\theta)$</alt></mathphrase>
+                        </inlineequation>
+                    </para>
+                    <para>where 
+                        <inlineequation><mathphrase><alt>\lambda</alt></mathphrase></inlineequation> 
+                        is the wavelength of the radiation</para>
+                    <para>and  
+                        <inlineequation><mathphrase><alt>2\theta</alt></mathphrase></inlineequation>
+                        is the angle through which the detected radiation has been
                         scattered.</para>
                     <figure>
                         <title>definition of Q geometry for small-angle scattering</title>

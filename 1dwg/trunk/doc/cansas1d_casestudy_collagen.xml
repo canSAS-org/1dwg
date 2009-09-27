@@ -45,7 +45,7 @@
                                     <imageobject>
                                         <imagedata
                                             fileref="../graphics/cs-collagen-saxs-chart-excel.jpg"
-                                            width="200px" scalefit="1"/>
+                                            width="200pt" scalefit="1"/>
                                     </imageobject>
                                     <caption>
                                         <para>case study: Collagen, SAXS data in Excel chart</para>
