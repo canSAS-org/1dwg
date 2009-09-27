@@ -16,6 +16,12 @@
     <bridgehead> $Revision$ $Date$ </bridgehead>
     <section>
         <title>Overview</title>
+        <para> To demonstrate how to get SAS data into the XML standard format, consider this set of
+            SAXS data collected at the National Synchrotron Light Source, Brookhaven National
+            Laboratory, using a SAXS camera set up temporarily at beam line X6B (operated by the
+            Materials Science Division, Argonne National Lab). </para>
+        <para> The sample was <emphasis role="bold">dry chick collagen.</emphasis> (Thanks to
+            Malcolm Capel, NSLS beam line X12C for the sample.) </para>
         <para>
             <table>
                 <title>Figures for dry chick collagen case study</title>
@@ -51,12 +57,6 @@
                 </tgroup>
             </table>
         </para>
-        <para> To demonstrate how to get SAS data into the XML standard format, consider this set of
-            SAXS data collected at the National Synchrotron Light Source, Brookhaven National
-            Laboratory, using a SAXS camera set up temporarily at beam line X6B (operated by the
-            Materials Science Division, Argonne National Lab). </para>
-        <para> The sample was <emphasis role="bold">dry chick collagen.</emphasis> (Thanks to
-            Malcolm Capel, NSLS beam line X12C for the sample.) </para>
         <para> The raw data was collected on a linear position-sensitive detector and reduced to
             columns of <emphasis role="bold">Q</emphasis>, <emphasis role="bold">I</emphasis>, and
                 <emphasis role="bold">Iesd</emphasis> (estimated standard deviation of <emphasis
@@ -172,18 +172,20 @@ Function Idata_tag(Q, Q_unit, I, I_unit, Idev, Idev_unit) As String
   XML = XML &amp; SAS_Idata_tag("Idev", Idev_unit, Idev)
   Idata_tag = XML_tag("Idata", "", XML)
 End Function</programlisting>
-                <para> Your window will look similar to this one when you copy/paste the above code:<mediaobject>
-                        <imageobject>
-                            <imagedata fileref="../graphics/cs-collagen-macro-editing.jpg"
-                                width="400pt" scalefit="1"/>
-                        </imageobject>
-                        <textobject>
-                            <phrase>case study: Collagen, SAXS data in Excel chart</phrase>
-                        </textobject>
-                        <caption>
-                            <para>case study: Collagen, SAXS data in Excel chart</para>
-                        </caption>
-                    </mediaobject> (Yes, my spreadsheet is called MyFirstMacro.xls) </para>
+                <para> Your window will look similar to this one when you copy/paste the above code:
+                     (Yes, my spreadsheet is called MyFirstMacro.xls) </para>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="../graphics/cs-collagen-macro-editing.jpg"
+                            width="400pt" scalefit="1"/>
+                    </imageobject>
+                    <textobject>
+                        <phrase>case study: Collagen, SAXS data in Excel chart</phrase>
+                    </textobject>
+                    <caption>
+                        <para>case study: Collagen, SAXS data in Excel chart</para>
+                    </caption>
+                </mediaobject>
                 <para> Now close the macro editing window and return to the SAXS data in the
                     spreadsheet. </para>
             </section>
