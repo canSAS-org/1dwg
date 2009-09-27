@@ -33,9 +33,14 @@
             <para> parent: XML header </para>
         </listitem>
     </itemizedlist>
-    <table>
+    <table orient="port">
         <title/>
         <tgroup cols="5">
+            <colspec colname="c1" colwidth="15*"/>
+            <colspec colname="c2" colwidth="15*"/>
+            <colspec colname="c3" colwidth="10*"/>
+            <colspec colname="c4" colwidth="30*"/>
+            <colspec colname="c5" colwidth="30*"/>
             <tbody>
                 <row>
                     <entry>Name</entry>
@@ -47,7 +52,7 @@
                 <row>
                     <entry> <emphasis role="bold">SASentry</emphasis> </entry>
                     <entry> container </entry>
-                    <entry> [1..unbounded] </entry>
+                    <entry> [1..] </entry>
                     <entry> A single SAS scan is reported in a <emphasis role="bold">SASentry</emphasis>. Include as many
                         <emphasis role="bold">SASentry</emphasis> elements as desired. They may contain related or unrelated
                         data. <emphasis role="bold">name</emphasis> is an optional attribute to

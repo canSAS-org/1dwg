@@ -35,26 +35,21 @@
             </para>
         </listitem>
     </itemizedlist>
-    <table>
+    <table orient="port">
         <title/>
-        <tgroup cols='5'>
+        <tgroup cols="5">
+            <colspec colname="c1" colwidth="15*"/>
+            <colspec colname="c2" colwidth="15*"/>
+            <colspec colname="c3" colwidth="10*"/>
+            <colspec colname="c4" colwidth="30*"/>
+            <colspec colname="c5" colwidth="30*"/>
             <tbody>
                 <row>
-                    <entry>
-                        Name
-                    </entry>
-                    <entry>
-                        Type
-                    </entry>
-                    <entry>
-                        occurrence
-                    </entry>
-                    <entry>
-                        Description
-                    </entry>
-                    <entry>
-                        Attributes
-                    </entry>
+                    <entry>Name</entry>
+                    <entry>Type</entry>
+                    <entry>occurrence</entry>
+                    <entry>Description</entry>
+                    <entry>Attributes</entry>
                 </row>
                 <row>
                     <entry>
@@ -64,7 +59,7 @@
                         container
                     </entry>
                     <entry>
-                        [0..unbounded]
+                        [0..]
                     </entry>
                     <entry>
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.

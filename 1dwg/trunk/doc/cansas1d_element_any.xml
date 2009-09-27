@@ -13,9 +13,14 @@
 <section xml:id="cansas1d_documentation-element-any" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>''{any}'' element</title>
-    <table>
+    <table orient="port">
         <title/>
         <tgroup cols="5">
+            <colspec colname="c1" colwidth="15*"/>
+            <colspec colname="c2" colwidth="15*"/>
+            <colspec colname="c3" colwidth="10*"/>
+            <colspec colname="c4" colwidth="30*"/>
+            <colspec colname="c5" colwidth="30*"/>
             <tbody>
                 <row>
                     <entry>Name</entry>
@@ -27,7 +32,7 @@
                 <row>
                     <entry><emphasis role="bold">{any}</emphasis></entry>
                     <entry> container </entry>
-                    <entry> [0..unbounded] </entry>
+                    <entry> [0..] </entry>
                     <entry>
                         <para> Any element(s) not defined in the cansas1d/1.0 standard can be placed
                             at this point. (These are called <emphasis>foreign</emphasis> elements.
