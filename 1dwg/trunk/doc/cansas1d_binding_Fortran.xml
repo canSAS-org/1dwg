@@ -14,6 +14,10 @@
     xmlns="http://docbook.org/ns/docbook" version="5.0"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Fortran binding</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <para>
         The development of the FORTRAN language, so beloved of scientists, pre-dates the development of XML. And it shows. FORTRAN is not a language that manipulates strings with ease, and this makes parsing XML decidedly awkward. So unless you <emphasis>really</emphasis> have to use FORTRAN, you are probably better off with C/C++ (or something else more 'modern'), see for example Daniel Veillard's LIBXML2 library at http://xmlsoft.org/ or Frank van den Berghen's parser at http://www.applied-mathematics.net/tools/xmlParser.html.
     </para>

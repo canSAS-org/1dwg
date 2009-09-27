@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-XML_Header" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Required XML Header</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <figure>
         <title>The SASroot element</title>
         <mediaobject>
@@ -114,19 +118,27 @@
             </tbody>
         </tgroup>
     </table>
-    <figure>
-        <title>Note 1: Required header for canSAS1d/1.0 XML files</title>
-        <programlisting>&lt;SASroot version="1.0"
-            xmlns="cansas1d/1.0"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-            ></programlisting>
-    </figure>
-    <figure>
-        <title>Note 2: Description of attributes in required header for canSAS1d/1.0 XML files</title>
-        <programlisting>version="1.0"
-xmlns="{this-namespace-URI}"
-xmlns:xsi="{URL-of-governing-XML-Schema}"
-xsi:schemaLocation="{this-namespace-URI}  {URL-to-find-XML-Schema}"</programlisting>
-    </figure>
+    <glossary>
+        <glosslist>
+            <glossentry>
+                <glossterm>Note 1: Required header for canSAS1d/1.0 XML files</glossterm>
+                <glossdef>
+                    <programlisting>&lt;SASroot version="1.0"
+    xmlns="cansas1d/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="cansas1d/1.0 
+        http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"></programlisting>
+                </glossdef>
+            </glossentry>
+            <glossentry>
+                <glossterm>
+                    Note 2: Description of attributes in required header for canSAS1d/1.0 XML files
+                </glossterm>
+                <glossdef><programlisting>version="1.0"
+     xmlns="{this-namespace-URI}"
+     xmlns:xsi="{URL-of-governing-XML-Schema}"
+     xsi:schemaLocation="{this-namespace-URI}  {URL-to-find-XML-Schema}"</programlisting></glossdef>
+            </glossentry>
+        </glosslist>
+    </glossary>
 </section>

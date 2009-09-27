@@ -10,10 +10,19 @@
     ########### SVN repository information ###################
 -->
 <!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_cansas1d_definition_of_terms-->
-<section xml:id="cansas1d_documentation-element-cansas1d_definition_of_terms" xmlns="http://docbook.org/ns/docbook"
-    version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+<section 
+    xml:id="cansas1d_documentation-element-cansas1d_definition_of_terms" 
+    xmlns="http://docbook.org/ns/docbook"
+    version="5.0" 
+    xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Definition of Terms</title>
-    <note><para>This Definition of Terms may not be provided in future versions of this manual.</para></note>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
+    <note><para>
+        This Definition of Terms may not be provided in future versions of this manual.
+    </para></note>
     <para>
         Note:
     </para>
@@ -21,8 +30,9 @@
         <para>
             Each term (element or attribute) is listed by its 
             <link xlink:href="http://cs:www.w3schools.com/cs:xpath/"><citetitle>XPath</citetitle></link> 
-            in the XML file. The <literal>cs:</literal> prefix refers to the 
-            <literal>xmlns</literal> namespace attribute listed in the XML header.
+            in the XML file. The <literal>cs:</literal> prefix is defined by a 
+            <literal>xmlns:cs="cansas1d/1.0"</literal> namespace 
+            attribute listed in the XML header.
         </para>
     </listitem>
         <listitem>
@@ -108,7 +118,7 @@
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry</code></glossterm>
                 <glossdef><para>
-                    [1..] A single SAS scan is reported in a SASentry. A SASentry can use the optional "name" attribute to provide a string for this SASentry. Use of this string is not defined by this standard.
+                    [1..inf] A single SAS scan is reported in a SASentry. A SASentry can use the optional "name" attribute to provide a string for this SASentry. Use of this string is not defined by this standard.
                 </para></glossdef>
             </glossentry>
             <glossentry>
@@ -714,7 +724,7 @@
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry/cs:SASnote</code></glossterm>
                 <glossdef><para>
-                    [1..] Free form description of anything not covered by other elements.
+                    [1..inf] Free form description of anything not covered by other elements.
                 </para></glossdef>
             </glossentry>
             <glossentry>
@@ -726,13 +736,21 @@
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry/cs:SASprocess/@name</code></glossterm>
                 <glossdef><para>
-                    [0..1] Optional attribute to provide a name for this SASprocess. It is redundant with /cs:SASroot/cs:SASentry/cs:SASprocess/cs:name but it is not the same. It should probably be removed.
+                    [0..1] Optional attribute to provide a name for this SASprocess. 
+                    <note><para>
+                        It is redundant with 
+                        /cs:SASroot/cs:SASentry/cs:SASprocess/cs:name 
+                        but it is not the same. It should probably be removed.
+                    </para></note>
                 </para></glossdef>
             </glossentry>
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry/cs:SASprocess/cs:date</code></glossterm>
                 <glossdef><para>
-                    [0..1] Optional date for this data processing or analysis step. *** SHOULD WE SPECIFY THE FORMAT FOR THE DATE? ***
+                    [0..1] Optional date for this data processing or analysis step. 
+                    <note><para>
+                        SHOULD WE SPECIFY THE FORMAT FOR THE DATE?
+                    </para></note>
                 </para></glossdef>
             </glossentry>
             <glossentry>
@@ -756,7 +774,12 @@
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry/cs:SASprocess/cs:SASprocessnote/&lt;any></code></glossterm>
                 <glossdef><para>
-                    [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. Use a xmlns="some-simple-identification-string" to identify that this is a foreign element.
+                    [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. 
+                    Declare a default namespace declaration such as
+                    <code>xmlns="urn:example-namespace:example-context"</code> 
+                    to identify that this is a foreign element 
+                    (where you replace "<code>example-namespace</code>" 
+                    and "<code>example-context</code>" with your own terms).
                 </para></glossdef>
             </glossentry>
             <glossentry>

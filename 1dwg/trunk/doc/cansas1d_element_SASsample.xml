@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-element-SASsample" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASsample element</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <figure>
         <title>The SASsample element</title>
         <mediaobject>
@@ -124,7 +128,7 @@
                         </para>
                     </entry>
                     <entry> string </entry>
-                    <entry> [0..] </entry>
+                    <entry> [0..inf] </entry>
                     <entry> Any additional sample details. </entry>
                     <entry>
                     </entry>
@@ -132,7 +136,7 @@
                 <row>
                     <entry> '''''{any}''''' </entry>
                     <entry> container </entry>
-                    <entry> [0..] </entry>
+                    <entry> [0..inf] </entry>
                     <entry> Any element(s) not defined in the cansas1d/1.0 standard can be placed at
                         this point. See ''{any}'' for more details. </entry>
                     <entry>

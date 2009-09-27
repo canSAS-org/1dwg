@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-element-SAScollimation" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SAScollimation element</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <figure>
         <title>The SAScollimation element</title>
         <mediaobject>
@@ -82,7 +86,7 @@
                             container
                         </entry>
                         <entry>
-                            [0..]
+                            [0..inf]
                         </entry>
                         <entry>
                             Description of a slit or aperture. 

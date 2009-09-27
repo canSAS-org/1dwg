@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-element-SASprocess" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASprocess element</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <figure>
         <title>The SASprocess element</title>
         <mediaobject>
@@ -113,7 +117,7 @@
                         string
                     </entry>
                     <entry>
-                        [0..]
+                        [0..inf]
                     </entry>
                     <entry>
                         This is used to specify the value of a single variable, parameter, or term (while defined here as a string, it could be a number) related to the SASprocess step.
@@ -132,7 +136,7 @@
                         container
                     </entry>
                     <entry>
-                        [1..]
+                        [1..inf]
                     </entry>
                     <entry>
                         This element is used to describe anything about SASprocess that is not already described.
@@ -147,7 +151,7 @@
                         container
                     </entry>
                     <entry>
-                        [0..]
+                        [0..inf]
                     </entry>
                     <entry>
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.
@@ -187,7 +191,7 @@
                             container
                         </entry>
                         <entry>
-                            [0..]
+                            [0..inf]
                         </entry>
                         <entry>
                             Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.

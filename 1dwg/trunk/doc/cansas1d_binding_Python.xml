@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-binding-Python" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Python binding</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <para>
         Specific <link xlink:href="http://danse.us/trac/sans"><citetitle>support</citetitle></link> 
         for the cansas1d/1.0 data standard in Python is being developed by 

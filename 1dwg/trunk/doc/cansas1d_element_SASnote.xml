@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-element-SASnote" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASnote element</title>
+    <bridgehead>
+        $Revision$
+        $Date$
+    </bridgehead>
     <figure>
         <title>The SASroot element</title>
         <mediaobject>
@@ -59,7 +63,7 @@
                         container
                     </entry>
                     <entry>
-                        [0..]
+                        [0..inf]
                     </entry>
                     <entry>
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.
