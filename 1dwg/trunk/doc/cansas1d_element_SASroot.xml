@@ -55,6 +55,10 @@
                     </entry>
                     <entry> container </entry>
                     <entry> [1..inf] </entry>
+					<!--
+					Here is an example of how to construct a cross-reference from NeXus
+					<link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#NXgeometrySection">NXgeometry</link>
+					-->
                     <entry> A single SAS scan is reported in a <emphasis role="bold"
                             >SASentry</emphasis>. Include as many <emphasis role="bold"
                             >SASentry</emphasis> elements as desired. They may contain related or
