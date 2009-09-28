@@ -29,7 +29,7 @@
     <itemizedlist mark="opencircle"><listitem>
         <para>
             Each term (element or attribute) is listed by its 
-            <link xlink:href="http://cs:www.w3schools.com/cs:xpath/"><citetitle>XPath</citetitle></link> 
+            <link xlink:href="http://www.w3schools.com/xpath/"><citetitle>XPath</citetitle></link> 
             in the XML file. The <literal>cs:</literal> prefix is defined by a 
             <literal>xmlns:cs="cansas1d/1.0"</literal> namespace 
             attribute listed in the XML header.

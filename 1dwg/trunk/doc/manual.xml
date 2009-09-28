@@ -82,6 +82,12 @@
                 >http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group</link>        </para>
     </preface>
 
+
+	<!--
+	Here is an example of how to construct a cross-reference from NeXus
+	<link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#NXgeometrySection">NXgeometry</link>
+	-->
+
     <xi:include href="wiki.xml"/>
     <xi:include href="elements.xml"/>
     <xi:include href="bindings.xml"/>

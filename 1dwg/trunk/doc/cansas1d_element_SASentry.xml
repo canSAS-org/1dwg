@@ -17,6 +17,14 @@
         $Revision$
         $Date$
     </bridgehead>
+    <itemizedlist mark="opencircle">
+        <listitem>
+            <para>
+				parent:
+				<link xlink:href="#cansas1d_documentation-element-SASroot">SASroot</link>
+            </para>
+        </listitem>
+    </itemizedlist>
     <figure>
         <title>The SASentry element</title>
         <mediaobject>
@@ -32,13 +40,6 @@
             </caption>
         </mediaobject>
     </figure>
-    <itemizedlist mark="opencircle">
-        <listitem>
-            <para>
-                parent: SASroot
-            </para>
-        </listitem>
-    </itemizedlist>
     <table orient="port" role="small">
         <title/>
         <tgroup cols="5">
@@ -122,7 +123,7 @@
                 </row>
                 <row>
                     <entry>
-                        '''SASdata'''
+                        <link xlink:href="#cansas1d_documentation-element-SASdata">SASdata</link>
                     </entry>
                     <entry>
                         container
@@ -164,7 +165,7 @@
                 </row>
                 <row>
                     <entry>
-                        '''SASsample'''
+                        <link xlink:href="#cansas1d_documentation-element-SASsample">SASsample</link>
                     </entry>
                     <entry>
                         container
@@ -173,7 +174,6 @@
                         [1..1]
                     </entry>
                     <entry>
-                        
                         Description of the sample.
                     </entry>
                     <entry>
@@ -184,7 +184,7 @@
                 </row>
                 <row>
                     <entry>
-                        '''SASinstrument'''
+                        <link xlink:href="#cansas1d_documentation-element-SASinstrument">SASinstrument</link>
                     </entry>
                     <entry>
                         container
@@ -199,7 +199,7 @@
                 </row>
                 <row>
                     <entry>
-                        '''''SASprocess'''''
+                        <link xlink:href="#cansas1d_documentation-element-SASprocess">SASprocess</link>
                     </entry>
                     <entry>
                         container
@@ -218,7 +218,7 @@
                 </row>
                 <row>
                     <entry>
-                        '''SASnote'''
+                        <link xlink:href="#cansas1d_documentation-element-SASnote">SASnote</link>
                     </entry>
                     <entry>
                         container

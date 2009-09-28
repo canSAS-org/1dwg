@@ -17,20 +17,6 @@
         $Revision$
         $Date$
     </bridgehead>
-    <figure>
-        <title>The SASroot element</title>
-        <mediaobject>
-            <imageobject>
-                <imagedata fileref="../graphics/1-SASroot.png" width="200pt" scalefit="1"/>
-            </imageobject>
-            <textobject>
-                <phrase>cansas1d-v1-1-SASroot</phrase>
-            </textobject>
-            <caption>
-                <para/>
-            </caption>
-        </mediaobject>
-    </figure>
     <table orient="port" role="small">
         <title/>
         <tgroup cols="5">
@@ -77,13 +63,23 @@
                     </entry>
                 </row>
                 <row>
-                    <entry><emphasis role="bold">SASroot</emphasis></entry>
+                    <entry>
+						<emphasis role="bold">
+							<link xlink:href="#cansas1d_documentation-element-SASroot">SASroot</link>
+						</emphasis>
+					</entry>
                     <entry>container</entry>
                     <entry>[1..1]</entry>
                     <entry>
                         <para>The canSAS reduced 1-D SAS data (cansas1d/1.0) will be in the
                                 <emphasis role="bold">SASroot</emphasis> database.</para>
-                        <para>(This is similar to NXroot used by NeXus.)</para>
+                        <para>
+							(This is similar to 
+							NXroot 
+							<link
+                                xlink:href="http://www.nexusformat.org/NXroot">NXroot</link>
+							used by NeXus.)
+						</para>
                         <itemizedlist>
                             <listitem>
                                 <para>
