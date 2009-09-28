@@ -21,8 +21,8 @@
 #	make rebuild	does a make clean then make all
 
 RELEASE = 1.0
-TARGET = cansas-1d-$(RELEASE)-Manual.pdf
-TARGET = manual.pdf
+TARGET = cansas-1d-1_0-manual.pdf
+#TARGET = manual.pdf
 
 CLEANING_LIST += $(TARGET)
 #CLEANING_LIST += *.pdf
@@ -39,13 +39,14 @@ test ::
 	@echo $(CLEANING_LIST)
 
 # dblatex.sf.net can be used to build a PDF version of the manual
-dblatex manual.pdf ::
+dblatex cansas-1d-1_0-manual.pdf ::
 	@#dblatex -P table.in.float=0 -ttex manual.xml
 	dblatex -P table.in.float=0 -b pdftex -tpdf manual.xml
 	@#pdftops $< temporary-manual.ps
 	@#ps2pdf temporary-manual.ps $<
+	mv -f manual.pdf cansas-1d-1_0-manual.pdf
 
-manual.ps ::manual.pdf
+cansas-1d-1_0-manual.ps :: cansas-1d-1_0-manual.pdf
 	pdftops $<
 
 clean ::
