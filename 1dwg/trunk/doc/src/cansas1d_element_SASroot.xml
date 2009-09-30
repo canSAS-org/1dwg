@@ -19,6 +19,7 @@
 	</bridgehead>
     <itemizedlist mark="opencircle">
         <listitem>
+            <indexterm><primary>SASroot</primary></indexterm>
             <para> 
 				parent: 
 				<link xlink:href="#cansas1d_documentation-XML_Header">XML header</link>
@@ -29,7 +30,7 @@
         <title>The SASroot element</title>
         <mediaobject>
             <imageobject>
-                <imagedata fileref="../graphics/1-SASroot.png" width="200pt" scalefit="1"/>
+                <imagedata fileref="../../graphics/1-SASroot.png" width="200pt" scalefit="1"/>
             </imageobject>
             <textobject>
                 <phrase>cansas1d-v1-1-SASroot</phrase>

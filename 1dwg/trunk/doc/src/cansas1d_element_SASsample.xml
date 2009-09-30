@@ -17,11 +17,20 @@
         $Revision$
         $Date$
     </bridgehead>
+    <itemizedlist mark="opencircle">
+        <listitem>
+            <indexterm><primary>SASsample</primary></indexterm>
+            <para>
+                parent:
+                <link xlink:href="#cansas1d_documentation-element-SASentry">SASentry</link>
+            </para>
+        </listitem>
+    </itemizedlist>
     <figure>
         <title>The SASsample element</title>
         <mediaobject>
             <imageobject>
-                <imagedata fileref="../graphics/3-SASsample.png" width="200pt" scalefit="1"/>
+                <imagedata fileref="../../graphics/3-SASsample.png" width="200pt" scalefit="1"/>
             </imageobject>
             <textobject>
                 <phrase>cansas1d-v1-3-SASsample</phrase>
@@ -31,11 +40,6 @@
             </caption>
         </mediaobject>
     </figure>
-    <itemizedlist mark="opencircle">
-        <listitem>
-            <para> parent: SASentry </para>
-        </listitem>
-    </itemizedlist>
     <table orient="port" role="small">
         <title/>
         <tgroup cols="5">
@@ -161,7 +165,7 @@
                                 <mediaobject>
                                     <imageobject>
                                         <imagedata
-                                            fileref="../graphics/translation-orientation-geometry.jpg"
+                                            fileref="../../graphics/translation-orientation-geometry.jpg"
                                             width="200pt" scalefit="1"/>
                                     </imageobject>
                                     <textobject>
@@ -176,7 +180,7 @@
                                 <mediaobject>
                                     <imageobject>
                                         <imagedata
-                                            fileref="../graphics/translation-orientation-geometry-2.jpg"
+                                            fileref="../../graphics/translation-orientation-geometry-2.jpg"
                                             width="200pt" scalefit="1"/>
                                     </imageobject>
                                     <textobject>

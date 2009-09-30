@@ -75,7 +75,7 @@
                 <title>block diagram of minimum elements required for cansas1d/1.0 standard</title>
                 <mediaobject>
                     <imageobject>
-                        <imagedata fileref="../graphics/10-minimum.png" scalefit="1" width="200pt"/>
+                        <imagedata fileref="../../graphics/10-minimum.png" scalefit="1" width="200pt"/>
                     </imageobject>
                 </mediaobject>
             </figure>
@@ -291,7 +291,7 @@
                         <title>definition of Q geometry for small-angle scattering</title>
                         <mediaobject>
                             <imageobject>
-                                <imagedata fileref="../graphics/Q-geometry.jpg" scalefit="1"
+                                <imagedata fileref="../../graphics/Q-geometry.jpg" scalefit="1"
                                     width="200pt"/></imageobject>
                         </mediaobject>
                     </figure>
@@ -361,7 +361,7 @@
                                                   <mediaobject>
                                                   <imageobject>
                                                   <imagedata
-                                                  fileref="../graphics/translation-orientation-geometry.jpg"
+                                                  fileref="../../graphics/translation-orientation-geometry.jpg"
                                                   width="200pt" scalefit="1"/>
                                                   </imageobject>
                                                   <caption>
@@ -373,7 +373,7 @@
                                                   <mediaobject>
                                                   <imageobject>
                                                   <imagedata
-                                                  fileref="../graphics/translation-orientation-geometry-2.jpg"
+                                                  fileref="../../graphics/translation-orientation-geometry-2.jpg"
                                                   width="200pt" scalefit="1"/>
                                                   </imageobject>
                                                   <caption>
