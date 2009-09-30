@@ -18,18 +18,19 @@
         $Date$
     </bridgehead>
     <itemizedlist mark="opencircle">
-	        <listitem>
-	        <para>
-	            parent: 
-				<link xlink:href="#cansas1d_documentation-element-SASinstrument">SASinstrument</link>
-	        </para>
-	    </listitem>
+        <listitem>
+            <indexterm><primary>SASdetector</primary></indexterm>
+            <para>
+                parent: 
+                <link xlink:href="#cansas1d_documentation-element-SASinstrument">SASinstrument</link>
+            </para>
+        </listitem>
     </itemizedlist>
     <figure>
         <title>The SASdetector element</title>
         <mediaobject>
             <imageobject>
-                <imagedata fileref="../graphics/7-SASdetector.png" width="200pt"
+                <imagedata fileref="../../graphics/7-SASdetector.png" width="200pt"
                     scalefit="1"/>
             </imageobject>
             <textobject>
@@ -198,7 +199,7 @@
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                    fileref="../graphics/translation-orientation-geometry.jpg"
+                                    fileref="../../graphics/translation-orientation-geometry.jpg"
                                     width="200pt" scalefit="1"/>
                             </imageobject>
                             <textobject>
@@ -213,7 +214,7 @@
                         <mediaobject>
                             <imageobject>
                                 <imagedata
-                                    fileref="../graphics/translation-orientation-geometry-2.jpg"
+                                    fileref="../../graphics/translation-orientation-geometry-2.jpg"
                                     width="200pt" scalefit="1"/>
                             </imageobject>
                             <textobject>

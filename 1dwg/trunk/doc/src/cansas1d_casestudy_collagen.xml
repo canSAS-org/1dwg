@@ -32,7 +32,7 @@
                                 <mediaobject>
                                     <imageobject>
                                         <imagedata
-                                            fileref="../graphics/cs-collagen-data-table-Excel.jpg"
+                                            fileref="../../graphics/cs-collagen-data-table-Excel.jpg"
                                             width="200pt" scalefit="1"/>
                                     </imageobject>
                                     <caption>
@@ -44,7 +44,7 @@
                                 <mediaobject>
                                     <imageobject>
                                         <imagedata
-                                            fileref="../graphics/cs-collagen-saxs-chart-excel.jpg"
+                                            fileref="../../graphics/cs-collagen-saxs-chart-excel.jpg"
                                             width="200pt" scalefit="1"/>
                                     </imageobject>
                                     <caption>
@@ -176,7 +176,7 @@ End Function</programlisting>
                      (Yes, my spreadsheet is called MyFirstMacro.xls) </para>
                 <mediaobject>
                     <imageobject>
-                        <imagedata fileref="../graphics/cs-collagen-macro-editing.jpg"
+                        <imagedata fileref="../../graphics/cs-collagen-macro-editing.jpg"
                             width="400pt" scalefit="1"/>
                     </imageobject>
                     <textobject>

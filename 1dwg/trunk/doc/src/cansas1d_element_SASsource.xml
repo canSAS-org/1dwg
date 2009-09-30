@@ -13,16 +13,20 @@
 <section xml:id="cansas1d_documentation-element-SASsource" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASsource element</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
+    <bridgehead> $Revision$ $Date$ </bridgehead>
+    <itemizedlist mark="opencircle">
+        <listitem>
+            <indexterm><primary>SASsource</primary></indexterm>
+            <para> parent: <link xlink:href="#cansas1d_documentation-element-SASinstrument"
+                    >SASinstrument</link>
+            </para>
+        </listitem>
+    </itemizedlist>
     <figure>
         <title>The SASsource element</title>
         <mediaobject>
             <imageobject>
-                <imagedata fileref="../graphics/5-SASsource.png" width="200pt"
-                    scalefit="1"/>
+                <imagedata fileref="../../graphics/5-SASsource.png" width="200pt" scalefit="1"/>
             </imageobject>
             <textobject>
                 <phrase>cansas1d-v1-5-SASsource</phrase>
@@ -32,11 +36,6 @@
             </caption>
         </mediaobject>
     </figure>
-    <itemizedlist mark="opencircle">
-        <listitem>
-            <para> parent: SASinstrument </para>
-        </listitem>
-    </itemizedlist>
     <section>
         <title>SASsource</title>
         <table orient="port" role="small">
@@ -55,149 +54,142 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">radiation</emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        string
-                    </entry>
-                    <entry>
-                        [1..1]
-                    </entry>
-                    <entry>
-                        Name of the radiation used. For maximum compatibility with NeXus, use one of the names defined by either 
-                        <link xlink:href="http://www.nexusformat.org/NXsource"><citetitle>NeXus '''NXsource'''/type</citetitle></link>
-                        * Spallation Neutron Source  * Pulsed Reactor Neutron Source  * Reactor Neutron Source  * Synchrotron X-ray Source  * Pulsed Muon Source  * Rotating Anode X-ray  * Fixed Tube X-ray  or 
-                        <link xlink:href="http://www.nexusformat.org/NXsource"><citetitle>NeXus '''NXsource'''/probe</citetitle></link>  * neutron  * x-ray  * muon  * electron
-                    </entry>
-                    <entry>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        '''''beam_size'''''
-                    </entry>
-                    <entry>
-                        container
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Physical dimension of the beam (incident on the sample). Note: If beam is round, just use X dimension. Note: While Z dimension is allowed by the standard, it does not make sense for small-angle scattering.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>name</emphasis></emphasis>={name}
-                        </para>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>beam_shape</emphasis></emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        string
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Text description of the shape of the beam (incident on the sample).
-                    </entry>
-                    <entry>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>wavelength</emphasis></emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        wavelength (lambda;) of radiation incident on the sample.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={unit}
-                        </para>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>wavelength_min</emphasis></emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Some facilities specify wavelength using a range. The minimum of such a range is given by wavelength_min.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={unit}
-                        </para>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>wavelength_max</emphasis></emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Some facilities specify wavelength using a range. The maximum of such a range is given by wavelength_max.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={unit}
-                        </para>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>wavelength_spread</emphasis></emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Some facilities specify the width of the wavelength spectrum. The width of such a range is given by wavelength_spread.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={unit}
-                        </para>
-                    </entry>
-                </row>
-            </tbody></tgroup>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">radiation</emphasis>
+                            </para>
+                        </entry>
+                        <entry> string </entry>
+                        <entry> [1..1] </entry>
+                        <entry>
+                            <para>
+                                Name of the radiation used. For maximum compatibility with NeXus,
+                                use one of the names defined by either <link
+                                    xlink:href="http://www.nexusformat.org/NXsource"
+                                    ><citetitle>NeXus</citetitle>
+                                        <literal>NXsource/type</literal></link> 
+                            </para>
+                            <itemizedlist>
+                                <listitem><para>Spallation Neutron Source</para></listitem>
+                                <listitem><para>Pulsed Reactor Neutron Source</para></listitem>
+                                <listitem><para>Reactor Neutron Source</para></listitem>
+                                <listitem><para>Synchrotron X-ray Source</para></listitem>
+                                <listitem><para>Pulsed Muon Source</para></listitem>
+                                <listitem><para>Rotating Anode X-ray</para></listitem>
+                                <listitem><para>Fixed Tube X-ray</para></listitem>
+                            </itemizedlist>
+                            <para> 
+                                or <link
+                                    xlink:href="http://www.nexusformat.org/NXsource"
+                                    ><citetitle>NeXus</citetitle>
+                                    <literal>NXsource/probe</literal></link> 
+                            </para>
+                            <itemizedlist>
+                                <listitem><para>neutron</para></listitem>
+                                <listitem><para>x-ray</para></listitem>
+                                <listitem><para>muon</para></listitem>
+                                <listitem><para>electron</para></listitem>
+                            </itemizedlist>
+                        </entry>
+                        <entry/>
+                        
+                    </row>
+                    <row>
+                        <entry> '''''beam_size''''' </entry>
+                        <entry> container </entry>
+                        <entry> [0..1] </entry>
+                        <entry> Physical dimension of the beam (incident on the sample). Note: If
+                            beam is round, just use X dimension. Note: While Z dimension is allowed
+                            by the standard, it does not make sense for small-angle scattering. </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>name</emphasis></emphasis>={name}
+                            </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>beam_shape</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry> string </entry>
+                        <entry> [0..1] </entry>
+                        <entry> Text description of the shape of the beam (incident on the sample). </entry>
+                        <entry>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>wavelength</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry> floating-point number </entry>
+                        <entry> [0..1] </entry>
+                        <entry> 
+                            <para>
+                                wavelength 
+                                (<inlineequation>
+                                    <mathphrase><alt>$\lambda$</alt></mathphrase>
+                                </inlineequation>)
+                                of radiation incident on the sample.
+                            </para>
+                        </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={unit} </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>wavelength_min</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry> floating-point number </entry>
+                        <entry> [0..1] </entry>
+                        <entry> Some facilities specify wavelength using a range. The minimum of
+                            such a range is given by wavelength_min. </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={unit} </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"><emphasis>wavelength_max</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry> floating-point number </entry>
+                        <entry> [0..1] </entry>
+                        <entry> Some facilities specify wavelength using a range. The maximum of
+                            such a range is given by wavelength_max. </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={unit} </para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <emphasis role="bold"
+                                    ><emphasis>wavelength_spread</emphasis></emphasis>
+                            </para>
+                        </entry>
+                        <entry> floating-point number </entry>
+                        <entry> [0..1] </entry>
+                        <entry> Some facilities specify the width of the wavelength spectrum. The
+                            width of such a range is given by wavelength_spread. </entry>
+                        <entry>
+                            <para>
+                                <emphasis role="bold">unit</emphasis>={unit} </para>
+                        </entry>
+                    </row>
+                </tbody>
+            </tgroup>
         </table>
     </section>
     <section>
@@ -205,13 +197,15 @@
         <para>
             <table>
                 <title/>
-                <tgroup cols='2'>
+                <tgroup cols="2">
                     <tbody>
                         <row>
                             <entry>
                                 <mediaobject>
                                     <imageobject>
-                                        <imagedata fileref="../graphics/translation-orientation-geometry.jpg" width='200pt' scalefit='1'/>
+                                        <imagedata
+                                            fileref="../../graphics/translation-orientation-geometry.jpg"
+                                            width="200pt" scalefit="1"/>
                                     </imageobject>
                                     <caption>
                                         <para>view from source</para>
@@ -221,7 +215,9 @@
                             <entry>
                                 <mediaobject>
                                     <imageobject>
-                                        <imagedata fileref="../graphics/translation-orientation-geometry-2.jpg" width='200pt' scalefit='1'/>
+                                        <imagedata
+                                            fileref="../../graphics/translation-orientation-geometry-2.jpg"
+                                            width="200pt" scalefit="1"/>
                                     </imageobject>
                                     <caption>
                                         <para>view from detector</para>
@@ -252,52 +248,40 @@
                             <entry>
                                 <emphasis role="bold">x</emphasis>
                             </entry>
+                            <entry> floating-point number </entry>
+                            <entry> [0..1] </entry>
+                            <entry> Dimension of the beam in X. The <emphasis role="bold"
+                                    >unit</emphasis> attribute is required. See
+                                cansas1d_documentation#Rules for acceptable values. </entry>
                             <entry>
-                                floating-point number
-                            </entry>
-                            <entry>
-                                [0..1]
-                            </entry>
-                            <entry>
-                                Dimension of the beam in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
-                            </entry>
-                            <entry>
-                                <emphasis role="bold">unit</emphasis>={units}
-                            </entry>
+                                <emphasis role="bold">unit</emphasis>={units} </entry>
                         </row>
                         <row>
                             <entry>
                                 <emphasis role="bold">y</emphasis>
                             </entry>
+                            <entry> floating-point number </entry>
+                            <entry> [0..1] </entry>
+                            <entry> Dimension of the beam in Y. The <emphasis role="bold"
+                                    >unit</emphasis> attribute is required. See
+                                cansas1d_documentation#Rules for acceptable values. </entry>
                             <entry>
-                                floating-point number
-                            </entry>
-                            <entry>
-                                [0..1]
-                            </entry>
-                            <entry>
-                                Dimension of the beam in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
-                            </entry>
-                            <entry>
-                                <emphasis role="bold">unit</emphasis>={units}
-                            </entry>
+                                <emphasis role="bold">unit</emphasis>={units} </entry>
                         </row>
                         <row>
                             <entry>
                                 <emphasis role="bold">z</emphasis>
                             </entry>
+                            <entry> floating-point number </entry>
+                            <entry> [0..1] </entry>
+                            <entry> Dimension of the beam in Z. The <emphasis role="bold"
+                                    >unit</emphasis> attribute is required. See
+                                cansas1d_documentation#Rules for acceptable values. Note: While Z
+                                dimension is allowed by the standard (provided by use of a standard
+                                element in the XML Schema), it does not make sense for small-angle
+                                scattering. </entry>
                             <entry>
-                                floating-point number
-                            </entry>
-                            <entry>
-                                [0..1]
-                            </entry>
-                            <entry>
-                                Dimension of the beam in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
-                            </entry>
-                            <entry>
-                                <emphasis role="bold">unit</emphasis>={units}
-                            </entry>
+                                <emphasis role="bold">unit</emphasis>={units} </entry>
                         </row>
                     </tbody>
                 </tgroup>
