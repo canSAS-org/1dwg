@@ -13,22 +13,16 @@
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Wiki Manual</title>
     <!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation -->
-    <section xml:id="cansas1d_documentation-Disclaimer">
-        <title>Disclaimer</title>
-        <para>This description is meant to inform the community how to layout the information within
-            the XML files. However, should the information in this document and the <link
-                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
-                >cansas1d/1.0 SAS XML Schema</link>
-            (http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd) differ, the XML
-            Schema will be deemed to have the most correct description of the standard.</para>
-    </section>
     <section xml:id="cansas1d_documentation-Objective">
         <title>Objective</title>
-        <para>One of the first aims of the canSAS (Collective Action for Nomadic Small-Angle
-            Scatterers) forum of users, software developers, and facility staff was to discuss
+        <para>One of the first aims of the canSAS
+            <indexterm><primary>canSAS</primary></indexterm>
+            (Collective Action for Nomadic Small-Angle Scatterers) 
+            forum of users, software developers, and facility staff was to discuss
             better sharing of SAS data analysis software. <link
                 xlink:href="http://www.smallangles.net/canSAS">CanSAS</link>
-            (http://www.smallangles.net/canSAS) identified that a significant need within the SAS
+            <footnote><para>http://www.smallangles.net/canSAS</para></footnote>
+            identified that a significant need within the SAS
             community can be satisfied by a robust, self-describing, text-based, standard format to
             communicate reduced one-dimensional small-angle scattering data, ''I(Q)'', between users
             of our facilities. Our goal has been to define such a format that leaves the data file
@@ -37,7 +31,9 @@
             nor require advanced programming interfaces. The file should contain both the primary
             data of ''I(Q)'' and also any other descriptive information (metadata) about the sample,
             measurement, instrument, processing, or analysis steps. </para>
-        <para>The cansas1d/1.0 standard meets the objectives for a 1D standard, incorporating
+        <para>The cansas1d/1.0
+            <indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
+            standard meets the objectives for a 1D standard, incorporating
             metadata about the measurement, parameters and results of processing or analysis steps.
             Even multiple measurements (related or unrelated) may be included within a single XML
             file. </para>
@@ -57,20 +53,52 @@
         <section xml:id="cansas1d_documentation-XMLLayout-Overview">
             <title>Overview</title>
             <para>The basic elements of the cansas1d/1.0 standard are shown in the following table.
-                After an XML header, the root element of the file is [[cansas1d_SASroot | SASroot]]
-                which contains one or more [[cansas1d_SASentry | SASentry]] elements, each of which
+                After an XML header, the root element of the file is 
+                <link xlink:href="#cansas1d_documentation-element-SASroot"
+                    ><code>SASroot</code></link>
+                <indexterm><primary>SASroot</primary></indexterm>
+                which contains one or more
+                <link xlink:href="#cansas1d_documentation-element-SASentry"
+                    ><code>SASentry</code></link>
+                <indexterm><primary>SASentry</primary></indexterm>
+                elements, each of which
                 describes a single experiment (data set, time-slice, step in a series, new sample,
-                etc.). Details of the [[cansas1d_SASentry | SASentry]] element are also shown in the
-                next figure. Refer to the [[cansas1d_block_diagrams | block diagrams]] for
-                alternative depictions. See <link
+                etc.). Details of the <literal>SASentry</literal> element are also shown in the
+                next figure. <!--Refer to the [[cansas1d_block_diagrams | block diagrams]] for
+                alternative depictions.--> See <link
                     xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml"
-                    >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml</link>
+                    >cansas1d.xml</link>
+                <footnote>
+                    <para>
+                        http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml
+                    </para>
+                </footnote>
                 for an example XML file. Examples, Case Studies, and other background information
                 are below. More discussion can be found on the
-                [[1D_Data_Formats_Working_Group|canSAS 1D Data Formats Working Group]] page and its
-                [[Talk:1D_Data_Formats_Working_Group|discussion]] page. Details about each specific
-                field (XPath string, XML elements and attributes) are described on the
-                [[cansas1d_definition_of_terms]] page. </para>
+                <link
+                    xlink:href="http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group"
+                    >canSAS 1D Data Formats Working Group</link>
+                <footnote>
+                    <para>
+                        http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group
+                    </para>
+                </footnote>
+                page and its
+                <link
+                    xlink:href="http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group"
+                    >discussion</link>
+                <footnote>
+                    <para>
+                        http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group
+                    </para>
+                </footnote>
+                page.  A 
+                <link
+                    xlink:href="#cansas1d_documentation-Documentation-Definitions"
+                    >glossary</link>
+                <indexterm><primary>glossary</primary><see>definition of terms</see></indexterm>
+                defining the details about each specific field (XPath string, XML elements and attributes) is provided.
+                </para>
             <figure>
                 <title>block diagram of minimum elements required for cansas1d/1.0 standard</title>
                 <mediaobject>
@@ -81,11 +109,19 @@
             </figure>
             <itemizedlist>
                 <listitem>
-                    <para> SASroot: the root element of the file (after the XML header) </para>
+                    <para> 
+                        <link xlink:href="#cansas1d_documentation-element-SASroot"
+                            ><literal>SASroot</literal></link>:
+                        the root element of the file (after the XML header) 
+                    </para>
                 </listitem>
                 <listitem>
-                    <para> SASentry: describes a single experiment (data set, time-slice, step in a
-                        series, new sample, etc.) </para>
+                    <para> 
+                        <link xlink:href="#cansas1d_documentation-element-SASentry"
+                            ><literal>SASentry</literal></link>:
+                        describes a single experiment (data set, time-slice, step in a
+                        series, new sample, etc.) 
+                    </para>
                 </listitem>
                 <listitem>
                     <para> block diagrams </para>
@@ -127,7 +163,8 @@
                                 <row>
                                     <entry>
                                         <emphasis role="bold">
-                                            <code>SASroot</code>
+                                            <link xlink:href="#cansas1d_documentation-element-SASroot"
+                                                ><code>SASroot</code></link>
                                         </emphasis>
                                     </entry>
                                     <entry>root element of XML file</entry>
@@ -135,7 +172,8 @@
                                 <row>
                                     <entry>
                                         <emphasis role="bold">
-                                            <code>&#160;SASentry</code>
+                                            <link xlink:href="#cansas1d_documentation-element-SASentry"
+                                                ><code>&#160;SASentry</code></link>
                                         </emphasis>
                                     </entry>
                                     <entry>data set, time-slice, step in a series, new sample,
@@ -147,7 +185,7 @@
                                             <code>&#160;&#160;Title</code>
                                         </emphasis>
                                     </entry>
-                                    <entry>for this particular SASentry</entry>
+                                    <entry>for this particular <literal>SASentry</literal></entry>
                                 </row>
                                 <row>
                                     <entry>
@@ -437,7 +475,8 @@
             </itemizedlist>
             <para>The translation and orientation geometry definitions used here are different than
                 those used by <link xlink:href="http://www.nanotech.wisc.edu/shadow"><emphasis
-                        role="bold">SHADOW</emphasis></link> (http://www.nanotech.wisc.edu/shadow)
+                        role="bold">SHADOW</emphasis></link>
+                <footnote><para>http://www.nanotech.wisc.edu/shadow</para></footnote>
                 where the <emphasis role="italic">y</emphasis> and <emphasis role="italic"
                     >z</emphasis> axes are swapped and the direction of <emphasis role="italic"
                     >x</emphasis> is changed.</para>
@@ -447,12 +486,20 @@
         </section>
         <section xml:id="cansas1d_documentation-converting_into_XML">
             <title>Converting data into the XML format</title>
-            <para>A WWW form ([http://www.smallangles.net/canSAS/xmlWriter/ canSAS/xmlWriter]) is
-                available to translate three-column ASCII text data into the canSAS1d/1.0 XML
+            <para>The 
+                <link xlink:href="http://www.smallangles.net/canSAS/xmlWriter/"
+                    ><emphasis role="italic"></emphasis>canSAS/xmlWriter</link>
+                <footnote>
+                    <para>
+                        http://www.smallangles.net/canSAS/xmlWriter/
+                    </para>
+                </footnote>
+                is a WWW form
+                to translate three-column ASCII text data into the canSAS1d/1.0 XML
                 format. This form will help you in creating an XML file with all the required
                 elements in the correct places. The form requests the SAS data of Q, I, and Idev
                 (defined elsewhere on this page) and some basic metadata (title, run, sample info,
-                ...). Press the &lt;nowiki>Submit&lt;/nowiki> button and you will receive a nicely
+                ...). Press the <code>&lt;nowiki>Submit&lt;/nowiki></code> button and you will receive a nicely
                 formatted WWW page with the SAS data. If you then choose "View page source" (from
                 one of your browser menus), you will see the raw XML of the canSAS1d/1.0 XML format
                 and you can copy/paste this into an XML file. </para>
@@ -642,7 +689,7 @@
                 Schema, XML ''foreign elements'' are permitted at select locations in the
                 cansas1d/1.0 format. Please refer to the references (and others) [[#Help_for_XML |
                 below]] for deeper discussions on foreign elements. </para>
-            <para> These is one example that demonstrates the use of a foreign namespace: <link
+            <para> There is one example that demonstrates the use of a foreign namespace: <link
                     xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml"
                     >http://svn.smallangles.net/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml</link>
                 This example uses a foreign namespace to record the transmission spectra related to

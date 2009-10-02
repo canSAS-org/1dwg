@@ -20,11 +20,15 @@
         $Revision$
         $Date$
     </bridgehead>
-    <note><para>
-        This Definition of Terms may not be provided in future versions of this manual.
-    </para></note>
+    <note>
+        <para> This Definition of Terms 
+            may not be provided in future versions of this manual. </para></note>
     <para>
-        Note:
+        This section provides a glossary 
+        <indexterm><primary>glossary</primary></indexterm> 
+        <indexterm><primary>definition of terms</primary></indexterm>
+        defining the details about each specific field (XPath string, 
+        XML elements and attributes) in the cansas1d/1.0 standard.<indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
     </para>
     <itemizedlist mark="opencircle"><listitem>
         <para>
@@ -106,7 +110,11 @@
             <glossentry>
                 <glossterm><code>/cs:SASroot</code></glossterm>
                 <glossdef><para>
-                    [1..1] The canSAS reduced 1-D SAS data will be in the SASroot database. This is similar to NXroot used by NeXus.
+                    [1..1] The canSAS reduced 1-D SAS data will be in the 
+                    <link xlink:href="#cansas1d_documentation-element-SASroot"
+                        ><literal>SASroot</literal></link>
+                    <indexterm><primary>SASroot</primary></indexterm> 
+                    database. This is similar to the root element of a NeXus file (<literal>NXroot</literal>).
                 </para></glossdef>
             </glossentry>
             <glossentry>
@@ -118,13 +126,18 @@
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry</code></glossterm>
                 <glossdef><para>
-                    [1..inf] A single SAS scan is reported in a SASentry. A SASentry can use the optional "name" attribute to provide a string for this SASentry. Use of this string is not defined by this standard.
+                    [1..inf] A single SAS scan is reported in a 
+                    <link xlink:href="#cansas1d_documentation-element-SASentry"
+                        ><literal>SASentry</literal></link>.
+                    <indexterm><primary>SASentry</primary></indexterm> 
+                    This is similar to <literal>NXentry</literal> used by NeXus.
+                    A <literal>SASentry</literal> can use an optional <literal>name</literal> attribute to provide a string for this SASentry. 
                 </para></glossdef>
             </glossentry>
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry/@name</code></glossterm>
                 <glossdef><para>
-                    [0..1] Optional string attribute to identify this particular SASentry.
+                    [0..1] Optional string attribute to identify this particular <literal>SASentry</literal>.  Use of the string associated with the <literal>name</literal> attribute is not defined by this standard.
                 </para></glossdef>
             </glossentry>
             <glossentry>

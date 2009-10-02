@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+
+<preface  xml:id="preface" xmlns="http://docbook.org/ns/docbook" version="5.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Preface</title>
+    <para>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="../../graphics/cswikilogo.png" scale="200"/>
+            </imageobject>
+        </mediaobject>
+        CanSAS 1-D Data Format, v1.0
+    </para>
+    <note><para>
+        Provide a note here describing CanSAS and the initiative to establish
+        a standard file format.  Note that the data files must adhere to the 
+        XML rules which includes being well-formed (including the use of closing tags).  
+        See <literal>http://www.w3schools.com/xmL/xml_syntax.asp</literal> for more details.
+        Files that can be validated 
+        against cansas1d.xsd are deemed to be valid cansas1d/1.0 data files.
+    </para></note>
+    <para>
+        The name "canSAS"
+        <indexterm><primary>canSAS</primary></indexterm>
+        stands for "Collective Action for Nomadic Small-Angle Scatterers.
+    </para>
+    <para>
+        This work is the initiative of the CanSAS 1D Data Formats Working Group, 
+        established at the canSAS-V workshop, NIST, Gaithersburg, Maryland, 
+        USA from October 29th to 31st 2007.  It derives many of its foundations
+        from previous works such as the SASXML format, a joint collaboration
+        between ISIS and ILL.
+    </para>
+    <para>
+        The home page of the 
+        <link 
+            xlink:href="http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group"
+            >CanSAS 1D Data Formats Working Group</link
+        ><footnote><para>http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group</para></footnote>
+        describes the members, timelines, and current status.
+        There is a 
+        <link 
+            xlink:href="http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group"
+            >discussion</link><footnote><para>http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group</para></footnote>   
+        page for some matters that preceded this revision.
+    </para>
+    <section xml:id="cansas1d_documentation-Disclaimer">
+        <title>Disclaimer</title>
+        <para>This description is meant to inform the community how to arrange information within
+            the structure of
+            the XML files and to define the spelling of the terms to be used. 
+            However, should the information in this document and the <link
+                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
+                >cansas1d/1.0 SAS XML Schema</link>
+            <footnote><para>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd</para></footnote>
+            differ, the XML Schema will be deemed to have the most correct description of the standard.</para>
+    </section>
+</preface>

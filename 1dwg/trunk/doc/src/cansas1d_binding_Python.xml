@@ -38,17 +38,28 @@ python setup.py install</programlisting>
     </section>
     <section><title>gnosis.xml.objectify</title>
         <para>
-            The GnosisUtils (http://freshmeat.net/projects/gnosisxml/) offer a method to readany XML file into Python data structures. This utility does not validate the XML against aspecific XML Schema which can be both good (flexible, especially when XML Foreign Namespace elements are used) and not so good (XML content not guaranteed to be <emphasis>by the rules</emphasis>).
+            The <link xlink:href="http://freshmeat.net/projects/gnosisxml/">GnosisUtils</link> 
+            <footnote><para>http://freshmeat.net/projects/gnosisxml/</para></footnote>
+            offer a method to read any XML file into Python data structures. This utility 
+            does not validate the XML against a specific XML Schema which can be both good 
+            (flexible, especially when XML Foreign Namespace elements are used) and not 
+            so good (XML content not guaranteed to be valid <emphasis>by the rules</emphasis>).
         </para>
         <para>
-            A quick test of this turned up an acceptable result in that it was able to read several of the canSAS test XML files, including those with foreign namespaces.And <emphasis role="bold"><emphasis>it was very easy.</emphasis></emphasis> (Especially with some help from http://www.xml.com/pub/a/2003/07/02/py-xml.html)
+            A quick test of this turned up an acceptable result in that it was able to read 
+            several of the canSAS test XML files, including those with foreign namespaces.  
+            And <emphasis role="bold"><emphasis> it was very easy.</emphasis></emphasis> 
+            (Especially with some help from http://www.xml.com/pub/a/2003/07/02/py-xml.html)
         </para>
         <para>
             Here is a quick example.
         </para>
         <section><title>installation</title>
             <para>
-                Here is the condensed installation (without all that output) steps. Your system may have gnosis already installed. You may also need sysAdmin privileges. You may need ...
+                Here is the condensed installation (without all that output) steps. 
+                Your system may have gnosis already installed. 
+                You may also need sysAdmin privileges. 
+                You may need ...
                 <programlisting>cd /tmp
 wget http://freshmeat.net/redir/gnosisxml/22028/url_tgz/Gnosis_Utils-1.2.2.tar.gz
 tar xzf Gnosis_Utils-1.2.2.tar.gz 
