@@ -132,7 +132,7 @@
                 </row>
                 <row>
                     <entry>
-                        '''''SASprocessnote'''''
+                        <link xlink:href="#cansas1d_documentation-element-SASprocessnote"><literal>SASprocessnote</literal></link>
                     </entry>
                     <entry>
                         container
@@ -147,7 +147,7 @@
                 </row>
                 <row>
                     <entry>
-                        '''''{any}'''''
+                        <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
                     </entry>
                     <entry>
                         container
@@ -156,7 +156,8 @@
                         [0..inf]
                     </entry>
                     <entry>
-                        Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.
+                        Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
+                        See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> for more details.
                     </entry>
                     <entry>
                         <para>
@@ -167,7 +168,7 @@
             </tbody>
         </tgroup>
     </table>
-    <section>
+    <section xml:id="cansas1d_documentation-element-SASprocessnote">
         <title>SASprocessnote</title>
         <table orient="port" role="small">
             <title/>
@@ -187,7 +188,7 @@
                     </row>
                     <row>
                         <entry>
-                            '''''{any}'''''
+                            <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
                         </entry>
                         <entry>
                             container
@@ -196,7 +197,8 @@
                             [0..inf]
                         </entry>
                         <entry>
-                            Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. See ''{any}'' for more details.
+                            Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
+                            See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> for more details.
                         </entry>
                         <entry>
                             <para>

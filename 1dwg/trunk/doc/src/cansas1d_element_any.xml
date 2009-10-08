@@ -12,7 +12,7 @@
 <!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_any -->
 <section xml:id="cansas1d_documentation-element-any" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>''{any}'' element</title>
+    <title><literal>{any}</literal> element</title>
     <bridgehead>
         $Revision$
         $Date$
@@ -34,12 +34,18 @@
                     <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                 </row>
                 <row>
-                    <entry><emphasis role="bold">{any}</emphasis></entry>
+                    <entry>
+                        <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                    </entry>
                     <entry> container </entry>
                     <entry> [0..inf] </entry>
                     <entry>
                         <para> Any element(s) not defined in the cansas1d/1.0 standard can be placed
                             at this point. (These are called <emphasis>foreign</emphasis> elements.
+                            <indexterm>
+                                <primary>XML</primary>
+                                <secondary>foreign elements</secondary>
+                            </indexterm>
                             It is suggested to associate foreign elements with a foreign namespace
                             to differentiate them from the canSAS elements in the XML file.) </para>
                     </entry>

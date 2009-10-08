@@ -329,7 +329,12 @@
                             </mathphrase>
                         </inlineequation>
                     </para>
-                    <para>where 
+                    <para>
+                        <indexterm>
+                            <primary>geometry</primary>
+                            <secondary>Q</secondary>
+                        </indexterm>
+                        where 
                         <inlineequation><mathphrase><alt>\lambda</alt></mathphrase></inlineequation> 
                         is the wavelength of the radiation</para>
                     <para>and  
@@ -383,7 +388,10 @@
                 <listitem>
                     <para> 
                         axes:
-                        <indexterm><primary>geometry</primary></indexterm>
+                        <indexterm>
+                            <primary>geometry</primary>
+                            <secondary>translation</secondary>
+                        </indexterm>
                     </para>
                     <orderedlist numeration="loweralpha">
                         <listitem>
@@ -404,6 +412,10 @@
                                 <title>definition of translation and orientation geometry as viewed
                                     from the detector towards the source</title>
                                 <para>
+                                    <indexterm>
+                                        <primary>geometry</primary>
+                                        <secondary>rotation</secondary>
+                                    </indexterm>
                                     <table>
                                         <title/>
                                         <tgroup cols="2">
