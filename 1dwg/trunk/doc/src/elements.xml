@@ -11,10 +11,10 @@
 -->
 <chapter xml:id="wiki-elements" xmlns="http://docbook.org/ns/docbook" version="5.0"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Elements of the CanSAS XML standard</title>
+    <title>Elements of the canSAS XML standard</title>
     <para>Starting the description of each element will be the current version control 
         <emphasis>Revision</emphasis> and <emphasis>Date</emphasis> of the documentation section.  
-        There are various elements (tag names) in the canSAS1d/1.0 standard. 
+        There are various elements (tag names) in the cansas1d/1.0 standard. 
         Each of these is described below.
     </para>
     <para> The <emphasis role="italic">Name</emphasis> is the XML tag to be used for this element of the standard. 

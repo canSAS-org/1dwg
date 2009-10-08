@@ -117,7 +117,7 @@
     <glossary>
         <glosslist>
             <glossentry>
-                <glossterm>Note 1: Required header for canSAS1d/1.0 XML files</glossterm>
+                <glossterm>Note 1: Required header for cansas1d/1.0 XML files</glossterm>
                 <glossdef>
                     <programlisting>&lt;SASroot version="1.0"
     xmlns="cansas1d/1.0"
@@ -128,7 +128,7 @@
             </glossentry>
             <glossentry>
                 <glossterm>
-                    Note 2: Description of attributes in required header for canSAS1d/1.0 XML files
+                    Note 2: Description of attributes in required header for cansas1d/1.0 XML files
                 </glossterm>
                 <glossdef><programlisting>version="1.0"
      xmlns="{this-namespace-URI}"

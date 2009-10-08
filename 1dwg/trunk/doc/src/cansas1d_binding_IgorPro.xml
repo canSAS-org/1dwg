@@ -207,29 +207,28 @@
             </indexterm>
             attempts
             to open the fileand read its contents as if it conformed to the canSAS XML standard
-            forreduced 1-D SAS data (cansas1d/1.0, also known as SASXML). If the file is found to be
-            non-conforming, then <emphasis role="bold">CS_XmlReader(fileName)</emphasis> returns
-            with anerror code (show below), otherwise it returns <emphasis role="bold">0</emphasis>
-            that indicates <emphasis>no error</emphasis>.All data read by this code is left in the
-            IgorPro data folder <emphasis role="bold"
-                    ><emphasis>root:Packages:CS_XMLreader</emphasis></emphasis> for pickup by the
+            for reduced 1-D SAS data (cansas1d/1.0, also known as SASXML). If the file is found to be
+            non-conforming, then <literal>CS_XmlReader(fileName)</literal> returns
+            with an error code (show below), otherwise it returns <literal>0</literal>
+            that indicates <literal>no error</literal>.All data read by this code is left in the
+            IgorPro data folder <literal>root:Packages:CS_XMLreader</literal> for pickup by the
             calling routine.(Two examples are provided to show how a routine might retrieve the
             data.) </para>
-        <para> After opening the XML file (with a file identifier <emphasis>fileID</emphasis>),
-            control is passed to <emphasis role="bold">CS_1i_parseXml(fileID)</emphasis> which then
-            walks through the XMLelements. For each <emphasis role="bold">SASentry</emphasis> in the
-            file, a new data folder is createdwith the name derived from the Title element (or best
-            effort determination).Efforts are taken to avoid duplication of data folder names (using
-            standard IgorPro routines). For <emphasis role="bold">SASentry</emphasis> elements that
-            contain more than one SASdataelement, a <emphasis role="bold">SASdata</emphasis> folder
-            is created for each and the corresponding <emphasis>I(Q)</emphasis> is placed in that
-            subfolder. When only one <emphasis role="bold">SASdata</emphasis> is found, the
-                <emphasis>I(Q)</emphasis>data is placed in the main <emphasis>Title</emphasis>
+        <para> After opening the XML file (with a file identifier <literal>fileID</literal>),
+            control is passed to <literal>CS_1i_parseXml(fileID)</literal> which then
+            walks through the XMLelements. For each <literal>SASentry</literal> in the
+            file, a new data folder is created with the name derived from the Title element (or best
+            effort determination).  Efforts are taken to avoid duplication of data folder names (using
+            standard IgorPro routines). For <literal>SASentry</literal> elements that
+            contain more than one SASdata element, a <literal>SASdata</literal> folder
+            is created for each and the corresponding <literal>I(Q)</literal> is placed in that
+            subfolder. When only one <literal>SASdata</literal> is found, the
+                <literal>I(Q)</literal>data is placed in the main <literal>Title</literal>
             folder. </para>
         <section>
             <title>data columns</title>
-            <para> Each column of data in the <emphasis role="bold">SASdata/Idata/*</emphasis> table
-                is placed into a singleIgorPro wave. At present, the code does not check for
+            <para> Each column of data in the <literal>SASdata/Idata/*</literal> table
+                is placed into a single IgorPro wave. At present, the code does not check for
                 non-standard data columns.(The capability is built into the code but is deactivated
                 at present). </para>
         </section>
@@ -247,7 +246,7 @@
                 characters that may cause
                 trouble when placed in a wave note. This will be the 
                 responsibility of the calling
-                routineto <emphasis>clean these up</emphasis> if the need arises.
+                routine to <emphasis>clean these up</emphasis> if the need arises.
             </para></caution>
                 <para> The code checks for most metadata elements and will check for repeated
                 elements where the standard permits. </para>
