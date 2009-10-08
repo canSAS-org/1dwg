@@ -32,7 +32,11 @@
         </listitem>
         <listitem>
             <para><emphasis role="bold">XSL (or XSLT)</emphasis>: eXtensible Stylesheet Language
-                (Transformation) <itemizedlist>
+                (Transformation) 
+                <indexterm>
+                    <primary>XML Stylesheet</primary>
+                </indexterm>
+                <itemizedlist>
                     <listitem>
                         <para>http://www.w3schools.com/xsl/</para>
                     </listitem>
@@ -90,7 +94,12 @@
                 </itemizedlist></para>
         </listitem>
         <listitem>
-            <para><emphasis role="bold">XML Foreign Elements</emphasis>: Inclusion of elements, at
+            <para><emphasis role="bold">XML Foreign Elements</emphasis>: 
+                <indexterm>
+                    <primary>XML</primary>
+                    <secondary>foreign elements</secondary>
+                </indexterm>
+                Inclusion of elements, at
                 select locations, that are not defined by the cansas1d.xsd XML Schema <itemizedlist>
                     <listitem>
                         <para>http://books.xmlschemata.org/relaxng/relax-CHP-11-SECT-4.html</para>

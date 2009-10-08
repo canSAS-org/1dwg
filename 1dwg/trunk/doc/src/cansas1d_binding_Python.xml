@@ -19,7 +19,12 @@
     </bridgehead>
     <para>
         Specific <link xlink:href="http://danse.us/trac/sans"><citetitle>support</citetitle></link> 
-        for the cansas1d/1.0 data standard in Python is being developed by 
+        for the cansas1d/1.0 data standard in Python 
+        <indexterm>
+            <primary>binding</primary>
+            <secondary>Python</secondary>
+        </indexterm>
+        is being developed by 
         <link xlink:href="http://www.ncnr.nist.gov/"><citetitle>NIST/NCNR</citetitle></link> 
         as part of their contribution to the 
         <link xlink:href="http://wiki.cacr.caltech.edu/danse"><citetitle>DANSE</citetitle></link> project.

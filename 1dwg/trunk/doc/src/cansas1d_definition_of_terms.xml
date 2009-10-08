@@ -143,7 +143,16 @@
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry/&lt;any></code></glossterm>
                 <glossdef><para>
-                    [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. Use a xmlns="some-simple-identification-string" to identify that this is a foreign element.
+                    [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. 
+                    Declare a default namespace declaration such as
+                    <code>xmlns="urn:example-namespace:example-context"</code> 
+                    to identify that this is a foreign element 
+                    <indexterm>
+                        <primary>XML</primary>
+                        <secondary>foreign elements</secondary>
+                    </indexterm>
+                    (where you replace "<code>example-namespace</code>" 
+                    and "<code>example-context</code>" with your own terms).
                 </para></glossdef>
             </glossentry>
             <glossentry>
@@ -269,7 +278,16 @@
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry/cs:SASdata/cs:Idata/&lt;any></code></glossterm>
                 <glossdef><para>
-                    [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. Use a xmlns="some-simple-identification-string" to identify that this is a foreign element.
+                    [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. 
+                    Declare a default namespace declaration such as
+                    <code>xmlns="urn:example-namespace:example-context"</code> 
+                    to identify that this is a foreign element 
+                    <indexterm>
+                        <primary>XML</primary>
+                        <secondary>foreign elements</secondary>
+                    </indexterm>
+                    (where you replace "<code>example-namespace</code>" 
+                    and "<code>example-context</code>" with your own terms).
                 </para></glossdef>
             </glossentry>
             <glossentry>
@@ -791,6 +809,10 @@
                     Declare a default namespace declaration such as
                     <code>xmlns="urn:example-namespace:example-context"</code> 
                     to identify that this is a foreign element 
+                    <indexterm>
+                        <primary>XML</primary>
+                        <secondary>foreign elements</secondary>
+                    </indexterm>
                     (where you replace "<code>example-namespace</code>" 
                     and "<code>example-context</code>" with your own terms).
                 </para></glossdef>
@@ -816,7 +838,17 @@
             <glossentry>
                 <glossterm><code>/cs:SASroot/cs:SASentry/cs:SASsample/&lt;any></code></glossterm>
                 <glossdef><para>
-                    [0..inf] Provision at this point for any element to be entered that is not part of the canSAS standard. Use a xmlns="some-simple-identification-string" to identify that this is a foreign element.
+                    [0..inf] 
+                    Provision at this point for any element to be entered that is not part of the canSAS standard. 
+                    Declare a default namespace declaration such as
+                    <code>xmlns="urn:example-namespace:example-context"</code> 
+                    to identify that this is a foreign element 
+                    <indexterm>
+                        <primary>XML</primary>
+                        <secondary>foreign elements</secondary>
+                    </indexterm>
+                    (where you replace "<code>example-namespace</code>" 
+                    and "<code>example-context</code>" with your own terms).
                 </para></glossdef>
             </glossentry>
             <glossentry>
