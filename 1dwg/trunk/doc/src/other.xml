@@ -57,6 +57,65 @@
             analytical results is restricted (such as no meaningful volume fraction or number
             density can be determined directly from I(Q)). </para>
     </section>
+    <section xml:id="xml-data-file">
+        <title>Example XML Data Files</title>
+        <para>
+            This section presents two examples of XML Data Files adhering to the cansas1d/1.0 standard.
+            <indexterm>
+                <primary>XML</primary>
+                <secondary>cansas1d/1.0 data file</secondary>
+            </indexterm>
+            Thie first file (<literal>data-simple.xml</literal>) 
+            is a basic example and the second file (<literal>cansas1d.xml</literal>) 
+            uses almost all the allowed elements.
+            In each, though, most of the data has been removed to clarify the structure.
+        </para>
+        <section xml:id="data-simple">
+            <title>data-simple.xml</title>
+            <para>The example data file <literal>data-simple.xml</literal> shows 
+                just the basic elements of the cansas1d/1.0 standard.  Only a single data 
+                point has been shown to more clearly show the other structure.
+                The data file is actually an excerpt from the
+                <link
+                    xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml"
+                    ><literal>bimodal-test1.xml</literal></link> example file in the main distribution.
+                The stylesheet in <literal>data-simple.xml</literal> is very basic
+                <footnote><para><link
+                    xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml"
+                    ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml</literal></link></para></footnote>
+                data file.
+            </para>
+            <indexterm>
+                <primary>XML</primary>
+                <secondary>cansas1d/1.0 data file</secondary>
+            </indexterm>
+            <programlisting language="xml" linenumbering="numbered">
+                <textobject>
+                    <textdata fileref="data-simple.xml"/>
+                </textobject>
+            </programlisting>
+        </section>
+        <section xml:id="data-cansas1d">
+            <title>cansas1d.xml</title>
+            <para>
+                The example data file <literal>cansas1d.xml</literal> shows example
+                of most of the elements of the cansas1d/1.0 standard.  Only a single data 
+                point has been shown to more clearly show the other structure.
+                <footnote><para><link
+                    xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml"
+                    ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml</literal></link></para></footnote>
+            </para>
+            <indexterm>
+                <primary>XML</primary>
+                <secondary>cansas1d/1.0 data file</secondary>
+            </indexterm>
+            <programlisting language="xml" linenumbering="numbered">
+                <textobject>
+                    <textdata fileref="../../cansas1d.xml"/>
+                </textobject>
+            </programlisting>
+        </section>
+    </section>
     <section xml:id="xml-stylesheet">
         <title>Example XML Stylesheets</title>
         <para>
@@ -77,20 +136,50 @@
                 <primary>XML Stylesheet</primary>
             </indexterm>
         </para>
-        <section>
+        <section xml:id="xsl-example">
             <title>example.xsl</title>
+            <para>
+                The <literal>example.xsl</literal> 
+                <indexterm>
+                    <primary>file</primary>
+                    <secondary>xsl</secondary>
+                    <see>XML Stylesheet</see>
+                </indexterm>
+                stylesheet displays 
+                all the <literal>Idata</literal> blocks in a cansas1d/1.0 file
+                in 3-column ASCII form, with column headers.
+            </para>
             <indexterm>
                 <primary>XML Stylesheet</primary>
                 <secondary>example.xsl</secondary>
             </indexterm>
-            <indexterm>
-                <primary>file</primary>
-                <secondary>xsl</secondary>
-                <see>XML Stylesheet</see>
-            </indexterm>
             <programlisting language="xml" linenumbering="numbered">
                 <textobject>
                     <textdata fileref="example.xsl"/>
+                </textobject>
+            </programlisting>
+        </section>
+        <section xml:id="xsl-cansas1d">
+            <title>cansasxml-html.xsl</title>
+            <para>
+                The <literal>cansasxml-html.xsl</literal> 
+                <indexterm>
+                    <primary>file</primary>
+                    <secondary>xsl</secondary>
+                    <see>XML Stylesheet</see>
+                </indexterm>
+                is the standard XSL stylesheet for cansas1d/1.0 files.
+                It shows all available <literal>SASdata</literal>
+                and metadata, separated by the different 
+                <literal>SASentry</literal> blocks.
+            </para>
+            <indexterm>
+                <primary>XML Stylesheet</primary>
+                <secondary>cansasxml-html.xsl</secondary>
+            </indexterm>
+            <programlisting language="xml" linenumbering="numbered">
+                <textobject>
+                    <textdata fileref="../../cansasxml-html.xsl"/>
                 </textobject>
             </programlisting>
         </section>

@@ -5,6 +5,11 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
       >
+     <!-- 
+          Note:  
+          This file is not a valid cansas1d/1.0 data file.
+          It is an example to show how to structure multiple data sets.
+     -->
       <SASentry name="071121.dat#S22">
             <!-- contents of the first experiment in the file go here -->
       </SASentry>
