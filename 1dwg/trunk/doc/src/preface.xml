@@ -19,10 +19,10 @@
                 <imagedata fileref="../../graphics/cswikilogo.png" scale="200"/>
             </imageobject>
         </mediaobject>
-        CanSAS 1-D Data Format, v1.0
+        canSAS 1-D Data Format, v1.0
     </para>
     <note><para>
-        Provide a note here describing CanSAS and the initiative to establish
+        Provide a note here describing canSAS and the initiative to establish
         a standard file format.  Note that the data files must adhere to the 
         XML rules which includes being well-formed (including the use of closing tags).  
         
@@ -40,12 +40,12 @@
         are deemed to be valid cansas1d/1.0 data files.
     </para></note>
     <para>
-        The name "canSAS"
+        The name "<emphasis role="italic">canSAS</emphasis>"
         <indexterm><primary>canSAS</primary></indexterm>
         stands for "Collective Action for Nomadic Small-Angle Scatterers.
     </para>
     <para>
-        This work is the initiative of the CanSAS 1D Data Formats Working Group, 
+        This work is the initiative of the canSAS 1D Data Formats Working Group, 
         established at the canSAS-V workshop, NIST, Gaithersburg, Maryland, 
         USA from October 29th to 31st 2007.  It derives many of its foundations
         from previous works such as the SASXML format, a joint collaboration
@@ -55,7 +55,7 @@
         The home page of the 
         <link 
             xlink:href="http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group"
-            >CanSAS 1D Data Formats Working Group</link
+            >canSAS 1D Data Formats Working Group</link
         ><footnote><para>http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group</para></footnote>
         describes the members, timelines, and current status.
         There is a 

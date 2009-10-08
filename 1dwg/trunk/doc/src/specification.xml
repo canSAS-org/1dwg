@@ -11,10 +11,10 @@
 -->
 <chapter xml:id="specification" xmlns="http://docbook.org/ns/docbook" version="5.0"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>canSAS1d/1.0 Specification</title>
+    <title>cansas1d/1.0 Specification</title>
     <para>
         This is the definitive specification of 
-        <literal>canSAS1d/1.0</literal>,
+        <literal>cansas1d/1.0</literal>,
         <indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
         the canSAS standard format for storing small-angle
         scattering data in XML files.
