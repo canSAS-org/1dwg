@@ -59,9 +59,8 @@
         </glossentry>
         <glossentry>
             <glossterm>purpose</glossterm>
-            <glossdef><para>implement an IgorPro file reader to read the canSAS 1-D reduced SAS
-                data in XML files adheres to the cansas1d/1.0 standard:
-                http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation</para></glossdef>
+            <glossdef><para>Implement an IgorPro file reader to read the canSAS 1-D reduced SAS
+                data in XML files that adhere to the cansas1d/1.0 standard.</para></glossdef>
         </glossentry>
         <glossentry>
             <glossterm>URL</glossterm>
