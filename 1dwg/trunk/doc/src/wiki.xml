@@ -31,7 +31,7 @@
             instantly human-readable, editable in the simplest of editors, and importable by simple
             text import filters in programs that need not recognise advanced structure in the file
             nor require advanced programming interfaces. The file should contain both the primary
-            data of ''I(Q)'' and also any other descriptive information (metadata) about the sample,
+            data of <literal>I(Q)</literal> and also any other descriptive information (metadata) about the sample,
             measurement, instrument, processing, or analysis steps. </para>
         <para>The cansas1d/1.0
             <indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
@@ -50,7 +50,8 @@
         <title>General Layout of the XML Data</title>
         <para>The canSAS 1-D standard for reduced 1-D SAS data is implemented using XML files. A
             single file can contain SAS data from a single experiment or multiple experiments. All
-            types of relevant data (''I(Q)'', metadata) are described for each experiment. More
+            types of relevant data (<literal>I(Q)</literal>, metadata) 
+            are described for each experiment. More
             details are provided below.</para>
         <section xml:id="cansas1d_documentation-XMLLayout-Overview">
             <title>Overview</title>
@@ -67,18 +68,11 @@
                 describes a single experiment (data set, time-slice, step in a series, new sample,
                 etc.). Details of the <literal>SASentry</literal> element are also shown in the
                 next figure. 
-                <!--Refer to the [[cansas1d_block_diagrams | block diagrams]] for
-                alternative depictions.--> 
-                See <link
-                    xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml"
-                    >cansas1d.xml</link>
-                <footnote>
-                    <para>
-                        <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml"
-                            ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml</literal></link>
-                    </para>
-                </footnote>
-                for an example XML file. Examples, Case Studies, and other background information
+                See the section titled <link
+                    xlink:href="#xml-data-file"
+                    >Example XML Data Files</link>
+                for examples of cansas1d/1.0 XML data file. 
+                Examples, Case Studies, and other background information
                 are below. More discussion can be found on the
                 <link
                     xlink:href="http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group"
@@ -115,13 +109,11 @@
                 </mediaobject>
             </figure>
             <itemizedlist>
-                <listitem>
-                    <para> 
+                <listitem><para> 
                         <link xlink:href="#cansas1d_documentation-element-SASroot"
                             ><literal>SASroot</literal></link>:
                         the root element of the file (after the XML header) 
-                    </para>
-                </listitem>
+                    </para></listitem>
                 <listitem>
                     <para> 
                         <link xlink:href="#cansas1d_documentation-element-SASentry"
@@ -129,24 +121,6 @@
                         describes a single experiment (data set, time-slice, step in a
                         series, new sample, etc.) 
                     </para>
-                </listitem>
-                <listitem>
-                    <para> block diagrams 
-                    <warning><para>!!!Need some help here!!!</para></warning>
-                    </para>
-                </listitem>
-                <listitem>
-                    <para> cansas1d.xml example XML file </para>
-                </listitem>
-                <listitem>
-                    <para> discussion of this format: basic more </para>
-                </listitem>
-                <listitem>
-                    <para> Seek outside help for XML </para>
-                </listitem>
-                <listitem>
-                    <para> Glossary: Details about each specific field (XPath string, XML
-                        elements and attributes) </para>
                 </listitem>
             </itemizedlist>
             <section xml:id="cansas1d_documentation-Basic_elements">

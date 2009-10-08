@@ -252,7 +252,7 @@
             <para> Here is an example of the metadata for the 
                 <literal>cs_collagen_full.xml</literal> case study: 
                 <table>
-                    <title>metadata for the ''cs_collagen_full.xml'' case study</title>
+                    <title>metadata for the <literal>cs_collagen_full.xml</literal> case study</title>
                     <tgroup cols="3">
                         <colspec colwidth="5*"/>
                         <colspec colwidth="40*"/>
