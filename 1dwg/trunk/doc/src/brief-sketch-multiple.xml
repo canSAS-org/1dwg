@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
+<SASroot version="1.0"
+      xmlns="cansas1d/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+      >
+      <SASentry name="071121.dat#S22">
+            <!-- contents of the first experiment in the file go here -->
+      </SASentry>
+      <SASentry name="example temperature series">
+           <!-- example with two SAS data sets related to the same sample -->
+           <Title>title of this series</Title>
+           <Run name="run1">42-001</Run>
+           <Run name="run2">42-002</Run>
+           <SASdata name="run1">
+                <!-- data from 42-001 run comes here -->
+           </SASdata>
+           <SASdata name="run2">
+                <!-- data from 42-002 run comes here -->
+           </SASdata>
+           <!-- other elements come here for this entry -->
+      </SASentry>
+      <SASentry name="other sample">
+           <!-- any number of additional experiments can be included, as desired -->
+           <!-- SASentry elements in the same XML file do not have to be related -->
+      </SASentry>
+</SASroot>

@@ -25,9 +25,19 @@
         Provide a note here describing CanSAS and the initiative to establish
         a standard file format.  Note that the data files must adhere to the 
         XML rules which includes being well-formed (including the use of closing tags).  
-        See <literal>http://www.w3schools.com/xmL/xml_syntax.asp</literal> for more details.
+        
+        <footnote>
+            <para>
+                For example, see 
+                <literal>http://www.w3schools.com/xmL/xml_syntax.asp</literal>
+                for an explanation of the XML syntax.
+            </para>
+        </footnote>
         Files that can be validated 
-        against cansas1d.xsd are deemed to be valid cansas1d/1.0 data files.
+        against <link
+            xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
+            ><literal>cansas1d.xsd</literal> </link>
+        are deemed to be valid cansas1d/1.0 data files.
     </para></note>
     <para>
         The name "canSAS"

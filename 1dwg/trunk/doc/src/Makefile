@@ -20,9 +20,14 @@
 
 # === Rules ===
 
+OPTS = -P table.in.float=0 -b pdftex
+
 all: dblatex
 
 # dblatex.sf.net builds the PDF version of the manual
 dblatex cansas-1d-1_0-manual.pdf ::
-	dblatex -P table.in.float=0 -b pdftex -tpdf manual.xml
+	dblatex $(OPTS) -tpdf manual.xml
 	mv -f manual.pdf ../cansas-1d-1_0-manual.pdf
+
+test :: Makefile test.xml
+	dblatex $(OPTS) -tpdf test.xml
