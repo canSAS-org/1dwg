@@ -209,6 +209,10 @@
                                 <para>view from source</para>
                             </caption>
                         </mediaobject>
+                        <indexterm>
+                            <primary>geometry</primary>
+                            <secondary>translation</secondary>
+                        </indexterm>
                     </entry>
                     <entry>
                         <mediaobject>
@@ -224,6 +228,10 @@
                                 <para>view from detector</para>
                             </caption>
                         </mediaobject>
+                        <indexterm>
+                            <primary>geometry</primary>
+                            <secondary>rotation</secondary>
+                        </indexterm>
                     </entry>
                 </row>
                 </tbody></tgroup>

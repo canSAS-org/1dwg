@@ -138,11 +138,15 @@
                     </entry>
                 </row>
                 <row>
-                    <entry> '''''{any}''''' </entry>
+                    <entry>
+                        <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                    </entry>
                     <entry> container </entry>
                     <entry> [0..inf] </entry>
                     <entry> Any element(s) not defined in the cansas1d/1.0 standard can be placed at
-                        this point. See ''{any}'' for more details. </entry>
+                        this point. See 
+                        <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                        for more details. </entry>
                     <entry>
                         <para>
                             <emphasis role="bold"
