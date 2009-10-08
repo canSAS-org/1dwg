@@ -136,10 +136,10 @@
                 <primary>XML Stylesheet</primary>
             </indexterm>
         </para>
-        <section xml:id="xsl-example">
-            <title>example.xsl</title>
+        <section xml:id="xsl-ascii3col">
+            <title>ascii3col.xsl</title>
             <para>
-                The <literal>example.xsl</literal> 
+                The <literal>ascii3col.xsl</literal> 
                 <indexterm>
                     <primary>file</primary>
                     <secondary>xsl</secondary>
@@ -151,11 +151,11 @@
             </para>
             <indexterm>
                 <primary>XML Stylesheet</primary>
-                <secondary>example.xsl</secondary>
+                <secondary>ascii3col.xsl</secondary>
             </indexterm>
             <programlisting language="xml" linenumbering="numbered">
                 <textobject>
-                    <textdata fileref="example.xsl"/>
+                    <textdata fileref="ascii3col.xsl"/>
                 </textobject>
             </programlisting>
         </section>
