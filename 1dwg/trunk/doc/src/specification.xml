@@ -21,5 +21,30 @@
         The standard is defined using the rules of 
         <link xlink:href="http://www.w3.org/XML/Schema">XML Schema</link>.
     </para>
+    <para>
+        Note that the cansas1d/1.0 XML data files must adhere to the 
+        XML rules which includes being well-formed
+        <indexterm><primary>XML</primary><secondary>well-formed</secondary></indexterm>
+        (including the use of closing tags).  
+        <footnote>
+            <para>
+                For example, see 
+                <link xlink:href="http://www.w3schools.com/xmL/xml_syntax.asp"
+                    ><literal>http://www.w3schools.com/xmL/xml_syntax.asp</literal></link>
+                for an explanation of the XML syntax.
+            </para>
+        </footnote>
+        Files that can be validated 
+        <indexterm><primary>cansas1d/1.0 standard</primary></indexterm>
+        <indexterm><primary>validation</primary></indexterm>
+        against 
+        <link
+            xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
+            ><literal>cansas1d.xsd</literal> </link>
+        are deemed to be valid cansas1d/1.0 data files.
+    </para>
     <note><para>More needs to be written here.</para></note>
+
+
+    <xi:include href="elements.xml"/>
 </chapter>

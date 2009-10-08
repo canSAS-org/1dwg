@@ -35,15 +35,25 @@
                 <para>Question : What is JAXB?</para>
             </listitem>
             <listitem>
-                <para>Answer : Java Architecture for XML Binding (JAXB):
-                    http://java.sun.com/developer/technicalArticles/WebServices/jaxb/</para>
+                <para>Answer : 
+                    <link xlink:href="http://java.sun.com/developer/technicalArticles/WebServices/jaxb/"
+                        >Java Architecture for XML Binding (JAXB)</link>:
+                    <footnote><para>
+                        <link xlink:href="http://java.sun.com/developer/technicalArticles/WebServices/jaxb/"
+                        ><literal>http://java.sun.com/developer/technicalArticles/WebServices/jaxb/</literal></link></para></footnote>
+                    </para>
             </listitem>
             <listitem>
                 <para>Wow! : Is it available for other languages?</para>
             </listitem>
             <listitem>
-                <para>Answer : Ask Google. JAXB is for Java. One good advisory page:
-                    http://www.devx.com/ibm/Article/20261</para>
+                <para>Answer : Ask Google. JAXB is for Java.
+                    (<link xlink:href="http://java.sun.com/developer/technicalArticles/WebServices/jaxb/"
+                        >example</link>)
+                    <footnote><para>
+                        <link xlink:href="http://www.devx.com/ibm/Article/20261"
+                            ><literal>http://www.devx.com/ibm/Article/20261</literal></link></para></footnote>
+                </para>
             </listitem>
             <listitem>
                 <para> Question : How do I pull out the <emphasis>I(Q)</emphasis> data? </para>
@@ -56,7 +66,10 @@
     <section>
         <title>JAXB_cansas1d_reader.java: example usage in JAVA</title>
         <para>
-            Here is a Java class that shows how to use the JAXB binding.Use this with any of the test data supplied with the cansas-1d-standard directory (above).By default, it shows what is in the <emphasis>1998spheres.xml</emphasis> example file: two samples.(You'll have to get the directory paths right until this documentation improves.)
+            Here is a Java class that shows how to use the JAXB binding.
+            Use this with any of the test data supplied with the cansas-1d-standard directory (above).
+            By default, it shows what is in the <emphasis>1998spheres.xml</emphasis> example file: two samples.
+            (You'll have to get the directory paths right until this documentation improves.)
         </para>
         <programlisting language="java" linenumbering="numbered"><textobject><textdata
             fileref="JAXB_cansas1d_reader.java"/></textobject></programlisting>
@@ -64,7 +77,10 @@
     <section>
         <title>example: how to retrieve I(Q)</title>
         <para>
-            Look for the line that has <emphasis role="bold">Qsas[i] = sdt.getIdata().get(i).getQ().getValue();</emphasis> to see the operations to unwind the data into usable double[] vectors. Pretty straightforward.
+            Look for the line that has 
+            <literal>Qsas[i] = sdt.getIdata().get(i).getQ().getValue();</literal> 
+            to see the operations to unwind the data into usable double[] vectors. 
+            Pretty straightforward.
         </para>
         <itemizedlist>
             <listitem><para>sdt :  SASdataType object</para></listitem>

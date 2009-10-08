@@ -15,18 +15,18 @@
     xmlns="http://docbook.org/ns/docbook"
     version="5.0" 
     xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Definition of Terms</title>
+    <title>Glossary</title>
     <bridgehead>
         $Revision$
         $Date$
     </bridgehead>
     <note>
-        <para> This Definition of Terms 
-            may not be provided in future versions of this manual. </para></note>
+        <para> This Glossary 
+            might not be provided in future versions of this manual. </para></note>
     <para>
         This section provides a glossary 
-        <indexterm><primary>glossary</primary></indexterm> 
-        <indexterm><primary>definition of terms</primary></indexterm>
+        <indexterm><primary>glossary</primary></indexterm>
+        <!--<indexterm><primary>definition of terms</primary><see>glossary</see></indexterm>-->
         defining the details about each specific field (XPath string, 
         XML elements and attributes) in the cansas1d/1.0 standard.<indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
     </para>
