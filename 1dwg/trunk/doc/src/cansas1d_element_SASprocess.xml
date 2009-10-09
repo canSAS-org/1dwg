@@ -180,7 +180,11 @@
         </tgroup>
     </table>
     <section xml:id="cansas1d_documentation-element-SASprocessnote">
-        <title>SASprocessnote</title>
+        <title>SASprocessnote element</title>
+        <indexterm significance="preferred">
+            <primary>element</primary>
+            <secondary>SASprocessnote</secondary>
+        </indexterm>
         <table orient="port" role="small">
             <title/>
             <tgroup cols="5">
