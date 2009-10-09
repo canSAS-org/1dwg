@@ -19,7 +19,10 @@
     </bridgehead>
     <itemizedlist mark="opencircle">
         <listitem>
-            <indexterm><primary>SAScollimation</primary></indexterm>
+            <indexterm significance="preferred">
+                <primary>element</primary>
+                <secondary>SAScollimation</secondary>
+            </indexterm>
             <para>
                 parent:
                 <link xlink:href="#cansas1d_documentation-element-SASinstrument">SASinstrument</link>
@@ -61,9 +64,11 @@
                     </row>
                     <row>
                         <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>length</emphasis></emphasis>
-                            </para>
+                            <literal>length</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>length</secondary>
+                            </indexterm>
                         </entry>
                         <entry>
                             floating-point number
@@ -74,11 +79,15 @@
                         <entry>
                             Amount/length of collimation inserted (on a SANS instrument)
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
                         <entry>
                             <literal>aperture</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>aperture</secondary>
+                            </indexterm>
                         </entry>
                         <entry>
                             container
@@ -88,9 +97,11 @@
                         </entry>
                         <entry>
                             Description of a slit or aperture. 
-                            <emphasis role="bold"><emphasis>name</emphasis></emphasis>: Optional name attribute for this aperture.  <emphasis role="bold"><emphasis>type</emphasis></emphasis>: Optional text attribute to describe the type aperture (pinhole, 4-blade slit, Soller slit, ...).
+                            <literal>name</literal>: Optional name attribute for this aperture.  
+                            <literal>type</literal>: Optional text attribute to describe the type 
+                            aperture (pinhole, 4-blade slit, Soller slit, ...).
                         </entry>
-                        <entry><para><literal> name={type} </literal></para></entry>
+                        <entry><literal>name={type}</literal></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -117,6 +128,10 @@
                     <row>
                         <entry>
                             <literal>size</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>size</secondary>
+                            </indexterm>
                         </entry>
                         <entry>
                             container
@@ -127,10 +142,16 @@
                         <entry>
                             Opening dimensions of this aperture.
                         </entry>
-                        <entry><para><literal> name={name} </literal></para></entry>
+                        <entry><literal>name={name}</literal></entry>
                     </row>
                     <row>
-                        <entry><para><literal> distance </literal></para></entry>
+                        <entry>
+                            <literal>distance</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>distance</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -140,7 +161,7 @@
                         <entry>
                             Distance from this collimation element to the sample.
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -203,7 +224,13 @@
                             <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                         </row>
                         <row>
-                            <entry><para><literal> x </literal></para></entry>
+                            <entry>
+                                <literal>x</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>x</secondary>
+                                </indexterm>
+                            </entry>
                             <entry>
                                 floating-point number
                             </entry>
@@ -211,12 +238,22 @@
                                 [0..1]
                             </entry>
                             <entry>
-                                Dimension of the collimation in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                                Dimension of the collimation in X. 
+                                The <literal>unit</literal> attribute is required. See
+                                the section about the
+                                <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                                for acceptable values.
                             </entry>
-                            <entry><para><literal> unit={unit} </literal></para></entry>
+                            <entry><literal>unit={unit}</literal></entry>
                         </row>
                         <row>
-                            <entry><para><literal> y </literal></para></entry>
+                            <entry>
+                                <literal>y</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>y</secondary>
+                                </indexterm>
+                            </entry>
                             <entry>
                                 floating-point number
                             </entry>
@@ -224,12 +261,22 @@
                                 [0..1]
                             </entry>
                             <entry>
-                                Dimension of the collimation in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                                Dimension of the collimation in Y. 
+                                The <literal>unit</literal> attribute is required. See
+                                the section about the
+                                <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                                for acceptable values.
                             </entry>
-                            <entry><para><literal> unit={unit} </literal></para></entry>
+                            <entry><literal>unit={unit}</literal></entry>
                         </row>
                         <row>
-                            <entry><para><literal> z </literal></para></entry>
+                            <entry>
+                                <literal>z</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>z</secondary>
+                                </indexterm>
+                            </entry>
                             <entry>
                                 floating-point number
                             </entry>
@@ -237,9 +284,22 @@
                                 [0..1]
                             </entry>
                             <entry>
-                                Dimension of the collimation in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
+                                <para>
+                                    Dimension of the collimation in Z. 
+                                    The <literal>unit</literal>
+                                    attribute is required. See the section about the <link
+                                        xlink:href="#cansas1d_documentation-rules">rules</link> for
+                                    acceptable values. 
+                                    <tip>
+                                        <para>
+                                            While Z dimension is allowed by the
+                                            standard (provided by use of a standard element in the XML Schema),
+                                            it does not make sense for small-angle scattering.
+                                        </para>
+                                    </tip>
+                                </para>
                             </entry>
-                            <entry><para><literal> unit={unit} </literal></para></entry>
+                            <entry><literal>unit={unit}</literal></entry>
                         </row>
                     </tbody>
                 </tgroup>

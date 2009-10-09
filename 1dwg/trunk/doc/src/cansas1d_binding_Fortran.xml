@@ -20,7 +20,7 @@
     </bridgehead>
     <para>
         The development of the FORTRAN language, 
-        <indexterm>
+        <indexterm significance="preferred">
             <primary>binding</primary>
             <secondary>FORTRAN</secondary>
         </indexterm>

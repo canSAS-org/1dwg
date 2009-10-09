@@ -19,7 +19,10 @@
 	</bridgehead>
     <itemizedlist mark="opencircle">
         <listitem>
-            <indexterm><primary>SASroot</primary></indexterm>
+            <indexterm significance="preferred">
+                <primary>element</primary>
+                <secondary>SASroot</secondary>
+            </indexterm>
             <para> 
 				parent: 
 				<link xlink:href="#cansas1d_documentation-XML_Header">XML header</link>
@@ -58,20 +61,19 @@
                 </row>
                 <row>
                     <entry>
-                        <emphasis role="bold">
-							<link xlink:href="#cansas1d_documentation-element-SASentry">SASentry</link>
-						</emphasis>
+						<link xlink:href="#cansas1d_documentation-element-SASentry"
+						    ><literal>SASentry</literal></link>
                     </entry>
                     <entry> container </entry>
                     <entry> [1..inf] </entry>
-                    <entry> A single SAS scan is reported in a <emphasis role="bold"
-                            >SASentry</emphasis>. Include as many <emphasis role="bold"
-                            >SASentry</emphasis> elements as desired. They may contain related or
-                        unrelated data. <emphasis role="bold">name</emphasis> is an optional
-                        attribute to provide a string for this <emphasis role="bold"
-                            >SASentry</emphasis>. (Use of this string is not defined by this
+                    <entry> A single SAS scan is reported in a <literal>SASentry</literal>. 
+                        Include as many <literal>SASentry</literal> elements as desired. 
+                        They may contain related or
+                        unrelated data. <literal>name</literal> is an optional
+                        attribute to provide a string for this <literal>SASentry</literal>. 
+                        (Use of this string is not defined by this
                         standard.) </entry>
-                    <entry> name=short-name </entry>
+                    <entry><literal>name=short-name</literal></entry>
                 </row>
             </tbody>
         </tgroup>

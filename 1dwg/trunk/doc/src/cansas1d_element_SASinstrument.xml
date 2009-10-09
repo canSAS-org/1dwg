@@ -19,10 +19,13 @@
     </bridgehead>
     <itemizedlist mark="opencircle">
         <listitem>
-            <indexterm><primary>SASinstrument</primary></indexterm>
+            <indexterm significance="preferred">
+                <primary>element</primary>
+                <secondary>SASinstrument</secondary>
+            </indexterm>
             <para>
                 parent:
-                <link xlink:href="#cansas1d_documentation-element-SASentry">SASentry</link>
+                <link xlink:href="#cansas1d_documentation-element-SASentry"><literal>SASentry</literal></link>
             </para>
         </listitem>
     </itemizedlist>
@@ -58,11 +61,7 @@
                     <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                 </row>
             <row>
-                <entry>
-                    <para>
-                        <emphasis role="bold">name</emphasis>
-                    </para>
-                </entry>
+                <entry><literal>name</literal></entry>
                 <entry>
                     string
                 </entry>
@@ -76,7 +75,7 @@
             </row>
             <row>
                 <entry>
-                    <literal>SASsource</literal>
+                    <link xlink:href="#cansas1d_documentation-element-SASsource"><literal>SASsource</literal></link>
                 </entry>
                 <entry>
                     container
@@ -93,7 +92,7 @@
             </row>
             <row>
                 <entry>
-                    <literal>SAScollimation</literal>
+                    <link xlink:href="#cansas1d_documentation-element-SAScollimation"><literal>SAScollimation</literal></link>
                 </entry>
                 <entry>
                     container
@@ -110,7 +109,7 @@
             </row>
             <row>
                 <entry>
-                    <literal>SASdetector</literal>
+                    <link xlink:href="#cansas1d_documentation-element-SASdetector"><literal>SASdetector</literal></link>
                 </entry>
                 <entry>
                     container
@@ -126,5 +125,4 @@
         </tbody>
         </tgroup>
     </table>
-    
 </section>

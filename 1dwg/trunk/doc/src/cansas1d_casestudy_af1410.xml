@@ -15,6 +15,10 @@
     <title>Case Study: AF1410 steel</title>
     <bridgehead> $Revision$ $Date$ </bridgehead>
     <section>
+        <indexterm significance="preferred">
+            <primary>case study</primary>
+            <secondary>SANS of AF1410 steel</secondary>
+        </indexterm>
         <title>Overview</title>
         <note>
             <para> This case study has not yet been written up. For now, see the data file 

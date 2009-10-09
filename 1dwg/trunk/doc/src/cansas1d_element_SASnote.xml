@@ -19,7 +19,10 @@
     </bridgehead>
     <itemizedlist mark="opencircle">
         <listitem>
-            <indexterm><primary>SASnote</primary></indexterm>
+            <indexterm significance="preferred">
+                <primary>element</primary>
+                <secondary>SASnote</secondary>
+            </indexterm>
             <para>
                 parent:
                 <link xlink:href="#cansas1d_documentation-element-SASentry">SASentry</link>
@@ -73,12 +76,11 @@
                     </entry>
                     <entry>
                         <para>
-                            <emphasis role="bold"><emphasis>xmlns:{foreign-prefix}</emphasis></emphasis>={foreign-namespace}
+                            <literal>xmlns:{foreign-prefix}={foreign-namespace}</literal>
                         </para>
                     </entry>
                 </row>
             </tbody>
         </tgroup>
     </table>
-    
 </section>

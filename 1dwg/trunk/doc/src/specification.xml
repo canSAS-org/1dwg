@@ -43,7 +43,35 @@
             ><literal>cansas1d.xsd</literal> </link>
         are deemed to be valid cansas1d/1.0 data files.
     </para>
-    <note><para>More needs to be written here.</para></note>
+    <para>
+        In this document, curly braces, <literal>{}</literal>, are used to
+        indicate text that is supplied by the user.  Such as, an attribute
+        may be written
+        <informalexample>
+            <programlisting>name={text}</programlisting>
+        </informalexample>
+        and this means that the 
+        user would replace <literal>{text}</literal> with text that gives,
+        in this example, a name such as <literal>final detector</literal>.
+        Thus resulting in
+        <informalexample>
+            <programlisting>name="final detector"</programlisting> 
+        </informalexample>
+        which is a well-formed XML attribute.  
+    </para>
+    <para>
+        Another example is an instance of the 
+        <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+        element.  Suppose one had analysis data, then <literal>{any}</literal> would be replaced 
+        with <literal>analysis</literal> and the element might look like this:
+        <informalexample>
+            <programlisting>
+                &lt;analysis>
+                ... analysis content goes here ...
+                &lt;/analysis>
+            </programlisting>
+        </informalexample>
+    </para>
 
 
     <xi:include href="elements.xml"/>

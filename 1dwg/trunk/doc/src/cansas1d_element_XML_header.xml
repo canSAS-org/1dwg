@@ -17,6 +17,18 @@
         $Revision$
         $Date$
     </bridgehead>
+    <example>
+        <title>Required header for cansas1d/1.0 XML files</title>
+        <indexterm significance="preferred">
+            <primary>XML header</primary>
+        </indexterm>
+        <programlisting>&lt;?xml version="1.0"?>
+&lt;SASroot version="1.0"
+   xmlns="cansas1d/1.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="cansas1d/1.0 
+   http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"></programlisting>
+    </example>
     <table orient="port" role="small">
         <title/>
         <tgroup cols="5">
@@ -53,7 +65,11 @@
                                 >example.xsl</emphasis> to indicate a different stylesheet in the
                             local directory. Refer to <link
                                 xlink:href="http://www.w3schools.org/xsl">W3 Schools XSLT
-                                Help</link> for assistance in constructing XSLT files. </para>
+                                Help</link> for assistance in constructing XSLT 
+                            files.<footnote><para><link
+                                xlink:href="http://www.w3schools.org/xsl"><literal
+                                    >http://www.w3schools.org/xsl</literal></link></para></footnote> 
+                        </para>
                         <para> XML rules actually allow for multiple stylesheet declarations.
                             Explore this possibility as your own adventure. </para>
                     </entry>
@@ -64,77 +80,52 @@
                 </row>
                 <row>
                     <entry>
-						<emphasis role="bold">
-							<link xlink:href="#cansas1d_documentation-element-SASroot">SASroot</link>
-						</emphasis>
+					    <link xlink:href="#cansas1d_documentation-element-SASroot"
+					        ><literal>SASroot</literal></link>
 					</entry>
                     <entry>container</entry>
                     <entry>[1..1]</entry>
                     <entry>
                         <para>The canSAS reduced 1-D SAS data (cansas1d/1.0) will be in the
-                                <emphasis role="bold">SASroot</emphasis> database.</para>
+                                <literal>SASroot</literal> database.</para>
                         <para>
 							(This is similar to 
-							NXroot 
 							<link
-                                xlink:href="http://www.nexusformat.org/NXroot">NXroot</link>
-							used by NeXus.)
+							    xlink:href="http://www.nexusformat.org/NXroot"><literal>NXroot</literal></link>
+                            used by NeXus.<footnote><para><link xlink:href="http://www.nexusformat.org/NXroot"
+                                ><literal>http://www.nexusformat.org/NXroot</literal></link></para></footnote>)
 						</para>
+                    </entry>
+                    <entry>
                         <itemizedlist>
                             <listitem>
                                 <para>
-                                    <emphasis role="bold">version="1.0"</emphasis> is required to
+                                    <literal>version="1.0"</literal> is required to
                                     identify the cansas1d/1.0 standard for SAS data.</para>
                             </listitem>
                             <listitem>
                                 <para>
-                                    <emphasis role="bold">xmlns</emphasis> sets the default
-                                    namespace for all elements (with no prefix) in this file.
+                                    <literal>xmlns</literal> sets the default
+                                    namespace URI for all elements (with no prefix) in this file.
                                 </para>
                             </listitem>
                             <listitem>
                                 <para>
-                                    <emphasis role="bold">xmlns:xsi</emphasis> sets <emphasis
-                                        role="bold">xsi</emphasis> as the prefix for any elements
-                                    from the governing XML Schema.</para>
+                                    <literal>xmlns:xsi</literal> sets <literal>xsi</literal> 
+                                    as the prefix for any elements
+                                    from the governing XML Schema and defines the namespace URI to 
+                                    use with the <literal>xsi:</literal> element prefix.</para>
                             </listitem>
                             <listitem>
                                 <para>
-                                    <emphasis role="bold">xsi:schemaLocation</emphasis> associates a
+                                    <literal>xsi:schemaLocation</literal> associates a
                                     suggested URL (where the cansas1d/1.0 XML Schema might be found)
                                     with the default namespace string. </para>
                             </listitem>
                         </itemizedlist>
-                        <para>See Note 1 below</para>
-                    </entry>
-                    <entry>
-                        <para>See Note 2 below</para>
                     </entry>
                 </row>
             </tbody>
         </tgroup>
     </table>
-    <glossary>
-        <glosslist>
-            <glossentry>
-                <glossterm>Note 1: Required header for cansas1d/1.0 XML files</glossterm>
-                <glossdef>
-                    <programlisting>&lt;SASroot version="1.0"
-    xmlns="cansas1d/1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="cansas1d/1.0 
-        http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"></programlisting>
-                </glossdef>
-            </glossentry>
-            <glossentry>
-                <glossterm>
-                    Note 2: Description of attributes in required header for cansas1d/1.0 XML files
-                </glossterm>
-                <glossdef><programlisting>version="1.0"
-     xmlns="{this-namespace-URI}"
-     xmlns:xsi="{URL-of-governing-XML-Schema}"
-     xsi:schemaLocation="{this-namespace-URI}  {URL-to-find-XML-Schema}"</programlisting></glossdef>
-            </glossentry>
-        </glosslist>
-    </glossary>
 </section>
