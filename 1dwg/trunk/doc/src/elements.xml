@@ -17,9 +17,6 @@
         There are various elements (tag names) in the cansas1d/1.0 standard. 
         Each of these is described below.
     </para>
-    <note>
-        <para>Explain the <literal>attribute={text}</literal> syntax.</para>
-    </note>
     <glosslist>
         <glossentry>
             <glossterm>Name</glossterm>
@@ -36,7 +33,11 @@
                             <glossdef>
                                 <para>
                                     Elements of type <emphasis role="italic">header</emphasis> 
-                                    describe the required XML header lines.  Use them without question.
+                                    describe the required XML header lines.  
+                                    Without questions, use the header
+                                    in the section titled
+                                    <link xlink:href="#cansas1d_documentation-XML_Header"
+                                        >Required XML Header</link>.
                                 </para>
                             </glossdef>
                         </glossentry>
@@ -99,7 +100,7 @@
                     adhere to the well-formed XML guidelines
                     <programlisting>attributename="value"</programlisting>
                     where either single or double quotes surround the value.  
-                    All attributes must have a value.
+                    All attributes must have a value.  Attributes may be given in any order.
                 </para>
             </glossdef>
         </glossentry>

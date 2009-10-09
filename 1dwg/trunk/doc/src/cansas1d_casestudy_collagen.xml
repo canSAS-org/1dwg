@@ -16,6 +16,10 @@
     <bridgehead> $Revision$ $Date$ </bridgehead>
     <section>
         <title>Overview</title>
+        <indexterm significance="preferred">
+            <primary>case study</primary>
+            <secondary>SAXS of dry chick collagen</secondary>
+        </indexterm>
         <para> To demonstrate how to get SAS data into the XML standard format, consider this set of
             SAXS data collected at the National Synchrotron Light Source, Brookhaven National
             Laboratory, using a SAXS camera set up temporarily at beam line X6B (operated by the
@@ -33,7 +37,7 @@
                                     <imageobject>
                                         <imagedata
                                             fileref="../../graphics/cs-collagen-data-table-Excel.jpg"
-                                            width="200pt" scalefit="1"/>
+                                            width="150pt" scalefit="1"/>
                                     </imageobject>
                                     <caption>
                                         <para>case study: Collagen, SAXS data in Excel table</para>
@@ -45,7 +49,7 @@
                                     <imageobject>
                                         <imagedata
                                             fileref="../../graphics/cs-collagen-saxs-chart-excel.jpg"
-                                            width="200pt" scalefit="1"/>
+                                            width="150pt" scalefit="1"/>
                                     </imageobject>
                                     <caption>
                                         <para>case study: Collagen, SAXS data in Excel chart</para>
@@ -57,31 +61,47 @@
                 </tgroup>
             </table>
         </para>
-        <para> The raw data was collected on a linear position-sensitive detector and reduced to
+        <para> The raw data 
+            was collected on a linear position-sensitive detector and reduced to
             columns of <emphasis role="bold">Q</emphasis>, <emphasis role="bold">I</emphasis>, and
                 <emphasis role="bold">Iesd</emphasis> (estimated standard deviation of <emphasis
                 role="bold">I</emphasis>). </para>
         <para> The only metadata available for this data (without resorting to digging through piles
-            of old notebooks) was obtained from two file headers: </para>
-        <para>
+            of old notebooks) was obtained from two file headers: 
             <link
-                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC">
-                <citetitle>collagen.asc</citetitle>
-            </link>
+                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC"
+                ><citetitle>collagen.asc</citetitle>
+            </link><footnote><para><link
+                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC"
+                ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC</literal>
+            </link></para></footnote>
+            and
+            <link
+                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/collagen.saxs"
+                ><citetitle>collagen.saxs</citetitle>
+            </link><footnote><para><link
+                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/collagen.saxs"
+                ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/collagen.saxs</literal>
+            </link></para></footnote>
+            as shown.
+        </para>
+        <para>
+            <example>
+                <title>First few lines from file <citetitle>collagen.asc</citetitle></title>
             <programlisting>Sep 19 1994     01:41:02 am     Elt: 00090 Seconds 
 ID: No spectrum identifier defined
 Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls        </programlisting>
-        </para>
-        <para>
-            <link
-                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/collagen.saxs">
-                <citetitle>collagen.saxs</citetitle>
-            </link>
-            <programlisting>dry chick collagen, d = 673 A
+            </example>
+            <example>
+                <title>Full listing of file <citetitle>collagen.saxs</citetitle></title>
+                <programlisting>dry chick collagen, d = 673 A
 6531 eV, X6B</programlisting>
+            </example>
         </para>
-        <para> But, the data can fulfill the minimum requirements of the 1D standard file format and
-            also make an excellent example of a minimal canSAS reduced 1-D SAS data file in XML.
+        <para> But, there is enough information to fulfill the minimum 
+            requirements of the 1D standard file format and
+            also make an excellent example of a minimal 
+            canSAS reduced 1-D SAS data file in XML.
         </para>
     </section>
     <section>
@@ -89,56 +109,28 @@ Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls        </pr
         <section>
             <title>make the basic XML file</title>
             <para> It is easiest to copy a template rather than start from an empty file. Copy the
-                    <link xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xml">
-                    <citetitle>cansas1d.xml</citetitle>
-                </link> file into your working directory and rename it to <emphasis role="bold"
-                    >collagen.xml</emphasis>. </para>
+                    <link xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xml"
+                        ><citetitle>cansas1d.xml</citetitle></link><footnote><para
+                            ><link xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xml">
+                                <literal>http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xml</literal>
+                            </link></para></footnote> 
+                file into your working directory and rename it to 
+                <literal>collagen.xml</literal>. </para>
         </section>
         <section>
             <title>modify collagen.xml</title>
             <para> It is easier to see the metadata in the XML file before you enter the SAXS data
-                into the file. With the brief metadata available, most lines can be eliminated. This
-                will result in a file that looks like </para>
-            <programlisting>&lt;?xml version="1.0"?>
-&lt;?xml-stylesheet type="text/xsl" href="example.xsl" ?>
-&lt;SASroot version="1.0"
-    xmlns="cansas1d/1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-    >
-    &lt;SASentry>
-    &lt;Title>dry chick collagen, d = 673 A, 6531 eV, X6B&lt;/Title>
-        &lt;Run />
-        &lt;SASdata>
-            &lt;!-- Idata lines will go here -->
-        &lt;/SASdata>
-        &lt;SASsample>
-            &lt;ID>dry chick collagen, d = 673 A, 6531 eV, X6B&lt;/ID>
-        &lt;/SASsample>
-        &lt;SASinstrument>
-            &lt;name>X6B, NSLS, BNL&lt;/name>
-            &lt;SASsource>
-                &lt;radiation>X-ray synchrotron&lt;/radiation>
-                &lt;wavelength unit="A">
-                    1.898
-                    &lt;!-- = 12398/6531 --> 
-                &lt;/wavelength>
-            &lt;/SASsource>
-            &lt;SAScollimation />
-            &lt;SASdetector>
-                &lt;name>X6B PSD&lt;/name>
-            &lt;/SASdetector>
-        &lt;/SASinstrument>
-        &lt;SASnote>
-            Sep 19 1994     01:41:02 am     Elt: 00090 Seconds 
-            ID: No spectrum identifier defined
-            Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls
-            
-            dry chick collagen, d = 673 A
-            6531 eV, X6B
-        &lt;/SASnote>
-    &lt;/SASentry>
-&lt;/SASroot></programlisting>
+                into the file. With the brief metadata available, most of the other 
+                lines in <citetitle>cansas1d.xml</citetitle> can be eliminated. This
+                will result in a file that looks like the next example.</para>
+            <example>
+                <title><literal>collagen.xml</literal> with metadata but before data lines are added.</title>
+                <programlisting language="xml" linenumbering="numbered">
+                    <textobject>
+                        <textdata fileref="example-collagen-predata.xml"/>
+                    </textobject>
+                </programlisting>
+            </example>
         </section>
         <section>
             <title>prepare the SAXS data</title>
@@ -146,34 +138,25 @@ Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls        </pr
                 lines of XML for the standard. Some may prefer to use a cell formula but here, we
                 develop a bit of Excel Macro code to clarify our procedure. </para>
             <section>
-                <title>Excel macros used</title>
-                <para> Within Excel, with the SAXS data in columns as shown in the Excel table
+                <title>Using Excel macros to reformat the SAXS data</title>
+                <para> Within Excel, 
+                    <indexterm>
+                        <primary>binding</primary>
+                        <secondary>Microsoft Excel</secondary>
+                    </indexterm>
+                    with the SAXS data in columns as shown in the Excel table
                     above, let's define the macros for our use. In Excel, type <emphasis role="bold"
                         >&lt;alt>&lt;F11></emphasis> to open the macro editing window. </para>
-                <programlisting>Function XML_tag(tag, attr, content) As String
-  If attr = "" Then
-    XML = "&lt;" &amp; tag &amp; ">"
-  Else
-  XML = "&lt;" &amp; tag &amp; " " &amp; attr &amp; ">"
-  End If
-  XML = XML &amp; content
-  XML = XML &amp; "&lt;/" &amp; tag &amp; ">"
-  XML_tag = XML
-End Function
-
-Function SAS_Idata_tag(element, unit, content) As String
-XML = XML_tag(element, "unit=""" &amp; unit &amp; """", content)
-  SAS_Idata_tag = XML
-End Function
-
-Function Idata_tag(Q, Q_unit, I, I_unit, Idev, Idev_unit) As String
-  XML = SAS_Idata_tag("Q", Q_unit, Q)
-  XML = XML &amp; SAS_Idata_tag("I", I_unit, I)
-  XML = XML &amp; SAS_Idata_tag("Idev", Idev_unit, Idev)
-  Idata_tag = XML_tag("Idata", "", XML)
-End Function</programlisting>
-                <para> Your window will look similar to this one when you copy/paste the above code:
-                     (Yes, my spreadsheet is called MyFirstMacro.xls) </para>
+                <example>
+                    <title>Microsoft Excel macro to format the <literal>Idata</literal> lines.</title>
+                    <programlisting>
+                        <textobject>
+                            <textdata fileref="example-excel-macro.txt"/>
+                        </textobject>
+                    </programlisting>
+                </example>
+                <para> Your window will look similar to this one when you copy/paste the above example code:
+                    (Yes, my spreadsheet is called <citetitle>MyFirstMacro.xls</citetitle>) </para>
                 <mediaobject>
                     <imageobject>
                         <imagedata fileref="../../graphics/cs-collagen-macro-editing.jpg"
@@ -192,7 +175,10 @@ End Function</programlisting>
             <section>
                 <title>construct the Idata lines in XML</title>
                 <para> move to spreadsheet cell <literal>E5</literal> and enter this
-                    formula <programlisting>=IDATA_tag(A5,$A$4,B5,$B$4,C5,$C$4)</programlisting>
+                    formula 
+                    <informalexample>
+                        <programlisting>=IDATA_tag(A5,$A$4,B5,$B$4,C5,$C$4)</programlisting>
+                    </informalexample>
                 </para>
                 <para> Copy it down all rows in column <emphasis role="bold">E</emphasis> through
                     cell <literal>E335</literal>

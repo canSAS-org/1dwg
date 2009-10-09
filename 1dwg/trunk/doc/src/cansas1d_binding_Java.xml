@@ -19,7 +19,7 @@
     </bridgehead>
     <para>
         Documentation for the JAXB binding
-        <indexterm>
+        <indexterm significance="preferred">
             <primary>binding</primary>
             <secondary>Java</secondary>
         </indexterm>

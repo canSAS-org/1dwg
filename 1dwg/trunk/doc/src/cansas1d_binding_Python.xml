@@ -20,7 +20,7 @@
     <para>
         Specific <link xlink:href="http://danse.us/trac/sans"><citetitle>support</citetitle></link> 
         for the cansas1d/1.0 data standard in Python 
-        <indexterm>
+        <indexterm significance="preferred">
             <primary>binding</primary>
             <secondary>Python</secondary>
         </indexterm>

@@ -15,8 +15,11 @@
     <title>SASdata element</title>
     <bridgehead> $Revision$ $Date$ </bridgehead>
     <itemizedlist mark="opencircle">
+        <indexterm significance="preferred">
+            <primary>element</primary>
+            <secondary>SASdata</secondary>
+        </indexterm>
         <listitem>
-            <indexterm significance="preferred"><primary>SASdata</primary></indexterm>
             <para> parent: <link xlink:href="#cansas1d_documentation-element-SASentry"
                 ><literal>SASentry</literal></link>
             </para>
@@ -70,10 +73,11 @@
                     </row>
                     <row>
                         <entry>
-                            <literal>
-                                Idata
-                                <indexterm><primary>Idata</primary></indexterm>
-                            </literal>
+                            <literal>Idata</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>Idata</secondary>
+                            </indexterm>
                         </entry>
                         <entry> container </entry>
                         <entry> [1..inf] </entry>
@@ -106,6 +110,10 @@
                         <entry>
                             <para>
                                 <literal>Q</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>Q</secondary>
+                                </indexterm>
                             </para>
                         </entry>
                         <entry> floating-point number </entry>
@@ -132,20 +140,27 @@
                                 <literal>1/A</literal> or <literal>1/nm</literal> are
                                 typical. </para>
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
                         <entry>
                             <para>
                                 <literal>I</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>I</secondary>
+                                </indexterm>
                             </para>
                         </entry>
                         <entry> floating-point number </entry>
                         <entry> [1..1] </entry>
                         <entry>
-                            <para> Intensity of the detected radiation. The <literal>unit</literal> 
-                                attribute is required. See
-                                cansas1d_documentation#Rules for acceptable values. One possibility
+                            <para> Intensity of the detected radiation. 
+                                The <literal>unit</literal> attribute is required. See
+                                the section about the
+                                <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                                for acceptable values.
+                                One possibility
                                 might be <literal>1/cm</literal> for absolute units when the
                                 intensity describes a <emphasis>differential cross-section per unit
                                     volume per unit solid angle</emphasis>. </para>
@@ -157,12 +172,16 @@
                                 <literal>unit</literal> attribute to determine how to handle subsequent
                                 data processing, especially in the area of units conversion. </para>
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
                         <entry>
                             <para>
                                 <literal>Idev</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>Idev</secondary>
+                                </indexterm>
                             </para>
                         </entry>
                         <entry> floating-point number </entry>
@@ -170,15 +189,18 @@
                         <entry> Estimated standard deviation of <literal>I</literal>.
                             The <literal>unit</literal> attribute is required. See
                                 <link xlink:href="#cansas1d_documentation-rules">rules for
-                                units</link>
-                            <!--cansas1d_documentation#Rules --> for acceptable values. One
+                                units</link> for acceptable values. One
                             possibility might be <literal>1/cm</literal>. </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
                         <entry>
                             <para>
                                 <literal>Qdev</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>Qdev</secondary>
+                                </indexterm>
                             </para>
                         </entry>
                         <entry> floating-point number </entry>
@@ -186,16 +208,20 @@
                         <entry> Estimated standard deviation of <literal>Q</literal>.
                             (optional: see note below on usage)
                             The <literal>unit</literal> 
-                                attribute is required. See <link
+                            attribute is required. See <link
                                 xlink:href="#cansas1d_documentation-rules">rules for units</link>
-                            <!--cansas1d_documentation#Rules --> for acceptable values. Either
+                            for acceptable values. Either
                             <literal>1/A</literal> or <literal>1/nm</literal> are typical. </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
                         <entry>
                             <para>
                                 <literal>dQw</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>dQw</secondary>
+                                </indexterm>
                             </para>
                         </entry>
                         <entry> floating-point number </entry>
@@ -209,17 +235,20 @@
                                 on usage).</para>
                             <para> The <literal>unit</literal> attribute is required.
                                 See <link xlink:href="#cansas1d_documentation-rules">rules for
-                                    units</link>
-                                <!--cansas1d_documentation#Rules --> for acceptable values. Either
+                                    units</link> for acceptable values. Either
                                 <literal>1/A</literal> or <literal>1/nm</literal> are
                                 typical. </para>
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
                         <entry>
                             <para>
                                 <literal>dQl</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>dQl</secondary>
+                                </indexterm>
                             </para>
                         </entry>
                         <entry> floating-point number </entry>
@@ -227,23 +256,26 @@
                         <entry>
                             <para>
                                 <literal>Q</literal> resolution perpendicular to the
-                                axis of scanning (the low-resolution <emphasis>slit
-                                    length</emphasis> direction). Useful for defining resolution
+                                axis of scanning (the low-resolution <literal>slit
+                                    length</literal> direction). Useful for defining resolution
                                 data from slit-smearing instruments such as Bonse-Hart geometry.
                                 (optional: see note below on usage)
                                 The <literal>unit</literal> attribute is required. See <link
                                     xlink:href="#cansas1d_documentation-rules">rules for
-                                    units</link>
-                                <!--cansas1d_documentation#Rules --> for acceptable values. Either
+                                    units</link> for acceptable values. Either
                                 <literal>1/A</literal> or <literal>1/nm</literal> are
                                 typical. </para>
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
                         <entry>
                             <para>
                                 <literal>Qmean</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>Qmean</secondary>
+                                </indexterm>
                             </para>
                         </entry>
                         <entry> floating-point number </entry>
@@ -253,38 +285,44 @@
                             or from area detectors.The <literal>unit</literal>
                             attribute is required. See <link
                                 xlink:href="#cansas1d_documentation-rules">rules for units</link>
-                            <!--cansas1d_documentation#Rules --> for acceptable values. Either
+                            for acceptable values. Either
                             <literal>1/A</literal> or <literal>1/nm</literal> are typical. </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
                         <entry>
                             <para>
                                 <literal>Shadowfactor</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>Shadowfactor</secondary>
+                                </indexterm>
                             </para>
                         </entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry>
                             <para> Describes the adjustment due to the beam stop penumbra. </para>
+                            <tip>
+                                <para>There is no unit attribute.</para>
+                            </tip>
                             <caution>
                                 <para>This definition needs revision. NIST?</para>
                             </caution>
-                            <note>
-                                <para>There is no unit attribute.</para>
-                            </note>
                         </entry>
                         <entry/>
                     </row>
                     <row>
                         <entry>
-                            <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                            <link xlink:href="#cansas1d_documentation-element-any"
+                                ><literal>{any}</literal></link>
                         </entry>
                         <entry> container </entry>
                         <entry> [0..inf] </entry>
                         <entry> Any element(s) not defined in the cansas1d/1.0 standard can be
                             placed at this point. 
-                            See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                            See <link xlink:href="#cansas1d_documentation-element-any"
+                                ><literal>{any}</literal></link>
                             for more details. </entry>
                         <entry>
                             <para>
@@ -302,9 +340,11 @@
         <title>Notes</title>
         <orderedlist numeration="arabic">
             <listitem>
-                <para> When an optional element (<literal>Idev</literal>, <literal>Qdev</literal>, ...) 
+                <para> When an optional element 
+                    (<literal>Idev</literal>, <literal>Qdev</literal>, ...) 
                     is used, it must be given in
-                    every <literal>Idata</literal> within the enclosing <literal>SASdata</literal>. </para>
+                    every <literal>Idata</literal> within the 
+                    enclosing <literal>SASdata</literal>. </para>
             </listitem>
             <listitem>
                 <para> If either <literal>dQw</literal> or
@@ -315,8 +355,8 @@
         </orderedlist>
         <note>
             <para>
-                <emphasis role="bold">(The Shadowfactor attribute definition needs revision.
-                    NIST?)</emphasis>
+                <emphasis role="bold">The Shadowfactor attribute definition needs revision.
+                    NIST?</emphasis>
             </para>
         </note>
     </section>

@@ -159,11 +159,14 @@
                 <primary>XML Stylesheet</primary>
                 <secondary>ascii3col.xsl</secondary>
             </indexterm>
-            <programlisting language="xml" linenumbering="numbered">
-                <textobject>
-                    <textdata fileref="ascii3col.xsl"/>
-                </textobject>
-            </programlisting>
+            <example>
+                <title><citetitle>ascii3col.xsl</citetitle></title>
+                <programlisting language="xml" linenumbering="numbered">
+                    <textobject>
+                        <textdata fileref="ascii3col.xsl"/>
+                    </textobject>
+                </programlisting>
+            </example>
         </section>
         <section xml:id="xsl-cansas1d">
             <title>cansasxml-html.xsl</title>
@@ -183,11 +186,15 @@
                 <primary>XML Stylesheet</primary>
                 <secondary>cansasxml-html.xsl</secondary>
             </indexterm>
-            <programlisting language="xml" linenumbering="numbered">
-                <textobject>
-                    <textdata fileref="../../cansasxml-html.xsl"/>
-                </textobject>
-            </programlisting>
+            <!-- Cannot make next code into multi-page example it seems. -->
+            <!--<example>
+                <title><citetitle>cansasxml-html.xsl</citetitle></title>-->
+                <programlisting language="xml" linenumbering="numbered">
+                    <textobject>
+                        <textdata fileref="../../cansasxml-html.xsl"/>
+                    </textobject>
+                </programlisting>
+            <!--</example>-->
         </section>
     </section>
 </chapter>

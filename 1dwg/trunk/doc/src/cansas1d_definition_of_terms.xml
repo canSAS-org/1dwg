@@ -26,7 +26,6 @@
     <para>
         This section provides a glossary 
         <indexterm><primary>glossary</primary></indexterm>
-        <!--<indexterm><primary>definition of terms</primary><see>glossary</see></indexterm>-->
         defining the details about each specific field (XPath string, 
         XML elements and attributes) in the cansas1d/1.0 standard.<indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
     </para>
@@ -113,7 +112,7 @@
                     [1..1] The canSAS reduced 1-D SAS data will be in the 
                     <link xlink:href="#cansas1d_documentation-element-SASroot"
                         ><literal>SASroot</literal></link>
-                    <indexterm><primary>SASroot</primary></indexterm> 
+                    <indexterm><primary>element</primary><secondary>SASroot</secondary></indexterm> 
                     database. This is similar to the root element of a NeXus file (<literal>NXroot</literal>).
                 </para></glossdef>
             </glossentry>
@@ -129,7 +128,7 @@
                     [1..inf] A single SAS scan is reported in a 
                     <link xlink:href="#cansas1d_documentation-element-SASentry"
                         ><literal>SASentry</literal></link>.
-                    <indexterm><primary>SASentry</primary></indexterm> 
+                    <indexterm><primary>element</primary><secondary>SASentry</secondary></indexterm> 
                     This is similar to <literal>NXentry</literal> used by NeXus.
                     A <literal>SASentry</literal> can use an optional <literal>name</literal> attribute to provide a string for this SASentry. 
                 </para></glossdef>

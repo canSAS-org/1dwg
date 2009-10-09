@@ -18,8 +18,11 @@
         $Date$
     </bridgehead>
     <itemizedlist mark="opencircle">
+        <indexterm significance="preferred">
+            <primary>element</primary>
+            <secondary>SASdetector</secondary>
+        </indexterm>
         <listitem>
-            <indexterm><primary>SASdetector</primary></indexterm>
             <para>
                 parent: 
                 <link xlink:href="#cansas1d_documentation-element-SASinstrument">SASinstrument</link>
@@ -60,7 +63,13 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
                     <row>
-                        <entry><para><literal> name </literal></para></entry>
+                        <entry>
+                            <literal>name</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>name</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             string
                         </entry>
@@ -73,7 +82,13 @@
                         <entry/>
                     </row>
                     <row>
-                        <entry><para><literal> SDD </literal></para></entry>
+                        <entry>
+                            <literal>SDD</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>SDD</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -83,11 +98,15 @@
                         <entry>
                             Distance between sample and detector.
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
                         <entry>
                             <literal>offset</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>offset</secondary>
+                            </indexterm>
                         </entry>
                         <entry>
                             container
@@ -103,6 +122,10 @@
                     <row>
                         <entry>
                             <literal>orientation</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>orientation</secondary>
+                            </indexterm>
                         </entry>
                         <entry>
                             container
@@ -118,6 +141,10 @@
                     <row>
                         <entry>
                             <literal>beam_center</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>beam_center</secondary>
+                            </indexterm>
                         </entry>
                         <entry>
                             container
@@ -133,6 +160,10 @@
                     <row>
                         <entry>
                             <literal>pixel_size</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>pixel_size</secondary>
+                            </indexterm>
                         </entry>
                         <entry>
                             container
@@ -146,7 +177,13 @@
                         <entry/>
                     </row>
                     <row>
-                        <entry><para><literal> slit_length </literal></para></entry>
+                        <entry>
+                            <literal>slit_length</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>slit_length</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -157,7 +194,7 @@
                             Slit length of the instrument for this detector. 
                             This is expressed in the same units as Q (reciprocal space units).
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -233,20 +270,36 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
                     <row>
-                        <entry><para><literal> x </literal></para></entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Offset of the detector position in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
-                    </entry>
-                    <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry>
+                            <literal>x</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>x</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Offset of the detector position in X. 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
                 </row>
                     <row>
-                        <entry><para><literal> y </literal></para></entry>
+                        <entry>
+                            <literal>y</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>y</secondary>
+                            </indexterm>
+                        </entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -254,12 +307,22 @@
                         [0..1]
                     </entry>
                     <entry>
-                        Offset of the detector position in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                        Offset of the detector position in Y. 
+                        The <literal>unit</literal> attribute is required. See
+                        the section about the
+                        <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                        for acceptable values.
                     </entry>
-                    <entry><para><literal> unit={unit} </literal></para></entry>
+                    <entry><literal>unit={unit}</literal></entry>
                 </row>
                     <row>
-                        <entry><para><literal> z </literal></para></entry>
+                        <entry>
+                            <literal>z</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>z</secondary>
+                            </indexterm>
+                        </entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -267,9 +330,22 @@
                         [0..1]
                     </entry>
                     <entry>
-                        Offset of the detector position in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
+                        <para>
+                            Offset of the detector position in Z. 
+                            The <literal>unit</literal>
+                            attribute is required. See the section about the <link
+                                xlink:href="#cansas1d_documentation-rules">rules</link> for
+                            acceptable values. 
+                            <tip>
+                                <para>
+                                    While Z dimension is allowed by the
+                                    standard (provided by use of a standard element in the XML Schema),
+                                    it does not make sense for small-angle scattering.
+                                </para>
+                            </tip>
+                        </para>
                     </entry>
-                    <entry><para><literal> unit={unit} </literal></para></entry>
+                    <entry><literal>unit={unit}</literal></entry>
                 </row>
                 </tbody>
             </tgroup>
@@ -294,7 +370,13 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
                     <row>
-                        <entry><para><literal> roll </literal></para></entry>
+                        <entry>
+                            <literal>roll</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>roll</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -302,12 +384,22 @@
                             [0..1]
                         </entry>
                         <entry>
-                            Rotation about the <emphasis>Z</emphasis> axis (roll). The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                            Rotation about the <literal>Z</literal> axis (roll). 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
-                        <entry><para><literal> pitch </literal></para></entry>
+                        <entry>
+                            <literal>pitch</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>pitch</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -315,12 +407,22 @@
                             [0..1]
                         </entry>
                         <entry>
-                            Rotation about the <emphasis>X</emphasis> axis (pitch). The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                            Rotation about the <literal>X</literal> axis (pitch). 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
-                        <entry><para><literal> yaw </literal></para></entry>
+                        <entry>
+                            <literal>yaw</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>yaw</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -328,9 +430,13 @@
                             [0..1]
                         </entry>
                         <entry>
-                            Rotation about the <emphasis>Y</emphasis> axis (yaw). The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                            Rotation about the <literal>Y</literal> axis (yaw). 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -355,7 +461,13 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
                     <row>
-                        <entry><para><literal> x </literal></para></entry>
+                        <entry>
+                            <literal>x</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>x</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -363,12 +475,22 @@
                             [0..1]
                         </entry>
                         <entry>
-                            Position of the beam center on the detector in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                            Position of the beam center on the detector in X. 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
-                        <entry><para><literal> y </literal></para></entry>
+                        <entry>
+                            <literal>y</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>y</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -376,12 +498,22 @@
                             [0..1]
                         </entry>
                         <entry>
-                            Position of the beam center on the detector in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                            Position of the beam center on the detector in Y. 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                     <row>
-                        <entry><para><literal> z </literal></para></entry>
+                        <entry>
+                            <literal>z</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>z</secondary>
+                            </indexterm>
+                        </entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -389,9 +521,22 @@
                             [0..1]
                         </entry>
                         <entry>
-                            Position of the beam center on the detector in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
+                            <para>
+                                Position of the beam center on the detector in Z. 
+                                The <literal>unit</literal>
+                                attribute is required. See the section about the <link
+                                    xlink:href="#cansas1d_documentation-rules">rules</link> for
+                                acceptable values. 
+                                <tip>
+                                    <para>
+                                        While Z dimension is allowed by the
+                                        standard (provided by use of a standard element in the XML Schema),
+                                        it does not make sense for small-angle scattering.
+                                    </para>
+                                </tip>
+                            </para>
                         </entry>
-                        <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -416,7 +561,13 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
                     <row>
-                        <entry><para><literal> x </literal></para></entry>
+                        <entry>
+                            <literal>x</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>x</secondary>
+                            </indexterm>
+                        </entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -424,12 +575,22 @@
                         [0..1]
                     </entry>
                     <entry>
-                        Size of a detector pixel in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                        Size of a detector pixel in X. 
+                        The <literal>unit</literal> attribute is required. See
+                        the section about the
+                        <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                        for acceptable values.
                     </entry>
-                    <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                 </row>
                     <row>
-                        <entry><para><literal> y </literal></para></entry>
+                        <entry>
+                            <literal>y</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>y</secondary>
+                            </indexterm>
+                        </entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -437,12 +598,22 @@
                         [0..1]
                     </entry>
                     <entry>
-                        Size of a detector pixel in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                        Size of a detector pixel in Y. 
+                        The <literal>unit</literal> attribute is required. See
+                        the section about the
+                        <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                        for acceptable values.
                     </entry>
-                    <entry><para><literal> unit={unit} </literal></para></entry>
+                        <entry><literal>unit={unit}</literal></entry>
                 </row>
                     <row>
-                        <entry><para><literal> z </literal></para></entry>
+                        <entry>
+                            <literal>z</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>z</secondary>
+                            </indexterm>
+                        </entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -450,9 +621,22 @@
                         [0..1]
                     </entry>
                     <entry>
-                        Size of a detector pixel in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
+                        <para>
+                            Size of a detector pixel in Z. 
+                            The <literal>unit</literal>
+                            attribute is required. See the section about the <link
+                                xlink:href="#cansas1d_documentation-rules">rules</link> for
+                            acceptable values. 
+                            <tip>
+                                <para>
+                                    While Z dimension is allowed by the
+                                    standard (provided by use of a standard element in the XML Schema),
+                                    it does not make sense for small-angle scattering.
+                                </para>
+                            </tip>
+                        </para>
                     </entry>
-                    <entry><para><literal> unit={unit} </literal></para></entry>
+                    <entry><literal>unit={unit}</literal></entry>
                 </row>
             </tbody></tgroup>
         </table>

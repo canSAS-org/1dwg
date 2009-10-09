@@ -13,6 +13,10 @@
 <section xml:id="cansas1d_documentation-binding-IgorPro" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>IgorPro binding</title>
+    <indexterm significance="preferred">
+        <primary>binding</primary>
+        <secondary>IgorPro</secondary>
+    </indexterm>
     <bridgehead>
         $Revision$
         $Date$

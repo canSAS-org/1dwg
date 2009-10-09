@@ -19,7 +19,10 @@
     </bridgehead>
     <itemizedlist mark="opencircle">
         <listitem>
-            <indexterm><primary>SASprocess</primary></indexterm>
+            <indexterm significance="preferred">
+                <primary>element</primary>
+                <secondary>SASprocess</secondary>
+            </indexterm>
             <para>
                 parent:
                 <link xlink:href="#cansas1d_documentation-element-SASentry"><literal>SASentry</literal></link>
@@ -57,7 +60,13 @@
                     <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                 </row>
                 <row>
-                    <entry><para><literal> name </literal></para></entry>
+                    <entry>
+                        <literal>name</literal>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>name</secondary>
+                        </indexterm>
+                    </entry>
                     <entry>
                         string
                     </entry>
@@ -70,7 +79,12 @@
                     <entry/>
                 </row>
                 <row>
-                    <entry><para><literal> date </literal></para></entry>
+                    <entry><literal>date</literal>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>date</secondary>
+                        </indexterm>
+                    </entry>
                     <entry>
                         string
                     </entry>
@@ -85,7 +99,13 @@
                     <entry/>
                 </row>
                 <row>
-                    <entry><para><literal> description </literal></para></entry>
+                    <entry>
+                        <literal>description</literal>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>description</secondary>
+                        </indexterm>
+                    </entry>
                     <entry>
                         string
                     </entry>
@@ -98,7 +118,12 @@
                     <entry/>
                 </row>
                 <row>
-                    <entry><para><literal> term </literal></para></entry>
+                    <entry><literal>term</literal>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>term</secondary>
+                        </indexterm>
+                    </entry>
                     <entry>
                         string
                     </entry>
@@ -110,12 +135,16 @@
                         (while defined here as a string, it could be a number) related to the 
                         <literal>SASprocess</literal> step.
                     </entry>
-                    <entry><para><literal> unit={unit} </literal></para></entry>
+                    <entry><literal>unit={unit}</literal></entry>
                 </row>
                 <row>
                     <entry>
                         <link xlink:href="#cansas1d_documentation-element-SASprocessnote"
                             ><literal>SASprocessnote</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>SASprocessnote</secondary>
+                        </indexterm>
                     </entry>
                     <entry>
                         container
@@ -130,7 +159,8 @@
                 </row>
                 <row>
                     <entry>
-                        <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                        <link xlink:href="#cansas1d_documentation-element-any"
+                            ><literal>{any}</literal></link>
                     </entry>
                     <entry>
                         container
@@ -140,10 +170,11 @@
                     </entry>
                     <entry>
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
-                        See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> 
+                        See <link xlink:href="#cansas1d_documentation-element-any"
+                            ><literal>{any}</literal></link> 
                         for more details.
                     </entry>
-                    <entry><para><literal> xmlns:{foreign-prefix}={foreign-namespace} </literal></para></entry>
+                    <entry><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></entry>
                 </row>
             </tbody>
         </tgroup>
@@ -168,7 +199,8 @@
                     </row>
                     <row>
                         <entry>
-                            <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                            <link xlink:href="#cansas1d_documentation-element-any"
+                                ><literal>{any}</literal></link>
                         </entry>
                         <entry>
                             container
@@ -178,9 +210,10 @@
                         </entry>
                         <entry>
                             Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
-                            See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> for more details.
+                            See <link xlink:href="#cansas1d_documentation-element-any"
+                                ><literal>{any}</literal></link> for more details.
                         </entry>
-                        <entry><para><literal> xmlns:{foreign-prefix}={foreign-namespace} </literal></para></entry>
+                        <entry><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></entry>
                     </row>
                 </tbody>
             </tgroup>
