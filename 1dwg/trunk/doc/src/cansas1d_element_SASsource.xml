@@ -55,11 +55,7 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">radiation</emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> radiation </literal></para></entry>
                         <entry> string </entry>
                         <entry> [1..1] </entry>
                         <entry>
@@ -93,39 +89,25 @@
                             </itemizedlist>
                         </entry>
                         <entry/>
-                        
                     </row>
                     <row>
-                        <entry> '''''beam_size''''' </entry>
+                        <entry><literal> beam_size </literal></entry>
                         <entry> container </entry>
                         <entry> [0..1] </entry>
                         <entry> Physical dimension of the beam (incident on the sample). Note: If
                             beam is round, just use X dimension. Note: While Z dimension is allowed
                             by the standard, it does not make sense for small-angle scattering. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>name</emphasis></emphasis>={name}
-                            </para>
-                        </entry>
+                        <entry><para><literal>name={name}</literal></para></entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>beam_shape</emphasis></emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> beam_shape </literal></para></entry>
                         <entry> string </entry>
                         <entry> [0..1] </entry>
                         <entry> Text description of the shape of the beam (incident on the sample). </entry>
-                        <entry>
-                        </entry>
+                        <entry/>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>wavelength</emphasis></emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> wavelength </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> 
@@ -137,56 +119,31 @@
                                 of radiation incident on the sample.
                             </para>
                         </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={unit} </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>wavelength_min</emphasis></emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> wavelength_min </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> Some facilities specify wavelength using a range. The minimum of
                             such a range is given by wavelength_min. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={unit} </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>wavelength_max</emphasis></emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> wavelength_max </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> Some facilities specify wavelength using a range. The maximum of
                             such a range is given by wavelength_max. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={unit} </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"
-                                    ><emphasis>wavelength_spread</emphasis></emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> wavelength_spread </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> Some facilities specify the width of the wavelength spectrum. The
                             width of such a range is given by wavelength_spread. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={unit} </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -245,33 +202,25 @@
                             <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                         </row>
                         <row>
-                            <entry>
-                                <emphasis role="bold">x</emphasis>
-                            </entry>
+                            <entry><para><literal> x </literal></para></entry>
                             <entry> floating-point number </entry>
                             <entry> [0..1] </entry>
                             <entry> Dimension of the beam in X. The <emphasis role="bold"
                                     >unit</emphasis> attribute is required. See
                                 cansas1d_documentation#Rules for acceptable values. </entry>
-                            <entry>
-                                <emphasis role="bold">unit</emphasis>={units} </entry>
+                            <entry><para><literal> unit={unit} </literal></para></entry>
                         </row>
                         <row>
-                            <entry>
-                                <emphasis role="bold">y</emphasis>
-                            </entry>
+                            <entry><para><literal> y </literal></para></entry>
                             <entry> floating-point number </entry>
                             <entry> [0..1] </entry>
                             <entry> Dimension of the beam in Y. The <emphasis role="bold"
                                     >unit</emphasis> attribute is required. See
                                 cansas1d_documentation#Rules for acceptable values. </entry>
-                            <entry>
-                                <emphasis role="bold">unit</emphasis>={units} </entry>
+                            <entry><para><literal> unit={unit} </literal></para></entry>
                         </row>
                         <row>
-                            <entry>
-                                <emphasis role="bold">z</emphasis>
-                            </entry>
+                            <entry><para><literal> z </literal></para></entry>
                             <entry> floating-point number </entry>
                             <entry> [0..1] </entry>
                             <entry> Dimension of the beam in Z. The <emphasis role="bold"
@@ -279,9 +228,9 @@
                                 cansas1d_documentation#Rules for acceptable values. Note: While Z
                                 dimension is allowed by the standard (provided by use of a standard
                                 element in the XML Schema), it does not make sense for small-angle
-                                scattering. </entry>
-                            <entry>
-                                <emphasis role="bold">unit</emphasis>={units} </entry>
+                                scattering. 
+                            </entry>
+                            <entry><para><literal> unit={unit} </literal></para></entry>
                         </row>
                     </tbody>
                 </tgroup>

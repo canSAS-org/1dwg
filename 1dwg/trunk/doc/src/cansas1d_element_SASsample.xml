@@ -57,85 +57,61 @@
                     <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                 </row>
                 <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">ID</emphasis>
-                        </para>
-                    </entry>
+                    <entry><para><literal> ID </literal></para></entry>
                     <entry> string </entry>
                     <entry> [1..1] </entry>
                     <entry> Text string that identifies this sample. </entry>
-                    <entry>
-                    </entry>
+                    <entry/>
                 </row>
                 <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>thickness</emphasis></emphasis>
-                        </para>
-                    </entry>
+                    <entry><para><literal> thickness </literal></para></entry>
                     <entry> floating-point number </entry>
                     <entry> [0..1] </entry>
                     <entry> Thickness of this sample. Must specify the unit as an attribute. </entry>
                     <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={unit} </para>
+                        <para><literal>unit={unit}</literal></para>
                     </entry>
                 </row>
                 <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>transmission</emphasis></emphasis>
-                        </para>
-                    </entry>
+                    <entry><para><literal> transmission </literal></para></entry>
                     <entry> floating-point number </entry>
                     <entry> [0..1] </entry>
                     <entry> Transmission (1-attenuation) of this sample. Express this as a fraction,
                         not as a percentage. NOTE: there is no unit attribute. </entry>
-                    <entry>
-                    </entry>
+                    <entry/>
                 </row>
                 <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>temperature</emphasis></emphasis>
-                        </para>
-                    </entry>
+                    <entry><para><literal> temperature </literal></para></entry>
                     <entry> floating-point number </entry>
                     <entry> [0..1] </entry>
                     <entry> Temperature of this sample. Must specify the unit as an attribute. </entry>
                     <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={unit} </para>
+                        <para><literal>unit={unit}</literal></para>
                     </entry>
                 </row>
                 <row>
-                    <entry> '''''position''''' </entry>
+                    <entry> <literal>position</literal> </entry>
                     <entry> container </entry>
                     <entry> [0..1] </entry>
                     <entry> Location in X, Y, and Z of the sample. </entry>
-                    <entry>
-                    </entry>
+                    <entry/>
                 </row>
                 <row>
-                    <entry> '''''orientation''''' </entry>
+                    <entry> <literal>orientation</literal> </entry>
                     <entry> container </entry>
                     <entry> [0..1] </entry>
                     <entry> Orientation (rotation) of the sample. </entry>
-                    <entry>
-                    </entry>
+                    <entry/>
                 </row>
                 <row>
                     <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>details</emphasis></emphasis>
-                        </para>
+                        <para><literal>details</literal></para>
                     </entry>
                     <entry> string </entry>
                     <entry> [0..inf] </entry>
                     <entry> Any additional sample details. </entry>
-                    <entry>
-                    </entry>
+                    <entry/>
+                    
                 </row>
                 <row>
                     <entry>
@@ -148,10 +124,7 @@
                         <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
                         for more details. </entry>
                     <entry>
-                        <para>
-                            <emphasis role="bold"
-                                ><emphasis>xmlns:{foreign-prefix}</emphasis></emphasis>={foreign-namespace}
-                        </para>
+                        <para><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></para>
                     </entry>
                 </row>
             </tbody>
@@ -220,43 +193,25 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">x</emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> x </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> Position of the sample in X. The <emphasis role="bold"
                                 >unit</emphasis> attribute is required. See
                             cansas1d_documentation#Rules for acceptable values. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal>unit={unit}</literal></para></entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">y</emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> y </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> Position of the sample in Y. The <emphasis role="bold"
                                 >unit</emphasis> attribute is required. See
                             cansas1d_documentation#Rules for acceptable values. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal>unit={unit}</literal></para></entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">z</emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> z </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> Position of the sample in Z. The <emphasis role="bold"
@@ -265,10 +220,7 @@
                             dimension is allowed by the standard (provided by use of a standard
                             element in the XML Schema), it does not make sense for small-angle
                             scattering. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal>unit={unit}</literal></para></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -293,52 +245,31 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">roll</emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> roll </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> Rotation about the <emphasis>Z</emphasis> axis (roll). The <emphasis
                                 role="bold">unit</emphasis> attribute is required. See
                             cansas1d_documentation#Rules for acceptable values. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal>unit={unit}</literal></para></entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">pitch</emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> pitch </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> Rotation about the <emphasis>X</emphasis> axis (pitch). The
                                 <emphasis role="bold">unit</emphasis> attribute is required. See
                             cansas1d_documentation#Rules for acceptable values. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal>unit={unit}</literal></para></entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">yaw</emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> yaw </literal></para></entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
                         <entry> Rotation about the <emphasis>Y</emphasis> axis (yaw). The <emphasis
                                 role="bold">unit</emphasis> attribute is required. See
                             cansas1d_documentation#Rules for acceptable values. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal>unit={unit}</literal></para></entry>
                     </row>
                 </tbody>
             </tgroup>

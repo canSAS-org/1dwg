@@ -112,11 +112,11 @@
                 </footnote>
             </para>
             <para> In the future, to retrieve an updated version of this support, go into the
-                XMLutils directory (created above) and type the command
+                XMLutils directory (created above) and type the command:
                 <programlisting>svn update</programlisting> (or just
-                <programlisting>svn up</programlisting>).
+                <programlisting>svn up</programlisting>
                 This will check the repository and
-                update files as needed.
+                update local files as needed.
                 If the installer program was updated, you'll need to run the
                 new installer program. It is not necessary to uninstall first. </para>
             <para> The installer executables contained in the download will do all the installation

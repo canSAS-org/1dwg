@@ -59,130 +59,106 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">name</emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        string
-                    </entry>
-                    <entry>
-                        [1..1]
-                    </entry>
-                    <entry>
-                        Text string that identifies the name of this detector.
-                    </entry>
-                    <entry>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>SDD</emphasis></emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Distance between sample and detector.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>unit</emphasis></emphasis>={unit}
-                        </para>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        '''''offset'''''
-                    </entry>
-                    <entry>
-                        container
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Offset of this detector position in X, Y, (and Z if necessary).
-                    </entry>
-                    <entry>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        '''''orientation'''''
-                    </entry>
-                    <entry>
-                        container
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Orientation (rotation) of this detector in roll, pitch, and yaw.
-                    </entry>
-                    <entry>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        '''''beam_center'''''
-                    </entry>
-                    <entry>
-                        container
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Center of the beam on the detector in X and Y (and Z if necessary).
-                    </entry>
-                    <entry>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        '''''pixel_size'''''
-                    </entry>
-                    <entry>
-                        container
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Size of detector pixels in X and Y (and Z if necessary).
-                    </entry>
-                    <entry>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>slit_length</emphasis></emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Slit length of the instrument for this detector. This is expressed in the same units as Q (reciprocal space units).
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>unit</emphasis></emphasis>={unit}
-                        </para>
-                    </entry>
-                </row>
+                    <row>
+                        <entry><para><literal> name </literal></para></entry>
+                        <entry>
+                            string
+                        </entry>
+                        <entry>
+                            [1..1]
+                        </entry>
+                        <entry>
+                            Text string that identifies the name of this detector.
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry><para><literal> SDD </literal></para></entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Distance between sample and detector.
+                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>offset</literal>
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Offset of this detector position in X, Y, (and Z if necessary).
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>orientation</literal>
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Orientation (rotation) of this detector in roll, pitch, and yaw.
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>beam_center</literal>
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Center of the beam on the detector in X and Y (and Z if necessary).
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>pixel_size</literal>
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Size of detector pixels in X and Y (and Z if necessary).
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry><para><literal> slit_length </literal></para></entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Slit length of the instrument for this detector. 
+                            This is expressed in the same units as Q (reciprocal space units).
+                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
+                    </row>
                 </tbody>
             </tgroup>
         </table>
@@ -256,12 +232,8 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">x</emphasis>
-                        </para>
-                    </entry>
+                    <row>
+                        <entry><para><literal> x </literal></para></entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -271,18 +243,10 @@
                     <entry>
                         Offset of the detector position in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
                     </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
+                    <entry><para><literal> unit={unit} </literal></para></entry>
                 </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">y</emphasis>
-                        </para>
-                    </entry>
+                    <row>
+                        <entry><para><literal> y </literal></para></entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -292,18 +256,10 @@
                     <entry>
                         Offset of the detector position in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
                     </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
+                    <entry><para><literal> unit={unit} </literal></para></entry>
                 </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">z</emphasis>
-                        </para>
-                    </entry>
+                    <row>
+                        <entry><para><literal> z </literal></para></entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -313,11 +269,7 @@
                     <entry>
                         Offset of the detector position in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
                     </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
+                    <entry><para><literal> unit={unit} </literal></para></entry>
                 </row>
                 </tbody>
             </tgroup>
@@ -341,69 +293,45 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">roll</emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Rotation about the <emphasis>Z</emphasis> axis (roll). The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">pitch</emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Rotation about the <emphasis>X</emphasis> axis (pitch). The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">yaw</emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Rotation about the <emphasis>Y</emphasis> axis (yaw). The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
-                </row>
+                    <row>
+                        <entry><para><literal> roll </literal></para></entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Rotation about the <emphasis>Z</emphasis> axis (roll). The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
+                    </row>
+                    <row>
+                        <entry><para><literal> pitch </literal></para></entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Rotation about the <emphasis>X</emphasis> axis (pitch). The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
+                    </row>
+                    <row>
+                        <entry><para><literal> yaw </literal></para></entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Rotation about the <emphasis>Y</emphasis> axis (yaw). The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
+                    </row>
                 </tbody>
             </tgroup>
         </table>
@@ -426,70 +354,46 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">x</emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Position of the beam center on the detector in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">y</emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Position of the beam center on the detector in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
-                </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">z</emphasis>
-                        </para>
-                    </entry>
-                    <entry>
-                        floating-point number
-                    </entry>
-                    <entry>
-                        [0..1]
-                    </entry>
-                    <entry>
-                        Position of the beam center on the detector in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
-                    </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
-                </row>
-            </tbody>
+                    <row>
+                        <entry><para><literal> x </literal></para></entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Position of the beam center on the detector in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
+                    </row>
+                    <row>
+                        <entry><para><literal> y </literal></para></entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Position of the beam center on the detector in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
+                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
+                    </row>
+                    <row>
+                        <entry><para><literal> z </literal></para></entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Position of the beam center on the detector in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
+                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
+                    </row>
+                </tbody>
             </tgroup>
         </table>
     </section>
@@ -511,12 +415,8 @@
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
                         <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                     </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">x</emphasis>
-                        </para>
-                    </entry>
+                    <row>
+                        <entry><para><literal> x </literal></para></entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -526,18 +426,10 @@
                     <entry>
                         Size of a detector pixel in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
                     </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
+                    <entry><para><literal> unit={unit} </literal></para></entry>
                 </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">y</emphasis>
-                        </para>
-                    </entry>
+                    <row>
+                        <entry><para><literal> y </literal></para></entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -547,18 +439,10 @@
                     <entry>
                         Size of a detector pixel in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
                     </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
+                    <entry><para><literal> unit={unit} </literal></para></entry>
                 </row>
-                <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">z</emphasis>
-                        </para>
-                    </entry>
+                    <row>
+                        <entry><para><literal> z </literal></para></entry>
                     <entry>
                         floating-point number
                     </entry>
@@ -568,11 +452,7 @@
                     <entry>
                         Size of a detector pixel in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
                     </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">unit</emphasis>={units}
-                        </para>
-                    </entry>
+                    <entry><para><literal> unit={unit} </literal></para></entry>
                 </row>
             </tbody></tgroup>
         </table>

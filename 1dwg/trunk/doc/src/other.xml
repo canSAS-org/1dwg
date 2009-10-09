@@ -147,7 +147,13 @@
                 </indexterm>
                 stylesheet displays 
                 all the <literal>Idata</literal> blocks in a cansas1d/1.0 file
-                in 3-column ASCII form, with column headers.
+                in 3-column ASCII form.  Be careful using this stylesheet
+                on files with multiple <literal>SASdata</literal> or
+                <literal>SASentry</literal> blocks since this stylesheet
+                assumes there is only one of each of these.  While it
+                is the most common case to have only one of each, some of
+                the examples have multiple data sets.  This stylesheet will
+                concatenate all of the <literal>Idata</literal>.
             </para>
             <indexterm>
                 <primary>XML Stylesheet</primary>
