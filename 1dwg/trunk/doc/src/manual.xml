@@ -58,7 +58,6 @@
     <xi:include href="specification.xml"/>
     <xi:include href="tutorial.xml"/>
     <xi:include href="bindings.xml"/>
-    <xi:include href="casestudies.xml"/>
     <xi:include href="other.xml"/>
 	<!--<xi:include href="appendices.xml"/>-->
     <index/>

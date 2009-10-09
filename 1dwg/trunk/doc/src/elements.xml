@@ -17,6 +17,9 @@
         There are various elements (tag names) in the cansas1d/1.0 standard. 
         Each of these is described below.
     </para>
+    <note>
+        <para>Explain the <literal>attribute={text}</literal> syntax.</para>
+    </note>
     <glosslist>
         <glossentry>
             <glossterm>Name</glossterm>

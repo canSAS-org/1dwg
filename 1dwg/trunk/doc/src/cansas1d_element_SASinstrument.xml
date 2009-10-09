@@ -76,7 +76,7 @@
             </row>
             <row>
                 <entry>
-                    '''SASsource'''
+                    <literal>SASsource</literal>
                 </entry>
                 <entry>
                     container
@@ -88,14 +88,12 @@
                     Text string that identifies the name of this source of radiation.
                 </entry>
                 <entry>
-                    <para>
-                        <emphasis role="bold"><emphasis>name</emphasis></emphasis>={name}
-                    </para>
+                    <para><literal>name={name}</literal></para>
                 </entry>
             </row>
             <row>
                 <entry>
-                    '''SAScollimation'''
+                    <literal>SAScollimation</literal>
                 </entry>
                 <entry>
                     container
@@ -107,14 +105,12 @@
                     Text string that identifies the name of this instrument collimation.
                 </entry>
                 <entry>
-                    <para>
-                        <emphasis role="bold"><emphasis>name</emphasis></emphasis>={name}
-                    </para>
+                    <para><literal>name={name}</literal></para>
                 </entry>
             </row>
             <row>
                 <entry>
-                    '''SASdetector'''
+                    <literal>SASdetector</literal>
                 </entry>
                 <entry>
                     container

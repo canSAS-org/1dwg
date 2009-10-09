@@ -58,11 +58,7 @@
                     <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                 </row>
                 <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">Title</emphasis>
-                        </para>
-                    </entry>
+                    <entry><para><literal> Title </literal></para></entry>
                     <entry>
                         string
                     </entry>
@@ -75,11 +71,7 @@
                     <entry/>
                 </row>
                 <row>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">Run</emphasis>
-                        </para>
-                    </entry>
+                    <entry><para><literal> Run </literal></para></entry>
                     <entry>
                         string
                     </entry>
@@ -88,18 +80,27 @@
                     </entry>
                     <entry>
                         <para>
-                            Run identification for this '''SASentry'''. For many facilities, this is an integer. Use multiple instances of <emphasis role="bold">Run</emphasis> as needed. 
+                            Run identification for this <literal>SASentry</literal>. 
+                            For many facilities, this is an integer. 
+                            Use multiple instances of <literal>Run</literal> as needed. 
                         </para>
                         <para>
-                            Note: How to correlate this with '''SASdata''' and '''SASinstrument''' configurations has not yet been defined.
+                            Note: 
+                            How to correlate this with <literal>SASdata</literal> and 
+                            <literal>SASinstrument</literal> 
+                            configurations has not yet been defined.
                         </para>
                         <para>
-                            <emphasis role="bold">name</emphasis> is an optional string attribute to identify this particular <emphasis role="bold">Run</emphasis>. Could use this to associate (correlate) multiple '''SASdata''' elements with <emphasis role="bold">Run</emphasis> elements. (Give them the same <emphasis>short-Run-identifier</emphasis>.)
+                            <literal>name</literal> is an optional string attribute to identify 
+                            this particular <literal>Run</literal>. 
+                            Could use this to associate (correlate) multiple <literal>SASdata</literal>
+                            elements with <literal>Run</literal> elements. 
+                            (Give them the same <literal>{short-Run-identifier}</literal>.)
                         </para>
                     </entry>
                     <entry>
                         <para>
-                            <emphasis role="bold"><emphasis>name</emphasis></emphasis>={short-Run-identifier}
+                            <literal>name</literal>={short-Run-identifier}
                         </para>
                     </entry>
                 </row>
@@ -115,17 +116,18 @@
                     </entry>
                     <entry>
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
-                        See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> for more details.
+                        See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> 
+                        for more details.
                     </entry>
                     <entry>
                         <para>
-                            <emphasis role="bold"><emphasis>xmlns:{foreign-prefix}</emphasis></emphasis>={foreign-namespace}
+                            <literal>xmlns:{foreign-prefix}={foreign-namespace}</literal>
                         </para>
                     </entry>
                 </row>
                 <row>
                     <entry>
-                        <link xlink:href="#cansas1d_documentation-element-SASdata">SASdata</link>
+                        <link xlink:href="#cansas1d_documentation-element-SASdata"><literal>SASdata</literal></link>
                     </entry>
                     <entry>
                         container
@@ -134,16 +136,13 @@
                         [1..inf]
                     </entry>
                     <entry>
-                        Reduced 1-D SAS data for this '''SASentry'''. 
-                        Use multiple '''SASdata''' elements to represent multiple frames. 
-                        Use this to associate (correlate) multiple '''SASdata''' 
-                        elements with 
-                        <emphasis role="bold">Run</emphasis> elements. (Give them the same name.)
+                        Reduced 1-D SAS data for this <literal>SASentry</literal>. 
+                        Use multiple <literal>SASdata</literal> elements to represent multiple frames. 
+                        Use this to associate (correlate) multiple <literal>SASdata</literal>
+                        elements with <literal>Run</literal> elements. (Give them the same name.)
                     </entry>
                     <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>name</emphasis></emphasis>={short-Run-identifier}
-                        </para>
+                        <para><literal>name={short-Run-identifier}</literal></para>
                     </entry>
                 </row>
                 <row>
@@ -158,17 +157,16 @@
                     </entry>
                     <entry>
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
-                        See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> for more details.
+                        See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> 
+                        for more details.
                     </entry>
                     <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>xmlns:{foreign-prefix}</emphasis></emphasis>={foreign-namespace}
-                        </para>
+                        <para><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></para>
                     </entry>
                 </row>
                 <row>
                     <entry>
-                        <link xlink:href="#cansas1d_documentation-element-SASsample">SASsample</link>
+                        <link xlink:href="#cansas1d_documentation-element-SASsample"><literal>SASsample</literal></link>
                     </entry>
                     <entry>
                         container
@@ -180,14 +178,12 @@
                         Description of the sample.
                     </entry>
                     <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>name</emphasis></emphasis>={short-SASsample-identifier}
-                        </para>
+                        <para><literal>name={short-SASsample-identifier}</literal></para>
                     </entry>
                 </row>
                 <row>
                     <entry>
-                        <link xlink:href="#cansas1d_documentation-element-SASinstrument">SASinstrument</link>
+                        <link xlink:href="#cansas1d_documentation-element-SASinstrument"><literal>SASinstrument</literal></link>
                     </entry>
                     <entry>
                         container
@@ -202,7 +198,7 @@
                 </row>
                 <row>
                     <entry>
-                        <link xlink:href="#cansas1d_documentation-element-SASprocess">SASprocess</link>
+                        <link xlink:href="#cansas1d_documentation-element-SASprocess"><literal>SASprocess</literal></link>
                     </entry>
                     <entry>
                         container
@@ -214,14 +210,12 @@
                         Description of a processing or analysis step.
                     </entry>
                     <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>name</emphasis></emphasis>={short-SASprocess-identifier}
-                        </para>
+                        <para><literal>name={short-SASprocess-identifier}</literal></para>
                     </entry>
                 </row>
                 <row>
                     <entry>
-                        <link xlink:href="#cansas1d_documentation-element-SASnote">SASnote</link>
+                        <link xlink:href="#cansas1d_documentation-element-SASnote"><literal>SASnote</literal></link>
                     </entry>
                     <entry>
                         container
@@ -233,9 +227,7 @@
                         Free form description of anything not covered by other elements.
                     </entry>
                     <entry>
-                        <para>
-                            <emphasis role="bold"><emphasis>name</emphasis></emphasis>={short-SASnote-identifier}
-                        </para>
+                        <para><literal>name={short-SASnote-identifier}</literal></para>
                     </entry>
                 </row>
             </tbody>

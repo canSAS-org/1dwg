@@ -20,4 +20,6 @@
         scattering data in XML files.
     </para>
     <note><para>More needs to be written here.</para></note>
+
+    <xi:include href="casestudies.xml"/>
 </chapter>

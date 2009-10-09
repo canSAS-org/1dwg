@@ -74,15 +74,11 @@
                         <entry>
                             Amount/length of collimation inserted (on a SANS instrument)
                         </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>unit</emphasis></emphasis>={unit}
-                            </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
                         <entry>
-                            '''''aperture'''''
+                            <literal>aperture</literal>
                         </entry>
                         <entry>
                             container
@@ -94,11 +90,7 @@
                             Description of a slit or aperture. 
                             <emphasis role="bold"><emphasis>name</emphasis></emphasis>: Optional name attribute for this aperture.  <emphasis role="bold"><emphasis>type</emphasis></emphasis>: Optional text attribute to describe the type aperture (pinhole, 4-blade slit, Soller slit, ...).
                         </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>name</emphasis></emphasis>={name}  <emphasis role="bold"><emphasis>type</emphasis></emphasis>={type}
-                            </para>
-                        </entry>
+                        <entry><para><literal> name={type} </literal></para></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -124,7 +116,7 @@
                     </row>
                     <row>
                         <entry>
-                            '''''size'''''
+                            <literal>size</literal>
                         </entry>
                         <entry>
                             container
@@ -135,18 +127,10 @@
                         <entry>
                             Opening dimensions of this aperture.
                         </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>name</emphasis></emphasis>={name}
-                            </para>
-                        </entry>
+                        <entry><para><literal> name={name} </literal></para></entry>
                     </row>
                     <row>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>distance</emphasis></emphasis>
-                            </para>
-                        </entry>
+                        <entry><para><literal> distance </literal></para></entry>
                         <entry>
                             floating-point number
                         </entry>
@@ -156,11 +140,7 @@
                         <entry>
                             Distance from this collimation element to the sample.
                         </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold"><emphasis>unit</emphasis></emphasis>={unit}
-                            </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                 </tbody>
             </tgroup>
@@ -223,9 +203,7 @@
                             <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
                         </row>
                         <row>
-                            <entry>
-                                <emphasis role="bold">x</emphasis>
-                            </entry>
+                            <entry><para><literal> x </literal></para></entry>
                             <entry>
                                 floating-point number
                             </entry>
@@ -235,14 +213,10 @@
                             <entry>
                                 Dimension of the collimation in X. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
                             </entry>
-                            <entry>
-                                <emphasis role="bold">unit</emphasis>={units}
-                            </entry>
+                            <entry><para><literal> unit={unit} </literal></para></entry>
                         </row>
                         <row>
-                            <entry>
-                                <emphasis role="bold">y</emphasis>
-                            </entry>
+                            <entry><para><literal> y </literal></para></entry>
                             <entry>
                                 floating-point number
                             </entry>
@@ -252,14 +226,10 @@
                             <entry>
                                 Dimension of the collimation in Y. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values.
                             </entry>
-                            <entry>
-                                <emphasis role="bold">unit</emphasis>={units}
-                            </entry>
+                            <entry><para><literal> unit={unit} </literal></para></entry>
                         </row>
                         <row>
-                            <entry>
-                                <emphasis role="bold">z</emphasis>
-                            </entry>
+                            <entry><para><literal> z </literal></para></entry>
                             <entry>
                                 floating-point number
                             </entry>
@@ -269,9 +239,7 @@
                             <entry>
                                 Dimension of the collimation in Z. The <emphasis role="bold">unit</emphasis> attribute is required. See cansas1d_documentation#Rules for acceptable values. Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
                             </entry>
-                            <entry>
-                                <emphasis role="bold">unit</emphasis>={units}
-                            </entry>
+                            <entry><para><literal> unit={unit} </literal></para></entry>
                         </row>
                     </tbody>
                 </tgroup>

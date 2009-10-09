@@ -124,18 +124,15 @@
                                     <mathphrase><alt>$2\theta$</alt></mathphrase>
                                 </inlineequation>
                                 is the angle through which the
-                                detected radiation has been scattered. The <emphasis role="bold"
-                                    >unit</emphasis> attribute is required. See <link
+                                detected radiation has been scattered. 
+                                The <literal>unit</literal> attribute is required. See <link
                                     xlink:href="#cansas1d_documentation-rules">rules for
                                     units</link>
                                 for acceptable values. Either
-                                    <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are
+                                <literal>1/A</literal> or <literal>1/nm</literal> are
                                 typical. </para>
                         </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
                         <entry>
@@ -146,24 +143,21 @@
                         <entry> floating-point number </entry>
                         <entry> [1..1] </entry>
                         <entry>
-                            <para> Intensity of the detected radiation. The <emphasis role="bold"
-                                    >unit</emphasis> attribute is required. See
+                            <para> Intensity of the detected radiation. The <literal>unit</literal> 
+                                attribute is required. See
                                 cansas1d_documentation#Rules for acceptable values. One possibility
-                                might be<emphasis>1/cm</emphasis> for absolute units when the
+                                might be <literal>1/cm</literal> for absolute units when the
                                 intensity describes a <emphasis>differential cross-section per unit
                                     volume per unit solid angle</emphasis>. </para>
                             <para> Be aware that there are different types of intensity used in
                                 small-angle scattering that may be reported (see the section titled
                                     <link xlink:href="#the_intensity_problem-rules"><emphasis
                                         role="italic">The Intensity Problem</emphasis></link>). One
-                                should be very careful to inspect the <emphasis role="bold"
-                                    >unit</emphasis> attribute to determine how to handle subsequent
+                                should be very careful to inspect the 
+                                <literal>unit</literal> attribute to determine how to handle subsequent
                                 data processing, especially in the area of units conversion. </para>
                         </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
                         <entry>
@@ -173,16 +167,13 @@
                         </entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
-                        <entry> Estimated standard deviation of <emphasis role="bold">I</emphasis>.
-                            The <emphasis role="bold">unit</emphasis> attribute is required. See
+                        <entry> Estimated standard deviation of <literal>I</literal>.
+                            The <literal>unit</literal> attribute is required. See
                                 <link xlink:href="#cansas1d_documentation-rules">rules for
                                 units</link>
                             <!--cansas1d_documentation#Rules --> for acceptable values. One
-                            possibility might be <emphasis>1/cm</emphasis>. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                            possibility might be <literal>1/cm</literal>. </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
                         <entry>
@@ -192,16 +183,14 @@
                         </entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
-                        <entry> Estimated standard deviation of <emphasis role="bold">Q</emphasis>.
-                            (optional: see note below on usage)The <emphasis role="bold"
-                                >unit</emphasis> attribute is required. See <link
+                        <entry> Estimated standard deviation of <literal>Q</literal>.
+                            (optional: see note below on usage)
+                            The <literal>unit</literal> 
+                                attribute is required. See <link
                                 xlink:href="#cansas1d_documentation-rules">rules for units</link>
                             <!--cansas1d_documentation#Rules --> for acceptable values. Either
-                                <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are typical. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                            <literal>1/A</literal> or <literal>1/nm</literal> are typical. </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
                         <entry>
@@ -213,22 +202,19 @@
                         <entry> [0..1] </entry>
                         <entry>
                             <para>
-                                <emphasis role="bold">Q</emphasis> resolution along the axis of
-                                scanning (the high-resolution <emphasis>slit width</emphasis>
+                                <literal>Q</literal> resolution along the axis of
+                                scanning (the high-resolution <literal>slit width</literal>
                                 direction). Useful for defining resolution data from slit-smearing
                                 instruments such as Bonse-Hart geometry. (optional: see note below
                                 on usage).</para>
-                            <para> The <emphasis role="bold">unit</emphasis> attribute is required.
+                            <para> The <literal>unit</literal> attribute is required.
                                 See <link xlink:href="#cansas1d_documentation-rules">rules for
                                     units</link>
                                 <!--cansas1d_documentation#Rules --> for acceptable values. Either
-                                    <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are
+                                <literal>1/A</literal> or <literal>1/nm</literal> are
                                 typical. </para>
                         </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
                         <entry>
@@ -240,22 +226,19 @@
                         <entry> [0..1] </entry>
                         <entry>
                             <para>
-                                <emphasis role="bold">Q</emphasis> resolution perpendicular to the
+                                <literal>Q</literal> resolution perpendicular to the
                                 axis of scanning (the low-resolution <emphasis>slit
                                     length</emphasis> direction). Useful for defining resolution
                                 data from slit-smearing instruments such as Bonse-Hart geometry.
-                                (optional: see note below on usage)The <emphasis role="bold"
-                                    >unit</emphasis> attribute is required. See <link
+                                (optional: see note below on usage)
+                                The <literal>unit</literal> attribute is required. See <link
                                     xlink:href="#cansas1d_documentation-rules">rules for
                                     units</link>
                                 <!--cansas1d_documentation#Rules --> for acceptable values. Either
-                                    <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are
+                                <literal>1/A</literal> or <literal>1/nm</literal> are
                                 typical. </para>
                         </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
                         <entry>
@@ -265,17 +248,14 @@
                         </entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
-                        <entry> Mean value of <emphasis role="bold">Q</emphasis> for this datum.
+                        <entry> Mean value of <literal>Q</literal> for this datum.
                             Useful when describing data that has been binned from higher-resolution
-                            or from area detectors.The <emphasis role="bold">unit</emphasis>
+                            or from area detectors.The <literal>unit</literal>
                             attribute is required. See <link
                                 xlink:href="#cansas1d_documentation-rules">rules for units</link>
                             <!--cansas1d_documentation#Rules --> for acceptable values. Either
-                                <emphasis>1/A</emphasis> or <emphasis>1/nm</emphasis> are typical. </entry>
-                        <entry>
-                            <para>
-                                <emphasis role="bold">unit</emphasis>={units} </para>
-                        </entry>
+                            <literal>1/A</literal> or <literal>1/nm</literal> are typical. </entry>
+                        <entry><para><literal> unit={unit} </literal></para></entry>
                     </row>
                     <row>
                         <entry>
@@ -308,12 +288,9 @@
                             for more details. </entry>
                         <entry>
                             <para>
-                                <emphasis role="bold"
-                                    ><emphasis
-                                        >xmlns:{foreign-prefix}</emphasis></emphasis>
-                                =<link
+                                <link
                                     xlink:href="#cansas1d_documentation-element-any"
-                                    ><literal>{foreign-namespace}</literal></link>
+                                    ><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></link>
                             </para>
                         </entry>
                     </row>
@@ -325,16 +302,14 @@
         <title>Notes</title>
         <orderedlist numeration="arabic">
             <listitem>
-                <para> When an optional element (<emphasis role="bold"
-                        ><emphasis>Idev</emphasis></emphasis>, <emphasis role="bold"
-                            ><emphasis>Qdev</emphasis></emphasis>, ...) is used, it must be given in
-                    every <emphasis role="bold">Idata</emphasis> within the enclosing <emphasis
-                        role="bold">SASdata</emphasis>. </para>
+                <para> When an optional element (<literal>Idev</literal>, <literal>Qdev</literal>, ...) 
+                    is used, it must be given in
+                    every <literal>Idata</literal> within the enclosing <literal>SASdata</literal>. </para>
             </listitem>
             <listitem>
-                <para> If either <emphasis role="bold"><emphasis>dQw</emphasis></emphasis> or
-                        <emphasis role="bold"><emphasis>dQl</emphasis></emphasis> are used, then
-                        <emphasis role="bold"><emphasis>Qdev</emphasis></emphasis> is not permitted
+                <para> If either <literal>dQw</literal> or
+                    <literal>dQl</literal> are used, then
+                    <literal>Qdev</literal> is not permitted
                     to be used. </para>
             </listitem>
         </orderedlist>
