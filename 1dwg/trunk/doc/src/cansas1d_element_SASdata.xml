@@ -335,24 +335,19 @@
                 </tbody>
             </tgroup>
         </table>
-    </section>
-    <section>
-        <title>Notes</title>
-        <orderedlist numeration="arabic">
-            <listitem>
-                <para> When an optional element 
-                    (<literal>Idev</literal>, <literal>Qdev</literal>, ...) 
-                    is used, it must be given in
-                    every <literal>Idata</literal> within the 
-                    enclosing <literal>SASdata</literal>. </para>
-            </listitem>
-            <listitem>
-                <para> If either <literal>dQw</literal> or
-                    <literal>dQl</literal> are used, then
-                    <literal>Qdev</literal> is not permitted
-                    to be used. </para>
-            </listitem>
-        </orderedlist>
+        <note>
+            <para> When an optional element 
+                (<literal>Idev</literal>, <literal>Qdev</literal>, ...) 
+                is used, it must be given in
+                every <literal>Idata</literal> within the 
+                enclosing <literal>SASdata</literal>. </para>
+        </note>
+        <note>
+            <para> If either <literal>dQw</literal> or
+                <literal>dQl</literal> are used, then
+                <literal>Qdev</literal> is not permitted
+                to be used. </para>
+        </note>
         <note>
             <para>
                 <emphasis role="bold">The Shadowfactor attribute definition needs revision.
