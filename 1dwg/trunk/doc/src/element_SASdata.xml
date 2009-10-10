@@ -302,14 +302,15 @@
                         <entry> [0..1] </entry>
                         <entry>
                             <para> Describes the adjustment due to the beam stop penumbra. </para>
+                            <!--<caution>
+                                <para>This definition needs revision. NIST?</para>
+                            </caution>-->
+                        </entry>
+                        <entry>
                             <tip>
                                 <para>There is no unit attribute.</para>
                             </tip>
-                            <caution>
-                                <para>This definition needs revision. NIST?</para>
-                            </caution>
                         </entry>
-                        <entry/>
                     </row>
                     <row>
                         <entry>
