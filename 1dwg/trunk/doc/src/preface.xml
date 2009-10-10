@@ -21,40 +21,31 @@
         </mediaobject>
         canSAS 1-D Data Format, v1.0
     </para>
-    <!--<note><para>
-        Provide a note here describing canSAS and the initiative to establish
-        a standard file format.  Note that the cansas1d/1.0 XML data files must adhere to the 
-        XML rules which includes being well-formed
-        <indexterm><primary>XML</primary><secondary>well-formed</secondary></indexterm>
-        (including the use of closing tags).<footnote>
-            <para>
-                For example, see 
-                <link xlink:href="http://www.w3schools.com/xmL/xml_syntax.asp"
-                    ><literal>http://www.w3schools.com/xmL/xml_syntax.asp</literal></link>
-                for an explanation of the XML syntax.
-            </para>
-        </footnote>
-        Files that can be validated 
-        <indexterm><primary>cansas1d/1.0 standard</primary></indexterm>
-        <indexterm><primary>validation</primary></indexterm>
-        against 
-        <link
-            xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
-            ><literal>cansas1d.xsd</literal> </link>
-        are deemed to be valid cansas1d/1.0 data files.
-    </para></note>-->
     <para>
         The name <emphasis role="italic">canSAS</emphasis>
         <indexterm><primary>canSAS</primary></indexterm>
         stands for 
         <emphasis role="italic">Collective Action for Nomadic Small-Angle Scatterers</emphasis>.
+        canSAS provides a forum for users, software developers and facility staff to meet 
+        and exchange ideas on all aspects of programming for X-ray and neutron small-angle 
+        scattering experiments. This includes experiment preparation and simulation through 
+        control to data-storage, reduction and analysis. The aim of the forum is to provide 
+        the best resources to the many nomadic experimenters who combine results measured at 
+        different facilities. 
     </para>
     <para>
-        This work is the initiative of the canSAS 1D Data Formats Working Group, 
+        The aims of the canSAS meetings are to promote and simplify sharing SAS data 
+        analysis methods. Non-specialists will benefit from easily applicable methods 
+        for exchanging and merging of data from different synchrotron, laboratory 
+        and neutron facilities.
+    </para>
+    <para>
+        The canonical name for this format is <literal>cansas1d/1.0</literal>.
+        This  work is the initiative of the canSAS 1D Data Formats Working Group, 
         established at the canSAS-V workshop, NIST, Gaithersburg, Maryland, 
         USA from October 29th to 31st 2007.  It derives many of its foundations
         from previous works such as the SASXML format, a joint collaboration
-        between ISIS and ILL.
+        between ISIS and ILL.  
     </para>
     <para>
         The home page of the 
@@ -63,7 +54,9 @@
             >canSAS 1D Data Formats Working Group</link
         ><footnote><para><link 
             xlink:href="http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group"
-            ><literal>http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group</literal></link
+            ><literal
+                >http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group</literal
+            ></link
             ></para></footnote>
         describes the members, timelines, and current status.
         There is a 
@@ -71,7 +64,9 @@
             xlink:href="http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group"
             >discussion</link><footnote><para><link 
             xlink:href="http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group"
-            ><literal>http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group</literal></link></para></footnote>   
+            ><literal
+                >http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group</literal
+                ></link></para></footnote>   
         page for some matters that preceded this revision.
     </para>
     <section xml:id="cansas1d_documentation-Disclaimer">
