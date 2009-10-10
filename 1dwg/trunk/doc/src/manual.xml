@@ -31,7 +31,7 @@
             <email>jemian@anl.gov</email>
         </author>
         <!--<edition>$Id$</edition>-->
-        <edition>draft</edition>
+        <!--<edition>draft</edition>-->
         <pubdate>2009</pubdate>
         <legalnotice>
             <para>
@@ -54,11 +54,14 @@
 	-->
 
 	<xi:include href="preface.xml"/>
-    <xi:include href="wiki.xml"/>
+    <xi:include href="overview.xml"/>
     <xi:include href="specification.xml"/>
     <xi:include href="tutorial.xml"/>
     <xi:include href="bindings.xml"/>
-    <xi:include href="other.xml"/>
-	<!--<xi:include href="appendices.xml"/>-->
+    <!-- +++++ appendices +++++ -->
+    <xi:include href="intensity-problem.xml"/>
+    <xi:include href="examples.xml"/>
+    <xi:include href="glossary.xml"/>
+    <xi:include href="xml-help.xml"/>
     <index/>
 </book>

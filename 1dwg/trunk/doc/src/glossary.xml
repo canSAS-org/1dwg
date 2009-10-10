@@ -10,24 +10,21 @@
     ########### SVN repository information ###################
 -->
 <!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_cansas1d_definition_of_terms-->
-<section 
+<appendix 
     xml:id="cansas1d_documentation-element-cansas1d_definition_of_terms" 
     xmlns="http://docbook.org/ns/docbook"
     version="5.0" 
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Glossary</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <note>
-        <para> This Glossary 
+        <para>This Glossary 
             might not be provided in future versions of this manual. </para></note>
     <para>
         This section provides a glossary 
         <indexterm><primary>glossary</primary></indexterm>
         defining the details about each specific field (XPath string, 
-        XML elements and attributes) in the cansas1d/1.0 standard.<indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
+        XML elements and attributes) in the cansas1d/1.0 standard.
+        <indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
     </para>
     <itemizedlist mark="opencircle"><listitem>
         <para>
@@ -104,7 +101,8 @@
         </listitem>
     </itemizedlist>
     <glossary>
-        <title>Glossary</title>
+        <title>Listed by full XPath reference</title>
+        <subtitle>assumes namespace declaration: <literal>xmlns:cs="cansas1d/1.0"</literal></subtitle>
         <glosslist>
             <glossentry>
                 <glossterm><code>/cs:SASroot</code></glossterm>
@@ -1068,4 +1066,4 @@
             </glossentry>
         </glosslist>
     </glossary>
-</section>
+</appendix>

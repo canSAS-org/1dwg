@@ -17,8 +17,8 @@
     <para>Bindings (import/export drivers) and other software support 
         have been created and contributed.  These are listed here by the 
         language or software environment.</para>
-    <xi:include href="cansas1d_binding_Fortran.xml"/>
-    <xi:include href="cansas1d_binding_IgorPro.xml"/>
-    <xi:include href="cansas1d_binding_Java.xml"/>
-    <xi:include href="cansas1d_binding_Python.xml"/>
+    <xi:include href="binding_Fortran.xml"/>
+    <xi:include href="binding_IgorPro.xml"/>
+    <xi:include href="binding_Java.xml"/>
+    <xi:include href="binding_Python.xml"/>
 </chapter>

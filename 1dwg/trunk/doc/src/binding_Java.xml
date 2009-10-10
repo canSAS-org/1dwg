@@ -13,10 +13,6 @@
 <section xml:id="cansas1d_documentation-binding-Java" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Java JAXB binding</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <para>
         Documentation for the JAXB binding
         <indexterm significance="preferred">
@@ -25,7 +21,11 @@
         </indexterm>
         is spotty at this time.
         You can check it out with subversion:
-        <programlisting>svn checkout http://svn.smallangles.net/svn/canSAS/1dwg/trunk cansas-1d-standard</programlisting>
+        <example>
+            <title>Check out main trunk using subversion.</title>
+            <programlisting
+                >svn checkout http://svn.smallangles.net/svn/canSAS/1dwg/trunk cansas1d</programlisting>
+        </example>
         (where cansas-1d-standard is a local directory name).
     </para>
     <section>
@@ -67,8 +67,21 @@
         <title>JAXB_cansas1d_reader.java: example usage in JAVA</title>
         <para>
             Here is a Java class that shows how to use the JAXB binding.
+            <indexterm>
+                <primary>Java file</primary>
+                <secondary>JAXB_cansas1d_reader.java</secondary>
+            </indexterm>
             Use this with any of the test data supplied with the cansas-1d-standard directory (above).
-            By default, it shows what is in the <emphasis>1998spheres.xml</emphasis> example file: two samples.
+            By default, it shows the two samples in the <literal>1998spheres.xml</literal> example 
+            file.<footnote><para><link 
+                xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/1998spheres.xml"
+                ><literal
+                    >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/1998spheres.xml</literal
+                ></link></para></footnote>
+            <indexterm>
+                <primary>XML file</primary>
+                <secondary>1998spheres.xml</secondary>
+            </indexterm>
             (You'll have to get the directory paths right until this documentation improves.)
         </para>
         <programlisting language="java" linenumbering="numbered"><textobject><textdata
@@ -78,8 +91,10 @@
         <title>example: how to retrieve I(Q)</title>
         <para>
             Look for the line that has 
-            <literal>Qsas[i] = sdt.getIdata().get(i).getQ().getValue();</literal> 
-            to see the operations to unwind the data into usable double[] vectors. 
+            <informalexample>
+                <programlisting>Qsas[i] = sdt.getIdata().get(i).getQ().getValue();</programlisting>
+            </informalexample>
+            to see the operations that unwind the data into usable double[] vectors. 
             Pretty straightforward.
         </para>
         <itemizedlist>
@@ -91,14 +106,26 @@
         </itemizedlist>
         <section>
             <title>GetSASdata.java</title>
+            <indexterm>
+                <primary>Java file</primary>
+                <secondary>GetSASdata.java</secondary>
+            </indexterm>
             <programlisting language="java" linenumbering="numbered"><textobject><textdata
                 fileref="GetSASdata.java"/></textobject></programlisting>
             </section>
         <section>
             <title>java-test.xml</title>
-            <para>
-                Ok, better to use SVN/TRAC for these files. This example will be improved but it proves the point.
-            </para>
+            <indexterm>
+                <primary>XML file</primary>
+                <secondary>java-test.xml</secondary>
+            </indexterm>
+            <note>
+                <para>
+                    Ok, better to use SVN/TRAC for these files. 
+                    This example could be improved but it proves the point.
+                    This file is too long for the manual.
+                </para>
+            </note>
             <programlisting language="xml" linenumbering="numbered"><textobject><textdata
                 fileref="java-test.xml"/></textobject></programlisting>
         </section>

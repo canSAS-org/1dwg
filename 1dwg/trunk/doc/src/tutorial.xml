@@ -19,7 +19,9 @@
         the canSAS standard format for storing small-angle
         scattering data in XML files.
     </para>
-    <note><para>More needs to be written here.</para></note>
+    <para>At present, the tutorial section consists of two case studies,
+        which can serve as examples.  The opportunity is ripe for a
+        better tutorial.</para>
 
     <xi:include href="casestudies.xml"/>
 </chapter>

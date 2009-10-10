@@ -65,10 +65,9 @@
         element.  Suppose one had analysis data, then <literal>{any}</literal> would be replaced 
         with <literal>analysis</literal> and the element might look like this:
         <informalexample>
-            <programlisting>
-                &lt;analysis>
-                ... analysis content goes here ...
-                &lt;/analysis>
+            <programlisting>&lt;analysis>
+    ... analysis content goes here ...
+&lt;/analysis>
             </programlisting>
         </informalexample>
     </para>

@@ -9,7 +9,7 @@
 # $Id$
 ########### SVN repository information ###################
 -->
-<section xml:id="wiki-XML_Help" xmlns="http://docbook.org/ns/docbook" version="5.0"
+<appendix xml:id="wiki-XML_Help" xmlns="http://docbook.org/ns/docbook" version="5.0"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>XML Help</title>
     <para>Listed below are various references useful in learning XML and related topics.</para>
@@ -113,4 +113,4 @@
                 </itemizedlist></para>
         </listitem>
     </itemizedlist>
-</section>
+</appendix>

@@ -13,7 +13,6 @@
 <section xml:id="cansas1d_documentation-element-SASdata" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASdata element</title>
-    <bridgehead> $Revision$ $Date$ </bridgehead>
     <itemizedlist mark="opencircle">
         <indexterm significance="preferred">
             <primary>element</primary>

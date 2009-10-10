@@ -13,10 +13,6 @@
 <section xml:id="cansas1d_documentation-element-SAScollimation" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SAScollimation element</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <itemizedlist mark="opencircle">
         <listitem>
             <indexterm significance="preferred">
@@ -170,8 +166,7 @@
     <section>
         <title>size</title>
         <para>
-            <table>
-                <title/>
+            <informaltable>
                 <tgroup cols='2'>
                     <tbody>
                         <row>
@@ -206,7 +201,7 @@
                         </row>
                     </tbody>
                 </tgroup>
-            </table>
+            </informaltable>
             <table orient="port" role="small">
                 <title/>
                 <tgroup cols="5">

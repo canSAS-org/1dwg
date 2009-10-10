@@ -14,10 +14,6 @@
     xmlns="http://docbook.org/ns/docbook" version="5.0"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Fortran binding</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <para>
         The development of the FORTRAN language, 
         <indexterm significance="preferred">

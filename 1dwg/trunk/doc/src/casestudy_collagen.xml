@@ -13,7 +13,6 @@
 <section xml:id="cansas1d_documentation-case_study-collagen" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Case Study: Dry Chick Collagen</title>
-    <bridgehead> $Revision$ $Date$ </bridgehead>
     <section>
         <title>Overview</title>
         <indexterm significance="preferred">
@@ -27,8 +26,8 @@
         <para> The sample was <emphasis role="bold">dry chick collagen.</emphasis> (Thanks to
             Malcolm Capel, NSLS beam line X12C for the sample.) </para>
         <para>
-            <table>
-                <title>Figures for dry chick collagen case study</title>
+            <informaltable>
+                <!--<title>Figures for dry chick collagen case study</title>-->
                 <tgroup cols="2">
                     <tbody>
                         <row>
@@ -40,7 +39,7 @@
                                             width="150pt" scalefit="1"/>
                                     </imageobject>
                                     <caption>
-                                        <para>case study: Collagen, SAXS data in Excel table</para>
+                                        <para>collagen SAXS in Excel table</para>
                                     </caption>
                                 </mediaobject>
                             </entry>
@@ -52,14 +51,14 @@
                                             width="150pt" scalefit="1"/>
                                     </imageobject>
                                     <caption>
-                                        <para>case study: Collagen, SAXS data in Excel chart</para>
+                                        <para>collagen SAXS in Excel chart (log-log)</para>
                                     </caption>
                                 </mediaobject>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
-            </table>
+            </informaltable>
         </para>
         <para> The raw data 
             was collected on a linear position-sensitive detector and reduced to

@@ -13,10 +13,6 @@
 <section xml:id="cansas1d_documentation-binding-Python" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Python binding</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <para>
         Specific <link xlink:href="http://danse.us/trac/sans"><citetitle>support</citetitle></link> 
         for the cansas1d/1.0 data standard in Python 
@@ -31,17 +27,24 @@
     </para>
     <para>
         Here are some terse instructions to get you started:
-        <programlisting>svn co http://danse.us/trac/sans/browser/trunk/DataLoader DataLoader
+        <example>
+            <title></title>
+            <programlisting
+                >svn co http://danse.us/trac/sans/browser/trunk/DataLoader DataLoader
 cd DataLoader
 python setup.py install</programlisting>
-        The <link xlink:href="http://danse.us/trac/sans/browser/trunk/DataLoader/release_notes.txt"><citetitle>release notes</citetitle></link> have a list of the dependencies.
+        </example>
+        The <link xlink:href="http://danse.us/trac/sans/browser/trunk/DataLoader/release_notes.txt"
+            ><citetitle>release notes</citetitle></link> have a list of the dependencies.
     </para>
-    <section><title>Comments</title>
+    <section>
+        <title>Comments</title>
         <para>
             Other constructive suggestions (that predate the NIST/NCNR support) have been gathered on this page.
         </para>    
     </section>
-    <section><title>gnosis.xml.objectify</title>
+    <section>
+        <title>gnosis.xml.objectify</title>
         <para>
             The <link xlink:href="http://freshmeat.net/projects/gnosisxml/">GnosisUtils</link> 
             <footnote><para>http://freshmeat.net/projects/gnosisxml/</para></footnote>
@@ -65,19 +68,29 @@ python setup.py install</programlisting>
                 Your system may have gnosis already installed. 
                 You may also need sysAdmin privileges. 
                 You may need ...
-                <programlisting>cd /tmp
+                <example>
+                    <title>Gnosis installation instructions</title>
+                <programlisting linenumbering="numbered"
+                    >cd /tmp
 wget http://freshmeat.net/redir/gnosisxml/22028/url_tgz/Gnosis_Utils-1.2.2.tar.gz
 tar xzf Gnosis_Utils-1.2.2.tar.gz 
 cd Gnosis_Utils-1.2.2/
 python setup.py install_all</programlisting>
+                </example>
             </para>
         </section>
         <section><title>quick test in Python</title>
             <para>
                 Here is the Python code (without all that output) 
-                (called <emphasis>python-test.py</emphasis>):
-                <programlisting>
-import gnosis.xml.objectify
+                (called <literal>python-test.py</literal>):
+                <indexterm>
+                    <primary>Python file</primary>
+                    <secondary>python-test.py</secondary>
+                </indexterm>
+                <example>
+                    <title>python-test.py</title>
+                <programlisting linenumbering="numbered"
+                    >import gnosis.xml.objectify
 
 sasxml = gnosis.xml.objectify.XML_Objectify('bimodal-test1.xml').make_instance()  
 print sasxml.SASentry.Title.PCDATA
@@ -85,23 +98,23 @@ print sasxml.SASentry.Run.PCDATA
 print sasxml.SASentry.SASinstrument.name.PCDATA
 print sasxml.SASentry.SASdata.Idata[0].Q.unit,  sasxml.SASentry.SASdata.Idata[0].I.unit
 print sasxml.SASentry.SASdata.Idata[0].Q.PCDATA,  sasxml.SASentry.SASdata.Idata[0].I.PCDATA,  sasxml.SASentry.SASdata.Idata[0].Idev.PCDATA</programlisting>
-            </para>            
-        </section>
-        <section>
-            <title>execution of that Python code</title>
-            <para>
-                <programlisting>[Pete@regitte,2441,cansas1dwg-regitte]$ ./python-test.py 
+                </example>
+            </para>
+                <example>
+                    <title>output from <literal>python-test.py</literal></title>
+                    <programlisting linenumbering="numbered"
+                        >[Pete@regitte,2441,cansas1dwg-regitte]$ ./python-test.py 
 SAS bimodal test1
 1992
 simulated SAS calculation
 1/A 1/cm
 0.0040157139 3497.473 90.72816
-                </programlisting>
-            </para>
-        </section>
-        <section>
+                    </programlisting>
+                </example>
+        <example>
             <title>full session output</title>
-            <programlisting>[Pete@regitte,2429,/tmp]$ cd /tmp
+            <programlisting linenumbering="numbered"
+                >[Pete@regitte,2429,/tmp]$ cd /tmp
 /tmp
 [Pete@regitte,2430,/tmp]$ wget http://freshmeat.net/redir/gnosisxml/22028/url_tgz/Gnosis_Utils-1.2.2.tar.gz
 --11:43:16--  http://freshmeat.net/redir/gnosisxml/22028/url_tgz/Gnosis_Utils-1.2.2.tar.gz
@@ -144,10 +157,13 @@ simulated SAS calculation
 1/cm
 >>> print sasxml.SASentry.SASdata.Idata[0].Q.PCDATA,  sasxml.SASentry.SASdata.Idata[0].I.PCDATA,  sasxml.SASentry.SASdata.Idata[0].Idev.PCDATA
 0.0040157139 3497.473 90.72816</programlisting>
+        </example>
         </section>
-        <section><title>Conclusion: OK</title>
+        <section>
+            <title>Conclusion: OK</title>
             <para>
-                This has the promise of being a useful approach to reading this format in Python.Now, how to write back out... ?
+                This has the promise of being a useful approach to reading this format in Python.
+                Now, how to write back out... ?
             </para>
         </section>
     </section>
@@ -158,9 +174,10 @@ simulated SAS calculation
             can build a binding (map the structure of the XML file directly into a 
             Python data structure) for Python from an XML Schema.
             However, the cansas1d/1.0 XML schema (cansas1d.xsd) does not seem to 
-            fit the model.It seems, for now, that <emphasis>generateDS-1.12a</emphasis> 
-            fails on a certain <emphasis>annotate</emphasis> line.
-            <programlisting>[Pete@regitte,2402,cansas1dwg-regitte]$ python ~/generateDS-1.12a/generateDS.py -p CS1D_ -o cansas1d.py -s cansas1dsubs.py cansas1d.xsd
+            fit the model.It seems, for now, that <literal>generateDS-1.12a</literal> 
+            fails on a certain <literal>annotate</literal> line.
+            <programlisting linenumbering="numbered"
+                >[Pete@regitte,2402,cansas1dwg-regitte]$ python ~/generateDS-1.12a/generateDS.py -p CS1D_ -o cansas1d.py -s cansas1dsubs.py cansas1d.xsd
 Traceback (most recent call last):
   File "/home/Pete/generateDS-1.12a/generateDS.py", line 3997, in &lt;module>
     main()
