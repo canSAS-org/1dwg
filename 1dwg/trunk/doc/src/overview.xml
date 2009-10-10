@@ -442,7 +442,7 @@
             </listitem>
             <listitem>
                 <para> Unicode characters MUST NOT be used</para>
-                <note><para>Perhaps this could be relaxed in v1.1?</para></note>
+                <!--<note><para>Perhaps this could be relaxed in v1.1?</para></note>-->
             </listitem>
             <listitem>
                 <para> Binary data is not supported</para>
@@ -813,9 +813,9 @@
         </section>
         <section xml:id="cansas1d_documentation-Support_Tools">
             <title>Support tools for Visualization &amp; Analysis software</title>
-            <para> Support for importing cansas1d/1.0 files exists for these languages: <note>
-                    <para>Refactor the wiki pages here and link as appropriate.</para>
-                </note></para>
+            <para> Support for importing cansas1d/1.0 files exists for these 
+                languages and environments: 
+            </para>
             <itemizedlist>
                 <listitem>
                     <para>
