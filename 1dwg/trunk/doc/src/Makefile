@@ -20,7 +20,8 @@
 
 # === Rules ===
 
-OPTS = -P table.in.float=0 -b pdftex
+#  native (default) | db2latex (pretty but longer) | simple (fails)
+OPTS = -P table.in.float=0 -b pdftex -t pdf -T native
 
 all: dblatex
 
@@ -30,4 +31,4 @@ dblatex cansas-1d-1_0-manual.pdf ::
 	mv -f manual.pdf ../cansas-1d-1_0-manual.pdf
 
 test :: Makefile test.xml
-	dblatex $(OPTS) -tpdf test.xml
+	dblatex $(OPTS) test.xml
