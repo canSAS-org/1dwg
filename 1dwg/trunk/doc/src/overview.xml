@@ -20,8 +20,7 @@
             (Collective Action for Nomadic Small-Angle Scatterers) 
             forum of users, software developers, and facility staff was to discuss
             better sharing of SAS data analysis software. The <link
-                xlink:href="http://www.smallangles.net/canSAS">canSAS</link>
-            <footnote><para>
+                xlink:href="http://www.smallangles.net/canSAS">canSAS</link><footnote><para>
                 <link xlink:href="http://www.smallangles.net/canSAS"
                     ><literal>http://www.smallangles.net/canSAS</literal></link></para></footnote>
             identified that a significant need within the SAS
@@ -80,8 +79,7 @@
                 are below. More discussion can be found on the
                 <link
                     xlink:href="http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group"
-                    >canSAS 1D Data Formats Working Group</link>
-                <footnote>
+                    >canSAS 1D Data Formats Working Group</link><footnote>
                     <para>
                         <link xlink:href="http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group"
                             ><literal>http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group</literal></link>
@@ -90,8 +88,7 @@
                 page and its
                 <link
                     xlink:href="http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group"
-                    >discussion</link>
-                <footnote>
+                    >discussion</link><footnote>
                     <para>
                         <link xlink:href="http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group"
                             ><literal>http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group</literal></link>
@@ -316,7 +313,16 @@
                 </figure>
             </listitem>
             <listitem>
-                <para> units to be given in standard SI abbreviations (eg, m, cm, mm, nm, K)
+                <para>
+                    units
+                    <indexterm significance="preferred">
+                        <primary>unit</primary>
+                    </indexterm>
+                    <indexterm>
+                        <primary>units</primary>
+                        <see>unit</see>
+                    </indexterm>
+                    to be given in standard SI abbreviations (eg, m, cm, mm, nm, K)
                     with the following exceptions: </para>
                 <orderedlist numeration="loweralpha">
                     <listitem>
@@ -381,8 +387,8 @@
                                     <primary>geometry</primary>
                                     <secondary>rotation</secondary>
                                 </indexterm>
-                                <table>
-                                    <title/>
+                                <informaltable>
+                                    <!--<title/>-->
                                     <tgroup cols="2">
                                         <tbody>
                                             <row>
@@ -413,7 +419,7 @@
                                             </row>
                                         </tbody>
                                     </tgroup>
-                                </table>
+                                </informaltable>
                             </para>
                         </figure>
                     </listitem>
@@ -436,6 +442,7 @@
             </listitem>
             <listitem>
                 <para> Unicode characters MUST NOT be used</para>
+                <note><para>Perhaps this could be relaxed in v1.1?</para></note>
             </listitem>
             <listitem>
                 <para> Binary data is not supported</para>
@@ -480,8 +487,7 @@
         </itemizedlist>
         <para>The translation and orientation geometry definitions used here are different than
             those used by <link xlink:href="http://www.nanotech.wisc.edu/shadow"
-                ><literal>SHADOW</literal></link>
-            <footnote><para>
+                ><literal>SHADOW</literal></link><footnote><para>
                 <link xlink:href="http://www.nanotech.wisc.edu/shadow"
                     ><literal>http://www.nanotech.wisc.edu/shadow</literal></link></para></footnote>
             where the <emphasis role="italic">y</emphasis> and <emphasis role="italic"
@@ -492,8 +498,7 @@
         <title>Converting data into the XML format</title>
         <para>The 
             <link xlink:href="http://www.smallangles.net/canSAS/xmlWriter/"
-                ><emphasis role="italic">canSAS/xmlWriter</emphasis></link>
-            <footnote>
+                ><emphasis role="italic">canSAS/xmlWriter</emphasis></link><footnote>
                 <para><link xlink:href="http://www.smallangles.net/canSAS/xmlWriter/"
                     ><literal>http://www.smallangles.net/canSAS/xmlWriter/</literal></link></para>
             </footnote>
@@ -505,8 +510,8 @@
             (defined elsewhere on this page) and some basic metadata (title, run, sample info,
             ...). </para>
         <para>Press the <code>Submit</code> button and you will receive a nicely
-            formatted WWW page with the SAS data. If you then choose "View page source" (from
-            one of your browser menus), you will see the raw XML of the cansas1d/1.0 XML format
+            formatted WWW page with the SAS data. If you then choose <emphasis>View page source</emphasis>
+            (from one of your browser menus), you will see the raw XML of the cansas1d/1.0 XML format
             and you can copy/paste this into an XML file. </para>
         <para>The SAS data that you paste into the form box is likely to be copied directly from
             a 3-column ASCII file from a text editor. Line breaks are OK, they will be treated
@@ -522,20 +527,17 @@
                 <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
                     ><literal>cansas1d.xsd</literal></link>
                 <link xlink:href="http://www.w3schools.com/xsd"
-                    >XML Schema</link>
-                <footnote><para>
+                    >XML Schema</link><footnote><para>
                     <link xlink:href="http://www.w3schools.com/xsd"
                         ><literal>http://www.w3schools.com/xsd</literal></link></para></footnote>
                 <indexterm><primary>XML Schema</primary></indexterm>
-                defines the rules for the XML file format
-                <footnote>
+                defines the rules for the XML file format<footnote>
                     <para>
                         TRAC:
                         <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
                             ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd</literal></link>
                     </para>
-                </footnote>
-                <footnote>
+                </footnote><footnote>
                     <para>
                         SVN:
                         <link xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
@@ -548,8 +550,7 @@
         <section xml:id="cansas1d_documentation-XML_Stylesheets">
             <title>XML Stylesheets</title>
             <para>
-                XML stylesheets (also known as XSLT)
-                <footnote>
+                XML stylesheets (also known as XSLT)<footnote>
                     <para>
                         <link xlink:href="http://www.w3schools.com/xsl/"
                             ><literal>http://www.w3schools.com/xsl/</literal></link></para>
@@ -558,8 +559,7 @@
                     <primary>XML Stylesheet</primary>
                 </indexterm>
                 can be used to extract metadata or to convert into another file format. The
-                default canSAS stylesheet <literal>cansasxml-html.xsl</literal>
-                <footnote>
+                default canSAS stylesheet <literal>cansasxml-html.xsl</literal><footnote>
                     <para>
                         <link xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl"
                             ><literal>http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl</literal></link></para>
@@ -568,8 +568,7 @@
                 file(s). It can be used to display the data in a supporting WWW browser
                 (such as Firefox or Internet Explorer) or to import into Microsoft Excel
                 (with the added XML support in Excel). (See the excellent write-up by Steve
-                King, ISIS, 
-                <footnote>
+                King, ISIS,<footnote>
                     <para>
                         <link xlink:href="http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf"
                             ><literal>http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf</literal></link>
@@ -582,7 +581,7 @@
                 WWW page with the SAS data and selected metadata.</para>
         </section>
         <section xml:id="cansas1d_documentation-programming_suggestions">
-            <title>Suggestions for support software that writes cansas1d/1.0 XML data files</title>
+            <title>Suggestions for support software that write cansas1d/1.0 XML data files</title>
             <para>
                 Some common best practices have been identified in the list below.
                 <indexterm><primary>file</primary><secondary>Writing cansas1d/1.0 files</secondary></indexterm>
@@ -612,8 +611,11 @@
                 </listitem>
                 <listitem>
                     <para>The most recent XSLT file can be identified by examining the file
-                        for the <literal>$ Revision: </literal> string. For example: 
-                        <code># &#36;Revision: 111 $</code> is version 111. </para>
+                        for the <literal>$ Revision: </literal> string such as in the next example. 
+                        <informalexample>
+                            <programlisting># &#36;Revision: 111 $</programlisting>
+                        </informalexample>
+                    </para>
                 </listitem>
             </itemizedlist>
         </section>
@@ -622,31 +624,49 @@
             <itemizedlist>
                 <listitem>
                     <para>
-                        Basic example:
-                        <footnote><para>
+                        Basic example:<footnote><para>
                             <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml"
-                                ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml</literal></link></para></footnote>
+                                ><literal
+                                    >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml</literal
+                                ></link></para></footnote>
+                        <indexterm>
+                            <primary>XML file</primary>
+                            <secondary>cansas1d.xml</secondary>
+                        </indexterm>
                         Note that, for clarity, only one row of data is
                         shown. This is probably a very good example to use as a starting point for
                         creating XML files with a text editor.</para>
                 </listitem>
                 <listitem>
                     <para>
-                        Bimodal test data:
-                        <footnote><para>
+                        Bimodal test data:<footnote><para>
                             <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml"
-                                ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml</literal></link></para></footnote>
-                        Simulated SAS data (with added noise) calculated from model bimodal size distribution to test size distribution analysis routines.</para>
+                                ><literal
+                                    >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml</literal
+                                ></link></para></footnote>
+                        <indexterm>
+                            <primary>XML file</primary>
+                            <secondary>bimodal-test1.xml</secondary>
+                        </indexterm>
+                        <indexterm>
+                            <primary>case study</primary>
+                            <secondary>bimodal test data</secondary>
+                        </indexterm>
+                        Simulated SAS data (with added noise) calculated from model bimodal size 
+                        distribution to test size distribution analysis routines.</para>
                 </listitem>
                 <listitem>
                     <para>
-                        Glassy Carbon Round Robin:
-                        <footnote>
+                        Glassy Carbon Round Robin:<footnote>
                             <para>
                             <link xlink:href="http://www.smallangles.net/wgwiki/index.php/Glassy_Carbon_Round_Robin"
                                 ><literal>http://www.smallangles.net/wgwiki/index.php/Glassy_Carbon_Round_Robin</literal
                                 ></link></para>
                         </footnote>
+                        <indexterm>
+                            <primary>case study</primary>
+                            <secondary>glassy carbon round robin</secondary>
+                        </indexterm>
                         Samples of a commercial glassy carbon
                         measured at several facilities worldwide.</para>
                 </listitem>
@@ -654,6 +674,10 @@
                     <para>SAXS data from 
                         <link xlink:href="#cansas1d_documentation-case_study-collagen"
                             >dry chick collagen</link>
+                        <indexterm>
+                            <primary>case study</primary>
+                            <secondary>SAXS of dry chick collagen</secondary>
+                        </indexterm>
                         illustrates the
                         minimum information necessary to meet the requirements of the standard
                         format</para>
@@ -661,21 +685,29 @@
                 <listitem>
                     <para>SANS data from 
                         <link xlink:href="#cansas1d_documentation-case_study-af1410"
-                            >AF1410 steel</link>: 
-                        <footnote><para>
-                            <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/"
-                                ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/</literal
-                                ></link></para></footnote>
+                            >AF1410 steel</link>:<footnote><para>
+                                <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/"
+                                    ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/</literal
+                                    ></link></para></footnote>
+                        <indexterm>
+                            <primary>case study</primary>
+                            <secondary>SANS of AF1410 steel</secondary>
+                        </indexterm>
                         SANS study using magnetic
                         contrast variation (with multiple samples and multiple data sets for each
                         sample), the files can be viewed from the TRAC site (no description yet).</para>
                 </listitem>
                 <listitem>
                     <para>
-                        <literal>cansas1d-template.xml</literal>:
-                        <footnote><para>
+                        <literal>cansas1d-template.xml</literal>:<footnote><para>
                             <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml"
-                                ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml</literal></link></para></footnote>
+                                ><literal
+                                    >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml</literal
+                                ></link></para></footnote>
+                        <indexterm>
+                            <primary>XML file</primary>
+                            <secondary>cansas1d-template.xml</secondary>
+                        </indexterm>
                         This is used to test all the rules in the XML
                         Schema. This is probably not a very good example to use as a starting point
                         for creating XML files with a text editor since it tests many of the
@@ -685,23 +717,40 @@
             <section xml:id="cansas1d_documentation-examples-multiple_experiments">
                 <title>XML layout for multiple experiments</title>
                 <para>Each experiment is described with a single <literal>SASentry</literal> element. The
-                    fragment below shows how multiple experiments can be included in a single XML
+                    fragment below shows how multiple experiments
+                    <indexterm>
+                        <primary>multiple experiments</primary>
+                    </indexterm>
+                    <indexterm>
+                        <primary>multiple data sets</primary>
+                    </indexterm>
+                    can be included in a single XML
                     file. Full examples of canSAS XML files with multiple experiments
                     include:</para>
                 <itemizedlist>
                     <listitem>
-                        <para> ISIS LOQ SANS instrument: 
-                            <footnote><para>
-                                <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/W1W2.XML"
-                                    ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/W1W2.XML</literal></link></para></footnote>
+                        <para> ISIS LOQ SANS instrument:<footnote><para>
+                            <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/W1W2.XML"
+                                ><literal
+                                    >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/W1W2.XML</literal
+                                ></link></para></footnote>
+                            <indexterm>
+                                <primary>XML file</primary>
+                                <secondary>W1W2.XML</secondary>
+                            </indexterm>
                             multiple data sets.
                         </para>
                     </listitem>
                     <listitem>
-                        <para> AF1410 steel SANS contrast variation study from NIST: 
-                            <footnote><para>
+                        <para> AF1410 steel SANS contrast variation study from NIST:<footnote><para>
                                 <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml"
-                                    ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml</literal></link></para></footnote>
+                                    ><literal
+                                        >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml</literal
+                                    ></link></para></footnote>
+                            <indexterm>
+                                <primary>XML file</primary>
+                                <secondary>cs_af1410.xml</secondary>
+                            </indexterm>
                             SANS study using magnetic
                             contrast variation (with multiple samples and multiple data sets for each
                             sample), the files can be viewed from the TRAC site (no description yet).
@@ -710,6 +759,10 @@
                 </itemizedlist>
                 <para>Here is a brief sketch of how a file would be arranged with multiple SASentry
                     elements and multiple SASdata elements.
+                    <indexterm>
+                        <primary>XML file</primary>
+                        <secondary>brief-sketch-multiple.xml</secondary>
+                    </indexterm>
                     <example>
                         <title>Brief sketch of a file with multiple SASentry and SASdata blocks.</title>
                         <programlisting language="xml" linenumbering="numbered">
@@ -724,7 +777,7 @@
         <section xml:id="cansas1d_documentation-Foreign_Elements">
             <title>Foreign Elements</title>
             <para> To allow for inclusion of elements that are not defined by the 
-	    <literal>cansas1d.xsd</literal> XML
+                <literal>cansas1d.xsd</literal> XML
                 Schema, XML <emphasis role="italic">foreign elements</emphasis> 
                 <indexterm>
                     <primary>XML</primary>
@@ -734,22 +787,27 @@
                 cansas1d/1.0 format. Please refer to the section 
                 <link xlink:href="#wiki-XML_Help"><emphasis>XML Help</emphasis></link>
                  for more help with XML foreign elements. </para>
-            <para> There is one example that demonstrates the use of a foreign namespace: 
-                <footnote>
+            <para> 
+                There is an example that demonstrates the use of a foreign 
+                namespace:<footnote>
                     <para>
                         <link
                             xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml"
-                            ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml</literal></link></para>
+                            ><literal
+                                >http://svn.smallangles.net/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml</literal></link></para>
                 </footnote>
                 This example uses a foreign namespace to record the transmission spectra related to
-                the acquisition of the SANS data at a time-of-flight facility. Look for the
-                    <code>&lt;transmission_spectrum xmlns="urn:transmission:spectrum"></code>
-                element at line 153. The foreign namespace given
-                    (<literal>urn:transmission:spectrum</literal>) becomes the default for just the
-                    <literal>transmission_spectrum</literal> element. </para>
-            <para> Also refer to <link
-                    xlink:href="http://svn.smallangles.net/trac/canSAS/changeset/47">canSAS TRAC
-                    ticket #47</link> for an example of arranging the content in 
+                the acquisition of the SANS data at a time-of-flight facility. Look near line 153
+                for the element om the next example. 
+                <informalexample>
+                    <programlisting>&lt;transmission_spectrum xmlns="urn:transmission:spectrum"></programlisting>
+                </informalexample>
+                The foreign namespace given
+                (<literal>urn:transmission:spectrum</literal>) becomes the default namespace for just the
+                <literal>transmission_spectrum</literal> element. </para>
+            <para>Also refer to <link
+                xlink:href="http://svn.smallangles.net/trac/canSAS/changeset/47">canSAS TRAC
+                ticket #47</link> for an example of arranging the content in 
                 <literal>SASprocessnote</literal> to avoid the use of foreign namespace
                 elements. </para>
         </section>
@@ -786,8 +844,8 @@
                             <secondary>IgorPro</secondary>
                         </indexterm>
                         <indexterm>
-                            <primary>FORTRAN</primary>
-                            <see>binding, FORTRAN</see>
+                            <primary>IgorPro</primary>
+                            <see>binding, IgorPro</see>
                         </indexterm>
                     </para>
                 </listitem>
@@ -826,8 +884,7 @@
                             xlink:href="http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html"
                             >ISIS LOQ instrument</link> has provided an <link
                                 xlink:href="http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf"
-                                >excellent description</link>
-                        <footnote><para><link
+                                >excellent description</link><footnote><para><link
                             xlink:href="http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html"
                             ><literal>http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html</literal
                             ></link></para></footnote>
@@ -836,8 +893,7 @@
                         Also note that the
                             <link
                             xlink:href="http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/loq.htm">old
-                            WWW site</link>
-                        <footnote><para><link
+                            WWW site</link><footnote><para><link
                             xlink:href="http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm"
                             ><literal>http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm</literal
                             ></link></para></footnote>
@@ -850,8 +906,8 @@
                         The <link xlink:href="#cansas1d_documentation-converting_into_XML"
                             ><emphasis role="italic">canSAS/xmlWriter</emphasis></link>
                         <indexterm><primary><literal>xmlWriter</literal></primary></indexterm>
-                        is implemented in <link xlink:href="http://www.php.net">PHP</link> 
-                        <footnote><para><link xlink:href="http://www.php.net"
+                        is implemented in <link xlink:href="http://www.php.net">PHP</link
+                        ><footnote><para><link xlink:href="http://www.php.net"
                             ><literal>http://www.php.net</literal></link></para></footnote>
                         <indexterm>
                             <primary>binding</primary>
@@ -864,15 +920,14 @@
                         and writes a cansas1d/1.0 data file given three-column ASCII data as input.
                         (<link
                             xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php"
-                            >PHP source</link>)
-                        <footnote>
+                            >PHP source</link>)<footnote>
                             <para>
                                 <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php"
                                     ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php</literal></link>
                             </para>
                         </footnote>
-                        The code uses <link xlink:href="http://www.php.net/DomDocument">DomDocument</link>
-                        <footnote><para><link xlink:href="http://www.php.net/DomDocument"
+                        The code uses <link xlink:href="http://www.php.net/DomDocument">DomDocument</link
+                        ><footnote><para><link xlink:href="http://www.php.net/DomDocument"
                             ><literal>http://www.php.net/DomDocument</literal></link></para></footnote>
                         to build the XML file.  Look for the line beginning with
                         <literal>function prepare_cansasxml($post)</literal>.
@@ -930,6 +985,10 @@
     </section>
     <section xml:id="cansas1d_documentation-schema_validation">
         <title>Validation of XML against the Schema</title>
+        <indexterm>
+            <primary>validation</primary>
+            <secondary>against XML Schema</secondary>
+        </indexterm>
         <orderedlist>
             <listitem>
                 <para>open browser to: 
@@ -945,8 +1004,7 @@
             </listitem>
             <listitem>
                 <para>paste content of 
-                    <literal>cansas1d.xsd</literal>
-                    <footnote><para><link
+                    <literal>cansas1d.xsd</literal><footnote><para><link
                         xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
                         ><literal>http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd</literal
                     ></link></para></footnote>

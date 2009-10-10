@@ -21,13 +21,12 @@
         </mediaobject>
         canSAS 1-D Data Format, v1.0
     </para>
-    <note><para>
+    <!--<note><para>
         Provide a note here describing canSAS and the initiative to establish
         a standard file format.  Note that the cansas1d/1.0 XML data files must adhere to the 
         XML rules which includes being well-formed
         <indexterm><primary>XML</primary><secondary>well-formed</secondary></indexterm>
-        (including the use of closing tags).  
-        <footnote>
+        (including the use of closing tags).<footnote>
             <para>
                 For example, see 
                 <link xlink:href="http://www.w3schools.com/xmL/xml_syntax.asp"
@@ -43,7 +42,7 @@
             xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
             ><literal>cansas1d.xsd</literal> </link>
         are deemed to be valid cansas1d/1.0 data files.
-    </para></note>
+    </para></note>-->
     <para>
         The name <emphasis role="italic">canSAS</emphasis>
         <indexterm><primary>canSAS</primary></indexterm>
@@ -70,8 +69,7 @@
         There is a 
         <link 
             xlink:href="http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group"
-            >discussion</link>
-        <footnote><para><link 
+            >discussion</link><footnote><para><link 
             xlink:href="http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group"
             ><literal>http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group</literal></link></para></footnote>   
         page for some matters that preceded this revision.
@@ -84,8 +82,7 @@
             However, should the information in this document and the 
             <link
                 xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
-                >cansas1d/1.0 SAS XML Schema</link>
-            <footnote><para><link
+                >cansas1d/1.0 SAS XML Schema</link><footnote><para><link
                 xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
                 ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd</literal></link></para></footnote>
             differ, the XML Schema will be deemed to have the most correct description of the standard.</para>

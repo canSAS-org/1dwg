@@ -13,10 +13,6 @@
 <section xml:id="cansas1d_documentation-XML_Header" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Required XML Header</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <example>
         <title>Required header for cansas1d/1.0 XML files</title>
         <indexterm significance="preferred">

@@ -13,12 +13,7 @@
 <section xml:id="cansas1d_documentation-case_study-af1410" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Case Study: AF1410 steel</title>
-    <bridgehead> $Revision$ $Date$ </bridgehead>
     <section>
-        <indexterm significance="preferred">
-            <primary>case study</primary>
-            <secondary>SANS of AF1410 steel</secondary>
-        </indexterm>
         <title>Overview</title>
         <note>
             <para> This case study has not yet been written up. For now, see the data file 
@@ -28,6 +23,10 @@
                 </link>).
             </para>
             <para> 
+                <indexterm significance="preferred">
+                    <primary>case study</primary>
+                    <secondary>SANS of AF1410 steel</secondary>
+                </indexterm>
                 The data file contains multiple SASentry elements that pertain to different samples
                 treated at different conditions in a time series.  Each SASentry element contains two
                 SASdata sections that correspond to sector averages from the two-dimensional SANS

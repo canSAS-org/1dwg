@@ -13,10 +13,6 @@
 <section xml:id="cansas1d_documentation-element-SASdetector" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASdetector element</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <itemizedlist mark="opencircle">
         <indexterm significance="preferred">
             <primary>element</primary>
@@ -203,8 +199,7 @@
     <section>
         <title>geometry</title>
         <para>
-            <table>
-                <title/>
+            <informaltable>
                 <tgroup cols='2'>
                     <tbody>
                         <row>
@@ -248,7 +243,7 @@
                     </entry>
                 </row>
                 </tbody></tgroup>
-            </table>
+            </informaltable>
         </para>
     </section>
     <section>

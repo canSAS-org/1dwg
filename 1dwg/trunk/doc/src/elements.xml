@@ -12,15 +12,15 @@
 <section xml:id="wiki-elements" xmlns="http://docbook.org/ns/docbook" version="5.0"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Elements of the canSAS XML standard</title>
-    <para>Starting the description of each element will be the current version control 
-        <emphasis>Revision</emphasis> and <emphasis>Date</emphasis> of the documentation section.  
+    <para>
         There are various elements (tag names) in the cansas1d/1.0 standard. 
         Each of these is described below.
     </para>
     <glosslist>
         <glossentry>
             <glossterm>Name</glossterm>
-            <glossdef><para><emphasis role="italic">Name</emphasis> is the XML tag to be used for this element of the standard.</para></glossdef>
+            <glossdef><para><emphasis role="italic">Name</emphasis> is the XML tag to be 
+                used for this element of the standard.</para></glossdef>
         </glossentry>
         <glossentry>
             <glossterm>Type</glossterm>
@@ -106,16 +106,16 @@
         </glossentry>
     </glosslist>
 
-    <xi:include href="cansas1d_element_XML_header.xml"/>
-    <xi:include href="cansas1d_element_SASroot.xml"/>
-    <xi:include href="cansas1d_element_SASentry.xml"/>
-    <xi:include href="cansas1d_element_SASdata.xml"/>
-    <xi:include href="cansas1d_element_SASsample.xml"/>
-    <xi:include href="cansas1d_element_SASinstrument.xml"/>
-    <xi:include href="cansas1d_element_SASsource.xml"/>
-    <xi:include href="cansas1d_element_SAScollimation.xml"/>
-    <xi:include href="cansas1d_element_SASdetector.xml"/>
-    <xi:include href="cansas1d_element_SASprocess.xml"/>
-    <xi:include href="cansas1d_element_SASnote.xml"/>
-    <xi:include href="cansas1d_element_any.xml"/>
+    <xi:include href="element_XML_header.xml"/>
+    <xi:include href="element_SASroot.xml"/>
+    <xi:include href="element_SASentry.xml"/>
+    <xi:include href="element_SASdata.xml"/>
+    <xi:include href="element_SASsample.xml"/>
+    <xi:include href="element_SASinstrument.xml"/>
+    <xi:include href="element_SASsource.xml"/>
+    <xi:include href="element_SAScollimation.xml"/>
+    <xi:include href="element_SASdetector.xml"/>
+    <xi:include href="element_SASprocess.xml"/>
+    <xi:include href="element_SASnote.xml"/>
+    <xi:include href="element_any.xml"/>
 </section>

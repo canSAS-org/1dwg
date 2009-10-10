@@ -17,13 +17,11 @@
         <primary>binding</primary>
         <secondary>IgorPro</secondary>
     </indexterm>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <para>An import tool (binding) for IgorPro has been created (cansasXML.ipf). You can check out
         the IgorPro working directory from the SVN server (see instructions below). </para>
-    <para>To use the canSASxml.ipf procedure, you must have the XMLutils XOP IGOR plugin installed.
+    <para>
+        To use the <literal>canSASxml.ipf</literal> procedure, 
+        you must have the XMLutils XOP IGOR plugin installed.
         See the Usage Notes below. </para>
     <note><para>Note that this tool is not a true 
         <link xlink:href="http://en.wikipedia.org/wiki/Binding_%28computer_science%29">binding</link>
@@ -82,9 +80,19 @@
         <glossentry>
             <glossterm>requires</glossterm>
             <glossdef><para>
-                IgorPro: http://www.wavemetrics.com XMLutils - XOP:
-                http://www.igorexchange.com/project/XMLutils (IGOR.5.04.x-1.x-dev,
-                2008-Aug-22)
+                IgorPro: http://www.wavemetrics.com 
+                <link xlink:href="http://www.igorexchange.com/project/XMLutils"
+                    ><literal
+                        >XMLutils XOP</literal></link><footnote><para>
+                            <link xlink:href="http://www.igorexchange.com/project/XMLutils"
+                                ><literal
+                                    >http://www.igorexchange.com/project/XMLutils</literal></link>
+                        </para></footnote>
+                <indexterm significance="preferred">
+                    <primary>IgorPro package</primary>
+                    <secondary>XMLutils XOP</secondary>
+                </indexterm>
+                (minimum requirement: IGOR.5.04.x-1.x-dev, 2008-Aug-22)
             </para></glossdef>
         </glossentry>
     </glosslist>
@@ -100,16 +108,14 @@
             <para> The XMLutils XOP, 
                 <indexterm><primary>XMLutils XOP</primary></indexterm>
                 written by Andrew Nelson (ANSTO), 
-                is hosted on the IgorExchange.
-                <footnote>
+                is hosted on the IgorExchange.<footnote>
                     <para>
                         <literal>http://www.igorexchange.com/</literal>
                     </para>
                 </footnote>
             </para>
             <para> One good location to place the checked out XMLutils directory is in the
-                Wavemetrics directory, next to the Igor Pro Folder.
-                <footnote>
+                Wavemetrics directory, next to the Igor Pro Folder.<footnote>
                     <para>
                         <literal>svn co svn://svn.igorexchange.com/packages/XMLutils/ XMLutils</literal>
                     </para>
@@ -172,8 +178,8 @@
             </listitem>
             <listitem>
                 <para> Download cansasXML.ipf. Either checkout from subversion (see above) or, with
-                    a web browser, copy cansasXML.ipf from the on-line subversion repository.
-                    <footnote>
+                    a web browser, copy cansasXML.ipf from the on-line subversion 
+                    repository.<footnote>
                         <para>
                     http://svn.smallangles.net/svn/canSAS/1dwg/trunk/IgorPro/cansasXML.ipf
                         </para>
@@ -681,9 +687,8 @@ dry chick collagen, d = 673 A
     </section>
     <section>
         <title>Example test case</title>
-        <para> Here is an example running the test routine <emphasis role="bold"
-            >prjTest_cansas1d()</emphasis>.
-            <programlisting>
+        <para> Here is an example running the test routine <literal>prjTest_cansas1d()</literal>.
+            <programlisting linenumbering="numbered">
 •prjTest_cansas1d()
 XMLopenfile: File(path) to open doesn't exist, or file can't be opened
 elmo.xml either not found or cannot be opened for reading
@@ -782,12 +787,16 @@ s81-polyurea.xml 		 identified as: cansas1d/1.0 XML file
             <para> Jan Ilavsky's 
                 <link 
                     xlink:href="http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm"
-                    ><emphasis role="bold">Irena</emphasis></link>
-                <footnote>
-                    <para>http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm</para>
+                    ><emphasis role="bold">Irena</emphasis></link><footnote>
+                    <para>
+                        <link xlink:href="http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm"
+                            ><literal
+                                >http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm</literal></link>
+                    </para>
                 </footnote>
-                <indexterm>
-                    <primary>Irena tool suite</primary>
+                <indexterm significance="preferred">
+                    <primary>IgorPro package</primary>
+                    <secondary>Irena tool suite</secondary>
                 </indexterm>
                 tool suite for IgorPro has a GUI to
                 load the data found in the XML file. 

@@ -51,7 +51,7 @@ Purpose:  Build one section of the manual without building the whole thing.
         </revhistory>
     </info>
     
-    <xi:include href="wiki.xml"/>
+    <xi:include href="overview.xml"/>
 
     <index/>
 </book>

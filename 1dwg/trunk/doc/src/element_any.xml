@@ -13,10 +13,6 @@
 <section xml:id="cansas1d_documentation-element-any" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title><literal>{any}</literal> element</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <table orient="port" role="small">
         <title/>
         <tgroup cols="5">
@@ -49,12 +45,7 @@
                             It is suggested to associate foreign elements with a foreign namespace
                             to differentiate them from the canSAS elements in the XML file.) </para>
                     </entry>
-                    <entry>
-                        <para>
-                            <emphasis role="bold">
-                                <emphasis>xmlns:{foreign-prefix}</emphasis>
-                            </emphasis> ={foreign-namespace} </para>
-                    </entry>
+                    <entry><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></entry>
                 </row>
             </tbody>
         </tgroup>

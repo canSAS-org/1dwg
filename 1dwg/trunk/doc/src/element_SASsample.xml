@@ -13,10 +13,6 @@
 <section xml:id="cansas1d_documentation-element-SASsample" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASsample element</title>
-    <bridgehead>
-        $Revision$
-        $Date$
-    </bridgehead>
     <itemizedlist mark="opencircle">
         <listitem>
             <indexterm significance="preferred">
@@ -35,12 +31,6 @@
             <imageobject>
                 <imagedata fileref="../../graphics/3-SASsample.png" width="200pt" scalefit="1"/>
             </imageobject>
-            <textobject>
-                <phrase>cansas1d-v1-3-SASsample</phrase>
-            </textobject>
-            <caption>
-                <para>The SASsample element</para>
-            </caption>
         </mediaobject>
     </figure>
     <table orient="port" role="small">
@@ -176,8 +166,7 @@
     <section>
         <title>geometry</title>
         <para>
-            <table>
-                <title/>
+            <informaltable>
                 <tgroup cols="2">
                     <tbody>
                         <row>
@@ -214,7 +203,7 @@
                         </row>
                     </tbody>
                 </tgroup>
-            </table>
+            </informaltable>
         </para>
     </section>
     <section>
