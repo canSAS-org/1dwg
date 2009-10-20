@@ -477,15 +477,18 @@ Usage:
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
-
+	
 	<xsl:template match="cs:SASnote">
-		<xsl:if test="@name!=''">
-			<tr>
-				<td><xsl:value-of select="name()" /></td>
-				<td><xsl:value-of select="." /></td>
+		<tr>
+			<td><xsl:value-of select="name()" /></td>
+			<td><xsl:value-of select="." /></td>
+			<xsl:if test="@name=''">
+				<td/>
+			</xsl:if>
+			<xsl:if test="@name!=''">
 				<td><xsl:value-of select="@name" /></td>
-			</tr>
-		</xsl:if>
+			</xsl:if>
+		</tr>
 	</xsl:template>
 
 </xsl:stylesheet>
