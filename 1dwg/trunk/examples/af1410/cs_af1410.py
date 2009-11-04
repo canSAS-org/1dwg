@@ -3,6 +3,11 @@
 # file:    cs_af1410.py
 # author:  Pete R. Jemian
 # date:    2008-02-25
+
+# SVN date:	$Date$
+# SVN rev.:	$Revision$
+# SVN URL:	$HeadURL$
+# SVN ID:	$Id$
 #
 # Case Study:
 #
@@ -17,7 +22,7 @@ import types
 
 reqDir = "/home/prjemian/af1410/"
 reqDir = "historical/"
-#cansasXMLFile = "./cs_af1410.xml"
+#cansasXMLFile = "./cs_af1410.xml" 
 
 aging = {}
 aging["qu"] ="0.25" 
