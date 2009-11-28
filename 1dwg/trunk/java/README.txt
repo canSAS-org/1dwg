@@ -18,7 +18,9 @@ DOCUMENTATION
 
 The documentation for the code is available either:
 * JAVADOC in JAR:  see above
-* JAVADOC in HTML: check out from the subversion tree until we get it posted to a URL
+* JAVADOC in HTML: 
+**  The complete HTML is contained within the cansas1d-1.0-javadoc.jar above.  It can be extracted with any program that can extract a ZIP file.
+**  check out from the subversion tree until we get it posted to a URL
 **	svn co http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/maven-eclipse/target/apidocs ./cansas1d-JAXB-docs-API
 
 DEVELOPMENT
