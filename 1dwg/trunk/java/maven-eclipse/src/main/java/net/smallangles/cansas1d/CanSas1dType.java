@@ -1,11 +1,11 @@
 package net.smallangles.cansas1d;
 
 //########### SVN repository information ###################
-//# $Date: $
-//# $Author: $
-//# $Revision: $
-//# $URL: $
-//# $Id: $
+//# $Date$
+//# $Author$
+//# $Revision$
+//# $URL$
+//# $Id$
 //########### SVN repository information ###################
 
 import java.io.File;
