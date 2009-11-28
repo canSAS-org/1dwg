@@ -24,6 +24,9 @@ Usage:
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:cs="cansas1d/1.0"
 	xmlns:fn="http://www.w3.org/2005/02/xpath-functions"
+	xmlns:ues="urn:efficiency:spectrum"
+	xmlns:ums="urn:monitor:spectrum"
+	xmlns:uts="urn:transmission:spectrum"
 	>
 
 	<xsl:template match="/">
@@ -127,7 +130,12 @@ Usage:
 					<th>Selected Metadata</th>
 				</tr>
 				<tr>
-					<td valign="top"><xsl:apply-templates  select="cs:SASdata" /></td>
+					<td valign="top">
+						<xsl:apply-templates  select="cs:SASdata" />
+						<xsl:apply-templates  select="cs:SASsample/ues:efficiency_ratio" />
+						<xsl:apply-templates  select="cs:SASsample/ums:monitor_spectrum" />
+						<xsl:apply-templates  select="cs:SASsample/uts:transmission_spectrum" />
+					</td>
 					<td valign="top">
 						<table border="2">
 							<tr bgcolor="lavender">
@@ -194,6 +202,15 @@ Usage:
 				</xsl:when>
 				<xsl:when test="name()='orientation'">
 					<xsl:apply-templates select="." />
+				</xsl:when>
+				<xsl:when test="name()='efficiency_ratio'">
+					<!-- xmlns="urn:efficiency:spectrum" -->
+				</xsl:when>
+				<xsl:when test="name()='monitor_spectrum'">
+					<!-- xmlns="urn:monitor:spectrum" -->
+				</xsl:when>
+				<xsl:when test="name()='transmission_spectrum'">
+					<!-- xmlns="urn:transmission:spectrum" -->
 				</xsl:when>
 				<xsl:otherwise>
 					<tr>
@@ -429,28 +446,6 @@ Usage:
 		</tr>
 	</xsl:template>
 	
-	<xsl:template match="cs:SASprocessnote" mode="Indra">
-		<!-- 
-			Customization for APS USAXS metadata
-			These will be IgorPro wavenote variables
-		-->
-		<xsl:for-each select="cs:APS_USAXS">
-			<!-- ignore any other elements at this point -->
-			<tr>
-				<td bgcolor="lightgrey"><xsl:value-of select="name(..)" /></td>
-				<td bgcolor="lightgrey"><xsl:value-of select="name()" /></td>
-				<td bgcolor="lightgrey"><xsl:value-of select="@name" /></td>
-			</tr>
-			<xsl:for-each select="*">
-				<tr>
-					<td><xsl:value-of select="name()" /></td>
-					<td><xsl:value-of select="." /></td>
-					<td><xsl:value-of select="@name" /></td>
-				</tr>
-			</xsl:for-each>
-		</xsl:for-each>
-	</xsl:template>
-	
 	<xsl:template match="cs:SASprocess">
 		<tr>
 			<td><xsl:value-of select="name()" /></td>
@@ -463,7 +458,10 @@ Usage:
 				<xsl:when test="name()='term'"><xsl:apply-templates select="." /></xsl:when>
 				<xsl:when test="name()='SASprocessnote'">
 					<xsl:choose>
-						<xsl:when test="../@name='Indra'"><xsl:apply-templates select="." mode="Indra"/></xsl:when>
+						<xsl:when test="../@name='Indra'">
+							<!-- Customization for APS USAXS metadata -->
+							<xsl:apply-templates select="." mode="Indra"/>
+						</xsl:when>
 						<xsl:otherwise><xsl:apply-templates select="." mode="standard"/></xsl:otherwise>
 					</xsl:choose>
 				</xsl:when>
@@ -489,6 +487,110 @@ Usage:
 				<td><xsl:value-of select="@name" /></td>
 			</xsl:if>
 		</tr>
+	</xsl:template>
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ++++++++++  Customizations  +++++++++++ -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+	<xsl:template match="cs:SASprocessnote" mode="Indra">
+		<!-- 
+			Customization for APS USAXS metadata
+			These will be IgorPro wavenote variables
+		-->
+		<xsl:for-each select="cs:APS_USAXS">
+			<!-- ignore any other elements at this point -->
+			<tr>
+				<td bgcolor="lightgrey"><xsl:value-of select="name(..)" /></td>
+				<td bgcolor="lightgrey"><xsl:value-of select="name()" /></td>
+				<td bgcolor="lightgrey"><xsl:value-of select="@name" /></td>
+			</tr>
+			<xsl:for-each select="*">
+				<tr>
+					<td><xsl:value-of select="name()" /></td>
+					<td><xsl:value-of select="." /></td>
+					<td><xsl:value-of select="@name" /></td>
+				</tr>
+			</xsl:for-each>
+		</xsl:for-each>
+	</xsl:template>
+	
+	<xsl:template match="ues:efficiency_ratio">
+		<!-- 
+			Customization for ISIS wavelength-dependent data
+		-->
+		<table border="2">
+			<caption>
+				wavelength-dependent detector efficiency spectrum
+			</caption>
+			<tr bgcolor="lavender">
+				<xsl:for-each select="ues:data[1]/*">
+					<th>
+						<xsl:value-of select="name()" /> 
+						<xsl:if test="@unit!=''"> (<xsl:value-of select="@unit" />)</xsl:if>
+					</th>
+				</xsl:for-each>
+			</tr>
+			<xsl:for-each select="ues:data">
+				<tr>
+					<xsl:for-each select="*">
+						<td><xsl:value-of select="." /></td>
+					</xsl:for-each>
+				</tr>
+			</xsl:for-each>
+		</table>
+	</xsl:template>
+	
+	<xsl:template match="ums:monitor_spectrum">
+		<!-- 
+			Customization for ISIS wavelength-dependent data
+		-->
+		<table border="2">
+			<caption>
+				wavelength-dependent monitor spectrum
+			</caption>
+			<tr bgcolor="lavender">
+				<xsl:for-each select="ums:data[1]/*">
+					<th>
+						<xsl:value-of select="name()" /> 
+						<xsl:if test="@unit!=''"> (<xsl:value-of select="@unit" />)</xsl:if>
+					</th>
+				</xsl:for-each>
+			</tr>
+			<xsl:for-each select="ums:data">
+				<tr>
+					<xsl:for-each select="*">
+						<td><xsl:value-of select="." /></td>
+					</xsl:for-each>
+				</tr>
+			</xsl:for-each>
+		</table>
+	</xsl:template>
+	
+	<xsl:template match="uts:transmission_spectrum">
+		<!-- 
+			Customization for ISIS wavelength-dependent data
+		-->
+		<table border="2">
+			<caption>
+				wavelength-dependent transmission spectrum
+			</caption>
+			<tr bgcolor="lavender">
+				<xsl:for-each select="uts:data[1]/*">
+					<th>
+						<xsl:value-of select="name()" /> 
+						<xsl:if test="@unit!=''"> (<xsl:value-of select="@unit" />)</xsl:if>
+					</th>
+				</xsl:for-each>
+			</tr>
+			<xsl:for-each select="uts:data">
+				<tr>
+					<xsl:for-each select="*">
+						<td><xsl:value-of select="." /></td>
+					</xsl:for-each>
+				</tr>
+			</xsl:for-each>
+		</table>
 	</xsl:template>
 
 </xsl:stylesheet>
