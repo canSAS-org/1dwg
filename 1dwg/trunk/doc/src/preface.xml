@@ -34,8 +34,12 @@
         different facilities. 
     </para>
     <para>
-        The aims of the canSAS meetings are to promote and simplify sharing SAS data 
-        analysis methods. Non-specialists will benefit from easily applicable methods 
+        The aims
+        <indexterm significance="preferred"><primary>canSAS</primary><secondary>aims</secondary></indexterm>
+        of the canSAS meetings are to promote and simplify sharing SAS data 
+        analysis methods. Non-specialists will benefit
+        <indexterm><primary>canSAS</primary><secondary>benefit</secondary></indexterm>
+        from easily applicable methods 
         for exchanging and merging of data from different synchrotron, laboratory 
         and neutron facilities.
     </para>

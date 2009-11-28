@@ -18,7 +18,7 @@
             <indexterm significance="preferred">
                 <primary>element</primary>
                 <secondary>SAScollimation</secondary>
-            </indexterm>
+            </indexterm> 
             <para>
                 parent:
                 <link xlink:href="#cansas1d_documentation-element-SASinstrument">SASinstrument</link>

@@ -15,7 +15,10 @@
     <!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation -->
     <section xml:id="cansas1d_documentation-Objective">
         <title>Objective</title>
-        <para>One of the first aims of the <emphasis role="bold">canSAS</emphasis>
+        <para>One of the first aims
+            <indexterm><primary>canSAS</primary><secondary>objective</secondary></indexterm>
+            <indexterm><primary>canSAS</primary><secondary>aims</secondary></indexterm>
+            of the <emphasis role="bold">canSAS</emphasis>
             <indexterm><primary>canSAS</primary></indexterm>
             (Collective Action for Nomadic Small-Angle Scatterers) 
             forum of users, software developers, and facility staff was to discuss
@@ -25,17 +28,24 @@
                     ><literal>http://www.smallangles.net/canSAS</literal></link></para></footnote>
             identified that a significant need within the SAS
             community can be satisfied by a robust, self-describing, text-based, standard format to
-            communicate reduced one-dimensional small-angle scattering data, <literal>I(Q)</literal>, between users
+            communicate reduced one-dimensional small-angle scattering data, 
+            <literal>I(Q)</literal>,<indexterm><primary>I(Q)</primary></indexterm> 
+            between users
             of our facilities. Our goal has been to define such a format that leaves the data file
             instantly human-readable, editable in the simplest of editors, and importable by simple
             text import filters in programs that need not recognise advanced structure in the file
             nor require advanced programming interfaces. The file should contain both the primary
-            data of <literal>I(Q)</literal> and also any other descriptive information (metadata) about the sample,
-            measurement, instrument, processing, or analysis steps. </para>
+            data of <literal>I(Q)</literal><indexterm><primary>I(Q)</primary></indexterm> 
+            and also any other descriptive information (metadata) 
+            <indexterm significance="preferred"><primary>metadata</primary></indexterm>
+            about the sample, measurement, instrument, processing, or analysis steps. </para>
         <para>The cansas1d/1.0
             <indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
+            <indexterm><primary>canSAS</primary><secondary>objective</secondary></indexterm>
             standard meets the objectives for a 1D standard, incorporating
-            metadata about the measurement, parameters and results of processing or analysis steps.
+            metadata
+            <indexterm><primary>metadata</primary></indexterm>
+            about the measurement, parameters and results of processing or analysis steps.
             Even multiple measurements (related or unrelated) may be included within a single XML
             file. </para>
         <section xml:id="cansas1d_documentation_Objective-Status">
@@ -53,9 +63,10 @@
         <title>General Layout of the XML Data</title>
         <para>The canSAS 1-D standard for reduced 1-D SAS data is implemented using XML files. A
             single file can contain SAS data from a single experiment or multiple experiments. All
-            types of relevant data (<literal>I(Q)</literal>, metadata) 
-            are described for each experiment. More
-            details are provided below.</para>
+            types of relevant data (<literal>I(Q)</literal><indexterm><primary>I(Q)</primary></indexterm>,
+            metadata) 
+            <indexterm><primary>metadata</primary></indexterm>
+            are described for each experiment. More details are provided below.</para>
         <section xml:id="cansas1d_documentation-XMLLayout-Overview">
             <title>Overview</title>
             <para>The basic elements of the cansas1d/1.0 standard are shown in the following table.
@@ -158,6 +169,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SASroot"
                                         ><literal>SASroot</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SASroot</secondary></indexterm> 
                                 </entry>
                                 <entry>root element of XML file</entry>
                             </row>
@@ -165,6 +177,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SASentry"
                                         ><literal>&#160;SASentry</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SASentry</secondary></indexterm> 
                                 </entry>
                                 <entry>data set, time-slice, step in a series, new sample,
                                     etc.</entry>
@@ -172,12 +185,14 @@
                             <row>
                                 <entry>
                                     <literal>&#160;&#160;Title</literal>
+                                <indexterm><primary>element</primary><secondary>Title</secondary></indexterm>
                                 </entry>
                                 <entry>for this particular <literal>SASentry</literal></entry>
                             </row>
                             <row>
                                 <entry>
                                     <literal>&#160;&#160;Run</literal>
+                                    <indexterm><primary>element</primary><secondary>Run</secondary></indexterm>
                                 </entry>
                                 <entry>run number or ID number of experiment</entry>
                             </row>
@@ -185,6 +200,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-any"
                                         ><literal>&#160;&#160;{any}</literal></link>
+                                    <indexterm><primary>element</primary><secondary>&lt;any&gt;</secondary></indexterm>
                                 </entry>
                                 <entry>any <literal>cansas1d/1.0</literal> element can be used at this
                                     point</entry>
@@ -193,12 +209,14 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SASdata"
                                         ><literal>&#160;&#160;SASdata</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SASdata</secondary></indexterm>
                                 </entry>
                                 <entry>this is where the reduced 1-D SAS data is stored</entry>
                             </row>
                             <row>
                                 <entry>
                                     <literal>&#160;&#160;&#160;Idata</literal>
+                                    <indexterm><primary>element</primary><secondary>Idata</secondary></indexterm>
                                 </entry>
                                 <entry>a single data point in the dataset</entry>
                             </row>
@@ -206,6 +224,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-any"
                                         ><literal>&#160;&#160;{any}</literal></link>
+                                    <indexterm><primary>element</primary><secondary>&lt;any&gt;</secondary></indexterm>
                                 </entry>
                                 <entry>any cansas1d/1.0 element can be used at this
                                     point</entry>
@@ -214,6 +233,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SASsample"
                                         ><literal>&#160;&#160;SASsample</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SASsample</secondary></indexterm>
                                 </entry>
                                 <entry>description of the sample</entry>
                             </row>
@@ -221,6 +241,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SASinstrument"
                                         ><literal>&#160;&#160;SASinstrument</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SASinstrument</secondary></indexterm>
                                 </entry>
                                 <entry>description of the instrument</entry>
                             </row>
@@ -228,6 +249,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SASsource"
                                         ><literal>&#160;&#160;&#160;SASsource</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SASsource</secondary></indexterm>
                                 </entry>
                                 <entry>description of the source</entry>
                             </row>
@@ -235,6 +257,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SAScollimation"
                                         ><literal>&#160;&#160;&#160;SAScollimation</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SAScollimation</secondary></indexterm>
                                 </entry>
                                 <entry>description of the collimation</entry>
                             </row>
@@ -242,6 +265,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SASdetector"
                                         ><literal>&#160;&#160;&#160;SASdetector</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SASdetector</secondary></indexterm>
                                 </entry>
                                 <entry>description of the detector</entry>
                             </row>
@@ -249,6 +273,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SASprocess"
                                         ><literal>&#160;&#160;SASprocess</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SASprocess</secondary></indexterm>
                                 </entry>
                                 <entry>for each processing or analysis step</entry>
                             </row>
@@ -256,6 +281,7 @@
                                 <entry>
                                     <link xlink:href="#cansas1d_documentation-element-SASnote"
                                         ><literal>&#160;&#160;SASnote</literal></link>
+                                    <indexterm><primary>element</primary><secondary>SASnote</secondary></indexterm>
                                 </entry>
                                 <entry>anything at all</entry>
                             </row>
@@ -290,6 +316,9 @@
                             </alt>
                         </mathphrase>
                     </inlineequation>
+                    <indexterm>
+                        <primary>Q</primary>
+                    </indexterm>
                 </para>
                 <para>
                     <indexterm>
@@ -427,7 +456,12 @@
             </listitem>
             <listitem>
                 <para>orientation (angles) describes one-axis rotations (rotations about
-                    multiple axes require more information): </para>
+                    multiple axes require more information): 
+                    <indexterm>
+                        <primary>geometry</primary>
+                        <secondary>orientation (rotation)</secondary>
+                    </indexterm>
+                </para>
                 <orderedlist numeration="loweralpha">
                     <listitem>
                         <para>roll is about z</para>
@@ -441,8 +475,12 @@
                 </orderedlist>
             </listitem>
             <listitem>
-                <para> Unicode characters MUST NOT be used</para>
-                <!--<note><para>Perhaps this could be relaxed in v1.1?</para></note>-->
+                <para> 
+                    Unicode characters MUST NOT be used
+                    <note>
+                        <para>Can UNICODE characters be permitted in v1.1 standard?</para>
+                    </note>
+                </para>
             </listitem>
             <listitem>
                 <para> Binary data is not supported</para>
@@ -453,7 +491,13 @@
     </section>
     <section xml:id="cansas1d_documentation-geometry_compatibility">
         <title>Compatibility of Geometry Definitions</title>
-        <para> Note: translation and orientation geometry used by canSAS are consistent with: </para>
+        <para>
+            Note: translation and orientation geometry used by canSAS are consistent with: 
+            <indexterm>
+                <primary>geometry</primary>
+                <secondary>compatibility with other standards</secondary>
+            </indexterm>
+        </para>
         <itemizedlist>
             <listitem>
                 <para>Cartesian: <link xlink:href="http://en.wikipedia.org/wiki/Cartesian_coordinate_system"
@@ -464,7 +508,9 @@
                     ><literal>http://en.wikipedia.org/wiki/Right-hand_rule</literal></link></para>
             </listitem>
             <listitem>
-                <para>NeXus: <link xlink:href="http://www.nexusformat.org/Coordinate_Systems"
+                <para>NeXus:
+                    <indexterm><primary>NeXus</primary></indexterm>
+                    <link xlink:href="http://www.nexusformat.org/Coordinate_Systems"
                     ><literal>http://www.nexusformat.org/Coordinate_Systems</literal></link></para>
             </listitem>
             <listitem>
@@ -507,8 +553,9 @@
             to translate three-column ASCII text data into the cansas1d/1.0 XML
             format. This form will help you in creating an XML file with all the required
             elements in the correct places. The form requests the SAS data of Q, I, and Idev
-            (defined elsewhere on this page) and some basic metadata (title, run, sample info,
-            ...). </para>
+            (defined elsewhere on this page) and some basic metadata 
+            <indexterm><primary>metadata</primary></indexterm>
+            (title, run, sample info, ...). </para>
         <para>Press the <code>Submit</code> button and you will receive a nicely
             formatted WWW page with the SAS data. If you then choose <emphasis>View page source</emphasis>
             (from one of your browser menus), you will see the raw XML of the cansas1d/1.0 XML format
@@ -558,7 +605,9 @@
                 <indexterm>
                     <primary>XML Stylesheet</primary>
                 </indexterm>
-                can be used to extract metadata or to convert into another file format. The
+                can be used to extract metadata 
+                <indexterm><primary>metadata</primary></indexterm>
+                or to convert into another file format. The
                 default canSAS stylesheet <literal>cansasxml-html.xsl</literal><footnote>
                     <para>
                         <link xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl"
@@ -578,7 +627,9 @@
                 Internet Explorer. Double-clicking on a canSAS XML data file with the
                 <literal>cansasxml-html.xsl</literal> (see above)
                 stylesheet in the same directory will produce a
-                WWW page with the SAS data and selected metadata.</para>
+                WWW page with the SAS data and selected metadata.
+                <indexterm><primary>metadata</primary></indexterm>
+            </para>
         </section>
         <section xml:id="cansas1d_documentation-programming_suggestions">
             <title>Suggestions for support software that write cansas1d/1.0 XML data files</title>
@@ -796,9 +847,9 @@
                             ><literal
                                 >http://svn.smallangles.net/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml</literal></link></para>
                 </footnote>
-                This example uses a foreign namespace to record the transmission spectra related to
+                This example uses a foreign namespace to record the transmission spectrum related to
                 the acquisition of the SANS data at a time-of-flight facility. Look near line 153
-                for the element om the next example. 
+                for this element: 
                 <informalexample>
                     <programlisting>&lt;transmission_spectrum xmlns="urn:transmission:spectrum"></programlisting>
                 </informalexample>

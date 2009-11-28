@@ -115,6 +115,10 @@
                     <entry>
                         <link xlink:href="#cansas1d_documentation-element-any"
                             ><literal>{any}</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>&lt;any&gt;</secondary>
+                        </indexterm>
                     </entry>
                     <entry>
                         container
@@ -126,6 +130,10 @@
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
                         See <link xlink:href="#cansas1d_documentation-element-any"
                             ><literal>{any}</literal></link> 
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>&lt;any&gt;</secondary>
+                        </indexterm>
                         for more details.
                     </entry>
                     <entry><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></entry>
@@ -156,6 +164,10 @@
                 <row>
                     <entry>
                         <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>&lt;any&gt;</secondary>
+                        </indexterm>
                     </entry>
                     <entry>
                         container

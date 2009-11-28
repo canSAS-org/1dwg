@@ -14,11 +14,11 @@
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>SASdata element</title>
     <itemizedlist mark="opencircle">
-        <indexterm significance="preferred">
-            <primary>element</primary>
-            <secondary>SASdata</secondary>
-        </indexterm>
         <listitem>
+            <indexterm significance="preferred">
+                <primary>element</primary>
+                <secondary>SASdata</secondary>
+            </indexterm>
             <para> parent: <link xlink:href="#cansas1d_documentation-element-SASentry"
                 ><literal>SASentry</literal></link>
             </para>
@@ -185,7 +185,7 @@
                         </entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
-                        <entry> Estimated standard deviation of <literal>I</literal>.
+                        <entry> Estimated uncertainty (usually standard deviation) of <literal>I</literal>.
                             The <literal>unit</literal> attribute is required. See
                                 <link xlink:href="#cansas1d_documentation-rules">rules for
                                 units</link> for acceptable values. One
@@ -204,7 +204,7 @@
                         </entry>
                         <entry> floating-point number </entry>
                         <entry> [0..1] </entry>
-                        <entry> Estimated standard deviation of <literal>Q</literal>.
+                        <entry> Estimated uncertainty (usually standard deviation) of <literal>Q</literal>.
                             (optional: see note below on usage)
                             The <literal>unit</literal> 
                             attribute is required. See <link
@@ -316,6 +316,10 @@
                         <entry>
                             <link xlink:href="#cansas1d_documentation-element-any"
                                 ><literal>{any}</literal></link>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>&lt;any&gt;</secondary>
+                            </indexterm>
                         </entry>
                         <entry> container </entry>
                         <entry> [0..inf] </entry>
@@ -350,7 +354,7 @@
         </note>
         <note>
             <para>
-                <emphasis role="bold">The Shadowfactor attribute definition needs revision.
+                <emphasis role="bold">The <literal>Shadowfactor</literal> element definition needs revision.
                     NIST?</emphasis>
             </para>
         </note>

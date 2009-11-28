@@ -97,7 +97,11 @@
                     <emphasis role="italic">Attributes</emphasis>
                     <indexterm><primary>XML</primary><secondary>attributes</secondary></indexterm>
                     list the required or optional attributes of this element.  Note that attributes must
-                    adhere to the well-formed XML guidelines
+                    adhere to the well-formed<footnote><para><link 
+                        xlink:href="http://www.w3schools.com/xmL/xml_syntax.asp"
+                        ><literal>http://www.w3schools.com/xmL/xml_syntax.asp</literal></link></para></footnote>
+                    <indexterm><primary>XML</primary><secondary>well-formed</secondary></indexterm>
+                    XML guidelines
                     <programlisting>attributename="value"</programlisting>
                     where either single or double quotes surround the value.  
                     All attributes must have a value.  Attributes may be given in any order.

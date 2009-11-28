@@ -43,7 +43,9 @@
                 <link
                     xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml"
                     ><literal>bimodal-test1.xml</literal></link> example file in the main distribution.
-                The stylesheet in <literal>data-simple.xml</literal> is very basic
+                The stylesheet
+                <indexterm><primary>XML Stylesheet</primary></indexterm>
+                in <literal>data-simple.xml</literal> is very basic
                 <footnote><para><link
                     xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml"
                     ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml</literal></link></para></footnote>
@@ -70,7 +72,7 @@
                     <primary>XML file</primary>
                     <secondary>cansas1d.xml</secondary>
                 </indexterm>
-                shows example
+                shows examples
                 of most of the elements of the cansas1d/1.0 standard.  Only a single data 
                 point has been shown to more clearly show the other structure.
                 <footnote><para><link
@@ -81,21 +83,22 @@
                 <primary>XML</primary>
                 <secondary>cansas1d/1.0 data file</secondary>
             </indexterm>
-            <example>
-                <title><citetitle>cansas1d.xml</citetitle></title>
+            <!-- too long for a DocBook "example" -->
+            <informalexample>
+                <!--<title><citetitle>cansas1d.xml</citetitle></title>-->
                 <programlisting language="xml" linenumbering="numbered">
                     <textobject>
                         <textdata fileref="../../cansas1d.xml"/>
                     </textobject>
                 </programlisting>
-            </example>
+            </informalexample>
         </section>
     </section>
     <section xml:id="xml-stylesheet">
         <title>Example XML Stylesheets</title>
         <para>
             This section presents examples of XML Stylesheets 
-            <indexterm>
+            <indexterm significance="preferred">
                 <primary>XML Stylesheet</primary>
             </indexterm>
             useful for the cansas1d/1.0 standard.  
@@ -106,7 +109,9 @@
             </indexterm>
             are used to transform XML documents into 
             other documents such as XML documents, xhtml documents, or even ASCII text.
-            XML stylesheets also can be used to extract metadata from XML files.
+            XML stylesheets also can be used to extract metadata
+            <indexterm><primary>metadata</primary></indexterm>
+            from XML files.
             <indexterm>
                 <primary>XML Stylesheet</primary>
             </indexterm>
@@ -154,22 +159,24 @@
                 </indexterm>
                 is the standard XSL stylesheet for cansas1d/1.0 files.
                 It shows all available <literal>SASdata</literal>
-                and metadata, separated by the different 
+                and metadata,
+                <indexterm><primary>metadata</primary></indexterm>
+                separated by the different 
                 <literal>SASentry</literal> blocks.
             </para>
             <indexterm>
                 <primary>XML Stylesheet</primary>
                 <secondary>cansasxml-html.xsl</secondary>
             </indexterm>
-            <!-- Cannot make next code into multi-page example it seems. -->
-            <!--<example>
-                <title><citetitle>cansasxml-html.xsl</citetitle></title>-->
+            <!-- too long for a DocBook "example" -->
+            <informalexample>
+                <!--<title><citetitle>cansasxml-html.xsl</citetitle></title>-->
                 <programlisting language="xml" linenumbering="numbered">
                     <textobject>
                         <textdata fileref="../../cansasxml-html.xsl"/>
                     </textobject>
                 </programlisting>
-            <!--</example>-->
+            </informalexample>
         </section>
     </section>
 </appendix>

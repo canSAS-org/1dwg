@@ -13,6 +13,9 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>XML Help</title>
     <para>Listed below are various references useful in learning XML and related topics.</para>
+    <indexterm>
+        <primary>XML</primary>
+    </indexterm>
     <itemizedlist mark="opencircle">
         <listitem>
             <para><emphasis role="bold">XML</emphasis>: eXtensible Markup Language <itemizedlist>
@@ -53,7 +56,11 @@
         </listitem>
         <listitem>
             <para><emphasis role="bold">XPath</emphasis>: XPath is a language for finding information
-                in an XML document. <itemizedlist>
+                in an XML document. 
+                <indexterm>
+                    <primary>XPath</primary>
+                </indexterm>
+                <itemizedlist>
                     <listitem>
                         <para>http://www.w3schools.com/xpath/</para>
                     </listitem>
@@ -67,7 +74,11 @@
         </listitem>
         <listitem>
             <para><emphasis role="bold">Schema</emphasis>: An XML Schema describes the structure of
-                an XML document. <itemizedlist>
+                an XML document.
+                <indexterm>
+                    <primary>XML Schema</primary>
+                </indexterm>
+                <itemizedlist>
                     <listitem>
                         <para>http://www.w3schools.com/schema/</para>
                     </listitem>
@@ -81,7 +92,15 @@
         </listitem>
         <listitem>
             <para><emphasis role="bold">XML Namespaces</emphasis>: XML namespaces are used for
-                providing uniquely named elements and attributes in an XML instance. <itemizedlist>
+                providing uniquely named elements and attributes in an XML instance.
+                <indexterm>
+                    <primary>XML Namespace</primary>
+                </indexterm>
+                <indexterm>
+                    <primary>namespace</primary>
+                    <see>XML Namespace</see>
+                </indexterm>
+                <itemizedlist>
                     <listitem>
                         <para>http://www.zvon.org/xxl/NamespaceTutorial/Output</para>
                     </listitem>
