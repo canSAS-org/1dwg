@@ -1,11 +1,11 @@
 package org.scatteringsw.reader;
 
 //########### SVN repository information ###################
-//# $Date: $
-//# $Author: $
-//# $Revision: $
-//# $URL: $
-//# $Id: $
+//# $Date$
+//# $Author$
+//# $Revision$
+//# $URL$
+//# $Id$
 //########### SVN repository information ###################
 
 import java.util.List;
