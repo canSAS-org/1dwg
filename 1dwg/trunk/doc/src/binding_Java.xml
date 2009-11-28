@@ -56,7 +56,11 @@
                 </para>
             </listitem>
             <listitem>
-                <para> Question : How do I pull out the <emphasis>I(Q)</emphasis> data? </para>
+                <para> 
+                    Question : How do I pull out the 
+                    <emphasis>I(Q)</emphasis><indexterm><primary>I(Q)</primary></indexterm> 
+                    data? 
+                </para>
             </listitem>
             <listitem>
                 <para> Answer : see fragment below (gets data for desmearing) </para>
@@ -89,6 +93,7 @@
     </section>
     <section>
         <title>example: how to retrieve I(Q)</title>
+        <indexterm><primary>I(Q)</primary></indexterm> 
         <para>
             Look for the line that has 
             <informalexample>

@@ -53,5 +53,6 @@
         types of intensity indiscriminately. </para>
     <para> A second problem is that when arbitrary units are used, then the set of possible
         analytical results is restricted (such as no meaningful volume fraction or number
-        density can be determined directly from I(Q)). </para>
+        density can be determined directly from I(Q)).<indexterm><primary>I(Q)</primary></indexterm> 
+    </para>
 </appendix>

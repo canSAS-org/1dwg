@@ -157,6 +157,10 @@
                     <entry>
                         <link xlink:href="#cansas1d_documentation-element-any"
                             ><literal>{any}</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>&lt;any&gt;</secondary>
+                        </indexterm>
                     </entry>
                     <entry>
                         container
@@ -201,6 +205,10 @@
                         <entry>
                             <link xlink:href="#cansas1d_documentation-element-any"
                                 ><literal>{any}</literal></link>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>&lt;any&gt;</secondary>
+                            </indexterm>
                         </entry>
                         <entry>
                             container

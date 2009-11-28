@@ -48,11 +48,6 @@
         </revhistory>
     </info>
 
-	<!--
-	Here is an example of how to construct a cross-reference from NeXus
-	<link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#NXgeometrySection">NXgeometry</link>
-	-->
-
 	<xi:include href="preface.xml"/>
     <xi:include href="overview.xml"/>
     <xi:include href="specification.xml"/>

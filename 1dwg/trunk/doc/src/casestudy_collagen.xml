@@ -63,9 +63,11 @@
         <para> The raw data 
             was collected on a linear position-sensitive detector and reduced to
             columns of <emphasis role="bold">Q</emphasis>, <emphasis role="bold">I</emphasis>, and
-                <emphasis role="bold">Iesd</emphasis> (estimated standard deviation of <emphasis
+                <emphasis role="bold">Idev</emphasis> (estimated standard deviation of <emphasis
                 role="bold">I</emphasis>). </para>
-        <para> The only metadata available for this data (without resorting to digging through piles
+        <para> The only metadata
+            <indexterm><primary>metadata</primary></indexterm>
+            available for this data (without resorting to digging through piles
             of old notebooks) was obtained from two file headers: 
             <link
                 xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC"
@@ -119,7 +121,9 @@ Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls        </pr
         <section>
             <title>modify collagen.xml</title>
             <para> It is easier to see the metadata in the XML file before you enter the SAXS data
-                into the file. With the brief metadata available, most of the other 
+                into the file. With the brief metadata
+                <indexterm><primary>metadata</primary></indexterm>
+                available, most of the other 
                 lines in <citetitle>cansas1d.xml</citetitle> can be eliminated. This
                 will result in a file that looks like the next example.</para>
             <example>

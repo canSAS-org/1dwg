@@ -59,6 +59,10 @@
                 <row>
                     <entry>
                         <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>&lt;any&gt;</secondary>
+                        </indexterm>
                     </entry>
                     <entry>
                         container
@@ -68,7 +72,8 @@
                     </entry>
                     <entry>
                         Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
-                        See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> for more details.
+                        See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                        for more details.
                     </entry>
                     <entry>
                         <para>

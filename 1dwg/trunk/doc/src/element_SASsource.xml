@@ -64,6 +64,7 @@
                     <entry>
                         <para>
                             Name of the radiation used. For maximum compatibility with NeXus,
+                            <indexterm><primary>NeXus</primary></indexterm>
                             use one of the names defined by either <link
                                 xlink:href="http://www.nexusformat.org/NXsource"
                                 ><citetitle>NeXus</citetitle>
@@ -82,6 +83,7 @@
                             or <link
                                 xlink:href="http://www.nexusformat.org/NXsource"
                                 ><citetitle>NeXus</citetitle>
+                                <indexterm><primary>NeXus</primary></indexterm>
                                 <literal>NXsource/probe</literal></link> 
                         </para>
                         <itemizedlist>

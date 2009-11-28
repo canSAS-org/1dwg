@@ -54,20 +54,25 @@
                     <entry>[0..1]</entry>
                     <entry>
                         <para><code>&lt;?xml-stylesheet type="text/xsl" href="example.xsl"
-                            ?></code></para>
-                        <para> Declares that <emphasis role="italic">example.xsl</emphasis> (needs
-                            to be in the local directory) will be the default stylesheet to an XML
-                            visualization tool. Change <emphasis role="italic"
+                            ?&gt;</code></para>
+                        <para>Declares <emphasis role="italic">example.xsl</emphasis> (needs
+                            to be in the local directory) is the default stylesheet
+                            <indexterm><primary>XML Stylesheet</primary></indexterm>
+                            of an XML visualization tool. Change <emphasis role="italic"
                                 >example.xsl</emphasis> to indicate a different stylesheet in the
-                            local directory. Refer to <link
-                                xlink:href="http://www.w3schools.org/xsl">W3 Schools XSLT
-                                Help</link> for assistance in constructing XSLT 
-                            files.<footnote><para><link
+                            local directory.<footnote><para>Refer to <link
                                 xlink:href="http://www.w3schools.org/xsl"><literal
-                                    >http://www.w3schools.org/xsl</literal></link></para></footnote> 
+                                    >http://www.w3schools.org/xsl</literal>
+                                W3 Schools XSLT
+                                Help</link> for assistance in constructing XSLT 
+                                files.</para></footnote> 
+                            <footnote>
+                                <para> XML rules actually allow for multiple stylesheet
+                                   <indexterm><primary>XML Stylesheet</primary></indexterm>
+                                   declarations.  Explore this possibility as your own adventure. 
+                                </para>
+                            </footnote>
                         </para>
-                        <para> XML rules actually allow for multiple stylesheet declarations.
-                            Explore this possibility as your own adventure. </para>
                     </entry>
                     <entry>
                         <para><code>type="text/xsl"</code></para>
@@ -88,7 +93,9 @@
 							(This is similar to 
 							<link
 							    xlink:href="http://www.nexusformat.org/NXroot"><literal>NXroot</literal></link>
-                            used by NeXus.<footnote><para><link xlink:href="http://www.nexusformat.org/NXroot"
+                            used by 
+                            <indexterm><primary>NeXus</primary></indexterm>
+                            NeXus.<footnote><para><link xlink:href="http://www.nexusformat.org/NXroot"
                                 ><literal>http://www.nexusformat.org/NXroot</literal></link></para></footnote>)
 						</para>
                     </entry>

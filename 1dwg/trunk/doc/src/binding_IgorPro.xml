@@ -29,7 +29,9 @@
         XML file is not replicated in IgorPro data structures. 
         This tool reads the vectors of 1-D SAS data (Q, I, ...) 
         into IgorPro waves (Qsas, Isas, ...). The tool also reads 
-        most of the metadata into an IgorPro textWave for use by other 
+        most of the metadata
+        <indexterm><primary>metadata</primary></indexterm>
+        into an IgorPro textWave for use by other 
         support in IgorPro.</para></note>
     <note><para>Note that the code described here is <emphasis>not a complete user interface</emphasis>.
         (See further comments below.) It is expected that this code will be called by a graphical
@@ -230,7 +232,9 @@
             effort determination).  Efforts are taken to avoid duplication of data folder names (using
             standard IgorPro routines). For <literal>SASentry</literal> elements that
             contain more than one SASdata element, a <literal>SASdata</literal> folder
-            is created for each and the corresponding <literal>I(Q)</literal> is placed in that
+            is created for each and the corresponding 
+            <literal>I(Q)</literal><indexterm><primary>I(Q)</primary></indexterm>
+            is placed in that
             subfolder. When only one <literal>SASdata</literal> is found, the
                 <literal>I(Q)</literal>data is placed in the main <literal>Title</literal>
             folder. </para>
@@ -243,8 +247,10 @@
         </section>
         <section>
             <title>metadata</title>
-            <para> Additional metadata is collected into a single text wave
-                (<emphasis>metadata</emphasis>) where the first columnis 
+            <para> Additional metadata
+                <indexterm><primary>metadata</primary></indexterm>
+                is collected into a single text wave
+                (<emphasis>metadata</emphasis>) where the first column is 
                 an identifier (or
                 <emphasis>key</emphasis>) and the second identifier is the
                 <emphasis>value</emphasis>. Only those keys with non-empty values 
@@ -257,9 +263,13 @@
                 responsibility of the calling
                 routine to <emphasis>clean these up</emphasis> if the need arises.
             </para></caution>
-                <para> The code checks for most metadata elements and will check for repeated
+            <para> The code checks for most metadata
+                <indexterm><primary>metadata</primary></indexterm>
+                elements and will check for repeated
                 elements where the standard permits. </para>
-            <para> Here is an example of the metadata for the 
+            <para> Here is an example of the metadata
+                <indexterm><primary>metadata</primary></indexterm>
+                for the 
                 <literal>cs_collagen_full.xml</literal> case study: 
                 <table>
                     <title>metadata for the <literal>cs_collagen_full.xml</literal> case study</title>
@@ -368,10 +378,10 @@ dry chick collagen, d = 673 A
             <title>XML stylesheet processing-instruction is not generated</title>
             <para> The <link xlink:href="http://www.igorexchange.com/project/XMLutils"
                 ><citetitle><literal>XMLutils</literal></citetitle></link> 
-                package does not provide a
-                method to insert the prescribed XML 
-                stylesheet processing-instruction into the XML
-                data file.
+                package does not provide a method to insert the prescribed XML 
+                stylesheet 
+                <indexterm><primary>XML Stylesheet</primary></indexterm>
+                processing-instruction into the XML data file.
                 <programlisting>&lt;?xml-stylesheet type=text/xsl href=example.xsl ?&gt;</programlisting>
                 If this processing-instruction is desired, 
                 it must be added to each XML data file by
@@ -457,9 +467,10 @@ dry chick collagen, d = 673 A
                     </indexterm>
                     <emphasis role="bold">This is what guides the
                         work</emphasis>, given a file ID returned from <emphasis role="bold"
-                        >XMLOpenFile()</emphasis>, parses that file for SAS data and metadata (1i in
-                    the function name signifies this is a function that supports INPUT from version
-                    1.0 XML files) </para>
+                            >XMLOpenFile()</emphasis>, parses that file for SAS data and metadata
+                    <indexterm><primary>metadata</primary></indexterm>
+                    (1i in the function name signifies this is a function that supports 
+                    INPUT from version 1.0 XML files) </para>
             </listitem>
             <listitem>
                 <para> CS_1i_getOneSASdata(fileID, Title, SASdataPath) : 
@@ -468,8 +479,9 @@ dry chick collagen, d = 673 A
                         <secondary>IgorPro</secondary>
                         <tertiary><literal>CS_1i_getOneSASdata()</literal></tertiary>
                     </indexterm>
-                    harvest the data and
-                    metadata in the specific SASdata element </para>
+                    harvest the data and metadata
+                    <indexterm><primary>metadata</primary></indexterm>
+                    in the specific SASdata element </para>
             </listitem>
             <listitem>
                 <para> CS_1i_getOneVector(file,prefix,XML_name,Igor_name) : 
@@ -510,8 +522,9 @@ dry chick collagen, d = 673 A
                     </indexterm>
                     queries XML file for <emphasis
                         role="bold">xpath</emphasis>. If <emphasis role="bold">value</emphasis> is
-                    not empty, appends it to <emphasis role="bold">metadata</emphasis> where
-                        <emphasis>last</emphasis> is the new last row: metadata[last][0]=key;
+                    not empty, appends it to <emphasis role="bold">metadata</emphasis>
+                    <indexterm><primary>metadata</primary></indexterm>
+                    where <emphasis>last</emphasis> is the new last row: metadata[last][0]=key;
                     metadata[last][1]=value </para>
             </listitem>
             <listitem>

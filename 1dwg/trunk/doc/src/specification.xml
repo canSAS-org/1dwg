@@ -24,7 +24,7 @@
     <para>
         Note that the cansas1d/1.0 XML data files must adhere to the 
         XML rules which includes being well-formed
-        <indexterm><primary>XML</primary><secondary>well-formed</secondary></indexterm>
+        <indexterm significance="preferred"><primary>XML</primary><secondary>well-formed</secondary></indexterm>
         (including the use of closing tags).  
         <footnote>
             <para>
@@ -62,7 +62,12 @@
     <para>
         Another example is an instance of the 
         <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
-        element.  Suppose one had analysis data, then <literal>{any}</literal> would be replaced 
+        element.  Suppose one had analysis data, then <literal>{any}</literal>
+        <indexterm>
+            <primary>element</primary>
+            <secondary>&lt;any&gt;</secondary>
+        </indexterm>
+        would be replaced 
         with <literal>analysis</literal> and the element might look like this:
         <informalexample>
             <programlisting>&lt;analysis>
@@ -71,7 +76,6 @@
             </programlisting>
         </informalexample>
     </para>
-
 
     <xi:include href="elements.xml"/>
 </chapter>
