@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.smallangles</groupId>
+	<artifactId>cansas1d</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>cansas1d</name>
+	<description>This is the Java (JAXB) binding for the canSAS1d/1.0 standard.
+
+One of the first aims of the canSAS (Collective Action for Nomadic Small-Angle Scatterers) forum of users, software developers, and facility staff was to discuss better sharing of SAS data analysis software. The canSAS identified that a significant need within the SAS community can be satisfied by a robust, self-describing, text-based, standard format to communicate reduced one-dimensional small-angle scattering data, between users of our facilities. Our goal has been to define such a format that leaves the data file instantly human-readable, editable in the simplest of editors, and importable by simple text import filters in programs that need not recognise advanced structure in the file nor require advanced programming interfaces. The file should contain both the primary data of and also any other descriptive information (metadata) about the sample, measurement, instrument, processing, or analysis steps.
+
+The cansas1d/1.0 standard meets the objectives for a 1D standard, incorporating metadata about the measurement, parameters and results of processing or analysis steps. Even multiple measurements (related or unrelated) may be included within a single XML file.</description>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<issueManagement>
+		<system>Trac</system>
+		<url>http://svn.smallangles.net/trac/canSAS</url>
+	</issueManagement>
+	<developers>
+		<developer>
+			<name>Pete Jemian</name>
+			<organization> Advanced Photon Source (APS) </organization>
+			<email>jemian@anl.gov</email>
+			<organizationUrl>http://www.aps.anl.gov</organizationUrl>
+			<roles>
+				<role>1D format working group</role>
+				<role>lead XML Developer</role>
+				<role>Java Developer</role>
+				<role>Python Developer</role>
+				<role>former APS/USAXS instrument scientist</role>
+			</roles>
+		</developer>
+		<developer>
+			<name> Steve King </name>
+			<organization> ISIS </organization>
+			<roles>
+				<role>1D format working group</role>
+				<role>FORTRAN Developer</role>
+				<role>ISIS LOQ instrument scientist</role>
+			</roles>
+		</developer>
+		<developer>
+			<name> Andrew Jackson </name>
+			<organization> NIST </organization>
+			<roles>
+				<role>1D format working group</role>
+				<role>IgorPro Developer</role>
+				<role>NIST NCNR/BT-5 USANS instrument scientist</role>
+			</roles>
+		</developer>
+		<developer>
+			<name> Ken Littrell </name>
+			<organization> ORNL </organization>
+			<roles>
+				<role>1D format working group</role>
+				<role>IgorPro Developer</role>
+				<role>ORNL/HIFR instrument scientist</role>
+			</roles>
+		</developer>
+		<developer>
+			<name> Andy Nelson </name>
+			<organization> ANSTO </organization>
+			<roles>
+				<role>1D format working group</role>
+				<role>IgorPro Developer</role>
+				<role>XML Developer</role>
+				<role>ANSTO/Platypus instrument scientist</role>
+			</roles>
+		</developer>
+		<developer>
+			<name> Ron Ghosh </name>
+			<organization> ILL </organization>
+			<roles>
+				<role>1D format working group</role>
+				<role>retired</role>
+			</roles>
+		</developer>
+		<developer>
+			<name> Jan Ilavsky </name>
+			<organization> APS </organization>
+			<roles>
+				<role>1D format working group</role>
+				<role>IgorPro Developer</role>
+				<role>APS/USAXS instrument scientist</role>
+			</roles>
+		</developer>
+	</developers>
+	<scm>
+		<url>http://svn.smallangles.net/svn/canSAS/1dwg/</url>
+	</scm>
+	<organization>
+		<name>canSAS</name>
+		<url>http://www.smallangles.net</url>
+	</organization>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>create-javadocjar</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-pdf-plugin</artifactId>-->
+<!--				<version>1.0-SNAPSHOT</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>pdf</id>-->
+<!--						<phase>site</phase>-->
+<!--						<goals>-->
+<!--							<goal>pdf</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<outputDirectory>${project.reporting.outputDirectory}</outputDirectory>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
+		</plugins>
+	</build>
+</project>
