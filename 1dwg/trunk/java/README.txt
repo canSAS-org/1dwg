@@ -5,9 +5,14 @@ $Id$
 USE
 
 To use the Java (JAXB) binding, all you need are the JAR files in the releases directory.
-http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/releases/cansas1d-1.0.jar
-http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/releases/cansas1d-1.0-javadoc.jar
-http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/releases/cansas1d-1.0-sources.jar
+	http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0/java
+	-- or --
+	http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/releases
+
+These are the files to download:
+	cansas1d-1.0.jar
+	cansas1d-1.0-javadoc.jar
+	cansas1d-1.0-sources.jar
 
 DOCUMENTATION
 
