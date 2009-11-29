@@ -23,6 +23,9 @@ The documentation for the code is available either:
 **  check out from the subversion tree until we get it posted to a URL
 **	svn co http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/maven-eclipse/target/apidocs ./cansas1d-JAXB-docs-API
 
+The documentation for the project is available:
+svn co http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/maven-eclipse/target/site ./cansas1d-JAXB-docs-project
+
 DEVELOPMENT
 
 To participate in the development of this code, checkout the maven-eclipse 
