@@ -63,7 +63,7 @@ public class GetSASdata {
 		SASentryType entry = (SASentryType) sasRoot.getSASentry().get(entryIndex);
 		SASdataType sdt = (SASdataType) entry.getSASdata().get(dataIndex);
 		if (sdt.getName().trim().compareTo("slit-smeared") != 0) {
-			System.out.println("selected SASdata element must start: &lt;SASdata name=\"slit-smeared\">");
+			System.out.println("selected SASdata element must start: <SASdata name=\"slit-smeared\">");
 			// throw something (an exception) here?
 			return;
 		}
@@ -71,7 +71,7 @@ public class GetSASdata {
 		Qsas = new double[numPoints];	// input Q
 		Isas = new double[numPoints];	// input I (slit-smeared)
 		Idev = new double[numPoints];	// input Idev (slit-smeared)
-		for (int i = 0; i &lt; numPoints; i++) {
+		for (int i = 0; i < numPoints; i++) {
 			Qsas[i] = sdt.getIdata().get(i).getQ().getValue();
 			Isas[i] = sdt.getIdata().get(i).getI().getValue();
 			Idev[i] = sdt.getIdata().get(i).getIdev().getValue();
@@ -97,7 +97,7 @@ public class GetSASdata {
 		JAXBContext jc = JAXBContext.newInstance(pkg);
 		Unmarshaller unmarshaller = jc.createUnmarshaller();
 		// open the XML file into a Java data structure
-		Object obj = (Object) ((JAXBElement&lt;Object>) unmarshaller
+		Object obj = (Object) ((JAXBElement<Object>) unmarshaller
 				.unmarshal(new File(xmlFile))).getValue();
 		return obj;
 	}
@@ -124,27 +124,27 @@ public class GetSASdata {
 
 		int numEntries = sasRoot.getSASentry().size();
 		System.out.println("SASentry elements: " + numEntries);
-		for( int i = 0; i &lt; numEntries; i++ ) {
+		for( int i = 0; i < numEntries; i++ ) {
 			System.out.println("SASentry");
 			SASentryType entry = sasRoot.getSASentry().get(i);
 			System.out.printf("Title:\t%s\n", entry.getTitle());
-			List&lt;SASentryType.Run> runs = entry.getRun();
+			List<SASentryType.Run> runs = entry.getRun();
 			System.out.printf("#Runs:\t%d\n", runs.size());
-			for( int j = 0; j &lt; runs.size(); j++ ) {
+			for( int j = 0; j < runs.size(); j++ ) {
 				Run run = (Run) runs.get(j);
 				System.out.printf("Run@name:\t%s\n", run.getName());
 				System.out.printf("Run:\t%s\n", run.getValue());
 			}
-			List&lt;SASdataType> datasets = entry.getSASdata();
+			List<SASdataType> datasets = entry.getSASdata();
 			System.out.printf("#SASdata:\t%d\n", datasets.size());
-			for( int j = 0; j &lt; datasets.size(); j++ ) {
+			for( int j = 0; j < datasets.size(); j++ ) {
 				SASdataType sdt = (SASdataType) datasets.get(j);
 				System.out.printf("SASdata@name:\t%s\n", sdt.getName());
 				System.out.printf("#points:\t%d\n", sdt.getIdata().size());
 			}
-			List&lt;SASdetectorType> detectors = entry.getSASinstrument().getSASdetector();
+			List<SASdetectorType> detectors = entry.getSASinstrument().getSASdetector();
 			System.out.printf("#SASdetector:\t%d\n", detectors.size());
-			for( int j = 0; j &lt; detectors.size(); j++ ) {
+			for( int j = 0; j < detectors.size(); j++ ) {
 				SASdetectorType det = (SASdetectorType) detectors.get(j);
 				System.out.printf("SASdata@name:\t%s\n", det.getName());
 				try {

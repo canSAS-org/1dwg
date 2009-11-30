@@ -783,7 +783,7 @@ s81-polyurea.xml 		 identified as: cansas1d/1.0 XML file
         </para>
     </section>
     <section>
-        <title>Graphical User Interface</title>
+        <title>IgorPro Graphical User Interface</title>
         <para> At least two groups are working on graphical user 
             interfaces that use the canSAS 1-D
             SAS XML format binding to IgorPro. The GUIs are intended 
