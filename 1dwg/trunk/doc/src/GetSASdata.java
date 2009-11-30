@@ -1,4 +1,4 @@
-/**
+/*
  *   ########### SVN repository information ###################
  *   # $Date$
  *   # $Author$
@@ -17,17 +17,16 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-import cansas1d.SASdataType;
-import cansas1d.SASdetectorType;
-import cansas1d.SASentryType;
-import cansas1d.SASinstrumentType;
-import cansas1d.SASrootType;
-import cansas1d.SASentryType.Run;
+import net.smallangles.cansas1d.SASdataType;
+import net.smallangles.cansas1d.SASdetectorType;
+import net.smallangles.cansas1d.SASentryType;
+import net.smallangles.cansas1d.SASinstrumentType;
+import net.smallangles.cansas1d.SASrootType;
+import net.smallangles.cansas1d.SASentryType.Run;
 
 
 /**
- * @author Pete Jemian
- * 
+ * Load the SAS data for desmearing by Jemian's ``lake'' program.
  */
 public class GetSASdata {
 
