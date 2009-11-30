@@ -1,0 +1,93 @@
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+    
+    This file is a configuration for "ant" and it is used to build
+    the PDF documentation file of the Java code.  Call it with:
+    	ant build
+
+    It uses the pdfdoclet installed in the configured location (see below).
+    http://pdfdoclet.sourceforge.net/
+-->
+<project name="cansas1d-1.0" default="build" basedir=".">
+
+    <!-- ************************************************************************ -->
+    <!-- Configuration properties                                                 -->
+    <!-- ************************************************************************ -->
+
+    <property name="source.dir"  value="${basedir}/src/main/java" />
+    <property name="output.dir"  value="${basedir}/pdf" />
+
+    <property name="pdfdoclet.config.file" value="${basedir}/doclet.properties" />
+
+    <!-- project name above is available in property "ant.project.name" -->
+    <property name="project.name" value="${ant.project.name}"/>
+    <property name="version.id" value="@VERSION-ID@"/>
+
+    <!-- name of the java library -->
+    <property name="library.name" value="pdfdoclet"/>
+
+    <!-- javadoc example packages     -->
+    <property name="javadoc.cansas1d.packages" value="net.smallangles.cansas1d.*" /> 
+    <property name="javadoc.reader.packages" value="org.scatteringsw.reader.*" />
+
+    <!-- PDF file targets     -->
+    <property name="cansas1d.pdf" value="${output.dir}/cansas1d.pdf" />
+    <property name="reader.pdf" value="${output.dir}/reader.pdf" />
+
+    <!-- 3rt party libraries                         -->
+    <property name="home.dir"  value="/home/jemian" />
+    <property name="eclipse.dir"  value="${home.dir}/Documents/eclipse" />
+    <property name="pdfdoclet.path"  value="${eclipse.dir}/pdfdoclet-binary-1.0.2" />
+    <property name="jar.dir"  value="${pdfdoclet.path}/jar" />
+    <property name="pdfdoclet.lib" value="pdfdoclet-1.0.2-all.jar" />
+
+    <!-- ************************************************************************ -->
+    <!-- Create the example PDF files                                             -->
+    <!-- ************************************************************************ -->
+
+    <target name="build" description="Builds all PDF files."
+            depends="cansas1d,reader" />
+            
+    <target name="cansas1d" description="Creates PDF files.">
+
+        <!-- Create the PDF javadoc                                -->
+        <javadoc 
+	    doclet="com.tarsec.javadoc.pdfdoclet.PDFDoclet"
+            docletpath="${jar.dir}/${pdfdoclet.lib}"
+            packagenames="${javadoc.cansas1d.packages}"
+            additionalparam="-pdf ${cansas1d.pdf} -debug -config ${pdfdoclet.config.file}"
+            private="no">
+            <sourcepath>
+                <pathelement location="${source.dir}"/>
+            </sourcepath>
+        </javadoc>
+
+        <echo message="Look for the PDF file: ${cansas1d.pdf}." />
+
+    </target>
+            
+    <target name="reader" description="Creates PDF file.">
+
+        <!-- Create the PDF javadoc                                -->
+        <javadoc 
+	    doclet="com.tarsec.javadoc.pdfdoclet.PDFDoclet"
+            docletpath="${jar.dir}/${pdfdoclet.lib}"
+            packagenames="${javadoc.reader.packages}"
+            additionalparam="-pdf ${reader.pdf} -debug -config ${pdfdoclet.config.file}"
+            private="no">
+            <sourcepath>
+                <pathelement location="${source.dir}"/>
+            </sourcepath>
+        </javadoc>
+
+        <echo message="Look for the PDF file: ${reader.pdf}." />
+
+    </target>
+
+</project>
