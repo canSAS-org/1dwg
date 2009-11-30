@@ -112,9 +112,28 @@ The cansas1d/1.0 standard meets the objectives for a 1D standard, incorporating 
 			</plugin>
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<!-- 
+					What about using PDFDOCLET to make PDF of javadocs?
+					http://pdfdoclet.sourceforge.net/running.html
+					http://mail-archives.apache.org/mod_mbox/maven-users/200707.mbox/%3CCDF7B0A3FDC6BE4CB523FB3FE31E4D5FD474A8@esebe111.NOE.Nokia.com%3E
+					http://maven.apache.org/plugins/maven-javadoc-plugin/examples/alternate-doclet.html
+
+				 -->
 				<executions>
 					<execution>
 						<id>create-javadocjar</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>create-sourcejar</id>
 						<phase>compile</phase>
 						<goals>
 							<goal>jar</goal>
