@@ -1,40 +1,67 @@
 
-Java (JAXB) binding for canSAS1d/1.0 XML standard for reduced small-angle scattering data.
+Java (JAXB 2.1) binding for canSAS1d/1.0 XML standard 
+for reduced small-angle scattering data.
+
 $Id$
+
+
+LICENSES
+
+See LICENSES folder.
+
 
 USE
 
-To use the Java (JAXB) binding, all you need are the JAR files in the releases directory.
+To use the Java (JAXB 2.1) binding, all you need are 
+the JAR files in the releases directory.
 	http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0/java
-	-- or --
-	http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/releases
 
 These are the files to download:
 	cansas1d-1.0.jar
-	cansas1d-1.0-javadoc.jar
-	cansas1d-1.0-sources.jar
+	cansas1d-1.0-javadoc.jar (optional)
+	cansas1d-1.0-sources.jar (optional)
+
 
 DOCUMENTATION
+
+This is the Java binding for the cansas1d/1.0 XML 
+standard for small-angle scattering data.
+
+The code has been auto-generated using the JAXB v2.1
+reference implementation from the cansas1d/1.0 XML schema.
 
 The documentation for the code is available either:
 * JAVADOC in JAR:  see above
 * JAVADOC in HTML: 
 **  The complete HTML is contained within the cansas1d-1.0-javadoc.jar above.  It can be extracted with any program that can extract a ZIP file.
-**  check out from the subversion tree until we get it posted to a URL
-**	svn co http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/maven-eclipse/target/apidocs ./cansas1d-JAXB-docs-API
 
-The documentation for the project is available:
-svn co http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/maven-eclipse/target/site ./cansas1d-JAXB-docs-project
 
 DEVELOPMENT
 
-To participate in the development of this code, checkout the maven-eclipse 
+To participate in the development of this code, checkout the ant-eclipse 
 directory from this level. No further instructions are provided so you may
 need to contact someone on the development team who understands this code.
-Check the pom.xml file for a listing if you need some getting started help.
 
-svn co http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/maven-eclipse ./cansas1d-JAXB-maven-eclipse
+svn co http://svn.smallangles.net/svn/canSAS/1dwg/trunk/java/ant-eclipse ./cansas1d-JAXB-ant-eclipse
+
+
+REFERENCES
+
+canSAS: 
+http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group
+
+cansas1d/1.0 documentation:
+http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0/doc/cansas-1d-1_0-manual.pdf?format=raw
+
+cansas1d/1.0 Java binding:
+http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0/java/
+
+JAXB reference implementation is version 2.1
+See the README.txt file in the LICENSES/JAXB folder.
+
 
 DEPRECATED
 
-The code in the cansas1d is deprecated and may be removed in the future without notice.
+The code from previous versions of the packaging and distribution
+(both cansas1d and maven-eclipse branches) is now deprecated and 
+has been removed from the SVN repository as of about revision 179.
