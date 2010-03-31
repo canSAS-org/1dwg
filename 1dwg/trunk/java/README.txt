@@ -65,3 +65,4 @@ DEPRECATED
 The code from previous versions of the packaging and distribution
 (both cansas1d and maven-eclipse branches) is now deprecated and 
 has been removed from the SVN repository as of about revision 179.
+The last useful version of the maven build was revision 171.
