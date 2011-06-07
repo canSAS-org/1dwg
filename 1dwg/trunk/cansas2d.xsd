@@ -3,21 +3,23 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"  jaxb:version="2.0"
-	targetNamespace="cansas2d/1.0" xmlns:tns="cansas2d/0.1"
+	targetNamespace="cansas2d/0.1" xmlns:tns="cansas2d/0.1"
 	elementFormDefault="qualified">
 
 <!-- JAXB: http://java.sun.com/developer/technicalArticles/WebServices/jaxb/ -->
 
-	<complexType name="floatVectorBase">
-		<attribute name="unit" type="string" use="required" />
-	</complexType>
-
+	<simpleType name="floatVectorBaseType">
+		<restriction base="string">
+			<pattern value = "(-?\d+(\.\d+)?\s?)+"/>
+			</restriction>
+	</simpleType>
+	
 	<complexType name="floatVectorType">
 		<simpleContent>
-				<restriction base="tns:floatVectorBase">
-					<pattern value = "(-?\d+(\.\d+)\s+)+"/>
-				</restriction>
-		</simpleContent>
+			<extension base="tns:floatVectorBaseType">
+				<attribute name="unit" type="string" use="required" />
+			</extension>
+		</simpleContent>		
 	</complexType>
 
 	<complexType name="floatUnitType">
@@ -61,13 +63,13 @@
 
 	<complexType name="IdataType">
 		<sequence>
-			<element name="Qx" minOccurs="1" maxOccurs="1"    type="tns:floatVectorType" />
-			<element name="Qy" minOccurs="1" maxOccurs="1"    type="tns:floatVectorType" />
-			<element name="I" minOccurs="1" maxOccurs="1"    type="tns:floatVectorType" />
-			<element name="Idev" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0" />
-			<element name="Qdev_parallel" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0" />
-			<element name="Qdev_perp" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0" />
-			<element name="Shadowfactor" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0" />
+			<element name="Qx" minOccurs="1" maxOccurs="1" type="tns:floatVectorType" />
+			<element name="Qy" minOccurs="1" maxOccurs="1" type="tns:floatVectorType" />
+			<element name="I" minOccurs="1" maxOccurs="1" type="tns:floatVectorType" />
+			<element name="Idev" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0.0" />
+			<element name="Qdev_parallel" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0.0" />
+			<element name="Qdev_perp" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0.0" />
+			<element name="Shadowfactor" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="1.0" />
 			<xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" namespace="##other" />
 		</sequence>
 	</complexType>
