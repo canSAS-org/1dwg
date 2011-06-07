@@ -8,14 +8,15 @@
 
 <!-- JAXB: http://java.sun.com/developer/technicalArticles/WebServices/jaxb/ -->
 
-	<complexType name="floatVectorUnitType">
+	<complexType name="floatVectorBase">
+		<attribute name="unit" type="string" use="required" />
+	</complexType>
+
+	<complexType name="floatVectorType">
 		<simpleContent>
-			<extension base="string">
-				<restriction base="string">
+				<restriction base="tns:floatVectorBase">
 					<pattern value = "(-?\d+(\.\d+)\s+)+"/>
 				</restriction>
-				<attribute name="unit" type="string" use="required" />
-			</extension>
 		</simpleContent>
 	</complexType>
 
