@@ -37,7 +37,7 @@
 			<date>07-SEP-2010 19:42:47</date>
 			<description />
 			<term name="average_type">QxQy_ASCII</term>
-			<term name="SAM_file">JUN09918.SA3_ML _Z586;JUN09919.SA3_ML _Z587;JUN09920.SA3_ML _Z588;JUN09921.SA3_ML _Z589;JUN09922.SA3_ML _Z590/term>
+			<term name="SAM_file">JUN09918.SA3_ML _Z586;JUN09919.SA3_ML _Z587;JUN09920.SA3_ML _Z588;JUN09921.SA3_ML _Z589;JUN09922.SA3_ML _Z590</term>
 			<term name="BKD_file">BLOCK901.SA3_ML_Z569</term>
 			<term name="EMP_file">EMPTY912.SA3_ML_Z580,EMPTY913.SA3_ML_Z581,EMPTY914.SA3_ML_Z582,EMPTY915.SA3_ML_Z583</term>
 			<term name="DIV_file">PLEX_28MAY2009_NG3.DIV</term>
