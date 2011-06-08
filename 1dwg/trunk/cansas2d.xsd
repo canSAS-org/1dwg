@@ -17,12 +17,6 @@
 			xmllint --noout --schema cansas2d.xsd cansas2d.xml
 		</appinfo>
 	</annotation>
-
-	<simpleType name="original_floatVectorBaseType">
-		<restriction base="string">
-			<pattern value = "(-?\d+(\.\d+)?\s?)+"/>
-			</restriction>
-	</simpleType>
 	
 	<simpleType name="floatVectorBaseType">
 		<list>
