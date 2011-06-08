@@ -8,12 +8,40 @@
 
 <!-- JAXB: http://java.sun.com/developer/technicalArticles/WebServices/jaxb/ -->
 
-	<simpleType name="floatVectorBaseType">
+	<annotation>
+		<appinfo>
+			XML Schema validation hint:
+			xmllint --noout --schema cansas2d.xsd Nanoparticle_2D_Example.xml
+			xmllint --noout --schema cansas2d.xsd cansas2d.xml
+		</appinfo>
+	</annotation>
+
+	<simpleType name="original_floatVectorBaseType">
 		<restriction base="string">
 			<pattern value = "(-?\d+(\.\d+)?\s?)+"/>
 			</restriction>
 	</simpleType>
 	
+	<simpleType name="floatVectorBaseType">
+		<list>
+			<annotation>
+				<documentation>
+					a "float" vector is a series of members (numbers)
+					separated by white space
+				</documentation>
+			</annotation>
+			<simpleType>
+				<annotation>
+					<documentation>
+						the members (numbers) of a "float" vector could be either 
+						any representation of decimal or integer numbers
+					</documentation>
+				</annotation>
+				<union memberTypes="decimal double float int integer long short"/>
+			</simpleType>
+		</list>
+	</simpleType>
+
 	<complexType name="floatVectorType">
 		<simpleContent>
 			<extension base="tns:floatVectorBaseType">
@@ -25,6 +53,7 @@
 	<complexType name="floatUnitType">
 		<simpleContent>
 			<extension base="float">
+				<!-- TODO: perhaps change the base from float to decimal? -->
 				<attribute name="unit" type="string" use="required" />
 			</extension>
 		</simpleContent>
@@ -67,6 +96,7 @@
 			<element name="Qy" minOccurs="1" maxOccurs="1" type="tns:floatVectorType" />
 			<element name="I" minOccurs="1" maxOccurs="1" type="tns:floatVectorType" />
 			<element name="Idev" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0.0" />
+			<element name="Qz" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" />
 			<element name="Qdev_parallel" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0.0" />
 			<element name="Qdev_perp" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="0.0" />
 			<element name="Shadowfactor" minOccurs="0" maxOccurs="1" type="tns:floatVectorType" default="1.0" />
