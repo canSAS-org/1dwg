@@ -3,7 +3,7 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"  jaxb:version="2.0"
-	targetNamespace="cansas1d/1.0" xmlns:tns="cansas1d/1.0"
+	targetNamespace="cansas1d/1.1" xmlns:tns="cansas1d/1.1"
 	elementFormDefault="qualified">
 
 <!-- JAXB: http://java.sun.com/developer/technicalArticles/WebServices/jaxb/ -->
@@ -45,7 +45,7 @@
 	</complexType>
 
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
+	
 	<complexType name="IdataType">
 		<sequence>
 			<element name="Q" minOccurs="1" maxOccurs="1"    type="tns:floatUnitType" />
@@ -64,14 +64,40 @@
 			<xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" namespace="##other" />
 		</sequence>
 	</complexType>
-
+	
 	<complexType name="SASdataType">
-		<sequence>
-			<element name="Idata" minOccurs="1" maxOccurs="unbounded" type="tns:IdataType" />
+		<sequence minOccurs="1" maxOccurs="1">  <!-- http://svn.smallangles.net/trac/canSAS/ticket/21 -->
+			<sequence>
+				<element name="Idata" minOccurs="1" maxOccurs="unbounded" type="tns:IdataType" />
+			</sequence>
+			<xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" namespace="##other" />
 		</sequence>
 		<attribute name="name" type="string" use="optional" default="" />
+		<attribute name="timestamp" type="dateTime" use="optional" />
 	</complexType>
-
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+	<complexType name="TSdataType">
+			<sequence>
+				<element name="Lambda " minOccurs="1" maxOccurs="1"    type="tns:floatUnitType" />
+				<element name="T" minOccurs="1" maxOccurs="1"    type="tns:floatUnitType" />
+				<element name="Tdev" minOccurs="0" maxOccurs="1" type="tns:floatUnitType" default="0" />
+				<xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" namespace="##other" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="SAStransmission_spectrumType">
+		<sequence minOccurs="1" maxOccurs="1">
+			<sequence minOccurs="1" maxOccurs="1">
+				<element name="TSdata" minOccurs="1" maxOccurs="unbounded" type="tns:IdataType" />
+			</sequence>
+			<xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" namespace="##other" />
+		</sequence>
+		<attribute name="name" type="string" use="optional" default="" />
+		<attribute name="timestamp" type="dateTime" use="optional" />
+	</complexType>
+	
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<complexType name="SASsampleType">
@@ -204,6 +230,7 @@
 			</element>
 			<xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" namespace="##other" />
 			<element name="SASdata" minOccurs="1" maxOccurs="unbounded" type="tns:SASdataType" />
+			<element name="SAStransmission_spectrum" minOccurs="0" maxOccurs="unbounded" type="tns:SAStransmission_spectrumType"/>
 			<xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" namespace="##other">
 				<!-- Is a second *any* element needed here? -->
 				<annotation>
