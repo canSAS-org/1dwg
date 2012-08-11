@@ -26,9 +26,9 @@ OPTS = -P table.in.float=0 -b pdftex -t pdf -T native
 all: dblatex
 
 # dblatex.sf.net builds the PDF version of the manual
-dblatex cansas-1d-1_0-manual.pdf ::
+dblatex cansas-1d-1_1-manual.pdf ::
 	dblatex $(OPTS) -tpdf manual.xml
-	mv -f manual.pdf ../cansas-1d-1_0-manual.pdf
+	mv -f manual.pdf ../cansas-1d-1_1-manual.pdf
 
 test :: Makefile test.xml
 	dblatex $(OPTS) test.xml
