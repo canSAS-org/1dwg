@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
-<SASroot version="1.0"
- xmlns="cansas1d/1.0"
+<SASroot version="1.1"
+  xmlns="cansas1d/1.1"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="cansas1d/1.0   http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd">
+ xsi:schemaLocation="cansas1d/1.1   http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd">
   <SASentry name="AF1410:10">
     <Title>AF1410-10 (AF1410 steel aged 10 h)</Title>
     <Run name="AF1410-a10">nuclear sector</Run>

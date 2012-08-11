@@ -14,15 +14,15 @@
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Required XML Header</title>
     <example>
-        <title>Required header for cansas1d/1.0 XML files</title>
+        <title>Required header for cansas1d/1.1 XML files</title>
         <indexterm significance="preferred">
             <primary>XML header</primary>
         </indexterm>
         <programlisting>&lt;?xml version="1.0"?>
-&lt;SASroot version="1.0"
-   xmlns="cansas1d/1.0"
+&lt;SASroot version="1.1"
+   xmlns="cansas1d/1.1"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="cansas1d/1.0 
+   xsi:schemaLocation="cansas1d/1.1 
    http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"></programlisting>
     </example>
     <table orient="port" role="small">
@@ -87,7 +87,7 @@
                     <entry>container</entry>
                     <entry>[1..1]</entry>
                     <entry>
-                        <para>The canSAS reduced 1-D SAS data (cansas1d/1.0) will be in the
+                        <para>The canSAS reduced 1-D SAS data (cansas1d/1.1) will be in the
                                 <literal>SASroot</literal> database.</para>
                         <para>
 							(This is similar to 
@@ -104,7 +104,7 @@
                             <listitem>
                                 <para>
                                     <literal>version="1.0"</literal> is required to
-                                    identify the cansas1d/1.0 standard for SAS data.</para>
+                                    identify the cansas1d/1.1 standard for SAS data.</para>
                             </listitem>
                             <listitem>
                                 <para>
@@ -122,7 +122,7 @@
                             <listitem>
                                 <para>
                                     <literal>xsi:schemaLocation</literal> associates a
-                                    suggested URL (where the cansas1d/1.0 XML Schema might be found)
+                                    suggested URL (where the cansas1d/1.1 XML Schema might be found)
                                     with the default namespace string. </para>
                             </listitem>
                         </itemizedlist>

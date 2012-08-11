@@ -257,7 +257,7 @@
 		<sequence>
 			<element name="SASentry" minOccurs="1" maxOccurs="unbounded" type="tns:SASentryType" />
 		</sequence>
-		<attribute name="version" type="string" fixed="1.0" use="required" />
+		<attribute name="version" type="string" fixed="1.1" use="required" />
 	</complexType>
 
 	<element name="SASroot" type="tns:SASrootType" />

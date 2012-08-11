@@ -64,7 +64,7 @@
         <glossentry>
             <glossterm>purpose</glossterm>
             <glossdef><para>Implement an IgorPro file reader to read the canSAS 1-D reduced SAS
-                data in XML files that adhere to the cansas1d/1.0 standard.</para></glossdef>
+                data in XML files that adhere to the cansas1d/1.1 standard.</para></glossdef>
         </glossentry>
         <glossentry>
             <glossterm>URL</glossterm>
@@ -218,7 +218,7 @@
             </indexterm>
             attempts
             to open the fileand read its contents as if it conformed to the canSAS XML standard
-            for reduced 1-D SAS data (cansas1d/1.0, also known as SASXML). If the file is found to be
+            for reduced 1-D SAS data (cansas1d/1.1, also known as SASXML). If the file is found to be
             non-conforming, then <literal>CS_XmlReader(fileName)</literal> returns
             with an error code (show below), otherwise it returns <literal>0</literal>
             that indicates <literal>no error</literal>.All data read by this code is left in the
@@ -294,7 +294,7 @@
                             <row>
                                 <entry>1</entry>
                                 <entry>namespace</entry>
-                                <entry>cansas1d/1.0</entry>
+                                <entry>cansas1d/1.1</entry>
                             </row>
                             <row>
                                 <entry>2</entry>
@@ -371,7 +371,7 @@ dry chick collagen, d = 673 A
                     >required XML file header</link>. If you take a minimalist view
                     (<emphasis>a.k.a.</emphasis> a shortcut), it is likely that your file may be
                 refused by this and other readers. Pay particular attention to UPPER/lower case in
-                the text <emphasis role="bold">cansas1d/1.0</emphasis> as this is a <emphasis
+                the text <emphasis role="bold">cansas1d/1.1</emphasis> as this is a <emphasis
                     role="bold">key component</emphasis> used toindex through the XML file. </para>
         </section>
         <section>
@@ -711,7 +711,7 @@ cansasXML.ipf: failed to parse XML
     Completed in 0.0133704 seconds
 root element is not SASroot with valid canSAS namespace
     Completed in 0.0134224 seconds
-bimodal-test1.xml 		 identified as: cansas1d/1.0 XML file
+bimodal-test1.xml 		 identified as: cansas1d/1.1 XML file
     Title: SAS bimodal test1 
     Completed in 0.068654 seconds
 root element is not SASroot with valid canSAS namespace
@@ -720,35 +720,35 @@ root element is not SASroot with valid canSAS namespace
     Completed in 0.0123102 seconds
 root element is not SASroot with valid canSAS namespace
     Completed in 0.00930118 seconds
-ISIS_SANS_Example.xml 		 identified as: cansas1d/1.0 XML file
+ISIS_SANS_Example.xml 		 identified as: cansas1d/1.1 XML file
     Title: standard can 12mm SANS 
     Completed in 0.0410387 seconds
-W1W2.xml 		 identified as: cansas1d/1.0 XML file
+W1W2.xml 		 identified as: cansas1d/1.1 XML file
     Title: standard can 12mm SANS 
     Title: TK49 standard 12mm SANS 
     Completed in 0.0669074 seconds
-ill_sasxml_example.xml 		 identified as: cansas1d/1.0 XML file
+ill_sasxml_example.xml 		 identified as: cansas1d/1.1 XML file
     Title: ILL-D22 example: 7D1 2mm 
     Completed in 0.0332752 seconds
-isis_sasxml_example.xml 		 identified as: cansas1d/1.0 XML file
+isis_sasxml_example.xml 		 identified as: cansas1d/1.1 XML file
     Title: LOQ TK49 Standard 12mm C9 
     Completed in 0.0388868 seconds
-r586.xml 		 identified as: cansas1d/1.0 XML file
+r586.xml 		 identified as: cansas1d/1.1 XML file
     Title: ILL-D11 example1: 2A 5mM 0%D2O 
     Completed in 0.0213737 seconds
-r597.xml 		 identified as: cansas1d/1.0 XML file
+r597.xml 		 identified as: cansas1d/1.1 XML file
     Title: ILL-D11 example2: 2A 5mM 0%D2O 
     Completed in 0.0221894 seconds
-xg009036_001.xml 		 identified as: cansas1d/1.0 XML file
+xg009036_001.xml 		 identified as: cansas1d/1.1 XML file
     Title: det corrn 5m 
     Completed in 0.0286721 seconds
-cs_collagen.xml 		 identified as: cansas1d/1.0 XML file
+cs_collagen.xml 		 identified as: cansas1d/1.1 XML file
     Title: dry chick collagen, d = 673 A, 6531 eV, X6B 
     Completed in 0.0296247 seconds
-cs_collagen_full.xml 		 identified as: cansas1d/1.0 XML file
+cs_collagen_full.xml 		 identified as: cansas1d/1.1 XML file
     Title: dry chick collagen, d = 673 A, 6531 eV, X6B 
     Completed in 0.0751836 seconds
-cs_af1410.xml 		 identified as: cansas1d/1.0 XML file
+cs_af1410.xml 		 identified as: cansas1d/1.1 XML file
     Title: AF1410-10 (AF1410 steel aged 10 h) 
     Title: AF1410-8h (AF1410 steel aged 8 h) 
     Title: AF1410-qu (AF1410 steel aged 0.25 h) 
@@ -763,20 +763,20 @@ cs_af1410.xml 		 identified as: cansas1d/1.0 XML file
 XMLopenfile: File(path) to open doesn't exist, or file can't be opened
 cansas1d-template.xml either not found or cannot be opened for reading
     Completed in 0.00892823 seconds
-1998spheres.xml 		 identified as: cansas1d/1.0 XML file
+1998spheres.xml 		 identified as: cansas1d/1.1 XML file
     Title: 255 nm PS spheres 
     Title: 460 nm PS spheres 
     Completed in 2.87649 seconds
 XMLopenfile: File(path) to open doesn't exist, or file can't be opened
 does-not-exist-file.xml either not found or cannot be opened for reading
     Completed in 0.00404549 seconds
-cs_rr_polymers.xml 		 identified as: cansas1d/1.0 XML file
+cs_rr_polymers.xml 		 identified as: cansas1d/1.1 XML file
     Title: Round Robin Polymer A 
     Title: Round Robin Polymer B 
     Title: Round Robin Polymer C 
     Title: Round Robin Polymer D 
     Completed in 0.0943477 seconds
-s81-polyurea.xml 		 identified as: cansas1d/1.0 XML file
+s81-polyurea.xml 		 identified as: cansas1d/1.1 XML file
     Title: S7 Neat Polyurea 
     Completed in 0.0361616 seconds
     </programlisting>

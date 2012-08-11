@@ -23,15 +23,15 @@
         This section provides a glossary 
         <indexterm><primary>glossary</primary></indexterm>
         defining the details about each specific field (XPath string, 
-        XML elements and attributes) in the cansas1d/1.0 standard.
-        <indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
+        XML elements and attributes) in the cansas1d/1.1 standard.
+        <indexterm><primary>cansas1d/1.1 standard</primary></indexterm> 
     </para>
     <itemizedlist mark="opencircle"><listitem>
         <para>
             Each term (element or attribute) is listed by its 
             <link xlink:href="http://www.w3schools.com/xpath/"><citetitle>XPath</citetitle></link> 
             in the XML file. The <literal>cs:</literal> prefix is defined by a 
-            <literal>xmlns:cs="cansas1d/1.0"</literal> namespace 
+            <literal>xmlns:cs="cansas1d/1.1"</literal> namespace 
             attribute listed in the XML header.
         </para>
     </listitem>
@@ -107,7 +107,7 @@
     </itemizedlist>
     <glossary>
         <title>Listed by full XPath reference</title>
-        <subtitle>assumes namespace declaration: <literal>xmlns:cs="cansas1d/1.0"</literal></subtitle>
+        <subtitle>assumes namespace declaration: <literal>xmlns:cs="cansas1d/1.1"</literal></subtitle>
         <glosslist>
             <glossentry>
                 <glossterm><code>/cs:SASroot</code></glossterm>

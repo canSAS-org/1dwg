@@ -15,7 +15,7 @@
     <title>Python binding</title>
     <para>
         Specific <link xlink:href="http://danse.us/trac/sans"><citetitle>support</citetitle></link> 
-        for the cansas1d/1.0 data standard in Python 
+        for the cansas1d/1.1 data standard in Python 
         <indexterm significance="preferred">
             <primary>binding</primary>
             <secondary>Python</secondary>
@@ -173,7 +173,7 @@ simulated SAS calculation
             (http://www.rexx.com/~dkuhlman/, http://www.rexx.com/~dkuhlman/generateDS.html) 
             can build a binding (map the structure of the XML file directly into a 
             Python data structure) for Python from an XML Schema.
-            However, the cansas1d/1.0 XML schema (cansas1d.xsd) does not seem to 
+            However, the cansas1d/1.1 XML schema (cansas1d.xsd) does not seem to 
             fit the model.It seems, for now, that <literal>generateDS-1.12a</literal> 
             fails on a certain <literal>annotate</literal> line.
             <programlisting linenumbering="numbered"

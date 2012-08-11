@@ -40,7 +40,7 @@
                     <entry> container </entry>
                     <entry> [0..inf] </entry>
                     <entry>
-                        <para> Any element(s) not defined in the cansas1d/1.0 standard can be placed
+                        <para> Any element(s) not defined in the cansas1d/1.1 standard can be placed
                             at this point. (These are called <emphasis>foreign</emphasis> elements.
                             <indexterm>
                                 <primary>XML</primary>

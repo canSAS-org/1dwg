@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
-<SASroot version="1.0"
-      xmlns="cansas1d/1.0"
+<SASroot version="1.1"
+      xmlns="cansas1d/1.1"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+      xsi:schemaLocation="cansas1d/1.1 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
       >
      <!-- 
           Note:  
-          This file is not a valid cansas1d/1.0 data file.
+          This file is not a valid cansas1d/1.1 data file.
           It is an example to show how to structure multiple data sets.
      -->
       <SASentry name="071121.dat#S22">

@@ -11,18 +11,18 @@
 -->
 <chapter xml:id="specification" xmlns="http://docbook.org/ns/docbook" version="5.0"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>cansas1d/1.0 Specification</title>
+    <title>cansas1d/1.1 Specification</title>
     <para>
         This is the definitive specification of 
-        <literal>cansas1d/1.0</literal>,
-        <indexterm><primary>cansas1d/1.0 standard</primary></indexterm> 
+        <literal>cansas1d/1.1</literal>,
+        <indexterm><primary>cansas1d/1.1 standard</primary></indexterm> 
         the canSAS standard format for storing small-angle
         scattering data in XML files.
         The standard is defined using the rules of 
         <link xlink:href="http://www.w3.org/XML/Schema">XML Schema</link>.
     </para>
     <para>
-        Note that the cansas1d/1.0 XML data files must adhere to the 
+        Note that the cansas1d/1.1 XML data files must adhere to the 
         XML rules which includes being well-formed
         <indexterm significance="preferred"><primary>XML</primary><secondary>well-formed</secondary></indexterm>
         (including the use of closing tags).  
@@ -35,13 +35,13 @@
             </para>
         </footnote>
         Files that can be validated 
-        <indexterm><primary>cansas1d/1.0 standard</primary></indexterm>
+        <indexterm><primary>cansas1d/1.1 standard</primary></indexterm>
         <indexterm><primary>validation</primary></indexterm>
         against 
         <link
             xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
             ><literal>cansas1d.xsd</literal> </link>
-        are deemed to be valid cansas1d/1.0 data files.
+        are deemed to be valid cansas1d/1.1 data files.
     </para>
     <para>
         In this document, curly braces, <literal>{}</literal>, are used to
