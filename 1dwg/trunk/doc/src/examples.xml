@@ -19,10 +19,10 @@
     <section xml:id="xml-data-file">
         <title>Example XML Data Files</title>
         <para>
-            This section presents two examples of XML Data Files adhering to the cansas1d/1.0 standard.
+            This section presents two examples of XML Data Files adhering to the cansas1d/1.1 standard.
             <indexterm>
                 <primary>XML</primary>
-                <secondary>cansas1d/1.0 data file</secondary>
+                <secondary>cansas1d/1.1 data file</secondary>
             </indexterm>
             Thie first file (<literal>data-simple.xml</literal>) 
             is a basic example and the second file (<literal>cansas1d.xml</literal>) 
@@ -37,7 +37,7 @@
                     <primary>XML file</primary>
                     <secondary>data-simple.xml</secondary>
                 </indexterm>
-                shows just the basic elements of the cansas1d/1.0 standard.  Only a 
+                shows just the basic elements of the cansas1d/1.1 standard.  Only a 
                 single data point has been shown to more clearly show the other structure.
                 The data file is actually an excerpt from the
                 <link
@@ -53,7 +53,7 @@
             </para>
             <indexterm>
                 <primary>XML</primary>
-                <secondary>cansas1d/1.0 data file</secondary>
+                <secondary>cansas1d/1.1 data file</secondary>
             </indexterm>
             <example>
                 <title><citetitle>data-simple.xml</citetitle></title>
@@ -73,7 +73,7 @@
                     <secondary>cansas1d.xml</secondary>
                 </indexterm>
                 shows examples
-                of most of the elements of the cansas1d/1.0 standard.  Only a single data 
+                of most of the elements of the cansas1d/1.1 standard.  Only a single data 
                 point has been shown to more clearly show the other structure.
                 <footnote><para><link
                     xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml"
@@ -81,7 +81,7 @@
             </para>
             <indexterm>
                 <primary>XML</primary>
-                <secondary>cansas1d/1.0 data file</secondary>
+                <secondary>cansas1d/1.1 data file</secondary>
             </indexterm>
             <!-- too long for a DocBook "example" -->
             <informalexample>
@@ -101,7 +101,7 @@
             <indexterm significance="preferred">
                 <primary>XML Stylesheet</primary>
             </indexterm>
-            useful for the cansas1d/1.0 standard.  
+            useful for the cansas1d/1.1 standard.  
             XML Stylesheets (XSLT) 
             <indexterm>
                 <primary>XSLT</primary>
@@ -126,7 +126,7 @@
                     <see>XML Stylesheet</see>
                 </indexterm>
                 stylesheet displays 
-                all the <literal>Idata</literal> blocks in a cansas1d/1.0 file
+                all the <literal>Idata</literal> blocks in a cansas1d/1.1 file
                 in 3-column ASCII form.  Be careful using this stylesheet
                 on files with multiple <literal>SASdata</literal> or
                 <literal>SASentry</literal> blocks since this stylesheet
@@ -157,7 +157,7 @@
                     <secondary>xsl</secondary>
                     <see>XML Stylesheet</see>
                 </indexterm>
-                is the standard XSL stylesheet for cansas1d/1.0 files.
+                is the standard XSL stylesheet for cansas1d/1.1 files.
                 It shows all available <literal>SASdata</literal>
                 and metadata,
                 <indexterm><primary>metadata</primary></indexterm>

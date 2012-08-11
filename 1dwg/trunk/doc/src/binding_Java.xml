@@ -12,8 +12,8 @@
 <!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_Java-->
 <section xml:id="cansas1d_documentation-binding-Java" xmlns="http://docbook.org/ns/docbook"
     version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Java (JAXB) binding for the canSAS1d/1.0 standard</title>
-    <para> A Java binding for the canSAS1d/1.0 standard has been auto-created using the JAXB tools
+    <title>Java (JAXB) binding for the cansas1d/1.1 standard</title>
+    <para> A Java binding for the cansas1d/1.1 standard has been auto-created using the JAXB tools
         from Sun (see below for more on JAXB) <indexterm>
             <primary>binding</primary>
             <secondary>Java</secondary>
@@ -101,7 +101,7 @@
             constructed<footnote><para><link
                 xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java"
                     ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java</literal></link></para></footnote>
-            to show how to read a canSAS1d/1.0 XML file using the Java API. </para>
+            to show how to read a cansas1d/1.1 XML file using the Java API. </para>
         <para> In short, these are the important two lines: <informalexample>
                 <programlisting>CanSas1dType reader = new CanSas1dType();</programlisting>
             </informalexample> and <informalexample>
@@ -183,7 +183,7 @@
                 <secondary><literal>java-test.xml</literal></secondary>
             </indexterm>
             <para> 
-                <literal>java-test.xml</literal> is an example canSAS1d/1.0 XML data file
+                <literal>java-test.xml</literal> is an example cansas1d/1.1 XML data file
                 (derived from the standard test file for the <literal>lake</literal> 
                 desmearing code).</para>
             <programlisting language="xml" linenumbering="numbered" 

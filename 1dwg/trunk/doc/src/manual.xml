@@ -32,7 +32,7 @@
         </author>
         <!--<edition>$Id$</edition>-->
         <!--<edition>draft</edition>-->
-        <pubdate>2009</pubdate>
+        <pubdate>2012</pubdate>
         <legalnotice>
             <para>
                 Not yet licensed.  Intended for unrestricted public domain use.
@@ -44,6 +44,12 @@
                 <date>2009-09-25</date>
                 <authorinitials>PRJ</authorinitials>
                 <revremark>converted from mediawiki to DocBook/5.0</revremark>
+            </revision>
+            <revision>
+                <revnumber>v1.1</revnumber>
+                <date>2012-09-01</date>
+                <authorinitials>PRJ</authorinitials>
+                <revremark>v1.1 release</revremark>
             </revision>
         </revhistory>
     </info>

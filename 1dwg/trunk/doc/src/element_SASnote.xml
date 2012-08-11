@@ -71,7 +71,7 @@
                         [0..inf]
                     </entry>
                     <entry>
-                        Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
+                        Any element(s) not defined in the cansas1d/1.1 standard can be placed at this point. 
                         See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
                         for more details.
                     </entry>

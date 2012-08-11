@@ -44,7 +44,7 @@
         and neutron facilities.
     </para>
     <para>
-        The canonical name for this format is <literal>cansas1d/1.0</literal>.
+        The canonical name for this format is <literal>cansas1d/1.1</literal>.
         This  work is the initiative of the canSAS 1D Data Formats Working Group, 
         established at the canSAS-V workshop, NIST, Gaithersburg, Maryland, 
         USA from October 29th to 31st 2007.  It derives many of its foundations
@@ -81,7 +81,7 @@
             However, should the information in this document and the 
             <link
                 xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
-                >cansas1d/1.0 SAS XML Schema</link><footnote><para><link
+                >cansas1d/1.1 SAS XML Schema</link><footnote><para><link
                 xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd"
                 ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd</literal></link></para></footnote>
             differ, the XML Schema will be deemed to have the most correct description of the standard.</para>

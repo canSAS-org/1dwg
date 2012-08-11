@@ -13,7 +13,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Elements of the canSAS XML standard</title>
     <para>
-        There are various elements (tag names) in the cansas1d/1.0 standard. 
+        There are various elements (tag names) in the cansas1d/1.1 standard. 
         Each of these is described below.
     </para>
     <glosslist>
