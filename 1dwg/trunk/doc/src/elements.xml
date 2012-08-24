@@ -114,6 +114,7 @@
     <xi:include href="element_SASroot.xml"/>
     <xi:include href="element_SASentry.xml"/>
     <xi:include href="element_SASdata.xml"/>
+    <xi:include href="element_SAStransmission_spectrum.xml"/>
     <xi:include href="element_SASsample.xml"/>
     <xi:include href="element_SASinstrument.xml"/>
     <xi:include href="element_SASsource.xml"/>

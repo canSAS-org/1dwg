@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_SASdata -->
+<section xml:id="cansas1d_documentation-element-SASdata" xmlns="http://docbook.org/ns/docbook"
+    version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>SAStransmission_spectrum element</title>
+    <itemizedlist mark="opencircle">
+        <listitem>
+            <indexterm significance="preferred">
+                <primary>element</primary>
+                <secondary>SAStransmission_spectrum</secondary>
+            </indexterm>
+            <para> parent: <link xlink:href="#cansas1d_documentation-element-SASentry"
+                ><literal>SASentry</literal></link>
+            </para>
+        </listitem>
+    </itemizedlist>
+    <figure>
+        <title>The SAStransmission_spectrum element</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="../../graphics/11-SAStransmission_spectrum.png" width="200pt" scalefit="1"/>
+            </imageobject>
+            <textobject>
+                <phrase>cansas1d-v1-11-SAStransmission_spectrum.png</phrase>
+            </textobject>
+            <caption>
+                <para>The SAStransmission_spectrum element</para>
+            </caption>
+        </mediaobject>
+    </figure>
+    <para>The <literal>SAStransmission_spectrum</literal> element has a 
+        <literal>name</literal> attribute to identify what type of spectrum
+        is being described.  It is expected that this value will take either 
+        of these two values:
+        <table orient="port" role="small">
+            <title/>
+            <tgroup cols="2">
+                <colspec colname="c1" colwidth="15*"/>
+                <colspec colname="c2" colwidth="15*"/>
+                <tbody>
+                    <row>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>value</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>meaning</entry>
+                    </row>
+                    <row>
+                        <entry><literal>sample</literal></entry>
+                        <entry>measurement with the sample and container</entry>
+                    </row>
+                    <row>
+                        <entry><literal>can</literal></entry>
+                        <entry>measurement with just the container</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </para>
+    <section>
+        <title>SAStransmission_spectrum</title>
+        <table orient="port" role="small">
+            <title/>
+            <tgroup cols="5">
+                <colspec colname="c1" colwidth="15*"/>
+                <colspec colname="c2" colwidth="15*"/>
+                <colspec colname="c3" colwidth="10*"/>
+                <colspec colname="c4" colwidth="30*"/>
+                <colspec colname="c5" colwidth="30*"/>
+                <tbody>
+                    <row>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Name</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Type</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Occurrence</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>Tdata</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>Tdata</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry> container </entry>
+                        <entry> [1..inf] </entry>
+                        <entry> Tdata describes a single transmission spectrum data point. </entry>
+                        <entry/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </section>
+    <section>
+        <title>Tdata</title>
+        <table orient="port" role="small">
+            <title/>
+            <tgroup cols="5">
+                <colspec colname="c1" colwidth="15*"/>
+                <colspec colname="c2" colwidth="15*"/>
+                <colspec colname="c3" colwidth="10*"/>
+                <colspec colname="c4" colwidth="30*"/>
+                <colspec colname="c5" colwidth="30*"/>
+                <tbody>
+                    <row>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Name</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Type</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Occurrence</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <literal>Lambda</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>Lambda</secondary>
+                                </indexterm>
+                            </para>
+                        </entry>
+                        <entry> floating-point number </entry>
+                        <entry> [1..1] </entry>
+                        <entry>
+                            <para>
+                                Wavelength of the radiation bin. 
+                                The <literal>unit</literal> attribute is required. See <link
+                                    xlink:href="#cansas1d_documentation-rules">rules for
+                                    units</link>
+                                for acceptable values. Either
+                                <literal>A</literal> or <literal>nm</literal> are
+                                typical. </para>
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <literal>T</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>T</secondary>
+                                </indexterm>
+                            </para>
+                        </entry>
+                        <entry> floating-point number </entry>
+                        <entry> [1..1] </entry>
+                        <entry>
+                            <para> Transmission value (I/Io). </para>
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>
+                                <literal>Tdev</literal>
+                                <indexterm>
+                                    <primary>element</primary>
+                                    <secondary>Idev</secondary>
+                                </indexterm>
+                            </para>
+                        </entry>
+                        <entry> floating-point number </entry>
+                        <entry> [0..1] </entry>
+                        <entry> Estimated uncertainty (usually standard deviation) of <literal>T</literal>.
+                            The <literal>unit</literal> attribute is required. See
+                                <link xlink:href="#cansas1d_documentation-rules">rules for
+                                units</link> for acceptable values. One
+                            possibility might be <literal>1/cm</literal>. </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <link xlink:href="#cansas1d_documentation-element-any"
+                                ><literal>{any}</literal></link>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>&lt;any&gt;</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry> container </entry>
+                        <entry> [0..inf] </entry>
+                        <entry> Any element(s) not defined in the cansas1d/1.1 standard can be
+                            placed at this point. 
+                            See <link xlink:href="#cansas1d_documentation-element-any"
+                                ><literal>{any}</literal></link>
+                            for more details. </entry>
+                        <entry>
+                            <para>
+                                <link
+                                    xlink:href="#cansas1d_documentation-element-any"
+                                    ><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></link>
+                            </para>
+                        </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <note>
+            <para> When an optional element 
+                (<literal>Tdev</literal>) 
+                is used, it must be given in
+                every <literal>Tdata</literal> within the 
+                enclosing <literal>SAStransmission_spectrum</literal>. </para>
+        </note>
+    </section>
+</section>
