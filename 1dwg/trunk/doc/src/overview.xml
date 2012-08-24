@@ -242,8 +242,8 @@
                             </row>
                             <row>
                                 <entry>
-                                    <literal>&#160;&#160;&#160;TSdata</literal>
-                                    <indexterm><primary>element</primary><secondary>TSdata</secondary></indexterm>
+                                    <literal>&#160;&#160;&#160;Tdata</literal>
+                                    <indexterm><primary>element</primary><secondary>Tdata</secondary></indexterm>
                                 </entry>
                                 <entry>a single data point in the transmission spectrum</entry>
                             </row>

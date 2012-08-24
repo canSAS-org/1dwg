@@ -78,7 +78,7 @@
 	
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
-	<complexType name="TSdataType">
+	<complexType name="TdataType">
 			<sequence>
 				<element name="Lambda " minOccurs="1" maxOccurs="1"    type="tns:floatUnitType" />
 				<element name="T" minOccurs="1" maxOccurs="1"    type="tns:floatUnitType" />
@@ -90,7 +90,7 @@
 	<complexType name="SAStransmission_spectrumType">
 		<sequence minOccurs="1" maxOccurs="1">
 			<sequence minOccurs="1" maxOccurs="1">
-				<element name="TSdata" minOccurs="1" maxOccurs="unbounded" type="tns:IdataType" />
+				<element name="Tdata" minOccurs="1" maxOccurs="unbounded" type="tns:TdataType" />
 			</sequence>
 			<xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" namespace="##other" />
 		</sequence>
