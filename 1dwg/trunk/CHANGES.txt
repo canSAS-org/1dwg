@@ -1,0 +1,15 @@
+.. $Id$
+
+===============
+CHANGES
+===============
+
+2012-08-16  tagged version canSAS1d/1.1
+	
+	* TRAC #17: wontfix: clean up rules
+	* TRAC #18: added timestamp attribute to SASdata and SAStransmission_spectrum
+	* TRAC #20: no change in format of namespace this time, wait for multi-D standard
+	* TRAC #21: added {any} element at end of SASdata and SAStransmission_spectrum
+	* TRAC #22: added SAStransmission_spectrum
+
+2009-05-12  tagged version canSAS1d/1.0
