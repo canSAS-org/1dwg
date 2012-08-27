@@ -10,10 +10,7 @@ Manual
    preface
    specification
    tutorial
+   examples
    bindings
-
-..
-    <xi:include href="intensity-problem.xml"/>
-    <xi:include href="examples.xml"/>
-    <xi:include href="glossary.xml"/>
-    <xi:include href="xml-help.xml"/>
+   intensity-problem
+   xml-help

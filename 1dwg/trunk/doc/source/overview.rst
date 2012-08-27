@@ -305,7 +305,7 @@ Some common best practices have been identified in the list below.
 
 
 Examples and Case Studies
-----------------------------------
+=========================================================
 
 .. index:: XML file; cansas1d.xml
 
@@ -334,355 +334,187 @@ Examples and Case Studies
     Samples of a commercial glassy carbon
     measured at several facilities worldwide.
 
+.. index:: case study; dry chick collagen SAXS
 
-..
-	    <section xml:id="cansas1d_documentation-Documentation-Definitions">
-	        <section xml:id="cansas1d_documentation-examples">
-	                <listitem>
-	                    <para>SAXS data from 
-	                        <link xlink:href="#cansas1d_documentation-case_study-collagen"
-	                            >dry chick collagen</link>
-	                        <indexterm>
-	                            <primary>case study</primary>
-	                            <secondary>SAXS of dry chick collagen</secondary>
-	                        </indexterm>
-	                        illustrates the
-	                        minimum information necessary to meet the requirements of the standard
-	                        format</para>
-	                </listitem>
-	                <listitem>
-	                    <para>SANS data from 
-	                        <link xlink:href="#cansas1d_documentation-case_study-af1410"
-	                            >AF1410 steel</link>:<footnote><para>
-	                                <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/"
-	                                    ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/</literal
-	                                    ></link></para></footnote>
-	                        <indexterm>
-	                            <primary>case study</primary>
-	                            <secondary>SANS of AF1410 steel</secondary>
-	                        </indexterm>
-	                        SANS study using magnetic
-	                        contrast variation (with multiple samples and multiple data sets for each
-	                        sample), the files can be viewed from the TRAC site (no description yet).</para>
-	                </listitem>
-	                <listitem>
-	                    <para>
-	                        <literal>cansas1d-template.xml</literal>:<footnote><para>
-	                            <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml"
-	                                ><literal
-	                                    >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml</literal
-	                                ></link></para></footnote>
-	                        <indexterm>
-	                            <primary>XML file</primary>
-	                            <secondary>cansas1d-template.xml</secondary>
-	                        </indexterm>
-	                        This is used to test all the rules in the XML
-	                        Schema. This is probably not a very good example to use as a starting point
-	                        for creating XML files with a text editor since it tests many of the
-	                        special-case rules.</para>
-	                </listitem>
-	            </itemizedlist>
-	            <section xml:id="cansas1d_documentation-examples-multiple_experiments">
-	                <title>XML layout for multiple experiments</title>
-	                <para>Each experiment is described with a single <literal>SASentry</literal> element. The
-	                    fragment below shows how multiple experiments
-	                    <indexterm>
-	                        <primary>multiple experiments</primary>
-	                    </indexterm>
-	                    <indexterm>
-	                        <primary>multiple data sets</primary>
-	                    </indexterm>
-	                    can be included in a single XML
-	                    file. Full examples of canSAS XML files with multiple experiments
-	                    include:</para>
-	                <itemizedlist>
-	                    <listitem>
-	                        <para> ISIS LOQ SANS instrument:<footnote><para>
-	                            <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/W1W2.XML"
-	                                ><literal
-	                                    >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/W1W2.XML</literal
-	                                ></link></para></footnote>
-	                            <indexterm>
-	                                <primary>XML file</primary>
-	                                <secondary>W1W2.XML</secondary>
-	                            </indexterm>
-	                            multiple data sets.
-	                        </para>
-	                    </listitem>
-	                    <listitem>
-	                        <para> AF1410 steel SANS contrast variation study from NIST:<footnote><para>
-	                                <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml"
-	                                    ><literal
-	                                        >http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml</literal
-	                                    ></link></para></footnote>
-	                            <indexterm>
-	                                <primary>XML file</primary>
-	                                <secondary>cs_af1410.xml</secondary>
-	                            </indexterm>
-	                            SANS study using magnetic
-	                            contrast variation (with multiple samples and multiple data sets for each
-	                            sample), the files can be viewed from the TRAC site (no description yet).
-	                        </para>
-	                    </listitem>
-	                </itemizedlist>
-	                <para>Here is a brief sketch of how a file would be arranged with multiple SASentry
-	                    elements and multiple SASdata elements.
-	                    <indexterm>
-	                        <primary>XML file</primary>
-	                        <secondary>brief-sketch-multiple.xml</secondary>
-	                    </indexterm>
-	                    <example>
-	                        <title>Brief sketch of a file with multiple SASentry and SASdata blocks.</title>
-	                        <programlisting language="xml" linenumbering="numbered">
-	                            <textobject>
-	                                <textdata fileref="brief-sketch-multiple.xml"/>
-	                            </textobject>
-	                        </programlisting>
-	                    </example>
-	                </para>
-	            </section>
-	        </section>
+**dry chick collagen SAXS**
+	see :ref:`case_study-collagen` section
+	
+	SAXS data from *dry chick collagen* illustrates the
+	minimum information necessary to meet the requirements of the standard
+	format.
+
+.. index:: case study; AF1410 steel SANS
+
+**AF1410 steel SANS**
+	see :ref:`case_study-af1410` section
+	
+	SANS data from *AF1410 steel* using magnetic
+	contrast variation (with multiple samples and multiple data sets for each
+	sample), the files can be viewed from the TRAC site (no description yet).
+	
+	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/
+
+.. index:: XML file; cansas1d-template.xml
+
+**cansas1d-template.xml**
+	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml
+	
+    This is used to test all the rules in the XML
+    Schema. This is probably not a very good example to use as a starting point
+    for creating XML files with a text editor since it tests many of the
+    special-case rules.
 
 
+XML layout for multiple experiments
+-------------------------------------------
 
-	        <section xml:id="cansas1d_documentation-Foreign_Elements">
-	            <title>Foreign Elements</title>
-	            <para> To allow for inclusion of elements that are not defined by the 
-	                <literal>cansas1d.xsd</literal> XML
-	                Schema, XML <emphasis role="italic">foreign elements</emphasis> 
-	                <indexterm>
-	                    <primary>XML</primary>
-	                    <secondary>foreign elements</secondary>
-	                </indexterm>
-	                are permitted at select locations in the
-	                cansas1d/1.1 format. Please refer to the section 
-	                <link xlink:href="#wiki-XML_Help"><emphasis>XML Help</emphasis></link>
-	                 for more help with XML foreign elements. </para>
-	            <para> 
-	                There is an example that demonstrates the use of a foreign 
-	                namespace:<footnote>
-	                    <para>
-	                        <link
-	                            xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml"
-	                            ><literal
-	                                >http://svn.smallangles.net/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml</literal></link></para>
-	                </footnote>
-	                This example uses a foreign namespace to record the transmission spectrum related to
-	                the acquisition of the SANS data at a time-of-flight facility. Look near line 153
-	                for this element: 
-	                <informalexample>
-	                    <programlisting>&lt;transmission_spectrum xmlns="urn:transmission:spectrum"></programlisting>
-	                </informalexample>
-	                The foreign namespace given
-	                (<literal>urn:transmission:spectrum</literal>) becomes the default namespace for just the
-	                <literal>transmission_spectrum</literal> element. </para>
-	            <para>Also refer to <link
-	                xlink:href="http://svn.smallangles.net/trac/canSAS/changeset/47">canSAS TRAC
-	                ticket #47</link> for an example of arranging the content in 
-	                <literal>SASprocessnote</literal> to avoid the use of foreign namespace
-	                elements. </para>
-	        </section>
-	        <section xml:id="cansas1d_documentation-Support_Tools">
-	            <title>Support tools for Visualization &amp; Analysis software</title>
-	            <para> Support for importing cansas1d/1.1 files exists for these 
-	                languages and environments: 
-	            </para>
-	            <itemizedlist>
-	                <listitem>
-	                    <para>
-	                        <emphasis role="bold">FORTRAN</emphasis>:
-	                        See the section titled
-	                        <link xlink:href="#cansas1d_documentation-binding-Fortran"
-	                            ><emphasis role="italic">Fortran binding</emphasis></link>.
-	                        <indexterm>
-	                            <primary>binding</primary>
-	                            <secondary>FORTRAN</secondary>
-	                        </indexterm>
-	                        <indexterm>
-	                            <primary>FORTRAN</primary>
-	                            <see>binding, FORTRAN</see>
-	                        </indexterm>
-	                    </para>
-	                </listitem>
-	                <listitem>
-	                    <para>
-	                        <emphasis role="bold">IgorPro</emphasis>:
-	                        See the section titled
-	                        <link xlink:href="#cansas1d_documentation-binding-IgorPro"
-	                            ><emphasis role="italic">IgorPro binding</emphasis></link>.
-	                        <indexterm>
-	                            <primary>binding</primary>
-	                            <secondary>IgorPro</secondary>
-	                        </indexterm>
-	                        <indexterm>
-	                            <primary>IgorPro</primary>
-	                            <see>binding, IgorPro</see>
-	                        </indexterm>
-	                    </para>
-	                </listitem>
-	                <listitem>
-	                    <para>
-	                        <emphasis role="bold">Java</emphasis>:
-	                        See the section titled
-	                        <link xlink:href="#cansas1d_documentation-binding-Java"
-	                            ><emphasis role="italic">Java JAXB binding</emphasis></link>.
-	                        <indexterm>
-	                            <primary>binding</primary>
-	                            <secondary>Java</secondary>
-	                        </indexterm>
-	                        <indexterm>
-	                            <primary>Java</primary>
-	                            <see>binding, Java</see>
-	                        </indexterm>
-	                    </para>
-	                </listitem>
-	                <listitem>
-	                    <para>
-	                        <emphasis role="bold">Microsoft Excel</emphasis>:
-	                        Support for Microsoft Excel
-	                        <indexterm>
-	                            <primary>binding</primary>
-	                            <secondary>Microsoft Excel</secondary>
-	                        </indexterm>
-	                        <indexterm>
-	                            <primary>Microsoft Excel</primary>
-	                            <see>binding, Microsoft Excel</see>
-	                        </indexterm>
-	                        is provided through the default canSAS stylesheet <link
-	                            xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl"
-	                            >cansasxml-html.xsl</link>. 
-	                        The <link
-	                            xlink:href="http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html"
-	                            >ISIS LOQ instrument</link> has provided an <link
-	                                xlink:href="http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf"
-	                                >excellent description</link><footnote><para><link
-	                            xlink:href="http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html"
-	                            ><literal>http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html</literal
-	                            ></link></para></footnote>
-	                        of how to import data from the
-	                        cansas1d/1.1 format into Excel.
-	                        Also note that the
-	                            <link
-	                            xlink:href="http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/loq.htm">old
-	                            WWW site</link><footnote><para><link
-	                            xlink:href="http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm"
-	                            ><literal>http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm</literal
-	                            ></link></para></footnote>
-	                        may still be available. 
-	                    </para>
-	                </listitem>
-	                <listitem>
-	                    <para>
-	                        <emphasis role="bold">PHP</emphasis>:
-	                        The <link xlink:href="#cansas1d_documentation-converting_into_XML"
-	                            ><emphasis role="italic">canSAS/xmlWriter</emphasis></link>
-	                        <indexterm><primary><literal>xmlWriter</literal></primary></indexterm>
-	                        is implemented in <link xlink:href="http://www.php.net">PHP</link
-	                        ><footnote><para><link xlink:href="http://www.php.net"
-	                            ><literal>http://www.php.net</literal></link></para></footnote>
-	                        <indexterm>
-	                            <primary>binding</primary>
-	                            <secondary>PHP</secondary>
-	                        </indexterm>
-	                        <indexterm>
-	                            <primary>PHP</primary>
-	                            <see>binding, PHP</see>
-	                        </indexterm>
-	                        and writes a cansas1d/1.1 data file given three-column ASCII data as input.
-	                        (<link
-	                            xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php"
-	                            >PHP source</link>)<footnote>
-	                            <para>
-	                                <link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php"
-	                                    ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php</literal></link>
-	                            </para>
-	                        </footnote>
-	                        The code uses <link xlink:href="http://www.php.net/DomDocument">DomDocument</link
-	                        ><footnote><para><link xlink:href="http://www.php.net/DomDocument"
-	                            ><literal>http://www.php.net/DomDocument</literal></link></para></footnote>
-	                        to build the XML file.  Look for the line beginning with
-	                        <literal>function prepare_cansasxml($post)</literal>.
-	                    </para>
-	                    <para>
-	                        Another example of <literal>DomDocument</literal>
-	                        is in the <literal>function surveillance($post)</literal> where
-	                        logging information is inserted into an XML file.
-	                    </para>
-	                </listitem>
-	                <listitem>
-	                    <para>
-	                        <emphasis role="bold">Python</emphasis>:
-	                        See the section titled
-	                        <link xlink:href="#cansas1d_documentation-binding-Python"
-	                            ><emphasis role="italic">Python binding</emphasis></link>.
-	                        <indexterm>
-	                            <primary>binding</primary>
-	                            <secondary>Python</secondary>
-	                        </indexterm>
-	                        <indexterm>
-	                            <primary>Python</primary>
-	                            <see>binding, Python</see>
-	                        </indexterm>
-	                    </para>
-	                </listitem>
-	                <listitem>
-	                    <para>
-	                        <emphasis role="bold">XSLT</emphasis> (useful in a web browser)
-	                        is described later in the section titled 
-	                        <link xlink:href="#xml-stylesheet"><emphasis role="italic">Example XML Stylesheets</emphasis></link>.
-	                        <indexterm>
-	                            <primary>binding</primary>
-	                            <secondary>XML Stylesheet (XSLT)</secondary>
-	                        </indexterm>
-	                    </para>
-	                </listitem>
-	            </itemizedlist>
-	        </section>
-	        <section xml:id="cansas1d_documentation-repositories">
-	            <title>Software repositories (for cansas1d/1.1 standard)</title>
-	            <itemizedlist>
-	                <listitem>
-	                    <para><emphasis role="bold">TRAC</emphasis>: <link
-	                            xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0"
-	                            ><literal>http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.0</literal></link></para>
-	                </listitem>
-	                <listitem>
-	                    <para><emphasis role="bold">Subversion</emphasis>: <link
-	                            xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0"
-	                            ><literal>http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0</literal></link></para>
-	                </listitem>
-	            </itemizedlist>
-	        </section>
-	    </section>
-	    <section xml:id="cansas1d_documentation-schema_validation">
-	        <title>Validation of XML against the Schema</title>
-	        <indexterm>
-	            <primary>validation</primary>
-	            <secondary>against XML Schema</secondary>
-	        </indexterm>
-	        <orderedlist>
-	            <listitem>
-	                <para>open browser to: 
-	                    <link xlink:href="http://www.xmlvalidation.com/"
-	                        ><literal>http://www.xmlvalidation.com/</literal></link></para>
-	            </listitem>
-	            <listitem>
-	                <para>paste content of candidate XML file (with reference in the header to the XML
-	                    Schema as shown above) into the form</para>
-	            </listitem>
-	            <listitem>
-	                <para>press <literal>&lt;validate></literal></para>
-	            </listitem>
-	            <listitem>
-	                <para>paste content of 
-	                    <literal>cansas1d.xsd</literal><footnote><para><link
-	                        xlink:href="http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-	                        ><literal>http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd</literal
-	                    ></link></para></footnote>
-	                    XSD file into form and press <literal>&lt;continue validation></literal>.</para>
-	            </listitem>
-	            <listitem>
-	                <para>check the results</para>
-	            </listitem>
-	        </orderedlist>
-	    </section>
+.. index::
+	single: multiple experiments
+	single: multiple data sets
+
+Each experiment is described with a single *SASentry* element. The
+fragment below shows how multiple experiments with multiple data sets
+can be included in a single XML file. This illustrates using more than
+one *SASentry* and more than one *SASdata* element.
+
+.. literalinclude:: ../src/brief-sketch-multiple.xml
+   :language: xml
+   :linenos:
+
+Full examples of canSAS XML files with multiple experiments
+include:
+
+.. index:: XML file; W1W2.XML
+
+**multiple data sets**
+	ISIS LOQ SANS instrument: 
+	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/W1W2.XML
+
+.. index:: XML file; cs_af1410.xml
+
+**multiple samples, multiple data sets**
+	AF1410 steel SANS contrast variation study from NIST:
+	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml
+	
+    SANS study using magnetic
+    contrast variation (with multiple samples and multiple data sets for each
+    sample), the files can be viewed from the TRAC site (no description yet).
+
+Foreign Elements
+------------------------
+
+.. index:: XML; foreign elements
+
+To allow for inclusion of elements that are not defined by the 
+*cansas1d.xsd* XML Schema, XML **foreign elements** 
+are permitted at select locations in the
+cansas1d/1.1 format. Please refer to the :ref:`XML Help` section 
+for more help with XML foreign elements.
+
+.. note::  **Need to make another example.**
+	This example was based on v1.0.  With v1.1, there is no need for
+	the foreign namespace in this example.  
+
+There is an example that demonstrates the use of a foreign namespace:
+http://svn.smallangles.net/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml
+
+This example uses a foreign namespace to record the transmission spectrum related to
+the acquisition of the SANS data at a time-of-flight facility. Look near line 153
+for this element::
+
+	<transmission_spectrum xmlns="urn:transmission:spectrum">
+
+The foreign namespace given (``urn:transmission:spectrum``) becomes the 
+default namespace for just the *transmission_spectrum* element.*
+
+Also refer to canSAS TRAC ticket #47
+(http://svn.smallangles.net/trac/canSAS/changeset/47)
+for an example of arranging the content in 
+*SASprocessnote* to avoid the use of foreign namespace
+elements.
+
+Support tools for Visualization & Analysis software
+=========================================================
+
+Support for importing cansas1d/1.1 files exists for 
+these languages and environments: 
+
+.. index::
+	single: binding; FORTRAN
+	see: FORTRAN; binding, FORTRAN
+
+**FORTRAN**
+	See the :ref:`fortran.binding` section.
+
+.. index::
+	single: binding; IgorPro
+	see: IgorPro; binding, IgorPro
+
+**IgorPro**
+	See the :ref:`IgorPro.binding` section.
+
+.. index::
+	single: binding; Java JAXB
+	see: Java JAXB; binding, Java JAXB
+
+**Java JAXB**
+	See the :ref:`Java.JAXB.binding` section.
+
+.. index::
+	single: binding; Microsoft Excel
+	see: Microsoft Excel; binding, Microsoft Excel
+
+**Microsoft Excel**
+	Support for Microsoft Excel is provided through the default canSAS stylesheet,
+	*cansasxml-html.xsl* (http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl).
+	The ISIS **LOQ** instrument (http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html)
+	has provided an excellent description of how to import data from the cansas1d/1.1 format into Excel.
+	Also note that the old WWW site (http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/loq.htm)
+	may still be available. 
+
+.. index::
+	single: binding; PHP
+	see: PHP; binding, PHP
+	single: xmlWriter
+
+**PHP**
+	See the :ref:`PHP.binding` section.
+	
+	The *canSAS/xmlWriter* (http://www.smallangles.net/canSAS/xmlWriter/)
+	is implemented in PHP (http://www.php.net) and writes a cansas1d/1.1 data 
+	file given three-column ASCII data as input.  The code uses
+	*DomDocument* (http://www.php.net/DomDocument)
+	to build the XML file.  Look for the line beginning with::
+	
+		function prepare_cansasxml($post)
+	
+	Another example of *DomDocument*
+	is in the ``function surveillance($post)`` where
+	logging information is inserted into an XML file.
+	
+	PHP source: http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php
+
+.. index::
+	single: binding; Python
+	see: Python; binding, Python
+	single: xmlWriter
+
+**Python**
+	See the :ref:`Python.binding` section.
+
+.. index::
+	single: binding; XML Stylesheet (XSLT)
+
+**XSLT**
+	*XSLT*  (useful in a web browser) is described later in the
+	:ref:`Example.XML.Stylesheets` section.
+
+
+Software repositories (for cansas1d/1.1 standard)
+=========================================================
+
+TRAC (bug reporting)
+	http://svn.smallangles.net/trac/canSAS/browser/1dwg/tags/v1.1
+
+SVN (*subversion* revision control system)
+	http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.1

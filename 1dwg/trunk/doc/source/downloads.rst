@@ -1,5 +1,8 @@
 .. $Id$
 
+.. _downloads:
+
+=========
 Downloads
 =========
 
