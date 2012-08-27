@@ -10,16 +10,20 @@ Compatibility of Geometry Definitions
 
 The translation and orientation geometry used by this canSAS standard are consistent with:
 
-Cartesian:
+**Cartesian**
 	http://en.wikipedia.org/wiki/Cartesian_coordinate_system
 
-Right-hand rule:
+**Right-hand rule**
 	http://en.wikipedia.org/wiki/Right-hand_rule
 
-:index:`NeXus`:
+.. index:: NeXus
+
+**NeXus**
 	http://www.nexusformat.org/Coordinate_Systems
 
-McStas:
+.. index:: McStas
+
+**McStas**
 	http://mcstas.risoe.dk/documentation/tutorial/node6.html
 
 ..
@@ -31,7 +35,12 @@ McStas:
     2007, XXI, 695 p. 200 illus., Hardcover
     ISBN: 978-0-387-32475-3
 
-The translation and orientation geometry definitions used here are different than
-those used by *SHADOW* (http://www.nanotech.wisc.edu/shadow)
-where the :math:`y` and :math:`z` axes are swapped and the direction 
-of :math:`x` is changed.
+---------------------------
+
+.. index:: SHADOW
+
+**SHADOW**
+	The translation and orientation geometry **definitions used here are different** than
+	those used by *SHADOW* (http://www.nanotech.wisc.edu/shadow)
+	where the :math:`y` and :math:`z` axes are swapped and the direction 
+	of :math:`x` is changed.
