@@ -77,8 +77,9 @@ point has been shown to more clearly show the other structure.
 
 .. index::
 	single: binding; XML Stylesheet (XSLT)
-	single: ! XML Stylesheet
 	see: XSLT; XML Stylesheet
+
+.. index::  ! XML Stylesheet
 
 .. _example.xml.stylesheets:
 
