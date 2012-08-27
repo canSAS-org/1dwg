@@ -9,8 +9,16 @@
 		<Title>SAS bimodal test1</Title>
 		<Run>1992</Run>
 		<SASdata>
-			<Idata><Q unit="1/A">0.0040157139</Q><I unit="1/cm">3497.473</I><Idev unit="1/cm">90.72816</Idev></Idata>
-			<Idata><Q unit="1/A">0.0045408653</Q><I unit="1/cm">3340.003</I><Idev unit="1/cm">84.95314</Idev></Idata>
+			<Idata>
+				<Q unit="1/A">0.0040157139</Q>
+				<I unit="1/cm">3497.473</I>
+				<Idev unit="1/cm">90.72816</Idev>
+			</Idata>
+			<Idata>
+				<Q unit="1/A">0.0045408653</Q>
+				<I unit="1/cm">3340.003</I>
+				<Idev unit="1/cm">84.95314</Idev>
+			</Idata>
 		</SASdata>
 		<SASsample>
 			<ID>bimodal-test1</ID>
