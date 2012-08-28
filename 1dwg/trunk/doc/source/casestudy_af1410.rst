@@ -21,7 +21,8 @@ the scattering from magnetic domain boundaries in one direction, the sector aver
 for that direction has scattering dominated by purely nuclear scattering moments.  The
 other *SASdata* section has scattering due to both nuclear and magnetic scattering moments.
 
-Also see the publication: A.J. Allen, D. Gavillet, J.R. Weertman, 
-"Small-Angle Neutron Scattering Studies of
-Carbide Precipitation in Ultrahigh-Strength Steels,"
-*Acta Metall* **41** (1993) 1869-1884.
+Also see the publication: 
+	A.J. Allen, D. Gavillet, J.R. Weertman, 
+	"Small-Angle Neutron Scattering Studies of
+	Carbide Precipitation in Ultrahigh-Strength Steels,"
+	*Acta Metall* **41** (1993) 1869-1884.
