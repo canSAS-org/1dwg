@@ -356,10 +356,10 @@ Examples and Case Studies
 
 .. index:: XML file; cansas1d-template.xml
 
-**cansas1d-template.xml**
+**Test all the cansas1d/1.1 rules**
 	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml
 	
-    This is used to test all the rules in the XML
+    The *cansas1d-template.xml* data file is used to test all the rules in the XML
     Schema. This is probably not a very good example to use as a starting point
     for creating XML files with a text editor since it tests many of the
     special-case rules.

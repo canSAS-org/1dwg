@@ -10,6 +10,7 @@ Manual
    preface
    specification
    tutorial
+   case-studies
    examples
    bindings
    intensity-problem

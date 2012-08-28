@@ -6,10 +6,15 @@
 Elements of the canSAS XML standard
 ===================================================
 
-.. _SASroot:
+.. _XML Header:
 
-SASroot
-==============
+XML Header
+===============
+
+.. toctree::
+   :maxdepth: 2
+   
+   element_SASroot
 
 
 .. _SASentry:

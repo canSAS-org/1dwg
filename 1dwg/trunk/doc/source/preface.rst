@@ -44,9 +44,9 @@ There is a discussion
 (http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group)
 page for some matters that preceded this revision.
 
+-----------------
     
-Disclaimer
-===============
+.. rubric:: Disclaimer
 
 This description is meant to inform the community how to arrange information within
 the structure of
