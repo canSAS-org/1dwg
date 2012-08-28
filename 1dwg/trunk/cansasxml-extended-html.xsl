@@ -166,7 +166,7 @@ Usage:
 			<caption><xsl:if 
 				test="@name!=''"><xsl:value-of select="@name" /></xsl:if> (<xsl:value-of 
 				select="count(cs:Tdata)" /> points)
-				<a id="#TSdata-{generate-id(.)}"  name="TSdata-{generate-id(.)}" />
+				<a id="#Tdata-{generate-id(.)}"  name="Tdata-{generate-id(.)}" />
 			</caption>
 			<tr bgcolor="lavender">
 				<xsl:for-each select="cs:Tdata[1]/*">
