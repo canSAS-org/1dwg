@@ -4,11 +4,11 @@
 canSAS1d data format
 ====================
 
-==========================================  ==========================
-.. figure:: ../../graphics/cswikilogo.png   The canSAS1d data format is used to communicate one-dimensional reduced small-angle scattering data.  It is a text format and is based on XML.
-==========================================  ==========================
+.. figure:: ../../graphics/cswikilogo.png
 
-
+The canSAS1d data format is used to communicate one-dimensional 
+reduced small-angle scattering data.  It is a text format and 
+is based on XML.
 
 Objective
 ============

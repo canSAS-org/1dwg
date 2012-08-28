@@ -50,6 +50,8 @@ Listed below are various references useful in learning :index:`XML` and related 
 	* http://www.zvon.org/xxl/NamespaceTutorial/Output
 	* http://en.wikipedia.org/wiki/XML_namespaces
 	* http://www.w3schools.com/XML/xml_namespaces.asp
+	* http://en.wikipedia.org/wiki/Uniform_resource_identifier
+	* http://www.usingxml.com/Basics/XmlNamespaces
 
 .. index:: XML; foreign elements
 
