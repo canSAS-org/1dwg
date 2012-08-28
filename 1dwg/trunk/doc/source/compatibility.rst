@@ -41,6 +41,6 @@ The translation and orientation geometry used by this canSAS standard are consis
 
 **SHADOW**
 	The translation and orientation geometry **definitions used here are different** than
-	those used by *SHADOW* (http://www.nanotech.wisc.edu/shadow)
-	where the :math:`y` and :math:`z` axes are swapped and the direction 
+	those used by *SHADOW* (http://www.nanotech.wisc.edu/shadow).
+	In *SHADOW*, the :math:`y` and :math:`z` axes are swapped and the direction 
 	of :math:`x` is changed.

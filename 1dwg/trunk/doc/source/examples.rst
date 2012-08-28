@@ -44,7 +44,7 @@ example file in the main distribution.
 
 .. index:: XML Stylesheet
 
-The stylesheet in *data-simple.xml* (:ref:`ascii3col.xsl`) is a very basic XSLT.
+The stylesheet identified on line 2 in *data-simple.xml* (:ref:`ascii3col.xsl`) is a very basic XSLT.
 When the *data-simple.xml* is opened in a browser (from a directory containing both
 *data-simple.xml* and *ascii3col.xsl*), the result looked like this:
 
