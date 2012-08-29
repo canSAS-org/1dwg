@@ -212,8 +212,10 @@ Rules
 #. Binary data is not supported
 
 
-Converting data into the XML format
-=====================================
+.. _XmlWriter:
+
+Converting data into the XML format: *XmlWriter*
+====================================================
 
 .. index:: ! xmlWriter
 
@@ -240,10 +242,13 @@ OK.
 Documentation and Definitions
 ========================================
 
+.. _cansas1d.xsd:
+
 XML Schema
 -------------
 
-The *cansas1d.xsd* :index:`XML Schema` (http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd)
+The *cansas1d.xsd* :index:`XML Schema` 
+(http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd)
 defines the rules for the XML file format and is used to
 validate any XML file for adherence to the format.
 
