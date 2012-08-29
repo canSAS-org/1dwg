@@ -6,6 +6,8 @@
 Elements of the canSAS XML standard
 ===================================================
 
+.. note::  This entire chapter needs to be converted from DocBook!
+
 .. _XML Header:
 
 XML Header
@@ -20,6 +22,16 @@ XML Header
 .. _SASentry:
 
 SASentry
+==============
+
+.. _Title:
+
+Title
+==============
+
+.. _Run:
+
+Run
 ==============
 
 
