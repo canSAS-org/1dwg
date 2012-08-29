@@ -64,7 +64,7 @@ You may need ...
 		cd Gnosis_Utils-1.2.2/
 		python setup.py install_all
 
-.. index:: Python file; *python-test.py*
+.. index:: Python file; python-test.py
 
 Quick test in Python
 ------------------------

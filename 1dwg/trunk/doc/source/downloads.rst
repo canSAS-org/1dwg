@@ -6,6 +6,8 @@
 Downloads
 =========
 
+.. note:: This page could use improvement!
+
 Version 1.0
 	released 2009-05-12 as no changes were committed since January 2009. 
 	Use this command to checkout the tagged release::

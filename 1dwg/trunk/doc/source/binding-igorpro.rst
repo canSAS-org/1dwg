@@ -167,7 +167,7 @@ and create a shortcut/alias to the plugin in
 
 
 
-.. index:: IgorPro; *CS_XmlReader()*
+.. index:: IgorPro function; CS_XmlReader()
 
 What it does
 ============
@@ -265,16 +265,15 @@ subfolder.  When only one *SASdata* is found, the
 	other methods such as use of a text editor or application of an XSLT transformation.
 
 
-List of Functions
+Important Functions
 ====================
 
 .. index:: 
-	single: IgorPro; *CS_XmlReader()*
-	single: IgorPro; *prj_grabMyXmlData()*
-	single: IgorPro; *prjTest_cansas1d()*
+	single: IgorPro function; CS_XmlReader()
+	single: IgorPro function; prj_grabMyXmlData()
+	single: IgorPro function; prjTest_cansas1d()
 
-These are (most of) the FUNCTIONS in the *cansasXML.ipf* code.  
-The only functions of interest are:
+These are the important FUNCTIONS in the *cansasXML.ipf* code.  
 
 	*CS_XmlReader(fileName)*
 		reads the named XML file and and loads SAS data
@@ -284,304 +283,17 @@ The only functions of interest are:
 		demonstration function to show a usage example
 
 
+.. put the rest of the function descriptions in the source code file, not very useful here
 
 
+Example test case
+=================
 
+Here is an example running the test routine *prjTest_cansas1d()*.
 
-..
-	    <section>
-	        <title></title>
-	        <itemizedlist mark="opencircle">
-	            <listitem>
-	                <para>
-	                    <emphasis role="bold">CS_XmlReader(fileName)*: 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_XmlReader()*</tertiary>
-	                    </indexterm>
-	                    open a canSAS 1-D
-	                    reduced SAS XML data file </para>
-	            </listitem>
-	        </itemizedlist>
-	        <itemizedlist mark="opencircle">
-	            <listitem>
-	                <para> input: *fileName* (string) name of canSAS XML file (can
-	                    include file system path name to file) </para>
-	            </listitem>
-	            <listitem>
-	                <para> returns: </para>
-	                <itemizedlist mark="opencircle">
-	                    <listitem>
-	                        <para> 0 successful </para>
-	                    </listitem>
-	                    <listitem>
-	                        <para> -1: XML file not found </para>
-	                    </listitem>
-	                    <listitem>
-	                        <para> -2: root element is not SASroot with valid canSAS namespace </para>
-	                    </listitem>
-	                    <listitem>
-	                        <para> -3: SASroot version is not 1.0 </para>
-	                    </listitem>
-	                    <listitem>
-	                        <para> -4: no SASentry elements (NOT USED NOW) </para>
-	                    </listitem>
-	                    <listitem>
-	                        <para> -5: XOPutils needs upgrade </para>
-	                    </listitem>
-	                </itemizedlist>
-	            </listitem>
-	        </itemizedlist>
-	        <itemizedlist mark="opencircle">
-	            <listitem>
-	                <para> CS_1i_parseXml(fileID):
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_1i_parseXml()*</tertiary>
-	                    </indexterm>
-	                    <emphasis role="bold">This is what guides the
-	                        work*, given a file ID returned from <emphasis role="bold"
-	                            >XMLOpenFile()*, parses that file for SAS data and metadata
-	                    <indexterm><primary>metadata</primary></indexterm>
-	                    (1i in the function name signifies this is a function that supports 
-	                    INPUT from version 1.0 XML files) </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_1i_getOneSASdata(fileID, Title, SASdataPath) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_1i_getOneSASdata()*</tertiary>
-	                    </indexterm>
-	                    harvest the data and metadata
-	                    <indexterm><primary>metadata</primary></indexterm>
-	                    in the specific SASdata element </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_1i_getOneVector(file,prefix,XML_name,Igor_name) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_1i_getOneVector()*</tertiary>
-	                    </indexterm>
-	                    harvest just one column
-	                    (vector) of data </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_1i_GetReducedSASdata(fileID, SASdataPath) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_1i_GetReducedSASdata()*</tertiary>
-	                    </indexterm>
-	                    grab the data and put it in
-	                    the working data folder </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_1i_locateTitle(fileID, SASentryPath) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_1i_locateTitle()*</tertiary>
-	                    </indexterm>
-	                    determine the title for this
-	                    experiment </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_appendMetaData(fileID, key, xpath, value) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_appendMetaData()*</tertiary>
-	                    </indexterm>
-	                    queries XML file for <emphasis
-	                        role="bold">xpath*. If <emphasis role="bold">value* is
-	                    not empty, appends it to <emphasis role="bold">metadata*
-	                    <indexterm><primary>metadata</primary></indexterm>
-	                    where *last* is the new last row: metadata[last][0]=key;
-	                    metadata[last][1]=value </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_buildXpathStr(prefix, value) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_buildXpathStr()*</tertiary>
-	                    </indexterm>
-	                    this function can be used only with very
-	                    simple XPath constructions </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_cleanFolderName(proposal) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_cleanFolderName()*</tertiary>
-	                    </indexterm>
-	                    given a proposal string, returns a candidate
-	                    folder name for immediate use </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_findElementIndex(matchStr) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_findElementIndex()*</tertiary>
-	                    </indexterm>
-	                    looks for element index in structure
-	                        *W_ElementList* returned from call to <emphasis
-	                        role="bold">XmlElemList(fileID)*
-	                </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_getDefaultNamespace(fileID) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_getDefaultNamespace()*</tertiary>
-	                    </indexterm>
-	                    returns the string containing the default
-	                    namespace for the XML file </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_registerNameSpaces() : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_registerNameSpaces()*</tertiary>
-	                    </indexterm>
-	                    Builds a table of all namespaces used in the XML
-	                    file and appends <emphasis role="bold">W_ElementList* with full
-	                    namespace-xpath string for each element. </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_simpleXmlListXpath(fileID, prefix, value) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_simpleXmlListXpath()*</tertiary>
-	                    </indexterm>
-	                    Calls <emphasis role="bold"
-	                        >XMLlistXpath()* with proper namespace prefix attached. </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_simpleXmlWaveFmXpath(fileID, prefix, value) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_simpleXmlWaveFmXpath()*</tertiary>
-	                    </indexterm>
-	                    Calls <emphasis role="bold"
-	                        >XMLwaveFmXpath()* with proper namespace prefix attached. </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_updateWaveNote(wavName, key, value) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_updateWaveNote()*</tertiary>
-	                    </indexterm>
-	                    adds (or replaces) definition of
-	                        *key*=*value* in the wave note of
-	                        *wavName*
-	                </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_XmlStrFmXpath(fileID, prefix, value) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_XmlStrFmXpath()*</tertiary>
-	                    </indexterm>
-	                    Calls <emphasis role="bold"
-	                        >XmlStrFmXpath()* with proper namespace prefix attached. Trims the
-	                    result string. </para>
-	            </listitem>
-	            <listitem>
-	                <para> CS_XPath_NS(simpleStr) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*CS_XPath_NS()*</tertiary>
-	                    </indexterm>
-	                    this function adds namespace info as necessary to
-	                    simpleStr (an XPath) </para>
-	            </listitem>
-	            <listitem>
-	                <para> TrimWS(str) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*TrimWS()*</tertiary>
-	                    </indexterm>
-	                    Calls <emphasis role="bold">TrimWSL(TrimWSR(str))*
-	                </para>
-	            </listitem>
-	            <listitem>
-	                <para> TrimWSL(str) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*TrimWSL()*</tertiary>
-	                    </indexterm>
-	                    Trims white space from left (leading) end of <emphasis
-	                        role="bold">str*
-	                </para>
-	            </listitem>
-	            <listitem>
-	                <para> TrimWSR(str) : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*TrimWSR()*</tertiary>
-	                    </indexterm>
-	                    Trims white space from right (trailing) end of <emphasis
-	                        role="bold">str*
-	                </para>
-	            </listitem>
-	            <listitem>
-	                <para> prjTest_cansas1d() : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*prjTest_cansas1d()*</tertiary>
-	                    </indexterm>
-	                    Demonstration function that calls <emphasis role="bold"
-	                        >CS_XmlReader(fileName)* for many of the test data sets. </para>
-	            </listitem>
-	            <listitem>
-	                <para> prj_grabMyXmlData() : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*prj_grabMyXmlData()*</tertiary>
-	                    </indexterm>
-	                    Demonstration function that moves loaded data from
-	                    root:Packages:CS_XMLreader to a user's data folder. (In this
-	                        *example*, that folder is root:PRJ_canSAS.) </para>
-	            </listitem>
-	            <listitem>
-	                <para> testCollette() : 
-	                    <indexterm>
-	                        <primary>binding</primary>
-	                        <secondary>IgorPro</secondary>
-	                        <tertiary>*testCollette()*</tertiary>
-	                    </indexterm>
-	                    Demonstration function that reads an ISIS/LOQ file and
-	                    copies the data to the root folder a la COLLETE </para>
-	            </listitem>
-	        </itemizedlist>
-	    </section>
-
-
-
-
-	    <section>
-	        <title>Example test case</title>
-	        <para> Here is an example running the test routine *prjTest_cansas1d()*.
-	            <programlisting linenumbering="numbered">
+.. code-block:: text
+	:linenos:
+		
 	*prjTest_cansas1d()
 	XMLopenfile: File(path) to open doesn't exist, or file can't be opened
 	elmo.xml either not found or cannot be opened for reading
@@ -659,40 +371,30 @@ The only functions of interest are:
 	s81-polyurea.xml 		 identified as: cansas1d/1.1 XML file
 	    Title: S7 Neat Polyurea 
 	    Completed in 0.0361616 seconds
-	    </programlisting>
-	        </para>
-	    </section>
-	    <section>
-	        <title>IgorPro Graphical User Interface</title>
-	        <para> At least two groups are working on graphical user 
-	            interfaces that use the canSAS 1-D
-	            SAS XML format binding to IgorPro. The GUIs are intended 
-	            to be used with their suites of
-	            SAS analysis tools (and hide the details of using this 
-	            support code from the user). </para>
-	        <para> NOTE: There is no support yet for writing the data 
-	            back into the canSAS format.
-	            Several details need to be described, and these are 
-	            being collected on the discussion
-	            page for the XML format </para>
-	        <section>
-	            <title>Irena tool suite</title>
-	            <para> Jan Ilavsky's 
-	                <link 
-	                    xlink:href="http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm"
-	                    ><emphasis role="bold">Irena*</link><footnote>
-	                    <para>
-	                        <link xlink:href="http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm"
-	                            ><literal
-	                                >http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm*</link>
-	                    </para>
-	                </footnote>
-	                <indexterm significance="preferred">
-	                    <primary>IgorPro package</primary>
-	                    <secondary>Irena tool suite</secondary>
-	                </indexterm>
-	                tool suite for IgorPro has a GUI to
-	                load the data found in the XML file. 
-	                Refer to the WWW site for more details. </para>
-	        </section>
-	    </section>
+
+IgorPro Graphical User Interface
+==================================
+
+At least two groups are working on graphical user 
+interfaces that use the canSAS 1-D
+SAS XML format binding to IgorPro. The GUIs are intended 
+to be used with their suites of
+SAS analysis tools (and hide the details of using this 
+support code from the user).
+
+.. note:: There is no support yet for writing the data 
+	back into the canSAS format.
+	Several details need to be described, and these are 
+	being collected on the discussion
+	page for the XML format
+
+
+.. index:: ! IgorPro package; Irena tool suite
+
+Irena tool suite
+-----------------
+
+Jan Ilavsky's **Irena** tool suite
+for IgorPro has a GUI to
+load the data found in the XML file. 
+Refer to http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm for more details.

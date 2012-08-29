@@ -96,6 +96,8 @@ and its discussion page.
 
 .. index: element; SASroot
 .. index: element; SASentry
+.. index: element; Title
+.. index: element; Run
 .. index: element; SASdata
 .. index: element; Idata
 .. index: element; SAStransmission_spectrum
@@ -117,8 +119,8 @@ Element                           Description
 :ref:`XML Header<XML.header>`     descriptive info required at the start of every XML file
 :ref:`SASroot`                    root element of XML file
 :ref:`SASentry`                   data set, time-slice, step in a series, new sample, etc.
-:index:`Title`                    for this particular :ref:`SASentry`
-:index:`Run`                      run number or ID number of experiment
+:ref:`Title`                      for this particular :ref:`SASentry`
+:ref:`Run`                        run number or ID number of experiment
 :ref:`{any}`                      any XML element can be used at this point
 :ref:`SASdata`                    this is where the reduced 1-D SAS data is stored
 :ref:`Idata`                      a single data point of :math:`I(Q)` (and related items) in the dataset
