@@ -60,8 +60,9 @@ source code (for developers)
 =======================================================
 
 An example (*Example_canSAS_Reader.java*) has been constructed
-(http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java)
 to show how to read a cansas1d/1.1 XML file using the Java API. 
+
+http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java
 
 In short, these are the important two lines:
 

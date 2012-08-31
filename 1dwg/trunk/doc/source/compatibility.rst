@@ -10,8 +10,12 @@ Compatibility of Geometry Definitions
 
 The translation and orientation geometry used by this canSAS standard are consistent with:
 
+.. index:: cartesian
+
 **Cartesian**
 	http://en.wikipedia.org/wiki/Cartesian_coordinate_system
+
+.. index:: right-hand rule
 
 **Right-hand rule**
 	http://en.wikipedia.org/wiki/Right-hand_rule

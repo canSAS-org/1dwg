@@ -38,11 +38,13 @@ from previous works such as the SASXML format, a joint collaboration
 between ISIS and ILL.  
 
 The home page of the canSAS 1D Data Formats Working Group 
-(http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group)
 describes the members, timelines, and current status.
-There is a discussion 
-(http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group)
-page for some matters that preceded this revision.
+There is a discussion page for some matters that preceded this revision.
+
+Home:
+	http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group
+Discussion:
+	http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group
 
 -----------------
     

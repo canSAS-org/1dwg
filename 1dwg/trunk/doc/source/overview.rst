@@ -91,7 +91,8 @@ and its discussion page.
 	<SASroot version="1.1"
 		xmlns="cansas1d/1.1"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="cansas1d/1.1 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+		xsi:schemaLocation="cansas1d/1.1
+		    http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
 		>
 
 .. index:
@@ -153,8 +154,9 @@ Rules
 	single: geometry; orientation (rotation)
 
 #. A cansas1d/1.1 XML data files will adhere to the standard if it can
-	successfully :ref:`validate` against the established XML Schema. 
-	(http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd)
+	successfully :ref:`validate <validate>` against the established XML Schema.
+	 
+	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd
 #. :math:`Q=(4 \pi / \lambda) \sin(\theta)`
 	where :math:`\lambda` is the wavelength of the radiation,
 	and :math:`2\theta` is the angle through which the detected radiation has been scattered.
@@ -220,14 +222,18 @@ geometry are described by the following two figures.
 	element; y
 	element; z
 
-+------------------------------------------------------------------+--------------------------------------------------------------------+
-| view from source                                                 | view from detector                                                 |
-+==================================================================+====================================================================+
-| .. figure:: ../../graphics/translation-orientation-geometry.jpg  | .. figure:: ../../graphics/translation-orientation-geometry-2.jpg  |
-|     :alt: view from source                                       |     :alt:                                                          |
-|     :width: 350 px                                               |     :width: 350 px                                                 |
-+------------------------------------------------------------------+--------------------------------------------------------------------+
+.. figure:: ../../graphics/translation-orientation-geometry.jpg
+    :alt: view from source				       
+    :width: 350 px	
+    
+    Coordinate axes as viewed from the source.
 
+.. figure:: ../../graphics/translation-orientation-geometry-2.jpg
+    :alt:						  
+    :width: 350 px
+    
+    Coordinate axes as viewed from the detector.
+    				  
 
 
 .. _XmlWriter:
@@ -270,10 +276,14 @@ The *cansas1d.xsd* :index:`XML Schema`
 defines the rules for the XML file format and is used to
 validate any XML file for adherence to the format.
 
-	TRAC (view source code highlighted by bug tracking system)
+	TRAC 
+		(view source code highlighted by bug tracking system)
+		
 		http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd
 
-	SVN (view raw source code from version control system)
+	SVN 
+		(view raw source code from version control system)
+		
 		http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd
 
 XML stylesheets
@@ -289,9 +299,10 @@ file(s). It can be used to display the data in a supporting WWW browser
 (such as Firefox or Internet Explorer) or to import into Microsoft Excel
 (with the added XML support in Excel). 
 
-.. tip:: See the excellent write-up by Steve King, ISIS, 
-	(http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf)
-	for an example.
+.. tip:: See the excellent write-up by Steve King, ISIS, for an example.
+
+	http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf
+	
 
 By default, MS Windows binds *.xml* files to start
 Internet Explorer. Double-clicking on a canSAS XML data file with the
@@ -411,12 +422,14 @@ include:
 
 **multiple data sets**
 	ISIS LOQ SANS instrument: 
+	
 	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/W1W2.XML
 
 .. index:: XML file; cs_af1410.xml
 
 **multiple samples, multiple data sets**
 	AF1410 steel SANS contrast variation study from NIST:
+	
 	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml
 	
     SANS study using magnetic

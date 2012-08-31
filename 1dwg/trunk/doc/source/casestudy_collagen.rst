@@ -35,6 +35,8 @@ available for this data (without resorting to digging through piles
 of old notebooks) was obtained from the headers of two files: 
 
 	*COLLAGEN.ASC*
+		raw data file
+		
 		http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC
 
 		.. rubric:: The header lines from *collagen.asc*:
@@ -48,6 +50,8 @@ of old notebooks) was obtained from the headers of two files:
 
 
 	*collagen.saxs*
+		raw data file
+		
 		http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/collagen.saxs
 	
 		.. rubric:: The header lines from *collagen.saxs*:

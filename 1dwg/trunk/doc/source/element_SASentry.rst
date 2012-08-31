@@ -11,9 +11,7 @@
 parent:
 	:ref:`SASroot`
 
-.. figure:: ../../graphics/1-SASroot.png
-    
-    The *SASentry* element
+Refer to the figure in :ref:`SASroot`.
 
 .. index::
 	element; Title
