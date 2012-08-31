@@ -25,11 +25,10 @@ Name                           Type        Occurrence   Description             
 ============================== =========== ============ =========================================== ====================================
 *length*                       float       [0..1]       Amount/length of collimation inserted       *unit={unit}*
                                                         (on a SANS instrument)
-:ref:`SAScollimation.aperture` container   [0..inf]     Description of a slit or aperture. 
-                                                        *name*: Optional name attribute for this 
-                                                        aperture.  
-                                                
-                                                        *type*: Optional text attribute to          *name={type}*
+:ref:`SAScollimation.aperture` container   [0..inf]     Description of a slit or aperture.       
+                                                        *name*: Optional name attribute for this    *name={name}*
+                                                        aperture.
+                                                        *type*: Optional text attribute to          *type={type}*
                                                         describe the type of aperture 
                                                         (pinhole, 4-blade slit, 
                                                         Soller slit, ...).
@@ -57,24 +56,17 @@ Name                        Type        Occurrence   Description                
 size
 ===========
 
+See the figures in :ref:`axes definition`.
+
 .. index::
 	geometry; translation
 	element; x
 	element; y
 	element; z
 
-+------------------------------------------------------------------+--------------------------------------------------------------------+
-| view from source                                                 | view from detector                                                 |
-+==================================================================+====================================================================+
-| .. figure:: ../../graphics/translation-orientation-geometry.jpg  | .. figure:: ../../graphics/translation-orientation-geometry-2.jpg  |
-|     :alt: view from source                                       |     :alt:                                                          |
-|     :width: 350 px                                               |     :width: 350 px                                                 |
-+------------------------------------------------------------------+--------------------------------------------------------------------+
-
-
 .. tip:: While :math:`z` is allowed 
 	by the standard (provided by use of 
-	a standard element in the XML Schema), 
+	a standard *size* element in the XML Schema), 
 	it does not make sense for 
 	small-angle scattering.
 

@@ -184,7 +184,7 @@ Rules
 #. when raised to a power, use similar to ``A^3`` or ``1/m^4`` 
 	(and not ``A3`` or ``A**3`` or ``m-4``)
 #. :index:`coordinate axes`:
-	(See the :ref:`compatibility` section)
+	(See the sections titled :ref:`axes definition` and :ref:`compatibility`.)
 	
 	a. :math:`z` is along the flight path (positive value in the direction of the detector)
 	#. :math:`x` is orthogonal to :math:`z` in the horizontal plane (positive values
@@ -192,18 +192,6 @@ Rules
 		radiation)
 	#. :math:`y` is orthogonal to :math:`z` and :math:`x` in the vertical plane 
 		(positive values increase upwards)
-	
-	.. figure:: ../../graphics/translation-orientation-geometry.jpg
-	    :alt: coordinate axes as viewed from the source
-	    :height: 200 px
-	    
-	    definition of translation and orientation geometry as viewed from the source towards the detector
-	
-	.. figure:: ../../graphics/translation-orientation-geometry-2.jpg
-	    :alt: coordinate axes as viewed from the detector
-	    :width: 200 px
-	    
-	    definition of translation and orientation geometry as viewed from the detector towards the source
 
 #. orientation (angles) describes single-axis rotations (rotations about
 	multiple axes require more information):
@@ -213,6 +201,31 @@ Rules
 	#. :index:`yaw` is about  :math:`y`
 
 #. Binary data is not supported
+
+
+
+.. _axes definition:
+
+Definition of the coordinate axes
+--------------------------------------
+
+The definitions of the coordinate axes for translation and orientation 
+geometry are described by the following two figures.
+
+.. index::
+	geometry; translation
+	element; x
+	element; y
+	element; z
+
++------------------------------------------------------------------+--------------------------------------------------------------------+
+| view from source                                                 | view from detector                                                 |
++==================================================================+====================================================================+
+| .. figure:: ../../graphics/translation-orientation-geometry.jpg  | .. figure:: ../../graphics/translation-orientation-geometry-2.jpg  |
+|     :alt: view from source                                       |     :alt:                                                          |
+|     :width: 350 px                                               |     :width: 350 px                                                 |
++------------------------------------------------------------------+--------------------------------------------------------------------+
+
 
 
 .. _XmlWriter:
