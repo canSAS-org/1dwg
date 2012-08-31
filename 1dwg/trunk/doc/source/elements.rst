@@ -17,12 +17,8 @@ XML Header
    :maxdepth: 2
    
    element_SASroot
-
-
-.. _SASentry:
-
-SASentry
-==============
+   element_SASentry
+   element_SAScollimation
 
 .. _Title:
 
@@ -74,12 +70,6 @@ SASinstrument
 .. _SASsource:
 
 SASsource
-==============
-
-
-.. _SAScollimation:
-
-SAScollimation
 ==============
 
 
