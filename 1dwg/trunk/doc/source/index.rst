@@ -38,6 +38,5 @@ results of processing or analysis steps. Even multiple measurements
 .. toctree::
    :maxdepth: 2
    
-   downloads
    manual
-   status
+   downloads

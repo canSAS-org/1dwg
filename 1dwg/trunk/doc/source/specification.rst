@@ -53,7 +53,7 @@ which is a well-formed XML attribute.
 
 .. index:: element; {any}
 
-Another example is an instance of the :ref:`{any}`
+Another example is an instance of the *{any}*
 element.  Suppose one had analysis data, then *{any}*
 would be replaced 
 with *analysis* and the element might look like this::

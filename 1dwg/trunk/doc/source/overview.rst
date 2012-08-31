@@ -94,22 +94,24 @@ and its discussion page.
 		xsi:schemaLocation="cansas1d/1.1 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
 		>
 
-.. index: element; SASroot
-.. index: element; SASentry
-.. index: element; Title
-.. index: element; Run
-.. index: element; SASdata
-.. index: element; Idata
-.. index: element; SAStransmission_spectrum
-.. index: element; Tdata
-.. index: element; {any}
-.. index: element; SASsample
-.. index: element; SASinstrument
-.. index: element; SASsource
-.. index: element; SAScollimation
-.. index: element; SASdetector 
-.. index: element; SASprocess
-.. index: element; SASnote
+.. index:
+	XML header
+	element; SASroot
+	element; SASentry
+	element; Title
+	element; Run
+	element; SASdata
+	element; Idata
+	element; SAStransmission_spectrum
+	element; Tdata
+	element; {any}
+	element; SASsample
+	element; SASinstrument
+	element; SASsource
+	element; SAScollimation
+	element; SASdetector 
+	element; SASprocess
+	element; SASnote
 
 .. rubric:: Basic elements of the canSAS 1-D standard
 
@@ -119,14 +121,14 @@ Element                           Description
 :ref:`XML Header<XML.header>`     descriptive info required at the start of every XML file
 :ref:`SASroot`                    root element of XML file
 :ref:`SASentry`                   data set, time-slice, step in a series, new sample, etc.
-:ref:`Title`                      for this particular :ref:`SASentry`
-:ref:`Run`                        run number or ID number of experiment
-:ref:`{any}`                      any XML element can be used at this point
+*Title*                           for this particular :ref:`SASentry`
+*Run*                             run number or ID number of experiment
+*{any}*                           any XML element can be used at this point
 :ref:`SASdata`                    this is where the reduced 1-D SAS data is stored
 :ref:`Idata`                      a single data point of :math:`I(Q)` (and related items) in the dataset
 :ref:`SAStransmission_spectrum`   any transmission spectra may be stored here
 :ref:`Tdata`                      a single data point in the transmission spectrum
-:ref:`{any}`                      any XML element can be used at this point
+*{any}*                           any XML element can be used at this point
 :ref:`SASsample`                  description of the sample
 :ref:`SASinstrument`              description of the instrument
 :ref:`SASsource`                  description of the source
@@ -156,6 +158,8 @@ Rules
 #. :math:`Q=(4 \pi / \lambda) \sin(\theta)`
 	where :math:`\lambda` is the wavelength of the radiation,
 	and :math:`2\theta` is the angle through which the detected radiation has been scattered.
+	
+	.. _Q geometry:
 	
 	.. figure:: ../../graphics/Q-geometry.jpg
 	    :alt: Q geometry
@@ -201,8 +205,6 @@ Rules
 	#. :index:`yaw` is about  :math:`y`
 
 #. Binary data is not supported
-
-
 
 .. _axes definition:
 
