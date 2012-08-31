@@ -171,23 +171,23 @@ desmearing code).
 JAXB: Questions and Answers
 ============================================
 
-[Q]: What is *JAXB*?
-	[A]: Java Architecture for XML Binding
+:Q: What is *JAXB*?
+:A: Java Architecture for XML Binding
 	(http://java.sun.com/developer/technicalArticles/WebServices/jaxb)
 
-[Q]: Wow! : Is it available for other languages?
-	[A]: Ask Google. JAXB is for Java. 
+:Q: Wow! Is it available for other languages?
+:A: Ask Google. *JAXB* is for Java. 
 	(http://java.sun.com/developer/technicalArticles/WebServices/jaxb)
 	
 	For example: http://www.devx.com/ibm/Article/20261
 
 .. index:: I(Q)
 
-[Q]: How do I pull out the :math:`I(Q)` data?
-	[A]: See Java code fragment above that gets data for desmearing.  (:ref:`java-test.xml`)
+:Q: How do I pull out the :math:`I(Q)` data?
+:A: See Java code fragment above that gets data for desmearing.  (:ref:`java-test.xml`)
 
-[Q]: Has JAXB been useful?
-	[A]: **Very useful.**
+:Q: Has JAXB been useful?
+:A: **Very useful.**
 	Since an XML Schema was defined, JAXB was 
 	very useful to create a Java binding 
 	automatically.  Then, *javadoc* was able to
