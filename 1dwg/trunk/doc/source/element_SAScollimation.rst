@@ -5,14 +5,13 @@
 .. _SAScollimation:
 
 ============================
-*SAScollimation* element
+*SAScollimation*
 ============================
 
 parent:
 	:ref:`SASinstrument`
 
 .. figure:: ../../graphics/6-SAScollimation.png
-    :alt: cansas1d-v1-1-SAScollimation
     
     The *SAScollimation* element
 
@@ -23,7 +22,7 @@ parent:
 ============================== =========== ============ =========================================== ====================================
 Name                           Type        Occurrence   Description                                 Attributes
 ============================== =========== ============ =========================================== ====================================
-*length*                       float       [0..1]       Amount/length of collimation inserted       *unit={unit}*
+*length*                       float       [0..1]       Amount/length of collimation inserted       *unit={unit}*   [#units]_
                                                         (on a SANS instrument)
 :ref:`SAScollimation.aperture` container   [0..inf]     Description of a slit or aperture.       
                                                         *name*: Optional name attribute for this    *name={name}*
@@ -47,7 +46,7 @@ aperture
 Name                        Type        Occurrence   Description                                 Attributes
 =========================== =========== ============ =========================================== ====================================
 :ref:`SAScollimation.size`  container   [0..1]       Opening dimensions of this aperture.        *name={name}*
-*distance*                  float       [0..1]       Distance from this collimation element      *unit={unit}* 
+*distance*                  float       [0..1]       Distance from this collimation element      *unit={unit}*    [#units]_
                                                      to the sample.
 =========================== =========== ============ =========================================== ====================================
 
@@ -64,23 +63,22 @@ See the figures in :ref:`axes definition`.
 	element; y
 	element; z
 
-.. tip:: While :math:`z` is allowed 
-	by the standard (provided by use of 
-	a standard *size* element in the XML Schema), 
-	it does not make sense for 
-	small-angle scattering.
-
 ====================== =========== ============ =========================================== ====================================
 Name                   Type        Occurrence   Description                                 Attributes
 ====================== =========== ============ =========================================== ====================================
-:math:`x`              float       [0..1]       Dimension of the collimation in X.          *unit={unit}*
-                                                The *unit* attribute is required. See
-                                                :ref:`rules` for acceptable values.
-:math:`y`              float       [0..1]       Dimension of the collimation in Y.          *unit={unit}*
-                                                The *unit* attribute is required. See
-                                                :ref:`rules` for acceptable values.
-:math:`z`              float       [0..1]       Dimension of the collimation in Z.          *unit={unit}*
-                                                The *unit* attribute is required. See
-                                                :ref:`rules` for acceptable values.
-
+:math:`x`              float       [0..1]       Dimension of the collimation in X.          *unit={unit}*   [#units]_
+:math:`y`              float       [0..1]       Dimension of the collimation in Y.          *unit={unit}*   [#units]_
+:math:`z`              float       [0..1]       Dimension of the collimation in Z.          *unit={unit}*   [#units]_  [#Z]_
 ====================== =========== ============ =========================================== ====================================
+
+
+---------------
+
+.. rubric:: Table Notes
+
+..  [#units] The *unit* attribute is required. 
+	See :ref:`rules` for acceptable values.
+..  [#Z] While :math:`z` is allowed by the standard (provided by use of 
+	a standard *size* element in the XML Schema), it does not make sense 
+	to use it for small-angle scattering.  Use of :math:`z` here may be 
+	ignored by processing software.
