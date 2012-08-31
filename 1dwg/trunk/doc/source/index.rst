@@ -10,8 +10,7 @@ The canSAS1d data format is used to communicate one-dimensional
 reduced small-angle scattering data.  It is a text format and 
 is based on XML.
 
-Objective
-============
+.. rubric:: Objective
 
 One of the first aims of the **canSAS** (Collective Action for 
 Nomadic Small-Angle Scatterers) forum of users, software 
@@ -38,5 +37,12 @@ results of processing or analysis steps. Even multiple measurements
 .. toctree::
    :maxdepth: 2
    
-   manual
+   preface
+   specification
+   tutorial
+   case-studies
+   examples
+   bindings
+   intensity-problem
+   xml-help
    downloads
