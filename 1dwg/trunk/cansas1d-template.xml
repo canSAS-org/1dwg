@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
 <SASroot version="1.1"
-	xmlns="cansas1d/1.1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="cansas1d/1.1 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-    >
+		xmlns="urn:cansas1d:1.1"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="urn:cansas1d:1.1 http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+		>
 	<!--
 	   file: cansas1d-template.xml
 	   purpose: Template file for canSAS 1-D reduced SAS XML data format
@@ -12,7 +12,7 @@
 	           All elements, when present, must appear in the order shown below.
 	           When shown in the template below, the "unit" attribute is required.
 	           If in doubt, try validating against the XML Schema as described in
-	           http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation#Validation_of_XML_against_the_Schema
+	           http://www.cansas.org/wgwiki/index.php/cansas1d_documentation#Validation_of_XML_against_the_Schema
 	 -->
 	<SASentry name="this name is optional">
 		<!--* SASentry: [1..inf] a single SAS scan -->

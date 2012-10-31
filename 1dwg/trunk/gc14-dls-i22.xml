@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
 <SASroot version="1.1"
-	xmlns="cansas1d/1.1"
+		xmlns="urn:cansas1d:1.1"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="cansas1d/1.1 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+		xsi:schemaLocation="urn:cansas1d:1.1 http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xsd"
 		>
 	<SASentry>
 		<Title>glassy carbon C14 at Diamond I22 at 8.9keV</Title>

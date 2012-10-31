@@ -11,21 +11,21 @@ Java JAXB
 A Java binding for the cansas1d/1.1 standard has been auto-created using the JAXB tools
 from Sun (see below for more on JAXB) using the *cansas1d.xsd* :index:`XML Schema`.
 Resources (JAR files and documentation) for the Java binding may be found in
-the canSAS subversion repository: http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0/java
+the canSAS subversion repository: http://svn.cansas.org/svn/canSAS/1dwg/tags/v1.0/java
 
 Subversion repository
-	http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0/java
+	http://svn.cansas.org/svn/canSAS/1dwg/tags/v1.0/java
 	
 	canSAS subversion repository tagged release directory for the Java binding.
 	Use resources from this directory in your development projects.
 
 *cansas1d-1.0.jar*
-	http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0/java/cansas1d-1.0.jar
+	http://svn.cansas.org/svn/canSAS/1dwg/tags/v1.0/java/cansas1d-1.0.jar
 	
 	JAR file to add to your CLASSPATH in order to use this binding.
 
 *cansas1d-1.0-javadoc.jar*
-	http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0/java/cansas1d-1.0-javadoc.jar
+	http://svn.cansas.org/svn/canSAS/1dwg/tags/v1.0/java/cansas1d-1.0-javadoc.jar
 	
 	Use this JAR file if you want to add the 
 	javadoc documentation as tooltips to your editor, such as eclipse. 
@@ -35,7 +35,7 @@ Subversion repository
 	Start with the *index.html* page.
 
 *cansas1d-1.0-sources.jar*
-	http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0/java/cansas1d-1.0-sources.jar
+	http://svn.cansas.org/svn/canSAS/1dwg/tags/v1.0/java/cansas1d-1.0-sources.jar
 	
 	JAR file of the source code.   
 	(auto-generated from the project source code using maven2)
@@ -44,13 +44,13 @@ Subversion repository
 	for the Java (JAXB) API.
 
 *cansas1d-1.0.pdf*
-	http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0/java/cansas1d-1.0.pdf
+	http://svn.cansas.org/svn/canSAS/1dwg/tags/v1.0/java/cansas1d-1.0.pdf
 
 	PDF file of the javadoc source code documentation.
 	(auto-generated from the project source code using pdfdoclet)
 
 source code (for developers)
-	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse
+	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse
 	
 	canSAS Development project subversion repository for the Java binding.  
 	Only use this if you want to participate as a code developer of this binding.
@@ -62,7 +62,7 @@ source code (for developers)
 An example (*Example_canSAS_Reader.java*) has been constructed
 to show how to read a cansas1d/1.1 XML file using the Java API. 
 
-http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java
+http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java
 
 In short, these are the important two lines:
 
@@ -102,7 +102,7 @@ Here is a Java class that shows how to use the JAXB binding.
 Use this with any of the test data supplied with the cansas-1d-standard
 directory (above). By default, it shows the two samples in the
 *1998spheres.xml* example file.
-(http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/1998spheres.xml)
+(http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/1998spheres.xml)
 
 .. note:: The reader will have to get the directory paths 
 	right until this documentation improves.
@@ -144,7 +144,7 @@ java item       description
 -------------------
 
 Since the source code is rather lengthy, download it from:
-http://svn.smallangles.net/svn/canSAS/1dwg/trunk/doc/src/GetSASdata.java
+http://svn.cansas.org/svn/canSAS/1dwg/trunk/doc/src/GetSASdata.java
 
 ..
 	.. literalinclude:: ../src/GetSASdata.java

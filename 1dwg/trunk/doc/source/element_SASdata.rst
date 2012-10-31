@@ -121,4 +121,4 @@ Name                   Type        Occurrence   Description                     
 .. [#either] If either *dQw* or *dQl* are used, 
 	then *Qdev* is not permitted to be used.
 .. [#shadow] The *Shadowfactor* is used in data files from NIST/NCNR 
-	instruments.  Contact NIST/NCNR for more information.
+	instruments.  See: J.G. Barker & J.S. Pedersen (1995) J. Appl. Cryst. 28, 105-114.
