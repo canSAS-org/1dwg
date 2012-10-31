@@ -20,10 +20,10 @@ parent:
 	<?xml version="1.0"?>
 	<?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl">
 	<SASroot version="1.1"
-	   xmlns="cansas1d/1.1"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xsi:schemaLocation="cansas1d/1.1 
-	   http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd">
+			xmlns="urn:cansas1d:1.1"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="urn:cansas1d:1.1 
+			                    http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xsd">
 
 
 
@@ -61,10 +61,11 @@ line   Description
 6 & 7  Location of the XML Schema that defines the allowed 
        tags for this XML file.  This attribute has two 
        strings within the quotations, separated by white 
-       space.  The first string is the XML namespace, 
-       repeated from above.  The second string is the name
+       space (a newline is acceptable).  
+       The first string is the XML namespace, 
+       repeated from above.  The second string is a suggested name
        of the XML Schema file.  Some XML support libraries 
        will follow the URL shown here to retrieve the
-       XML Schema from the canSAS server but this behavior 
-       is not guaranteed by the XML standard.
+       XML Schema from the canSAS server.  Since this behavior 
+       is not guaranteed by the XML standard, don't count on it.
 ====== ========================================================

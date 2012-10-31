@@ -3,9 +3,10 @@
 <!-- NOTE: This file contains SAS data sets and 0, 1, or 2 transmission spectra (T vs. L) -->
 <!-- compare with: GLASSYC_C4G8G9_no_TL.xml -->
 <SASroot version="1.1"
-          xmlns="cansas1d/1.1"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="cansas1d/1.1 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd">
+		xmlns="urn:cansas1d:1.1"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="urn:cansas1d:1.1 http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+		>
  <SASentry name="Workspace_2">
  <Title> C4_SANS                  </Title>
  <Run> 47126 </Run>

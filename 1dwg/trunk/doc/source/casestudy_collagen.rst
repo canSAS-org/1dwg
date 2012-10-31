@@ -37,7 +37,7 @@ of old notebooks) was obtained from the headers of two files:
 	*COLLAGEN.ASC*
 		raw data file
 		
-		http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC
+		http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC
 
 		.. rubric:: The header lines from *collagen.asc*:
 		
@@ -52,7 +52,7 @@ of old notebooks) was obtained from the headers of two files:
 	*collagen.saxs*
 		raw data file
 		
-		http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/collagen.saxs
+		http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/collagen/collagen.saxs
 	
 		.. rubric:: The header lines from *collagen.saxs*:
 		
@@ -78,7 +78,7 @@ Make the basic XML file
 
 It is easiest to copy a template rather than start from an empty file. Copy the
 :download:`cansas1d.xml <../../cansas1d.xml>` file 
-(http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xml)
+(http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xml)
 into your working directory and rename it to 
 *collagen.xml*.
 
@@ -153,7 +153,7 @@ Final Result
 A nicely-formatted display version of the final result 
 can be viewed through the TRAC repository:
 
-	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cs_collagen_full.xml
+	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/cs_collagen_full.xml
 
 Validate the file
 =====================
@@ -168,4 +168,4 @@ References
 
 All files are available at:
 
-	http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/collagen/
+	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/collagen/

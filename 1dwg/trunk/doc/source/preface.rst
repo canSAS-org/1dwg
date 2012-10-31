@@ -31,7 +31,7 @@ The canonical name for this format is *cansas1d/1.1*.
 This  work is the initiative of the canSAS 1D Data Formats Working Group, 
 established at the canSAS-V workshop, NIST, Gaithersburg, Maryland, 
 USA from October 29th to 31st 2007, which produced revision 1.0.
-A second workshop was held July 28th to 31st at Uppsala University, 
+A further workshop was held July 28th to 31st, 2012 at Uppsala University, 
 Uppsala, Sweden which produced revision 1.1.
 The format derives many of its foundations
 from previous works such as the SASXML format, a joint collaboration
@@ -42,9 +42,9 @@ describes the members, timelines, and current status.
 There is a discussion page for some matters that preceded this revision.
 
 Home:
-	http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group
+	http://www.cansas.org/wgwiki/index.php/1D_Data_Formats_Working_Group
 Discussion:
-	http://www.smallangles.net/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group
+	http://www.cansas.org/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group
 
 -----------------
     
@@ -55,5 +55,5 @@ the structure of
 the XML files and to define the spelling of the terms to be used. 
 However, should the information in this document and the 
 cansas1d/1.1 SAS XML Schema differ, 
-(http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd) 
+(http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd) 
 the XML Schema will be deemed to have the most correct description of the standard.
