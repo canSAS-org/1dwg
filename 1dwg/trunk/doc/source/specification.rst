@@ -30,7 +30,7 @@ Note that the cansas1d/1.1 XML data files must adhere to the
 XML rules which includes being well-formed
 (including the use of closing tags).  [#]_
 Files that can be validated  against :ref:`cansas1d.xsd`
-(http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd)
+(http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd)
 are deemed to be valid cansas1d/1.1 data files.
 
 .. [#] For example, see http://www.w3schools.com/xmL/xml_syntax.asp

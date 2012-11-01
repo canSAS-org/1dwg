@@ -92,7 +92,7 @@ and its discussion page.
 		xmlns="cansas1d/1.1"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="cansas1d/1.1
-		    http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+		    http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd"
 		>
 
 .. index:
@@ -156,7 +156,7 @@ Rules
 #. A cansas1d/1.1 XML data files will adhere to the standard if it can
 	successfully :ref:`validate <validate>` against the established XML Schema.
 	 
-	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd
+	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd
 #. :math:`Q=(4 \pi / \lambda) \sin(\theta)`
 	where :math:`\lambda` is the wavelength of the radiation,
 	and :math:`2\theta` is the angle through which the detected radiation has been scattered.
@@ -272,19 +272,19 @@ XML Schema
 -------------
 
 The *cansas1d.xsd* :index:`XML Schema` 
-(http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd)
+(http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd)
 defines the rules for the XML file format and is used to
 validate any XML file for adherence to the format.
 
 	TRAC 
 		(view source code highlighted by bug tracking system)
 		
-		http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd
+		http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd
 
 	SVN 
 		(view raw source code from version control system)
 		
-		http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xsd
+		http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd
 
 XML stylesheets
 ----------------
@@ -293,15 +293,24 @@ An :index:`XML stylesheet`, or *XSLT* (http://www.w3schools.com/xsl/),
 can be used to extract :index:`metadata` 
 or to convert into another file format. The
 default canSAS stylesheet *cansasxml-html.xsl*
-(http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansasxml-html.xsl)
+(http://www.cansas.org/svn/1dwg/trunk/cansasxml-html.xsl)
 should be copied into each folder with canSAS XML data
 file(s). It can be used to display the data in a supporting WWW browser
 (such as Firefox or Internet Explorer) or to import into Microsoft Excel
 (with the added XML support in Excel). 
 
-.. tip:: See the excellent write-up by Steve King, ISIS, for an example.
-
-	http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf
+.. Steve King suggests retiring this document since it has expired URLs.
+	The content is still good and may be a good addition to this document.
+	It is also moved to a new URL:
+	
+		http://www.small-angle.ac.uk/small-angle/Formats/mainColumnParagraphs/00/text_files/file/New_canSAS_XML_Data_Format.pdf
+	
+	I copied that locally to refs/New_canSAS_XML_Data_Format.pdf
+	
+	.. tip:: See the excellent write-up by Steve King, ISIS, for an example.
+	
+		http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf
+		
 	
 
 By default, MS Windows binds *.xml* files to start
@@ -344,7 +353,7 @@ Examples and Case Studies
 .. index:: XML file; cansas1d.xml
 
 **Basic example** 
-	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xml
+	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xml
 	
     Note that, for clarity, only one row of data is
     shown. This is probably a very good example to use as a starting point for
@@ -354,7 +363,7 @@ Examples and Case Studies
 .. index:: case study; bimodal test data
 
 **Bimodal test data**
-	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml
+	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml
 
     Simulated SAS data (with added noise) calculated from model bimodal size 
     distribution to test size distribution analysis routines.
@@ -386,12 +395,12 @@ Examples and Case Studies
 	contrast variation (with multiple samples and multiple data sets for each
 	sample), the files can be viewed from the TRAC site (no description yet).
 	
-	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/af1410/
+	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/af1410/
 
 .. index:: XML file; cansas1d-template.xml
 
 **Test all the cansas1d/1.1 rules**
-	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml
+	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml
 	
     The *cansas1d-template.xml* data file is used to test all the rules in the XML
     Schema. This is probably not a very good example to use as a starting point
@@ -423,14 +432,14 @@ include:
 **multiple data sets**
 	ISIS LOQ SANS instrument: 
 	
-	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/W1W2.XML
+	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/W1W2.XML
 
 .. index:: XML file; cs_af1410.xml
 
 **multiple samples, multiple data sets**
 	AF1410 steel SANS contrast variation study from NIST:
 	
-	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml
+	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml
 	
     SANS study using magnetic
     contrast variation (with multiple samples and multiple data sets for each
@@ -452,7 +461,7 @@ for more help with XML foreign elements.
 	the foreign namespace in this example.  
 
 There is an example that demonstrates the use of a foreign namespace:
-http://svn.cansas.org/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml
+http://www.cansas.org/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml
 
 This example uses a foreign namespace to record the transmission spectrum related to
 the acquisition of the SANS data at a time-of-flight facility. Look near line 153
@@ -464,7 +473,7 @@ The foreign namespace given (``urn:transmission:spectrum``) becomes the
 default namespace for just the *transmission_spectrum* element.*
 
 Also refer to canSAS TRAC ticket #47
-(http://svn.cansas.org/trac/canSAS/changeset/47)
+(http://www.cansas.org/trac/canSAS/changeset/47)
 for an example of arranging the content in 
 *SASprocessnote* to avoid the use of foreign namespace
 elements.
@@ -502,7 +511,7 @@ these languages and environments:
 
 **Microsoft Excel**
 	Support for Microsoft Excel is provided through the default canSAS stylesheet,
-	*cansasxml-html.xsl* (http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansasxml-html.xsl).
+	*cansasxml-html.xsl* (http://www.cansas.org/svn/1dwg/trunk/cansasxml-html.xsl).
 	The ISIS **LOQ** instrument (http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html)
 	has provided an excellent description of how to import data from the cansas1d/1.1 format into Excel.
 	Also note that the old WWW site (http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/loq.htm)
@@ -528,7 +537,7 @@ these languages and environments:
 	is in the ``function surveillance($post)`` where
 	logging information is inserted into an XML file.
 	
-	PHP source: http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php
+	PHP source: http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php
 
 .. index::
 	single: binding; Python
@@ -550,7 +559,7 @@ Software repositories (for cansas1d/1.1 standard)
 =========================================================
 
 TRAC (bug reporting)
-	http://svn.cansas.org/trac/canSAS/browser/1dwg/tags/v1.1
+	http://www.cansas.org/trac/canSAS/browser/1dwg/tags/v1.1
 
 SVN (*subversion* revision control system)
-	http://svn.cansas.org/svn/canSAS/1dwg/tags/v1.1
+	http://www.cansas.org/svn/1dwg/tags/v1.1

@@ -23,8 +23,7 @@ parent:
 			xmlns="urn:cansas1d:1.1"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			xsi:schemaLocation="urn:cansas1d:1.1 
-			                    http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xsd">
-
+			                    http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd">
 
 
 ====== ========================================================
@@ -63,9 +62,10 @@ line   Description
        strings within the quotations, separated by white 
        space (a newline is acceptable).  
        The first string is the XML namespace, 
-       repeated from above.  The second string is a suggested name
-       of the XML Schema file.  Some XML support libraries 
+       repeated from above.  The second string is a suggested
+       name of the XML Schema file.  Some XML support libraries 
        will follow the URL shown here to retrieve the
        XML Schema from the canSAS server.  Since this behavior 
-       is not guaranteed by the XML standard, don't count on it.
+       is not guaranteed by the XML standard, don't count on 
+       it.
 ====== ========================================================

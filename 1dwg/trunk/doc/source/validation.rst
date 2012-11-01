@@ -17,5 +17,5 @@ Validation of XML against the Schema
 #. paste content of :download:`cansas1d.xsd <../../cansas1d.xsd>` XSD file into form 
 	and press ``<continue validation>``
 	
-	(http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xsd)
+	(http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd)
 #. check the results

@@ -36,7 +36,7 @@ See the :ref:`IgorPro Binding Usage Notes` section below.
 
 
 **file**
-	http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
+	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
 
 **author**
 	Pete R. Jemian <jemian@anl.gov>
@@ -53,9 +53,9 @@ See the :ref:`IgorPro Binding Usage Notes` section below.
 
 **URL**
 	*TRAC*
-		http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
+		http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
 	*SVN*
-		http://svn.cansas.org/svn/canSAS/1dwg/trunk/IgorPro/cansasXML.ipf
+		http://www.cansas.org/svn/1dwg/trunk/IgorPro/cansasXML.ipf
 
 .. index:: ! IgorPro package; XMLutils XOP
 
@@ -122,7 +122,7 @@ Check out the canSAS 1d SAS XML reader from the subversion repository:
 
 	.. code-block:: text
 	
-		svn checkout http://svn.cansas.org/svn/canSAS/1dwg/trunk cansas-1dwg
+		svn checkout http://www.cansas.org/svn/1dwg/trunk cansas-1dwg
 
 This will download lots of extra files. The file of interest is in the
 IgorPro directory and is called *cansasXML.ipf*
@@ -146,7 +146,7 @@ Installation
 #. Install *XMLutils* XOP by double-clicking the installer for your operating system.
 #. Download *cansasXML.ipf*. Either checkout from subversion (see above) or, with
 	a web browser, copy *cansasXML.ipf* from the on-line subversion repository.
-	(http://svn.cansas.org/svn/canSAS/1dwg/trunk/IgorPro/cansasXML.ipf)
+	(http://www.cansas.org/svn/1dwg/trunk/IgorPro/cansasXML.ipf)
 #. Copy *cansasXML.ipf* file to *...WavemetricsIgor Pro FolderUser Procedures*
 	(or file system equivalent)
 #. Then, you should be able to restart *IgorPro* and progress from there.

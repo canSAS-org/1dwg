@@ -1,10 +1,15 @@
 .. $Id$
 
+.. _CHANGES:
+
 ===============
 CHANGES
 ===============
 
-2012-08-16  tagged version canSAS1d/1.1  (2012-10-31 need to retag)
+:v1.1:
+	2012-08-16, tagged version canSAS1d/1.1
+	
+	2012-10-31, still some more changes, need to retag
 	
 	* TRAC #17: wontfix: clean up rules
 	* TRAC #18: added timestamp attribute to SASdata and SAStransmission_spectrum
@@ -15,4 +20,5 @@ CHANGES
 	
 	* slight changes in documentation of units (Angstrom and Celsius)
 
-2009-05-12  tagged version canSAS1d/1.0
+:v1.0:
+	2009-05-12, tagged version canSAS1d/1.0
