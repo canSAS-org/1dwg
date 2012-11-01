@@ -3,7 +3,7 @@
 <SASroot version="1.1"
 		xmlns="urn:cansas1d:1.1"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="urn:cansas1d:1.1 http://svn.cansas.org/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+		xsi:schemaLocation="urn:cansas1d:1.1 http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd"
 		>
 	<SASentry>
 		<Title>dry chick collagen, d = 673 A, 6531 eV, X6B</Title>

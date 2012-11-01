@@ -35,7 +35,7 @@ The example data file *data-simple.xml*
 shows just the basic elements of the cansas1d/1.1 standard.  Only a 
 single data point has been shown to more clearly show the other structure.
 The data file is actually an excerpt from the *bimodal-test1.xml*
-(http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml)
+(http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml)
 example file in the main distribution.
 
 .. literalinclude:: ../src/data-simple.xml
@@ -62,7 +62,7 @@ When the *data-simple.xml* is opened in a browser (from a directory containing b
 ---------------------
 
 The example data file *cansas1d.xml* 
-(http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xml)
+(http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xml)
 shows examples
 of most of the elements of the cansas1d/1.1 standard.  Only a single data 
 point has been shown to more clearly show the other structure.

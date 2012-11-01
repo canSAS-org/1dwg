@@ -43,7 +43,7 @@ canSAS 1-D SAS XML v1.0 support
 
 	This update is expected to follow soon on the release of v1.1
 
-Steve King[mailto:s.m.king@rl.ac.uk] (ISIS) has provided a F77 routine 
+Steve King[mailto:stephen.king@stfc.ac.uk] (ISIS) has provided a F77 routine 
 that will read cansas1d/1.0 XML files.
 
-http://svn.cansas.org/trac/canSAS/browser/1dwg/trunk/fortran/SASXML_G77.F 
+http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/fortran/SASXML_G77.F 
