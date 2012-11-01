@@ -35,31 +35,31 @@ See the :ref:`IgorPro Binding Usage Notes` section below.
 	(including any renaming of waves as desired). 
 
 
-**file**
+:file:
 	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
 
-**author**
+:author:
 	Pete R. Jemian <jemian@anl.gov>
 
-**date**
+:date:
 	2009-09-02
 
-**version**
+:version:
 	1.11 (**requires** latest XMLutils XOP -- see below)
 
-**purpose**
+:purpose:
 	Implement an IgorPro file reader to read the canSAS 1-D reduced SAS
 	data in XML files that adhere to the cansas1d/1.1 standard.
 
-**URL**
-	*TRAC*
+:URL:
+	:TRAC:
 		http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
-	*SVN*
+	:SVN:
 		http://www.cansas.org/svn/1dwg/trunk/IgorPro/cansasXML.ipf
 
 .. index:: ! IgorPro package; XMLutils XOP
 
-**requires**
+:requires:
 	* IgorPro: http://www.wavemetrics.com 
 	* *XMLutils* XOP: http://www.igorexchange.com/project/XMLutils
 	* minimum requirement: IGOR.5.04.x-1.x-dev (circa 2008-Aug-22)

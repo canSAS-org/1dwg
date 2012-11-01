@@ -8,7 +8,7 @@ XML Help
 
 Listed below are various references useful in learning :index:`XML` and related topics.
 
-**XML**
+:XML:
 	eXtensible Markup Language
 
 	* http://www.w3schools.com/xml/
@@ -18,7 +18,7 @@ Listed below are various references useful in learning :index:`XML` and related 
 
 .. index:: XML Stylesheet
 
-**XSL** (or **XSLT**)
+:XSL: (or **XSLT**)
 	eXtensible Stylesheet Language
 
 	* http://www.w3schools.com/xsl/
@@ -26,14 +26,14 @@ Listed below are various references useful in learning :index:`XML` and related 
 	* http://en.wikipedia.org/wiki/Extensible_Stylesheet_Language
 	* http://en.wikipedia.org/wiki/XSLT
 
-**XPath**
+:XPath:
 	XPath is a language for finding information in an XML document
 
 	* http://www.w3schools.com/xpath/
 	* http://www.w3.org/Style/XSL/
 	* http://en.wikipedia.org/wiki/XPath
 
-**Schema**
+:Schema:
 	An XML Schema describes the structure of an XML document
 
 	* http://www.w3schools.com/schema/
@@ -43,7 +43,7 @@ Listed below are various references useful in learning :index:`XML` and related 
 .. index::
 	see: namespace; XML Namespace
 
-**XML Namespaces**
+:XML Namespaces:
 	An :index:`XML namespace` is used for providing uniquely-named 
 	elements and attributes in an XML instance.
 	
@@ -55,7 +55,7 @@ Listed below are various references useful in learning :index:`XML` and related 
 
 .. index:: XML; foreign elements
 
-**XML Foreign Elements**
+:XML Foreign Elements:
 	Inclusion of elements, at select locations, that are not 
 	defined by the cansas1d.xsd XML Schema
 	

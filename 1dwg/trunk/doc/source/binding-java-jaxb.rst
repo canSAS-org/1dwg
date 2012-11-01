@@ -107,7 +107,7 @@ directory (above). By default, it shows the two samples in the
 .. note:: The reader will have to get the directory paths 
 	right until this documentation improves.
 
-.. literalinclude:: ../src/Example_canSAS_Reader.java
+.. literalinclude:: examples/Example_canSAS_Reader.java
    :language: java
    :linenos:
 
@@ -147,7 +147,7 @@ Since the source code is rather lengthy, download it from:
 http://www.cansas.org/svn/1dwg/trunk/doc/src/GetSASdata.java
 
 ..
-	.. literalinclude:: ../src/GetSASdata.java
+	.. literalinclude:: examples/GetSASdata.java
 	   :language: java
 	   :linenos:
 
@@ -162,7 +162,7 @@ http://www.cansas.org/svn/1dwg/trunk/doc/src/GetSASdata.java
 (derived from the standard test file for the *lake* 
 desmearing code).
 
-.. literalinclude:: ../src/java-test.xml
+.. literalinclude:: examples/java-test.xml
    :language: xml
    :linenos:
 

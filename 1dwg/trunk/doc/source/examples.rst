@@ -31,14 +31,14 @@ In each, though, most of the data has been removed to clarify the structure.
 *data-simple.xml*
 ---------------------
 
-The example data file *data-simple.xml*
+The example data file :download:`data-simple.xml <examples/data-simple.xml>`
 shows just the basic elements of the cansas1d/1.1 standard.  Only a 
 single data point has been shown to more clearly show the other structure.
 The data file is actually an excerpt from the *bimodal-test1.xml*
 (http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml)
 example file in the main distribution.
 
-.. literalinclude:: ../src/data-simple.xml
+.. literalinclude:: examples/data-simple.xml
    :language: xml
    :linenos:
 
@@ -61,11 +61,12 @@ When the *data-simple.xml* is opened in a browser (from a directory containing b
 *cansas1d.xml*
 ---------------------
 
-The example data file *cansas1d.xml* 
+The example data file :download:`cansas1d.xml<../../cansas1d.xml>` 
 (http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xml)
 shows examples
 of most of the elements of the cansas1d/1.1 standard.  Only a single data 
-point has been shown to more clearly show the other structure.
+point has been provided here to more clearly show the other structure
+in the data file.
 
 .. index:: XML; cansas1d/1.1 data file
 
@@ -114,7 +115,7 @@ concatenate all of the *Idata*.
 
 .. index:: XML Stylesheet; ascii3col.xsl
 
-.. literalinclude:: ../src/ascii3col.xsl
+.. literalinclude:: examples/ascii3col.xsl
    :language: xml
    :linenos:
 

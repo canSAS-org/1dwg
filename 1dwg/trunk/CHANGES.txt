@@ -19,6 +19,8 @@ CHANGES
 	* TRAC #27: rebrand from smallangles.net to cansas.org
 	
 	* slight changes in documentation of units (Angstrom and Celsius)
+	* restriction against using UNICODE is lifted
+	* removed the Glossary
 
 :v1.0:
 	2009-05-12, tagged version canSAS1d/1.0

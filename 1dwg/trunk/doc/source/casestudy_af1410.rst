@@ -10,7 +10,7 @@ Case Study: AF1410 Steel
 
 .. note:: This case study has not yet been written up. 
 
-data file: *cs_af1410.xml*
+data file: :download:`cs_af1410.xml<../../examples/af1410/cs_af1410.xml>`
 	http://www.cansas.org/svn/1dwg/trunk/examples/af1410/cs_af1410.xml
 
 The data file contains multiple :ref:`SASentry` elements that pertain to different samples

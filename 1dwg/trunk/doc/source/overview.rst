@@ -243,7 +243,7 @@ Converting data into the XML format: *XmlWriter*
 
 .. index:: ! xmlWriter
 
-The canSAS/xmlWriter (http://www.cansas.org/canSAS/xmlWriter/)
+The canSAS/xmlWriter (http://www.smallangles.net/canSAS/xmlWriter/)
 is a WWW form
 to translate three-column ASCII text data into the cansas1d/1.1 XML
 format. This form will help you in creating an XML file with all the required
@@ -276,12 +276,12 @@ The *cansas1d.xsd* :index:`XML Schema`
 defines the rules for the XML file format and is used to
 validate any XML file for adherence to the format.
 
-	TRAC 
+	:TRAC:
 		(view source code highlighted by bug tracking system)
 		
 		http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd
 
-	SVN 
+	:SVN:
 		(view raw source code from version control system)
 		
 		http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd
@@ -352,7 +352,7 @@ Examples and Case Studies
 
 .. index:: XML file; cansas1d.xml
 
-**Basic example** 
+:Basic example:
 	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xml
 	
     Note that, for clarity, only one row of data is
@@ -362,7 +362,7 @@ Examples and Case Studies
 .. index:: XML file; bimodal-test1.xml
 .. index:: case study; bimodal test data
 
-**Bimodal test data**
+:Bimodal test data:
 	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml
 
     Simulated SAS data (with added noise) calculated from model bimodal size 
@@ -371,7 +371,7 @@ Examples and Case Studies
 
 .. index:: case study; glassy carbon round robin
 
-**Glassy Carbon Round Robin**
+:Glassy Carbon Round Robin:
 	http://www.cansas.org/wgwiki/index.php/Glassy_Carbon_Round_Robin
 
     Samples of a commercial glassy carbon
@@ -379,7 +379,7 @@ Examples and Case Studies
 
 .. index:: case study; dry chick collagen SAXS
 
-**dry chick collagen SAXS**
+:dry chick collagen SAXS:
 	see :ref:`case_study-collagen` section
 	
 	SAXS data from *dry chick collagen* illustrates the
@@ -388,7 +388,7 @@ Examples and Case Studies
 
 .. index:: case study; AF1410 steel SANS
 
-**AF1410 steel SANS**
+:AF1410 steel SANS:
 	see :ref:`case_study-af1410` section
 	
 	SANS data from *AF1410 steel* using magnetic
@@ -399,7 +399,7 @@ Examples and Case Studies
 
 .. index:: XML file; cansas1d-template.xml
 
-**Test all the cansas1d/1.1 rules**
+:Test all the cansas1d/1.1 rules:
 	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml
 	
     The *cansas1d-template.xml* data file is used to test all the rules in the XML
@@ -420,7 +420,7 @@ fragment below shows how multiple experiments with multiple data sets
 can be included in a single XML file. This illustrates using more than
 one *SASentry* and more than one *SASdata* element.
 
-.. literalinclude:: ../src/brief-sketch-multiple.xml
+.. literalinclude:: examples/brief-sketch-multiple.xml
    :language: xml
    :linenos:
 
@@ -429,14 +429,14 @@ include:
 
 .. index:: XML file; W1W2.XML
 
-**multiple data sets**
+:multiple data sets:
 	ISIS LOQ SANS instrument: 
 	
 	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/W1W2.XML
 
 .. index:: XML file; cs_af1410.xml
 
-**multiple samples, multiple data sets**
+:multiple samples, multiple data sets:
 	AF1410 steel SANS contrast variation study from NIST:
 	
 	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml
@@ -488,28 +488,28 @@ these languages and environments:
 	single: binding; FORTRAN
 	see: FORTRAN; binding, FORTRAN
 
-**FORTRAN**
+:FORTRAN:
 	See the :ref:`fortran.binding` section.
 
 .. index::
 	single: binding; IgorPro
 	see: IgorPro; binding, IgorPro
 
-**IgorPro**
+:IgorPro:
 	See the :ref:`IgorPro.binding` section.
 
 .. index::
 	single: binding; Java JAXB
 	see: Java JAXB; binding, Java JAXB
 
-**Java JAXB**
+:Java JAXB:
 	See the :ref:`Java.JAXB.binding` section.
 
 .. index::
 	single: binding; Microsoft Excel
 	see: Microsoft Excel; binding, Microsoft Excel
 
-**Microsoft Excel**
+:Microsoft Excel:
 	Support for Microsoft Excel is provided through the default canSAS stylesheet,
 	*cansasxml-html.xsl* (http://www.cansas.org/svn/1dwg/trunk/cansasxml-html.xsl).
 	The ISIS **LOQ** instrument (http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html)
@@ -522,7 +522,7 @@ these languages and environments:
 	see: PHP; binding, PHP
 	single: xmlWriter
 
-**PHP**
+:PHP:
 	See the :ref:`PHP.binding` section.
 	
 	The *canSAS/xmlWriter* (http://www.cansas.org/canSAS/xmlWriter/)
@@ -544,13 +544,13 @@ these languages and environments:
 	see: Python; binding, Python
 	single: xmlWriter
 
-**Python**
+:Python:
 	See the :ref:`Python.binding` section.
 
 .. index::
 	single: binding; XML Stylesheet (XSLT)
 
-**XSLT**
+:XSLT:
 	*XSLT*  (useful in a web browser) is described later in the
 	:ref:`Example.XML.Stylesheets` section.
 
@@ -558,8 +558,10 @@ these languages and environments:
 Software repositories (for cansas1d/1.1 standard)
 =========================================================
 
-TRAC (bug reporting)
+:TRAC:
+	(bug reporting)
 	http://www.cansas.org/trac/canSAS/browser/1dwg/tags/v1.1
 
-SVN (*subversion* revision control system)
+:SVN:
+	(*subversion* revision control system)
 	http://www.cansas.org/svn/1dwg/tags/v1.1

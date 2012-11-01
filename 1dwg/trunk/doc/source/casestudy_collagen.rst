@@ -93,7 +93,7 @@ will result in a file that looks like the next example.
 
 	.. rubric:: *collagen.xml* with metadata but before data lines are added
 	
-	.. literalinclude:: ../src/example-collagen-predata.xml
+	.. literalinclude:: examples/example-collagen-predata.xml
 	   :language: xml
 	   :linenos:
 
@@ -116,7 +116,7 @@ above, let's define the macros for our use. In Excel, type
 
 	.. rubric:: Microsoft Excel macro to format the *Idata* lines
 	
-	.. literalinclude:: ../src/example-excel-macro.txt
+	.. literalinclude:: examples/example-excel-macro.txt
 	   :language: text
 	   :linenos:
 

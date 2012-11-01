@@ -34,7 +34,7 @@ Other constructive suggestions (that predate the NIST/NCNR support) have been ga
 *gnosis.xml.objectify*
 =========================
  
-The *GnosisUtils* (http://freshmeat.net/projects/gnosisxml/)
+The *GnosisUtils* (http://freecode.com/projects/gnosisxml/)
 offer a method to read any XML file into Python data structures. This utility 
 does not validate the XML against a specific XML Schema which can be both good 
 (flexible, especially when XML Foreign Namespace elements are used) and not 
@@ -64,6 +64,14 @@ You may need ...
 		cd Gnosis_Utils-1.2.2/
 		python setup.py install_all
 
+Alternatively, it might be simpler to install from the PyPI
+repository (http://pypi.python.org/pypi/Gnosis%20Utilities):
+
+	.. code-block:: guess
+		:linenos:
+		
+		easy_install -U gnosis_utils
+
 .. index:: Python file; python-test.py
 
 Quick test in Python
@@ -73,6 +81,8 @@ Quick test in Python
 
 	The *GnosisUtils* have the promise of being a useful tool to support 
 	reading this format in Python.  Now, how to write back out... ?
+	From the website, it appears the development of GnosisUtils 
+	has stagnated in 2007 at v1.2.2.
 
 Here is the Python code (without all that output) (called *python-test.py*):
 
