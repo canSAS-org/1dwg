@@ -243,7 +243,7 @@ Converting data into the XML format: *XmlWriter*
 
 .. index:: ! xmlWriter
 
-The canSAS/xmlWriter (http://www.smallangles.net/canSAS/xmlWriter/)
+The canSAS/xmlWriter (http://www.cansas.org/formats/tools/xmlWriter/)
 is a WWW form
 to translate three-column ASCII text data into the cansas1d/1.1 XML
 format. This form will help you in creating an XML file with all the required
