@@ -192,12 +192,13 @@ Rules
 #. :index:`coordinate axes`:
 	(See the sections titled :ref:`axes definition` and :ref:`compatibility`.)
 	
-	a. :math:`z` is along the flight path (positive value in the direction of the detector)
-	#. :math:`x` is orthogonal to :math:`z` in the horizontal plane (positive values
-		increase to the right when viewed towards the incoming
-		radiation)
-	#. :math:`y` is orthogonal to :math:`z` and :math:`x` in the vertical plane 
-		(positive values increase upwards)
+	a. :math:`z` is along the trajectory of the radiation
+	   (positive value in the direction towards the detector)
+	#. :math:`x` is orthogonal to :math:`z` in the horizontal plane
+	   (positive values increase to the right when viewed 
+	   towards the incoming radiation)
+	#. :math:`y` is orthogonal to :math:`z` and :math:`x` 
+	   in the vertical plane (positive values increase upwards)
 
 #. orientation (angles) describes single-axis rotations (rotations about
 	multiple axes require more information):
