@@ -37,7 +37,7 @@ of old notebooks) was obtained from the headers of two files:
 	*COLLAGEN.ASC*
 		raw data file
 		
-		http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC
+		http://www.cansas.org/trac/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC
 
 		.. rubric:: The header lines from *collagen.asc*:
 		
@@ -52,7 +52,7 @@ of old notebooks) was obtained from the headers of two files:
 	*collagen.saxs*
 		raw data file
 		
-		http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/collagen/collagen.saxs
+		http://www.cansas.org/trac/browser/1dwg/trunk/examples/collagen/collagen.saxs
 	
 		.. rubric:: The header lines from *collagen.saxs*:
 		
@@ -153,7 +153,7 @@ Final Result
 A nicely-formatted display version of the final result 
 can be viewed through the TRAC repository:
 
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cs_collagen_full.xml
+	http://www.cansas.org/trac/browser/1dwg/trunk/cs_collagen_full.xml
 
 Validate the file
 =====================
@@ -168,4 +168,4 @@ References
 
 All files are available at:
 
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/collagen/
+	http://www.cansas.org/trac/browser/1dwg/trunk/examples/collagen/

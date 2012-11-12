@@ -156,7 +156,7 @@ Rules
 #. A cansas1d/1.1 XML data files will adhere to the standard if it can
 	successfully :ref:`validate <validate>` against the established XML Schema.
 	 
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd
+	http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xsd
 #. :math:`Q=(4 \pi / \lambda) \sin(\theta)`
 	where :math:`\lambda` is the wavelength of the radiation,
 	and :math:`2\theta` is the angle through which the detected radiation has been scattered.
@@ -273,14 +273,14 @@ XML Schema
 -------------
 
 The *cansas1d.xsd* :index:`XML Schema` 
-(http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd)
+(http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xsd)
 defines the rules for the XML file format and is used to
 validate any XML file for adherence to the format.
 
 	:TRAC:
 		(view source code highlighted by bug tracking system)
 		
-		http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd
+		http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xsd
 
 	:SVN:
 		(view raw source code from version control system)
@@ -354,7 +354,7 @@ Examples and Case Studies
 .. index:: XML file; cansas1d.xml
 
 :Basic example:
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xml
+	http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xml
 	
     Note that, for clarity, only one row of data is
     shown. This is probably a very good example to use as a starting point for
@@ -364,7 +364,7 @@ Examples and Case Studies
 .. index:: case study; bimodal test data
 
 :Bimodal test data:
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml
+	http://www.cansas.org/trac/browser/1dwg/trunk/bimodal-test1.xml
 
     Simulated SAS data (with added noise) calculated from model bimodal size 
     distribution to test size distribution analysis routines.
@@ -396,12 +396,12 @@ Examples and Case Studies
 	contrast variation (with multiple samples and multiple data sets for each
 	sample), the files can be viewed from the TRAC site (no description yet).
 	
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/af1410/
+	http://www.cansas.org/trac/browser/1dwg/trunk/examples/af1410/
 
 .. index:: XML file; cansas1d-template.xml
 
 :Test all the cansas1d/1.1 rules:
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml
+	http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d-template.xml
 	
     The *cansas1d-template.xml* data file is used to test all the rules in the XML
     Schema. This is probably not a very good example to use as a starting point
@@ -433,14 +433,14 @@ include:
 :multiple data sets:
 	ISIS LOQ SANS instrument: 
 	
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/W1W2.XML
+	http://www.cansas.org/trac/browser/1dwg/trunk/W1W2.XML
 
 .. index:: XML file; cs_af1410.xml
 
 :multiple samples, multiple data sets:
 	AF1410 steel SANS contrast variation study from NIST:
 	
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/examples/af1410/cs_af1410.xml
+	http://www.cansas.org/trac/browser/1dwg/trunk/examples/af1410/cs_af1410.xml
 	
     SANS study using magnetic
     contrast variation (with multiple samples and multiple data sets for each
@@ -462,7 +462,7 @@ for more help with XML foreign elements.
 	the foreign namespace in this example.  
 
 There is an example that demonstrates the use of a foreign namespace:
-http://www.cansas.org/trac/canSAS/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml
+http://www.cansas.org/trac/browser/1dwg/data/Glassy%20Carbon/ISIS/GLASSYC_C4G8G9_withTL.xml
 
 This example uses a foreign namespace to record the transmission spectrum related to
 the acquisition of the SANS data at a time-of-flight facility. Look near line 153
@@ -474,7 +474,7 @@ The foreign namespace given (``urn:transmission:spectrum``) becomes the
 default namespace for just the *transmission_spectrum* element.*
 
 Also refer to canSAS TRAC ticket #47
-(http://www.cansas.org/trac/canSAS/changeset/47)
+(http://www.cansas.org/trac/changeset/47)
 for an example of arranging the content in 
 *SASprocessnote* to avoid the use of foreign namespace
 elements.
@@ -526,7 +526,7 @@ these languages and environments:
 :PHP:
 	See the :ref:`PHP.binding` section.
 	
-	The *canSAS/xmlWriter* (http://www.cansas.org/canSAS/xmlWriter/)
+	The *canSAS/xmlWriter* (http://www.cansas.org/xmlWriter/)
 	is implemented in PHP (http://www.php.net) and writes a cansas1d/1.1 data 
 	file given three-column ASCII data as input.  The code uses
 	*DomDocument* (http://www.php.net/DomDocument)
@@ -538,7 +538,7 @@ these languages and environments:
 	is in the ``function surveillance($post)`` where
 	logging information is inserted into an XML file.
 	
-	PHP source: http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/php/xmlWriter/index.php
+	PHP source: http://www.cansas.org/trac/browser/1dwg/trunk/php/xmlWriter/index.php
 
 .. index::
 	single: binding; Python
@@ -561,7 +561,7 @@ Software repositories (for cansas1d/1.1 standard)
 
 :TRAC:
 	(bug reporting)
-	http://www.cansas.org/trac/canSAS/browser/1dwg/tags/v1.1
+	http://www.cansas.org/trac/browser/1dwg/tags/v1.1
 
 :SVN:
 	(*subversion* revision control system)

@@ -66,7 +66,7 @@
 	</complexType>
 	
 	<complexType name="SASdataType">
-		<sequence minOccurs="1" maxOccurs="1">  <!-- http://svn.cansas.org/trac/canSAS/ticket/21 -->
+		<sequence minOccurs="1" maxOccurs="1">  <!-- http://svn.cansas.org/trac/ticket/21 -->
 			<sequence>
 				<element name="Idata" minOccurs="1" maxOccurs="unbounded" type="tns:IdataType" />
 			</sequence>
