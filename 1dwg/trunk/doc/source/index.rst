@@ -34,15 +34,20 @@ results of processing or analysis steps. Even multiple measurements
 (related or unrelated) may be included within a single XML file.
 
 
+.. rubric::  Brief Contents
+
+
 .. toctree::
-   :maxdepth: 2
+   :hidden:
    
-   preface
-   specification
-   tutorial
-   case-studies
-   examples
-   bindings
-   intensity-problem
-   xml-help
-   downloads
+   contents
+
+
+* :ref:`Preface`
+* :ref:`Specification`
+* :ref:`Examples`
+* :ref:`case.studies`
+* :ref:`Tutorial`
+* :ref:`bindings`
+* :ref:`downloads`
+* :ref:`changes`

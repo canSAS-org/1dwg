@@ -36,7 +36,7 @@ See the :ref:`IgorPro Binding Usage Notes` section below.
 
 
 :file:
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
+	http://www.cansas.org/trac/browser/1dwg/trunk/IgorPro/cansasXML.ipf
 
 :author:
 	Pete R. Jemian <jemian@anl.gov>
@@ -53,7 +53,7 @@ See the :ref:`IgorPro Binding Usage Notes` section below.
 
 :URL:
 	:TRAC:
-		http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf
+		http://www.cansas.org/trac/browser/1dwg/trunk/IgorPro/cansasXML.ipf
 	:SVN:
 		http://www.cansas.org/svn/1dwg/trunk/IgorPro/cansasXML.ipf
 

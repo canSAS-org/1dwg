@@ -1,5 +1,8 @@
 .. $Id$
 
+.. _preface:
+
+
 Preface
 ==============
 
@@ -55,5 +58,5 @@ the structure of
 the XML files and to define the spelling of the terms to be used. 
 However, should the information in this document and the 
 cansas1d/1.1 SAS XML Schema differ, 
-(http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd) 
+(http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xsd) 
 the XML Schema will be deemed to have the most correct description of the standard.

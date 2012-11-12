@@ -50,7 +50,7 @@ Subversion repository
 	(auto-generated from the project source code using pdfdoclet)
 
 source code (for developers)
-	http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse
+	http://www.cansas.org/trac/browser/1dwg/trunk/java/maven/eclipse
 	
 	canSAS Development project subversion repository for the Java binding.  
 	Only use this if you want to participate as a code developer of this binding.
@@ -62,7 +62,7 @@ source code (for developers)
 An example (*Example_canSAS_Reader.java*) has been constructed
 to show how to read a cansas1d/1.1 XML file using the Java API. 
 
-http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java
+http://www.cansas.org/trac/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java
 
 In short, these are the important two lines:
 
@@ -102,7 +102,7 @@ Here is a Java class that shows how to use the JAXB binding.
 Use this with any of the test data supplied with the cansas-1d-standard
 directory (above). By default, it shows the two samples in the
 *1998spheres.xml* example file.
-(http://www.cansas.org/trac/canSAS/browser/1dwg/trunk/1998spheres.xml)
+(http://www.cansas.org/trac/browser/1dwg/trunk/1998spheres.xml)
 
 .. note:: The reader will have to get the directory paths 
 	right until this documentation improves.
