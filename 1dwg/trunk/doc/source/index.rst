@@ -15,7 +15,7 @@ is based on XML.
 One of the first aims of the **canSAS** (Collective Action for 
 Nomadic Small-Angle Scatterers) forum of users, software 
 developers, and facility staff was to discuss better sharing of SAS 
-data analysis software. The canSAS (http://www.cansas.org/canSAS) identified that a 
+data analysis software. The canSAS (http://www.cansas.org/) identified that a 
 significant need within the SAS community can be satisfied by a 
 robust, self-describing, text-based, standard format to communicate 
 reduced one-dimensional small-angle scattering data, :math:`I(Q)`, 
