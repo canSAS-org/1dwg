@@ -3,7 +3,7 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:cs="urn:cansas1d:1.1"
-	xsi:schemaLocation="urn:cansas1d:1.1 http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd"
+	xsi:schemaLocation="urn:cansas1d:1.1 http://www.cansas.org/formats/1.1/cansas1d.xsd"
 >
 <xsl:template match="/">
 <html>
