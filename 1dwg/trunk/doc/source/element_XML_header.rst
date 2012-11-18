@@ -23,7 +23,7 @@ parent:
 			xmlns="urn:cansas1d:1.1"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			xsi:schemaLocation="urn:cansas1d:1.1 
-			                    http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd">
+			                    http://www.cansas.org/formats/1.1/cansas1d.xsd">
 
 
 ====== ========================================================
