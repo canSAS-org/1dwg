@@ -1,0 +1,97 @@
+<gallery caption="block diagrams">
+Image:cansas1d-v1-5-SASsource.png
+</gallery>
+
+* parent: [[cansas1d_SASinstrument | SASinstrument]]
+
+== SASsource ==
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| '''radiation'''
+|| string
+| align="center" | [1..1]
+|| Name of the radiation used.  For maximum compatibility with NeXus, use one of the names defined by either [http://www.nexusformat.org/NXsource NeXus '''NXsource'''/type]  <br /> * Spallation Neutron Source <br /> * Pulsed Reactor Neutron Source <br /> * Reactor Neutron Source <br /> * Synchrotron X-ray Source <br /> * Pulsed Muon Source <br /> * Rotating Anode X-ray <br /> * Fixed Tube X-ray <br /> or [http://www.nexusformat.org/NXsource NeXus '''NXsource'''/probe] <br /> * neutron <br /> * x-ray <br /> * muon <br /> * electron
+||
+|-
+|| [[#beam_size | '''''beam_size''''']]
+|| container
+| align="center" | [0..1]
+|| Physical dimension of the beam (incident on the sample). Note: If beam is round, just use X dimension. Note: While Z dimension is allowed by the standard, it does not make sense for small-angle scattering.
+|| '''''name'''''="{name}"
+|-
+|| '''''beam_shape'''''
+|| string
+| align="center" | [0..1]
+|| Text description of the shape of the beam (incident on the sample).
+||
+|-
+|| '''''wavelength'''''
+|| floating-point number
+| align="center" | [0..1]
+|| wavelength (&lambda;) of radiation incident on the sample. 
+|| '''unit'''="{unit}"
+|-
+|| '''''wavelength_min'''''
+|| floating-point number
+| align="center" | [0..1]
+|| Some facilities specify wavelength using a range. The minimum of such a range is given by wavelength_min.
+|| '''unit'''="{unit}"
+|-
+|| '''''wavelength_max'''''
+|| floating-point number
+| align="center" | [0..1]
+|| Some facilities specify wavelength using a range. The maximum of such a range is given by wavelength_max. 
+|| '''unit'''="{unit}"
+|-
+|| '''''wavelength_spread'''''
+|| floating-point number
+| align="center" | [0..1]
+|| Some facilities specify the width of the wavelength spectrum. The width of such a range is given by wavelength_spread. 
+|| '''unit'''="{unit}"
+|-
+|}
+
+== beam_size ==
+
+<gallery caption="geometry">
+Image:Translation-orientation-geometry.jpg    | from source
+Image:Translation-orientation-geometry-2.jpg  | from detector
+</gallery>
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| '''x'''
+|| floating-point number
+| align="center" | [0..1]
+|| Dimension of the beam in X. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''y'''
+|| floating-point number
+| align="center" | [0..1]
+|| Dimension of the beam in Y. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.
+|| '''unit'''="{units}"
+|-
+|| '''z'''
+|| floating-point number
+| align="center" | [0..1]
+|| Dimension of the beam in Z. 
+The '''unit''' attribute is required.  See [[cansas1d_documentation#Rules]] for acceptable values.  Note: While Z dimension is allowed by the standard (provided by use of a standard element in the XML Schema), it does not make sense for small-angle scattering.
+|| '''unit'''="{units}"
+|-
+|}
