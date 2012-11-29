@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="example.xsl"?>
+<SASroot 
+    xmlns="http://www.w3schools.com"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="common.xsd">
+ <SASentry name="ILL example">
+  <SASdata>
+   <Idata><Q_A-1>   0.000000E+00 </Q_A-1><I_cm-1>   0.000000E+00 </I_cm-1><Idev_cm-1>   0.000000E+00 </Idev_cm-1><Qdev_A-1>   0.000000E+00 </Qdev_A-1></Idata>
+   <!-- 
+     Looky!  Can specify units as attributes.
+     Not recommended to mix in a block but, wow, this can be done!
+     See the .dtd file for more details!
+   -->
+   <Idata><Q units="A-1">   7.853982E-04 </Q><I units="cm-1">   0.000000E+00 </I><Idev units="cm-1">   0.000000E+00 </Idev><Qdev units="A-1">   5.290519E-04 </Qdev></Idata>
+   <Idata><Q_A-1>   1.570796E-03 </Q_A-1><I_cm-1>   0.000000E+00 </I_cm-1><Idev_cm-1>   0.000000E+00 </Idev_cm-1><Qdev_A-1>   5.462641E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.356194E-03 </Q_A-1><I_cm-1>   0.000000E+00 </I_cm-1><Idev_cm-1>   0.000000E+00 </Idev_cm-1><Qdev_A-1>   5.738046E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.423113E-03 </Q_A-1><I_cm-1>  -1.013887E+01 </I_cm-1><Idev_cm-1>  -1.595304E+01 </Idev_cm-1><Qdev_A-1>   6.252376E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.986425E-03 </Q_A-1><I_cm-1>  -1.040687E+02 </I_cm-1><Idev_cm-1>  -6.040934E+02 </Idev_cm-1><Qdev_A-1>   6.577747E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.747937E-03 </Q_A-1><I_cm-1>   2.803847E+01 </I_cm-1><Idev_cm-1>   2.178166E+01 </Idev_cm-1><Qdev_A-1>   7.065347E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   5.511106E-03 </Q_A-1><I_cm-1>   1.305283E+01 </I_cm-1><Idev_cm-1>   2.717132E+00 </Idev_cm-1><Qdev_A-1>   7.599326E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   6.312272E-03 </Q_A-1><I_cm-1>   9.199719E+00 </I_cm-1><Idev_cm-1>   1.025447E+00 </Idev_cm-1><Qdev_A-1>   8.199009E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   7.085647E-03 </Q_A-1><I_cm-1>   8.427243E+00 </I_cm-1><Idev_cm-1>   7.807953E-01 </Idev_cm-1><Qdev_A-1>   8.808349E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   7.858813E-03 </Q_A-1><I_cm-1>   7.684547E+00 </I_cm-1><Idev_cm-1>   5.645913E-01 </Idev_cm-1><Qdev_A-1>   9.441578E-04 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   8.645013E-03 </Q_A-1><I_cm-1>   7.676375E+00 </I_cm-1><Idev_cm-1>   5.031449E-01 </Idev_cm-1><Qdev_A-1>   1.010548E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   9.420658E-03 </Q_A-1><I_cm-1>   7.693844E+00 </I_cm-1><Idev_cm-1>   4.735692E-01 </Idev_cm-1><Qdev_A-1>   1.077662E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.021134E-02 </Q_A-1><I_cm-1>   7.626715E+00 </I_cm-1><Idev_cm-1>   4.288891E-01 </Idev_cm-1><Qdev_A-1>   1.147435E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.100320E-02 </Q_A-1><I_cm-1>   7.296264E+00 </I_cm-1><Idev_cm-1>   3.833572E-01 </Idev_cm-1><Qdev_A-1>   1.218451E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.178024E-02 </Q_A-1><I_cm-1>   7.506202E+00 </I_cm-1><Idev_cm-1>   3.720536E-01 </Idev_cm-1><Qdev_A-1>   1.289065E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.257099E-02 </Q_A-1><I_cm-1>   7.551725E+00 </I_cm-1><Idev_cm-1>   3.677744E-01 </Idev_cm-1><Qdev_A-1>   1.361718E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.335339E-02 </Q_A-1><I_cm-1>   7.271583E+00 </I_cm-1><Idev_cm-1>   3.373113E-01 </Idev_cm-1><Qdev_A-1>   1.434273E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.412778E-02 </Q_A-1><I_cm-1>   6.848637E+00 </I_cm-1><Idev_cm-1>   2.879251E-01 </Idev_cm-1><Qdev_A-1>   1.506647E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.492401E-02 </Q_A-1><I_cm-1>   7.045397E+00 </I_cm-1><Idev_cm-1>   2.919511E-01 </Idev_cm-1><Qdev_A-1>   1.581563E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.571944E-02 </Q_A-1><I_cm-1>   7.026912E+00 </I_cm-1><Idev_cm-1>   2.918268E-01 </Idev_cm-1><Qdev_A-1>   1.656843E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.649774E-02 </Q_A-1><I_cm-1>   6.872463E+00 </I_cm-1><Idev_cm-1>   2.736902E-01 </Idev_cm-1><Qdev_A-1>   1.730871E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.728140E-02 </Q_A-1><I_cm-1>   6.941207E+00 </I_cm-1><Idev_cm-1>   2.709793E-01 </Idev_cm-1><Qdev_A-1>   1.805732E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.806783E-02 </Q_A-1><I_cm-1>   6.562048E+00 </I_cm-1><Idev_cm-1>   2.402111E-01 </Idev_cm-1><Qdev_A-1>   1.881146E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.884779E-02 </Q_A-1><I_cm-1>   6.836144E+00 </I_cm-1><Idev_cm-1>   2.528365E-01 </Idev_cm-1><Qdev_A-1>   1.956191E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   1.963466E-02 </Q_A-1><I_cm-1>   6.386352E+00 </I_cm-1><Idev_cm-1>   2.171626E-01 </Idev_cm-1><Qdev_A-1>   2.032127E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.042139E-02 </Q_A-1><I_cm-1>   6.515014E+00 </I_cm-1><Idev_cm-1>   2.278526E-01 </Idev_cm-1><Qdev_A-1>   2.108251E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.119991E-02 </Q_A-1><I_cm-1>   6.375016E+00 </I_cm-1><Idev_cm-1>   2.100200E-01 </Idev_cm-1><Qdev_A-1>   2.183759E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.199290E-02 </Q_A-1><I_cm-1>   6.398082E+00 </I_cm-1><Idev_cm-1>   2.083693E-01 </Idev_cm-1><Qdev_A-1>   2.260834E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.278407E-02 </Q_A-1><I_cm-1>   6.315217E+00 </I_cm-1><Idev_cm-1>   2.081712E-01 </Idev_cm-1><Qdev_A-1>   2.337881E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.355685E-02 </Q_A-1><I_cm-1>   5.986359E+00 </I_cm-1><Idev_cm-1>   1.865450E-01 </Idev_cm-1><Qdev_A-1>   2.413268E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.434466E-02 </Q_A-1><I_cm-1>   6.410161E+00 </I_cm-1><Idev_cm-1>   2.058192E-01 </Idev_cm-1><Qdev_A-1>   2.490239E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.513471E-02 </Q_A-1><I_cm-1>   5.729372E+00 </I_cm-1><Idev_cm-1>   1.735024E-01 </Idev_cm-1><Qdev_A-1>   2.567541E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.591523E-02 </Q_A-1><I_cm-1>   5.719833E+00 </I_cm-1><Idev_cm-1>   1.728524E-01 </Idev_cm-1><Qdev_A-1>   2.644009E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.670370E-02 </Q_A-1><I_cm-1>   5.742700E+00 </I_cm-1><Idev_cm-1>   1.680129E-01 </Idev_cm-1><Qdev_A-1>   2.721348E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.748693E-02 </Q_A-1><I_cm-1>   5.453211E+00 </I_cm-1><Idev_cm-1>   1.571413E-01 </Idev_cm-1><Qdev_A-1>   2.798256E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.826735E-02 </Q_A-1><I_cm-1>   5.355177E+00 </I_cm-1><Idev_cm-1>   1.509180E-01 </Idev_cm-1><Qdev_A-1>   2.874966E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.905969E-02 </Q_A-1><I_cm-1>   5.403429E+00 </I_cm-1><Idev_cm-1>   1.522365E-01 </Idev_cm-1><Qdev_A-1>   2.952918E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   2.984972E-02 </Q_A-1><I_cm-1>   4.932916E+00 </I_cm-1><Idev_cm-1>   1.346002E-01 </Idev_cm-1><Qdev_A-1>   3.030709E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.062632E-02 </Q_A-1><I_cm-1>   4.896323E+00 </I_cm-1><Idev_cm-1>   1.331449E-01 </Idev_cm-1><Qdev_A-1>   3.107239E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.141591E-02 </Q_A-1><I_cm-1>   4.899223E+00 </I_cm-1><Idev_cm-1>   1.320771E-01 </Idev_cm-1><Qdev_A-1>   3.185104E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.220949E-02 </Q_A-1><I_cm-1>   4.635206E+00 </I_cm-1><Idev_cm-1>   1.227799E-01 </Idev_cm-1><Qdev_A-1>   3.263416E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.298980E-02 </Q_A-1><I_cm-1>   4.451303E+00 </I_cm-1><Idev_cm-1>   1.151127E-01 </Idev_cm-1><Qdev_A-1>   3.340468E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.377144E-02 </Q_A-1><I_cm-1>   4.535063E+00 </I_cm-1><Idev_cm-1>   1.195334E-01 </Idev_cm-1><Qdev_A-1>   3.417695E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.455361E-02 </Q_A-1><I_cm-1>   4.148833E+00 </I_cm-1><Idev_cm-1>   1.055833E-01 </Idev_cm-1><Qdev_A-1>   3.495017E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.533949E-02 </Q_A-1><I_cm-1>   4.134597E+00 </I_cm-1><Idev_cm-1>   1.044251E-01 </Idev_cm-1><Qdev_A-1>   3.572745E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.612345E-02 </Q_A-1><I_cm-1>   3.928159E+00 </I_cm-1><Idev_cm-1>   1.000084E-01 </Idev_cm-1><Qdev_A-1>   3.650320E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.689906E-02 </Q_A-1><I_cm-1>   3.948881E+00 </I_cm-1><Idev_cm-1>   1.095183E-01 </Idev_cm-1><Qdev_A-1>   3.727103E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.768547E-02 </Q_A-1><I_cm-1>   3.732991E+00 </I_cm-1><Idev_cm-1>   1.125003E-01 </Idev_cm-1><Qdev_A-1>   3.804988E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.847295E-02 </Q_A-1><I_cm-1>   3.538576E+00 </I_cm-1><Idev_cm-1>   1.091457E-01 </Idev_cm-1><Qdev_A-1>   3.883009E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   3.926152E-02 </Q_A-1><I_cm-1>   3.421592E+00 </I_cm-1><Idev_cm-1>   1.153038E-01 </Idev_cm-1><Qdev_A-1>   3.961167E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.005116E-02 </Q_A-1><I_cm-1>   3.155872E+00 </I_cm-1><Idev_cm-1>   1.091997E-01 </Idev_cm-1><Qdev_A-1>   4.039459E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.083731E-02 </Q_A-1><I_cm-1>   2.918833E+00 </I_cm-1><Idev_cm-1>   1.044780E-01 </Idev_cm-1><Qdev_A-1>   4.117431E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.160304E-02 </Q_A-1><I_cm-1>   3.016789E+00 </I_cm-1><Idev_cm-1>   1.216358E-01 </Idev_cm-1><Qdev_A-1>   4.193400E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.238020E-02 </Q_A-1><I_cm-1>   2.918326E+00 </I_cm-1><Idev_cm-1>   1.229637E-01 </Idev_cm-1><Qdev_A-1>   4.270526E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.318456E-02 </Q_A-1><I_cm-1>   2.855160E+00 </I_cm-1><Idev_cm-1>   1.254312E-01 </Idev_cm-1><Qdev_A-1>   4.350374E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.398574E-02 </Q_A-1><I_cm-1>   2.591346E+00 </I_cm-1><Idev_cm-1>   1.200769E-01 </Idev_cm-1><Qdev_A-1>   4.429927E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.476441E-02 </Q_A-1><I_cm-1>   2.564399E+00 </I_cm-1><Idev_cm-1>   1.287962E-01 </Idev_cm-1><Qdev_A-1>   4.507265E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.554401E-02 </Q_A-1><I_cm-1>   2.333560E+00 </I_cm-1><Idev_cm-1>   1.212806E-01 </Idev_cm-1><Qdev_A-1>   4.584712E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.632942E-02 </Q_A-1><I_cm-1>   2.224146E+00 </I_cm-1><Idev_cm-1>   1.278781E-01 </Idev_cm-1><Qdev_A-1>   4.662756E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.711189E-02 </Q_A-1><I_cm-1>   2.332195E+00 </I_cm-1><Idev_cm-1>   1.505235E-01 </Idev_cm-1><Qdev_A-1>   4.740523E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.791620E-02 </Q_A-1><I_cm-1>   2.059419E+00 </I_cm-1><Idev_cm-1>   1.392801E-01 </Idev_cm-1><Qdev_A-1>   4.820477E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.868990E-02 </Q_A-1><I_cm-1>   2.123561E+00 </I_cm-1><Idev_cm-1>   1.882716E-01 </Idev_cm-1><Qdev_A-1>   4.897404E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   4.941605E-02 </Q_A-1><I_cm-1>   1.770578E+00 </I_cm-1><Idev_cm-1>   1.647465E-01 </Idev_cm-1><Qdev_A-1>   4.969614E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   5.018928E-02 </Q_A-1><I_cm-1>   2.132738E+00 </I_cm-1><Idev_cm-1>   2.599679E-01 </Idev_cm-1><Qdev_A-1>   5.046520E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   5.095456E-02 </Q_A-1><I_cm-1>   1.576560E+00 </I_cm-1><Idev_cm-1>   2.831447E-01 </Idev_cm-1><Qdev_A-1>   5.122649E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   5.156558E-02 </Q_A-1><I_cm-1>   4.056215E+00 </I_cm-1><Idev_cm-1>   3.662568E+00 </Idev_cm-1><Qdev_A-1>   5.183439E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   5.262168E-02 </Q_A-1><I_cm-1>   0.000000E+00 </I_cm-1><Idev_cm-1>   0.000000E+00 </Idev_cm-1><Qdev_A-1>   5.288529E-03 </Qdev_A-1></Idata>
+   <Idata><Q_A-1>   5.340708E-02 </Q_A-1><I_cm-1>   0.000000E+00 </I_cm-1><Idev_cm-1>   0.000000E+00 </Idev_cm-1><Qdev_A-1>   5.366696E-03 </Qdev_A-1></Idata>
+</SASdata>
+<Title>7D1 2mm             </Title>
+<Source_file>"g009346.001"</Source_file>
+<Flux_monitor>      1.00</Flux_monitor>
+<Count_time_secs>   100.000</Count_time_secs>
+<Q_resolution>"estimated"</Q_resolution>
+<SASsample>
+<sample_temperature>     0.0000 </sample_temperature>
+<sample_offset_angle_deg>      0.000 </sample_offset_angle_deg>
+<sample_x_mm>    8.00 </sample_x_mm>
+<sample_y_mm>    0.00 </sample_y_mm>
+<sample_transmission>   0.0000 </sample_transmission>
+<sample_thickness_mm>    0.00 </sample_thickness_mm>
+</SASsample>
+<SASinstrument name="D22 " > 
+<SASsource>
+<radiation>  neutron  </radiation>
+<beam_x_mm>   30.00 </beam_x_mm>
+<beam_y_mm>    0.00 </beam_y_mm>
+<wavelength_A>    8.00 </wavelength_A>
+<wavelength_spread>    0.10 </wavelength_spread>
+</SASsource>
+<SAScollimator>
+<distance_coll_m>   11.200 </distance_coll_m>
+</SAScollimator>
+<SASdetector>
+<offset_angle_deg>    0.00 </offset_angle_deg>
+<x0_cm>   47.03 </x0_cm>
+<y0_cm>   47.78 </y0_cm>
+<distance_SD_m>    10.000 </distance_SD_m>
+<pixel_x_mm>    7.50 </pixel_x_mm>
+<pixel_y_mm>    7.50 </pixel_y_mm>
+</SASdetector>
+</SASinstrument>
+<SASprocess name="spol" >
+<date>  1-Jul-1998 14:57:37 </date>
+<radialstep_cm>   1.000 </radialstep_cm>
+<sector_width_deg>  180.0 </sector_width_deg>
+<sector_orient_deg>     0.0 </sector_orient_deg>
+<SASnote_01>  AvA1 4.8700E-01 AsA2 9.2700E-01 XvA3 4.3800E-02 XsA4 1.6360E-01 XfA5 0.0000E+00 </SASnote_01>
+<SASnote_02> S...  9346  0  2.23E+01 7D1 2mm         Sbak  9345  0  2.23E+01 D2O 2mm          </SASnote_02>
+<SASnote_03> Vbak  9343  0  2.23E+01 Empty Qtz Cell  V...  9342  0  2.23E+01 H2O 1mm          </SASnote_03>
+<SASnote_04> Cd/E  9340  0  2.23E+01 Cd - Bgd                                                 </SASnote_04>
+</SASprocess>
+ </SASentry>
+ <SASentry name="ISIS example">
+ <SASdata>
+ <Idata><Q_A-1> 0.00900 </Q_A-1><I_cm-1> 0.5704E+02 </I_cm-1><Idev_cm-1> 0.61E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.01100 </Q_A-1><I_cm-1> 0.4944E+02 </I_cm-1><Idev_cm-1> 0.43E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.01300 </Q_A-1><I_cm-1> 0.4452E+02 </I_cm-1><Idev_cm-1> 0.34E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.01500 </Q_A-1><I_cm-1> 0.4001E+02 </I_cm-1><Idev_cm-1> 0.28E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.01700 </Q_A-1><I_cm-1> 0.3622E+02 </I_cm-1><Idev_cm-1> 0.24E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.01900 </Q_A-1><I_cm-1> 0.3299E+02 </I_cm-1><Idev_cm-1> 0.21E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.02100 </Q_A-1><I_cm-1> 0.2928E+02 </I_cm-1><Idev_cm-1> 0.18E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.02300 </Q_A-1><I_cm-1> 0.2664E+02 </I_cm-1><Idev_cm-1> 0.17E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.02500 </Q_A-1><I_cm-1> 0.2403E+02 </I_cm-1><Idev_cm-1> 0.15E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.02700 </Q_A-1><I_cm-1> 0.2153E+02 </I_cm-1><Idev_cm-1> 0.14E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.02900 </Q_A-1><I_cm-1> 0.1969E+02 </I_cm-1><Idev_cm-1> 0.12E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.03100 </Q_A-1><I_cm-1> 0.1776E+02 </I_cm-1><Idev_cm-1> 0.11E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.03300 </Q_A-1><I_cm-1> 0.1612E+02 </I_cm-1><Idev_cm-1> 0.11E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.03500 </Q_A-1><I_cm-1> 0.1483E+02 </I_cm-1><Idev_cm-1> 0.99E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.03700 </Q_A-1><I_cm-1> 0.1344E+02 </I_cm-1><Idev_cm-1> 0.91E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.03900 </Q_A-1><I_cm-1> 0.1224E+02 </I_cm-1><Idev_cm-1> 0.85E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.04100 </Q_A-1><I_cm-1> 0.1123E+02 </I_cm-1><Idev_cm-1> 0.79E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.04300 </Q_A-1><I_cm-1> 0.1025E+02 </I_cm-1><Idev_cm-1> 0.74E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.04500 </Q_A-1><I_cm-1> 0.9527E+01 </I_cm-1><Idev_cm-1> 0.70E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.04700 </Q_A-1><I_cm-1> 0.8839E+01 </I_cm-1><Idev_cm-1> 0.66E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.04900 </Q_A-1><I_cm-1> 0.8234E+01 </I_cm-1><Idev_cm-1> 0.63E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.05100 </Q_A-1><I_cm-1> 0.7638E+01 </I_cm-1><Idev_cm-1> 0.59E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.05300 </Q_A-1><I_cm-1> 0.7129E+01 </I_cm-1><Idev_cm-1> 0.56E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.05500 </Q_A-1><I_cm-1> 0.6684E+01 </I_cm-1><Idev_cm-1> 0.54E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.05700 </Q_A-1><I_cm-1> 0.6294E+01 </I_cm-1><Idev_cm-1> 0.52E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.05900 </Q_A-1><I_cm-1> 0.5922E+01 </I_cm-1><Idev_cm-1> 0.50E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.06100 </Q_A-1><I_cm-1> 0.5570E+01 </I_cm-1><Idev_cm-1> 0.48E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.06300 </Q_A-1><I_cm-1> 0.5282E+01 </I_cm-1><Idev_cm-1> 0.47E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.06500 </Q_A-1><I_cm-1> 0.4995E+01 </I_cm-1><Idev_cm-1> 0.46E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.06700 </Q_A-1><I_cm-1> 0.4758E+01 </I_cm-1><Idev_cm-1> 0.45E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.06900 </Q_A-1><I_cm-1> 0.4581E+01 </I_cm-1><Idev_cm-1> 0.44E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.07100 </Q_A-1><I_cm-1> 0.4351E+01 </I_cm-1><Idev_cm-1> 0.43E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.07300 </Q_A-1><I_cm-1> 0.4108E+01 </I_cm-1><Idev_cm-1> 0.42E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.07500 </Q_A-1><I_cm-1> 0.3929E+01 </I_cm-1><Idev_cm-1> 0.41E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.07700 </Q_A-1><I_cm-1> 0.3709E+01 </I_cm-1><Idev_cm-1> 0.40E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.07900 </Q_A-1><I_cm-1> 0.3557E+01 </I_cm-1><Idev_cm-1> 0.40E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.08100 </Q_A-1><I_cm-1> 0.3423E+01 </I_cm-1><Idev_cm-1> 0.39E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.08300 </Q_A-1><I_cm-1> 0.3286E+01 </I_cm-1><Idev_cm-1> 0.39E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.08500 </Q_A-1><I_cm-1> 0.3171E+01 </I_cm-1><Idev_cm-1> 0.38E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.08700 </Q_A-1><I_cm-1> 0.3041E+01 </I_cm-1><Idev_cm-1> 0.38E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.08900 </Q_A-1><I_cm-1> 0.2919E+01 </I_cm-1><Idev_cm-1> 0.37E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.09100 </Q_A-1><I_cm-1> 0.2824E+01 </I_cm-1><Idev_cm-1> 0.37E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.09300 </Q_A-1><I_cm-1> 0.2718E+01 </I_cm-1><Idev_cm-1> 0.36E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.09500 </Q_A-1><I_cm-1> 0.2620E+01 </I_cm-1><Idev_cm-1> 0.36E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.09700 </Q_A-1><I_cm-1> 0.2507E+01 </I_cm-1><Idev_cm-1> 0.35E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.09900 </Q_A-1><I_cm-1> 0.2429E+01 </I_cm-1><Idev_cm-1> 0.35E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.10100 </Q_A-1><I_cm-1> 0.2364E+01 </I_cm-1><Idev_cm-1> 0.35E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.10300 </Q_A-1><I_cm-1> 0.2276E+01 </I_cm-1><Idev_cm-1> 0.34E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.10500 </Q_A-1><I_cm-1> 0.2169E+01 </I_cm-1><Idev_cm-1> 0.34E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.10700 </Q_A-1><I_cm-1> 0.2106E+01 </I_cm-1><Idev_cm-1> 0.34E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.10900 </Q_A-1><I_cm-1> 0.2063E+01 </I_cm-1><Idev_cm-1> 0.34E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.11100 </Q_A-1><I_cm-1> 0.2003E+01 </I_cm-1><Idev_cm-1> 0.33E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.11300 </Q_A-1><I_cm-1> 0.1940E+01 </I_cm-1><Idev_cm-1> 0.33E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.11500 </Q_A-1><I_cm-1> 0.1887E+01 </I_cm-1><Idev_cm-1> 0.33E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.11700 </Q_A-1><I_cm-1> 0.1820E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.11900 </Q_A-1><I_cm-1> 0.1770E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.12100 </Q_A-1><I_cm-1> 0.1696E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.12300 </Q_A-1><I_cm-1> 0.1627E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.12500 </Q_A-1><I_cm-1> 0.1593E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.12700 </Q_A-1><I_cm-1> 0.1537E+01 </I_cm-1><Idev_cm-1> 0.31E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.12900 </Q_A-1><I_cm-1> 0.1494E+01 </I_cm-1><Idev_cm-1> 0.31E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.13100 </Q_A-1><I_cm-1> 0.1475E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.13300 </Q_A-1><I_cm-1> 0.1438E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.13500 </Q_A-1><I_cm-1> 0.1403E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.13700 </Q_A-1><I_cm-1> 0.1387E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.13900 </Q_A-1><I_cm-1> 0.1370E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.14100 </Q_A-1><I_cm-1> 0.1333E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.14300 </Q_A-1><I_cm-1> 0.1282E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.14500 </Q_A-1><I_cm-1> 0.1243E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.14700 </Q_A-1><I_cm-1> 0.1207E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.14900 </Q_A-1><I_cm-1> 0.1184E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.15100 </Q_A-1><I_cm-1> 0.1154E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.15300 </Q_A-1><I_cm-1> 0.1133E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.15500 </Q_A-1><I_cm-1> 0.1121E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.15700 </Q_A-1><I_cm-1> 0.1099E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.15900 </Q_A-1><I_cm-1> 0.1071E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.16100 </Q_A-1><I_cm-1> 0.1044E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.16300 </Q_A-1><I_cm-1> 0.1016E+01 </I_cm-1><Idev_cm-1> 0.32E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.16500 </Q_A-1><I_cm-1> 0.9997E+00 </I_cm-1><Idev_cm-1> 0.33E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.16700 </Q_A-1><I_cm-1> 0.9885E+00 </I_cm-1><Idev_cm-1> 0.33E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.16900 </Q_A-1><I_cm-1> 0.9817E+00 </I_cm-1><Idev_cm-1> 0.33E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.17100 </Q_A-1><I_cm-1> 0.9656E+00 </I_cm-1><Idev_cm-1> 0.34E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.17300 </Q_A-1><I_cm-1> 0.9350E+00 </I_cm-1><Idev_cm-1> 0.34E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.17500 </Q_A-1><I_cm-1> 0.9249E+00 </I_cm-1><Idev_cm-1> 0.34E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.17700 </Q_A-1><I_cm-1> 0.9091E+00 </I_cm-1><Idev_cm-1> 0.34E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.17900 </Q_A-1><I_cm-1> 0.8879E+00 </I_cm-1><Idev_cm-1> 0.35E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.18100 </Q_A-1><I_cm-1> 0.8697E+00 </I_cm-1><Idev_cm-1> 0.35E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.18300 </Q_A-1><I_cm-1> 0.8730E+00 </I_cm-1><Idev_cm-1> 0.36E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.18500 </Q_A-1><I_cm-1> 0.8701E+00 </I_cm-1><Idev_cm-1> 0.36E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.18700 </Q_A-1><I_cm-1> 0.8601E+00 </I_cm-1><Idev_cm-1> 0.37E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.18900 </Q_A-1><I_cm-1> 0.8239E+00 </I_cm-1><Idev_cm-1> 0.37E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.19100 </Q_A-1><I_cm-1> 0.7947E+00 </I_cm-1><Idev_cm-1> 0.37E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.19300 </Q_A-1><I_cm-1> 0.7783E+00 </I_cm-1><Idev_cm-1> 0.38E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.19500 </Q_A-1><I_cm-1> 0.7734E+00 </I_cm-1><Idev_cm-1> 0.38E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.19700 </Q_A-1><I_cm-1> 0.7878E+00 </I_cm-1><Idev_cm-1> 0.40E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.19900 </Q_A-1><I_cm-1> 0.7810E+00 </I_cm-1><Idev_cm-1> 0.41E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.20100 </Q_A-1><I_cm-1> 0.7648E+00 </I_cm-1><Idev_cm-1> 0.41E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.20300 </Q_A-1><I_cm-1> 0.7321E+00 </I_cm-1><Idev_cm-1> 0.41E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.20500 </Q_A-1><I_cm-1> 0.7151E+00 </I_cm-1><Idev_cm-1> 0.42E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.20700 </Q_A-1><I_cm-1> 0.6960E+00 </I_cm-1><Idev_cm-1> 0.43E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.20900 </Q_A-1><I_cm-1> 0.6620E+00 </I_cm-1><Idev_cm-1> 0.43E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.21100 </Q_A-1><I_cm-1> 0.6553E+00 </I_cm-1><Idev_cm-1> 0.44E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.21300 </Q_A-1><I_cm-1> 0.6527E+00 </I_cm-1><Idev_cm-1> 0.46E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.21500 </Q_A-1><I_cm-1> 0.6626E+00 </I_cm-1><Idev_cm-1> 0.48E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.21700 </Q_A-1><I_cm-1> 0.6572E+00 </I_cm-1><Idev_cm-1> 0.49E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.21900 </Q_A-1><I_cm-1> 0.6383E+00 </I_cm-1><Idev_cm-1> 0.50E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.22100 </Q_A-1><I_cm-1> 0.6173E+00 </I_cm-1><Idev_cm-1> 0.51E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.22300 </Q_A-1><I_cm-1> 0.5957E+00 </I_cm-1><Idev_cm-1> 0.52E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.22500 </Q_A-1><I_cm-1> 0.5890E+00 </I_cm-1><Idev_cm-1> 0.54E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.22700 </Q_A-1><I_cm-1> 0.5885E+00 </I_cm-1><Idev_cm-1> 0.56E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.22900 </Q_A-1><I_cm-1> 0.5669E+00 </I_cm-1><Idev_cm-1> 0.57E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.23100 </Q_A-1><I_cm-1> 0.5691E+00 </I_cm-1><Idev_cm-1> 0.60E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.23300 </Q_A-1><I_cm-1> 0.5552E+00 </I_cm-1><Idev_cm-1> 0.61E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.23500 </Q_A-1><I_cm-1> 0.5517E+00 </I_cm-1><Idev_cm-1> 0.64E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.23700 </Q_A-1><I_cm-1> 0.5671E+00 </I_cm-1><Idev_cm-1> 0.67E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.23900 </Q_A-1><I_cm-1> 0.5653E+00 </I_cm-1><Idev_cm-1> 0.70E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.24100 </Q_A-1><I_cm-1> 0.5808E+00 </I_cm-1><Idev_cm-1> 0.74E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.24300 </Q_A-1><I_cm-1> 0.5722E+00 </I_cm-1><Idev_cm-1> 0.77E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.24500 </Q_A-1><I_cm-1> 0.5751E+00 </I_cm-1><Idev_cm-1> 0.81E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.24700 </Q_A-1><I_cm-1> 0.5807E+00 </I_cm-1><Idev_cm-1> 0.85E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.24900 </Q_A-1><I_cm-1> 0.5474E+00 </I_cm-1><Idev_cm-1> 0.87E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.25100 </Q_A-1><I_cm-1> 0.5592E+00 </I_cm-1><Idev_cm-1> 0.92E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.25300 </Q_A-1><I_cm-1> 0.5498E+00 </I_cm-1><Idev_cm-1> 0.97E-01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.25500 </Q_A-1><I_cm-1> 0.5331E+00 </I_cm-1><Idev_cm-1> 0.10E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.25700 </Q_A-1><I_cm-1> 0.4824E+00 </I_cm-1><Idev_cm-1> 0.10E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.25900 </Q_A-1><I_cm-1> 0.4692E+00 </I_cm-1><Idev_cm-1> 0.11E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.26100 </Q_A-1><I_cm-1> 0.4566E+00 </I_cm-1><Idev_cm-1> 0.11E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.26300 </Q_A-1><I_cm-1> 0.4511E+00 </I_cm-1><Idev_cm-1> 0.12E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.26500 </Q_A-1><I_cm-1> 0.4723E+00 </I_cm-1><Idev_cm-1> 0.13E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.26700 </Q_A-1><I_cm-1> 0.5118E+00 </I_cm-1><Idev_cm-1> 0.15E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.26900 </Q_A-1><I_cm-1> 0.4845E+00 </I_cm-1><Idev_cm-1> 0.16E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.27100 </Q_A-1><I_cm-1> 0.4594E+00 </I_cm-1><Idev_cm-1> 0.17E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.27300 </Q_A-1><I_cm-1> 0.4723E+00 </I_cm-1><Idev_cm-1> 0.19E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.27500 </Q_A-1><I_cm-1> 0.4406E+00 </I_cm-1><Idev_cm-1> 0.21E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.27700 </Q_A-1><I_cm-1> 0.4100E+00 </I_cm-1><Idev_cm-1> 0.23E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.27900 </Q_A-1><I_cm-1> 0.4508E+00 </I_cm-1><Idev_cm-1> 0.29E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.28100 </Q_A-1><I_cm-1> 0.4262E+00 </I_cm-1><Idev_cm-1> 0.35E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.28300 </Q_A-1><I_cm-1> 0.3323E+00 </I_cm-1><Idev_cm-1> 0.39E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.28500 </Q_A-1><I_cm-1> 0.2780E+00 </I_cm-1><Idev_cm-1> 0.56E+00 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ <Idata><Q_A-1> 0.28700 </Q_A-1><I_cm-1> 0.2694E+00 </I_cm-1><Idev_cm-1> 0.22E+01 </Idev_cm-1><Qdev_A-1> 0.00E+00 </Qdev_A-1></Idata>
+ </SASdata>
+ <Run>   34064 </Run>
+ <Title> LOQ TK49 Standard 12mm C9                                    </Title>
+ <Count_time_frames>         15852 </Count_time_frames>
+ <Q_resolution> "estimate" </Q_resolution>
+ <SASsample>
+   <sample_thickness_mm>   1.03 </sample_thickness_mm>
+ </SASsample>
+ <SASinstrument name="LOQ   " >
+  <SASsource>
+   <radiation> neutron </radiation>
+   <beam_x_mm> 12.00 </beam_x_mm>
+   <beam_y_mm> 12.00 </beam_y_mm>
+   <beam_shape> "disc        " </beam_shape>
+   <wavelength_min_nm> 0.22 </wavelength_min_nm>
+   <wavelength_max_nm> 1.00 </wavelength_max_nm>
+  </SASsource>
+  <SAScollimation>
+   <distance_coll_m> 11.000 </distance_coll_m>
+  </SAScollimation>
+  <SASdetector>
+   <distance_SD_m>  4.150 </distance_SD_m>
+   <x0_mm> 322.64 </x0_mm>
+   <y0_mm> 327.68 </y0_mm>
+   <pixel_x_mm> 5.00 </pixel_x_mm>
+   <pixel_y_mm> 5.00 </pixel_y_mm>
+  </SASdetector>
+ </SASinstrument>
+ <SASprocess name="COLETTE" >
+  <date> 14-DEC-2006 22:54:06 </date>
+  <radius_min_mm>  38.0 </radius_min_mm>
+  <radius_max_mm> 419.0 </radius_max_mm>
+  <radialstep_mm>   3.0 </radialstep_mm>
+  <sector_width_deg>  180.0 </sector_width_deg>
+  <I_scale_factor> 1.4751 </I_scale_factor>
+  <SASnote_01>USER:MASK.COM                                      </SASnote_01>
+  <SASnote_02>                                                   </SASnote_02>
+  <SASnote_03>                                                   </SASnote_03>
+  <SASnote_04>                                                   </SASnote_04>
+ </SASprocess>
+ </SASentry>
+</SASroot>

@@ -1,0 +1,21 @@
+<gallery caption="block diagrams">
+Image:cansas1d-v1-1-SASroot.png
+</gallery>
+
+* parent: [[cansas1d_XML_header | XML header]]
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| [[cansas1d_SASentry | '''SASentry''']]
+|| container
+| align="center" | [1..unbounded]
+|| A single SAS scan is reported in a [[cansas1d_SASentry | '''SASentry''']].  Include as many [[cansas1d_SASentry | '''SASentry''']] elements as desired.  They may contain related or unrelated data.
+'''name''' is an optional attribute to provide a string for this [[cansas1d_SASentry | '''SASentry''']]. (Use of this string is not defined by this standard.)
+|| name="short-name"
+|}

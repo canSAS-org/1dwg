@@ -1,0 +1,351 @@
+= Disclaimer =
+
+This description is meant to inform the community how to layout
+the information within the XML files.  However, should the
+information in this document and the [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd cansas1d/1.0 SAS XML Schema]
+differ, the XML Schema will be deemed to have the most correct description
+of the standard.
+
+= Objective =
+
+One of the first aims of the canSAS (Collective Action for Nomadic Small-Angle Scatterers) forum of users, software developers, and facility staff was to discuss better sharing of SAS data analysis software. [http://www.smallangles.net/canSAS/ CanSAS] identified that a significant need within the SAS community can be satisfied by a robust, self-describing, text-based, standard format to communicate reduced one-dimensional small-angle scattering data, ''I(Q)'', between users of our facilities.  Our goal has been to define such a format that leaves the data file instantly human-readable, editable in the simplest of editors, and importable by simple text import filters in programs that need not recognise advanced structure in the file nor require advanced programming interfaces.  The file should contain both the primary data of ''I(Q)'' and also any other descriptive information (metadata) about the sample, measurement, instrument, processing, or analysis steps.
+	
+The cansas1d/1.0 standard meets the objectives for a 1D standard, incorporating metadata about the measurement, parameters and results of processing or analysis steps.  Even multiple measurements (related or unrelated) may be included within a single XML file.
+
+== Status ==
+
+Version 1.0 was tagged from the subversion repository on 2009-05-12 as no changes were committed since January 2009.  Use this command to checkout the tagged release.
+<pre>
+svn checkout http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.0 cansas1dwg-1.0
+</pre>
+
+= General Layout of the XML Data =
+
+The canSAS 1-D standard for reduced 1-D SAS data is implemented using XML files.
+A single file can contain SAS data from a single experiment or multiple experiments.
+All types of relevant data (''I(Q)'', metadata) are described for each experiment.
+More details are provided below.
+
+== Overview ==
+
+[[Image:cansas1d-v1-10-minimum.png|thumb|block diagram of minimum elements required for cansas1d/1.0 standard]]
+
+The basic elements of the cansas1d/1.0 standard are shown in the following table.
+After an XML header, the root element of the file is [[cansas1d_SASroot | SASroot]] which 
+contains one or more [[cansas1d_SASentry | SASentry]] elements, each of which describes
+a single experiment (data set, time-slice, step in a series, new 
+sample, etc.).  Details of the [[cansas1d_SASentry | SASentry]] element are also
+shown in the next figure.  Refer to the [[cansas1d_block_diagrams | block diagrams]] 
+for alternative depictions.  See [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml cansas1d.xml] for an example XML file.
+Examples, Case Studies, and other background information are below.  More discussion can be found on the [[1D_Data_Formats_Working_Group|canSAS 1D Data Formats Working Group]] page and its [[Talk:1D_Data_Formats_Working_Group|discussion]] page.  Details about 
+each specific field (XPath string, XML elements and attributes) are described 
+on the [[cansas1d_definition_of_terms]] page.
+
+* [[cansas1d_SASroot | '''SASroot''': the root element of the file (after the XML header)]]
+* [[cansas1d_SASentry | '''SASentry''': describes a single experiment (data set, time-slice, step in a series, new sample, etc.)]]
+* [[cansas1d_block_diagrams | block diagrams]]
+* [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml cansas1d.xml] example XML file
+* discussion of this format: [[1D_Data_Formats_Working_Group | basic]] [[Talk:1D_Data_Formats_Working_Group | more]]
+* [[# Help_for_XML | Seek outside help for XML]]
+* [[cansas1d_definition_of_terms | '''Definition of terms''': Details about each specific field (XPath string, XML elements and attributes)]]
+
+=== Basic elements of the cansas1d/1.0 standard ===
+
+{| 
+|-
+! {{Headcellstyle}} | element
+|| &nbsp;
+! {{Headcellstyle}} | description
+|-
+||
+[[cansas1d_XML_header | XML header]]
+||
+||descriptive info required at the start of every XML file
+|-
+||
+:[[cansas1d_SASroot | SASroot]]
+||
+||
+|-
+||
+::[[cansas1d_SASentry | SASentry]]
+||
+||data set, time-slice, step in a series, new sample, etc.
+|-
+||
+:::Title
+||
+||for this particular SASentry
+|-
+||
+:::Run
+||
+||run number or ID number of experiment
+|-
+||
+:::[[cansas1d_any | {any}]]
+||
+||any non-cansas1d/1.0 element can be used at this point
+|-
+||
+:::[[cansas1d_SASdata | SASdata]]
+||
+||this is where the reduced 1-D SAS data is stored
+|-
+||
+::::[[cansas1d_SASdata | Idata]]
+||
+||a single data point in the dataset
+|-
+||
+:::[[cansas1d_any | {any}]]
+||
+||any non-cansas1d/1.0 element can be used at this point
+|-
+||
+:::[[cansas1d_SASsample | SASsample]]
+||
+|| description of the sample
+|-
+||
+:::[[cansas1d_SASinstrument | SASinstrument]]
+||
+|| description of the instrument
+|-
+||
+::::[[cansas1d_SASsource | SASsource]]
+||
+|| description of the source
+|-
+||
+::::[[cansas1d_SAScollimation | SAScollimation]]
+||
+|| description of the collimation
+|-
+||
+::::[[cansas1d_SASdetector | SASdetector]]
+||
+|| description of the detector
+|-
+||
+:::[[cansas1d_SASprocess | SASprocess]]
+||
+||for each processing or analysis step
+|-
+||
+:::[[cansas1d_SASnote | SASnote]]
+||
+||anything at all
+|}
+
+=== Required XML file header ===
+<pre>
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
+<SASroot version="1.0"
+    xmlns="cansas1d/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+    >
+</pre>
+
+== Rules ==
+
+[[Image:Q-geometry.jpg|thumb|definition of Q geometry for small-angle scattering]]
+
+[[Image:Translation-orientation-geometry-2.jpg|thumb|definition of translation and orientation geometry]]
+
+# canSAS1d/1.0 XML data files will adhere to the standard if they can successfully [[cansas1d_documentation#Validation_of_XML_against_the_Schema | validate]] against the established XML Schema ([http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd cansas1d.xsd])
+# Q=(4 &pi; / &lambda;) sin(&theta;) <br> where &lambda; is the wavelength of the radiation and 2&theta; is the angle through which the detected radiation has been scattered.
+# units to be given in standard SI abbreviations (eg, m, cm, mm, nm, K) with the following exceptions: 
+##um=micrometres
+##C=celsius
+##A=Angstroms
+##percent=%.
+##fraction
+##a.u.=arbitrary units
+##none=no units are relevant (such as dimensionless)
+# where reciprocal units need to be quoted the format shall be "1/abbreviation"
+# when raised to a power, use similar to "A^3" or "1/m^4" (and not "A3" or "m-4")
+# axes:
+##z is along the flight path (positive value in the direction of the detector)
+##x is orthogonal to z in the horizontal plane (positive values increase to the right when viewed towards the incoming radiation)
+##y is orthogonal to z and x in the vertical plane (positive values increase upwards)
+#orientation (angles): 
+##roll is about z
+##pitch is about x
+##yaw is about y
+# Unicode characters MUST NOT be used
+# Binary data is not supported
+
+=== Compatibility of Geometry Definitions ===
+
+Note:  translation and orientation geometry used by canSAS are consistent with:
+#http://en.wikipedia.org/wiki/Cartesian_coordinate_system
+#http://en.wikipedia.org/wiki/Right-hand_rule
+#http://www.nexusformat.org/Coordinate_Systems
+#http://mcstas.risoe.dk/documentation/tutorial/node6.html
+#http://webhost5.nts.jhu.edu/reza/book/kinematics/kinematics.htm
+
+The translation and orientation geometry definitions used 
+here are different than those used by
+'''SHADOW''' ([http://www.nanotech.wisc.edu/shadow/ http://www.nanotech.wisc.edu/shadow/]) 
+where the ''y'' and ''z'' axes are swapped 
+and the direction of ''x'' is changed.
+
+= Documentation and Definitions =
+
+* '''Documentation''': [[cansas1d_documentation]]  (this page)
+* '''Definitions''':   [[cansas1d_definition_of_terms]]
+* '''Block diagrams''': [[cansas1d_block_diagrams]]
+
+== XML Schema ==
+
+'''XML Schema''': The [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd cansas1d.xsd] [http://www.w3schools.com/xsd XML Schema] defines the rules for the XML file format ([http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xsd TRAC], [http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd SVN]) and is used to validate
+any XML file for adherence to the format.
+
+== XML Stylesheets ==
+
+* '''cansasxml-html.xsl''': [http://www.w3schools.com/xsl/ XSLT stylesheets] can be used to extract metadata or to convert into another file format.  The default canSAS stylesheet [[http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl   cansasxml-html.xsl]] should be copied into each folder with canSAS XML data file(s).   It can be used to display the data in a supporting WWW browser (such as Firefox or Internet Explorer) or to import into Microsoft Excel (with the added XML support in Excel).  (See the excellent write-up by Steve King, ISIS, at http://www.isis.rl.ac.uk/LargeScale/LOQ/xml/cansas_xml_format.pdf for an example.)   By default, MS Windows binds '''*.xml''' files to start Internet Explorer.  Double-clicking on a canSAS XML data file with the [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansasxml-html.xsl '''cansasxml-html.xsl'''] stylesheet in the same directory will produce a WWW page with the SAS data and selected metadata.
+* Suggestion for support software that writes canSAS1d/1.0 XML data files:
+** be sure to update to the latest SVN repository revision (command: <tt>svn update</tt>)
+** check the output directory to see if it contains the default XSLT file.
+** copy the latest XSLT file to the output directory if either:
+*** the output directory contains an older revision
+*** the output directory does not have the default XSLT file
+** The most recent XSLT file can be identified by examining the file for the '''$ Revision: ''' string.  For example <pre># $Revision: 66 $</pre> is version 66 (updated 2009-01-12).
+
+== Examples and Case Studies ==
+
+* [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d.xml cansas1d.xml] basic example: Note that, for clarity, only one row of data is shown.  This is probably a very good example to use as a starting point for creating XML files with a text editor.
+* [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/bimodal-test1.xml bimodal-test1.xml]: Simulated SAS data to test size distribution calculation routines.
+* [[cansas1d_casestudy_collagen | dry chick collagen]]: illustrates the minimum information necessary to meet the requirements of the standard format
+* [[cansas1d_casestudy_af1410 | AF1410 steel]]: SANS study using magnetic contrast variation (with multiple samples and multiple data sets for each sample), the files can be viewed from TRAC (no description yet):  [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/ http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/examples/af1410/]
+* [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cansas1d-template.xml cansas1d-template.xml]: This is used to test all the rules in the XML Schema.  This is probably not a very good example to use as a starting point for creating XML files with a text editor since it tests many of the special-case rules.
+
+=== XML layout for multiple experiments ===
+
+Each experiment is described with a single '''SASentry''' element.
+The fragment below shows how multiple experiments can be included 
+in a single XML file.  Full examples of canSAS XML files with multiple experiments include:
+* [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/W1W2.XML ISIS LOQ SANS instrument]
+* [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/cs_af1410.xml NIST SANS data]
+
+<pre>
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
+<SASroot version="1.0"
+    xmlns="cansas1d/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+    >
+  <SASentry name="071121.dat#S22">
+    <!-- contents of the first experiment in the file go here -->
+  </SASentry>
+  <SASentry name="example temperature series">
+    <!-- example with two SAS data sets related to the same sample -->
+    <Title>title of this series</Title>
+    <Run name="run1">42-001</Run>
+    <Run name="run2">42-002</Run>
+    <SASdata name="run1">
+      <!-- data from 42-001 run comes here -->
+    </SASdata>
+    <SASdata name="run2">
+      <!-- data from 42-002 run comes here -->
+    </SASdata>
+    <!-- other elements come here for this entry -->
+  </SASentry>
+  <SASentry name="other sample">
+    <!-- any number of additional experiments can be included, as desired -->
+    <!-- SASentry elements in the same XML file do not have to be related -->
+  </SASentry>
+</SASroot>
+</pre>
+
+
+== Foreign Elements ==
+
+To allow for inclusion of elements that are not defined by the cansas1d.xsd XML Schema, 
+XML ''foreign elements'' are permitted at select locations in the cansas1d/1.0 format.
+Please refer to the references (and others) [[#Help_for_XML | below]] for deeper discussions on foreign elements.
+
+No examples exist.
+At present, all examples of canSAS xml files using foreign namespaces have been converted to bring that data into either the '''SASprocessnote''' or '''SASnote''' elements.
+Refer to the [http://svn.smallangles.net/trac/canSAS/changeset/47 TRAC changes] for an example of arranging the content in '''SASprocessnote''' to avoid the use of foreign namespace elements.
+
+== Support tools for Visualization & Analysis software ==
+
+<small>(under development as of May 2008)</small>
+
+=== Binding for IgorPro ===
+
+An import tool (a.k.a. binding) for [http://www.wavemetrics.com/ IgorPro] has been created
+([http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/IgorPro/cansasXML.ipf cansasXML.ipf]).
+[[cansas1d_binding_IgorPro | Documentation]] is available.
+
+<small>
+'''Note''' that this tool is not a true [http://en.wikipedia.org/wiki/Binding_%28computer_science%29 binding] in that the structure of the XML file is not replicated in IgorPro data structures.  This tool reads the vectors of 1-D SAS data (Q, I, ...) into IgorPro waves (Qsas, Isas, ...).  The tool also reads most of the metadata into an IgorPro textWave for use by other support in IgorPro.
+</small>
+
+Status:
+* Capabilities
+** test suite of XML files developed
+** import the XML files into IgorPro
+* open TRAC tickets (as of 2008-05-15)
+** http://svn.smallangles.net/trac/canSAS/ticket/3
+** http://svn.smallangles.net/trac/canSAS/ticket/10
+* Further
+** conversation with Andrew Nelson shows more efficiency can be gained from minor redesign.
+** Development of a GUI (to support the [http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.html Irena] package) has begun
+** Development to add export capabilities (from IgorPro) back to the cansas1d/1.0 format has begun
+
+=== Binding for Java ===
+
+A [http://java.sun.com/developer/technicalArticles/WebServices/jaxb/ JAXB] [http://en.wikipedia.org/wiki/Binding_%28computer_science%29 binding] for Java has been created.
+(http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/java/cansas1d).
+[[cansas1d_binding_Java | Documentation]] is in progress.
+
+<small>
+'''Note''' that this tool replicates the structure of the XML file into Java data structures.  Additional Java software must be applied to convert the /SASdata/Idata/* elements into vectors of ''I(Q)'' data.
+</small>
+
+Status:
+* Capabilities
+** import the XML files into Java
+** tested by use in collimation-correction (desmearing) software (not publicly available at this time)
+* Further
+** need to test export capabilities
+
+=== Support for Python ===
+
+Specific [http://danse.us/trac/sans support] for the cansas1d/1.0 data standard in Python is being developed by 
+[http://www.ncnr.nist.gov/ NIST/NCNR] as part of their contribution to the [http://wiki.cacr.caltech.edu/danse DANSE] project.
+See the [[cansas1d_binding_Python | Python Documentation]] page for more details.
+
+=== Support for FORTRAN ===
+
+Steve King[mailto:s.m.king@rl.ac.uk] (ISIS) has provided a F77 routine ([http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/fortran/SASXML_G77.F SASXML_G77.F]) that will read CanSAS XML v1.0 files.
+See the [[cansas1d_binding_Fortran | Fortran Documentation]] page for more details.
+
+=== Suport for Microsoft Excel ===
+
+Support for Microsoft Excel is provided through the default canSAS stylesheet 
+[[http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansasxml-html.xsl  cansasxml-html.xsl]].  
+An excellent description (http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/xml/cansas_xml_format.pdf) of how to import data from the cansas1d/1.0 format into Excel is available from the ISIS LOQ instrument (http://www.isis.rl.ac.uk/LargeScale/LOQ/loq.htm).
+
+== Software repositories ==
+
+* '''TRAC''':       [http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk]
+* '''Subversion''': [http://svn.smallangles.net/svn/canSAS/1dwg http://svn.smallangles.net/svn/canSAS/1dwg]  <br />(<nowiki>svn checkout http://svn.smallangles.net/svn/canSAS/1dwg/trunk/ cansas-1dwg</nowiki>)
+
+= Validation of XML against the Schema =
+# open browser to:   http://www.xmlvalidation.com/
+# paste content of candidate XML file (with reference in the header to the XML Schema as shown above) into the form
+# press <validate>
+# paste content of [http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd cansas1d.xsd] XSD file into form and press <continue validation>
+# check the results
+
+= Help for XML =
+
+The various references for help on XML have been moved to their own wiki page:
+[[XmlHelp]]

@@ -1,0 +1,15 @@
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+|| [[cansas1d_any | ''{any}'']]
+|| container
+| align="center" | [0..unbounded]
+|| Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point.   (These are called ''foreign'' elements.  It is suggested to associate foreign elements with a foreign namespace to differentiate them from the canSAS elements in the XML file.)
+|| '''''xmlns:{foreign-prefix}'''''="{foreign-namespace}"
+|-
+|}

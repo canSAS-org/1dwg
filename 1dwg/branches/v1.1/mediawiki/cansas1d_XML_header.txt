@@ -1,0 +1,43 @@
+<gallery caption="block diagrams">
+Image:cansas1d-v1-1-SASroot.png
+</gallery>
+
+{| {{Tablestyle}}
+|-
+! {{Headcellstyle}} | Name
+! {{Headcellstyle}} | Type
+! {{Headcellstyle}} | occurrence
+! {{Headcellstyle}} | Description
+! {{Headcellstyle}} | Attributes
+|-
+
+|| ''xml declaration''
+|| header
+| align="center" | [1..1]
+|| <pre><?xml version="1.0"?></pre>Required first line of every well-formed XML file.  '''version="1.0"''' refers to version 1.0 of the XML standard.
+|| version="1.0"
+|-
+|| ''stylesheet''
+|| header
+| align="center" | [0..1]
+|| <pre><?xml-stylesheet type="text/xsl" href="example.xsl" ?></pre>Declares that ''example.xsl'' (needs to be in the local directory) will be the default stylesheet to an XML visualization tool.  Change ''example.xsl'' to indicate a different stylesheet in the local directory.  Refer to [http://www.w3schools.com/xsl W3 Schools XSLT Help] for assistance in constructing XSLT files.
+
+XML rules actually allow for multiple stylesheet declarations.  Explore this possibility as your own adventure.
+|| type="text/xsl"<br />href="example.xsl"
+|-
+|| [[cansas1d_SASroot | '''SASroot''']]
+|| container
+| align="center" | [1..1]
+|| The canSAS reduced 1-D SAS data (cansas1d/1.0) will be in the '''SASroot''' database. 
+(This is similar to NXroot used by NeXus.)
+* '''version="1.0"''' is required to identify the cansas1d/1.0 standard for SAS data.
+* '''xmlns''' sets the default namespace for all elements (with no prefix) in this file.
+* '''xmlns:xsi''' sets '''xsi''' as the prefix for any elements from the governing XML Schema.
+* '''xsi:schemaLocation'''  associates a suggested URL (where the cansas1d/1.0 XML Schema might be found) with the default namespace string.
+<pre><SASroot version="1.0"
+    xmlns="cansas1d/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
+    ></pre>
+|| version="1.0"<br />xmlns="{this-namespace-URI}"<br />xmlns:xsi="{URL-of-governing-XML-Schema}"<br />xsi:schemaLocation="{this-namespace-URI} {URL-to-find-XML-Schema}"
+|}
