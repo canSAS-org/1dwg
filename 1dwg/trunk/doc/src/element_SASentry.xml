@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_SASentry -->
+<section xml:id="cansas1d_documentation-element-SASentry" xmlns="http://docbook.org/ns/docbook"
+    version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>SASentry element</title>
+    <itemizedlist mark="opencircle">
+        <listitem>
+            <indexterm significance="preferred">
+                <primary>element</primary>
+                <secondary>SASentry</secondary>
+            </indexterm>
+            <para>
+				parent:
+				<link xlink:href="#cansas1d_documentation-element-SASroot"><literal>SASroot</literal></link>
+            </para>
+        </listitem>
+    </itemizedlist>
+    <figure>
+        <title>The SASentry element</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="../../graphics/1-SASroot.png" width="200pt"
+                    scalefit="1"/>
+            </imageobject>
+            <textobject>
+                <phrase>cansas1d-v1-1-SASroot</phrase>
+            </textobject>
+            <caption>
+                <para/>
+            </caption>
+        </mediaobject>
+    </figure>
+    <table orient="port" role="small">
+        <title/>
+        <tgroup cols="5">
+            <colspec colname="c1" colwidth="15*"/>
+            <colspec colname="c2" colwidth="15*"/>
+            <colspec colname="c3" colwidth="10*"/>
+            <colspec colname="c4" colwidth="30*"/>
+            <colspec colname="c5" colwidth="30*"/>
+            <tbody>
+                <row>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Name</entry>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Type</entry>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Occurrence</entry>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
+                    <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
+                </row>
+                <row>
+                    <entry>
+                        <literal>Title</literal>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>Title</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        string
+                    </entry>
+                    <entry>
+                        [1..1]
+                    </entry>
+                    <entry>
+                        Title of this <literal>SASentry</literal>.
+                    </entry>
+                    <entry/>
+                </row>
+                <row>
+                    <entry>
+                        <literal>Run</literal>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>Run</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        string
+                    </entry>
+                    <entry>
+                        [1..inf]
+                    </entry>
+                    <entry>
+                        <para>
+                            Run identification for this <literal>SASentry</literal>. 
+                            For many facilities, this is an integer. 
+                            Use multiple instances of <literal>Run</literal> as needed. 
+                        </para>
+                        <para>
+                            Note: 
+                            How to correlate this with <literal>SASdata</literal> and 
+                            <literal>SASinstrument</literal> 
+                            configurations has not yet been defined.
+                        </para>
+                        <para>
+                            <literal>name</literal> is an optional string attribute to identify 
+                            this particular <literal>Run</literal>. 
+                            Could use this to associate (correlate) multiple <literal>SASdata</literal>
+                            elements with <literal>Run</literal> elements. 
+                            (Give them the same <literal>{short-Run-identifier}</literal>.)
+                        </para>
+                    </entry>
+                    <entry><literal>name={short-Run-identifier}</literal></entry>
+                </row>
+                <row>
+                    <entry>
+                        <link xlink:href="#cansas1d_documentation-element-any"
+                            ><literal>{any}</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>&lt;any&gt;</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        container
+                    </entry>
+                    <entry>
+                        [0..inf]
+                    </entry>
+                    <entry>
+                        Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
+                        See <link xlink:href="#cansas1d_documentation-element-any"
+                            ><literal>{any}</literal></link> 
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>&lt;any&gt;</secondary>
+                        </indexterm>
+                        for more details.
+                    </entry>
+                    <entry><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></entry>
+                </row>
+                <row>
+                    <entry>
+                        <link xlink:href="#cansas1d_documentation-element-SASdata"
+                            ><literal>SASdata</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>SASdata</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        container
+                    </entry>
+                    <entry>
+                        [1..inf]
+                    </entry>
+                    <entry>
+                        Reduced 1-D SAS data for this <literal>SASentry</literal>. 
+                        Use multiple <literal>SASdata</literal> elements to represent multiple frames. 
+                        Use this to associate (correlate) multiple <literal>SASdata</literal>
+                        elements with <literal>Run</literal> elements. (Give them the same name.)
+                    </entry>
+                    <entry><literal>name={short-Run-identifier}</literal></entry>
+                </row>
+                <row>
+                    <entry>
+                        <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>&lt;any&gt;</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        container
+                    </entry>
+                    <entry>
+                        [0..inf]
+                    </entry>
+                    <entry>
+                        Any element(s) not defined in the cansas1d/1.0 standard can be placed at this point. 
+                        See <link xlink:href="#cansas1d_documentation-element-any"><literal>{any}</literal></link> 
+                        for more details.
+                    </entry>
+                    <entry><literal>xmlns:{foreign-prefix}={foreign-namespace}</literal></entry>
+                </row>
+                <row>
+                    <entry>
+                        <link xlink:href="#cansas1d_documentation-element-SASsample"
+                            ><literal>SASsample</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>SASsample</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        container
+                    </entry>
+                    <entry>
+                        [1..1]
+                    </entry>
+                    <entry>
+                        Description of the sample.
+                    </entry>
+                    <entry><literal>name={short-SASsample-identifier}</literal></entry>
+                </row>
+                <row>
+                    <entry>
+                        <link xlink:href="#cansas1d_documentation-element-SASinstrument"
+                            ><literal>SASinstrument</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>SASinstrument</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        container
+                    </entry>
+                    <entry>
+                        [1..1]
+                    </entry>
+                    <entry>
+                        Description of the instrument
+                    </entry>
+                    <entry/>
+                </row>
+                <row>
+                    <entry>
+                        <link xlink:href="#cansas1d_documentation-element-SASprocess"
+                            ><literal>SASprocess</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>SASprocess</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        container
+                    </entry>
+                    <entry>
+                        [0..inf]
+                    </entry>
+                    <entry>
+                        Description of a processing or analysis step.
+                    </entry>
+                    <entry><literal>name={short-SASprocess-identifier}</literal></entry>
+                </row>
+                <row>
+                    <entry>
+                        <link xlink:href="#cansas1d_documentation-element-SASnote"
+                            ><literal>SASnote</literal></link>
+                        <indexterm>
+                            <primary>element</primary>
+                            <secondary>SASnote</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        container
+                    </entry>
+                    <entry>
+                        [1..inf]
+                    </entry>
+                    <entry>
+                        Free form description of anything not covered by other elements.
+                    </entry>
+                    <entry><literal>name={short-SASnote-identifier}</literal></entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+</section>

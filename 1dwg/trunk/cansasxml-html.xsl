@@ -10,19 +10,19 @@
 ########### SVN repository information ###################
 
 Purpose:
-	This stylesheet is used to translate cansas1d/1.1
+	This stylesheet is used to translate cansas1d/1.0
 	XML data files into a display form for viewing
 	in a web browser such as Firefox or Internet Explorer.
 
 Usage:
 	xsltproc cansasxml-html.xsl datafile.xml > datafile.html
 	(or include it as indicated at the documentation site
-	http://www.cansas.org/wgwiki/index.php/cansas1d_documentation)
+	http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation)
 -->
 
-<xsl:stylesheet version="1.1"
+<xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:cs="urn:cansas1d:1.1"
+	xmlns:cs="cansas1d/1.0"
 	xmlns:fn="http://www.w3.org/2005/02/xpath-functions"
 	xmlns:ues="urn:efficiency:spectrum"
 	xmlns:ums="urn:monitor:spectrum"
