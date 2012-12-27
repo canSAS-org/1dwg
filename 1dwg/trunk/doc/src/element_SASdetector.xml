@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_SASdetector -->
+<section xml:id="cansas1d_documentation-element-SASdetector" xmlns="http://docbook.org/ns/docbook"
+    version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>SASdetector element</title>
+    <itemizedlist mark="opencircle">
+        <listitem>
+        <indexterm significance="preferred">
+            <primary>element</primary>
+            <secondary>SASdetector</secondary>
+        </indexterm>
+            <para>
+                parent: 
+                <link xlink:href="#cansas1d_documentation-element-SASinstrument">SASinstrument</link>
+            </para>
+        </listitem>
+    </itemizedlist>
+    <figure>
+        <title>The SASdetector element</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="../../graphics/7-SASdetector.png" width="200pt"
+                    scalefit="1"/>
+            </imageobject>
+            <textobject>
+                <phrase>cansas1d-v1-7-SASdetector</phrase>
+            </textobject>
+            <caption>
+                <para>The SASdetector element</para>
+            </caption>
+        </mediaobject>
+    </figure>
+    <section>
+        <title>SASdetector</title>
+        <table orient="port" role="small">
+            <title/>
+            <tgroup cols="5">
+                <colspec colname="c1" colwidth="15*"/>
+                <colspec colname="c2" colwidth="15*"/>
+                <colspec colname="c3" colwidth="10*"/>
+                <colspec colname="c4" colwidth="30*"/>
+                <colspec colname="c5" colwidth="30*"/>
+                <tbody>
+                    <row>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Name</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Type</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Occurrence</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>name</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>name</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            string
+                        </entry>
+                        <entry>
+                            [1..1]
+                        </entry>
+                        <entry>
+                            Text string that identifies the name of this detector.
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>SDD</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>SDD</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Distance between sample and detector.
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>offset</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>offset</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Offset of this detector position in X, Y, (and Z if necessary).
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>orientation</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>orientation</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Orientation (rotation) of this detector in roll, pitch, and yaw.
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>beam_center</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>beam_center</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Center of the beam on the detector in X and Y (and Z if necessary).
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>pixel_size</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>pixel_size</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            container
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Size of detector pixels in X and Y (and Z if necessary).
+                        </entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>slit_length</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>slit_length</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Slit length of the instrument for this detector. 
+                            This is expressed in the same units as Q (reciprocal space units).
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </section>
+    <section>
+        <title>geometry</title>
+        <para>
+            <informaltable>
+                <tgroup cols='2'>
+                    <tbody>
+                        <row>
+                    <entry>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                    fileref="../../graphics/translation-orientation-geometry.jpg"
+                                    width="200pt" scalefit="1"/>
+                            </imageobject>
+                            <textobject>
+                                <phrase/>
+                            </textobject>
+                            <caption>
+                                <para>view from source</para>
+                            </caption>
+                        </mediaobject>
+                        <indexterm>
+                            <primary>geometry</primary>
+                            <secondary>translation</secondary>
+                        </indexterm>
+                    </entry>
+                    <entry>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata
+                                    fileref="../../graphics/translation-orientation-geometry-2.jpg"
+                                    width="200pt" scalefit="1"/>
+                            </imageobject>
+                            <textobject>
+                                <phrase/>
+                            </textobject>
+                            <caption>
+                                <para>view from detector</para>
+                            </caption>
+                        </mediaobject>
+                        <indexterm>
+                            <primary>geometry</primary>
+                            <secondary>rotation</secondary>
+                        </indexterm>
+                    </entry>
+                </row>
+                </tbody></tgroup>
+            </informaltable>
+        </para>
+    </section>
+    <section>
+        <title>offset</title>
+        <table orient="port" role="small">
+            <title/>
+            <tgroup cols="5">
+                <colspec colname="c1" colwidth="15*"/>
+                <colspec colname="c2" colwidth="15*"/>
+                <colspec colname="c3" colwidth="10*"/>
+                <colspec colname="c4" colwidth="30*"/>
+                <colspec colname="c5" colwidth="30*"/>
+                <tbody>
+                    <row>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Name</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Type</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Occurrence</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>x</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>x</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Offset of the detector position in X. 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                </row>
+                    <row>
+                        <entry>
+                            <literal>y</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>y</secondary>
+                            </indexterm>
+                        </entry>
+                    <entry>
+                        floating-point number
+                    </entry>
+                    <entry>
+                        [0..1]
+                    </entry>
+                    <entry>
+                        Offset of the detector position in Y. 
+                        The <literal>unit</literal> attribute is required. See
+                        the section about the
+                        <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                        for acceptable values.
+                    </entry>
+                    <entry><literal>unit={unit}</literal></entry>
+                </row>
+                    <row>
+                        <entry>
+                            <literal>z</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>z</secondary>
+                            </indexterm>
+                        </entry>
+                    <entry>
+                        floating-point number
+                    </entry>
+                    <entry>
+                        [0..1]
+                    </entry>
+                    <entry>
+                        <para>
+                            Offset of the detector position in Z. 
+                            The <literal>unit</literal>
+                            attribute is required. See the section about the <link
+                                xlink:href="#cansas1d_documentation-rules">rules</link> for
+                            acceptable values. 
+                            <tip>
+                                <para>
+                                    While Z dimension is allowed by the
+                                    standard (provided by use of a standard element in the XML Schema),
+                                    it does not make sense for small-angle scattering.
+                                </para>
+                            </tip>
+                        </para>
+                    </entry>
+                    <entry><literal>unit={unit}</literal></entry>
+                </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </section>
+    <section>
+        <title>orientation</title>
+        <table orient="port" role="small">
+            <title/>
+            <tgroup cols="5">
+                <colspec colname="c1" colwidth="15*"/>
+                <colspec colname="c2" colwidth="15*"/>
+                <colspec colname="c3" colwidth="10*"/>
+                <colspec colname="c4" colwidth="30*"/>
+                <colspec colname="c5" colwidth="30*"/>
+                <tbody>
+                    <row>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Name</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Type</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Occurrence</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>roll</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>roll</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Rotation about the <literal>Z</literal> axis (roll). 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>pitch</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>pitch</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Rotation about the <literal>X</literal> axis (pitch). 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>yaw</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>yaw</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Rotation about the <literal>Y</literal> axis (yaw). 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </section>
+    <section>
+        <title>beam_center</title>
+        <table orient="port" role="small">
+            <title/>
+            <tgroup cols="5">
+                <colspec colname="c1" colwidth="15*"/>
+                <colspec colname="c2" colwidth="15*"/>
+                <colspec colname="c3" colwidth="10*"/>
+                <colspec colname="c4" colwidth="30*"/>
+                <colspec colname="c5" colwidth="30*"/>
+                <tbody>
+                    <row>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Name</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Type</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Occurrence</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>x</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>x</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Position of the beam center on the detector in X. 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>y</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>y</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            Position of the beam center on the detector in Y. 
+                            The <literal>unit</literal> attribute is required. See
+                            the section about the
+                            <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                            for acceptable values.
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>z</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>z</secondary>
+                            </indexterm>
+                        </entry>
+                        <entry>
+                            floating-point number
+                        </entry>
+                        <entry>
+                            [0..1]
+                        </entry>
+                        <entry>
+                            <para>
+                                Position of the beam center on the detector in Z. 
+                                The <literal>unit</literal>
+                                attribute is required. See the section about the <link
+                                    xlink:href="#cansas1d_documentation-rules">rules</link> for
+                                acceptable values. 
+                                <tip>
+                                    <para>
+                                        While Z dimension is allowed by the
+                                        standard (provided by use of a standard element in the XML Schema),
+                                        it does not make sense for small-angle scattering.
+                                    </para>
+                                </tip>
+                            </para>
+                        </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </section>
+    <section>
+        <title>pixel_size</title>
+        <table orient="port" role="small">
+            <title/>
+            <tgroup cols="5">
+                <colspec colname="c1" colwidth="15*"/>
+                <colspec colname="c2" colwidth="15*"/>
+                <colspec colname="c3" colwidth="10*"/>
+                <colspec colname="c4" colwidth="30*"/>
+                <colspec colname="c5" colwidth="30*"/>
+                <tbody>
+                    <row>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Name</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Type</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Occurrence</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Description</entry>
+                        <entry><?dblatex bgcolor="[gray]{0.8}"?>Attributes</entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <literal>x</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>x</secondary>
+                            </indexterm>
+                        </entry>
+                    <entry>
+                        floating-point number
+                    </entry>
+                    <entry>
+                        [0..1]
+                    </entry>
+                    <entry>
+                        Size of a detector pixel in X. 
+                        The <literal>unit</literal> attribute is required. See
+                        the section about the
+                        <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                        for acceptable values.
+                    </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                </row>
+                    <row>
+                        <entry>
+                            <literal>y</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>y</secondary>
+                            </indexterm>
+                        </entry>
+                    <entry>
+                        floating-point number
+                    </entry>
+                    <entry>
+                        [0..1]
+                    </entry>
+                    <entry>
+                        Size of a detector pixel in Y. 
+                        The <literal>unit</literal> attribute is required. See
+                        the section about the
+                        <link xlink:href="#cansas1d_documentation-rules">rules</link>
+                        for acceptable values.
+                    </entry>
+                        <entry><literal>unit={unit}</literal></entry>
+                </row>
+                    <row>
+                        <entry>
+                            <literal>z</literal>
+                            <indexterm>
+                                <primary>element</primary>
+                                <secondary>z</secondary>
+                            </indexterm>
+                        </entry>
+                    <entry>
+                        floating-point number
+                    </entry>
+                    <entry>
+                        [0..1]
+                    </entry>
+                    <entry>
+                        <para>
+                            Size of a detector pixel in Z. 
+                            The <literal>unit</literal>
+                            attribute is required. See the section about the <link
+                                xlink:href="#cansas1d_documentation-rules">rules</link> for
+                            acceptable values. 
+                            <tip>
+                                <para>
+                                    While Z dimension is allowed by the
+                                    standard (provided by use of a standard element in the XML Schema),
+                                    it does not make sense for small-angle scattering.
+                                </para>
+                            </tip>
+                        </para>
+                    </entry>
+                    <entry><literal>unit={unit}</literal></entry>
+                </row>
+            </tbody></tgroup>
+        </table>
+    </section>
+</section>

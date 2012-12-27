@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<!-- from: http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_Fortran -->
+<section xml:id="cansas1d_documentation-binding-Fortran"
+    xmlns="http://docbook.org/ns/docbook" version="5.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Fortran binding</title>
+    <para>
+        The development of the FORTRAN language, 
+        <indexterm significance="preferred">
+            <primary>binding</primary>
+            <secondary>FORTRAN</secondary>
+        </indexterm>
+        so beloved of scientists, pre-dates the development of XML. 
+        And it shows. FORTRAN is not a language that manipulates strings with ease, 
+        and this makes parsing XML decidedly awkward. 
+        So unless you <emphasis>really</emphasis> have to use FORTRAN, 
+        you are probably better off with C/C++ (or something else more 'modern'), 
+        see for example Daniel Veillard's LIBXML2 library at http://xmlsoft.org/ 
+        or Frank van den Berghen's parser at 
+        http://www.applied-mathematics.net/tools/xmlParser.html.
+    </para>
+    <para>
+        If you have to use a dialect earlier than FORTRAN-90 (F90), then the chances are you will have to code your own parser.
+    </para>
+    <section><title>Software Development Kits</title>
+        <para>
+            For later dialects, there are some SDK's available on the Web:
+        </para>
+        <itemizedlist mark="opencircle"><listitem>
+            <para>
+                F90:
+            </para>
+            <itemizedlist mark="opencircle"><listitem>
+                <para>
+                    XMLPARSE - by Arjen Markus at http://xml-fortran.sourceforge.net/
+                </para>
+            </listitem>
+                <listitem>
+                    <para>
+                        FoX - by Toby White  others at http://uszla.me.uk/space/software/FoX/
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </listitem>
+            <listitem>
+                <para>
+                    For F95:
+                </para>
+                <itemizedlist mark="opencircle"><listitem>
+                    <para>
+                        XML - by Mart Rentmeester at http://nn-online.org/code/xml/
+                    </para>
+                </listitem>
+                </itemizedlist>
+            </listitem>
+        </itemizedlist>
+    </section>
+    <section>
+        <title>canSAS 1-D SAS XML v1.0 support</title>
+        <para>
+            Steve King[mailto:s.m.king@rl.ac.uk] (ISIS) has provided a F77 routine (<link xlink:href="http://svn.smallangles.net/trac/canSAS/browser/1dwg/trunk/fortran/SASXML_G77.F"><citetitle>SASXML_G77.F</citetitle></link>) that will read CanSAS XML v1.0 files.
+        </para>
+    </section>
+</section>

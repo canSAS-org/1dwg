@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" type="xml"?>
+<!-- 
+    ########### SVN repository information ###################
+    # $Date$
+    # $Author$
+    # $Revision$
+    # $HeadURL$
+    # $Id$
+    ########### SVN repository information ###################
+-->
+<chapter xml:id="wiki-bindings" 
+    xmlns="http://docbook.org/ns/docbook" version="5.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Bindings and Software Support</title>
+    <para>Bindings (import/export drivers) and other software support 
+        have been created and contributed.  These are listed here by the 
+        language or software environment.</para>
+    <xi:include href="binding_Fortran.xml"/>
+    <xi:include href="binding_IgorPro.xml"/>
+    <xi:include href="binding_Java.xml"/>
+    <xi:include href="binding_Python.xml"/>
+</chapter>
