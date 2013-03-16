@@ -46,12 +46,16 @@ def print_SASdata(sd):
     if 'name' in sd.__dict__:
         print 'SASdata name:', sd.name
     print '# points:', numPts
-    s  = 'Q ('+sd.Idata[0].Q.unit+')'
-    s += '  I ('+sd.Idata[0].I.unit+')'
-    s += '  Idev ('+sd.Idata[0].Idev.unit+')'
-    print s
+    columns = [
+        ['Q ('+sd.Idata[0].Q.unit+')'],
+        ['I ('+sd.Idata[0].I.unit+')'],
+        ['Idev ('+sd.Idata[0].Idev.unit+')'],
+    ]
     for Idata in sd.Idata:
-        print Idata.Q.PCDATA,  Idata.I.PCDATA,  Idata.Idev.PCDATA
+        values = (Idata.Q.PCDATA, Idata.I.PCDATA, Idata.Idev.PCDATA)
+        for item, value in enumerate(values):
+            columns[item].append(str(value))
+    print columnsToText(columns)
 
 
 def print_optional_item(title, parent, item):
@@ -64,6 +68,33 @@ def print_optional_item(title, parent, item):
         if 'unit' in obj.__dict__:
             s += ' (' + obj.unit + ')'
         print s
+
+
+def columnsToText(columns):
+    '''
+    convert a list of column lists into rows of text
+    
+    column widths will be chosen from the maximum character width of each column
+    
+    :param [[str]] columns: list of column lists (all same length)
+    :returns str: text block, with line separators
+    
+    Example::
+    
+        >>> columns = [ ['1A', '2A'], ['1B is long', '2B'], ['1C', '2C'] ]
+        >>> print columnsToText( columns )
+        1A  1B is long  1C
+        2A  2B          2C
+    
+    '''
+    # get the largest width for each column
+    widths = [max(map(len, item)) for item in columns]
+    # left-align each column
+    sep = ' '*2
+    fmt = sep.join(['%%-%ds' % item for item in widths])
+    # rows = zip(*columns) : matrix transpose
+    result = [fmt % tuple(row) for row in zip(*columns)]
+    return '\n'.join(result)
 
 
 def demo(xmlFile):
