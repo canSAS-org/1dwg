@@ -10,7 +10,7 @@
 ########### SVN repository information ###################
 
 Purpose:
-	This stylesheet is used to display the cansas1d/1.0
+	This stylesheet is used to display the cansas1d:1.1
 	xmlWriter surveillance log..
 -->
 
