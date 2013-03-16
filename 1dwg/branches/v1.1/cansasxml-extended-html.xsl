@@ -10,7 +10,7 @@
 ########### SVN repository information ###################
 
 Purpose:
-	This stylesheet is used to translate cansas1d/1.1
+	This stylesheet is used to translate cansas1d:1.1
 	XML data files into a display form for viewing
 	in a web browser such as Firefox or Internet Explorer
 	that supports client-side XSLT formatting.
@@ -179,7 +179,7 @@ Usage:
 		    	<xsl:for-each select="cs:Tdata">
 					<tr>
 						<xsl:for-each select="*">
-							<td><xsl:value-of select="." /></td>
+							<xsl:call-template name="td-value"/>
 						</xsl:for-each>
 					</tr>
 				</xsl:for-each>
@@ -204,7 +204,7 @@ Usage:
 			<xsl:for-each select="cs:Idata">
 				<tr>
 					<xsl:for-each select="*">
-						<td><xsl:value-of select="." /></td>
+						<xsl:call-template name="td-value"/>
 					</xsl:for-each>
 				</tr>
 			</xsl:for-each>
@@ -226,11 +226,7 @@ Usage:
 					<xsl:apply-templates select="." />
 				</xsl:when>
 				<xsl:otherwise>
-					<tr>
-						<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-						<td><xsl:value-of select="." /></td>
-						<td><xsl:value-of select="@unit" /></td>
-					</tr>
+					<xsl:call-template name="tr-parent-value-units"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
@@ -249,11 +245,7 @@ Usage:
 				<xsl:when test="name()='SASdetector'"><xsl:apply-templates select="." /></xsl:when>
 				<xsl:when test="name()='name'" />
 				<xsl:otherwise>
-					<tr>
-						<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-						<td><xsl:value-of select="." /></td>
-						<td><xsl:value-of select="@unit" /></td>
-					</tr>
+					<xsl:call-template name="tr-parent-value-units"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
@@ -269,28 +261,16 @@ Usage:
 			<xsl:choose>
 				<xsl:when test="name()='beam_size'"><xsl:apply-templates select="." /></xsl:when>
 				<xsl:otherwise>
-					<tr>
-						<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-						<td><xsl:value-of select="." /></td>
-						<td><xsl:value-of select="@unit" /></td>
-					</tr>
+					<xsl:call-template name="tr-parent-value-units"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:beam_size">
-		<tr>
-			<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-			<td><xsl:value-of select="@name" /></td>
-			<td />
-		</tr>
+		<xsl:call-template name="tr-parent-name"/>
 		<xsl:for-each select="*">
-			<tr>
-				<td><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-				<td><xsl:value-of select="." /></td>
-				<td><xsl:value-of select="@unit" /></td>
-			</tr>
+			<xsl:call-template name="tr-grandparent-value-units"/>
 		</xsl:for-each>
 	</xsl:template>
 
@@ -299,11 +279,7 @@ Usage:
 			<xsl:choose>
 				<xsl:when test="name()='aperture'"><xsl:apply-templates select="." /></xsl:when>
 				<xsl:otherwise>
-					<tr>
-						<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-						<td><xsl:value-of select="." /></td>
-						<td><xsl:value-of select="@unit" /></td>
-					</tr>
+					<xsl:call-template name="tr-parent-value-units"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
@@ -319,11 +295,7 @@ Usage:
 			<xsl:choose>
 				<xsl:when test="name()='size'"><xsl:apply-templates select="." /></xsl:when>
 				<xsl:otherwise>
-					<tr>
-						<td><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-						<td><xsl:value-of select="." /></td>
-						<td><xsl:value-of select="@unit" /></td>
-					</tr>
+					<xsl:call-template name="tr-grandparent-value-units"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
@@ -331,15 +303,15 @@ Usage:
 
 	<xsl:template match="cs:size">
 		<tr>
-			<td><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
+			<xsl:call-template name="td-grandparent"/>
 			<td><xsl:value-of select="@name" /></td>
 			<td />
 		</tr>
 		<xsl:for-each select="*">
 			<tr>
-				<td><xsl:value-of select="name(../../..)" />_<xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-				<td><xsl:value-of select="." /></td>
-				<td><xsl:value-of select="@unit" /></td>
+				<xsl:call-template name="td-greatgrandparent"/>
+				<xsl:call-template name="td-value"/>
+				<xsl:call-template name="td-unit"/>
 			</tr>
 		</xsl:for-each>
 	</xsl:template>
@@ -358,103 +330,59 @@ Usage:
 				<xsl:when test="name()='beam_center'"><xsl:apply-templates select="." /></xsl:when>
 				<xsl:when test="name()='pixel_size'"><xsl:apply-templates select="." /></xsl:when>
 				<xsl:otherwise>
-					<tr>
-						<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-						<td><xsl:value-of select="." /></td>
-						<td><xsl:value-of select="@unit" /></td>
-					</tr>
+					<xsl:call-template name="tr-parent-value-units"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:orientation">
-		<tr>
-			<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-			<td><xsl:value-of select="@name" /></td>
-			<td />
-		</tr>
+		<xsl:call-template name="tr-parent-name"/>
 		<xsl:for-each select="*">
-			<tr>
-				<td><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-				<td><xsl:value-of select="." /></td>
-				<td><xsl:value-of select="@unit" /></td>
-			</tr>
+			<xsl:call-template name="tr-grandparent-value-units"/>
 		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:position">
-		<tr>
-			<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-			<td><xsl:value-of select="@name" /></td>
-			<td />
-		</tr>
+		<xsl:call-template name="tr-parent-name"/>
 		<xsl:for-each select="*">
-			<tr>
-				<td><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-				<td><xsl:value-of select="." /></td>
-				<td><xsl:value-of select="@unit" /></td>
-			</tr>
+			<xsl:call-template name="tr-grandparent-value-units"/>
 		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:offset">
-		<tr>
-			<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-			<td><xsl:value-of select="@name" /></td>
-			<td />
-		</tr>
+		<xsl:call-template name="tr-parent-name"/>
 		<xsl:for-each select="*">
-			<tr>
-				<td><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-				<td><xsl:value-of select="." /></td>
-				<td><xsl:value-of select="@unit" /></td>
-			</tr>
+			<xsl:call-template name="tr-grandparent-value-units"/>
 		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:beam_center">
-		<tr>
-			<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-			<td><xsl:value-of select="@name" /></td>
-			<td />
-		</tr>
+		<xsl:call-template name="tr-parent-name"/>
 		<xsl:for-each select="*">
-			<tr>
-				<td><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-				<td><xsl:value-of select="." /></td>
-				<td><xsl:value-of select="@unit" /></td>
-			</tr>
+			<xsl:call-template name="tr-grandparent-value-units"/>
 		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:pixel_size">
-		<tr>
-			<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-			<td><xsl:value-of select="@name" /></td>
-			<td />
-		</tr>
+		<xsl:call-template name="tr-parent-name"/>
 		<xsl:for-each select="*">
-			<tr>
-				<td><xsl:value-of select="name(../..)" />_<xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-				<td><xsl:value-of select="." /></td>
-				<td><xsl:value-of select="@unit" /></td>
-			</tr>
+			<xsl:call-template name="tr-grandparent-value-units"/>
 		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="cs:term">
 		<tr>
 			<td><xsl:value-of select="@name" /></td>
-			<td><xsl:value-of select="." /></td>
-			<td><xsl:value-of select="@unit" /></td>
+			<xsl:call-template name="td-value"/>
+			<xsl:call-template name="td-unit"/>
 		</tr>
 	</xsl:template>
 
 	<xsl:template match="cs:SASprocessnote" mode="standard">
 		<tr>
 			<td><xsl:value-of select="name()" /></td>
-			<td><xsl:value-of select="." /></td>
+			<xsl:call-template name="td-value"/>
 			<td><xsl:value-of select="@name" /></td>
 		</tr>
 	</xsl:template>
@@ -474,7 +402,7 @@ Usage:
 			<xsl:for-each select="*">
 				<tr>
 					<td><xsl:value-of select="name()" /></td>
-					<td><xsl:value-of select="." /></td>
+					<xsl:call-template name="td-value"/>
 					<td><xsl:value-of select="@name" /></td>
 				</tr>
 			</xsl:for-each>
@@ -499,8 +427,8 @@ Usage:
 				</xsl:when>
 				<xsl:otherwise>
 					<tr>
-						<td><xsl:value-of select="name(..)" />_<xsl:value-of select="name()" /></td>
-						<td><xsl:value-of select="." /></td>
+						<xsl:call-template name="td-grandparent"/>
+						<xsl:call-template name="td-value"/>
 						<td />
 					</tr>
 				</xsl:otherwise>
@@ -512,10 +440,65 @@ Usage:
 		<xsl:if test="@name!=''">
 			<tr>
 				<td><xsl:value-of select="name()" /></td>
-				<td><xsl:value-of select="." /></td>
+				<xsl:call-template name="td-value"/>
 				<td><xsl:value-of select="@name" /></td>
 			</tr>
 		</xsl:if>
+	</xsl:template>
+	
+	<!-- =============== convenience routines =============== -->
+	
+	<xsl:template name="tr-parent-value-units">
+		<tr>
+			<xsl:call-template name="td-parent"/>
+			<xsl:call-template name="td-value"/>
+			<xsl:call-template name="td-unit"/>
+		</tr>
+	</xsl:template>
+	
+	<xsl:template name="tr-grandparent-value-units">
+		<tr>
+			<xsl:call-template name="td-grandparent"/>
+			<xsl:call-template name="td-value"/>
+			<xsl:call-template name="td-unit"/>
+		</tr>
+	</xsl:template>
+	
+	<xsl:template name="tr-parent-name">
+		<tr>
+			<xsl:call-template name="td-parent"/>
+			<td><xsl:value-of select="@name" /></td>
+			<td />
+		</tr>
+	</xsl:template>
+	
+	<xsl:template name="td-value">
+		<td><xsl:value-of select="." /></td>
+	</xsl:template>
+	
+	<xsl:template name="td-parent">
+		<td><xsl:value-of select="name(..)" 
+			/>_<xsl:value-of select="name()" 
+			/></td>
+	</xsl:template>
+	
+	<xsl:template name="td-grandparent">
+		<td><xsl:value-of select="name(../..)" 
+			/>_<xsl:value-of select="name(..)" 
+			/>_<xsl:value-of select="name()" 
+			/></td>
+	</xsl:template>
+	
+	<xsl:template name="td-greatgrandparent">
+		<td><xsl:value-of select="name(../../..)" 
+			/>_<xsl:value-of select="name(../..)" 
+			/>_<xsl:value-of select="name(..)" 
+			/>_<xsl:value-of select="name()" 
+			/></td>
+	</xsl:template>
+	
+	<xsl:template name="td-unit">
+		<td><xsl:value-of select="@unit" /></td>
 	</xsl:template>
 
 </xsl:stylesheet>
