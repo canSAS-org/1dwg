@@ -64,13 +64,13 @@ You may need ...
 		cd Gnosis_Utils-1.2.2/
 		python setup.py install_all
 
-Alternatively, it might be simpler to install from the PyPI
+Alternatively, it *is* much simpler to install (or update) from the PyPI
 repository (http://pypi.python.org/pypi/Gnosis%20Utilities):
 
 	.. code-block:: guess
 		:linenos:
 		
-		easy_install -U gnosis_utils
+		easy_install -U gnosis
 
 .. index:: Python file; python-test.py
 
