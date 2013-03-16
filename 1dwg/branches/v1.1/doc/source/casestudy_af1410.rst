@@ -10,8 +10,8 @@ Case Study: AF1410 Steel
 
 .. note:: This case study has not yet been written up. 
 
-data file: :download:`cs_af1410.xml<../../examples/af1410/cs_af1410.xml>`
-	http://www.cansas.org/svn/1dwg/trunk/examples/af1410/cs_af1410.xml
+data file: :download:`cs_af1410.xml<../../examples/cs_af1410.xml>`
+	http://www.cansas.org/svn/1dwg/trunk/examples/cs_af1410.xml
 
 The data file contains multiple :ref:`SASentry` elements that pertain to different samples
 treated at different conditions in a time series.  Each *SASentry* element contains two

@@ -34,33 +34,20 @@ The only :index:`metadata`
 available for this data (without resorting to digging through piles
 of old notebooks) was obtained from the headers of two files: 
 
-	*COLLAGEN.ASC*
-		raw data file
-		
-		http://www.cansas.org/trac/browser/1dwg/trunk/examples/collagen/COLLAGEN.ASC
-
-		.. rubric:: The header lines from *collagen.asc*:
-		
-		.. code-block:: text
-			:linenos:
-			
-			Sep 19 1994     01:41:02 am     Elt: 00090 Seconds 
-			ID: No spectrum identifier defined
-			Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls
-
-
-	*collagen.saxs*
-		raw data file
-		
-		http://www.cansas.org/trac/browser/1dwg/trunk/examples/collagen/collagen.saxs
+	.. rubric:: The header lines from *COLLAGEN.ASC* (:download:`download<examples/COLLAGEN.ASC>`):
 	
-		.. rubric:: The header lines from *collagen.saxs*:
-		
-		.. code-block:: text
-			:linenos:
-			
-			dry chick collagen, d = 673 A
-			6531 eV, X6B
+	.. literalinclude:: examples/COLLAGEN.ASC
+		:lines: 1-3
+		:linenos:
+
+
+	.. rubric:: The header lines from *collagen.saxs* (:download:`download<examples/collagen.saxs>`):
+
+	.. code-block:: text
+		:linenos:
+
+		dry chick collagen, d = 673 A
+		6531 eV, X6B
 
 There is enough information to fulfill the minimum 
 requirements of the 1D standard file format and
@@ -77,8 +64,8 @@ Make the basic XML file
 ------------------------------
 
 It is easiest to copy a template rather than start from an empty file. Copy the
-:download:`cansas1d.xml <../../cansas1d.xml>` file 
-(http://www.cansas.org/svn/1dwg/trunk/cansas1d.xml)
+:download:`cansas1d.xml <../../examples/cansas1d.xml>` file 
+(http://www.cansas.org/svn/1dwg/trunk/examples/cansas1d.xml)
 into your working directory and rename it to 
 *collagen.xml*.
 

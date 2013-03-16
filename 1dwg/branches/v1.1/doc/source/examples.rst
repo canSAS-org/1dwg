@@ -61,8 +61,8 @@ When the *data-simple.xml* is opened in a browser (from a directory containing b
 *cansas1d.xml*
 ---------------------
 
-The example data file :download:`cansas1d.xml<../../cansas1d.xml>` 
-(http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xml)
+The example data file :download:`cansas1d.xml<../../examples/cansas1d.xml>` 
+(http://www.cansas.org/trac/browser/1dwg/trunk/examples/cansas1d.xml)
 shows examples
 of most of the elements of the cansas1d:1.1 standard.  Only a single data 
 point has been provided here to more clearly show the other structure
@@ -70,7 +70,7 @@ in the data file.
 
 .. index:: XML; cansas1d:1.1 data file
 
-.. literalinclude:: ../../cansas1d.xml
+.. literalinclude:: ../../examples/cansas1d.xml
    :language: xml
    :linenos:
 
@@ -120,17 +120,17 @@ concatenate all of the *Idata*.
    :linenos:
 
 
-.. index:: XSLT file; cansasxml-html.xsl
+.. index:: XSLT file; cansas1d.xsl
 
-.. _cansasxml-html.xsl:
+.. _cansas1d.xsl:
 
-*cansasxml-html.xsl*
+*cansas1d.xsl*
 ---------------------
 
-.. index:: XML Stylesheet; cansasxml-html.xsl
+.. index:: XML Stylesheet; cansas1d.xsl
 
-The :download:`cansasxml-html.xsl <../../cansas1d.xsl>`  
-(at almost 600 lines, it is too large to print here)
+The :download:`cansas1d.xsl <../../examples/cansas1d.xsl>`  
+(at about 500 lines, it is too large to print here)
 is the standard XSL stylesheet for cansas1d:1.1 files.
 It shows all available :ref:`SASdata` and :index:`metadata`,
 separated by the different :ref:`SASentry` blocks.
