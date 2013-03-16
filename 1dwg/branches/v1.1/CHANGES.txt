@@ -25,6 +25,8 @@ CHANGES
 	2013-03-15, identified that v1.1 is a branch, not yet ready for release
 	
 	* cleanup XSLT and reduce to just one XSLT
+	* clean up the examples, remove unnecessary material
+	* remove the mediawiki directory, we are done with it now
 
 :v1.0:
 	2009-05-12, tagged version canSAS1d/1.0

@@ -10,16 +10,15 @@
 
 ##### GLOBALS #####################################################################
 
-$tool['titleStr'] = "canSAS1d/1.0 XML formatter";
+$tool['titleStr'] = "cansas1d:1.1 XML formatter";
 $tool['svnid'] = "\$Id$";
 $tool['email'] = "jemian@anl.gov";
 $tool['postMethod'] = 'POST';
 $tool['postAction'] = 'index.php';
 $tool['surveillance_file'] = './www/surveillance.xml';	// chmod 666
-$tool['meta,desc'] = "Formats SAS data in the cansas1d/1.0 XML data format.";
+$tool['meta,desc'] = "Formats SAS data in the cansas1d:1.1 XML data format.";
 $tool['meta,keys'] = "small-angle scattering, data format";
-$tool['canSAS_URL'] = "http://www.smallangles.net/"
-	. "wgwiki/index.php/cansas1d_documentation";
+$tool['canSAS_URL'] = "http://www.cansas.org/";
 
 # here are the form variables and descriptions
 $vars['title'] = 'Title';
@@ -177,7 +176,7 @@ function buildHtmlPage($post) {
 	);
 	$a = addElement($doc, $p, 'a');
 	addAttribute($a, 'href', $tool['canSAS_URL']);
-	addText($doc, $a, 'cansas1d/1.0 standard');
+	addText($doc, $a, 'cansas1d:1.1 standard');
 	addText($doc, $p, 
 		'.  The WWW form returns the data in the XML format.'
 	);
@@ -237,16 +236,16 @@ function prepare_cansasxml($post) {
 	$doc = new DOMDocument('1.0', 'UTF-8');
 
 	$xslt = $doc->createProcessingInstruction('xml-stylesheet', 
-		'type="text/xsl" href="cansasxml-html.xsl"');
+		'type="text/xsl" href="cansas1d.xsl"');
 	$doc->appendChild($xslt);
 
-	$root = $doc->createElementNS('cansas1d/1.0','SASroot');
+	$root = $doc->createElementNS('cansas1d:1.1','SASroot');
 	$doc->appendChild($root);
 	addComment($doc, $root, 'canSAS XML created by ' . $tool['titleStr']);
 
 	$xsi_url = 'http://www.w3.org/2001/XMLSchema-instance';
-	$schemaLocation = 'cansas1d/1.0 '
-	   . 'http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd';
+	$schemaLocation = 'cansas1d:1.1 '
+	   . 'http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd';
 	addAttribute($root, 'version', '1.0');
 	addAttribute($root, 'xmlns:xsi', $xsi_url);
 	addAttribute($root, 'xsi:schemaLocation', $schemaLocation);
