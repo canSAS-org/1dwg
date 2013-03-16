@@ -31,6 +31,7 @@ for exchanging and merging of data from different synchrotron, laboratory
 and neutron facilities.
 
 The canonical name for this format is *cansas1d:1.1*.
+
 This  work is the initiative of the canSAS 1D Data Formats Working Group, 
 established at the canSAS-V workshop, NIST, Gaithersburg, Maryland, 
 USA from October 29th to 31st 2007, which produced revision 1.0.
