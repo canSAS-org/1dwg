@@ -43,7 +43,7 @@ Name                   Type        Occurrence   Description                     
                                                 (Give them the same 
                                                 *{short-Run-identifier}*.)
 :ref:`{any}`           container   [0..inf]     Any element(s) not defined in the           *xmlns:{foreign-prefix}={foreign-namespace}*
-                                                cansas1d/1.1 standard can be placed at 
+                                                cansas1d:1.1 standard can be placed at 
                                                 this point.
 :ref:`SASdata`         container   [1..inf]     Reduced 1-D SAS data for this *SASentry*.   *name={short-Run-identifier}*
                                                 Use multiple *SASdata* elements to 
@@ -53,7 +53,7 @@ Name                   Type        Occurrence   Description                     
                                                 elements with *Run* elements. 
                                                 (Give them the same name.)
 :ref:`{any}`           container   [0..inf]     Any element(s) not defined in the           *xmlns:{foreign-prefix}={foreign-namespace}*
-                                                cansas1d/1.1 standard can be placed at 
+                                                cansas1d:1.1 standard can be placed at 
                                                 this point.
 :ref:`SASsample`       container   [1..1]       Description of the sample.                  *name={short-SASsample-identifier}*
 :ref:`SASinstrument`   container   [1..1]       Description of the instrument.

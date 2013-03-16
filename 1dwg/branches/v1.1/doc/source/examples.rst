@@ -10,14 +10,14 @@ Various topics have been considered or presented in considering this standard.
 Some are described below.
 
 .. index::
-	single: XML; cansas1d/1.1 data file
+	single: XML; cansas1d:1.1 data file
 
 .. _example.xml.data.files:
 
 Example XML Data Files
 ==================================
 
-This section presents two examples of XML Data Files adhering to the cansas1d/1.1 standard.
+This section presents two examples of XML Data Files adhering to the cansas1d:1.1 standard.
 
 The first file (:ref:`data-simple.xml`) 
 is a basic example and the second file (:ref:`cansas1d.xml`) 
@@ -32,7 +32,7 @@ In each, though, most of the data has been removed to clarify the structure.
 ---------------------
 
 The example data file :download:`data-simple.xml <examples/data-simple.xml>`
-shows just the basic elements of the cansas1d/1.1 standard.  Only a 
+shows just the basic elements of the cansas1d:1.1 standard.  Only a 
 single data point has been shown to more clearly show the other structure.
 The data file is actually an excerpt from the *bimodal-test1.xml*
 (http://www.cansas.org/trac/browser/1dwg/trunk/bimodal-test1.xml)
@@ -64,11 +64,11 @@ When the *data-simple.xml* is opened in a browser (from a directory containing b
 The example data file :download:`cansas1d.xml<../../cansas1d.xml>` 
 (http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xml)
 shows examples
-of most of the elements of the cansas1d/1.1 standard.  Only a single data 
+of most of the elements of the cansas1d:1.1 standard.  Only a single data 
 point has been provided here to more clearly show the other structure
 in the data file.
 
-.. index:: XML; cansas1d/1.1 data file
+.. index:: XML; cansas1d:1.1 data file
 
 .. literalinclude:: ../../cansas1d.xml
    :language: xml
@@ -88,7 +88,7 @@ Example XML Stylesheets
 ==================================
 
 This section presents examples of XML Stylesheets
-useful for the cansas1d/1.1 standard.  
+useful for the cansas1d:1.1 standard.  
 XML Stylesheets (XSLT) 
 are used to transform XML documents into 
 other documents such as XML documents, xhtml documents, or even ASCII text.
@@ -104,7 +104,7 @@ from XML files.
 ---------------------
 
 The *ascii3col.xsl* stylesheet displays
-all the *Idata* blocks in a cansas1d/1.1 file
+all the *Idata* blocks in a cansas1d:1.1 file
 in 3-column ASCII form.  Be careful using this stylesheet
 on files with multiple *SASdata* or
 *SASentry* blocks since this stylesheet
@@ -129,8 +129,8 @@ concatenate all of the *Idata*.
 
 .. index:: XML Stylesheet; cansasxml-html.xsl
 
-The :download:`cansasxml-html.xsl <../../cansasxml-html.xsl>`  
+The :download:`cansasxml-html.xsl <../../cansas1d.xsl>`  
 (at almost 600 lines, it is too large to print here)
-is the standard XSL stylesheet for cansas1d/1.1 files.
+is the standard XSL stylesheet for cansas1d:1.1 files.
 It shows all available :ref:`SASdata` and :index:`metadata`,
 separated by the different :ref:`SASentry` blocks.

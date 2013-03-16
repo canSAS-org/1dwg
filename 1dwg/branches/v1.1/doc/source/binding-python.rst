@@ -8,12 +8,12 @@
 Python
 ================
 
-Specific support for the cansas1d/1.1 data standard in Python (http://danse.us/trac/sans)
+Specific support for the cansas1d:1.1 data standard in Python (http://danse.us/trac/sans)
 is being developed by NIST/NCNR (http://www.ncnr.nist.gov)
 as part of their contribution to the 
 DANSE project (http://wiki.cacr.caltech.edu/danse).
 
-Here are some extremeley terse instructions (circa 2008) to get you started on a UNIX or Linux system:
+Here are some extremely terse instructions (circa 2008) to get you started on a UNIX or Linux system:
 
 .. code-block:: guess
 	:linenos:
@@ -179,7 +179,7 @@ Here is the Python code (without all that output) (called *python-test.py*):
 (http://www.rexx.com/~dkuhlman/, http://www.rexx.com/~dkuhlman/generateDS.html) 
 can build a binding (map the structure of the XML file directly into a 
 Python data structure) for Python from an XML Schema.
-However, the cansas1d/1.1 XML schema (cansas1d.xsd) does not seem to 
+However, the cansas1d:1.1 XML schema (cansas1d.xsd) does not seem to 
 fit the model.It seems, for now, that *generateDS-1.12a* 
 fails on a certain *annotate* line.
 

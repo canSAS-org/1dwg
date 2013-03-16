@@ -6,9 +6,9 @@
 Tutorial
 ================
 
-.. index:: cansas1d/1.1 standard
+.. index:: cansas1d:1.1 standard
 
-This is a tutorial for *cansas1d/1.1*,
+This is a tutorial for *cansas1d:1.1*,
 the canSAS standard format for storing small-angle
 scattering data in XML files.
 

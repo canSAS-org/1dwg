@@ -49,7 +49,7 @@ See the :ref:`IgorPro Binding Usage Notes` section below.
 
 :purpose:
 	Implement an IgorPro file reader to read the canSAS 1-D reduced SAS
-	data in XML files that adhere to the cansas1d/1.1 standard.
+	data in XML files that adhere to the cansas1d:1.1 standard.
 
 :URL:
 	:TRAC:
@@ -174,7 +174,7 @@ What it does
 
 Given an XML file, **CS_XmlReader(fileName)** attempts
 to open the file and read its contents as if it conformed to the canSAS XML standard
-for reduced 1-D SAS data (cansas1d/1.1, also known as SASXML). If the file is found to be
+for reduced 1-D SAS data (cansas1d:1.1, also known as SASXML). If the file is found to be
 non-conforming, then *CS_XmlReader(fileName)* returns
 with an error code (show below), otherwise it returns *0*, indicating *no error*.
 All data read by this code is left in the
@@ -221,7 +221,7 @@ subfolder.  When only one *SASdata* is found, the
 	row `i`   key: `metadata[i][0]`                             value: `metadata[i][1]`
 	=======   ===============================================   =====================================================================
 	0         xmlFile                                           *cs_collagen_full.xml*
-	1         namespace                                         ``cansas1d/1.1``
+	1         namespace                                         ``cansas1d:1.1``
 	2         *Title*                                           ``dry chick collagen, d = 673 A, 6531 eV, X6B``
 	3         *Run*                                             ``Sep 19 1994 01:41:02 am``
 	4         *SASsample/ID*                                    ``dry chick collagen, d = 673 A, 6531 eV, X6B``
@@ -251,7 +251,7 @@ subfolder.  When only one *SASdata* is found, the
 	given XML file conforms to the required :ref:`XML file header <XML.header>`.
 	If you take a minimalist view (*a.k.a.* a shortcut), it is likely that your file may be
 	refused by this and other readers. Pay particular attention to UPPER and lower case in
-	the text **cansas1d/1.1** as this is a **key component** used to index through the XML file.
+	the text **cansas1d:1.1** as this is a **key component** used to index through the XML file.
 
 **XML stylesheet processing-instruction is not generated**
 	The :ref:`XMLutils XOP` package does not provide a method to insert the prescribed 
@@ -303,7 +303,7 @@ Here is an example running the test routine *prjTest_cansas1d()*.
 	    Completed in 0.0133704 seconds
 	root element is not SASroot with valid canSAS namespace
 	    Completed in 0.0134224 seconds
-	bimodal-test1.xml 		 identified as: cansas1d/1.1 XML file
+	bimodal-test1.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: SAS bimodal test1 
 	    Completed in 0.068654 seconds
 	root element is not SASroot with valid canSAS namespace
@@ -312,35 +312,35 @@ Here is an example running the test routine *prjTest_cansas1d()*.
 	    Completed in 0.0123102 seconds
 	root element is not SASroot with valid canSAS namespace
 	    Completed in 0.00930118 seconds
-	ISIS_SANS_Example.xml 		 identified as: cansas1d/1.1 XML file
+	ISIS_SANS_Example.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: standard can 12mm SANS 
 	    Completed in 0.0410387 seconds
-	W1W2.xml 		 identified as: cansas1d/1.1 XML file
+	W1W2.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: standard can 12mm SANS 
 	    Title: TK49 standard 12mm SANS 
 	    Completed in 0.0669074 seconds
-	ill_sasxml_example.xml 		 identified as: cansas1d/1.1 XML file
+	ill_sasxml_example.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: ILL-D22 example: 7D1 2mm 
 	    Completed in 0.0332752 seconds
-	isis_sasxml_example.xml 		 identified as: cansas1d/1.1 XML file
+	isis_sasxml_example.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: LOQ TK49 Standard 12mm C9 
 	    Completed in 0.0388868 seconds
-	r586.xml 		 identified as: cansas1d/1.1 XML file
+	r586.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: ILL-D11 example1: 2A 5mM 0%D2O 
 	    Completed in 0.0213737 seconds
-	r597.xml 		 identified as: cansas1d/1.1 XML file
+	r597.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: ILL-D11 example2: 2A 5mM 0%D2O 
 	    Completed in 0.0221894 seconds
-	xg009036_001.xml 		 identified as: cansas1d/1.1 XML file
+	xg009036_001.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: det corrn 5m 
 	    Completed in 0.0286721 seconds
-	cs_collagen.xml 		 identified as: cansas1d/1.1 XML file
+	cs_collagen.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: dry chick collagen, d = 673 A, 6531 eV, X6B 
 	    Completed in 0.0296247 seconds
-	cs_collagen_full.xml 		 identified as: cansas1d/1.1 XML file
+	cs_collagen_full.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: dry chick collagen, d = 673 A, 6531 eV, X6B 
 	    Completed in 0.0751836 seconds
-	cs_af1410.xml 		 identified as: cansas1d/1.1 XML file
+	cs_af1410.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: AF1410-10 (AF1410 steel aged 10 h) 
 	    Title: AF1410-8h (AF1410 steel aged 8 h) 
 	    Title: AF1410-qu (AF1410 steel aged 0.25 h) 
@@ -355,20 +355,20 @@ Here is an example running the test routine *prjTest_cansas1d()*.
 	XMLopenfile: File(path) to open doesn't exist, or file can't be opened
 	cansas1d-template.xml either not found or cannot be opened for reading
 	    Completed in 0.00892823 seconds
-	1998spheres.xml 		 identified as: cansas1d/1.1 XML file
+	1998spheres.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: 255 nm PS spheres 
 	    Title: 460 nm PS spheres 
 	    Completed in 2.87649 seconds
 	XMLopenfile: File(path) to open doesn't exist, or file can't be opened
 	does-not-exist-file.xml either not found or cannot be opened for reading
 	    Completed in 0.00404549 seconds
-	cs_rr_polymers.xml 		 identified as: cansas1d/1.1 XML file
+	cs_rr_polymers.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: Round Robin Polymer A 
 	    Title: Round Robin Polymer B 
 	    Title: Round Robin Polymer C 
 	    Title: Round Robin Polymer D 
 	    Completed in 0.0943477 seconds
-	s81-polyurea.xml 		 identified as: cansas1d/1.1 XML file
+	s81-polyurea.xml 		 identified as: cansas1d:1.1 XML file
 	    Title: S7 Neat Polyurea 
 	    Completed in 0.0361616 seconds
 

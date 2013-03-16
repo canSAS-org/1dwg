@@ -28,7 +28,7 @@ should contain both the primary data of :math:`I(Q)` and also any
 other descriptive information (metadata) about the sample, 
 measurement, instrument, processing, or analysis steps.
 
-The cansas1d/1.1 standard meets the objectives for a 1D standard, 
+The cansas1d:1.1 standard meets the objectives for a 1D standard, 
 incorporating metadata about the measurement, parameters and 
 results of processing or analysis steps. Even multiple measurements 
 (related or unrelated) may be included within a single XML file.

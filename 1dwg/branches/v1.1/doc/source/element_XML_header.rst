@@ -12,7 +12,7 @@ parent:
 	None.  This is the start of the XML file.
 
 ..
-	.. rubric:: Required header for cansas1d/1.1 XML files
+	.. rubric:: Required header for cansas1d:1.1 XML files
 
 .. code-block:: guess
 	:linenos:

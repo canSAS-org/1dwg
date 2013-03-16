@@ -1,6 +1,6 @@
 .. $Id$
 
-.. index:: ! cansas1d/1.1 standard
+.. index:: ! cansas1d:1.1 standard
 
 .. _specification:
 
@@ -14,7 +14,7 @@ or multiple experiments. All types of relevant data (:math:`I(Q)`,
 metadata) are described for each experiment. More details are provided 
 below.
 
-This is the definitive specification of *cansas1d/1.1*,
+This is the definitive specification of *cansas1d:1.1*,
 the canSAS standard format for storing small-angle
 scattering data in XML files.
 The standard is defined using the rules of XML Schema
@@ -23,15 +23,15 @@ The standard is defined using the rules of XML Schema
 .. index:: ! XML; well-formed
 
 .. index::
-	single: cansas1d/1.1 standard
+	single: cansas1d:1.1 standard
 	single: validation
 
-Note that the cansas1d/1.1 XML data files must adhere to the 
+Note that the cansas1d:1.1 XML data files must adhere to the 
 XML rules which includes being well-formed
 (including the use of closing tags).  [#]_
 Files that can be validated  against :ref:`cansas1d.xsd`
 (http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xsd)
-are deemed to be valid cansas1d/1.1 data files.
+are deemed to be valid cansas1d:1.1 data files.
 
 .. [#] For example, see http://www.w3schools.com/xmL/xml_syntax.asp
         for an explanation of the XML syntax.

@@ -102,7 +102,7 @@ Name                   Type        Occurrence   Description                     
                                                 affected by the beam stop penumbra.
                                                 [#optional]_  [#shadow]_ 
 :ref:`{any}`           container   [0..inf]     Any element(s) not defined in the           *xmlns:{foreign-prefix}={foreign-namespace}*
-                                                cansas1d/1.1 standard can be placed at 
+                                                cansas1d:1.1 standard can be placed at 
                                                 this point.
 ====================== =========== ============ =========================================== ====================================
 
