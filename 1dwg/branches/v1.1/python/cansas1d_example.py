@@ -1,15 +1,22 @@
 #!/usr/bin/env python
 ''' 
-http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_Python
-
-Example use of Gnosis_utils to read cansas1d/1.0 file
+Example use of Gnosis_utils to read cansas1d:1.1 file
 '''
 
-# ../bimodal-test1.xml
-# ../s81-polyurea.xml
 
+########### SVN repository information ###################
+# $Date: 2011-08-05 12:25:16 -0500 (Fri, 05 Aug 2011) $
+# $Author: jemian $
+# $Revision: 603 $
+# $URL: https://subversion.xray.aps.anl.gov/bcdaext/epicsdf/src/epicsdf.py $
+# $Id: epicsdf.py 603 2011-08-05 17:25:16Z jemian $
+########### SVN repository information ###################
+
+
+import os
 import sys
-import gnosis.xml.objectify
+import gnosis.xml.objectify     # easy_install -U gnosis
+
 
 def indra_metadata(SASentry):
     '''print metadata from APS/USAXS Indra package'''
@@ -21,13 +28,9 @@ def indra_metadata(SASentry):
                 '''multiple invocations of the usaxs element'''
                 for item in dir(index):
                     '''discover the element names'''
-                    if (item[0] == '_'):    # sift out data structure management terms
+                    if item[0] == '_':    # sift out data structure management terms
                         continue
-                    if (item == 'PCDATA'):  # sift this out
-                        continue
-                    if (item == 'name'):    # sift out the "name" attribute
-                        continue
-                    if (item == 'xmlns'):   # sift out the "xmlns" attribute
+                    if item in ('PCDATA', 'name', 'xmlns'):  # sift this out
                         continue
                     s = ''
                     s += '('+index.xmlns+') '
@@ -35,6 +38,7 @@ def indra_metadata(SASentry):
                     s += item + ': '
                     s += index.__dict__[item].PCDATA
                     print s
+
 
 def print_SASdata(sd):
     '''print the contents of the SASdata element'''
@@ -49,6 +53,7 @@ def print_SASdata(sd):
     for Idata in sd.Idata:
         print Idata.Q.PCDATA,  Idata.I.PCDATA,  Idata.Idev.PCDATA
 
+
 def print_optional_item(title, parent, item):
     ''' this item is optional and may not be present'''
     if item in parent.__dict__:
@@ -60,25 +65,37 @@ def print_optional_item(title, parent, item):
             s += ' (' + obj.unit + ')'
         print s
 
-xmlFile = sys.argv[1]
-print '#---------------------------------------------------'
-print 'XML:', xmlFile
-# read in the XML file
-sasxml = gnosis.xml.objectify.XML_Objectify(xmlFile).make_instance()
-# might check it here to make sure it is a "cansas1d/1.0" file
-print 'namespace:', sasxml.xmlns
-# might check it here to make sure it is version "1.0"
-print 'version:', sasxml.version
-SASentry = sasxml.SASentry                  # just the first one
-print 'title:', SASentry.Title.PCDATA
-print 'run:', SASentry.Run.PCDATA
-print_optional_item('instrument', SASentry.SASinstrument, 'name')
-indra_metadata(SASentry)        # foreign XML elements from APS/USAXS
-print_optional_item('sample ID', SASentry.SASsample, 'ID')
-print_optional_item('sample thickness', SASentry.SASsample, 'thickness')
-print_optional_item('sample transmission', SASentry.SASsample, 'transmission')
-if 'position' in SASentry.SASsample.__dict__:
-    print_optional_item('sample X', SASentry.SASsample.position, 'x')
-    print_optional_item('sample Y', SASentry.SASsample.position, 'y')
-print_SASdata(SASentry.SASdata)
 
+def demo(xmlFile):
+    print '#---------------------------------------------------'
+    print 'XML:', xmlFile
+    # read in the XML file
+    sasxml = gnosis.xml.objectify.XML_Objectify(xmlFile).make_instance()
+    if sasxml.xmlns != 'urn:cansas1d:1.1':
+        print "Not cansas1d:1.1 file (found: %s)" % sasxml.xmlns
+        return
+    print 'namespace:', sasxml.xmlns
+    if sasxml.version != '1.1':
+        print "Not v1.1 file (found: %s)" % sasxml.version
+        return
+    print 'version:', sasxml.version
+    SASentry = sasxml.SASentry                  # just the first one
+    print 'title:', SASentry.Title.PCDATA
+    print 'run:', SASentry.Run.PCDATA
+    print_optional_item('instrument', SASentry.SASinstrument, 'name')
+    indra_metadata(SASentry)        # foreign XML elements from APS/USAXS
+    print_optional_item('sample ID', SASentry.SASsample, 'ID')
+    print_optional_item('sample thickness', SASentry.SASsample, 'thickness')
+    print_optional_item('sample transmission', SASentry.SASsample, 'transmission')
+    if 'position' in SASentry.SASsample.__dict__:
+        print_optional_item('sample X', SASentry.SASsample.position, 'x')
+        print_optional_item('sample Y', SASentry.SASsample.position, 'y')
+    print_SASdata(SASentry.SASdata)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        demo(sys.argv[1])
+    else:
+        demo(os.path.join('..', 'examples', 'bimodal-test1.xml'))
+        demo(os.path.join('..', 'examples', 's81-polyurea.xml'))
