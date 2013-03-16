@@ -30,7 +30,7 @@ analysis methods. Non-specialists will benefit from easily applicable methods
 for exchanging and merging of data from different synchrotron, laboratory 
 and neutron facilities.
 
-The canonical name for this format is *cansas1d/1.1*.
+The canonical name for this format is *cansas1d:1.1*.
 This  work is the initiative of the canSAS 1D Data Formats Working Group, 
 established at the canSAS-V workshop, NIST, Gaithersburg, Maryland, 
 USA from October 29th to 31st 2007, which produced revision 1.0.
@@ -57,6 +57,6 @@ This description is meant to inform the community how to arrange information wit
 the structure of
 the XML files and to define the spelling of the terms to be used. 
 However, should the information in this document and the 
-cansas1d/1.1 SAS XML Schema differ, 
+cansas1d:1.1 SAS XML Schema differ, 
 (http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xsd) 
 the XML Schema will be deemed to have the most correct description of the standard.

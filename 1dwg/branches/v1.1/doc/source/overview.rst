@@ -28,10 +28,10 @@ about the sample, measurement, instrument, processing, or analysis steps.
 Objective
 ================
 
-.. index:: ! cansas1d/1.1 standard
+.. index:: ! cansas1d:1.1 standard
 .. index:: canSAS; objective
 
-The cansas1d/1.1
+The cansas1d:1.1
 standard meets the objectives for a 1D standard, incorporating :index:`metadata`
 about the measurement, parameters and results of processing or analysis steps.
 Even multiple measurements (related or unrelated) may be included within a single XML
@@ -51,7 +51,7 @@ are described for each experiment. More details are provided below.
 .. index:: element; SASroot
 .. index:: element; SASentry
 
-The basic elements of the cansas1d/1.1 standard are shown in the following table.
+The basic elements of the cansas1d:1.1 standard are shown in the following table.
 After an XML header, the root element of the file is :ref:`SASroot`
 which contains one or more :ref:`SASentry`
 elements, each of which
@@ -59,7 +59,7 @@ describes a single experiment (data set, time-slice, step in a series, new sampl
 etc.). Details of the *SASentry* element are also shown in the
 next figure. 
 See the section :ref:`elements`
-for examples of cansas1d/1.1 XML data files. 
+for examples of cansas1d:1.1 XML data files. 
 Examples, Case Studies, and other background information
 are below. More discussion can be found on the
 canSAS 1D Data Formats Working Group page 
@@ -68,9 +68,9 @@ and its discussion page.
 (http://www.cansas.org/wgwiki/index.php/Talk:1D_Data_Formats_Working_Group)
 
 	.. figure:: ../../graphics/10-minimum.png
-	    :alt: cansas1d/1.1 standard block diagram, minimum elements
+	    :alt: cansas1d:1.1 standard block diagram, minimum elements
 	    
-	    block diagram of minimum elements required for *cansas1d/1.1* standard
+	    block diagram of minimum elements required for *cansas1d:1.1* standard
 
 :ref:`SASroot`
 	the root element of the file (after the XML header) 
@@ -82,16 +82,16 @@ and its discussion page.
 
 .. _XML.header:
 
-.. rubric:: Required header for cansas1d/1.1 XML files
+.. rubric:: Required header for cansas1d:1.1 XML files
 
 .. code-block:: xml
 	:linenos:
 	
 	<?xml version="1.0"?>
 	<SASroot version="1.1"
-		xmlns="cansas1d/1.1"
+		xmlns="cansas1d:1.1"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="cansas1d/1.1
+		xsi:schemaLocation="cansas1d:1.1
 		    http://www.cansas.org/svn/1dwg/trunk/cansas1d.xsd"
 		>
 
@@ -153,7 +153,7 @@ Rules
 	single: geometry; translation
 	single: geometry; orientation (rotation)
 
-#. A cansas1d/1.1 XML data files will adhere to the standard if it can
+#. A cansas1d:1.1 XML data files will adhere to the standard if it can
 	successfully :ref:`validate <validate>` against the established XML Schema.
 	 
 	http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xsd
@@ -246,7 +246,7 @@ Converting data into the XML format: *XmlWriter*
 
 The canSAS/xmlWriter (http://www.cansas.org/formats/tools/xmlWriter/)
 is a WWW form
-to translate three-column ASCII text data into the cansas1d/1.1 XML
+to translate three-column ASCII text data into the cansas1d:1.1 XML
 format. This form will help you in creating an XML file with all the required
 elements in the correct places. The form requests the SAS data of *Q*, *I*, and *Idev*
 (defined elsewhere on this page) and some basic :index:`metadata`
@@ -254,7 +254,7 @@ elements in the correct places. The form requests the SAS data of *Q*, *I*, and 
 
 Press the *Submit* button and you will receive a nicely
 formatted WWW page with the SAS data. If you then choose *View page source*
-(from one of your browser menus), you will see the raw XML of the cansas1d/1.1 XML format
+(from one of your browser menus), you will see the raw XML of the cansas1d:1.1 XML format
 and you can copy/paste this into an XML file. 
 
 The SAS data that you paste into the form box is likely to be copied directly from
@@ -321,11 +321,11 @@ stylesheet in the same directory will produce a
 WWW page with the SAS data and selected metadata.
 
 
-Suggestions for support software that write cansas1d/1.1 XML data files
+Suggestions for support software that write cansas1d:1.1 XML data files
 -------------------------------------------------------------------------
 
 .. index::
-	single: file; Writing cansas1d/1.1 files
+	single: file; Writing cansas1d:1.1 files
 	single: best practices
 
 Some common best practices have been identified in the list below.
@@ -400,7 +400,7 @@ Examples and Case Studies
 
 .. index:: XML file; cansas1d-template.xml
 
-:Test all the cansas1d/1.1 rules:
+:Test all the cansas1d:1.1 rules:
 	http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d-template.xml
 	
     The *cansas1d-template.xml* data file is used to test all the rules in the XML
@@ -454,7 +454,7 @@ Foreign Elements
 To allow for inclusion of elements that are not defined by the 
 *cansas1d.xsd* XML Schema, XML **foreign elements** 
 are permitted at select locations in the
-cansas1d/1.1 format. Please refer to the :ref:`XML Help` section 
+cansas1d:1.1 format. Please refer to the :ref:`XML Help` section 
 for more help with XML foreign elements.
 
 .. note::  **Need to make another example.**
@@ -482,7 +482,7 @@ elements.
 Support tools for Visualization & Analysis software
 =========================================================
 
-Support for importing cansas1d/1.1 files exists for 
+Support for importing cansas1d:1.1 files exists for 
 these languages and environments: 
 
 .. index::
@@ -514,7 +514,7 @@ these languages and environments:
 	Support for Microsoft Excel is provided through the default canSAS stylesheet,
 	*cansasxml-html.xsl* (http://www.cansas.org/svn/1dwg/trunk/cansasxml-html.xsl).
 	The ISIS **LOQ** instrument (http://www.isis.stfc.ac.uk/instruments/loq/loq2470.html)
-	has provided an excellent description of how to import data from the cansas1d/1.1 format into Excel.
+	has provided an excellent description of how to import data from the cansas1d:1.1 format into Excel.
 	Also note that the old WWW site (http://www.isis.rl.ac.uk/archive/LargeScale/LOQ/loq.htm)
 	may still be available. 
 
@@ -527,7 +527,7 @@ these languages and environments:
 	See the :ref:`PHP.binding` section.
 	
 	The *canSAS/xmlWriter* (http://www.cansas.org/xmlWriter/)
-	is implemented in PHP (http://www.php.net) and writes a cansas1d/1.1 data 
+	is implemented in PHP (http://www.php.net) and writes a cansas1d:1.1 data 
 	file given three-column ASCII data as input.  The code uses
 	*DomDocument* (http://www.php.net/DomDocument)
 	to build the XML file.  Look for the line beginning with::
@@ -556,7 +556,7 @@ these languages and environments:
 	:ref:`Example.XML.Stylesheets` section.
 
 
-Software repositories (for cansas1d/1.1 standard)
+Software repositories (for cansas1d:1.1 standard)
 =========================================================
 
 :TRAC:

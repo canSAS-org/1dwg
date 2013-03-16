@@ -19,7 +19,7 @@ other data (not defined by this canSAS standard) into the file.
 Name                   Type        Occurrence   Description                                 Attributes
 ====================== =========== ============ =========================================== ====================================
 *{any}*                container   [0..inf]     Any element(s) not defined in the           *xmlns:{foreign-prefix}={foreign-namespace}*
-                                                cansas1d/1.1 standard can be placed at 
+                                                cansas1d:1.1 standard can be placed at 
                                                 this point.
                                                 (These are called **foreign** elements.
                                                 It is suggested to associate foreign 

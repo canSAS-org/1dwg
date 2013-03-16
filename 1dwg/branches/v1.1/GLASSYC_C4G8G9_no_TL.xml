@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="cansasxml-extended-html.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="cansas1d.xsl" ?>
 <!-- NOTE: This file contains SAS data sets but no transmission spectra -->
 <!-- compare with: GLASSYC_C4G8G9_w_TL.xml -->
 <SASroot version="1.1"

@@ -8,7 +8,7 @@
 Java JAXB
 ================
 
-A Java binding for the cansas1d/1.1 standard has been auto-created using the JAXB tools
+A Java binding for the cansas1d:1.1 standard has been auto-created using the JAXB tools
 from Sun (see below for more on JAXB) using the *cansas1d.xsd* :index:`XML Schema`.
 Resources (JAR files and documentation) for the Java binding may be found in
 the canSAS subversion repository: http://www.cansas.org/svn/1dwg/tags/v1.0/java
@@ -60,7 +60,7 @@ source code (for developers)
 =======================================================
 
 An example (*Example_canSAS_Reader.java*) has been constructed
-to show how to read a cansas1d/1.1 XML file using the Java API. 
+to show how to read a cansas1d:1.1 XML file using the Java API. 
 
 http://www.cansas.org/trac/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java
 
@@ -158,7 +158,7 @@ http://www.cansas.org/svn/1dwg/trunk/doc/src/GetSASdata.java
 *java-test.xml*
 ------------------
 
-*java-test.xml* is an example cansas1d/1.1 XML data file
+*java-test.xml* is an example cansas1d:1.1 XML data file
 (derived from the standard test file for the *lake* 
 desmearing code).
 

@@ -6,7 +6,7 @@
 Elements of the canSAS XML standard
 ===================================================
 
-There are various elements (tag names) in the cansas1d/1.1 standard.
+There are various elements (tag names) in the cansas1d:1.1 standard.
 Each of these is described below.
 
 :Name:
