@@ -5,11 +5,11 @@ Example use of Gnosis_utils to read cansas1d:1.1 file
 
 
 ########### SVN repository information ###################
-# $Date: 2011-08-05 12:25:16 -0500 (Fri, 05 Aug 2011) $
-# $Author: jemian $
-# $Revision: 603 $
-# $URL: https://subversion.xray.aps.anl.gov/bcdaext/epicsdf/src/epicsdf.py $
-# $Id: epicsdf.py 603 2011-08-05 17:25:16Z jemian $
+# $Date$
+# $Author$
+# $Revision$
+# $URL$
+# $Id$
 ########### SVN repository information ###################
 
 
@@ -71,11 +71,13 @@ def demo(xmlFile):
     print 'XML:', xmlFile
     # read in the XML file
     sasxml = gnosis.xml.objectify.XML_Objectify(xmlFile).make_instance()
-    if sasxml.xmlns != 'urn:cansas1d:1.1':
+    # support reading v1.0 and v1.1 data files
+    # v1.1 schema is backwards compatible, mostly
+    if sasxml.xmlns not in ('urn:cansas1d:1.1', 'cansas1d/1.0'):
         print "Not cansas1d:1.1 file (found: %s)" % sasxml.xmlns
         return
     print 'namespace:', sasxml.xmlns
-    if sasxml.version != '1.1':
+    if sasxml.version not in ('1.1', '1.0'):
         print "Not v1.1 file (found: %s)" % sasxml.version
         return
     print 'version:', sasxml.version
