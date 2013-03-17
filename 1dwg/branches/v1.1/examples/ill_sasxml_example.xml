@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
-<SASroot version="1.0"
-    xmlns="cansas1d/1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-    >
+<?xml-stylesheet type="text/xsl" href="cansas1d.xsl" ?>
+<SASroot version="1.1"
+		xmlns="urn:cansas1d:1.1"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="urn:cansas1d:1.1 http://www.cansas.org/formats/1.1/cansas1d.xsd"
+		>
 	<SASentry>
 		<Title>ILL-D22 example: 7D1 2mm             </Title>
 		<Run>g009346.001</Run>
@@ -80,14 +80,18 @@
 			<Idata><Q unit="1/A">   5.340708E-02 </Q><I unit="1/cm">   0.000000E+00 </I><Idev unit="1/cm">   0.000000E+00 </Idev><Qdev unit="1/A">   5.366696E-03 </Qdev></Idata>
 		</SASdata>
 		<SASsample>
-			<sample_temperature>     0.0000 </sample_temperature>
-			<sample_offset_angle_deg>      0.000 </sample_offset_angle_deg>
-			<sample_x_mm>    8.00 </sample_x_mm>
-			<sample_y_mm>    0.00 </sample_y_mm>
-			<sample_transmission>   0.0000 </sample_transmission>
-			<sample_thickness_mm>    0.00 </sample_thickness_mm>
+			<ID>7D1 2mm</ID>
+			<thickness unit="mm">    0.00 </thickness>
+			<transmission>   0.0000 </transmission>
+			<temperature unit="C">     0.0000 </temperature>
+			<position>
+				<x unit="mm">    8.00 </x>
+				<y unit="mm">    0.00 </y>
+			</position>
+			<sample_offset_angle_deg xmlns="urn:ILL:D22">      0.000 </sample_offset_angle_deg>
 		</SASsample>
-		<SASinstrument name="D22" >
+		<SASinstrument>
+			<name>D22</name>
 			<SASsource>
 				<radiation>neutron</radiation>
 				<beam_size>
@@ -130,5 +134,6 @@
 			<SASprocessnote name="03"> Vbak  9343  0  2.23E+01 Empty Qtz Cell  V...  9342  0  2.23E+01 H2O 1mm          </SASprocessnote>
 			<SASprocessnote name="04"> Cd/E  9340  0  2.23E+01 Cd - Bgd                                                 </SASprocessnote>
 		</SASprocess>
+		<SASnote/>
 	</SASentry>
 </SASroot>
