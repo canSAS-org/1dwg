@@ -9,8 +9,8 @@
 // SVN ID:	$Id$
 // purpose:  implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files
 //			adheres to the cansas1d/1.0 standard
-// readme:    http://www.smallangles.net/wgwiki/index.php/cansas1d_binding_IgorPro
-// URL:	http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
+// readme:    http://www.cansas.org/formats/canSAS1d/1.1/doc/binding-igorpro.html
+// URL:	http://www.cansas.org/formats/canSAS1d/1.1/doc/
 //
 // requires:	IgorPro (http://www.wavemetrics.com/)
 //				XMLutils - XOP (http://www.igorexchange.com/project/XMLutils)
@@ -38,7 +38,7 @@ FUNCTION CS_XmlReader(fileName)
 	//		0 : successful
 	//		-1: XML file not found
 	//		-2: root element is not <SASroot> with valid canSAS namespace
-	//		-3: <SASroot> version  is not 1.0
+	//		-3: <SASroot> version  is not 1.0 or 1.1
 	//		-4: no <SASentry> elements
 	//		-5: XMLutils XOP needs upgrade
 	//		-6: XMLutils XOP not found
@@ -110,7 +110,8 @@ FUNCTION CS_XmlReader(fileName)
 	
 	STRSWITCH(ns)	
 	CASE "cansas1d/1.0":							// version 1.0 of the canSAS 1-D reduced SAS data standard
-		PRINT fileName, "\t\t identified as: cansas1d/1.0 XML file"
+	CASE "urn:cansas1d:1.1":						// version 1.1 of the canSAS 1-D reduced SAS data standard
+		PRINT fileName, "\t\t identified as: " + ns + " XML file"
 		returnCode = CS_1i_parseXml(fileID)			//  This is where the action happens!
 		IF (returnCode != 0)
 			IF (strlen(errorMsg) == 0)
@@ -149,8 +150,9 @@ FUNCTION/S CS_getDefaultNamespace(fileID)
 	VARIABLE fileID
 	STRING ns = "", thisLocation
 	VARIABLE i, item
-	MAKE/T/N=(1)/O nsList		// list of all possible namespaces
+	MAKE/T/N=(2)/O nsList		// list of all possible namespaces
 	nsList[0] = "cansas1d/1.0"		// first version of canSAS 1-D reduced SAS
+	nsList[1] = "urn:cansas1d:1.1"	// second version of canSAS 1-D reduced SAS
 
 	FOR (item = 0; item < DimSize(nsList, 0); item += 1)		// loop over all possible namespaces
 		XMLlistAttr(fileID, "/cs:SASroot", "cs="+nsList[item])
@@ -231,6 +233,17 @@ FUNCTION CS_1i_parseXml(fileID)
 				SetDataFolder ::			// back up to parent directory
 			ENDFOR
 		ENDIF
+
+		// TODO: process any transmission spectra
+		STRING/G ns = CS_getDefaultNamespace(fileID)
+		IF (cmpstr(ns,  "urn:cansas1d:1.1") == 0)
+			XmlListXpath(fileID, SASentryPath + "//cs:SAStransmission_spectrum", nsStr)
+			WAVE/T 	M_listXPath
+			print "Searching for SAStransmission_spectrum groups"
+			print DimSize(M_listXPath, 0) , M_listXPath
+			// ...
+		ENDIF
+		
 		KillWaves/Z M_listXPath
 	ENDFOR
 
@@ -709,26 +722,25 @@ FUNCTION prjTest_cansas1d()
 	// build a table of test data sets
 	fList = AddListItem("elmo.xml", 				fList, ";", Inf)		// non-existent file
 	fList = AddListItem("cansasXML.ipf", 			fList, ";", Inf)		// this file (should fail on XML parsing)
-	fList = AddListItem("book.xml", 				fList, ";", Inf)		// good XML example file but not canSAS, not even close
-	fList = AddListItem("bimodal-test1.xml", 		fList, ";", Inf)		// simple dataset
-	fList = AddListItem("bimodal-test2-vector.xml",	fList, ";", Inf)		// version 2.0 file (no standard yet)
-	fList = AddListItem("test.xml",					fList, ";", Inf)		// cs_collagen.xml with no namespace
-	fList = AddListItem("test2.xml", 				fList, ";", Inf)		// version 2.0 file (no standard yet)
-	fList = AddListItem("ISIS_SANS_Example.xml", 	fList, ";", Inf)		// from S. King, 2008-03-17
-	fList = AddListItem("W1W2.xml", 				fList, ";", Inf)		// from S. King, 2008-03-17
-	fList = AddListItem("ill_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
-	fList = AddListItem("isis_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
-	fList = AddListItem("r586.xml", 					fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
-	fList = AddListItem("r597.xml", 					fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
-	fList = AddListItem("xg009036_001.xml", 		fList, ";", Inf)		// foreign elements with other namespaces
-	fList = AddListItem("cs_collagen.xml", 			fList, ";", Inf)		// another simple dataset, bare minimum info
-	fList = AddListItem("cs_collagen_full.xml", 		fList, ";", Inf)		// more Q range than previous
-	fList = AddListItem("cs_af1410.xml", 			fList, ";", Inf)		// multiple SASentry and SASdata elements
-	fList = AddListItem("cansas1d-template.xml", 	fList, ";", Inf)		// multiple SASentry and SASdata elements
-	fList = AddListItem("1998spheres.xml", 			fList, ";", Inf)		// 2 SASentry, few thousand data points each
-	fList = AddListItem("does-not-exist-file.xml", 		fList, ";", Inf)		// non-existent file
-	fList = AddListItem("cs_rr_polymers.xml", 		fList, ";", Inf)		// Round Robin polymer samples from John Barnes @ NIST
-	fList = AddListItem("s81-polyurea.xml", 			fList, ";", Inf)		// polyurea from APS/USAXS/Indra (with extra metadata)
+	fList = AddListItem("../examples/book.xml", 				fList, ";", Inf)		// good XML example file but not canSAS, not even close
+	fList = AddListItem("../examples/bimodal-test1.xml", 		fList, ";", Inf)		// simple dataset
+	fList = AddListItem("../examples/testers/test3.xml",					fList, ";", Inf)		// no number provided for wavelength, others, too
+	fList = AddListItem("../examples/ISIS_SANS_Example.xml", 	fList, ";", Inf)		// from S. King, 2008-03-17
+	fList = AddListItem("../examples/W1W2.xml", 				fList, ";", Inf)		// from S. King, 2008-03-17
+	fList = AddListItem("../examples/ill_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("../examples/isis_sasxml_example.xml", 	fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("../examples/r586.xml", 					fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("../examples/r597.xml", 					fList, ";", Inf)		// from canSAS 2007 meeting, reformatted
+	fList = AddListItem("../examples/xg009036_001.xml", 		fList, ";", Inf)		// foreign elements with other namespaces
+	fList = AddListItem("../examples/cs_collagen.xml", 			fList, ";", Inf)		// another simple dataset, bare minimum info
+	fList = AddListItem("../examples/cs_collagen_full.xml", 		fList, ";", Inf)		// more Q range than previous
+	fList = AddListItem("../examples/cs_af1410.xml", 			fList, ";", Inf)		// multiple SASentry and SASdata elements
+	fList = AddListItem("../examples/cs_rr_polymers.xml", 		fList, ";", Inf)		// Round Robin polymer samples from John Barnes @ NIST
+	fList = AddListItem("../examples/cansas1d-template.xml", 	fList, ";", Inf)		// multiple SASentry and SASdata elements
+	fList = AddListItem("../examples/1998spheres.xml", 			fList, ";", Inf)		// 2 SASentry, few thousand data points each
+	fList = AddListItem("../examples/does-not-exist-file.xml", 		fList, ";", Inf)		// non-existent file
+	fList = AddListItem("../examples/s81-polyurea.xml", 			fList, ";", Inf)		// polyurea from APS/USAXS/Indra (with extra metadata)
+	fList = AddListItem("../examples/GLASSYC_C4G8G9_w_TL.xml", 			fList, ";", Inf)		// from S. King, with transmission spectra
 	
 	// try to load each data set in the table
 	FOR ( i = 0; i < ItemsInList(fList) ; i += 1 )
