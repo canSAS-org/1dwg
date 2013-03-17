@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
  <?xml-stylesheet type="text/xsl" href="cansas1d.xsl" ?>
 <SASroot version="1.1"
-		xmlns="urn:cansas1d:1.1"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="urn:cansas1d:1.1 http://www.cansas.org/formats/1.1/cansas1d.xsd"
-		>
+          xmlns="urn:cansas1d:1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="urn:cansas1d:1.1 http://www.cansas.org/formats/1.1/cansas1d.xsd"
+      >
 	<SASentry name="13444rear_1D_1.75_12.5">
 		<Title>PS3 0.025% Sample C_1mm_SANS/TRANS</Title>
 		<Run>13432</Run>
@@ -301,16 +301,19 @@
 				<radiation>Spallation Neutron Source</radiation>
 			</SASsource>
 			<SAScollimation/>
-			<SASdetector>
-				<name>detector</name>
-			</SASdetector>
+           <SASdetector>
+				<name>Rear:  ORDELA 21000N</name>
+           </SASdetector>
+           <SASdetector>
+				<name>Front: ORDELA 21000N</name>
+           </SASdetector>
 		</SASinstrument>
 		<SASprocess>
 			<name>Mantid generated CanSAS1D XML</name>
 			<date>12-Jun-2012 17:08:43</date>
 			<term name="svn">2.1.493</term>
 			<term name="user_file">Z:/Masks/MASKSANS2D_121T_12m_M1.txt</term>
-			<SASprocessnote/>
+            <SASprocessnote/>
 		</SASprocess>
 		<SASnote>
 		</SASnote>
