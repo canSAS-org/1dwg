@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="cansasxml-html.xsl" ?>
-<SASroot version="1.0"
-    xmlns="cansas1d/1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="cansas1d/1.0 http://svn.smallangles.net/svn/canSAS/1dwg/trunk/cansas1d.xsd"
-    >
+<?xml-stylesheet type="text/xsl" href="cansas1d.xsl" ?>
+<SASroot version="1.1"
+		xmlns="urn:cansas1d:1.1"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="urn:cansas1d:1.1 http://www.cansas.org/formats/1.1/cansas1d.xsd"
+		>
 	<SASentry name="rr-polymer-A">
 		<Title>Round Robin Polymer A</Title>
 		<Run>1999-08-13 07:51:39</Run>
@@ -149,8 +149,8 @@
 				<wavelength unit="A"> 1.37991 </wavelength>
 			</SASsource>
 			<SAScollimation />
-			<SASdetector name="USAXS photodiode">
-				<name>photodiode</name>
+			<SASdetector>
+				<name>USAXS photodiode</name>
 				<SDD unit="mm"> 235 </SDD>
 				<pixel_size>
 					<x unit="mm">5.50</x>
@@ -158,7 +158,9 @@
 				<slit_length unit="1/A"> 0.053282 </slit_length>
 			</SASdetector>
 		</SASinstrument>
-		<SASprocess />
+		<SASprocess>
+			<SASprocessnote/>
+		</SASprocess>
 		<SASnote name="raw IgorPro wavenote">  DATAFILE=friday_barnes.dat;EPOCH=934538182;TZ=-5;SCAN_N=9;SECONDS=3017375499;DATE=Fri, Aug 13, 1999;HOUR=07:51:39;COMMENT=Round Robin Polymer sample A, 8985 eV;
 SpecCommand=uascan  ar 12.7497 12.7432 9 0.0002  -24.5 285 1.2 150 5;SpecComment=Round Robin Polymer sample A, 8985 eV;SpecScan=spec9;
   USAXSDataFolder=root:USAXS:friday_barnes:'S9_Round Robin Polymer A':;RawFolder=root:raw:friday_barnes:spec9:;UserSampleName='S9_Round Robin Polymer A';Wname=SMR_Int;Wavelength=1.3799;
@@ -310,8 +312,8 @@ SlitLength=0.053282;NumberOfSteps=150;SDDistance=235;SampleThickness=1;SampleTra
 				<wavelength unit="A"> 1.37991 </wavelength>
 			</SASsource>
 			<SAScollimation />
-			<SASdetector name="USAXS photodiode">
-				<name>photodiode</name>
+			<SASdetector>
+				<name>USAXS photodiode</name>
 				<SDD unit="mm"> 235 </SDD>
 				<pixel_size>
 					<x unit="mm">5.50</x>
@@ -319,7 +321,9 @@ SlitLength=0.053282;NumberOfSteps=150;SDDistance=235;SampleThickness=1;SampleTra
 				<slit_length unit="1/A"> 0.053282 </slit_length>
 			</SASdetector>
 		</SASinstrument>
-		<SASprocess />
+		<SASprocess>
+			<SASprocessnote/>
+		</SASprocess>
 		<SASnote name="raw IgorPro wavenote">  DATAFILE=friday_barnes.dat;EPOCH=934538182;TZ=-5;SCAN_N=10;SECONDS=3017376625;DATE=Fri, Aug 13, 1999;HOUR=08:10:25;COMMENT=Round Robin Polymer sample B, 8985 eV;
 SpecCommand=uascan  ar 12.7497 12.7432 9 0.0002  -24.5 285 1.2 150 5;SpecComment=Round Robin Polymer sample B, 8985 eV;SpecScan=spec10;
   USAXSDataFolder=root:USAXS:friday_barnes:'S10_Round Robin Polymer B':;RawFolder=root:raw:friday_barnes:spec10:;UserSampleName='S10_Round Robin Polymer B';Wname=SMR_Int;Wavelength=1.3799;
@@ -471,8 +475,8 @@ SlitLength=0.053282;NumberOfSteps=150;SDDistance=235;Units=cm-1;BlankComment=bla
 				<wavelength unit="A"> 1.37991 </wavelength>
 			</SASsource>
 			<SAScollimation />
-			<SASdetector name="USAXS photodiode">
-				<name>photodiode</name>
+			<SASdetector>
+				<name>USAXS photodiode</name>
 				<SDD unit="mm"> 235 </SDD>
 				<pixel_size>
 					<x unit="mm">5.50</x>
@@ -480,7 +484,9 @@ SlitLength=0.053282;NumberOfSteps=150;SDDistance=235;Units=cm-1;BlankComment=bla
 				<slit_length unit="1/A"> 0.053282 </slit_length>
 			</SASdetector>
 		</SASinstrument>
-		<SASprocess />
+		<SASprocess>
+			<SASprocessnote/>
+		</SASprocess>
 		<SASnote name="raw IgorPro wavenote">   DATAFILE=friday_barnes.dat;EPOCH=934538182;TZ=-5;SCAN_N=12;SECONDS=3017378868;DATE=Fri, Aug 13, 1999;HOUR=08:47:48;COMMENT=Round Robin Polymer sample C, 8985 eV;
 SpecCommand=uascan  ar 12.7497 12.7432 9 0.0002  -24.5 285 1.2 150 5;SpecComment=Round Robin Polymer sample C, 8985 eV;SpecScan=spec12;
   USAXSDataFolder=root:USAXS:friday_barnes:'S12_Round Robin Polymer C':;RawFolder=root:raw:friday_barnes:spec12:;UserSampleName='S12_Round Robin Polymer C';Wname=SMR_Int;Wavelength=1.3799;
@@ -632,8 +638,8 @@ SlitLength=0.053282;NumberOfSteps=150;SDDistance=235;Units=cm-1;BlankComment=bla
 				<wavelength unit="A"> 1.37991 </wavelength>
 			</SASsource>
 			<SAScollimation />
-			<SASdetector name="USAXS photodiode">
-				<name>photodiode</name>
+			<SASdetector>
+				<name>USAXS photodiode</name>
 				<SDD unit="mm"> 235 </SDD>
 				<pixel_size>
 					<x unit="mm">5.50</x>
@@ -641,7 +647,9 @@ SlitLength=0.053282;NumberOfSteps=150;SDDistance=235;Units=cm-1;BlankComment=bla
 				<slit_length unit="1/A"> 0.053282 </slit_length>
 			</SASdetector>
 		</SASinstrument>
-		<SASprocess />
+		<SASprocess>
+			<SASprocessnote/>
+		</SASprocess>
 		<SASnote name="raw IgorPro wavenote">  DATAFILE=friday_barnes.dat;EPOCH=934538182;TZ=-5;SCAN_N=13;SECONDS=3017379990;DATE=Fri, Aug 13, 1999;HOUR=09:06:30;COMMENT=Round Robin Polymer sample D, 8985 eV;
 SpecCommand=uascan  ar 12.7497 12.7432 9 0.0002  -24.5 285 1.2 150 5;SpecComment=Round Robin Polymer sample D, 8985 eV;SpecScan=spec13;
   USAXSDataFolder=root:USAXS:friday_barnes:'S13_Round Robin Polymer D':;RawFolder=root:raw:friday_barnes:spec13:;UserSampleName='S13_Round Robin Polymer D';Wname=SMR_Int;Wavelength=1.3799;
