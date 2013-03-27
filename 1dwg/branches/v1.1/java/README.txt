@@ -4,6 +4,12 @@ for reduced small-angle scattering data.
 
 $Id$
 
+TODO:
+* need to update to v1.1 canSAS standard
+* need to change to http://www.cansas.org
+* need to relearn *and document* how to build the java files with JAXB from the XSD Schema
+
+
 
 LICENSES
 
