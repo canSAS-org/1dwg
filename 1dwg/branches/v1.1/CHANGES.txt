@@ -27,6 +27,17 @@ CHANGES
 	* cleanup XSLT and reduce to just one XSLT
 	* clean up the examples, remove unnecessary material
 	* remove the mediawiki directory, we are done with it now
+	
+	2013-03-27, finishing up the bindings before moving back to trunk
+
+    * removed java/maven-eclipse directory as indicated by java/README.txt file
+    * TRAC #13: Need to pick a license model  <<<<<<<<<<<<< MUST DO THIS !
+    * TRAC #25: PHP code updated to generate v1.1 data files
+    * TRAC #26: Python binding complete, reads both v1.0 and v1.1
+    * TRAC #28: IgorPro binding needs updating, should read both v1.0 and v1.1
+    * TRAC #29: FORTRAN binding needs to be updated (or withdrawn)
+    * TRAC #30: Won't allow arbitrary order of data columns in Idata group
+    * TRAC #31: began work on Java binding
 
 :v1.0:
 	2009-05-12, tagged version canSAS1d/1.0

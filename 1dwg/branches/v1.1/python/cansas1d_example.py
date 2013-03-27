@@ -1,6 +1,18 @@
 #!/usr/bin/env python
 ''' 
-Example use of Gnosis_utils to read cansas1d:1.1 file
+Example use of Gnosis_utils to read both cansas1d:1.1 
+and cansas1d/1.0 files
+
+This demonstrates full access to the contents of 
+the XML file using a single line to open the file::
+
+    sasxml = readCanSasFile(xmlFile)
+
+.. note:: Since :meth:`readCanSasFile` raises exceptions 
+   if the namespace or version does not match, it is best
+   to wrap this call in ``try ... except``` block,
+   as shown in :meth:`demo`.
+
 '''
 
 
@@ -16,6 +28,52 @@ Example use of Gnosis_utils to read cansas1d:1.1 file
 import os
 import sys
 import gnosis.xml.objectify     # easy_install -U gnosis
+
+
+    # support reading v1.0 and v1.1 data files
+    # v1.1 schema is backwards compatible, mostly
+CANSAS_NAMESPACES = {
+    '1.0': 'cansas1d/1.0',
+    '1.1': 'urn:cansas1d:1.1',
+}
+
+
+def readCanSasFile(xmlFile):
+    '''
+    open a canSAS XML data file as a gnosis file object
+    
+    usage::
+    
+        try:
+            sasxml = readCanSasFile(xmlFile)
+        except (Exception_canSAS_namespace, Exception_canSAS_version), answer:
+            print answer
+            return
+        print 'namespace:', sasxml.xmlns
+        print 'version:', sasxml.version
+        SASentry = sasxml.SASentry                  # just the first one
+        # ...
+    
+    '''
+    # read in the XML file
+    sasxml = gnosis.xml.objectify.XML_Objectify(xmlFile).make_instance()
+    # namespace check to accept file as canSAS XML
+    if sasxml.xmlns not in CANSAS_NAMESPACES.values():
+        msg = "Not a canSAS data file (namespace found: %s)" % sasxml.xmlns
+        raise Exception_canSAS_namespace, msg
+    if sasxml.version not in CANSAS_NAMESPACES.keys():
+        msg = "Not v1.1 file (found: %s)" % msg
+        raise Exception_canSAS_version, msg
+    return sasxml
+
+
+class Exception_canSAS_namespace(Exception):
+    '''canSAS XML file namespace'''
+    pass
+
+class Exception_canSAS_version(Exception):
+    '''version string of the canSAS standard'''
+    pass
 
 
 def indra_metadata(SASentry):
@@ -101,16 +159,12 @@ def demo(xmlFile):
     print '#---------------------------------------------------'
     print 'XML:', xmlFile
     # read in the XML file
-    sasxml = gnosis.xml.objectify.XML_Objectify(xmlFile).make_instance()
-    # support reading v1.0 and v1.1 data files
-    # v1.1 schema is backwards compatible, mostly
-    if sasxml.xmlns not in ('urn:cansas1d:1.1', 'cansas1d/1.0'):
-        print "Not cansas1d:1.1 file (found: %s)" % sasxml.xmlns
+    try:
+        sasxml = readCanSasFile(xmlFile)
+    except (Exception_canSAS_namespace, Exception_canSAS_version), answer:
+        print answer
         return
     print 'namespace:', sasxml.xmlns
-    if sasxml.version not in ('1.1', '1.0'):
-        print "Not v1.1 file (found: %s)" % sasxml.version
-        return
     print 'version:', sasxml.version
     SASentry = sasxml.SASentry                  # just the first one
     print 'title:', SASentry.Title.PCDATA
