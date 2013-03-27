@@ -4,12 +4,23 @@ for reduced small-angle scattering data.
 
 $Id$
 
-TODO:
+TODO
+
 * need to update to v1.1 canSAS standard
 * need to change to http://www.cansas.org
 * need to relearn *and document* how to build the java files with JAXB from the XSD Schema
   http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/2.0/tutorial/doc/JAXBUsing.html
+  
+  ::
 
+    [jemian@gov,250,v1.1]$ mkdir -p java/ant-eclipse/src/org/cansas
+    [jemian@gov,251,v1.1]$ xjc -d java/ant-eclipse/src/org/cansas cansas1d.xsd
+    [jemian@gov,262,_1]$ mv *.java ..
+    [jemian@gov,263,_1]$ cd ../
+    [jemian@gov,264,cansas1d]$ rmdir _1
+    edit package line in *.java to read::
+
+      package org.cansas.cansas1d;
 
 
 LICENSES
