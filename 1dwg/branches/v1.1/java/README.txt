@@ -8,6 +8,7 @@ TODO:
 * need to update to v1.1 canSAS standard
 * need to change to http://www.cansas.org
 * need to relearn *and document* how to build the java files with JAXB from the XSD Schema
+  http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/2.0/tutorial/doc/JAXBUsing.html
 
 
 
