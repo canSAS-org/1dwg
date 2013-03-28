@@ -1,5 +1,5 @@
-#pragma rtGlobals=1		// Use modern global access method.
-#pragma version=1.11
+#pragma rtGlobals=1		// rtGlobals=3 requires IgorPro 6.3+
+#pragma version=1.12
 
 // file:	cansasXML.ipf
 // author:	Pete R. Jemian <jemian@anl.gov>
@@ -8,28 +8,48 @@
 // SVN URL:	$HeadURL$
 // SVN ID:	$Id$
 // purpose:  implement an IgorPro file reader to read the canSAS 1-D reduced SAS data in XML files
-//			adheres to the cansas1d/1.0 standard
+//			adhering to either the cansas1d/1.0 or cansas1d/1.1 standards
 // readme:    http://www.cansas.org/formats/canSAS1d/1.1/doc/binding-igorpro.html
 // URL:	http://www.cansas.org/formats/canSAS1d/1.1/doc/
 //
 // requires:	IgorPro (http://www.wavemetrics.com/)
 //				XMLutils - XOP (http://www.igorexchange.com/project/XMLutils)
-// provides:  CS_CmlReader(String fileName)
+// provides:  CS_XmlReader(String fileName)
 //				all other functions in this file should not be relied upon
 
+//  ================  ================  =================
+//  #pragma version   canSAS1d version  namespace
+//  ================  ================  =================
+//  1.12              v1.1              urn:cansas1d:1.1
+//  1.11              v1.0              cansas1d/1.0
+//  ================  ================  =================
+
+
 // ==================================================================
-// CS_XmlReader("bimodal-test1.xml")
-// CS_XmlReader("1998spheres.xml")
-// CS_XmlReader("xg009036_001.xml")
-// CS_XmlReader("s81-polyurea.xml")
-// CS_XmlReader("cs_af1410.xml")
+// CS_XmlReader("../examples/bimodal-test1.xml")
+// CS_XmlReader("../examples/1998spheres.xml")
+// CS_XmlReader("../examples/xg009036_001.xml")
+// CS_XmlReader("../examples/s81-polyurea.xml")
+// CS_XmlReader("../examples/cs_af1410.xml")
 //  testCollette();  prjTest_cansas1d()
 // ==================================================================
 
 
-#if( Exists("XmlOpenFile") )
+#if( ! Exists("XmlOpenFile") )
 	// BEFORE we do anything else, check that XMLutils XOP is available.
+	// No XMLutils XOP: provide dummy function so that IgorPro can compile dependent support code
 
+	FUNCTION CS_XmlReader(fileName)
+	    String fileName
+		String msg
+		msg = "XML function provided by XMLutils XOP is not available,"
+		msg += " get the XOP from : http://www.igorexchange.com/project/XMLutils"
+		msg += " (see http://www.cansas.org/formats/canSAS1d/1.1/doc/binding-igorpro.html for details)"
+	    Abort  msg
+	    RETURN(-6)
+	END
+
+#else	// if( Exists("XmlOpenFile") )
 
 FUNCTION CS_XmlReader(fileName)
 	//
@@ -776,7 +796,7 @@ FUNCTION testCollette()
 
 	//Say, for Run=31531, then Qsas_31531
 
-	CS_XmlReader("W1W2.XML")
+	CS_XmlReader("../examples/W1W2.XML")
 	STRING srcDir = "root:Packages:CS_XMLreader"
 	STRING destDir = "root", importFolder, target
 	Variable i, j
