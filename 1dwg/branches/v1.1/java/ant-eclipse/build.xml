@@ -17,7 +17,7 @@
 	</description>
 
 	<!-- set global properties for this build -->
-	<property name="version" value="1.0" />
+	<property name="version" value="1.1" />
 	<property name="src.dir" location="src" />
 	<property name="bin.dir" location="bin" />
 	<property name="lib.dir" location="lib" />
@@ -28,7 +28,7 @@
 	<property name="src.tests" location="tests" />
 	<property name="bin.tests" location="bin-tests" />
 
-	<property name="project.master" value="net.smallangles"/>
+	<property name="project.master" value="org.cansas"/>
 	<property name="project.name.full" 
 		value="${project.master}.${ant.project.name}"/>
 	<property name="project.main.class" 
