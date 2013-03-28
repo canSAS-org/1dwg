@@ -12,6 +12,10 @@ import java.util.List;
 
 import javax.xml.bind.JAXBException;
 
+TODO: this needs to be reworked!
+For starters, there is no such net.smallangles.cansas1d.CanSas1dType.java
+http://www.cansas.org/trac/ticket/32
+
 import net.smallangles.cansas1d.CanSas1dType;
 import net.smallangles.cansas1d.SASdataType;
 import net.smallangles.cansas1d.SASentryType;
@@ -68,9 +72,14 @@ public class Example_canSAS_Reader {
 
 			System.out.println("the end.");
 
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			String fmt = "File not found: %s\n";
+			System.out.printf(fmt, xmlFile);
 		} catch (JAXBException e) {
 			e.printStackTrace();
-			System.out.printf("Could not open (unmarshall) XML file: %s\n", xmlFile);
+			String fmt = "Could not open (unmarshall) XML file: %s\n";
+			System.out.printf(fmt, xmlFile);
 		}
 	}
 
