@@ -1,6 +1,6 @@
 *
 *
-*	F77 SUBROUTINE XMLIP2 TO READ CANSAS SASXML V1.0 1D TREATED DATA FILES
+*	F77 SUBROUTINE XMLIP2 TO READ CANSAS SASXML V1.0 and v1.1 1D TREATED DATA FILES
 *	AND EXAMPLE IMPLEMENTATION PROGRAM EXAMPLE_READ_SASXML
 *
 *	READS UP TO 4 NUMERICAL FIELDS (Q, I, (Idev, (Qdev)))
@@ -31,7 +31,7 @@
 *	AN ACKNOWLEDGEMENT TO THE ORIGINAL AUTHOR IS RETAINED
 *
 *	ALSO SEE:
-*	http://www.smallangles.net/wgwiki/index.php/cansas1d_documentation
+*	http://www.cansas.org/formats/canSAS1d/1.1/doc/
 
 
 C===============================================================================
