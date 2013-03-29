@@ -13,33 +13,17 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerFactoryConfigurationError;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import org.cansas.cansas1d.SASdataType;
 import org.cansas.cansas1d.SASentryType;
-import org.cansas.cansas1d.SASrootType;
 import org.cansas.cansas1d.SASentryType.Run;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import org.cansas.cansas1d.SASrootType;
 
 
 /**
@@ -55,32 +39,6 @@ import org.w3c.dom.Element;
  * <pre>
 Reader rdr = new org.cansas.cansas1d.demo.Reader();
 SASrootType srt = rdr.loadXML(xmlFile);
-</pre>
- * </p>
- * 
- * <p>
- * 	Built using JAXB 2.1 interface for eclipse:
- * <ul>
- *   <li>
- *   You need this ZIP file:
- * 	<pre>org.jvnet.jaxbw.zip</pre>
- *   </li>
- *   <li>
- *   from: 
- * 	<pre>https://jaxb-workshop.dev.java.net/plugins/eclipse/xjc-plugin.html</pre>
- *   </li>
- *   <li>
- *   or:
- * 	<pre>https://jaxb-workshop.dev.java.net/servlets/ProjectDocumentList?folderID=4962&expandFolder=4962&folderID=0</pre>
- *   </li>
- *   <li>
- *   canSAS: 
- * 	<pre>http://www.smallangles.net/wgwiki/index.php/1D_Data_Formats_Working_Group</pre>
- *   </li>
- * </ul>
- * If you use the JAXB 2.0 interface, the exception messages
- * will not be helpful to clarify that JAXB 2.1 should be used.
- * </p>
  * 
  * @version $Id$
  */
@@ -94,7 +52,8 @@ public class Reader {
 	private JAXBElement<SASrootType> xmlJavaData;
 	
 	/**
-	 * Open a cansas1d/1.0 file
+	 * Open a cansas1d 1D file
+	 *
 	 * @param xmlFile
 	 * @return SasRootType object (saves a second method call)
 	 * @throws JAXBException 
@@ -102,25 +61,25 @@ public class Reader {
 	 */
 	@SuppressWarnings( "unchecked" )
 	public SASrootType loadXML(String xmlFile) throws JAXBException, FileNotFoundException {
-		// use the cansas1d/1.0 schema that is bound to a Java structure
-		jc = JAXBContext.newInstance(JAXB_CONTEXT);
+
+		// use the cansas1d XML Schema that is bound to a Java structure
+		jc = JAXBContext.newInstance(JAXB_CONTEXT);      // reference the namespace: 
 		Unmarshaller unmarshaller = jc.createUnmarshaller();
 
 		// find the XML file as a resource in the JAR
-		//boolean exists = new File(xmlFile).exists();
 		InputStream in = new FileInputStream(new File(xmlFile));
+
 		// load the XML file into a Java data structure
 		xmlJavaData = (JAXBElement<SASrootType>) unmarshaller.unmarshal(in);
-		return getSasRootType();
+		
+		return xmlJavaData.getValue();
 	}
 
 	/**
 	 * Describe the XML data in more detail than toString() method
 	 * and print to stdout.
 	 */
-	public void full_report() {
-		SASrootType srt = getSasRootType();
-
+	public void full_report(SASrootType srt) {
 		for ( SASentryType entry : srt.getSASentry() ) {
 			System.out.println("SASentry");
 			System.out.printf("Title:\t%s\n", entry.getTitle());
@@ -149,19 +108,10 @@ public class Reader {
 	}
 
 	/**
-	 * Data object at the root of the XML file
-	 * @return SASroot object
-	 */
-	public SASrootType getSasRootType() {
-		return xmlJavaData.getValue();
-	}
-
-	/**
 	 * simple representation of data in memory
 	 */
-	public String toString() {
-		SASrootType sasRootType = getSasRootType();
-		return "SASentry elements: " + sasRootType.getSASentry().size();
+	public String toString(SASrootType sasRoot) {
+		return "SASentry elements: " + sasRoot.getSASentry().size();
 	}
 
 	/**
@@ -172,27 +122,28 @@ public class Reader {
 		System.out.println("SVN ID: " + Reader.SVN_ID);
 
 		String[] fileList = {
-				RES_DIR + "1998spheres.xml",
-				RES_DIR + "cs_collagen.xml"
+			RES_DIR + "cs_collagen.xml",
+			RES_DIR + "1998spheres.xml",
+			"cannot_find_this.xml"
 		};
 		for (String xmlFile : fileList) {
 			System.out.println("\n\nFile: " + xmlFile);
 			try {
 				Reader rdr = new Reader();
 				// load canSAS XML file into memory
-				rdr.loadXML(xmlFile);
+				SASrootType srt = rdr.loadXML(xmlFile);
 
-				System.out.println(rdr.toString());
-				rdr.full_report();
+				System.out.println(rdr.toString(srt));
+				rdr.full_report(srt);
 
 				System.out.println("the end.");
 
 			} catch (FileNotFoundException e) {
-				e.printStackTrace();
+				// e.printStackTrace();
 				String fmt = "File not found: %s\n";
 				System.out.printf(fmt, xmlFile);
 			} catch (JAXBException e) {
-				e.printStackTrace();
+				// e.printStackTrace();
 				String fmt = "Could not open (unmarshall) XML file: %s\n";
 				System.out.printf(fmt, xmlFile);
 			}
