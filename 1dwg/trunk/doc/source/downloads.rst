@@ -13,8 +13,8 @@ Current Release
    http://www.cansas.org/trac/report/6?sort=ticket&asc=1
 
 :Version 1.1:
+	released 2013-03-29, 
 	http://www.cansas.org/trac/ticket/23
-	expected release 2013-04-01
 	
 	::
 	
