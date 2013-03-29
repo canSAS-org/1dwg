@@ -41,10 +41,22 @@ results of processing or analysis steps. Even multiple measurements
    
    contents
 
-+-------------------------+----------------------+
-| * :ref:`Preface`        + * :ref:`bindings`    |
-| * :ref:`Specification`  + * :ref:`downloads`   |
-| * :ref:`Examples`       + * :ref:`changes`     |
-| * :ref:`case.studies`   + * :ref:`license`     |
-| * :ref:`Tutorial`       + * :ref:`authors`     |
-+-------------------------+----------------------+
+..
+	+-------------------------+----------------------+
+	| * :ref:`Preface`        + * :ref:`bindings`    |
+	| * :ref:`Specification`  + * :ref:`downloads`   |
+	| * :ref:`Examples`       + * :ref:`changes`     |
+	| * :ref:`case.studies`   + * :ref:`license`     |
+	| * :ref:`Tutorial`       + * :ref:`authors`     |
+	+-------------------------+----------------------+
+
+* :ref:`Preface`          
+* :ref:`Specification`     
+* :ref:`Examples`           
+* :ref:`case.studies`        
+* :ref:`Tutorial`            
+* :ref:`bindings`   
+* :ref:`downloads` 
+* :ref:`changes`  
+* :ref:`license` 
+* :ref:`authors` 
