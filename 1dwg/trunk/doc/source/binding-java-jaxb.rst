@@ -8,112 +8,101 @@
 Java JAXB
 ================
 
-.. note:: FIX THIS into a how-to use the JAR file to read canSAS data files
-
-A Java binding for the cansas1d:1.1 standard has been auto-created using the JAXB tools
-from Sun (see below for more on JAXB) using the *cansas1d.xsd* :index:`XML Schema`.
-Resources (JAR files and documentation) for the Java binding may be found in
-the canSAS subversion repository: http://www.cansas.org/svn/1dwg/tags/v1.0/java
-
-Subversion repository
-	http://www.cansas.org/svn/1dwg/tags/v1.0/java
-	
-	canSAS subversion repository tagged release directory for the Java binding.
-	Use resources from this directory in your development projects.
-
-*cansas1d-1.0.jar*
-	http://www.cansas.org/svn/1dwg/tags/v1.0/java/cansas1d-1.0.jar
-	
-	JAR file to add to your CLASSPATH in order to use this binding.
-
-*cansas1d-1.0-javadoc.jar*
-	http://www.cansas.org/svn/1dwg/tags/v1.0/java/cansas1d-1.0-javadoc.jar
-	
-	Use this JAR file if you want to add the 
-	javadoc documentation as tooltips to your editor, such as eclipse. 
-	(auto-generated from the project source code using maven2)
-	Note that this file is compatible with any ZIP program and can be unzipped
-	to provide a directory with all the documentation as a set of HTML pages.
-	Start with the *index.html* page.
-
-*cansas1d-1.0-sources.jar*
-	http://www.cansas.org/svn/1dwg/tags/v1.0/java/cansas1d-1.0-sources.jar
-	
-	JAR file of the source code.   
-	(auto-generated from the project source code using maven2)
-	Note that this is *just*
-	the source code tree and not the full project development tree
-	for the Java (JAXB) API.
-
-*cansas1d-1.0.pdf*
-	http://www.cansas.org/svn/1dwg/tags/v1.0/java/cansas1d-1.0.pdf
-
-	PDF file of the javadoc source code documentation.
-	(auto-generated from the project source code using pdfdoclet)
-
-source code (for developers)
-	http://www.cansas.org/trac/browser/1dwg/trunk/java/maven/eclipse
-	
-	canSAS Development project subversion repository for the Java binding.  
-	Only use this if you want to participate as a code developer of this binding.
+A Java binding for the cansas1d:1.1 standard has been auto-created 
+using the JAXB tools from Oracle (formerly Sun, see below for more 
+on JAXB) using the *cansas1d.xsd* :index:`XML Schema`.  See the 
+:ref:`binding.java.download` section below.
 
 
-*Example_canSAS_Reader.java*: example usage in JAVA
-=======================================================
+Using the Java Binding
+======================
 
-An example (*Example_canSAS_Reader.java*) has been constructed
-to show how to read a cansas1d:1.1 XML file using the Java API. 
-
-http://www.cansas.org/trac/browser/1dwg/trunk/java/maven/eclipse/src/main/java/org/scatteringsw/reader/Example_canSAS_Reader.java
-
-In short, these are the important two lines:
+The basics of the binding are these java statements:
 
 .. code-block:: java
 
-	CanSas1dType reader = new CanSas1dType();
+		// associate a JAXB context with the canSAS namespace URI
+		jc = JAXBContext.newInstance("org.cansas.cansas1d"); 
+		Unmarshaller unmarshaller = jc.createUnmarshaller();
 
-and
+		// open an XML file from local storage
+		InputStream in = new FileInputStream("a/data/file.xml);
+
+		// load the XML file into a Java data structure
+		xmlJavaData = (JAXBElement<SASrootType>) unmarshaller.unmarshal(in);
+		
+		// get the SASroot object
+		SASrootType sasroot = xmlJavaData.getValue()
+
+With a `SASroot` object, one can iterate over the `SASentry` groups 
+and, for instance, print the `Title` string:
 
 .. code-block:: java
 
-	SASrootType sasRoot = reader.open(xmlFile);
+	for ( SASentryType entry : sasroot.getSASentry() ) {
+		System.out.printf("SASentry Title:  %s\n", entry.getTitle());
+	}
 
-where *String xmlFile;* is the name of the XML file to be read. 
-You will also need these imports:
+Full example
+----------------------
 
-.. code-block:: java
-	:linenos:
+An example that uses the binding is provided in the java support 
+and is available for direct 
+:download:`download <../../java/ant-eclipse/src/org/cansas/cansas1d/demo/Reader.java>`
+or may be viewed using a web browser:
+http://www.cansas.org/trac/browser/1dwg/trunk/java/ant-eclipse/src/org/cansas/cansas1d/demo/Reader.java
+
+Output from `Reader.java` is::
+
+	class: org.cansas.cansas1d.demo.Reader
+	SVN ID: $Id$
 	
-	import javax.xml.bind.JAXBException;
 	
-	import net.smallangles.cansas1d.CanSas1dType;
-	import net.smallangles.cansas1d.SASdataType;
-	import net.smallangles.cansas1d.SASentryType;
-	import net.smallangles.cansas1d.SASrootType;
-	import net.smallangles.cansas1d.SASentryType.Run;
+	File: ./resources/cansas1d/cs_collagen.xml
+	SASentry elements: 1
+	SASentry
+	Title:	dry chick collagen, d = 673 A, 6531 eV, X6B
+	#Runs:	1
+	Run@name:	
+	Run:	Sep 19 1994     01:41:02 am
+	#SASdata:	1
+	SASdata@name:	
+	#points:	125
+	
+	the end.
+	
+	
+	File: ./resources/cansas1d/1998spheres.xml
+	SASentry elements: 2
+	SASentry
+	Title:	255 nm PS spheres
+	#Runs:	1
+	Run@name:	
+	Run:	scan2.dat, scan 5
+	#SASdata:	1
+	SASdata@name:	
+	#points:	1824
+	
+	SASentry
+	Title:	460 nm PS spheres
+	#Runs:	1
+	Run@name:	
+	Run:	scan1.dat, scan 67
+	#SASdata:	1
+	SASdata@name:	
+	#points:	3689
+	
+	the end.
+	
+	
+	File: cannot_find_this.xml
+	File not found: cannot_find_this.xml
 
-Also, since *CanSas1dType.open(xmlFile)* can throw a
-*JAXBException*, you should use a *try{} catch {}*
-clause. See the source code for the example.
 
-.. index:: 
-	Java file; Example_canSAS_Reader.java
-	XML file; 1998spheres.xml
-
-Here is a Java class that shows how to use the JAXB binding. 
-Use this with any of the test data supplied with the cansas-1d-standard
-directory (above). By default, it shows the two samples in the
-*1998spheres.xml* example file.
-(http://www.cansas.org/trac/browser/1dwg/trunk/1998spheres.xml)
-
-.. note:: The reader will have to get the directory paths 
-	right until this documentation improves.
-
-.. literalinclude:: examples/Example_canSAS_Reader.java
-   :language: java
-   :linenos:
 
 .. index:: I(Q)
+
+.. _binding.java.howto.I:
 
 example: how to retrieve :math:`I(Q)`
 ============================================
@@ -123,8 +112,10 @@ Look near line 75 for this code:
 
 .. code-block:: java
 	
-	Qsas[i] = sdt.getIdata().get(i).getQ().getValue();
-	Isas[i] = sdt.getIdata().get(i).getI().getValue();
+	SASdataType sasdata = sasroot.getSASentry().getSASdata()
+	// ...
+	Qsas[i] = sasdata.getIdata().get(i).getQ().getValue();
+	Isas[i] = sasdata.getIdata().get(i).getI().getValue();
 
 to see the operations that unwind the data into usable *double[]*
 vectors. Pretty straightforward although there is lots of
@@ -134,40 +125,49 @@ that describes the items in the line just shown:
 ==============  ================================================
 java item       description
 ==============  ================================================
-*sdt*           *SASdataType* object
+*sasdata*       *SASdataType* object
 *getIdata()*    amongst the */SASdata/Idata* tuples ...
 *get(i)*        ... pick the *Idata* tuple from row *i*.
 *getQ()*        Just the */SASdata/Idata/Q*
 *getValue()*    and specifically the value, not the unit
 ==============  ================================================
 
-.. index:: Java file; GetSASdata.java
 
-*GetSASdata.java*
--------------------
 
-Since the source code is rather lengthy, download it from:
-http://www.cansas.org/svn/1dwg/trunk/doc/src/GetSASdata.java
+.. _binding.java.download:
 
-..
-	.. literalinclude:: examples/GetSASdata.java
-	   :language: java
-	   :linenos:
+Downloading
+===========
 
-.. index:: Java file; java-test.java
+Resources 
+(JAR files and documentation) for the Java binding may be found 
+in the canSAS subversion :ref:`repository`.
 
-.. _java-test.xml:
+*cansas1d-#.#.jar*
+	JAR file to add to your CLASSPATH in order to use this binding.
+	Adheres to canSAS 1D standard version #.#.
 
-*java-test.xml*
-------------------
+*cansas1d-#.#-javadoc.jar*
+	http://www.cansas.org/svn/1dwg/tags/v#.#/java/cansas1d-#.#-javadoc.jar
+	
+	Use this JAR file if you want to add the source code documentation
+	as tooltips to your editor, such as eclipse. 
+	Note that this file is compatible with any ZIP program and can be unzipped
+	to provide a directory with all the documentation as a set of HTML pages.
+	Start with the *index.html* page.
+	Adheres to canSAS 1D standard version #.#.
 
-*java-test.xml* is an example cansas1d:1.1 XML data file
-(derived from the standard test file for the *lake* 
-desmearing code).
+*cansas1d-#.#-sources.jar*	
+	JAR file of the source code.   
+	Note that this is *just* the source code tree and not 
+	the full project development tree for the Java (JAXB) API.
+	Adheres to canSAS 1D standard version #.#.
 
-.. literalinclude:: examples/java-test.xml
-   :language: xml
-   :linenos:
+source code (for developers)
+	http://www.cansas.org/trac/browser/1dwg/trunk/java/ant-eclipse
+	
+	canSAS Development project subversion repository for the Java binding.  
+	Only use this if you want to participate as a code developer of this binding.
 
 
 .. index:: ! JAXB
@@ -188,7 +188,7 @@ JAXB: Questions and Answers
 .. index:: I(Q)
 
 :Q: How do I pull out the :math:`I(Q)` data?
-:A: See Java code fragment above that gets data for desmearing.  (:ref:`java-test.xml`)
+:A: See Java code fragment :ref:`above <binding.java.howto.I>`
 
 :Q: Has JAXB been useful?
 :A: **Very useful.**
