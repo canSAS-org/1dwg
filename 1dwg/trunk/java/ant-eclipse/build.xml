@@ -128,6 +128,7 @@
 			destdir="${bin.dir}"
 			debug="true"
 			debuglevel="${javac.debug.attrs}"
+			includeantruntime="false"
 			verbose="false">
 			<classpath path="${compile.classpath.contents}" />
 		</javac>
