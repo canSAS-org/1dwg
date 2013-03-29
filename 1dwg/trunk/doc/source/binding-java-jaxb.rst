@@ -17,22 +17,37 @@ on JAXB) using the *cansas1d.xsd* :index:`XML Schema`.  See the
 Using the Java Binding
 ======================
 
-The basics of the binding are these java statements:
+The basics of the binding are these java statements.  
+First, associate a JAXB context with the canSAS namespace URI
 
 .. code-block:: java
 
-		// associate a JAXB context with the canSAS namespace URI
-		jc = JAXBContext.newInstance("org.cansas.cansas1d"); 
-		Unmarshaller unmarshaller = jc.createUnmarshaller();
+	jc = JAXBContext.newInstance("org.cansas.cansas1d"); 
 
-		// open an XML file from local storage
-		InputStream in = new FileInputStream("a/data/file.xml);
+Next, create an object to read XML data into Java data objects
+created by JAXB from the canSAS XML Schema.
 
-		// load the XML file into a Java data structure
-		xmlJavaData = (JAXBElement<SASrootType>) unmarshaller.unmarshal(in);
-		
-		// get the SASroot object
-		SASrootType sasroot = xmlJavaData.getValue()
+.. code-block:: java
+
+	Unmarshaller unmarshaller = jc.createUnmarshaller();
+
+Next, open an XML file from local storage.
+
+.. code-block:: java
+
+	InputStream in = new FileInputStream("a/data/file.xml);
+
+Next, load the XML data into a Java data structure
+
+.. code-block:: java
+
+	xmlJavaData = (JAXBElement<SASrootType>) unmarshaller.unmarshal(in);
+
+Next, get the SASroot object
+
+.. code-block:: java
+	
+	SASrootType sasroot = xmlJavaData.getValue();
 
 With a `SASroot` object, one can iterate over the `SASentry` groups 
 and, for instance, print the `Title` string:
