@@ -24,7 +24,7 @@ import net.smallangles.cansas1d.SASentryType.Run;
 
 /**
  * Demonstrate how to use the Java binding for the 
- * cansas1d/1.0 standard XML format for reduced 
+ * cansas1d/1.1 standard XML format for reduced 
  * small-angle scattering data.
  * 
  */

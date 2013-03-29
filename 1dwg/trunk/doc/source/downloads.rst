@@ -9,8 +9,8 @@ Downloads
 .. note:: See :ref:`CHANGES` history below
 
 :Version 1.1:
-	released !imminent! including changes indicated on the TRAC site. 
-	Tickets closed: 17, 18, 20, 21, 22.
+	expected release 2013-04-01 including changes indicated on the TRAC site. 
+	See :ref:`changes` below.
 	
 	See http://www.cansas.org/trac/report/6?sort=ticket&asc=1
 	

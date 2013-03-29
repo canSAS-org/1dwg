@@ -8,6 +8,8 @@
 Java JAXB
 ================
 
+.. note:: FIX THIS into a how-to use the JAR file to read canSAS data files
+
 A Java binding for the cansas1d:1.1 standard has been auto-created using the JAXB tools
 from Sun (see below for more on JAXB) using the *cansas1d.xsd* :index:`XML Schema`.
 Resources (JAR files and documentation) for the Java binding may be found in
@@ -122,6 +124,7 @@ Look near line 75 for this code:
 .. code-block:: java
 	
 	Qsas[i] = sdt.getIdata().get(i).getQ().getValue();
+	Isas[i] = sdt.getIdata().get(i).getI().getValue();
 
 to see the operations that unwind the data into usable *double[]*
 vectors. Pretty straightforward although there is lots of

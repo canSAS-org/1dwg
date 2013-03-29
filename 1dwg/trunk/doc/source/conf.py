@@ -17,6 +17,7 @@ import sys, os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath(os.path.join('..', '..', 'python')))
 
 # -- General configuration -----------------------------------------------------
 
@@ -25,9 +26,11 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.pngmath',]
+#extensions = ['sphinx.ext.pngmath',]
 extensions = ['sphinx.ext.mathjax',]
 extensions.append('sphinx.ext.todo')
+extensions.append('sphinx.ext.autodoc')
+extensions.append('sphinx.ext.viewcode')
 todo_include_todos = True
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'canSAS1d'
-copyright = u'2012, canSAS'
+copyright = u'2013, canSAS'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -253,7 +256,7 @@ texinfo_documents = [
 epub_title = u'canSAS1d'
 epub_author = u'canSAS'
 epub_publisher = u'canSAS'
-epub_copyright = u'2012, canSAS'
+epub_copyright = u'2013, canSAS'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.

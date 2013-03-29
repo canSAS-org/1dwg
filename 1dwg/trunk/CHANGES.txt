@@ -6,38 +6,49 @@
 CHANGES
 ===============
 
-:v1.1:
-	2012-08-16, tagged version canSAS1d/1.1
-	
-	2012-10-31, still some more changes, need to retag
-	
-	* TRAC #17: wontfix: clean up rules
-	* TRAC #18: added timestamp attribute to SASdata and SAStransmission_spectrum
-	* TRAC #20: slight change in format of namespace string and URL
-	* TRAC #21: added {any} element at end of SASdata and SAStransmission_spectrum
-	* TRAC #22: added SAStransmission_spectrum
-	* TRAC #27: rebrand from smallangles.net to cansas.org
-	
-	* slight changes in documentation of units (Angstrom and Celsius)
-	* restriction against using UNICODE is lifted
-	* removed the Glossary
-	
-	2013-03-15, identified that v1.1 is a branch, not yet ready for release
-	
-	* cleanup XSLT and reduce to just one XSLT
-	* clean up the examples, remove unnecessary material
-	* remove the mediawiki directory, we are done with it now
-	
-	2013-03-27, finishing up the bindings before moving back to trunk
+v1.1
+================
 
-    * removed java/maven-eclipse directory as indicated by java/README.txt file
-    * TRAC #13: Need to pick a license model  <<<<<<<<<<<<< MUST DO THIS !
-    * TRAC #25: PHP code updated to generate v1.1 data files
-    * TRAC #26: Python binding complete, reads both v1.0 and v1.1
-    * TRAC #28: IgorPro binding needs updating, should read both v1.0 and v1.1
-    * TRAC #29: FORTRAN binding needs to be updated (or withdrawn)
-    * TRAC #30: Won't allow arbitrary order of data columns in Idata group
-    * TRAC #31: began work on Java binding
+2013-03-28:
 
-:v1.0:
+  moved v1.1 branch back to trunk (replacement)
+
+* TRAC #13: using the Argonne Open Source License
+
+2013-03-27:
+
+  finishing up the bindings before moving back to trunk
+
+* removed java/maven-eclipse directory as indicated by java/README.txt file
+* TRAC #25: PHP code updated to generate v1.1 data files
+* TRAC #26: Python binding complete, reads both v1.0 and v1.1
+* TRAC #28: IgorPro binding needs updating, should read both v1.0 and v1.1
+* TRAC #29: FORTRAN binding needs to be updated (or withdrawn)
+* TRAC #30: Can't easily allow arbitrary order of data columns in Idata group
+* TRAC #31: began work on Java binding
+
+2013-03-15:
+
+  identified that v1.1 is a branch, not yet ready for release
+
+* cleanup XSLT and reduce to just one XSLT
+* clean up the examples, remove unnecessary material
+* remove the mediawiki directory, we are done with it now
+
+2012-10-31:
+
+* TRAC #17: wontfix: clean up rules
+* TRAC #18: added timestamp attribute to SASdata and SAStransmission_spectrum
+* TRAC #20: slight change in format of namespace string and URL
+* TRAC #21: added {any} element at end of SASdata and SAStransmission_spectrum
+* TRAC #22: added SAStransmission_spectrum
+* TRAC #27: rebrand from smallangles.net to cansas.org
+
+* slight changes in documentation of units (Angstrom and Celsius)
+* restriction against using UNICODE is lifted
+* removed the Glossary
+	
+v1.0
+================
+
 	2009-05-12, tagged version canSAS1d/1.0

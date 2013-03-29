@@ -19,6 +19,10 @@ Usage:
 	xsltproc cansas1d.xsl datafile.xml > datafile.html
 	(or include it as indicated at the documentation site
 	http://www.cansas.org/wgwiki/index.php/cansas1d_documentation)
+
+Copyright (c) 2013, UChicago Argonne, LLC
+This file is distributed subject to a Software License Agreement found
+in the file LICENSE that is included with this distribution. 
 -->
 
 <xsl:stylesheet version="1.1"
