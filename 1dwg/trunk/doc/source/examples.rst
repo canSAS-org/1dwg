@@ -44,15 +44,15 @@ example file in the main distribution.
 
 .. index:: XML Stylesheet
 
-The stylesheet identified on line 2 in *data-simple.xml* (:ref:`ascii3col.xsl`) is a very basic XSLT.
-When the *data-simple.xml* is opened in a browser (from a directory containing both
+The stylesheet (:ref:`ascii3col.xsl`) identified on line 2 of 
+:ref:`data-simple.xml` is a very basic XSLT.
+When *data-simple.xml* is opened in a browser (from a directory containing both
 *data-simple.xml* and *ascii3col.xsl*), the result looked like this:
 
 	.. figure:: graphics/ascii3col.png
 	    :alt: Simple XSLT view of *data-simple.xml*
 	    
-	    View of *data-simple.xml* in a browser after XSLT transformation using *ascii3col.xsl*.
-
+	    View of *data-simple.xml* in a browser **after** XSLT transformation using *ascii3col.xsl*.
 
 .. index:: XML file; cansas1d.xml
 
@@ -86,30 +86,31 @@ downloaded,
 or the entire directory may be checked out to
 create a local copy for you.
 
->>> svn co http://www.cansas.org/svn/1dwg/branches/v1.1/examples cansas1d-examples
+>>> svn co http://www.cansas.org/svn/1dwg/tags/v1.1/examples cansas1d-examples
 
-* :download:`1998spheres.xml <../../examples/1998spheres.xml >`
-* :download:`bimodal-test1.xml <../../examples/bimodal-test1.xml >`
-* :download:`cansas1d-template.xml <../../examples/cansas1d-template.xml >`
-* :download:`cansas1d.xml <../../examples/cansas1d.xml >`
-* :download:`cs_af1410.xml <../../examples/cs_af1410.xml >`
-* :download:`cs_collagen.xml <../../examples/cs_collagen.xml >`
-* :download:`cs_collagen_full.xml <../../examples/cs_collagen_full.xml >`
-* :download:`cs_rr_polymers.xml <../../examples/cs_rr_polymers.xml >`
-* :download:`gc14-dls-i22.xml <../../examples/gc14-dls-i22.xml >`
-* :download:`GLASSYC_C4G8G9_no_TL.xml <../../examples/GLASSYC_C4G8G9_no_TL.xml >`
-* :download:`GLASSYC_C4G8G9_w_TL.xml <../../examples/GLASSYC_C4G8G9_w_TL.xml >`
-* :download:`ill_sasxml_example.xml <../../examples/ill_sasxml_example.xml >`
-* :download:`ISIS_SANS_Example.xml <../../examples/ISIS_SANS_Example.xml >`
-* :download:`isis_sasxml_example.xml <../../examples/isis_sasxml_example.xml >`
-* :download:`r586.xml <../../examples/r586.xml >`
-* :download:`r597.xml <../../examples/r597.xml >`
-* :download:`s81-polyurea.xml <../../examples/s81-polyurea.xml >`
-* :download:`samdata_WITHTX.xml <../../examples/samdata_WITHTX.xml >`
-* :download:`W1W2.XML <../../examples/W1W2.XML >`
-* :download:`xg009036_001.xml <../../examples/xg009036_001.xml >`
+* :download:`1998spheres.xml <../../examples/1998spheres.xml>`
+* :download:`bimodal-test1.xml <../../examples/bimodal-test1.xml>`
+* :download:`cansas1d-template.xml <../../examples/cansas1d-template.xml>`
+* :download:`cansas1d.xml <../../examples/cansas1d.xml>`
+* :download:`cs_af1410.xml <../../examples/cs_af1410.xml>`
+* :download:`cs_collagen.xml <../../examples/cs_collagen.xml>`
+* :download:`cs_collagen_full.xml <../../examples/cs_collagen_full.xml>`
+* :download:`cs_rr_polymers.xml <../../examples/cs_rr_polymers.xml>`
+* :download:`gc14-dls-i22.xml <../../examples/gc14-dls-i22.xml>`
+* :download:`GLASSYC_C4G8G9_no_TL.xml <../../examples/GLASSYC_C4G8G9_no_TL.xml>`
+* :download:`GLASSYC_C4G8G9_w_TL.xml <../../examples/GLASSYC_C4G8G9_w_TL.xml>`
+* :download:`ill_sasxml_example.xml <../../examples/ill_sasxml_example.xml>`
+* :download:`ISIS_SANS_Example.xml <../../examples/ISIS_SANS_Example.xml>`
+* :download:`isis_sasxml_example.xml <../../examples/isis_sasxml_example.xml>`
+* :download:`r586.xml <../../examples/r586.xml>`
+* :download:`r597.xml <../../examples/r597.xml>`
+* :download:`s81-polyurea.xml <../../examples/s81-polyurea.xml>`
+* :download:`samdata_WITHTX.xml <../../examples/samdata_WITHTX.xml>`
+* :download:`W1W2.XML <../../examples/W1W2.XML>`
+* :download:`xg009036_001.xml <../../examples/xg009036_001.xml>`
 
-.. [#] http://www.cansas.org/svn/1dwg/branches/v1.1/examples
+.. [#] http://www.cansas.org/svn/1dwg/tags/v1.1/examples
+   (or http://www.cansas.org/svn/1dwg/trunk/examples)
 
 .. index::
 	single: binding; XML Stylesheet (XSLT)
