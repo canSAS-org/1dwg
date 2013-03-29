@@ -3,9 +3,9 @@
 .. _bindings:
 
 
-===================================================
-Language Bindings and Software Support
-===================================================
+=================
+Language Bindings
+=================
 
 Bindings (import/export drivers) and other software support 
 have been created and contributed.  These are listed here by the 
