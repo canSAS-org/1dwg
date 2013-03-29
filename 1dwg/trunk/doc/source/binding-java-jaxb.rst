@@ -198,3 +198,27 @@ JAXB: Questions and Answers
 	auto-generate the basic documentation as HTML and 
 	*pdfdoclet* was able to auto-generate the 
 	documentation in a PDF file.
+
+
+(re)building the JAXB code
+============================
+
+To build the java files with JAXB from the XSD Schema,
+refer to the JAXB documentation: [#]_
+
+.. [#] JAXB:  http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/2.0/tutorial/doc/JAXBUsing.html
+
+Here are the steps taken (this time).  Note that to use `xjc`, you'll need the
+full JDK, not just a JVM or JRE.
+
+::
+
+	[jemian@gov,250,v1.1]$ mkdir -p java/ant-eclipse/src/org/cansas
+	[jemian@gov,251,v1.1]$ xjc -d java/ant-eclipse/src/org/cansas cansas1d.xsd
+	[jemian@gov,262,_1]$ mv *.java ..
+	[jemian@gov,263,_1]$ cd ../
+	[jemian@gov,264,cansas1d]$ rmdir _1
+	edit package line in *.java to read::
+	
+		package org.cansas.cansas1d;
+

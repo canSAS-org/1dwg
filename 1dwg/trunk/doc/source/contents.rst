@@ -17,3 +17,7 @@ Table of Contents
    downloads
    license
    authors
+
+--------
+
+This document was created |today|.
