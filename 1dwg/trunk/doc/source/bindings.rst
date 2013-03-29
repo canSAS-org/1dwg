@@ -11,6 +11,8 @@ Bindings (import/export drivers) and other software support
 have been created and contributed.  These are listed here by the 
 language or software environment.
 
+.. keep this list alphabetical
+
 .. toctree::
    :maxdepth: 2
    

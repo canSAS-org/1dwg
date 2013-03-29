@@ -6,6 +6,12 @@
 	targetNamespace="urn:cansas1d:1.1" xmlns:tns="urn:cansas1d:1.1"
 	elementFormDefault="qualified">
 
+<!-- 
+Copyright (c) 2013, UChicago Argonne, LLC
+This file is distributed subject to a Software License Agreement found
+in the file LICENSE that is included with this distribution. 
+ -->
+ 
 <!-- JAXB: http://java.sun.com/developer/technicalArticles/WebServices/jaxb/ -->
 
 	<complexType name="floatUnitType">

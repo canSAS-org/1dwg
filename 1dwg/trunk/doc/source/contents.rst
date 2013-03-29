@@ -15,3 +15,5 @@ Table of Contents
    intensity-problem
    xml-help
    downloads
+   license
+   authors

@@ -36,14 +36,10 @@ For later dialects, there are some SDKs available on the Web:
 	* *XML* - by Mart Rentmeester at http://nn-online.org/code/xml/
 
 
-canSAS 1-D SAS XML v1.0 support
-======================================
+canSAS 1-D SAS XML v1.0 and v1.1 support
+==========================================
 
-.. sidebar:: Needs update to v1.1
-
-	This update is expected to follow soon on the release of v1.1
-
-Steve King[mailto:stephen.king@stfc.ac.uk] (ISIS) has provided a F77 routine 
-that will read cansas1d/1.0 XML files.
+Steve King `<stephen.king@stfc.ac.uk>` (ISIS) has provided a F77 routine 
+that will read cansas1d v1.0 and v1.1 XML files.
 
 http://www.cansas.org/trac/browser/1dwg/trunk/fortran/SASXML_G77.F 

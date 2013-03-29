@@ -8,6 +8,11 @@
 # $Id$
 ########### SVN repository information ###################
 
+# Copyright (c) 2013, UChicago Argonne, LLC
+# This file is distributed subject to a Software License Agreement found
+# in the file LICENSE that is included with this distribution. 
+
+
 ##### GLOBALS #####################################################################
 
 $tool['titleStr'] = "cansas1d:1.1 XML formatter";

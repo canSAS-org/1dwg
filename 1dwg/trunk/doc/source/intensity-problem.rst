@@ -1,4 +1,4 @@
-.. $Id: validation.rst 241 2012-08-27 07:15:24Z prjemian $
+.. $Id$
 
 .. index::
 	single: intensity; problem

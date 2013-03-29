@@ -16,6 +16,11 @@
 //				XMLutils - XOP (http://www.igorexchange.com/project/XMLutils)
 // provides:  CS_XmlReader(String fileName)
 //				all other functions in this file should not be relied upon
+//
+// Copyright (c) 2013, UChicago Argonne, LLC
+// This file is distributed subject to a Software License Agreement found
+// in the file LICENSE that is included with this distribution. 
+
 
 //  ================  ================  =================  ==========
 //  #pragma version   canSAS1d version  namespace          released

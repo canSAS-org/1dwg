@@ -555,13 +555,18 @@ these languages and environments:
 	*XSLT*  (useful in a web browser) is described later in the
 	:ref:`Example.XML.Stylesheets` section.
 
+.. _repository:
 
 Software repositories (for cansas1d:1.1 standard)
 =========================================================
 
+.. index:: TRAC
+
 :TRAC:
 	(bug reporting)
 	http://www.cansas.org/trac/browser/1dwg/tags/v1.1
+
+.. index:: subversion, svn
 
 :SVN:
 	(*subversion* revision control system)
