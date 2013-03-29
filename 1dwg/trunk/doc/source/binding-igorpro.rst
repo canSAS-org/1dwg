@@ -42,10 +42,10 @@ See the :ref:`IgorPro Binding Usage Notes` section below.
 	Pete R. Jemian <jemian@anl.gov>
 
 :date:
-	2009-09-02
+	2013-03-29
 
 :version:
-	1.11 (**requires** latest XMLutils XOP -- see below)
+	1.12 (**requires** latest XMLutils XOP -- see below)
 
 :purpose:
 	Implement an IgorPro file reader to read the canSAS 1-D reduced SAS
