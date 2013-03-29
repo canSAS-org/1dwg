@@ -13,13 +13,14 @@ See LICENSES folder.
 USE
 
 To use the Java (JAXB 2.1) binding, all you need are 
-the JAR files in the releases directory.
-	http://svn.smallangles.net/svn/canSAS/1dwg/tags/v1.1/java
+the JAR files in the tagged releases directory.
+
+* http://www.cansas.org/svn/1dwg/tags/v1.1/java
 
 These are the files to download:
-	cansas1d-1.1.jar
-	cansas1d-1.1-javadoc.jar (optional)
-	cansas1d-1.1-sources.jar (optional)
+*	cansas1d-1.1.jar
+*	cansas1d-1.1-javadoc.jar (optional)
+*	cansas1d-1.1-sources.jar (optional)
 
 
 DOCUMENTATION
