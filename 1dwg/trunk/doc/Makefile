@@ -14,7 +14,10 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext
+# change this for new releases
+PDF_NAME = cansas-1d-1_1-manual.pdf
+
+.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext rebuild rebuild-html all realclean
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -37,8 +40,16 @@ help:
 	@echo "  changes    to make an overview of all changed/added/deprecated items"
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
+	@echo "  rebuild    to rebuild latexpdf and html"
+	@echo "  rebuild-html    to rebuild only html"
+	@echo "  all        to build latexpdf and html"
+	@echo "  clean      remove build/doctrees (forces a complete build next time)"
+	@echo "  realclean  remove build/*"
 
 clean:
+	-rm -rf $(BUILDDIR)/doctrees
+
+realclean:
 	-rm -rf $(BUILDDIR)/*
 
 html:
@@ -106,6 +117,7 @@ latexpdf:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
+	/bin/cp -f $(BUILDDIR)/latex/canSAS1d.pdf ./$(PDF_NAME)
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
 
 text:
@@ -151,3 +163,9 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+all: latexpdf html
+
+rebuild-html: clean html
+
+rebuild: clean all

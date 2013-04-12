@@ -218,22 +218,26 @@ JAXB: Questions and Answers
 (re)building the JAXB code
 ============================
 
-To build the java files with JAXB from the XSD Schema,
+The Java bindings can be built from the XML Schema file using 
+JAXB.  For more information, 
 refer to the JAXB documentation: [#]_
 
-.. [#] JAXB:  http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/2.0/tutorial/doc/JAXBUsing.html
+.. [#] JAXB:  http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/2.0/tutorial/doc/JAXBUsing.html 
 
-Here are the steps taken (this time).  Note that to use `xjc`, you'll need the
-full JDK, not just a JVM or JRE.
+.. note:: To use `xjc`, you need a JDK, not just a JVM or JRE.
 
-::
+Starting from the <trunk> directory, create a directory (if necessary) 
+for the JAXB Java source code that will be created from the XML Schema::
 
-	[jemian@gov,250,v1.1]$ mkdir -p java/ant-eclipse/src/org/cansas
-	[jemian@gov,251,v1.1]$ xjc -d java/ant-eclipse/src/org/cansas cansas1d.xsd
-	[jemian@gov,262,_1]$ mv *.java ..
-	[jemian@gov,263,_1]$ cd ../
-	[jemian@gov,264,cansas1d]$ rmdir _1
-	edit package line in *.java to read::
+	mkdir -p java/ant-eclipse/src
+
+Staying in the <trunk> directory, build the JAXB JAXB Java source code::
+
+	xjc -d java/ant-eclipse/src cansas1d.xsd -p org.cansas.cansas1d
 	
-		package org.cansas.cansas1d;
+Next, moving into the Java project directory, rebuild the .jar files:: 
+	
+	cd java/ant-eclipse
+	ant rebuild
+	/bin/cp dist/*.jar ../
 
