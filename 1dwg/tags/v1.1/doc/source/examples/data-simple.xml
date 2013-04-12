@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ascii3col.xsl" ?>
+<SASroot version="1.1"
+	xmlns="urn:cansas1d:1.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:cansas1d:1.1 
+	    http://www.cansas.org/formats/1.1/cansas1d.xsd"
+	>
+	<SASentry>
+		<Title>SAS bimodal test1</Title>
+		<Run>1992</Run>
+		<SASdata>
+			<Idata>
+				<Q unit="1/A">0.0040157139</Q>
+				<I unit="1/cm">3497.473</I>
+				<Idev unit="1/cm">90.72816</Idev>
+			</Idata>
+			<Idata>
+				<Q unit="1/A">0.0045408653</Q>
+				<I unit="1/cm">3340.003</I>
+				<Idev unit="1/cm">84.95314</Idev>
+			</Idata>
+		</SASdata>
+		<SASsample>
+			<ID>bimodal-test1</ID>
+		</SASsample>
+		<SASinstrument>
+			<name>simulated SAS calculation</name>
+			<SASsource>
+				<radiation>artificial</radiation>
+				<wavelength unit="A">1.00</wavelength>
+			</SASsource>
+			<SAScollimation/>
+			<SASdetector>
+				<name>calculation</name>
+			</SASdetector>
+		</SASinstrument>
+		<SASprocess>
+			<name>create the SAS data</name>
+			<date>1992-01-31</date>
+			<term name="shape">spheres</term>
+			<term name="contrast" unit="1/cm^4">100E20</term>
+			<term name="Background" unit="1/cm">0.1</term>
+			<term name="sMult" unit="cts/cm">1000.0</term>
+			<term name="sNoise" unit="fraction">0.25</term>
+			<SASprocessnote/>
+		</SASprocess>
+		<SASnote/>
+	</SASentry>
+</SASroot>
