@@ -86,7 +86,7 @@ in the file LICENSE that is included with this distribution.
 	
 	<complexType name="TdataType">
 			<sequence>
-				<element name="Lambda " minOccurs="1" maxOccurs="1"    type="tns:floatUnitType" />
+				<element name="Lambda" minOccurs="1" maxOccurs="1"    type="tns:floatUnitType" />
 				<element name="T" minOccurs="1" maxOccurs="1"    type="tns:floatUnitType" />
 				<element name="Tdev" minOccurs="0" maxOccurs="1" type="tns:floatUnitType" default="0" />
 				<xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" namespace="##other" />
