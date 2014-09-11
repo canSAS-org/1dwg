@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>XML header &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="index.html" />
+    <link rel="up" title="Elements of the canSAS XML standard" href="elements.html" />
+    <link rel="next" title="SASroot" href="element_SASroot.html" />
+    <link rel="prev" title="Elements of the canSAS XML standard" href="elements.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="element_SASroot.html" title="SASroot"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="elements.html" title="Elements of the canSAS XML standard"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="specification.html" >Specification</a> &raquo;</li>
+          <li><a href="elements.html" accesskey="U">Elements of the canSAS XML standard</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="elements.html"
+                        title="previous chapter">Elements of the canSAS XML standard</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="element_SASroot.html"
+                        title="next chapter"><em>SASroot</em></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/element_XML_header.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="xml-header">
+<span id="index-0"></span><span id="id1"></span><h1>XML header<a class="headerlink" href="#xml-header" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>parent:</dt>
+<dd>None.  This is the start of the XML file.</dd>
+</dl>
+<div class="highlight-guess"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nt">xml</span> <span class="nt">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="o">?&gt;</span>
+<span class="o">&lt;?</span><span class="nt">xml-stylesheet</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/xsl&quot;</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;cansasxml-html.xsl&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">SASroot</span> <span class="nt">version</span><span class="o">=</span><span class="s2">&quot;1.1&quot;</span>
+                <span class="nt">xmlns</span><span class="o">=</span><span class="s2">&quot;urn:cansas1d:1.1&quot;</span>
+                <span class="nt">xmlns</span><span class="nd">:xsi</span><span class="o">=</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+                <span class="nt">xsi</span><span class="nd">:schemaLocation</span><span class="o">=</span><span class="s2">&quot;urn:cansas1d:1.1</span>
+<span class="s2">                                    http://www.cansas.org/formats/1.1/cansas1d.xsd&quot;</span><span class="o">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">line</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>declaration that this is an XML file,
+Some XML files have an additional attribute that is not
+part of the canSAS standard:
+<tt class="docutils literal"><span class="pre">encoding='UTF-8'</span></tt> that is not included since not all
+canSAS participants are comfortable supporting UTF-8
+(<a class="reference external" href="http://en.wikipedia.org/wiki/UTF-8">http://en.wikipedia.org/wiki/UTF-8</a>) yet.</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Optional <span class="target" id="index-1"></span>XML Stylesheet declaration to allow
+this XML file to display nicely in a (XSLT-compliant)
+WWW browser such as firefox.  The XSLT file named as
+the argument of the <em>href</em> attribute (in this case:
+<em>cansasxml-html.xsl</em>) <strong>must be in the same directory</strong>
+as this XML file. (This requirement is part of the
+XSLT specification.)  You can substitute a different
+XSLT file name to achieve a different formatted result.
+See <a class="reference external" href="http://www.w3schools.org/xsl">http://www.w3schools.org/xsl</a> for more help.</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td><p class="first"><a class="reference internal" href="element_SASroot.html#sasroot"><em>SASroot</em></a> is the root element of the
+XML file.  The <em>version</em> attribute is the version
+number of the canSAS standard to which this file
+has been written.</p>
+<p class="last">The order in which the attributes of any XML element
+appear is not important.  An attribute may not be
+given twice in an element if the file conforms to
+the XML standard.  Indentation is optional and is
+ignored by the XML support library.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>Attribute declaring the default XML namespace.</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>Attribute defining <em>xsi</em> as the prefix to identify
+content tags in the <em>XMLSchema-instance</em> namespace.</td>
+</tr>
+<tr class="row-odd"><td>6 &amp; 7</td>
+<td>Location of the XML Schema that defines the allowed
+tags for this XML file.  This attribute has two
+strings within the quotations, separated by white
+space (a newline is acceptable).
+The first string is the XML namespace,
+repeated from above.  The second string is a suggested
+name of the XML Schema file.  Some XML support libraries
+will follow the URL shown here to retrieve the
+XML Schema from the canSAS server.  Since this behavior
+is not guaranteed by the XML standard, don&#8217;t count on
+it.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="element_SASroot.html" title="SASroot"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="elements.html" title="Elements of the canSAS XML standard"
+             >previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="specification.html" >Specification</a> &raquo;</li>
+          <li><a href="elements.html" >Elements of the canSAS XML standard</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

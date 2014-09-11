@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>canSAS1d data format &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="#" />
+    <link rel="next" title="Table of Contents" href="contents.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contents.html" title="Table of Contents"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">canSAS1d 1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="contents.html"
+                        title="next chapter">Table of Contents</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="cansas1d-data-format">
+<h1>canSAS1d data format<a class="headerlink" href="#cansas1d-data-format" title="Permalink to this headline">¶</a></h1>
+<div class="figure">
+<img alt="_images/cswikilogo.png" src="_images/cswikilogo.png" />
+</div>
+<p>The canSAS1d data format is used to communicate one-dimensional
+reduced small-angle scattering data.  It is a text format and
+is based on XML.</p>
+<p class="rubric">Objective</p>
+<p>One of the first aims of the <strong>canSAS</strong> (Collective Action for
+Nomadic Small-Angle Scatterers) forum of users, software
+developers, and facility staff was to discuss better sharing of SAS
+data analysis software. The canSAS (<a class="reference external" href="http://www.cansas.org/">http://www.cansas.org/</a>) identified that a
+significant need within the SAS community can be satisfied by a
+robust, self-describing, text-based, standard format to communicate
+reduced one-dimensional small-angle scattering data, <span class="math">\(I(Q)\)</span>,
+between users of our facilities. Our goal has been to define such a
+format that leaves the data file instantly human-readable, editable
+in the simplest of editors, and importable by simple text import
+filters in programs that need not recognize advanced structure in
+the file nor require advanced programming interfaces. The file
+should contain both the primary data of <span class="math">\(I(Q)\)</span> and also any
+other descriptive information (metadata) about the sample,
+measurement, instrument, processing, or analysis steps.</p>
+<p>The cansas1d:1.1 standard meets the objectives for a 1D standard,
+incorporating metadata about the measurement, parameters and
+results of processing or analysis steps. Even multiple measurements
+(related or unrelated) may be included within a single XML file.</p>
+<p class="rubric">Brief Contents</p>
+<div class="toctree-wrapper compound">
+</div>
+<ul class="simple">
+<li><a class="reference internal" href="preface.html#preface"><em>Preface</em></a></li>
+<li><a class="reference internal" href="specification.html#specification"><em>Specification</em></a></li>
+<li><a class="reference internal" href="examples.html#examples"><em>Examples</em></a></li>
+<li><a class="reference internal" href="case-studies.html#case-studies"><em>Case Studies</em></a></li>
+<li><a class="reference internal" href="tutorial.html#tutorial"><em>Tutorial</em></a></li>
+<li><a class="reference internal" href="bindings.html#bindings"><em>Language Bindings</em></a></li>
+<li><a class="reference internal" href="downloads.html#downloads"><em>Downloads</em></a></li>
+<li><a class="reference internal" href="downloads.html#changes"><em>CHANGES</em></a></li>
+<li><a class="reference internal" href="license.html#license"><em>License</em></a></li>
+<li><a class="reference internal" href="authors.html#authors"><em>Authors and Contributors</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contents.html" title="Table of Contents"
+             >next</a> |</li>
+        <li><a href="#">canSAS1d 1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

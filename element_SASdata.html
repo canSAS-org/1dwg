@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SASdata &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="index.html" />
+    <link rel="up" title="Elements of the canSAS XML standard" href="elements.html" />
+    <link rel="next" title="SAStransmission_spectrum" href="element_SAStransmission_spectrum.html" />
+    <link rel="prev" title="SASentry" href="element_SASentry.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="element_SAStransmission_spectrum.html" title="SAStransmission_spectrum"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="element_SASentry.html" title="SASentry"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="specification.html" >Specification</a> &raquo;</li>
+          <li><a href="elements.html" accesskey="U">Elements of the canSAS XML standard</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><em>SASdata</em></a></li>
+<li><a class="reference internal" href="#idata"><em>Idata</em></a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="element_SASentry.html"
+                        title="previous chapter"><em>SASentry</em></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="element_SAStransmission_spectrum.html"
+                        title="next chapter"><em>SAStransmission_spectrum</em></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/element_SASdata.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sasdata">
+<span id="index-0"></span><span id="id1"></span><h1><em>SASdata</em><a class="headerlink" href="#sasdata" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>parent:</dt>
+<dd><a class="reference internal" href="element_SASentry.html#sasentry"><em>SASentry</em></a></dd>
+</dl>
+<div class="figure">
+<img alt="_images/2-SASdata.png" src="_images/2-SASdata.png" />
+<p class="caption">The <em>SASdata</em> element</p>
+</div>
+<p>Also, see the <a class="reference internal" href="overview.html#q-geometry"><em>drawing of the Q geometry</em></a>.</p>
+<table border="1" class="docutils" id="index-1">
+<colgroup>
+<col width="18%" />
+<col width="9%" />
+<col width="10%" />
+<col width="35%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Occurrence</th>
+<th class="head">Description</th>
+<th class="head">Attributes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#idata"><em>Idata</em></a></td>
+<td>container</td>
+<td>[1..inf]</td>
+<td>Each <em>Idata</em> describes a single SAS
+data point containing <span class="math">\(I(Q)\)</span> and
+other terms.</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="idata">
+<span id="index-2"></span><span id="id2"></span><h1><em>Idata</em><a class="headerlink" href="#idata" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>parent:</dt>
+<dd><a class="reference internal" href="#sasdata"><em>SASdata</em></a></dd>
+</dl>
+<table border="1" class="docutils" id="index-3">
+<colgroup>
+<col width="17%" />
+<col width="8%" />
+<col width="9%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Occurrence</th>
+<th class="head">Description</th>
+<th class="head">Attributes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>Q</em></td>
+<td>float</td>
+<td>[1..1]</td>
+<td><span class="math">\(Q=(4 \pi / \lambda) \sin(\theta)\)</span>
+as defined in the <a class="reference internal" href="overview.html#rules"><em>Rules</em></a> section.
+Either <em>1/A</em> or <em>1/nm</em> are typical units.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id3">[1]</a></td>
+</tr>
+<tr class="row-odd"><td><em>I</em></td>
+<td>float</td>
+<td>[1..1]</td>
+<td>Intensity of the detected radiation.
+as defined in the <a class="reference internal" href="overview.html#rules"><em>Rules</em></a> section.
+See the section titled
+<a class="reference internal" href="intensity-problem.html#intensity-problem"><em>The Intensity Problem</em></a> for ways to
+describe the SAS intensity.
+One possibility might be <em>1/cm</em> for
+absolute units when the intensity
+describes a <strong>differential cross-section
+per unit volume per unit solid angle</strong>.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id4">[1]</a> <a class="footnote-reference" href="#sas-i" id="id5">[2]</a></td>
+</tr>
+<tr class="row-even"><td><em>Idev</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Estimated uncertainty (usually standard
+deviation) of <em>I</em>. <a class="footnote-reference" href="#optional" id="id6">[3]</a>
+It is unexpected for <em>I</em> and <em>Idev</em>
+to have different units.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id7">[1]</a></td>
+</tr>
+<tr class="row-odd"><td><em>Qdev</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Estimated uncertainty (usually standard
+deviation) of <em>Q</em>. <a class="footnote-reference" href="#optional" id="id8">[3]</a>
+It is unexpected for <em>Q</em> and <em>Qdev</em>
+to have different units.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id9">[1]</a> <a class="footnote-reference" href="#either" id="id10">[4]</a></td>
+</tr>
+<tr class="row-even"><td><em>dQw</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td><span class="math">\(Q\)</span> resolution along the axis of
+scanning (the high-resolution
+<em>slit width</em> direction). Useful for
+defining resolution data from
+slit-smearing instruments such as
+Bonse-Hart geometry.  <a class="footnote-reference" href="#optional" id="id11">[3]</a>
+It is unexpected for <em>Q</em> and <em>dQw</em>
+to have different units.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id12">[1]</a> <a class="footnote-reference" href="#either" id="id13">[4]</a></td>
+</tr>
+<tr class="row-odd"><td><em>dQl</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td><span class="math">\(Q\)</span> resolution perpendicular to
+the axis of scanning (the low-resolution
+<em>slit length</em> direction). Useful for
+defining resolution data from
+slit-smearing instruments such as
+Bonse-Hart geometry.  <a class="footnote-reference" href="#optional" id="id14">[3]</a>
+It is unexpected for <em>Q</em> and <em>dQl</em>
+to have different units.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id15">[1]</a> <a class="footnote-reference" href="#either" id="id16">[4]</a></td>
+</tr>
+<tr class="row-even"><td><em>Qmean</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Mean value of <span class="math">\(Q\)</span> for this data
+point. <a class="footnote-reference" href="#optional" id="id17">[3]</a>
+Useful when describing data that has
+been binned from higher-resolution
+or from area detectors.
+It is unexpected for <em>Q</em> and <em>Qmean</em>
+to have different units.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id18">[1]</a></td>
+</tr>
+<tr class="row-odd"><td><em>Shadowfactor</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>A numerical factor applied to pixels
+affected by the beam stop penumbra.
+<a class="footnote-reference" href="#optional" id="id19">[3]</a>  <a class="footnote-reference" href="#shadow" id="id20">[5]</a></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="element_any.html#any"><em>{any}</em></a></td>
+<td>container</td>
+<td>[0..inf]</td>
+<td>Any element(s) not defined in the
+cansas1d:1.1 standard can be placed at
+this point.</td>
+<td><em>xmlns:{foreign-prefix}={foreign-namespace}</em></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p class="rubric">Table Notes</p>
+<table class="docutils footnote" frame="void" id="units" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>, <a class="fn-backref" href="#id7">3</a>, <a class="fn-backref" href="#id9">4</a>, <a class="fn-backref" href="#id12">5</a>, <a class="fn-backref" href="#id15">6</a>, <a class="fn-backref" href="#id18">7</a>)</em> The <em>unit</em> attribute is required.
+See <a class="reference internal" href="overview.html#rules"><em>Rules</em></a> for acceptable values.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="sas-i" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[2]</a></td><td>Because there are several different ways to describe the SAS
+intensity,  One should be very careful to inspect the <em>unit</em>
+attribute to determine how to handle subsequent data processing,
+especially in the area of units conversion.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="optional" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id6">1</a>, <a class="fn-backref" href="#id8">2</a>, <a class="fn-backref" href="#id11">3</a>, <a class="fn-backref" href="#id14">4</a>, <a class="fn-backref" href="#id17">5</a>, <a class="fn-backref" href="#id19">6</a>)</em> When an optional element (such as <em>Idev</em>, <em>Qdev</em>, ...) is used,
+it <strong>must</strong> be used in every <em>Idata</em> within the enclosing <em>SASdata</em>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="either" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td><em>(<a class="fn-backref" href="#id10">1</a>, <a class="fn-backref" href="#id13">2</a>, <a class="fn-backref" href="#id16">3</a>)</em> If either <em>dQw</em> or <em>dQl</em> are used,
+then <em>Qdev</em> is not permitted to be used.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="shadow" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id20">[5]</a></td><td>The <em>Shadowfactor</em> is used in data files from NIST/NCNR
+instruments.  See: J.G. Barker &amp; J.S. Pedersen (1995) J. Appl. Cryst. 28, 105-114.</td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="element_SAStransmission_spectrum.html" title="SAStransmission_spectrum"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="element_SASentry.html" title="SASentry"
+             >previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="specification.html" >Specification</a> &raquo;</li>
+          <li><a href="elements.html" >Elements of the canSAS XML standard</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

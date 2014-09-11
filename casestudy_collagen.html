@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Case Study: Dry Chick Collagen &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="index.html" />
+    <link rel="up" title="Case Studies" href="case-studies.html" />
+    <link rel="next" title="Case Study: AF1410 Steel" href="casestudy_af1410.html" />
+    <link rel="prev" title="Case Studies" href="case-studies.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="casestudy_af1410.html" title="Case Study: AF1410 Steel"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="case-studies.html" title="Case Studies"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="case-studies.html" accesskey="U">Case Studies</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Case Study: Dry Chick Collagen</a><ul>
+<li><a class="reference internal" href="#create-the-xml-data-file">Create the XML data file</a><ul>
+<li><a class="reference internal" href="#make-the-basic-xml-file">Make the basic XML file</a></li>
+<li><a class="reference internal" href="#modify-collagen-xml">Modify <em>collagen.xml</em></a></li>
+<li><a class="reference internal" href="#prepare-the-saxs-data">Prepare the SAXS data</a></li>
+<li><a class="reference internal" href="#using-excel-macros-to-reformat-the-saxs-data">Using Excel macros to reformat the SAXS data</a></li>
+<li><a class="reference internal" href="#construct-the-idata-lines-in-xml">construct the <em>Idata</em> lines in XML</a></li>
+<li><a class="reference internal" href="#final-result">Final Result</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#validate-the-file">Validate the file</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="case-studies.html"
+                        title="previous chapter">Case Studies</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="casestudy_af1410.html"
+                        title="next chapter">Case Study: AF1410 Steel</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/casestudy_collagen.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="case-study-dry-chick-collagen">
+<span id="case-study-collagen"></span><span id="index-0"></span><h1>Case Study: Dry Chick Collagen<a class="headerlink" href="#case-study-dry-chick-collagen" title="Permalink to this headline">¶</a></h1>
+<p>To demonstrate how to get SAS data into the XML standard format, consider this set of
+SAXS data collected at the National Synchrotron Light Source, Brookhaven National
+Laboratory, using a SAXS camera set up temporarily at beam line X6B (operated by the
+Materials Science Division, Argonne National Lab).</p>
+<p>The sample was <strong>dry chick collagen</strong>.
+(Thanks to Malcolm Capel, NSLS beam line X12C for the sample.)</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/cs-collagen-data-table-Excel.jpg" src="_images/cs-collagen-data-table-Excel.jpg" />
+<p class="caption">collagen SAXS in Excel table</p>
+</div>
+<div class="figure">
+<img alt="_images/cs-collagen-saxs-chart-excel.jpg" src="_images/cs-collagen-saxs-chart-excel.jpg" />
+<p class="caption">collagen SAXS in Excel chart (log-log)</p>
+</div>
+</div></blockquote>
+<p>The raw data was collected on a linear position-sensitive detector
+and reduced to columns of <span class="math">\(Q\)</span>, <span class="math">\(I\)</span>, and <span class="math">\(Idev\)</span>
+(estimated standard deviation of <span class="math">\(I\)</span>).</p>
+<p>The only <span class="target" id="index-1"></span>metadata
+available for this data (without resorting to digging through piles
+of old notebooks) was obtained from the headers of two files:</p>
+<blockquote>
+<div><p class="rubric">The header lines from <em>COLLAGEN.ASC</em> (<a class="reference download internal" href="_downloads/COLLAGEN.ASC"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>):</p>
+<div class="highlight-python"><pre>Sep 19 1994     01:41:02 am     Elt: 00090 Seconds ID: No spectrum identifier definedMemory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls</pre>
+</div>
+<p class="rubric">The header lines from <em>collagen.saxs</em> (<a class="reference download internal" href="_downloads/collagen.saxs"><tt class="xref download docutils literal"><span class="pre">download</span></tt></a>):</p>
+<div class="highlight-text"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre>dry chick collagen, d = 673 A
+6531 eV, X6B
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<p>There is enough information to fulfill the minimum
+requirements of the 1D standard file format and
+also make an excellent example of a minimal
+canSAS reduced 1-D SAS data file in XML.</p>
+<div class="section" id="create-the-xml-data-file">
+<h2>Create the XML data file<a class="headerlink" href="#create-the-xml-data-file" title="Permalink to this headline">¶</a></h2>
+<p>The procedure to create the XML data file by hand is described next.</p>
+<div class="section" id="make-the-basic-xml-file">
+<h3>Make the basic XML file<a class="headerlink" href="#make-the-basic-xml-file" title="Permalink to this headline">¶</a></h3>
+<p>It is easiest to copy a template rather than start from an empty file. Copy the
+<a class="reference download internal" href="_downloads/cansas1d.xml"><tt class="xref download docutils literal"><span class="pre">cansas1d.xml</span></tt></a> file
+(<a class="reference external" href="http://www.cansas.org/svn/1dwg/trunk/examples/cansas1d.xml">http://www.cansas.org/svn/1dwg/trunk/examples/cansas1d.xml</a>)
+into your working directory and rename it to
+<em>collagen.xml</em>.</p>
+</div>
+<div class="section" id="modify-collagen-xml">
+<h3>Modify <em>collagen.xml</em><a class="headerlink" href="#modify-collagen-xml" title="Permalink to this headline">¶</a></h3>
+<p>It is easier to see the metadata in the XML file before you enter the SAXS data
+into the file. With the brief metadata available, most of the other
+lines in <em>cansas1d.xml</em> can be eliminated. This
+will result in a file that looks like the next example.</p>
+<blockquote>
+<div><p class="rubric"><em>collagen.xml</em> with metadata but before data lines are added</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;example.xsl&quot; ?&gt;</span>
+<span class="nt">&lt;SASroot</span> <span class="na">version=</span><span class="s">&quot;1.1&quot;</span>
+	<span class="na">xmlns=</span><span class="s">&quot;urn:cansas1d:1.1&quot;</span>
+	<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+	<span class="na">xsi:schemaLocation=</span><span class="s">&quot;urn:cansas1d:1.1 </span>
+<span class="s">	    http://www.cansas.org/formats/1.1/cansas1d.xsd&quot;</span>
+    <span class="nt">&gt;</span>
+    <span class="nt">&lt;SASentry&gt;</span>
+    <span class="nt">&lt;Title&gt;</span>dry chick collagen, d = 673 A, 6531 eV, X6B<span class="nt">&lt;/Title&gt;</span>
+        <span class="nt">&lt;Run</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;SASdata&gt;</span>
+            <span class="c">&lt;!-- Idata lines will go here --&gt;</span>
+        <span class="nt">&lt;/SASdata&gt;</span>
+        <span class="nt">&lt;SASsample&gt;</span>
+            <span class="nt">&lt;ID&gt;</span>dry chick collagen, d = 673 A, 6531 eV, X6B<span class="nt">&lt;/ID&gt;</span>
+        <span class="nt">&lt;/SASsample&gt;</span>
+        <span class="nt">&lt;SASinstrument&gt;</span>
+            <span class="nt">&lt;name&gt;</span>X6B, NSLS, BNL<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;SASsource&gt;</span>
+                <span class="nt">&lt;radiation&gt;</span>X-ray synchrotron<span class="nt">&lt;/radiation&gt;</span>
+                <span class="nt">&lt;wavelength</span> <span class="na">unit=</span><span class="s">&quot;A&quot;</span><span class="nt">&gt;</span>
+                    1.898   <span class="c">&lt;!-- = 12398/6531 --&gt;</span> 
+                <span class="nt">&lt;/wavelength&gt;</span>
+            <span class="nt">&lt;/SASsource&gt;</span>
+            <span class="nt">&lt;SAScollimation</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;SASdetector&gt;</span>
+                <span class="nt">&lt;name&gt;</span>X6B PSD<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;/SASdetector&gt;</span>
+        <span class="nt">&lt;/SASinstrument&gt;</span>
+        <span class="nt">&lt;SASnote&gt;</span>
+            Sep 19 1994     01:41:02 am     Elt: 00090 Seconds 
+            ID: No spectrum identifier defined
+            Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls
+            
+            dry chick collagen, d = 673 A
+            6531 eV, X6B
+        <span class="nt">&lt;/SASnote&gt;</span>
+    <span class="nt">&lt;/SASentry&gt;</span>
+<span class="nt">&lt;/SASroot&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</div>
+<div class="section" id="prepare-the-saxs-data">
+<h3>Prepare the SAXS data<a class="headerlink" href="#prepare-the-saxs-data" title="Permalink to this headline">¶</a></h3>
+<p>Microsoft Excel is used here to convert the table of SAXS data into the required
+lines of XML for the standard. Some may prefer to use a cell formula but here, we
+develop a bit of Excel Macro code to clarify our procedure.</p>
+</div>
+<div class="section" id="using-excel-macros-to-reformat-the-saxs-data">
+<h3>Using Excel macros to reformat the SAXS data<a class="headerlink" href="#using-excel-macros-to-reformat-the-saxs-data" title="Permalink to this headline">¶</a></h3>
+<p id="index-2">Within Excel, with the SAXS data in columns as shown in the Excel table
+above, let&#8217;s define the macros for our use. In Excel, type
+<em>&lt;alt&gt;&lt;F11&gt;</em> to open the macro editing window.</p>
+<blockquote>
+<div><p class="rubric">Microsoft Excel macro to format the <em>Idata</em> lines</p>
+<div class="highlight-text"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre>Function XML_tag(tag, attr, content) As String
+  If attr = &quot;&quot; Then
+    XML = &quot;&lt;&quot; &amp; tag &amp; &quot;&gt;&quot;
+  Else
+  XML = &quot;&lt;&quot; &amp; tag &amp; &quot; &quot; &amp; attr &amp; &quot;&gt;&quot;
+  End If
+  XML = XML &amp; content
+  XML = XML &amp; &quot;&lt;/&quot; &amp; tag &amp; &quot;&gt;&quot;
+  XML_tag = XML
+End Function
+
+Function SAS_Idata_tag(element, unit, content) As String
+  XML = XML_tag(element, &quot;unit=&quot;&quot;&quot; &amp; unit &amp; &quot;&quot;&quot;&quot;, content)
+  SAS_Idata_tag = XML
+End Function
+
+Function Idata_tag(Q, Q_unit, I, I_unit, Idev, Idev_unit) As String
+  XML = SAS_Idata_tag(&quot;Q&quot;, Q_unit, Q)
+  XML = XML &amp; SAS_Idata_tag(&quot;I&quot;, I_unit, I)
+  XML = XML &amp; SAS_Idata_tag(&quot;Idev&quot;, Idev_unit, Idev)
+  Idata_tag = XML_tag(&quot;Idata&quot;, &quot;&quot;, XML)
+End Function
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<p>Your window will look similar to this one when you copy/paste the above example code:
+(Yes, my spreadsheet is called <em>MyFirstMacro.xls</em>)</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/cs-collagen-macro-editing.jpg" src="_images/cs-collagen-macro-editing.jpg" style="width: 800px;" />
+<p class="caption">case study: Collagen, SAXS data in Excel chart</p>
+</div>
+</div></blockquote>
+<p>Now close the macro editing window and return to the SAXS data in the spreadsheet.</p>
+</div>
+<div class="section" id="construct-the-idata-lines-in-xml">
+<h3>construct the <em>Idata</em> lines in XML<a class="headerlink" href="#construct-the-idata-lines-in-xml" title="Permalink to this headline">¶</a></h3>
+<p>Move to spreadsheet cell <em>E5</em> and enter this formula:</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>=IDATA_tag(A5,$A$4,B5,$B$4,C5,$C$4)
+</pre></div>
+</div>
+</div></blockquote>
+<p>Copy it down all rows in column <strong>E</strong> through cell <em>E335</em>.</p>
+<p>Select cells E5:E335 and copy to clipboard, then paste into
+<em>collagen.xml</em> document inside the
+<em>SASdata</em> element where you see the XML comment.</p>
+</div>
+<div class="section" id="final-result">
+<h3>Final Result<a class="headerlink" href="#final-result" title="Permalink to this headline">¶</a></h3>
+<p>A nicely-formatted display version of the final result
+can be viewed through the TRAC repository:</p>
+<blockquote>
+<div><a class="reference external" href="http://www.cansas.org/trac/browser/1dwg/trunk/cs_collagen_full.xml">http://www.cansas.org/trac/browser/1dwg/trunk/cs_collagen_full.xml</a></div></blockquote>
+</div>
+</div>
+<div class="section" id="validate-the-file">
+<h2>Validate the file<a class="headerlink" href="#validate-the-file" title="Permalink to this headline">¶</a></h2>
+<p>So you think you have an XML file? Let&#8217;s validate it
+using the procedure from the documentation.
+All the instructions are in the <a class="reference internal" href="validation.html#validate"><em>Validation of XML against the Schema</em></a> section.
+No sense in repeating them here.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>All files are available at:</p>
+<blockquote>
+<div><a class="reference external" href="http://www.cansas.org/trac/browser/1dwg/trunk/examples/collagen/">http://www.cansas.org/trac/browser/1dwg/trunk/examples/collagen/</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="casestudy_af1410.html" title="Case Study: AF1410 Steel"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="case-studies.html" title="Case Studies"
+             >previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="case-studies.html" >Case Studies</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

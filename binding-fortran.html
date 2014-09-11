@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FORTRAN &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="index.html" />
+    <link rel="up" title="Language Bindings" href="bindings.html" />
+    <link rel="next" title="IgorPro" href="binding-igorpro.html" />
+    <link rel="prev" title="Language Bindings" href="bindings.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="binding-igorpro.html" title="IgorPro"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bindings.html" title="Language Bindings"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="bindings.html" accesskey="U">Language Bindings</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">FORTRAN</a><ul>
+<li><a class="reference internal" href="#software-development-kits">Software Development Kits</a></li>
+<li><a class="reference internal" href="#cansas-1-d-sas-xml-v1-0-and-v1-1-support">canSAS 1-D SAS XML v1.0 and v1.1 support</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="bindings.html"
+                        title="previous chapter">Language Bindings</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="binding-igorpro.html"
+                        title="next chapter">IgorPro</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/binding-fortran.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fortran">
+<span id="fortran-binding"></span><span id="index-0"></span><h1>FORTRAN<a class="headerlink" href="#fortran" title="Permalink to this headline">¶</a></h1>
+<p>The development of the FORTRAN language,
+so beloved of scientists, pre-dates the development of XML.
+And it shows. FORTRAN is not a language that manipulates strings with ease,
+and this makes parsing XML decidedly awkward.
+So unless you <em>really</em> must use FORTRAN,
+you are probably better off with C/C++ (or something else more &#8216;modern&#8217;),
+see for example Daniel Veillard&#8217;s LIBXML2 library at <a class="reference external" href="http://xmlsoft.org/">http://xmlsoft.org/</a>
+or Frank van den Berghen&#8217;s parser at
+<a class="reference external" href="http://www.applied-mathematics.net/tools/xmlParser.html">http://www.applied-mathematics.net/tools/xmlParser.html</a>.</p>
+<p>If you have to use a dialect earlier than FORTRAN-90 (F90),
+then the chances are you will have to code your own parser.</p>
+<div class="section" id="software-development-kits">
+<h2>Software Development Kits<a class="headerlink" href="#software-development-kits" title="Permalink to this headline">¶</a></h2>
+<p>For later dialects, there are some SDKs available on the Web:</p>
+<p><strong>F90</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><em>XMLPARSE</em> - by Arjen Markus at <a class="reference external" href="http://xml-fortran.sourceforge.net/">http://xml-fortran.sourceforge.net/</a></li>
+<li><em>FoX</em> - by Toby White  others at <a class="reference external" href="http://uszla.me.uk/space/software/FoX/">http://uszla.me.uk/space/software/FoX/</a></li>
+</ul>
+</div></blockquote>
+<p><strong>F95</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><em>XML</em> - by Mart Rentmeester at <a class="reference external" href="http://nn-online.org/code/xml/">http://nn-online.org/code/xml/</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="cansas-1-d-sas-xml-v1-0-and-v1-1-support">
+<h2>canSAS 1-D SAS XML v1.0 and v1.1 support<a class="headerlink" href="#cansas-1-d-sas-xml-v1-0-and-v1-1-support" title="Permalink to this headline">¶</a></h2>
+<p>Steve King <cite>&lt;stephen.king&#64;stfc.ac.uk&gt;</cite> (ISIS) has provided a F77 routine
+that will read cansas1d v1.0 and v1.1 XML files.</p>
+<p><a class="reference external" href="http://www.cansas.org/trac/browser/1dwg/trunk/fortran/SASXML_G77.F">http://www.cansas.org/trac/browser/1dwg/trunk/fortran/SASXML_G77.F</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="binding-igorpro.html" title="IgorPro"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bindings.html" title="Language Bindings"
+             >previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="bindings.html" >Language Bindings</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cansas1d &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for cansas1d</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+
+<span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">read canSAS 1-D XML data files (either v1.0 or v1.1)</span>
+
+<span class="sd">:requires: </span>
+<span class="sd">    gnosis.xml.objectify     # easy_install -U gnosis</span>
+
+<span class="sd">basic use in a program::</span>
+
+<span class="sd">    import cansas1d</span>
+<span class="sd">    try:</span>
+<span class="sd">        sasxml = cansas1d.readCanSasFile(xmlFile)</span>
+<span class="sd">    except cansas1d.Exception_canSAS_namespace, answer:</span>
+<span class="sd">        print &quot;wrong XML namespace:&quot;, answer</span>
+<span class="sd">        return</span>
+<span class="sd">    except cansas1d.Exception_canSAS_version, answer:</span>
+<span class="sd">        print &quot;wrong version string:&quot;, answer</span>
+<span class="sd">        return</span>
+
+<span class="sd">Copyright (c) 2013, UChicago Argonne, LLC</span>
+<span class="sd">This file is distributed subject to a Software License Agreement found</span>
+<span class="sd">in the file LICENSE that is included with this distribution. </span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="c">########### SVN repository information ###################</span>
+<span class="c"># $Date$</span>
+<span class="c"># $Author$</span>
+<span class="c"># $Revision$</span>
+<span class="c"># $URL$</span>
+<span class="c"># $Id$</span>
+<span class="c">########### SVN repository information ###################</span>
+
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">gnosis.xml.objectify</span>     <span class="c"># easy_install -U gnosis</span>
+
+
+    <span class="c"># support reading v1.0 and v1.1 data files</span>
+    <span class="c"># v1.1 schema is backwards compatible, mostly</span>
+<span class="n">CANSAS_NAMESPACES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;1.0&#39;</span><span class="p">:</span> <span class="s">&#39;cansas1d/1.0&#39;</span><span class="p">,</span>
+    <span class="s">&#39;1.1&#39;</span><span class="p">:</span> <span class="s">&#39;urn:cansas1d:1.1&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="readCanSasFile"><a class="viewcode-back" href="../binding-python.html#cansas1d.readCanSasFile">[docs]</a><span class="k">def</span> <span class="nf">readCanSasFile</span><span class="p">(</span><span class="n">xmlFile</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    open a canSAS XML data file as a gnosis file object</span>
+<span class="sd">    </span>
+<span class="sd">    :param str xmlFile: name of canSAS 1D XML data file</span>
+<span class="sd">    :returns: gnosis object with XML data structure</span>
+<span class="sd">    :raises Exception_canSAS_namespace: if namespace does not match</span>
+<span class="sd">    :raises Exception_canSAS_version: if version does not match</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c"># read in the XML file</span>
+    <span class="n">sasxml</span> <span class="o">=</span> <span class="n">gnosis</span><span class="o">.</span><span class="n">xml</span><span class="o">.</span><span class="n">objectify</span><span class="o">.</span><span class="n">XML_Objectify</span><span class="p">(</span><span class="n">xmlFile</span><span class="p">)</span><span class="o">.</span><span class="n">make_instance</span><span class="p">()</span>
+    
+    <span class="c"># namespace check to accept file as canSAS XML</span>
+    <span class="k">if</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">xmlns</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">CANSAS_NAMESPACES</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">Exception_canSAS_namespace</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sasxml</span><span class="o">.</span><span class="n">xmlns</span><span class="p">)</span>
+    
+    <span class="c"># version check</span>
+    <span class="k">if</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">version</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">CANSAS_NAMESPACES</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">Exception_canSAS_version</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sasxml</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">sasxml</span>
+</div>
+<div class="viewcode-block" id="Exception_canSAS_namespace"><a class="viewcode-back" href="../binding-python.html#cansas1d.Exception_canSAS_namespace">[docs]</a><span class="k">class</span> <span class="nc">Exception_canSAS_namespace</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;canSAS XML file namespace&#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="Exception_canSAS_version"><a class="viewcode-back" href="../binding-python.html#cansas1d.Exception_canSAS_version">[docs]</a><span class="k">class</span> <span class="nc">Exception_canSAS_version</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;version string of the canSAS standard&#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;just for demonstration using example data files&#39;&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">xmlFile</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;bimodal-test1&#39;</span><span class="p">,</span> <span class="s">&#39;s81-polyurea&#39;</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;..&#39;</span><span class="p">,</span> <span class="s">&#39;examples&#39;</span><span class="p">,</span> <span class="n">xmlFile</span><span class="o">+</span><span class="s">&#39;.xml&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">sasxml</span> <span class="o">=</span> <span class="n">readCanSasFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">Exception_canSAS_namespace</span><span class="p">,</span> <span class="n">answer</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">xmlFile</span><span class="p">,</span> <span class="s">&quot;wrong XML namespace:&quot;</span><span class="p">,</span> <span class="n">answer</span>
+            <span class="k">continue</span>
+        <span class="k">except</span> <span class="n">Exception_canSAS_version</span><span class="p">,</span> <span class="n">answer</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">xmlFile</span><span class="p">,</span> <span class="s">&quot;wrong version string:&quot;</span><span class="p">,</span> <span class="n">answer</span>
+            <span class="k">continue</span>
+        <span class="k">print</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> has </span><span class="si">%d</span><span class="s"> data points&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">xmlFile</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">SASdata</span><span class="o">.</span><span class="n">Idata</span><span class="p">))</span>
+        
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Python &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="index.html" />
+    <link rel="up" title="Language Bindings" href="bindings.html" />
+    <link rel="next" title="The Intensity Problem" href="intensity-problem.html" />
+    <link rel="prev" title="PHP" href="binding-php.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="intensity-problem.html" title="The Intensity Problem"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="binding-php.html" title="PHP"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="bindings.html" accesskey="U">Language Bindings</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Python</a><ul>
+<li><a class="reference internal" href="#interactive-example-using-cansas1d">Interactive example using <cite>cansas1d</cite></a></li>
+<li><a class="reference internal" href="#interactive-example-using-gnosis-xml-objectify">Interactive Example using <cite>gnosis.xml.objectify</cite></a></li>
+<li><a class="reference internal" href="#example-how-to-retrieve">example: how to retrieve <span class="math">\(I(Q)\)</span></a></li>
+<li><a class="reference internal" href="#cansas1d-py-source-code-documentation"><cite>cansas1d.py</cite> source code documentation</a></li>
+<li><a class="reference internal" href="#gnosis-utils">gnosis utils</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="binding-php.html"
+                        title="previous chapter">PHP</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="intensity-problem.html"
+                        title="next chapter">The Intensity Problem</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/binding-python.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="python">
+<span id="python-binding"></span><span id="index-0"></span><h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>The Python binding to read canSAS 1-D data files
+has been implemented using the <a class="reference internal" href="#gnosis"><em>gnosis utils</em></a>.
+It is very easy to use, once you have the <cite>gnosis utils</cite> installed.
+XML files are read by the <tt class="xref py py-meth docutils literal"><span class="pre">readCanSasFile()</span></tt> routine
+from the <cite>cansas1d</cite> support file.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">version</th>
+<th class="head">namespace</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1.0</td>
+<td><cite>cansas1d/1.0</cite></td>
+</tr>
+<tr class="row-odd"><td>1.1</td>
+<td><cite>urn:cansas1d:1.1</cite></td>
+</tr>
+</tbody>
+</table>
+<p>If either namespace or version don&#8217;t match, an exception is raised.</p>
+<p>If the version and namespace match this table, the data from the file is mapped
+into Python objects, as shown by the examples below.  Otherwise, an
+appropriate exception is raised.</p>
+<div class="section" id="interactive-example-using-cansas1d">
+<h2>Interactive example using <cite>cansas1d</cite><a class="headerlink" href="#interactive-example-using-cansas1d" title="Permalink to this headline">¶</a></h2>
+<p>Here is an interactive example showing how to read a canSAS 1D
+data file using the canSAS 1D Python binding:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">cansas1d</span> <span class="kn">import</span> <span class="n">readCanSasFile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sasxml</span> <span class="o">=</span> <span class="n">readCanSasFile</span><span class="p">(</span><span class="s">&#39;bimodal-test1.xml&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">Title</span>
+<span class="go">&lt;Title id=&quot;34b0470&quot; &gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">Title</span><span class="o">.</span><span class="n">PCDATA</span>
+<span class="go">SAS bimodal test1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">SASdata</span><span class="o">.</span><span class="n">Idata</span><span class="p">)</span>
+<span class="go">91</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">SASsample</span><span class="o">.</span><span class="n">ID</span><span class="o">.</span><span class="n">PCDATA</span>
+<span class="go">bimodal-test1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">source</span> <span class="o">=</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">SASinstrument</span><span class="o">.</span><span class="n">SASsource</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">source</span><span class="o">.</span><span class="n">radiation</span><span class="o">.</span><span class="n">PCDATA</span><span class="p">,</span> <span class="n">source</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">PCDATA</span><span class="p">,</span> <span class="n">source</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">unit</span>
+<span class="go">artificial 1.00 A</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="interactive-example-using-gnosis-xml-objectify">
+<h2>Interactive Example using <cite>gnosis.xml.objectify</cite><a class="headerlink" href="#interactive-example-using-gnosis-xml-objectify" title="Permalink to this headline">¶</a></h2>
+<p>Here is an interactive example showing how to read a canSAS 1D
+data file using <cite>gnosis.xml.objectify</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gnosis.xml.objectify</span> <span class="kn">import</span> <span class="n">XML_Objectify</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sasxml</span> <span class="o">=</span> <span class="n">XML_Objectify</span><span class="p">(</span><span class="s">&#39;bimodal-test1.xml&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">make_instance</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">Title</span><span class="o">.</span><span class="n">PCDATA</span>
+<span class="go">SAS bimodal test1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">Run</span><span class="o">.</span><span class="n">PCDATA</span>
+<span class="go">1992</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">SASinstrument</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">PCDATA</span>
+<span class="go">simulated SAS calculation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data0</span> <span class="o">=</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">SASdata</span><span class="o">.</span><span class="n">Idata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data0</span><span class="o">.</span><span class="n">Q</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>  <span class="n">data0</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">unit</span>
+<span class="go">1/A 1/cm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data0</span><span class="o">.</span><span class="n">Q</span><span class="o">.</span><span class="n">PCDATA</span><span class="p">,</span>  <span class="n">data0</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">PCDATA</span><span class="p">,</span>  <span class="n">data0</span><span class="o">.</span><span class="n">Idev</span><span class="o">.</span><span class="n">PCDATA</span>
+<span class="go">0.0040157139 3497.473 90.72816</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-how-to-retrieve">
+<h2>example: how to retrieve <span class="math">\(I(Q)\)</span><a class="headerlink" href="#example-how-to-retrieve" title="Permalink to this headline">¶</a></h2>
+<p>briefly (ignoring any exception handling):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">cansas1d</span> <span class="kn">import</span> <span class="n">readCanSasFile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sasxml</span> <span class="o">=</span> <span class="n">readCanSasFile</span><span class="p">(</span><span class="s">&#39;bimodal-test1.xml&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">Q</span><span class="o">.</span><span class="n">PCDATA</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">SASdata</span><span class="o">.</span><span class="n">Idata</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">PCDATA</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sasxml</span><span class="o">.</span><span class="n">SASentry</span><span class="o">.</span><span class="n">SASdata</span><span class="o">.</span><span class="n">Idata</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cansas1d-py-source-code-documentation">
+<span id="cansas1d-py"></span><h2><cite>cansas1d.py</cite> source code documentation<a class="headerlink" href="#cansas1d-py-source-code-documentation" title="Permalink to this headline">¶</a></h2>
+<p>Here is the source code and documentation of the
+<cite>cansas1d.py</cite> Python binding.
+This file (and an example that calls this file and prints
+more data from the file) may be found in the canSAS
+<a class="reference internal" href="overview.html#repository"><em>subversion</em></a> repository.</p>
+</div>
+<div class="section" id="gnosis-utils">
+<span id="gnosis"></span><h2>gnosis utils<a class="headerlink" href="#gnosis-utils" title="Permalink to this headline">¶</a></h2>
+<p>The Python binding to read canSAS 1-D data files
+has been implemented using the gnosis utilities. <a class="footnote-reference" href="#id2" id="id1">[1]</a>
+Specifically, the <cite>gnosis.xml.objectify</cite> package turns
+arbitrary XML documents into Python objects.
+Since <cite>gnosis.xml.objectify</cite> is not aware of the XML Schema,
+it is necessary to check that the file read is a canSAS 1D file.
+Matching of the namespace and version should be sufficient
+to accept a canSAS 1D file.  Appropriate exceptions
+are raised if the file does not pass these tests.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>gnosis utilities: <a class="reference external" href="http://freecode.com/projects/gnosisxml/">http://freecode.com/projects/gnosisxml/</a></td></tr>
+</tbody>
+</table>
+<p>You can install the gnosis utilities if you have the <cite>distutils</cite> package using:</p>
+<div class="highlight-python"><pre>easy_install -U gnosis</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="intensity-problem.html" title="The Intensity Problem"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="binding-php.html" title="PHP"
+             >previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="bindings.html" >Language Bindings</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

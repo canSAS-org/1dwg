@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IgorPro &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="index.html" />
+    <link rel="up" title="Language Bindings" href="bindings.html" />
+    <link rel="next" title="Java JAXB" href="binding-java-jaxb.html" />
+    <link rel="prev" title="FORTRAN" href="binding-fortran.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="binding-java-jaxb.html" title="Java JAXB"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="binding-fortran.html" title="FORTRAN"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="bindings.html" accesskey="U">Language Bindings</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">IgorPro</a><ul>
+<li><a class="reference internal" href="#checkout-of-support-code-in-subversion">Checkout of support code in Subversion</a><ul>
+<li><a class="reference internal" href="#xmlutils-xop"><em>XMLutils</em> XOP</a></li>
+<li><a class="reference internal" href="#cansasxml-ipf"><em>cansasXML.ipf</em></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage-notes">Usage Notes</a></li>
+<li><a class="reference internal" href="#what-it-does">What it does</a></li>
+<li><a class="reference internal" href="#important-functions">Important Functions</a></li>
+<li><a class="reference internal" href="#example-test-case">Example test case</a></li>
+<li><a class="reference internal" href="#igorpro-graphical-user-interface">IgorPro Graphical User Interface</a><ul>
+<li><a class="reference internal" href="#irena-tool-suite">Irena tool suite</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="binding-fortran.html"
+                        title="previous chapter">FORTRAN</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="binding-java-jaxb.html"
+                        title="next chapter">Java JAXB</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/binding-igorpro.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="igorpro">
+<span id="igorpro-binding"></span><span id="index-0"></span><h1>IgorPro<a class="headerlink" href="#igorpro" title="Permalink to this headline">¶</a></h1>
+<p>An import tool (binding) for IgorPro has been created (<em>cansasXML.ipf</em>). You can check out
+the IgorPro working directory from the SVN server (see instructions below).</p>
+<p>To use the <em>canSASxml.ipf</em> procedure,
+you must have the XMLutils XOP IGOR plugin installed.
+See the <a class="reference internal" href="#igorpro-binding-usage-notes"><em>Usage Notes</em></a> section below.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Note that this tool is not a true binding <a class="footnote-reference" href="#id2" id="id1">[1]</a>
+in that the structure of the
+XML file is not replicated in IgorPro data structures.
+This tool reads the vectors of 1-D SAS data (<em>Q</em>, <em>I</em>, ...)
+into IgorPro waves (<em>Qsas</em>, <em>Isas</em>, ...). The tool also reads
+most of the metadata into an IgorPro textWave for use by other
+support in IgorPro.</p>
+<table class="last docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>For example, see <em>data binding</em> from
+<a class="reference external" href="http://en.wikipedia.org/wiki/Binding_%28computer_science%29">http://en.wikipedia.org/wiki/Binding_%28computer_science%29</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that the code described here is <em>not a complete user interface</em>.
+(See further comments below.) It is expected that this code will be called by a graphical
+user interface routine and that routine will handle the work of copying the loaded SAS data
+in IgorPro from the <em>root:Packages:CS_XMLreader</em> data folder to the destination of choice
+(including any renaming of waves as desired).</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">file:</th><td class="field-body"><p class="first"><a class="reference external" href="http://www.cansas.org/trac/browser/1dwg/trunk/IgorPro/cansasXML.ipf">http://www.cansas.org/trac/browser/1dwg/trunk/IgorPro/cansasXML.ipf</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">author:</th><td class="field-body"><p class="first">Pete R. Jemian &lt;<a class="reference external" href="mailto:jemian&#37;&#52;&#48;anl&#46;gov">jemian<span>&#64;</span>anl<span>&#46;</span>gov</a>&gt;</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">date:</th><td class="field-body"><p class="first">2013-03-29</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">version:</th><td class="field-body"><p class="first">1.12 (<strong>requires</strong> latest XMLutils XOP &#8211; see below)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">purpose:</th><td class="field-body"><p class="first">Implement an IgorPro file reader to read the canSAS 1-D reduced SAS
+data in XML files that adhere to the cansas1d:1.1 standard.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">URL:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">TRAC:</th><td class="field-body"><a class="reference external" href="http://www.cansas.org/trac/browser/1dwg/trunk/IgorPro/cansasXML.ipf">http://www.cansas.org/trac/browser/1dwg/trunk/IgorPro/cansasXML.ipf</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">SVN:</th><td class="field-body"><a class="reference external" href="http://www.cansas.org/svn/1dwg/trunk/IgorPro/cansasXML.ipf">http://www.cansas.org/svn/1dwg/trunk/IgorPro/cansasXML.ipf</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" id="index-1" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">requires:</th><td class="field-body"><ul class="first last simple">
+<li>IgorPro: <a class="reference external" href="http://www.wavemetrics.com">http://www.wavemetrics.com</a></li>
+<li><em>XMLutils</em> XOP: <a class="reference external" href="http://www.igorexchange.com/project/XMLutils">http://www.igorexchange.com/project/XMLutils</a></li>
+<li>minimum requirement: IGOR.5.04.x-1.x-dev (circa 2008-Aug-22)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="checkout-of-support-code-in-subversion">
+<h2>Checkout of support code in Subversion<a class="headerlink" href="#checkout-of-support-code-in-subversion" title="Permalink to this headline">¶</a></h2>
+<p>Subversion (<a class="reference external" href="http://subversion.tigris.org/">http://subversion.tigris.org/</a>) is a program for
+managing software
+versions. There are command line and GUI clients for a
+variety of operating systems. We
+won&#8217;t recommend any here but will show the command lines necessary.</p>
+<div class="section" id="xmlutils-xop">
+<span id="index-2"></span><span id="id3"></span><h3><em>XMLutils</em> XOP<a class="headerlink" href="#xmlutils-xop" title="Permalink to this headline">¶</a></h3>
+<p>The <em>XMLutils</em> XOP, written by Andrew Nelson (ANSTO),
+is hosted on the IgorExchange (<a class="reference external" href="http://www.igorexchange.com/">http://www.igorexchange.com/</a>).</p>
+<p>One good location to place the checked out <em>XMLutils</em> directory is in the
+<em>Wavemetrics</em> directory, next to the <em>Igor Pro Folder</em>.</p>
+<p>Here is the subversion checkout command:</p>
+<blockquote>
+<div><div class="highlight-guess"><div class="highlight"><pre><span class="n">svn</span> <span class="n">co</span> <span class="n">svn</span><span class="o">:</span><span class="c1">//svn.igorexchange.com/packages/XMLutils/ XMLutils</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To retrieve an updated version of this support in the future, go into the
+<em>XMLutils</em> directory (created above) and type either of these commands:</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>svn update
+svn up
+</pre></div>
+</div>
+</div></blockquote>
+<p>This will check the repository and update local files as needed.
+If the installer program was updated, you&#8217;ll need to run the
+new installer program. It is not necessary to uninstall first.</p>
+<p>The installer executables contained in the download will do all the installation
+for you. They will place the XOP in the folder <em>/User Procedures/motofit/XMLutils</em>,
+and create a shortcut/alias to the plugin in <em>./Igor Extensions</em>.
+Packages from other facilities should place the XOP there as well.</p>
+</div>
+<div class="section" id="cansasxml-ipf">
+<span id="index-3"></span><h3><em>cansasXML.ipf</em><a class="headerlink" href="#cansasxml-ipf" title="Permalink to this headline">¶</a></h3>
+<p>Check out the canSAS 1d SAS XML reader from the subversion repository:</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>svn checkout http://www.cansas.org/svn/1dwg/trunk cansas-1dwg
+</pre></div>
+</div>
+</div></blockquote>
+<p>This will download lots of extra files. The file of interest is in the
+IgorPro directory and is called <em>cansasXML.ipf</em></p>
+<p>To retrieve an updated version of this support in the future,
+go into the <em>cansas-1dwg</em> directory (created above) and type the command:</p>
+<div class="highlight-python"><pre>svn update</pre>
+</div>
+<p>This will check the repository and update files as needed.</p>
+</div>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>License and Install the <em>IgorPro</em> application</dt>
+<dd><p class="first last">(should have already done this step by now)</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Quit <em>IgorPro</em> if it is running</p>
+</li>
+<li><dl class="first docutils">
+<dt>Download <em>XMLutils</em> XOP. Either checkout from subversion (see above) or, with a</dt>
+<dd><p class="first last">web browser, visit <a class="reference external" href="http://svn.igorexchange.com/viewvc/packages/XMLutils/trunk/">http://svn.igorexchange.com/viewvc/packages/XMLutils/trunk/</a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Install <em>XMLutils</em> XOP by double-clicking the installer for your operating system.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Download <em>cansasXML.ipf</em>. Either checkout from subversion (see above) or, with</dt>
+<dd><p class="first last">a web browser, copy <em>cansasXML.ipf</em> from the on-line subversion repository.
+(<a class="reference external" href="http://www.cansas.org/svn/1dwg/trunk/IgorPro/cansasXML.ipf">http://www.cansas.org/svn/1dwg/trunk/IgorPro/cansasXML.ipf</a>)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Copy <em>cansasXML.ipf</em> file to <em>...WavemetricsIgor Pro FolderUser Procedures</em></dt>
+<dd><p class="first last">(or file system equivalent)</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Then, you should be able to restart <em>IgorPro</em> and progress from there.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="usage-notes">
+<span id="igorpro-binding-usage-notes"></span><h2>Usage Notes<a class="headerlink" href="#usage-notes" title="Permalink to this headline">¶</a></h2>
+<p>To use the <em>canSASxml.ipf</em> procedure, you must have the <em>XMLutils</em> XOP IgorPro plugin
+installed. This may be downloaded from the IgorExchange Project site. There are
+installer executables contained in the download that will do all the installation for
+you. Each installer will place the XOP in the folder
+<em>...Wavemetrics:Igor Pro Folder:User Procedures:motofit:XMLutils</em>,
+and create a shortcut/alias to the plugin in
+<em>...Wavemetrics:Igor Pro Folder:Igor Extensions</em>.</p>
+</div>
+<div class="section" id="what-it-does">
+<span id="index-4"></span><h2>What it does<a class="headerlink" href="#what-it-does" title="Permalink to this headline">¶</a></h2>
+<p>Given an XML file, <strong>CS_XmlReader(fileName)</strong> attempts
+to open the file and read its contents as if it conformed to the canSAS XML standard
+for reduced 1-D SAS data (cansas1d:1.1, also known as SASXML). If the file is found to be
+non-conforming, then <em>CS_XmlReader(fileName)</em> returns
+with an error code (show below), otherwise it returns <em>0</em>, indicating <em>no error</em>.
+All data read by this code is left in the
+IgorPro data folder <em>root:Packages:CS_XMLreader</em> for pickup by the calling routine.
+(Two examples are provided to show how a routine might retrieve the data.)</p>
+<p id="index-5">After opening the XML file (with a file identifier <em>fileID</em>),
+control is passed to <em>CS_1i_parseXml(fileID)</em> which then
+walks through the XML elements. For each <em>SASentry</em> in the
+file, a new data folder is created with the name derived from the <em>Title</em> element (or best
+effort determination).  Efforts are taken to avoid duplication of data folder names (using
+standard IgorPro routines). For <em>SASentry</em> elements that
+contain more than one <em>SASdata</em> element, a <em>SASdata</em> folder
+is created for each.  The corresponding  <span class="math">\(I(Q)\)</span> is placed in that
+subfolder.  When only one <em>SASdata</em> is found, the
+<span class="math">\(I(Q)\)</span> data is placed in the main <em>Title</em> folder.</p>
+<dl class="docutils">
+<dt><strong>data columns</strong></dt>
+<dd>Each column of data in the <em>SASdata/Idata/*</em> table
+is placed into a single IgorPro wave. At present, the code does not check for
+non-standard data columns.(The capability is built into the code but is deactivated
+at present).</dd>
+<dt><strong>metadata</strong></dt>
+<dd><p class="first">Additional <span class="target" id="index-6"></span>metadata is collected into a single text wave
+(<em>metadata</em>) where the first column is an identifier (or
+<em>key</em>) and the second identifier is the <em>value</em>. Only those keys with non-empty values
+are retained in the metadata table.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">The <em>values</em> are not checked for
+characters that may cause trouble when placed in a wave note. This will be the
+responsibility of the calling routine to <em>clean these up</em> if the need arises.</p>
+</div>
+<p>The code checks for most metadata elements and will check for
+repeated elements where the standard permits.</p>
+<p>Here is an example of the metadata for the <a class="reference internal" href="casestudy_collagen.html#case-study-collagen"><em>Case Study: Dry Chick Collagen</em></a>.</p>
+<p class="rubric">metadata for the <em>cs_collagen_full.xml</em> case study</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="5%" />
+<col width="36%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">row <cite>i</cite></th>
+<th class="head">key: <cite>metadata[i][0]</cite></th>
+<th class="head">value: <cite>metadata[i][1]</cite></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>xmlFile</td>
+<td><em>cs_collagen_full.xml</em></td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>namespace</td>
+<td><tt class="docutils literal"><span class="pre">cansas1d:1.1</span></tt></td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td><em>Title</em></td>
+<td><tt class="docutils literal"><span class="pre">dry</span> <span class="pre">chick</span> <span class="pre">collagen,</span> <span class="pre">d</span> <span class="pre">=</span> <span class="pre">673</span> <span class="pre">A,</span> <span class="pre">6531</span> <span class="pre">eV,</span> <span class="pre">X6B</span></tt></td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td><em>Run</em></td>
+<td><tt class="docutils literal"><span class="pre">Sep</span> <span class="pre">19</span> <span class="pre">1994</span> <span class="pre">01:41:02</span> <span class="pre">am</span></tt></td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td><em>SASsample/ID</em></td>
+<td><tt class="docutils literal"><span class="pre">dry</span> <span class="pre">chick</span> <span class="pre">collagen,</span> <span class="pre">d</span> <span class="pre">=</span> <span class="pre">673</span> <span class="pre">A,</span> <span class="pre">6531</span> <span class="pre">eV,</span> <span class="pre">X6B</span></tt></td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td><em>SASinstrument/name</em></td>
+<td><tt class="docutils literal"><span class="pre">X6B,</span> <span class="pre">NSLS,</span> <span class="pre">BNL</span></tt></td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td><em>SASinstrument/SASsource/radiation</em></td>
+<td><tt class="docutils literal"><span class="pre">X-ray</span> <span class="pre">synchrotron</span></tt></td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td><em>SASinstrument/SASsource/wavelength</em></td>
+<td><tt class="docutils literal"><span class="pre">1.898</span></tt></td>
+</tr>
+<tr class="row-even"><td>8</td>
+<td><em>SASinstrument/SASsource/wavelength/&#64;unit</em></td>
+<td><tt class="docutils literal"><span class="pre">A</span></tt></td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td><em>SASinstrument/SASdetector/&#64;name</em></td>
+<td><tt class="docutils literal"><span class="pre">X6B</span> <span class="pre">PSD</span></tt></td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td><em>SASnote</em></td>
+<td><div class="first last highlight-python"><pre>Sep 19 1994     01:41:02 am     Elt: 00090 Seconds
+ID: No spectrum identifier defined
+Memory Size: 8192 Chls  Conversion Gain: 1024  Adc Offset: 0000 Chls
+
+dry chick collagen, d = 673 A
+6531 eV, X6B</pre>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><strong>XML foreign namespace elements</strong></dt>
+<dd>These are ignored at this time.</dd>
+<dt><strong>XML namespace and header</strong></dt>
+<dd>The routine does a <em>best-efforts</em> check to ensure that the
+given XML file conforms to the required <a class="reference internal" href="overview.html#xml-header"><em>XML file header</em></a>.
+If you take a minimalist view (<em>a.k.a.</em> a shortcut), it is likely that your file may be
+refused by this and other readers. Pay particular attention to UPPER and lower case in
+the text <strong>cansas1d:1.1</strong> as this is a <strong>key component</strong> used to index through the XML file.</dd>
+<dt><strong>XML stylesheet processing-instruction is not generated</strong></dt>
+<dd><p class="first">The <a class="reference internal" href="#xmlutils-xop"><em>XMLutils XOP</em></a> package does not provide a method to insert the prescribed
+<span class="target" id="index-8"></span>XML stylesheet processing-instruction into the XML data file.</p>
+<blockquote>
+<div><div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml-stylesheet type=text/xsl href=example.xsl ?&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p class="last">If this processing-instruction is desired, it must be added to each XML data file by
+other methods such as use of a text editor or application of an XSLT transformation.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="important-functions">
+<h2>Important Functions<a class="headerlink" href="#important-functions" title="Permalink to this headline">¶</a></h2>
+<p id="index-9">These are the important FUNCTIONS in the <em>cansasXML.ipf</em> code.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><em>CS_XmlReader(fileName)</em></dt>
+<dd>reads the named XML file and and loads SAS data</dd>
+<dt><em>prj_grabMyXmlData()</em></dt>
+<dd>demonstration function to show a usage example</dd>
+<dt><em>prjTest_cansas1d()</em></dt>
+<dd>demonstration function to show a usage example</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="example-test-case">
+<h2>Example test case<a class="headerlink" href="#example-test-case" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example running the test routine <em>prjTest_cansas1d()</em>.</p>
+<div class="highlight-text"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre></div></td><td class="code"><div class="highlight"><pre>*prjTest_cansas1d()
+XMLopenfile: File(path) to open doesn&#39;t exist, or file can&#39;t be opened
+elmo.xml either not found or cannot be opened for reading
+    Completed in 0.00669666 seconds
+XMLopenfile: XML file was not parseable
+cansasXML.ipf: failed to parse XML
+    Completed in 0.0133704 seconds
+root element is not SASroot with valid canSAS namespace
+    Completed in 0.0134224 seconds
+bimodal-test1.xml                identified as: cansas1d:1.1 XML file
+    Title: SAS bimodal test1
+    Completed in 0.068654 seconds
+root element is not SASroot with valid canSAS namespace
+    Completed in 0.0172572 seconds
+root element is not SASroot with valid canSAS namespace
+    Completed in 0.0123102 seconds
+root element is not SASroot with valid canSAS namespace
+    Completed in 0.00930118 seconds
+ISIS_SANS_Example.xml            identified as: cansas1d:1.1 XML file
+    Title: standard can 12mm SANS
+    Completed in 0.0410387 seconds
+W1W2.xml                 identified as: cansas1d:1.1 XML file
+    Title: standard can 12mm SANS
+    Title: TK49 standard 12mm SANS
+    Completed in 0.0669074 seconds
+ill_sasxml_example.xml           identified as: cansas1d:1.1 XML file
+    Title: ILL-D22 example: 7D1 2mm
+    Completed in 0.0332752 seconds
+isis_sasxml_example.xml                  identified as: cansas1d:1.1 XML file
+    Title: LOQ TK49 Standard 12mm C9
+    Completed in 0.0388868 seconds
+r586.xml                 identified as: cansas1d:1.1 XML file
+    Title: ILL-D11 example1: 2A 5mM 0%D2O
+    Completed in 0.0213737 seconds
+r597.xml                 identified as: cansas1d:1.1 XML file
+    Title: ILL-D11 example2: 2A 5mM 0%D2O
+    Completed in 0.0221894 seconds
+xg009036_001.xml                 identified as: cansas1d:1.1 XML file
+    Title: det corrn 5m
+    Completed in 0.0286721 seconds
+cs_collagen.xml                  identified as: cansas1d:1.1 XML file
+    Title: dry chick collagen, d = 673 A, 6531 eV, X6B
+    Completed in 0.0296247 seconds
+cs_collagen_full.xml             identified as: cansas1d:1.1 XML file
+    Title: dry chick collagen, d = 673 A, 6531 eV, X6B
+    Completed in 0.0751836 seconds
+cs_af1410.xml            identified as: cansas1d:1.1 XML file
+    Title: AF1410-10 (AF1410 steel aged 10 h)
+    Title: AF1410-8h (AF1410 steel aged 8 h)
+    Title: AF1410-qu (AF1410 steel aged 0.25 h)
+    Title: AF1410-cc (AF1410 steel aged 100 h)
+    Title: AF1410-2h (AF1410 steel aged 2 h)
+    Title: AF1410-50 (AF1410 steel aged 50 h)
+    Title: AF1410-20 (AF1410 steel aged 20 h)
+    Title: AF1410-5h (AF1410 steel aged 5 h)
+    Title: AF1410-1h (AF1410 steel aged 1 h)
+    Title: AF1410-hf (AF1410 steel aged 0.5 h)
+    Completed in 0.338425 seconds
+XMLopenfile: File(path) to open doesn&#39;t exist, or file can&#39;t be opened
+cansas1d-template.xml either not found or cannot be opened for reading
+    Completed in 0.00892823 seconds
+1998spheres.xml                  identified as: cansas1d:1.1 XML file
+    Title: 255 nm PS spheres
+    Title: 460 nm PS spheres
+    Completed in 2.87649 seconds
+XMLopenfile: File(path) to open doesn&#39;t exist, or file can&#39;t be opened
+does-not-exist-file.xml either not found or cannot be opened for reading
+    Completed in 0.00404549 seconds
+cs_rr_polymers.xml               identified as: cansas1d:1.1 XML file
+    Title: Round Robin Polymer A
+    Title: Round Robin Polymer B
+    Title: Round Robin Polymer C
+    Title: Round Robin Polymer D
+    Completed in 0.0943477 seconds
+s81-polyurea.xml                 identified as: cansas1d:1.1 XML file
+    Title: S7 Neat Polyurea
+    Completed in 0.0361616 seconds
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="igorpro-graphical-user-interface">
+<h2>IgorPro Graphical User Interface<a class="headerlink" href="#igorpro-graphical-user-interface" title="Permalink to this headline">¶</a></h2>
+<p>At least two groups are working on graphical user
+interfaces that use the canSAS 1-D
+SAS XML format binding to IgorPro. The GUIs are intended
+to be used with their suites of
+SAS analysis tools (and hide the details of using this
+support code from the user).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There is no support yet for writing the data
+back into the canSAS format.
+Several details need to be described, and these are
+being collected on the discussion
+page for the XML format</p>
+</div>
+<div class="section" id="irena-tool-suite">
+<span id="index-10"></span><h3>Irena tool suite<a class="headerlink" href="#irena-tool-suite" title="Permalink to this headline">¶</a></h3>
+<p>Jan Ilavsky&#8217;s <strong>Irena</strong> tool suite
+for IgorPro has a GUI to
+load the data found in the XML file.
+Refer to <a class="reference external" href="http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm">http://usaxs.xor.aps.anl.gov/staff/ilavsky/irena.htm</a> for more details.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="binding-java-jaxb.html" title="Java JAXB"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="binding-fortran.html" title="FORTRAN"
+             >previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="bindings.html" >Language Bindings</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SASsample &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="index.html" />
+    <link rel="up" title="Elements of the canSAS XML standard" href="elements.html" />
+    <link rel="next" title="SASinstrument" href="element_SASinstrument.html" />
+    <link rel="prev" title="SAStransmission_spectrum" href="element_SAStransmission_spectrum.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="element_SASinstrument.html" title="SASinstrument"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="element_SAStransmission_spectrum.html" title="SAStransmission_spectrum"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="specification.html" >Specification</a> &raquo;</li>
+          <li><a href="elements.html" accesskey="U">Elements of the canSAS XML standard</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><em>SASsample</em></a><ul>
+<li><a class="reference internal" href="#geometry">geometry</a></li>
+<li><a class="reference internal" href="#position"><em>position</em></a></li>
+<li><a class="reference internal" href="#orientation"><em>orientation</em></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="element_SAStransmission_spectrum.html"
+                        title="previous chapter"><em>SAStransmission_spectrum</em></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="element_SASinstrument.html"
+                        title="next chapter"><em>SASinstrument</em></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/element_SASsample.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sassample">
+<span id="index-0"></span><span id="id1"></span><h1><em>SASsample</em><a class="headerlink" href="#sassample" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>parent:</dt>
+<dd><a class="reference internal" href="element_SASentry.html#sasentry"><em>SASentry</em></a></dd>
+</dl>
+<div class="figure">
+<img alt="_images/3-SASsample.png" src="_images/3-SASsample.png" />
+<p class="caption">The <em>SASsample</em> element</p>
+</div>
+<table border="1" class="docutils" id="index-1">
+<colgroup>
+<col width="17%" />
+<col width="8%" />
+<col width="9%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Occurrence</th>
+<th class="head">Description</th>
+<th class="head">Attributes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>ID</em></td>
+<td>string</td>
+<td>[1..1]</td>
+<td>Text string that identifies this sample.</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><em>thickness</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Thickness of this sample.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id2">[1]</a></td>
+</tr>
+<tr class="row-even"><td><em>transmission</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Transmission (<span class="math">\(I/I_0\)</span>) of this
+sample.  Note that there is no
+<em>unit</em> attribute as this number is
+dimensionless.</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><em>temperature</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Temperature of this sample.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id3">[1]</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#samp-pos"><em>position</em></a></td>
+<td>container</td>
+<td>[0..1]</td>
+<td>Location of the sample in
+<em>X</em>, <em>Y</em>, and <em>Z</em>.</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#samp-orient"><em>orientation</em></a></td>
+<td>container</td>
+<td>[0..1]</td>
+<td>Orientation (rotation) of the sample.</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><em>details</em></td>
+<td>string</td>
+<td>[0..inf]</td>
+<td>Any additional sample details.</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="element_any.html#any"><em>{any}</em></a></td>
+<td>container</td>
+<td>[0..inf]</td>
+<td>Any element(s) not defined in the
+cansas1d:1.1 standard can be placed at
+this point.</td>
+<td><em>xmlns:{foreign-prefix}={foreign-namespace}</em></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="geometry">
+<h2>geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
+<p>See the figures in <a class="reference internal" href="overview.html#axes-definition"><em>Definition of the coordinate axes</em></a>.</p>
+</div>
+<div class="section" id="position">
+<span id="samp-pos"></span><span id="index-2"></span><h2><em>position</em><a class="headerlink" href="#position" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="9%" />
+<col width="10%" />
+<col width="35%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Occurrence</th>
+<th class="head">Description</th>
+<th class="head">Attributes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(x\)</span></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Position of the sample in <em>X</em>.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id4">[1]</a></td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(y\)</span></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Position of the sample in <em>Y</em>.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id5">[1]</a></td>
+</tr>
+<tr class="row-even"><td><span class="math">\(z\)</span></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Position of the sample in <em>Z</em>.</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id6">[1]</a>  <a class="footnote-reference" href="#z" id="id7">[2]</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="orientation">
+<span id="samp-orient"></span><span id="index-3"></span><h2><em>orientation</em><a class="headerlink" href="#orientation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <em>orientation</em> element is intended to describe
+simple rotations about a single axis rather than a full
+set of rotations as in a crystallographic context.</p>
+</div>
+<table border="1" class="docutils" id="index-4">
+<colgroup>
+<col width="18%" />
+<col width="9%" />
+<col width="10%" />
+<col width="35%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Occurrence</th>
+<th class="head">Description</th>
+<th class="head">Attributes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>roll</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Rotation about the <em>Z</em> axis (roll).</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id8">[1]</a></td>
+</tr>
+<tr class="row-odd"><td><em>pitch</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Rotation about the <em>X</em> axis (pitch).</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id9">[1]</a></td>
+</tr>
+<tr class="row-even"><td><em>yaw</em></td>
+<td>float</td>
+<td>[0..1]</td>
+<td>Rotation about the <em>Y</em> axis (yaw).</td>
+<td><em>unit={unit}</em>   <a class="footnote-reference" href="#units" id="id10">[1]</a></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p class="rubric">Table Notes</p>
+<table class="docutils footnote" frame="void" id="units" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>, <a class="fn-backref" href="#id4">3</a>, <a class="fn-backref" href="#id5">4</a>, <a class="fn-backref" href="#id6">5</a>, <a class="fn-backref" href="#id8">6</a>, <a class="fn-backref" href="#id9">7</a>, <a class="fn-backref" href="#id10">8</a>)</em> The <em>unit</em> attribute is required.
+See <a class="reference internal" href="overview.html#rules"><em>Rules</em></a> for acceptable values.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="z" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[2]</a></td><td>While <span class="math">\(z\)</span> is allowed by the standard (provided by use of
+a standard <em>size</em> element in the XML Schema), it does not make sense
+to use it for small-angle scattering in some situations as noted.
+Use of <span class="math">\(z\)</span> in such situations may be
+ignored by processing software.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="element_SASinstrument.html" title="SASinstrument"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="element_SAStransmission_spectrum.html" title="SAStransmission_spectrum"
+             >previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="specification.html" >Specification</a> &raquo;</li>
+          <li><a href="elements.html" >Elements of the canSAS XML standard</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Specification &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="index.html" />
+    <link rel="up" title="Table of Contents" href="contents.html" />
+    <link rel="next" title="Overview" href="overview.html" />
+    <link rel="prev" title="Preface" href="preface.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="preface.html" title="Preface"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" accesskey="U">Table of Contents</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="preface.html"
+                        title="previous chapter">Preface</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="next chapter">Overview</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/specification.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="specification">
+<span id="index-0"></span><span id="id1"></span><h1>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h1>
+<p>The canSAS 1-D standard for reduced 1-D SAS data is implemented using
+XML files. A single file can contain SAS data from a single experiment
+or multiple experiments. All types of relevant data (<span class="math">\(I(Q)\)</span>,
+metadata) are described for each experiment. More details are provided
+below.</p>
+<p>This is the definitive specification of <em>cansas1d:1.1</em>,
+the canSAS standard format for storing small-angle
+scattering data in XML files.
+The standard is defined using the rules of XML Schema
+(<a class="reference external" href="http://www.w3.org/XML/Schema">http://www.w3.org/XML/Schema</a>).</p>
+<span class="target" id="index-1"></span><p id="index-2">Note that the cansas1d:1.1 XML data files must adhere to the
+XML rules which includes being well-formed
+(including the use of closing tags).  <a class="footnote-reference" href="#id3" id="id2">[1]</a>
+Files that can be validated  against <a class="reference internal" href="overview.html#cansas1d-xsd"><em>XML Schema</em></a>
+(<a class="reference external" href="http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xsd">http://www.cansas.org/trac/browser/1dwg/trunk/cansas1d.xsd</a>)
+are deemed to be valid cansas1d:1.1 data files.</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>For example, see <a class="reference external" href="http://www.w3schools.com/xmL/xml_syntax.asp">http://www.w3schools.com/xmL/xml_syntax.asp</a>
+for an explanation of the XML syntax.</td></tr>
+</tbody>
+</table>
+<p>In this document, curly braces, <em>{}</em>, are used to
+indicate text that is supplied by the user.  Such as, an attribute
+may be written</p>
+<blockquote>
+<div>name={text}</div></blockquote>
+<p>and this means that the
+user would replace <em>{text}</em> with text that gives,
+in this example, a name such as <em>final detector</em>.
+Thus resulting in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">name</span><span class="o">=</span><span class="s">&quot;final detector&quot;</span>
+</pre></div>
+</div>
+<p>which is a well-formed XML attribute.</p>
+<p id="index-3">Another example is an instance of the <em>{any}</em>
+element.  Suppose one had analysis data, then <em>{any}</em>
+would be replaced
+with <em>analysis</em> and the element might look like this:</p>
+<div class="highlight-python"><pre>&lt;analysis&gt;
+   ... analysis content goes here ...
+&lt;/analysis&gt;</pre>
+</div>
+<p class="rubric">Contents</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#objective">Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#general-layout-of-the-xml-data">General Layout of the XML Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#rules">Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#converting-data-into-the-xml-format-xmlwriter">Converting data into the XML format: <em>XmlWriter</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#documentation-and-definitions">Documentation and Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#examples-and-case-studies">Examples and Case Studies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#support-tools-for-visualization-analysis-software">Support tools for Visualization &amp; Analysis software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#software-repositories-for-cansas1d-1-1-standard">Software repositories (for cansas1d:1.1 standard)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="elements.html">Elements of the canSAS XML standard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="element_XML_header.html">XML header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASroot.html"><em>SASroot</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASentry.html"><em>SASentry</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASdata.html"><em>SASdata</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASdata.html#idata"><em>Idata</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SAStransmission_spectrum.html"><em>SAStransmission_spectrum</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SAStransmission_spectrum.html#tdata-element"><em>Tdata</em> element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASsample.html"><em>SASsample</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASinstrument.html"><em>SASinstrument</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASsource.html"><em>SASsource</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SAScollimation.html"><em>SAScollimation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASdetector.html"><em>SASdetector</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASprocess.html"><em>SASprocess</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASprocess.html#sasprocessnote"><em>SASprocessnote</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASnote.html"><em>SASnote</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_any.html"><em>{any}</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation of XML against the Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility of Geometry Definitions</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="preface.html" title="Preface"
+             >previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

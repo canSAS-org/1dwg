@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Elements of the canSAS XML standard &mdash; canSAS1d 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="canSAS1d 1.1 documentation" href="index.html" />
+    <link rel="up" title="Specification" href="specification.html" />
+    <link rel="next" title="XML header" href="element_XML_header.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="element_XML_header.html" title="XML header"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="specification.html" accesskey="U">Specification</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cswikilogo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="previous chapter">Overview</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="element_XML_header.html"
+                        title="next chapter">XML header</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/elements.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="elements-of-the-cansas-xml-standard">
+<span id="elements"></span><h1>Elements of the canSAS XML standard<a class="headerlink" href="#elements-of-the-cansas-xml-standard" title="Permalink to this headline">¶</a></h1>
+<p>There are various elements (tag names) in the cansas1d:1.1 standard.
+Each of these is described below.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Name:</th><td class="field-body"><p class="first">XML tag to be used for this element of the standard.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body"><p class="first">A <em>Type</em> may be either of:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">header:</th><td class="field-body">Describes the required XML header lines.
+Without questions, use the header
+in the section titled <a class="reference internal" href="element_XML_header.html#xml-header"><em>XML header</em></a>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">container:</th><td class="field-body">A <em>container</em> element has subelements but
+no text of its own.
+These are similar to the NeXus NXDL
+<tt class="docutils literal"><span class="pre">group</span></tt> type.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">floating-point number:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Elements of type <em>floating-point number</em>
+are obvious.  In most cases, a <tt class="docutils literal"><span class="pre">unit</span></tt> attribute
+is required.  This will be noted.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">string:</th><td class="field-body">Elements of type <em>string</em>
+are any valid string (non-whitespace) sequence.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Occurence:</th><td class="field-body"><p class="first last">The number of times a particular element may appear is
+described in the <em>occurence</em> column. A value of <em>[0..1]</em>
+indicates the element is optional but may appear one time. A value of
+<em>[0..inf]</em> indicates the element is optional
+but may appear an infinite number of times (also known as unbounded).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="index-0"></span><table class="docutils field-list" frame="void" id="index-1" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><p class="first"><em>Attributes</em> list the required or optional attributes of this element.
+Note that attributes must adhere to the well-formed <a class="footnote-reference" href="#id2" id="id1">[1]</a>
+XML guidelines:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">attributename</span><span class="o">=</span><span class="s">&quot;value&quot;</span>
+</pre></div>
+</div>
+<p>where either single or double quotes surround the value.
+All attributes must have a value.  Attributes may be given in any order.</p>
+<table class="last docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><p class="first last">well-formed XML: <a class="reference external" href="http://www.w3schools.com/xmL/xml_syntax.asp">http://www.w3schools.com/xmL/xml_syntax.asp</a></p>
+</td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="element_XML_header.html">XML header</a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASroot.html"><em>SASroot</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASentry.html"><em>SASentry</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASdata.html"><em>SASdata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASdata.html#idata"><em>Idata</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SAStransmission_spectrum.html"><em>SAStransmission_spectrum</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SAStransmission_spectrum.html#tdata-element"><em>Tdata</em> element</a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASsample.html"><em>SASsample</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="element_SASsample.html#geometry">geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASsample.html#position"><em>position</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASsample.html#orientation"><em>orientation</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASinstrument.html"><em>SASinstrument</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASsource.html"><em>SASsource</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="element_SASsource.html#geometry">geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASsource.html#beam-size"><em>beam_size</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="element_SAScollimation.html"><em>SAScollimation</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="element_SAScollimation.html#aperture">aperture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SAScollimation.html#size">size</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASdetector.html"><em>SASdetector</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="element_SASdetector.html#geometry">geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASdetector.html#offset"><em>offset</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASdetector.html#orientation"><em>orientation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASdetector.html#beam-center"><em>beam_center</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_SASdetector.html#pixel-size"><em>pixel_size</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASprocess.html"><em>SASprocess</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASprocess.html#sasprocessnote"><em>SASprocessnote</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_SASnote.html"><em>SASnote</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="element_any.html"><em>{any}</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="element_XML_header.html" title="XML header"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             >previous</a> |</li>
+        <li><a href="index.html">canSAS1d 1.1 documentation</a> &raquo;</li>
+          <li><a href="contents.html" >Table of Contents</a> &raquo;</li>
+          <li><a href="specification.html" >Specification</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, canSAS.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
