@@ -1,8 +1,8 @@
 .. $Id$
 
-====================
+=================
 Table of Contents
-====================
+=================
 
 .. toctree::
    
@@ -13,6 +13,7 @@ Table of Contents
    examples
    bindings
    intensity-problem
+   browser
    xml-help
    downloads
    license
