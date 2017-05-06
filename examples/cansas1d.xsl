@@ -1,14 +1,6 @@
 <?xml version="1.0"?>
 
 <!--
-########### SVN repository information ###################
-# $Date$
-# $Author$
-# $Revision$
-# $HeadURL$
-# $Id$
-########### SVN repository information ###################
-
 Purpose:
 	This stylesheet is used to translate cansas1d:1.1
 	XML data files into a display form for viewing
