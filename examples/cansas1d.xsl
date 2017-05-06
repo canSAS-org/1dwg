@@ -82,7 +82,19 @@ in the file LICENSE that is included with this distribution.
 				</table>
 				<xsl:apply-templates  />
 				<hr />
-				<small><center>$Id$</center></small>
+				<small>
+					<center>
+						documentation:
+						<a href="http://www.cansas.org/formats/canSAS1d/1.1/doc/">
+							http://www.cansas.org/formats/canSAS1d/1.1/doc
+						</a>
+						<br />
+						GitHub source: 
+						<a href="https://github.com/canSAS-org/1dwg">
+							https://github.com/canSAS-org/1dwg
+						</a>
+					</center>
+				</small>
 			</body>
 		</html>
 	</xsl:template>
